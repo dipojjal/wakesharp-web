@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SunriseSection from '../components/SunriseSection.astro';
+import FeatureRow from '../components/FeatureRow.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import StoreGallery from '../components/StoreGallery.astro';
+import Lark from '../components/Lark.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE } from '../config/site';
+
+import iosHome from '../assets/screens/ios/home.png';
+import iosRing from '../assets/screens/ios/ring.png';
+import iosSmart from '../assets/screens/ios/smart.png';
+import iosMission from '../assets/screens/ios/mission.png';
+import iosGames from '../assets/screens/ios/games.png';
+import iosReveal from '../assets/screens/ios/reveal.png';
+import androidStats from '../assets/screens/android/stats.png';
+
+const trust = [
+  'Rings through Silent, Focus and Do Not Disturb',
+  'No account, ever',
+  'Your calendar never leaves your device',
+  'Every alarm free, forever',
+];
+
+const freeFeatures = [
+  'As many alarms as you need',
+  'Math missions, with adjustable difficulty',
+  'Strict Mode',
+  'Smart calendar alarms',
+  'Streaks and freeze tokens',
+  'Two warm-up games — Math Sprint and Reaction Tap',
+  'Your 7-day Sharpness trend',
+];
+
+const plusFeatures = [
+  'Everything in Free',
+  'Memory Match, as the third warm-up game',
+  'The full 30-day Sharpness trend',
+];
+
+const faqs = [
+  {
+    q: 'Does it really ring in Silent, Focus or Do Not Disturb?',
+    a: 'In normal circumstances, yes — that is the whole point. On iPhone it uses Apple’s system alarm framework, the same one the built-in Clock app uses. On Android it plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen. What no app can do is ring on a phone that is switched off, out of battery, or has had its permissions revoked — so for anything you truly cannot miss, set a second alarm on another device.',
+  },
+  {
+    q: 'Can I cheat past the mission?',
+    a: 'You can dismiss the alarm without one — your phone’s own stop button always works, and we would not want it any other way. WakeSharp then shows an owed-mission screen next time you open it, so your streak can still be repaired. You can also snooze twice, at a cost of 5 Sharpness each. Strict Mode removes the easy exits by re-ringing until the mission is done.',
+  },
+  {
+    q: 'What exactly does it read from my calendar?',
+    a: 'Your upcoming events, read-only, entirely on your device, for one purpose: working out what time to wake you. Nothing is transmitted anywhere. It is optional, and every other feature works if you decline it.',
+  },
+  {
+    q: 'Do I need an account?',
+    a: 'No. There isn’t one to make. No email, no password, no sign-in.',
+  },
+  {
+    q: 'What is free and what is Plus?',
+    a: 'Every alarm and every mission is free forever, along with smart calendar alarms, Strict Mode, streaks, two warm-up games and your 7-day trend. Plus adds a third warm-up game and the full 30-day trend. That is the entire difference.',
+  },
+  {
+    q: 'How do I cancel?',
+    a: 'Through the App Store or Google Play, any time. Deleting the app does not cancel a subscription.',
+  },
+  {
+    q: 'Does it track me?',
+    a: 'No advertising ID, no location, no third-party analytics or tracking SDK, and no account to profile. The only thing that ever leaves your device is subscription data, and only if you buy Plus.',
+  },
+];
+---
+
+<BaseLayout title="WakeSharp — Wake up sharp. Not just awake." path="/">
+  <JsonLd />
+
+  {/* ── 1. Hero ─────────────────────────────────────────────────────────── */}
+  <SunriseSection id="hero" class="!pt-16 sm:!pt-20">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
+      <div>
+        <div class="mb-6 lg:hidden">
+          <Lark pose="asleep" width={150} breathe glow priority />
+        </div>
+        <h1 class="text-[clamp(2.5rem,8vw,4.25rem)] leading-[1.05]">
+          Wake up <span class="accent">sharp.</span><br />Not just awake.
+        </h1>
+        <p class="lede mt-6">
+          The alarm that rings through Silent, Focus and Do Not Disturb — and won’t stop until you’ve
+          proved you’re actually up.
+        </p>
+        <div class="mt-8"><StoreButtons /></div>
+      </div>
+
+      <div class="relative flex justify-center lg:block">
+        <div class="pointer-events-none absolute -top-4 -left-10 z-10 hidden lg:block">
+          <Lark pose="asleep" width={165} breathe glow priority />
+        </div>
+        <PhoneFrame src={iosHome} alt="WakeSharp home screen at night, showing a 6:40 AM alarm and a smart calendar rule" width={300} tilt={-3.5} priority class="lg:ml-auto lg:mr-2 lg:mt-28" />
+      </div>
+    </div>
+  </SunriseSection>
+
+  {/* ── 2. Trust strip ──────────────────────────────────────────────────── */}
+  <SunriseSection id="trust" class="!py-10" anchor="features">
+    <ul class="flex flex-wrap justify-center gap-3">
+      {
+        trust.map((t) => (
+          <li class="rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-sm font-semibold">
+            {t}
+          </li>
+        ))
+      }
+    </ul>
+  </SunriseSection>
+
+  {/* ── 3. Ring ─────────────────────────────────────────────────────────── */}
+  <SunriseSection id="ring">
+    <FeatureRow screenshot={iosRing} alt="The WakeSharp alarm ringing, with Start Mission and Snooze" side="left">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">It won’t stop until you’re <span class="accent">sharp</span></h2>
+      <p class="lede mt-5">
+        On iPhone, Apple’s AlarmKit fires it over the lock screen even if the app was force-quit. On Android,
+        a full-screen alert on the alarm stream that Do Not Disturb doesn’t silence. Either way, the only way
+        out is through.
+      </p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 4. Smart alarms ─────────────────────────────────────────────────── */}
+  <SunriseSection id="smart">
+    <FeatureRow screenshot={iosSmart} alt="The smart alarm rule editor, set to ring 90 minutes before the first meeting" side="right" raised>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Wakes you before your <span class="accent">first meeting</span></h2>
+      <p class="lede mt-5">
+        “Ring 90 minutes before my first meeting.” WakeSharp reads your calendar, re-checks it overnight, and
+        moves when the meeting moves. Read-only, on your device, never transmitted.
+      </p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 5. Mission ──────────────────────────────────────────────────────── */}
+  <SunriseSection id="mission">
+    <FeatureRow screenshot={iosMission} alt="The math mission: solve 6 minus 3 to silence the alarm" side="left">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]"><span class="accent">Solve</span> to silence</h2>
+      <p class="lede mt-5">
+        Three quick problems stand between you and quiet. Strict Mode re-rings until you finish them. Snoozing
+        costs 5 Sharpness a time, twice — then it stops asking.
+      </p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 6. Warm-up ──────────────────────────────────────────────────────── */}
+  <SunriseSection id="games">
+    <FeatureRow screenshot={iosGames} alt="The Memory Match warm-up game" side="right">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">3 <span class="accent">brain games.</span> 2 minutes.</h2>
+      <p class="lede mt-5">
+        Math Sprint, Memory Match and Reaction Tap — a two-minute warm-up while the kettle boils. Math Sprint
+        and Reaction Tap are free; Memory Match is the one thing Plus adds.
+      </p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 7. Sharpness — scrim mandatory, see src/config/sunrise.ts ───────── */}
+  <SunriseSection id="sharp" class="min-h-[100svh] flex items-center">
+    <FeatureRow screenshot={iosReveal} alt="The daily Sharpness Score reveal" side="left" scrim>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Know how <span class="accent">sharp</span> you woke up</h2>
+      <p class="lede mt-5">
+        One number out of 100, scored against your own rolling baseline — not against strangers. Yesterday’s
+        you is the only benchmark that means anything at 6am.
+      </p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 8. Streaks & trends ─────────────────────────────────────────────── */}
+  <SunriseSection id="stats">
+    <FeatureRow screenshot={androidStats} alt="The Sharpness trend chart with a streak counter" side="right">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Watch yourself get <span class="accent">sharper</span></h2>
+      <p class="lede mt-5">
+        A streak, a trend line, and a freeze token for the days life happens. Seven days of history free,
+        thirty with Plus.
+      </p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 9. Both platforms ───────────────────────────────────────────────── */}
+  <SunriseSection id="platforms">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Same app. <span class="accent">Both phones.</span></h2>
+      <p class="lede mt-5">
+        Built natively twice — SwiftUI on iOS, Kotlin and Compose on Android. Not a wrapper. Requires
+        {' '}{SITE.requirements.ios} or {SITE.requirements.android}.
+      </p>
+    </div>
+    <StoreGallery />
+  </SunriseSection>
+
+  {/* ── 10. Pricing ─────────────────────────────────────────────────────── */}
+  <SunriseSection id="pricing">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Every alarm is <span class="accent">free forever</span></h2>
+      <p class="lede mt-5">
+        Plus adds the third warm-up game and the full 30-day trend. That is the whole difference — no alarm,
+        no mission and no smart rule is ever behind it.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <div class="card p-7">
+        <h3 class="text-xl">Free</h3>
+        <p class="mt-1 text-4xl font-extrabold">$0</p>
+        <ul class="mt-6 space-y-2.5 text-[0.97rem]">
+          {freeFeatures.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-success)] font-bold">✓</span><span>{f}</span></li>)}
+        </ul>
+      </div>
+
+      <div class="card relative p-7 ring-2 ring-[var(--color-coral)]">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-xl">WakeSharp Plus</h3>
+            <p class="mt-1 text-4xl font-extrabold">
+              {SITE.plus.monthly}<span class="text-base font-semibold dim">/month</span>
+            </p>
+            <p class="mt-1 text-sm dim">
+              or {SITE.plus.annual}/year, with a {SITE.plus.trialDays}-day free trial
+            </p>
+          </div>
+          <div class="hidden sm:block"><Lark pose="celebrating" width={100} /></div>
+        </div>
+        <ul class="mt-6 space-y-2.5 text-[0.97rem]">
+          {plusFeatures.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-coral-ink)] font-bold">✓</span><span>{f}</span></li>)}
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-6 max-w-2xl text-sm dim">
+      Subscriptions are billed by Apple or Google and renew until cancelled. Cancel any time in your store
+      account — deleting the app does not cancel a subscription. See the <a class="underline underline-offset-2" href="/terms">Terms</a>.
+    </p>
+  </SunriseSection>
+
+  {/* ── 11. FAQ ─────────────────────────────────────────────────────────── */}
+  <SunriseSection id="faq">
+    <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Questions, <span class="accent">answered</span></h2>
+    <div class="mt-8 max-w-3xl divide-y divide-black/10">
+      {
+        faqs.map((f) => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold">
+              {f.q}
+              <span aria-hidden="true" class="shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 leading-relaxed dim">{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </SunriseSection>
+
+  {/* ── 12. Final CTA ───────────────────────────────────────────────────── */}
+  <SunriseSection id="cta">
+    <div class="flex flex-col items-center text-center">
+      <Lark pose="encouraging" width={170} />
+      <h2 class="mt-6 text-[clamp(1.9rem,5vw,3rem)]">Tomorrow morning starts <span class="accent">tonight</span></h2>
+      <p class="lede mx-auto mt-5 text-center">
+        Set one alarm. See what a sharp morning actually feels like.
+      </p>
+      <div class="mt-8"><StoreButtons tone="light" align="center" /></div>
+    </div>
+  </SunriseSection>
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .group-open\:rotate-45 { transition: none; }
+  }
+</style>

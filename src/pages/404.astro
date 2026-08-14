@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import asleep from '../assets/mascot/asleep.png';
+---
+
+<BaseLayout title="Page not found — WakeSharp" path="/404" noindex>
+  <div data-tone="night" class="flex min-h-[70dvh] flex-col items-center justify-center gap-6 bg-[var(--color-night-deep)] px-6 py-20 text-center text-[var(--color-night-text)]">
+    <Image src={asleep} alt="WakeSharp mascot, asleep" width={220} densities={[1, 2]} class="drop-shadow-[var(--shadow-lark)]" />
+    <h1 class="text-4xl sm:text-5xl">This page is still <span class="accent">asleep.</span></h1>
+    <p class="lede mx-auto text-center">
+      We couldn't find that one. The Lark suggests going back to the start.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="/" class="pill bg-[var(--color-coral)] px-5 py-3 text-[var(--color-night-deep)]">Back to WakeSharp</a>
+      <a href="/support" class="pill bg-[var(--color-night-elevated)] px-5 py-3">Get support</a>
+    </div>
+  </div>
+</BaseLayout>

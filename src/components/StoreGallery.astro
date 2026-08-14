@@ -1,0 +1,122 @@
+---
+/**
+ * The shipped store screenshots, exactly as the App Store and Google Play show them.
+ *
+ * These are the composed frames (device frame + background plate + baked-in
+ * headline) from Design/Screenshots/ios-6.9 and play-phone — not the clean captures
+ * the feature rows use. Seeing the real listing artwork is the point.
+ *
+ * CSS scroll-snap, no carousel library. The toggle is ~8 lines of vanilla JS
+ * flipping one attribute; with JS off both rails render, each with its own heading.
+ */
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const load = (mods: Record<string, { default: ImageMetadata }>): ImageMetadata[] =>
+  Object.keys(mods)
+    .sort()
+    .map((k) => mods[k]!.default);
+
+const ios = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/ios/*.png', { eager: true }));
+const android = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/android/*.png', { eager: true }));
+
+const CAPTIONS = [
+  'Home screen with the next alarm and a smart calendar rule',
+  'The alarm ringing over the lock screen',
+  'The math mission that silences the alarm',
+  'The Memory Match warm-up game',
+  'The daily Sharpness Score reveal',
+  'The smart alarm rule editor',
+  'The Sharpness trend and streak stats',
+];
+
+const rails = [
+  { key: 'ios', label: 'iPhone', store: 'App Store', shots: ios },
+  { key: 'android', label: 'Android', store: 'Google Play', shots: android },
+];
+---
+
+<div id="store-gallery" data-platform="ios" class="mt-10">
+  <div role="tablist" aria-label="Choose a platform" class="js-only mb-6 inline-flex rounded-full border border-black/10 bg-white/60 p-1">
+    {
+      rails.map((r, i) => (
+        <button
+          type="button"
+          role="tab"
+          id={`tab-${r.key}`}
+          aria-controls={`rail-${r.key}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          data-platform-btn={r.key}
+          class="pill px-5 py-2 text-sm"
+        >
+          {r.label}
+        </button>
+      ))
+    }
+  </div>
+
+  {
+    rails.map((r) => (
+      <div id={`rail-${r.key}`} role="tabpanel" aria-labelledby={`tab-${r.key}`} data-rail={r.key}>
+        <h3 class="no-js-only mb-4 text-lg font-bold">{r.label} — as shown on the {r.store}</h3>
+        <ul class="store-rail flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5">
+          {r.shots.map((shot, i) => (
+            <li class="shrink-0 snap-start">
+              <Picture
+                src={shot}
+                alt={`WakeSharp on ${r.label}: ${CAPTIONS[i] ?? 'app screenshot'}`}
+                widths={[220, 440]}
+                sizes="220px"
+                formats={['avif', 'webp']}
+                fallbackFormat="png"
+                quality={68}
+                loading="lazy"
+                decoding="async"
+                class="w-[220px] rounded-[18px] shadow-[0_10px_28px_rgb(0_0_0/0.18)]"
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.getElementById('store-gallery');
+    if (!root) return;
+    document.documentElement.setAttribute('data-js', 'on');
+    root.querySelectorAll('[data-platform-btn]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const next = btn.getAttribute('data-platform-btn');
+        root.setAttribute('data-platform', next);
+        root.querySelectorAll('[data-platform-btn]').forEach((b) =>
+          b.setAttribute('aria-selected', String(b === btn))
+        );
+      });
+    });
+  })();
+</script>
+
+<style>
+  /* Without JS the toggle is meaningless, so it never appears and both rails show. */
+  .js-only { display: none; }
+  :global(html[data-js]) .js-only { display: inline-flex; }
+  :global(html[data-js]) .no-js-only { display: none; }
+  :global(html[data-js]) #store-gallery[data-platform='ios'] [data-rail='android'],
+  :global(html[data-js]) #store-gallery[data-platform='android'] [data-rail='ios'] {
+    display: none;
+  }
+
+  [role='tab'] { color: var(--tone-dim); font-weight: 700; }
+  [role='tab'][aria-selected='true'] {
+    background: var(--color-night-deep);
+    color: var(--color-morning-cream);
+  }
+
+  .store-rail { scrollbar-width: thin; }
+  @media (prefers-reduced-motion: no-preference) {
+    .store-rail { scroll-behavior: smooth; }
+  }
+</style>

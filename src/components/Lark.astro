@@ -1,0 +1,47 @@
+---
+/**
+ * The Lark.
+ *
+ * Aspect ratio is never forced: the cutouts are trimmed to their alpha bounding box
+ * by scripts/prep-assets.mjs and are NOT square (532x864, 635x831, ...). Passing
+ * both width and height would make sharp resize to those exact dimensions and
+ * distort the character, so only `width` is passed and Astro derives the height.
+ */
+import { Image } from 'astro:assets';
+import hero from '../assets/mascot/hero.png';
+import asleep from '../assets/mascot/asleep.png';
+import waking from '../assets/mascot/waking.png';
+import focused from '../assets/mascot/focused.png';
+import celebrating from '../assets/mascot/celebrating.png';
+import encouraging from '../assets/mascot/encouraging.png';
+
+const POSES = { hero, asleep, waking, focused, celebrating, encouraging };
+export type Pose = keyof typeof POSES;
+
+interface Props {
+  pose: Pose;
+  width?: number;
+  /** The app's own 1.0<->1.03 / 2.4s breathe. Reduced-motion safe. */
+  breathe?: boolean;
+  glow?: boolean;
+  class?: string;
+  priority?: boolean;
+}
+const { pose, width = 200, breathe = false, glow = false, class: cls = '', priority = false } = Astro.props;
+---
+
+<Image
+  src={POSES[pose]}
+  alt={`WakeSharp mascot, ${pose}`}
+  width={width}
+  densities={[1, 2]}
+  format="webp"
+  quality={80}
+  loading={priority ? 'eager' : 'lazy'}
+  decoding={priority ? 'sync' : 'async'}
+  class:list={[cls, breathe && 'breathe', glow && 'lark-glow']}
+/>
+
+<style>
+  .lark-glow { filter: drop-shadow(var(--shadow-lark)); }
+</style>

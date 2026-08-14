@@ -1,0 +1,24 @@
+---
+import { SUNRISE } from '../config/sunrise';
+
+interface Props {
+  id: string;
+  class?: string;
+  /** Extra id the section should also answer to (for nav anchors like #features). */
+  anchor?: string;
+}
+const { id, class: cls = '', anchor } = Astro.props;
+
+const stop = SUNRISE.find((s) => s.id === id);
+if (!stop) throw new Error(`Unknown sunrise section "${id}" — add it to src/config/sunrise.ts`);
+---
+
+<section
+  id={id}
+  data-tone={stop.tone}
+  class:list={['sunrise-section', cls]}
+  style={`--from:${stop.from};--to:${stop.to}`}
+>
+  {anchor && <span id={anchor} class="block"></span>}
+  <div class="mx-auto max-w-6xl"><slot /></div>
+</section>

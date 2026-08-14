@@ -1,0 +1,32 @@
+---
+/**
+ * Always-translucent sticky nav.
+ *
+ * A `position: sticky` element cannot switch background on scroll in CSS alone —
+ * that needs either `animation-timeline: scroll()` (not Baseline) or an
+ * IntersectionObserver. Holding one translucent night bar the whole way down keeps
+ * the page at zero JS and reads correctly over both the dark and the light bands.
+ */
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[color-mix(in_srgb,var(--color-night-surface)_82%,transparent)] backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
+    <a href="/" class="flex items-center gap-2.5 text-[var(--color-night-text)]">
+      <img src="/icon-192.png" alt="" width="28" height="28" class="rounded-[8px]" />
+      <span class="text-lg font-extrabold tracking-[-0.02em]">WakeSharp</span>
+      <span class="sr-only">— home</span>
+    </a>
+
+    <nav aria-label="Main" class="hidden items-center gap-7 text-sm font-semibold text-[var(--color-night-dim)] md:flex">
+      <a class="hover:text-[var(--color-night-text)]" href="/#features">Features</a>
+      <a class="hover:text-[var(--color-night-text)]" href="/#sharp">Sharpness</a>
+      <a class="hover:text-[var(--color-night-text)]" href="/#pricing">Pricing</a>
+      <a class="hover:text-[var(--color-night-text)]" href="/#faq">FAQ</a>
+    </nav>
+
+    <a
+      href="/#features"
+      class="pill bg-[var(--color-coral)] px-4 py-2 text-sm text-[var(--color-night-deep)]"
+    >Get WakeSharp</a>
+  </div>
+</header>

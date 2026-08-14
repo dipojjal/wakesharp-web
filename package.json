@@ -1,0 +1,35 @@
+{
+  "name": "wakesharp-web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "assets:prep": "node scripts/prep-assets.mjs",
+    "contrast": "node scripts/check-contrast.mjs",
+    "copy": "node scripts/check-copy.mjs",
+    "verify": "npm run contrast && npm run build && npm run copy"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/nunito": "^5.2.5",
+    "astro": "^7.2.2",
+    "sharp": "^0.35.3"
+  },
+  "optionalDependencies": {
+    "@img/sharp-libvips-linux-x64": "^1.2.0",
+    "@img/sharp-linux-x64": "^0.35.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.0"
+  }
+}

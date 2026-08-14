@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# vercel
+.vercel/
+
+# tooling
+.playwright-mcp/
+*.log
+.DS_Store
+
+# environment
+.env
+.env.production
+.env*.local

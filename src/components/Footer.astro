@@ -1,0 +1,62 @@
+---
+import { SITE, SAFETY_NOTICE, TRADEMARKS } from '../config/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--color-night-deep)] text-[var(--color-night-text)] px-6 pt-16 pb-10">
+  <div class="mx-auto max-w-6xl">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <img src="/icon-192.png" alt="" width="32" height="32" class="rounded-lg" />
+          <span class="text-xl font-extrabold tracking-[-0.02em]">WakeSharp</span>
+        </div>
+        <p class="mt-3 text-sm text-[var(--color-night-dim)]">{SITE.tagline}</p>
+      </div>
+
+      <nav aria-label="Product">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-[var(--color-night-dim)]">Product</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-[var(--color-amber)]" href="/#features">Features</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href="/#sharp">Sharpness Score</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href="/#pricing">Pricing</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-[var(--color-night-dim)]">Legal</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-[var(--color-amber)]" href="/privacy">Privacy Policy</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href="/terms">Terms of Service</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href="/support">Support</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="text-sm font-bold uppercase tracking-wider text-[var(--color-night-dim)]">Contact</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-[var(--color-amber)] break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        </ul>
+        <p class="mt-4 text-sm text-[var(--color-night-dim)]">
+          Built by {SITE.author}, solo indie developer.
+        </p>
+      </div>
+    </div>
+
+    <!--
+      The safety notice lives here, on every page, not only inside Terms section 8.
+      The homepage makes strong reliability claims; the same reader has to see the
+      qualification. An alarm that fails to wake someone is a real liability surface.
+    -->
+    <p class="mt-12 rounded-[var(--radius-card)] border border-white/10 bg-white/[0.04] p-4 text-sm leading-relaxed text-[var(--color-night-dim)]">
+      <strong class="text-[var(--color-night-text)]">Please note.</strong> {SAFETY_NOTICE}
+      <a class="underline decoration-dotted underline-offset-2 hover:text-[var(--color-amber)]" href="/terms#safety">Full safety notice</a>.
+    </p>
+
+    <div class="mt-8 border-t border-white/10 pt-6 text-xs leading-relaxed text-[var(--color-night-dim)]">
+      {TRADEMARKS.map((line) => <p>{line}</p>)}
+      <p class="mt-3">&copy; {year} {SITE.author}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

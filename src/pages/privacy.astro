@@ -1,0 +1,183 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { SITE } from '../config/site';
+---
+
+<LegalLayout
+  title="Privacy Policy — WakeSharp"
+  description="WakeSharp has no accounts and no analytics SDK. Your alarms, scores and calendar data stay on your device."
+  path="/privacy"
+  heading="Privacy Policy"
+  intro="WakeSharp is an alarm clock that runs on your phone. It has no accounts, no advertising, and no analytics SDK. Almost nothing leaves your device — and this page explains exactly what does."
+>
+  <div class="callout">
+    <h2 class="!mt-0">The short version</h2>
+    <ul>
+      <li>There is no WakeSharp account. We never ask for your name, email or phone number.</li>
+      <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>only on your device</strong>.</li>
+      <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
+      <li>The only thing that leaves your device is subscription data, and only if you buy WakeSharp Plus.</li>
+      <li>No advertising ID. No location. No third-party analytics or tracking SDK.</li>
+    </ul>
+  </div>
+
+  <h2>Who we are</h2>
+  <p>
+    WakeSharp is made by {SITE.author}, an independent solo developer. For anything in this policy,
+    write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. For data-protection purposes, that is
+    also the controller for the limited processing described below.
+  </p>
+
+  <h2>What WakeSharp does not do</h2>
+  <ul>
+    <li>It does not create an account or a user profile.</li>
+    <li>It does not collect your name, email address, phone number or contacts.</li>
+    <li>It does not request or use your location.</li>
+    <li>It does not use an advertising identifier, and it shows no ads.</li>
+    <li>It does not embed a third-party analytics or tracking SDK, and it does not track you across other apps or websites.</li>
+    <li>It does not sell or share personal information, in the sense those words are given by the CCPA/CPRA. There is nothing to sell.</li>
+  </ul>
+
+  <h2>What stays on your device</h2>
+  <p>
+    Everything WakeSharp knows about your mornings is written to a local database on your phone
+    (SwiftData on iOS, Room on Android) and never uploaded:
+  </p>
+  <ul>
+    <li>Your alarms, their times, repeat days and settings.</li>
+    <li>Your smart-alarm rules and the wake times computed from them.</li>
+    <li>A journal of alarms scheduled, fired, snoozed, missed or silenced by a completed mission.</li>
+    <li>Your warm-up game results, personal baseline, daily Sharpness scores, streaks and freeze tokens.</li>
+    <li>Your app preferences.</li>
+  </ul>
+  <p>
+    On Android the app declares <code>android:allowBackup="false"</code>, so this data is not copied into
+    Android's cloud backup. Deleting the app removes all of it.
+  </p>
+
+  <h2>Calendar access — optional, read-only, and it never leaves your phone</h2>
+  <p>
+    WakeSharp can wake you a set number of minutes before your first meeting. To do that it needs to read
+    your calendar. This is how that works:
+  </p>
+  <ul>
+    <li>It is <strong>entirely optional</strong>. Decline it and every other feature still works — you just set your alarm times yourself.</li>
+    <li>Access is <strong>read-only</strong>. WakeSharp never creates, edits or deletes an event.</li>
+    <li>Events are read <strong>on your device</strong>, and used for one purpose: to compute the time your alarm should ring.</li>
+    <li>Event titles, attendees, locations, notes and times are <strong>never transmitted to us or to anyone else</strong>. They are not written to any server, and they are not included in any diagnostic report.</li>
+    <li>You can revoke calendar access at any time in your phone's system settings. The smart alarm stops adjusting; nothing else changes.</li>
+  </ul>
+
+  <h2>Permissions, and why each one exists</h2>
+  <p>On iPhone, WakeSharp asks for:</p>
+  <ul>
+    <li><strong>Alarms</strong> — so the alarm can ring loudly and reliably through Silent mode and Focus, using Apple's system alarm framework.</li>
+    <li><strong>Calendar</strong> — optional, read-only, for smart alarms only.</li>
+    <li><strong>Notifications</strong> — for the optional pre-bed wind-down reminder.</li>
+  </ul>
+  <p>On Android, the app declares exactly these permissions:</p>
+  <ul>
+    <li><code>USE_EXACT_ALARM</code> — to schedule an alarm that fires at the exact minute you asked for.</li>
+    <li><code>USE_FULL_SCREEN_INTENT</code> — to show the ringing screen over the lock screen.</li>
+    <li><code>POST_NOTIFICATIONS</code> — for the ring notification and the optional bedtime reminder.</li>
+    <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> — to keep the alarm tone playing while the alarm is ringing.</li>
+    <li><code>RECEIVE_BOOT_COMPLETED</code> — to restore your alarms after a restart, because Android discards scheduled alarms on reboot.</li>
+    <li><code>READ_CALENDAR</code> — optional, read-only, for smart alarms only.</li>
+    <li><code>WAKE_LOCK</code> and <code>VIBRATE</code> — to wake the screen and vibrate while ringing.</li>
+  </ul>
+
+  <h2>Purchases and WakeSharp Plus</h2>
+  <p>
+    Every alarm and every mission in WakeSharp is free, forever. WakeSharp Plus is an optional subscription
+    ({SITE.plus.monthly}/month or {SITE.plus.annual}/year) that adds a third warm-up game and the full
+    30-day Sharpness trend.
+  </p>
+  <p>
+    If you subscribe, the purchase itself is handled entirely by <strong>Apple</strong> or
+    <strong>Google</strong>. We never see your card, your billing address, or your Apple or Google account
+    details.
+  </p>
+  <p>
+    To know whether your subscription is active, WakeSharp uses <strong>RevenueCat, Inc.</strong>, a
+    subscription-management service. When you open the paywall or restore a purchase, the RevenueCat SDK
+    sends:
+  </p>
+  <table>
+    <thead>
+      <tr><th>What is sent</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A randomly generated, anonymous app user ID</td><td>To tie a receipt to an install. It is not derived from your name, email or any device identifier you can be traced by.</td></tr>
+      <tr><td>The store receipt / purchase token from Apple or Google</td><td>To validate the purchase and decide whether Plus is unlocked.</td></tr>
+      <tr><td>IP address, and the country derived from it or from your store account</td><td>Sent with every network request; used for fraud checks and to price and report by region.</td></tr>
+      <tr><td>Device model, operating-system version and app version</td><td>Sent by the SDK with each request, and used to diagnose purchase problems.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    RevenueCat processes this in the <strong>United States</strong>, as our processor and under their data
+    processing terms, including standard contractual clauses where they are required for transfers from the
+    UK or the EEA. Their own privacy policy is at
+    <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>.
+  </p>
+  <p>
+    RevenueCat also shows us <strong>anonymous, aggregate</strong> subscription numbers — how many trials
+    started, how many subscriptions are active. We cannot identify you from it, and it is the only analytics
+    of any kind in this product. There is no analytics SDK in the app.
+  </p>
+  <p><strong>If you never open the paywall and never subscribe, nothing at all leaves your device.</strong></p>
+
+  <h2>How long data is kept, and how to delete it</h2>
+  <ul>
+    <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. We hold no copy, so there is nothing for us to delete.</li>
+    <li><strong>Subscription records at RevenueCat</strong> — kept while the subscription record exists, under RevenueCat's own retention policy.</li>
+    <li>
+      Because the app user ID is anonymous, neither you nor we can identify your record from the app itself.
+      If you want that record removed, email us from the address on your Apple or Google receipt and include
+      the purchase date — we will use the store transaction to locate and delete it.
+    </li>
+  </ul>
+  <p>Cancelling a subscription is separate and is done in your App Store or Google Play account. Deleting the app does not cancel a subscription.</p>
+
+  <h2>Children's privacy</h2>
+  <p>
+    WakeSharp is rated 4+ / Everyone and is suitable for all ages, but it is not directed at children and it
+    collects no personal information from anyone, including children. We do not knowingly collect data from
+    children under 13 (or the equivalent age in your country), because we do not knowingly collect personal
+    data from anybody.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    Depending on where you live, the GDPR, the UK GDPR, the CCPA/CPRA and similar laws give you rights to
+    access, correct, delete, port or object to the processing of your personal data.
+  </p>
+  <p>
+    In practice those rights are unusually easy to exercise here: <strong>we hold no personal data about
+    you</strong>. Your on-device data is already in your hands — you can see it in the app and destroy it by
+    uninstalling. The only record connected to you at all is the anonymous subscription record described
+    above, and the deletion route for it is in the previous section.
+  </p>
+  <p>
+    Where we do process data, our legal basis is the performance of our contract with you (validating a
+    subscription you bought) and our legitimate interest in preventing payment fraud. You have the right to
+    complain to your local data-protection authority.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
+    passcode. Traffic to RevenueCat uses HTTPS. No system is perfectly secure, but the surface here is
+    deliberately tiny: there is no WakeSharp server and no WakeSharp database.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If this policy changes we will update the date at the top of this page. Material changes will be
+    described here rather than made quietly.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a> — {SITE.author}, independent developer of WakeSharp.
+  </p>
+</LegalLayout>

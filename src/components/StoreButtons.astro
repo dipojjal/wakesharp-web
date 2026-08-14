@@ -1,0 +1,81 @@
+---
+/**
+ * Pre-launch store buttons.
+ *
+ * These are deliberately NOT the official Apple / Google badge artwork.
+ *
+ *  - Apple ships a separate "Pre-order on the App Store" badge with an instruction
+ *    to swap it for the download badge at release. That pairing settles it: the
+ *    download badge is scoped to apps that are actually downloadable.
+ *  - Google's brand features may be used only to promote content that is on Google
+ *    Play. There is no listing yet, so there is nothing to promote.
+ *  - Independent of trademark law: a button reading "Download on the App Store"
+ *    that scrolls the page instead of downloading is deceptive UI, and a
+ *    disclaimer does not fix it.
+ *
+ * "Official badge + Coming soon ribbon" has no compliant form either — overlaid
+ * modifies the badge, adjacent lands inside the mandatory quarter-height clear
+ * space, greyed out is a recolour.
+ *
+ * Plain text naming the stores is ordinary nominative use and carries no artwork
+ * risk, so the line beneath says where it is launching. On launch day, flip
+ * `state` to 'live' in src/config/site.ts and drop the official badges in here.
+ *
+ * There is deliberately no aria-label on the links. An aria-label REPLACES the
+ * accessible name, so a label that does not contain the visible text ("iPhone",
+ * "Coming soon") fails WCAG 2.5.3 Label in Name — voice-control users say what
+ * they can see and nothing matches. The extra context lives in a visually hidden
+ * span AFTER the visible text, so the accessible name still begins with what is
+ * on screen.
+ */
+import { SITE, isLive, anyStoreLive, type StoreConfig } from '../config/site';
+
+interface Props {
+  /** Dark bands get elevated-night secondary; light bands get white. */
+  tone?: 'dark' | 'light';
+  align?: 'start' | 'center';
+}
+const { tone = 'dark', align = 'start' } = Astro.props;
+
+const stores: StoreConfig[] = [SITE.stores.ios, SITE.stores.android];
+const secondary =
+  tone === 'dark'
+    ? 'bg-[var(--color-night-elevated)] text-[var(--color-night-text)]'
+    : 'bg-white text-[var(--color-morning-text)] border border-[color-mix(in_srgb,var(--color-morning-text)_12%,transparent)]';
+---
+
+<div class:list={['flex flex-col gap-3', align === 'center' && 'items-center']}>
+  <div class:list={['flex flex-wrap gap-3', align === 'center' && 'justify-center']}>
+    {
+      stores.map((s, i) => (
+        <a
+          href={s.url}
+          class:list={[
+            'pill min-w-[9.25rem] flex-1 px-5 py-3 text-left sm:flex-none',
+            i === 0
+              ? 'bg-[var(--color-coral)] text-[var(--color-night-deep)]'
+              : secondary,
+          ]}
+        >
+          <span class="flex flex-col leading-tight">
+            <span class="text-base font-extrabold">{s.platform}</span>
+            <span class="text-xs font-semibold opacity-75">{isLive(s) ? 'Get the app' : s.note}</span>
+          </span>
+          <span class="sr-only">
+            {isLive(s)
+              ? ` — get WakeSharp for ${s.platform}`
+              : ` — WakeSharp for ${s.platform} is not released yet. Jump to the features section.`}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+
+  {
+    !anyStoreLive() && (
+      <p class:list={['text-sm dim', align === 'center' && 'text-center']}>
+        Launching on the App Store and Google Play.
+      </p>
+    )
+  }
+</div>

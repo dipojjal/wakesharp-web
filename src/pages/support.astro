@@ -1,0 +1,117 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { SITE } from '../config/site';
+---
+
+<LegalLayout
+  title="Support — WakeSharp"
+  description="Get help with WakeSharp: why an alarm might not ring, how missions and the Sharpness Score work, and how to manage your subscription."
+  path="/support"
+  heading="Support"
+  intro="WakeSharp is made by one person, and that person answers the email."
+>
+  <div class="callout">
+    <h2 class="!mt-0">Get in touch</h2>
+    <p class="!mb-0">
+      Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. I usually reply within
+      <strong>2–3 business days</strong>. Including your phone model, OS version and the WakeSharp version
+      from Settings will almost always get you a faster answer.
+    </p>
+  </div>
+
+  <h2>Requirements</h2>
+  <p>WakeSharp needs {SITE.requirements.ios} on iPhone, or {SITE.requirements.android} on Android.</p>
+
+  <h2>My alarm didn't ring</h2>
+  <p>This is the one that matters, so here is the full checklist.</p>
+
+  <h3>On iPhone</h3>
+  <ol>
+    <li><strong>Check the alarm is actually enabled</strong> on the Home screen, and that its repeat days include today.</li>
+    <li><strong>Check alarm permission.</strong> Settings → WakeSharp. If alarm access was declined, WakeSharp cannot schedule anything. Turn it on and re-save the alarm.</li>
+    <li><strong>Check the volume and the silent switch.</strong> WakeSharp rings through Silent mode and Focus, but it cannot ring through a device that is switched off or out of battery.</li>
+    <li><strong>Check Bluetooth.</strong> If your phone is still connected to headphones or a car, the alarm may be playing there.</li>
+    <li><strong>Restart the phone</strong> and re-save the alarm if it still misbehaves.</li>
+  </ol>
+
+  <h3>On Android</h3>
+  <ol>
+    <li><strong>Check the alarm is enabled</strong> and that its repeat days include today.</li>
+    <li><strong>Allow notifications.</strong> Settings → Apps → WakeSharp → Notifications. The ring screen arrives as a full-screen notification; blocking notifications suppresses it.</li>
+    <li>
+      <strong>Turn off battery optimisation for WakeSharp.</strong> Settings → Apps → WakeSharp → Battery →
+      <em>Unrestricted</em>. This is the single most common cause on Samsung, Xiaomi, OPPO, vivo and OnePlus
+      devices, which are more aggressive than stock Android. On Samsung, also check Settings → Battery →
+      Background usage limits and make sure WakeSharp is not in "Sleeping" or "Deep sleeping apps".
+    </li>
+    <li><strong>Don't "Force stop" WakeSharp.</strong> Force-stopping cancels its scheduled alarms until you open the app again.</li>
+    <li><strong>After a restart, open WakeSharp once.</strong> It re-arms your alarms on boot, but opening it guarantees the sync ran.</li>
+  </ol>
+
+  <div class="callout callout--warn">
+    <p class="!mb-0">
+      <strong>If being woken really matters, set a second alarm on another device.</strong> WakeSharp
+      schedules alarms through the operating system, and the OS decides whether they sound. See the
+      <a href="/terms#safety">safety notice</a>.
+    </p>
+  </div>
+
+  <h2>Does WakeSharp really ring through Silent, Focus and Do Not Disturb?</h2>
+  <p>
+    In normal circumstances, yes — that is the whole point of the app, and it is the same mechanism the
+    built-in clock uses on each platform.
+  </p>
+  <ul>
+    <li><strong>On iPhone</strong>, WakeSharp uses Apple's system alarm framework, which is designed to sound through Silent mode and Focus.</li>
+    <li><strong>On Android</strong>, the alarm plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen. There is no extra permission prompt for this.</li>
+  </ul>
+  <p>
+    What neither platform can do is ring on a phone that is powered off, out of battery, or has had the app's
+    permissions revoked.
+  </p>
+
+  <h2>Missions, snoozing and Strict Mode</h2>
+  <ul>
+    <li><strong>The mission</strong> is three quick arithmetic problems. Solve them and the alarm goes quiet. Difficulty is set per alarm — easy, standard or hard.</li>
+    <li><strong>Snoozing</strong> is capped at twice a day, five minutes each, and costs 5 Sharpness per snooze (capped at −10).</li>
+    <li><strong>Strict Mode</strong> pre-schedules guard alarms a few minutes apart; only a completed mission cancels them. Turn it on per alarm.</li>
+    <li><strong>Dismissing without a mission</strong> is possible — the system's own stop button always works. WakeSharp then shows an owed-mission screen the next time you open it, so your streak can still be repaired.</li>
+  </ul>
+
+  <h2>Smart calendar alarms</h2>
+  <p>
+    A smart rule rings a set number of minutes before your first meeting, clamped between an earliest and a
+    latest wake time you choose. WakeSharp re-checks your calendar overnight, so if the meeting moves, the
+    alarm moves. If you decline calendar access, everything else still works — you just set times yourself.
+    Your events never leave your device; see the <a href="/privacy">Privacy Policy</a>.
+  </p>
+
+  <h2>The Sharpness Score</h2>
+  <p>
+    After a mission you can run an optional two-minute warm-up. Your score is measured against your own
+    rolling baseline, not against other people, so it settles around 100 as the app learns your normal. A bad
+    morning is a dip against yesterday's you, nothing more. It is not a clinical or cognitive test.
+  </p>
+
+  <h2>Purchases and WakeSharp Plus</h2>
+  <ul>
+    <li><strong>What Plus adds:</strong> a third warm-up game and the full 30-day Sharpness trend. Every alarm and every mission is free, forever.</li>
+    <li><strong>Restoring a purchase:</strong> open the paywall and tap <em>Restore</em>. Make sure you are signed in with the same Apple or Google account you bought with.</li>
+    <li><strong>Cancelling:</strong> <a href="https://apps.apple.com/account/subscriptions" rel="noopener">App Store subscriptions</a> or <a href="https://play.google.com/store/account/subscriptions" rel="noopener">Google Play subscriptions</a>. Deleting the app does not cancel a subscription.</li>
+    <li><strong>Refunds</strong> are handled by Apple or Google, not by us — but email me if something went wrong and I will help where I can.</li>
+  </ul>
+
+  <h2>Deleting your data</h2>
+  <p>
+    Everything WakeSharp records lives on your phone. Uninstalling the app deletes all of it, and we hold no
+    copy. For the anonymous subscription record held by our payments processor, see
+    <a href="/privacy">how long data is kept</a>.
+  </p>
+
+  <h2>Bugs, feedback and feature requests</h2>
+  <p>
+    All welcome, at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. For a bug, the most useful things to
+    include are your phone model, your OS version, what you expected, and what happened instead. If an alarm
+    failed to ring, the time it was set for and the time you found the phone helps a great deal.
+  </p>
+</LegalLayout>

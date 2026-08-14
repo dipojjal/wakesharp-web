@@ -1,0 +1,201 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/nunito/wght.css';
+
+/*
+ * WakeSharp brand tokens, ported verbatim from the app's design system:
+ *   ios/Packages/WakeSharpKit/Sources/WSDesignSystem/Palette.swift
+ *   android/app/src/main/kotlin/com/dipojjal/wakesharp/designsystem/WsPalette.kt
+ * All 15 colours round-trip exactly between the two.
+ */
+@theme {
+  /* Brand — derived from the Lark's own coral-and-amber plumage. */
+  --color-coral: #f58c6b;
+  --color-amber: #fabf59;
+  --color-sunrise-pink: #f0828c;
+  --color-success: #4db875;
+  --color-danger: #e65c54;
+
+  /* Burnt coral. The brand coral is only ~2:1 on cream, so light bands get this
+     instead; it holds the hue and clears AA. See scripts/check-contrast.mjs. */
+  --color-coral-ink: #935440;
+
+  /* Night — the app's alarm-set and ringing palette. */
+  --color-night-deep: #121229;
+  --color-night-surface: #1f1f3d;
+  --color-night-elevated: #2b2b4f;
+  --color-night-text: #f5f2fa;
+  --color-night-dim: #adadcc;
+
+  /* Morning — the app's post-wake palette. */
+  --color-morning-cream: #fff7eb;
+  --color-morning-surface: #ffffff;
+  --color-morning-text: #332921;
+  --color-morning-dim: #7a6b61;
+
+  /* Type. Nunito is the marketing face on both platforms already
+     (tools/screenshots/compose.py), so the site and the store galleries match.
+     It MUST be wired to --font-sans: Tailwind Preflight derives body's
+     font-family from that token, and setting only a --font-display alias
+     renders the whole site in system sans while still shipping the webfont. */
+  --font-sans: 'Nunito Variable', ui-rounded, 'SF Pro Rounded', system-ui, sans-serif;
+
+  --radius-card: 20px;
+
+  --shadow-card: 0 2px 5px rgb(0 0 0 / 0.05);
+  --shadow-raised: 0 4px 8px rgb(0 0 0 / 0.06);
+  /* The only tinted shadow in the whole system — the mascot's coral glow. */
+  --shadow-lark: 0 10px 36px rgb(245 140 107 / 0.35);
+}
+
+/* ── Tone system ────────────────────────────────────────────────────────────
+ * Each sunrise band declares a tone; the tone sets the three ink tokens every
+ * component reads. Values are verified by `npm run contrast`, which walks each
+ * band at 21 interpolated steps — Lighthouse cannot check this, because its
+ * contrast audit skips any node whose background is a gradient.
+ */
+[data-tone='night'],
+[data-tone='twilight'] {
+  --tone-text: var(--color-night-text);
+  --tone-dim: var(--color-night-dim);
+  --tone-accent: var(--color-amber);
+}
+[data-tone='amber'] {
+  --tone-text: var(--color-morning-text);
+  --tone-dim: #4a3b2f;
+  --tone-accent: var(--color-night-deep);
+}
+[data-tone='dawn'] {
+  --tone-text: var(--color-morning-text);
+  --tone-dim: #4f3f33;
+  --tone-accent: var(--color-night-deep);
+}
+[data-tone='morning'] {
+  --tone-text: var(--color-morning-text);
+  --tone-dim: #655750;
+  --tone-accent: var(--color-coral-ink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  body {
+    background: var(--color-night-deep);
+    color: var(--color-night-text);
+    text-rendering: optimizeLegibility;
+  }
+  /* Anchored sections must not slide under the sticky header. */
+  :target { scroll-margin-top: 5.5rem; }
+  h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-amber);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  [data-tone='amber'] :focus-visible,
+  [data-tone='dawn'] :focus-visible,
+  [data-tone='morning'] :focus-visible {
+    outline-color: var(--color-coral-ink);
+  }
+}
+
+@layer components {
+  .sunrise-section {
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, var(--from), var(--to));
+    color: var(--tone-text);
+    padding-inline: 24px;
+    padding-block: clamp(4rem, 10vw, 7rem);
+  }
+
+  /* Six consecutive dark purple bands band visibly on 8-bit panels. A faint
+     noise layer breaks the stepping without touching the colour values. */
+  .sunrise-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .accent { color: var(--tone-accent); }
+  .dim { color: var(--tone-dim); }
+
+  .lede {
+    color: var(--tone-dim);
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    line-height: 1.6;
+    max-width: 46ch;
+  }
+
+  /* The `sharp` band flips night to day; its midpoint fails AA for light AND
+     dark text, so there is no ink that works on it. Content sits on this
+     instead — headline included, not just body copy. */
+  .scrim {
+    background: color-mix(in srgb, var(--color-night-surface) 92%, transparent);
+    border: 1px solid rgb(255 255 255 / 0.08);
+    border-radius: var(--radius-card);
+    padding: clamp(1.75rem, 5vw, 3rem);
+    backdrop-filter: blur(2px);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    line-height: 1.15;
+    transition: transform 140ms ease, filter 140ms ease;
+  }
+  .pill:hover { filter: brightness(1.06); }
+  .pill:active { transform: translateY(1px); }
+  @media (prefers-reduced-motion: reduce) {
+    .pill { transition: none; }
+    .pill:active { transform: none; }
+  }
+
+  .card {
+    border-radius: var(--radius-card);
+    background: var(--color-morning-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Mascot breathing — the app's own 1.0<->1.03 over 2.4s, ease-in-out,
+     autoreversing (MascotView.swift / Mascot.kt). Opt-in per instance. */
+  @media (prefers-reduced-motion: no-preference) {
+    .breathe { animation: breathe 2.4s ease-in-out infinite alternate; }
+  }
+  @keyframes breathe {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+  }
+
+  .skip-link {
+    /* fixed, not absolute: an absolutely-positioned skip link is measured from
+       the document, so once the page is scrolled it focuses off-screen. */
+    position: fixed;
+    left: 24px;
+    top: -100px;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background: var(--color-amber);
+    color: var(--color-night-deep);
+    font-weight: 700;
+    transition: top 120ms ease;
+  }
+  .skip-link:focus { top: 12px; }
+}

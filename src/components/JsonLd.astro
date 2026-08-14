@@ -1,0 +1,57 @@
+---
+import { SITE, isLive } from '../config/site';
+
+/**
+ * MobileApplication, not SoftwareApplication — it is the narrower type and both
+ * store URLs are absent until launch. `offers` describes the real pricing: free to
+ * install, with an optional subscription. No aggregateRating: the app has no
+ * ratings yet, and inventing one would be both false and a structured-data penalty.
+ */
+const live = [
+  isLive(SITE.stores.ios) ? SITE.stores.ios.url : null,
+  isLive(SITE.stores.android) ? SITE.stores.android.url : null,
+].filter(Boolean);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: SITE.name,
+  alternateName: 'WakeSharp: Alarm Clock & Games',
+  description: SITE.description,
+  url: SITE.url,
+  image: new URL('/og.png', SITE.url).href,
+  applicationCategory: 'ProductivityApplication',
+  applicationSubCategory: 'Alarm Clock',
+  operatingSystem: `${SITE.requirements.ios}, ${SITE.requirements.android}`,
+  ...(live.length ? { downloadUrl: live, installUrl: live } : {}),
+  author: { '@type': 'Person', name: SITE.author },
+  publisher: { '@type': 'Person', name: SITE.author },
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'WakeSharp (free)',
+      price: '0',
+      priceCurrency: 'USD',
+      description: 'Every alarm and every mission, free forever.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'WakeSharp Plus (monthly)',
+      price: SITE.plus.monthly.replace('$', ''),
+      priceCurrency: 'USD',
+      description: 'Adds a third warm-up game and the full 30-day Sharpness trend.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'WakeSharp Plus (annual)',
+      price: SITE.plus.annual.replace('$', ''),
+      priceCurrency: 'USD',
+      description: `Adds a third warm-up game and the full 30-day Sharpness trend. Includes a ${SITE.plus.trialDays}-day free trial.`,
+    },
+  ],
+  privacyPolicy: new URL('/privacy', SITE.url).href,
+  termsOfService: new URL('/terms', SITE.url).href,
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
