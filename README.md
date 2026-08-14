@@ -89,3 +89,10 @@ scripts/             ← prep-assets, build-og, check-contrast, check-copy
 Source-available, not open source — see [LICENSE](LICENSE) and
 [THIRD-PARTY.md](THIRD-PARTY.md). The Lark and the app screenshots are not openly
 licensed.
+
+## Vercel project settings
+
+Framework preset must be **Astro** (build `astro build`, output `dist`). The project was
+first created by `vercel link`, which does not detect the framework — it was left as
+"Other", whose default output directory is `public/`. CLI deploys with `--prebuilt` mask
+that, but a git-triggered build would have served the wrong directory.
