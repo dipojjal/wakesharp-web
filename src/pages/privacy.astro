@@ -5,10 +5,10 @@ import { SITE } from '../config/site';
 
 <LegalLayout
   title="Privacy Policy — WakeSharp"
-  description="WakeSharp has no accounts and no analytics SDK. Your alarms, scores and calendar data stay on your device."
+  description="WakeSharp has no accounts and no ads. Your alarms, scores and calendar data stay on your device; anonymous usage analytics help us improve the app."
   path="/privacy"
   heading="Privacy Policy"
-  intro="WakeSharp is an alarm clock that runs on your phone. It has no accounts, no advertising, and no analytics SDK. Almost nothing leaves your device — and this page explains exactly what does."
+  intro="WakeSharp is an alarm clock that runs on your phone. It has no accounts and no advertising. Your alarms, scores and calendar events stay on your device; what does leave it — anonymous usage analytics and subscription data — is listed on this page, exactly."
 >
   <div class="callout">
     <h2 class="!mt-0">The short version</h2>
@@ -16,8 +16,8 @@ import { SITE } from '../config/site';
       <li>There is no WakeSharp account. We never ask for your name, email or phone number.</li>
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>only on your device</strong>.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
-      <li>The only thing that leaves your device is subscription data, and only if you buy WakeSharp Plus.</li>
-      <li>No advertising ID. No location. No third-party analytics or tracking SDK.</li>
+      <li>Two things leave your device: <strong>anonymous usage analytics</strong> (which screens you use and where you get stuck, keyed to a random ID — never your name, and never the content of your alarms or calendar) and <strong>subscription data</strong> if you buy WakeSharp Plus.</li>
+      <li>No advertising ID. No location. No tracking across other apps or websites, and nothing is ever sold.</li>
     </ul>
   </div>
 
@@ -34,8 +34,8 @@ import { SITE } from '../config/site';
     <li>It does not collect your name, email address, phone number or contacts.</li>
     <li>It does not request or use your location.</li>
     <li>It does not use an advertising identifier, and it shows no ads.</li>
-    <li>It does not embed a third-party analytics or tracking SDK, and it does not track you across other apps or websites.</li>
-    <li>It does not sell or share personal information, in the sense those words are given by the CCPA/CPRA. There is nothing to sell.</li>
+    <li>It does not track you across other apps or websites. The usage analytics described below measure WakeSharp itself, are keyed to a random per-install ID, and are never combined with outside data or used for advertising.</li>
+    <li>It does not sell or share personal information, in the sense those words are given by the CCPA/CPRA.</li>
   </ul>
 
   <h2>What stays on your device</h2>
@@ -121,10 +121,39 @@ import { SITE } from '../config/site';
   </p>
   <p>
     RevenueCat also shows us <strong>anonymous, aggregate</strong> subscription numbers — how many trials
-    started, how many subscriptions are active. We cannot identify you from it, and it is the only analytics
-    of any kind in this product. There is no analytics SDK in the app.
+    started, how many subscriptions are active. We cannot identify you from it. RevenueCat additionally
+    forwards subscription events (a trial started, a renewal, a cancellation) to our analytics project
+    described in the next section, keyed to the same random analytics ID — so we can see, in aggregate,
+    how free users become subscribers.
   </p>
-  <p><strong>If you never open the paywall and never subscribe, nothing at all leaves your device.</strong></p>
+
+  <h2>Usage analytics and session replay (PostHog)</h2>
+  <p>
+    WakeSharp uses <strong>PostHog, Inc.</strong>, a product-analytics service, to understand how the app
+    is used — which screens people visit, where onboarding is abandoned, whether the paywall is confusing.
+    This is the only analytics SDK in the app, and it works without knowing who you are:
+  </p>
+  <table>
+    <thead>
+      <tr><th>What is sent</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A randomly generated, per-install analytics ID</td><td>To count you once. It is created on your device, is not derived from your name, email or any identifier you can be traced by, and resets if you reinstall the app.</td></tr>
+      <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
+      <tr><td>Masked session recordings — a replay of screen layouts where <strong>all text and images are obscured</strong> before anything leaves your device</td><td>To see where people get stuck. What we can watch back is the shape of the interaction, not what was on your screen.</td></tr>
+      <tr><td>Device model, operating-system version, app version, language, and the approximate region PostHog derives from the request's IP address</td><td>To diagnose device-specific problems and see roughly where users are. We see country-level information, not your location.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    PostHog processes this in the <strong>United States</strong>, as our processor and under their data
+    processing agreement, including standard contractual clauses where required for transfers from the UK
+    or the EEA. Their privacy policy is at{' '}
+    <a href="https://posthog.com/privacy" rel="noopener">posthog.com/privacy</a>.
+  </p>
+  <p>
+    There is no advertising involved: this data is never combined with third-party data, never used to
+    target you, and never sold.
+  </p>
 
   <h2 id="contact-form">The contact form on this website</h2>
   <p>
@@ -146,10 +175,12 @@ import { SITE } from '../config/site';
   <ul>
     <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. We hold no copy, so there is nothing for us to delete.</li>
     <li><strong>Subscription records at RevenueCat</strong> — kept while the subscription record exists, under RevenueCat's own retention policy.</li>
+    <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are kept for a shorter period under PostHog's retention settings. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li>
-      Because the app user ID is anonymous, neither you nor we can identify your record from the app itself.
-      If you want that record removed, email us from the address on your Apple or Google receipt and include
-      the purchase date — we will use the store transaction to locate and delete it.
+      Because both the subscription ID and the analytics ID are anonymous, neither you nor we can identify
+      your record from the app itself. For the subscription record, email us from the address on your Apple
+      or Google receipt and include the purchase date — we will use the store transaction to locate and
+      delete it.
     </li>
   </ul>
   <p>Cancelling a subscription is separate and is done in your App Store or Google Play account. Deleting the app does not cancel a subscription.</p>
@@ -168,22 +199,22 @@ import { SITE } from '../config/site';
     access, correct, delete, port or object to the processing of your personal data.
   </p>
   <p>
-    In practice those rights are unusually easy to exercise here: <strong>we hold no personal data about
+    In practice those rights are unusually easy to exercise here: <strong>we hold nothing that identifies
     you</strong>. Your on-device data is already in your hands — you can see it in the app and destroy it by
-    uninstalling. The only record connected to you at all is the anonymous subscription record described
-    above, and the deletion route for it is in the previous section.
+    uninstalling. The only records connected to you at all are the anonymous subscription and analytics
+    records described above, and the deletion routes for both are in the previous section.
   </p>
   <p>
     Where we do process data, our legal basis is the performance of our contract with you (validating a
-    subscription you bought) and our legitimate interest in preventing payment fraud. You have the right to
-    complain to your local data-protection authority.
+    subscription you bought), and our legitimate interest in understanding how the app is used and in
+    preventing payment fraud. You have the right to complain to your local data-protection authority.
   </p>
 
   <h2>Security</h2>
   <p>
     Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
-    passcode. Traffic to RevenueCat uses HTTPS. No system is perfectly secure, but the surface here is
-    deliberately tiny: there is no WakeSharp server and no WakeSharp database.
+    passcode. Traffic to RevenueCat and PostHog uses HTTPS. No system is perfectly secure, but the surface
+    here is deliberately tiny: there is no WakeSharp server and no WakeSharp database.
   </p>
 
   <h2>Changes to this policy</h2>

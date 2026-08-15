@@ -30,7 +30,7 @@ export const SITE = {
   email: 'support@wakesharp.app',
   author: 'Dipojjal Chakrabarti',
   /** Stamped on the legal pages. Bump when their content materially changes. */
-  lastUpdated: '2026-08-14',
+  lastUpdated: '2026-08-15',
 
   requirements: { ios: 'iOS 26 or later', android: 'Android 8.0 or later' },
 
