@@ -19,3 +19,5 @@ node_modules/
 .env*.local
 .vercel
 .env*
+# ...but the template carries no secrets and documents what the deploy needs.
+!.env.example

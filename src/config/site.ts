@@ -27,7 +27,7 @@ export const SITE = {
   description:
     'The alarm that gets you meeting-ready. A quick mission silences it, a two-minute brain warm-up scores how sharp you woke up, and smart alarms read your calendar so you wake before your first meeting.',
   url: 'https://wakesharp.app',
-  email: 'cooldipojjal@gmail.com',
+  email: 'support@wakesharp.app',
   author: 'Dipojjal Chakrabarti',
   /** Stamped on the legal pages. Bump when their content materially changes. */
   lastUpdated: '2026-08-14',

@@ -10,9 +10,11 @@
     { "source": "/legal/terms", "destination": "/terms", "permanent": true },
     { "source": "/tos", "destination": "/terms", "permanent": true },
     { "source": "/eula", "destination": "/terms", "permanent": true },
-    { "source": "/help", "destination": "/support", "permanent": true },
-    { "source": "/contact", "destination": "/support", "permanent": true }
+    { "source": "/help", "destination": "/support", "permanent": true }
   ],
+  "functions": {
+    "api/contact.ts": { "maxDuration": 10 }
+  },
   "headers": [
     {
       "source": "/(.*)",

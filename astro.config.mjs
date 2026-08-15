@@ -13,7 +13,13 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },
-  integrations: [sitemap()],
+  // The two contact result pages are 303 destinations, not content — they carry
+  // `noindex` in the head, and they stay out of the sitemap for the same reason.
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/contact-sent') && !page.includes('/contact-error'),
+    }),
+  ],
   vite: { plugins: [tailwindcss()] },
   // URL-variant safety nets live in vercel.json as real 308s. Astro's `redirects`
   // would emit meta-refresh HTML pages instead, which are slower and which search

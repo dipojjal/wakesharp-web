@@ -1,0 +1,30 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { SITE } from '../config/site';
+---
+
+<LegalLayout
+  title="Message not sent — WakeSharp"
+  description="The WakeSharp contact form could not deliver your message."
+  path="/contact-error"
+  heading="That did not go through"
+  intro="Your message was not delivered, and I would rather tell you than pretend otherwise."
+  showUpdated={false}
+  noindex={true}
+>
+  <div class="callout callout--warn">
+    <p class="!mb-0">
+      Please write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a> directly instead. Nothing you typed
+      was stored, so it will need retyping — sorry about that.
+    </p>
+  </div>
+
+  <p>
+    You will also land here if a required field arrived empty, the email address was not a valid one, or the
+    message ran past the 4,000-character limit the form allows.
+  </p>
+
+  <p>
+    <a href="/contact">Back to the form</a> · <a href="/support">Support</a> · <a href="/">Homepage</a>
+  </p>
+</LegalLayout>

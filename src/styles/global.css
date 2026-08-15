@@ -198,4 +198,48 @@
     transition: top 120ms ease;
   }
   .skip-link:focus { top: 12px; }
+
+  /* ── Form controls ──────────────────────────────────────────────────────────
+   * The only inputs on the site. They live on the /contact morning surface, so
+   * they are specified against cream, not night. Focus rings are inherited from
+   * the global :focus-visible rule, which already swaps to coral-ink under
+   * [data-tone='morning'] — do not re-declare an outline here.
+   */
+  .field-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  .field-hint {
+    font-weight: 400;
+    color: var(--tone-dim);
+  }
+  .field {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--color-morning-text) 22%, transparent);
+    border-radius: 12px;
+    background: var(--color-morning-surface);
+    color: var(--color-morning-text);
+    font: inherit;
+    line-height: 1.5;
+  }
+  .field::placeholder { color: color-mix(in srgb, var(--color-morning-text) 45%, transparent); }
+  .field:hover { border-color: color-mix(in srgb, var(--color-morning-text) 38%, transparent); }
+  textarea.field {
+    min-height: 11rem;
+    resize: vertical;
+  }
+
+  /* Bot bait. Positioned off-screen rather than display:none — plenty of bots
+     skip genuinely hidden inputs but will fill anything still in the layout. */
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 }

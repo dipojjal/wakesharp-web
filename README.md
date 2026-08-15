@@ -43,6 +43,30 @@ Individually:
 | `npm run build` | `astro check` (typecheck) then the static build. |
 | `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), and for store links that shouldn't exist yet. |
 
+## The contact form
+
+`/contact` is a plain HTML form that POSTs to **`api/contact.ts`** and gets a 303 back to
+`/contact-sent` or `/contact-error`. No client-side JavaScript is involved, which is the
+whole point of doing it this way.
+
+`api/` at the repo root is a **Vercel** convention, not an Astro one — Vercel builds it
+with `@vercel/node` alongside Astro's static `dist/`, so `output: 'static'` stays adapter-free
+and `npm run verify` keeps working. Astro never sees the file, but `tsconfig.json` includes
+`**/*`, so `astro check` **does** typecheck it and a type error there fails `npm run build`.
+
+Two consequences worth remembering:
+
+- **`npm run dev` cannot serve `/api/contact`.** `astro dev` knows nothing about `api/`.
+  Use `npx vercel dev` to exercise the round trip locally.
+- The endpoint needs `RESEND_API_KEY` (see `.env.example`). It is server-side only — never
+  give it a `PUBLIC_` prefix, which is what Astro exposes to the browser bundle.
+
+Mail is sent through Resend from `contact@send.wakesharp.app` to `support@wakesharp.app`,
+with `Reply-To` set to the submitter. The From address must stay on the verified sending
+domain: using the submitter's address there fails DMARC alignment and gets the mail
+quarantined. Sending is verified on the `send.` subdomain so Resend's MX does not collide
+with the root MX that carries the `support@` mailbox.
+
 ## Assets
 
 Images are derived from the app repo's `Design/` folder and committed here as
@@ -91,6 +115,9 @@ Source-available, not open source — see [LICENSE](LICENSE) and
 licensed.
 
 ## Vercel project settings
+
+`RESEND_API_KEY` must exist under Settings → Environment Variables for Production, Preview
+and Development, or `/contact` sends every submission to `/contact-error`.
 
 Framework preset must be **Astro** (build `astro build`, output `dist`). The project was
 first created by `vercel link`, which does not detect the framework — it was left as

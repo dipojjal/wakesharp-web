@@ -8,8 +8,11 @@ interface Props {
   path: string;
   heading: string;
   intro?: string;
+  /** Off for pages that are not versioned documents, e.g. the contact form. */
+  showUpdated?: boolean;
+  noindex?: boolean;
 }
-const { title, description, path, heading, intro } = Astro.props;
+const { title, description, path, heading, intro, showUpdated = true, noindex } = Astro.props;
 
 // Parse at local noon: `new Date('2026-08-14')` is UTC midnight, which renders as
 // the previous day for anyone west of UTC.
@@ -20,7 +23,7 @@ const updated = new Date(`${SITE.lastUpdated}T12:00:00`).toLocaleDateString('en-
 });
 ---
 
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout title={title} description={description} path={path} noindex={noindex}>
   <!--
     Legal pages are a flat morning surface, deliberately outside the sunrise ramp.
     These URLs are hardcoded in both shipped apps' paywalls; they need to be
@@ -29,14 +32,14 @@ const updated = new Date(`${SITE.lastUpdated}T12:00:00`).toLocaleDateString('en-
   <div data-tone="morning" class="bg-[var(--color-morning-cream)] px-6 py-14 text-[var(--color-morning-text)] sm:py-20">
     <div class="mx-auto w-full max-w-[68ch]">
       <h1 class="text-4xl sm:text-5xl">{heading}</h1>
-      <p class="mt-3 text-sm dim">Last updated {updated}</p>
+      {showUpdated && <p class="mt-3 text-sm dim">Last updated {updated}</p>}
       {intro && <p class="mt-6 text-lg leading-relaxed">{intro}</p>}
 
       <div class="legal mt-10"><slot /></div>
 
       <hr class="my-12 border-[color-mix(in_srgb,var(--color-morning-text)_15%,transparent)]" />
       <p class="text-sm dim">
-        Questions about this page? Email
+        Questions about this page? Email{' '}
         <a class="font-semibold text-[var(--color-coral-ink)] underline underline-offset-2" href={`mailto:${SITE.email}`}>{SITE.email}</a>.
       </p>
     </div>
