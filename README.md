@@ -61,11 +61,12 @@ Two consequences worth remembering:
 - The endpoint needs `RESEND_API_KEY` (see `.env.example`). It is server-side only — never
   give it a `PUBLIC_` prefix, which is what Astro exposes to the browser bundle.
 
-Mail is sent through Resend from `contact@send.wakesharp.app` to `support@wakesharp.app`,
-with `Reply-To` set to the submitter. The From address must stay on the verified sending
-domain: using the submitter's address there fails DMARC alignment and gets the mail
-quarantined. Sending is verified on the `send.` subdomain so Resend's MX does not collide
-with the root MX that carries the `support@` mailbox.
+Mail is sent through Resend from `support@wakesharp.app` back to the same mailbox, with
+`Reply-To` set to the submitter, and the submitter gets a short static acknowledgement
+from the same address. The From address must stay on the Resend-verified domain
+(`wakesharp.app`): using the submitter's address there fails DMARC alignment and gets the
+mail quarantined. Resend's Return-Path/bounce records live on the `send.` subdomain, so
+its MX never collides with the root MX that carries the `support@` mailbox.
 
 ## Assets
 
@@ -119,7 +120,8 @@ licensed.
 `RESEND_API_KEY` must exist under Settings → Environment Variables for Production, Preview
 and Development, or `/contact` sends every submission to `/contact-error`.
 
-Framework preset must be **Astro** (build `astro build`, output `dist`). The project was
-first created by `vercel link`, which does not detect the framework — it was left as
-"Other", whose default output directory is `public/`. CLI deploys with `--prebuilt` mask
-that, but a git-triggered build would have served the wrong directory.
+The framework preset is pinned in-repo: `vercel.json` sets `"framework": "astro"` (build
+`astro build`, output `dist`), which overrides the dashboard. The project was first
+created by `vercel link`, which does not detect the framework — it was left as "Other",
+whose default output directory is `public/`, and a git-triggered build would have served
+the wrong directory.

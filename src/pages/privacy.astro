@@ -135,7 +135,8 @@ import { SITE } from '../config/site';
     If you use that form, the name, email address, topic, optional device details and message you type are
     delivered to <a href={`mailto:${SITE.email}`}>{SITE.email}</a> as an ordinary email by{' '}
     <a href="https://resend.com/legal/privacy-policy" rel="noopener">Resend</a>, the service that carries
-    it. There is no database behind the form — nothing is written to disk on our side, and your submission
+    it. Submitting also triggers a single automatic confirmation email to the address you entered; its
+    text is fixed and contains nothing from your submission. There is no database behind the form — nothing is written to disk on our side, and your submission
     exists only as the resulting email in our inbox. It is kept while the correspondence is useful and then
     deleted; Resend holds a short-lived delivery log under its own retention policy. Because it is ordinary
     email and not a secure channel, please do not send anything sensitive through it.

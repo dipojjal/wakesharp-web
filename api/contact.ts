@@ -14,7 +14,20 @@
  */
 
 const TO = 'support@wakesharp.app';
-const FROM = 'WakeSharp Contact <contact@send.wakesharp.app>';
+const FROM = 'WakeSharp Contact <support@wakesharp.app>';
+/** User-facing mail drops the "Contact" qualifier — this is the product speaking. */
+const AUTO_FROM = 'WakeSharp <support@wakesharp.app>';
+
+/**
+ * Acknowledgement sent to the submitter. Deliberately static: echoing form input
+ * back out would let the form push attacker-written text to arbitrary addresses.
+ */
+const AUTO_REPLY_TEXT = [
+  'Thanks for contacting WakeSharp — your message has reached the developer.',
+  'Replies usually take 2–3 business days.',
+  '',
+  "If you didn't submit the contact form at wakesharp.app, you can ignore this email.",
+].join('\n');
 
 const SENT = '/contact-sent';
 const FAILED = '/contact-error';
@@ -111,6 +124,31 @@ export async function POST(request: Request): Promise<Response> {
   } catch (err) {
     console.error('[contact] Request to Resend failed:', err);
     return seeOther(FAILED);
+  }
+
+  // Best-effort acknowledgement to the submitter. The notification above has already
+  // succeeded, so a failure here must never surface as /contact-error.
+  try {
+    const ack = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: AUTO_FROM,
+        to: [email],
+        subject: 'We received your message — WakeSharp',
+        text: AUTO_REPLY_TEXT,
+        // RFC 3834, so out-of-office autoresponders don't answer back in a loop.
+        headers: { 'Auto-Submitted': 'auto-replied' },
+      }),
+    });
+    if (!ack.ok) {
+      console.error(`[contact] Auto-reply send returned ${ack.status}: ${await ack.text()}`);
+    }
+  } catch (err) {
+    console.error('[contact] Auto-reply request failed:', err);
   }
 
   return seeOther(SENT);
