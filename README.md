@@ -39,9 +39,9 @@ Individually:
 
 | Command | What it checks |
 |---|---|
-| `npm run contrast` | Walks all 12 sunrise bands at 21 interpolated steps and fails if any tone's text, dim or accent colour drops below WCAG AA. Lighthouse **cannot** catch this — its contrast audit skips text sitting on a gradient. |
+| `npm run contrast` | Walks all 13 sunrise bands at 21 interpolated steps and fails if any tone's text, dim or accent colour drops below WCAG AA. Lighthouse **cannot** catch this — its contrast audit skips text sitting on a gradient. |
 | `npm run build` | `astro check` (typecheck) then the static build. |
-| `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), and for store links that shouldn't exist yet. |
+| `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. |
 
 ## The contact form
 
@@ -82,31 +82,54 @@ python3 scripts/build-og.py     # regenerates public/og.png
 originals — those are gitignored there and live only on the author's machine and in a
 separate archive. Don't treat this repo as the system of record for screenshots.
 
-## Launching
+## Store state
 
-When the App Store and Play listings go live, edit **`src/config/site.ts`** only: set
-each store's `state` to `'live'` and paste its real URL. `StoreButtons`, the JSON-LD
-and the footer all read from that one file.
+Both apps are live — Google Play since 2026-08-18, the App Store since 2026-08-22, both
+as *WakeSharp: Math Alarm Clock* from KineticBit Inc.
 
-Until then the buttons are custom-styled pills that anchor to `#features`. They are
-deliberately **not** the official Apple/Google badges: that artwork is licensed for
-apps that are actually on the store, and a "Download on the App Store" button that
-scrolls the page instead of downloading is deceptive UI. See the comment at the top of
-`src/components/StoreButtons.astro`.
+**`src/config/site.ts` is the only file to edit when that changes.** `StoreButtons`, the
+JSON-LD, the Smart App Banner, the footer and the install CTAs on `/c`, `/p` and `/404`
+all read from it. If a listing is ever pulled, set that store's `state` back to
+`'coming-soon'`: the badges revert to custom pills and every store link disappears in the
+same build. `npm run copy` enforces the pairing in both directions.
+
+The buttons are the official Apple and Google badge artwork, served byte-identical from
+`public/badges/` with no image pipeline — both vendors forbid modifying it, and not
+processing it is the surest way not to. `src/components/StoreButtons.astro` records the
+sizing maths (the two files bake in different clear space) and why the pills existed
+before launch.
+
+## Where the copy comes from
+
+The **app source is authoritative, not the live store description** — the App Store text
+is an older draft that still says "all five games on a daily rotation", which the app's
+own paywall retired on 2026-08-16. When a claim on this site needs settling, read:
+
+- `ios/Packages/WakeSharpKit/Sources/WSGames/GameRegistry.swift` — how many warm-up games
+  exist, how many a Plus morning runs, and which are free.
+- `ios/WakeSharp/Features/Paywall/PaywallView.swift` — the five Plus gates, verbatim. The
+  site's `plusFeatures` list mirrors it so the two can never contradict each other in
+  front of a reviewer.
+
+`scripts/check-copy.mjs` encodes the decisions that came out of that reading, with the
+constant or file that settles each one in its `why` string.
 
 ## Structure
 
 ```
 src/
 ├─ config/
-│  ├─ site.ts        ← the one file to edit on launch day
+│  ├─ site.ts        ← store state, pricing, publisher, governing law
 │  └─ sunrise.ts     ← the night→morning gradient ramp + per-tone ink
 ├─ styles/global.css ← brand tokens ported from the app's Palette.swift
 ├─ layouts/          ← BaseLayout, LegalLayout
 ├─ components/       ← Header, Footer, SunriseSection, PhoneFrame, Lark, …
-├─ pages/            ← index, privacy, terms, support, 404
+├─ pages/            ← index, privacy, terms, support, contact(+sent/error),
+│                      c, p, 404
 └─ assets/           ← screens/, store/, mascot/  (generated, committed)
+public/badges/       ← official App Store / Google Play artwork, unmodified
 scripts/             ← prep-assets, build-og, check-contrast, check-copy
+api/contact.ts       ← Vercel function, not Astro — see "The contact form"
 ```
 
 ## Licence
