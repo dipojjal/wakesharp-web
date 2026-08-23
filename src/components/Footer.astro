@@ -40,7 +40,7 @@ const year = new Date().getFullYear();
           <li><a class="hover:text-[var(--color-amber)] break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
         </ul>
         <p class="mt-4 text-sm text-[var(--color-night-dim)]">
-          Built by {SITE.author}, solo indie developer.
+          Built by {SITE.publisher}, a small independent studio.
         </p>
       </div>
     </div>
@@ -57,7 +57,7 @@ const year = new Date().getFullYear();
 
     <div class="mt-8 border-t border-white/10 pt-6 text-xs leading-relaxed text-[var(--color-night-dim)]">
       {TRADEMARKS.map((line) => <p>{line}</p>)}
-      <p class="mt-3">&copy; {year} {SITE.author}. All rights reserved.</p>
+      <p class="mt-3">&copy; {year} {SITE.publisher}. All rights reserved.</p>
     </div>
   </div>
 </footer>

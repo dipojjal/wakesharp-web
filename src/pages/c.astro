@@ -1,5 +1,6 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
 ---
 
 <!--
@@ -37,10 +38,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   </p>
 
   <h2>Get WakeSharp</h2>
-  <p>
-    <a href="https://apps.apple.com/us/app/id6801198703">App Store</a> ·
-    <a href="https://play.google.com/store/apps/details?id=com.wakesharp.app">Google Play</a>
-  </p>
+  <p>It’s free, and setting your first alarm takes about ten seconds.</p>
+  <StoreButtons tone="light" />
 </LegalLayout>
 
 <script is:inline>

@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
 import asleep from '../assets/mascot/asleep.png';
 ---
 
@@ -15,5 +16,6 @@ import asleep from '../assets/mascot/asleep.png';
       <a href="/" class="pill bg-[var(--color-coral)] px-5 py-3 text-[var(--color-night-deep)]">Back to WakeSharp</a>
       <a href="/support" class="pill bg-[var(--color-night-elevated)] px-5 py-3">Get support</a>
     </div>
+    <div class="mt-2"><StoreButtons align="center" /></div>
   </div>
 </BaseLayout>

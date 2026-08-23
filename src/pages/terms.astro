@@ -13,7 +13,7 @@ import { SITE } from '../config/site';
   <h2>1. Accepting these terms</h2>
   <p>
     By downloading, installing or using WakeSharp you agree to these terms. If you do not agree, please do
-    not use the app. WakeSharp is provided by {SITE.author}, an independent developer ("we", "us").
+    not use the app. WakeSharp is provided by {SITE.publisher} ("we", "us").
   </p>
 
   <h2>2. Who can use WakeSharp</h2>
@@ -39,11 +39,15 @@ import { SITE } from '../config/site';
     transfers ownership.
   </p>
 
-  <h2>4. WakeSharp Plus — subscriptions</h2>
+  <h2>4. WakeSharp Plus</h2>
   <p>
-    Every alarm and every mission in WakeSharp is free, forever. WakeSharp Plus is an optional subscription
-    that adds a third warm-up game and the full 30-day Sharpness trend.
+    Every alarm and every mission in WakeSharp is free, forever. WakeSharp Plus is optional. It adds three
+    rotating warm-up games every morning, scan missions on every alarm, your full Sharpness history,
+    unlimited smart calendar alarms and shift rotations, and the Lark scenes, wallpapers and celebrations.
+    It can be bought as a subscription or as a one-time purchase.
   </p>
+
+  <h3>Subscriptions (monthly and annual)</h3>
   <ul>
     <li><strong>Price.</strong> {SITE.plus.monthly} per month, or {SITE.plus.annual} per year. Prices shown in the app come from the store and may differ by region, tax and currency; the price shown at purchase is the price that applies.</li>
     <li><strong>Free trial.</strong> The annual plan includes a {SITE.plus.trialDays}-day free trial where the store offers one, for new subscribers only. If you cancel before the trial ends you are not charged. Unused trial time is forfeited when you subscribe.</li>
@@ -54,11 +58,21 @@ import { SITE } from '../config/site';
     <li><strong>Changes to price or benefits</strong> will be notified before they take effect, and you can cancel before renewing.</li>
   </ul>
 
+  <h3>Plus Lifetime (a one-time purchase)</h3>
+  <ul>
+    <li><strong>It is not a subscription.</strong> WakeSharp Plus Lifetime is a single payment of {SITE.plus.lifetime}. It does not renew, you are never billed again, and there is nothing to cancel — the auto-renewal and cancellation terms above do not apply to it.</li>
+    <li><strong>No free trial.</strong> The {SITE.plus.trialDays}-day free trial belongs to the annual subscription only.</li>
+    <li><strong>What it covers.</strong> The WakeSharp Plus features in this app, on the store account you bought it with, for as long as the app remains available on that store and runs on your device. It is not a promise that any particular feature will exist forever; section 5 governs changes.</li>
+    <li><strong>Restoring it.</strong> Reinstalling or moving to a new device restores it through <em>Restore Purchases</em> on the Plus screen, using the same store account.</li>
+    <li><strong>Refunds</strong> are governed by Apple's or Google's refund policy for one-time purchases, whichever store you bought from.</li>
+  </ul>
+
   <h2>5. Changes to the app</h2>
   <p>
     We may add, change or remove features over time as the app and the platforms it runs on evolve. If we
     remove something material from WakeSharp Plus during a period you have paid for, you may cancel and seek
-    a pro-rata refund through the store.
+    a pro-rata refund through the store. If you bought Plus Lifetime there is no period to pro-rate; your
+    remedy is a refund request to the store under its own policy for one-time purchases.
   </p>
 
   <h2>6. Your calendar</h2>
@@ -161,8 +175,8 @@ import { SITE } from '../config/site';
 
   <h2>15. Governing law</h2>
   <p>
-    These terms are governed by the laws of <strong>[[JURISDICTION — e.g. India]]</strong>, without regard to
-    conflict-of-law rules, and the courts of <strong>[[CITY / STATE]]</strong> have non-exclusive
+    These terms are governed by the laws of <strong>{SITE.jurisdiction.law}</strong>, without regard to
+    conflict-of-law rules, and the courts of <strong>{SITE.jurisdiction.courts}</strong> have non-exclusive
     jurisdiction. If you are a consumer, this does not deprive you of the protection of the mandatory laws of
     the country where you live, or of your right to bring proceedings there.
   </p>
@@ -182,6 +196,6 @@ import { SITE } from '../config/site';
 
   <h2>18. Contact</h2>
   <p>
-    <a href={`mailto:${SITE.email}`}>{SITE.email}</a> — {SITE.author}, independent developer of WakeSharp.
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a> — {SITE.publisher}, publisher of WakeSharp.
   </p>
 </LegalLayout>

@@ -33,7 +33,8 @@ export const SUNRISE = [
   { id: 'hero', from: '#10111F', to: '#16172E', tone: 'night' },
   { id: 'trust', from: '#16172E', to: '#1B1A34', tone: 'night' },
   { id: 'ring', from: '#1B1A34', to: '#241D3E', tone: 'night' },
-  { id: 'smart', from: '#241D3E', to: '#3D2654', tone: 'night' },
+  { id: 'reliable', from: '#241D3E', to: '#2E2246', tone: 'night' },
+  { id: 'smart', from: '#2E2246', to: '#3D2654', tone: 'night' },
   { id: 'mission', from: '#3D2654', to: '#4C2E59', tone: 'night' },
   { id: 'games', from: '#4C2E59', to: '#5B355E', tone: 'night' },
   // The night -> day flip. Its midpoint (~#A86D6B) measures ~3.4:1 against light text

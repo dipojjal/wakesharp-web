@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../config/site';
+import { SITE, isLive } from '../config/site';
 import '../styles/global.css';
 
 interface Props {
@@ -43,5 +43,6 @@ const ogImage = new URL('/og.png', SITE.url).href;
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
-{/* Uncomment on launch day, once the App Store listing exists:
-<meta name="apple-itunes-app" content="app-id=6801198703" /> */}
+{/* Smart App Banner. Safari shows an install/open strip on iPhone; the id is
+    the bare App Store id, not a URL, so it cannot reuse SITE.stores.ios.url. */}
+{isLive(SITE.stores.ios) && <meta name="apple-itunes-app" content={`app-id=${SITE.appStoreId}`} />}

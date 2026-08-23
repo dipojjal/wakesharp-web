@@ -2,21 +2,28 @@
 import { SITE, isLive } from '../config/site';
 
 /**
- * MobileApplication, not SoftwareApplication — it is the narrower type and both
- * store URLs are absent until launch. `offers` describes the real pricing: free to
- * install, with an optional subscription. No aggregateRating: the app has no
- * ratings yet, and inventing one would be both false and a structured-data penalty.
+ * MobileApplication, not SoftwareApplication — it is the narrower type. Both
+ * store URLs are present now that the apps are live; `offers` describes the real
+ * pricing: free to install, with an optional subscription and a one-time
+ * lifetime purchase.
+ *
+ * Still no `aggregateRating`. Neither store has a single rating yet, and
+ * inventing one would be both false and a structured-data penalty. Add it only
+ * from real numbers, and keep it in step with them.
  */
 const live = [
   isLive(SITE.stores.ios) ? SITE.stores.ios.url : null,
   isLive(SITE.stores.android) ? SITE.stores.android.url : null,
 ].filter(Boolean);
 
+/** What Plus actually unlocks, per the paywall both apps ship. */
+const PLUS = 'Three rotating warm-up games each morning, scan missions on every alarm, unlimited smart calendar alarms, your full Sharpness history, and the Lark scenes, wallpapers and celebrations.';
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'MobileApplication',
   name: SITE.name,
-  alternateName: 'WakeSharp: Alarm Clock & Games',
+  alternateName: 'WakeSharp: Math Alarm Clock',
   description: SITE.description,
   url: SITE.url,
   image: new URL('/og.png', SITE.url).href,
@@ -24,29 +31,36 @@ const schema = {
   applicationSubCategory: 'Alarm Clock',
   operatingSystem: `${SITE.requirements.ios}, ${SITE.requirements.android}`,
   ...(live.length ? { downloadUrl: live, installUrl: live } : {}),
-  author: { '@type': 'Person', name: SITE.author },
-  publisher: { '@type': 'Person', name: SITE.author },
+  author: { '@type': 'Organization', name: SITE.publisher },
+  publisher: { '@type': 'Organization', name: SITE.publisher },
   offers: [
     {
       '@type': 'Offer',
       name: 'WakeSharp (free)',
       price: '0',
       priceCurrency: 'USD',
-      description: 'Every alarm and every mission, free forever.',
+      description: 'Every alarm and every mission, free forever — including all thirteen alarm tones.',
     },
     {
       '@type': 'Offer',
       name: 'WakeSharp Plus (monthly)',
       price: SITE.plus.monthly.replace('$', ''),
       priceCurrency: 'USD',
-      description: 'Adds a third warm-up game and the full 30-day Sharpness trend.',
+      description: PLUS,
     },
     {
       '@type': 'Offer',
       name: 'WakeSharp Plus (annual)',
       price: SITE.plus.annual.replace('$', ''),
       priceCurrency: 'USD',
-      description: `Adds a third warm-up game and the full 30-day Sharpness trend. Includes a ${SITE.plus.trialDays}-day free trial.`,
+      description: `${PLUS} Includes a ${SITE.plus.trialDays}-day free trial for new subscribers.`,
+    },
+    {
+      '@type': 'Offer',
+      name: 'WakeSharp Plus (lifetime)',
+      price: SITE.plus.lifetime.replace('$', ''),
+      priceCurrency: 'USD',
+      description: `${PLUS} A single payment — it does not renew.`,
     },
   ],
   privacyPolicy: new URL('/privacy', SITE.url).href,
