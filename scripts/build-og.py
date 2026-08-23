@@ -89,7 +89,8 @@ def main() -> int:
     draw.text((left, 196), "WakeSharp", font=font(112, "ExtraBold"), fill=(0xFF, 0xFF, 0xFF, 255))
     draw.text((left, 330), "Wake up sharp.", font=font(42, "SemiBold"), fill=(0xFA, 0xBF, 0x59, 255))
     draw.text((left, 384), "Not just awake.", font=font(42, "SemiBold"), fill=(0xFF, 0xFF, 0xFF, 204))
-    draw.text((left, 462), "Alarm missions · brain warm-ups · smart calendar alarms",
+    # Kept under ~55 characters: the Lark cutout starts at x = 0.68 * 1200 = 816.
+    draw.text((left, 462), "Alarm missions · brain warm-ups · alarm reliability",
               font=font(25, "SemiBold"), fill=(0xFF, 0xFF, 0xFF, 168))
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
