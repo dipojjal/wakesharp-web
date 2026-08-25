@@ -1,0 +1,56 @@
+---
+import { GROWTH_DESTINATIONS, type GrowthAngle } from '../config/growth';
+import { SITE } from '../config/site';
+
+interface Props {
+  angle: GrowthAngle;
+}
+
+const { angle } = Astro.props;
+const destination = GROWTH_DESTINATIONS[angle];
+---
+
+<aside
+  class="rounded-[var(--radius-card)] border border-white/10 bg-[var(--color-night-surface)] p-6 text-[var(--color-night-text)] sm:p-8"
+  data-growth-cta={destination.id}
+>
+  <p class="text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-amber)]">Try the real app</p>
+  <h2 class="mt-2 text-2xl">Continue with WakeSharp</h2>
+  <p class="mt-3 max-w-2xl text-[var(--color-night-dim)]">
+    These links currently open the live main listings. The matching custom-page references are prepared but
+    remain inactive until store approval: {destination.appStoreReference} and {destination.playListingReference}.
+  </p>
+  <div class="mt-5 flex flex-wrap gap-3">
+    <a
+      href={SITE.stores.ios.url}
+      class="pill bg-[var(--color-coral)] px-5 py-3 text-[var(--color-night-deep)]"
+      data-growth-store="ios"
+      data-page-id={destination.id}
+      data-store-reference={destination.appStoreReference}
+    >View on the App Store</a>
+    <a
+      href={SITE.stores.android.url}
+      class="pill bg-[var(--color-night-elevated)] px-5 py-3 text-[var(--color-night-text)]"
+      data-growth-store="android"
+      data-page-id={destination.id}
+      data-store-reference={destination.playListingReference}
+    >View on Google Play</a>
+  </div>
+</aside>
+
+<script>
+  import { track } from '@vercel/analytics';
+
+  for (const link of document.querySelectorAll<HTMLElement>('[data-growth-store]')) {
+    if (link.dataset.growthTrackingBound === 'true') continue;
+    link.dataset.growthTrackingBound = 'true';
+    link.addEventListener('click', () => {
+      track('store destination clicked', {
+        platform: link.dataset.growthStore ?? 'unknown',
+        page_id: link.dataset.pageId ?? 'unknown',
+        source: 'seo',
+      });
+    });
+  }
+</script>
+

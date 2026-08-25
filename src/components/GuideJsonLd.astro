@@ -1,0 +1,49 @@
+---
+import type { Guide } from '../content/guides';
+import { SITE } from '../config/site';
+
+interface Props {
+  guide: Guide;
+  image: string;
+}
+
+const { guide, image } = Astro.props;
+const url = new URL(`/${guide.slug}`, SITE.url).href;
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: guide.heading,
+      description: guide.description,
+      datePublished: '2026-08-25',
+      dateModified: '2026-08-25',
+      mainEntityOfPage: url,
+      image: new URL(image, SITE.url).href,
+      author: { '@type': 'Organization', name: SITE.publisher },
+      publisher: { '@type': 'Organization', name: SITE.publisher },
+      citation: guide.sources.map((item) => item.url),
+      about: guide.intent,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'WakeSharp', item: SITE.url },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE.url}/guides` },
+        { '@type': 'ListItem', position: 3, name: guide.heading, item: url },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: guide.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(graph)} />
+

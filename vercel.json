@@ -14,7 +14,17 @@
     { "source": "/help", "destination": "/support", "permanent": true }
   ],
   "functions": {
-    "api/contact.ts": { "maxDuration": 10 }
+    "api/contact.ts": { "maxDuration": 10 },
+    "api/referrals/challenge.ts": { "maxDuration": 10 },
+    "api/referrals/register-install.ts": { "maxDuration": 10 },
+    "api/referrals/create.ts": { "maxDuration": 10 },
+    "api/referrals/claim.ts": { "maxDuration": 10 },
+    "api/referrals/success.ts": { "maxDuration": 15 },
+    "api/referrals/status.ts": { "maxDuration": 15 },
+    "api/referrals/delete.ts": { "maxDuration": 10 },
+    "api/referrals/landing.ts": { "maxDuration": 10 },
+    "api/attribution/apple.ts": { "maxDuration": 10 },
+    "api/internal/referrals/operations.ts": { "maxDuration": 30 }
   },
   "headers": [
     {
@@ -42,6 +52,7 @@
   ],
   "rewrites": [
     { "source": "/c/:payload", "destination": "/c" },
-    { "source": "/p/:payload", "destination": "/p" }
+    { "source": "/p/:payload", "destination": "/p" },
+    { "source": "/r/:code", "destination": "/api/referrals/landing?code=:code" }
   ]
 }

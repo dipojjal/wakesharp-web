@@ -9,14 +9,30 @@ interface Props {
   description?: string;
   path: string;
   noindex?: boolean;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
 }
-const { title, description, path, noindex } = Astro.props;
+const {
+  title, description, path, noindex, ogImage, ogImageAlt,
+  ogImageWidth, ogImageHeight,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} path={path} noindex={noindex} />
+    <BaseHead
+      title={title}
+      description={description}
+      path={path}
+      noindex={noindex}
+      ogImage={ogImage}
+      ogImageAlt={ogImageAlt}
+      ogImageWidth={ogImageWidth}
+      ogImageHeight={ogImageHeight}
+    />
   </head>
   <body class="min-h-dvh">
     <a class="skip-link" href="#main">Skip to content</a>
