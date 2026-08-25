@@ -65,4 +65,3 @@ export async function POST(request: Request): Promise<Response> {
 }
 
 export function PUT(): Response { return methodNotAllowed('GET, POST'); }
-

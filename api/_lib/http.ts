@@ -49,4 +49,3 @@ export async function endpoint(work: () => Promise<Response>): Promise<Response>
 
 export const methodNotAllowed = (allowed: string): Response =>
   new Response(null, { status: 405, headers: { Allow: allowed, 'Cache-Control': 'no-store' } });
-

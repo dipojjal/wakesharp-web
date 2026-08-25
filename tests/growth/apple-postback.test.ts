@@ -35,4 +35,3 @@ test('development postbacks are not accepted in production', () => {
     (error: unknown) => error instanceof ApiError && error.code === 'development_postback_disabled',
   );
 });
-

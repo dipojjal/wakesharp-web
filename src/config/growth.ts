@@ -23,4 +23,3 @@ export const GROWTH_DESTINATIONS = {
 } as const;
 
 export type GrowthAngle = keyof typeof GROWTH_DESTINATIONS;
-

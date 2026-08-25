@@ -37,4 +37,3 @@ export async function POST(request: Request): Promise<Response> {
     return json({ code: rows[0].code, url: `https://wakesharp.app/r/${rows[0].code}` });
   });
 }
-

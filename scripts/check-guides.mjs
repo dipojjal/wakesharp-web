@@ -59,4 +59,3 @@ if (failures) {
   process.exit(1);
 }
 console.log(`\n  Guide check passed across ${Object.keys(guides).length} pages.\n`);
-
