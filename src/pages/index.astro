@@ -18,7 +18,7 @@ import iosReveal from '../assets/screens/ios/reveal.png';
 import androidStats from '../assets/screens/android/stats.png';
 
 const trust = [
-  'Rings through Silent, Focus and Do Not Disturb',
+  'Platform-native alarm delivery, when permitted',
   'Tells you what could stop it — before the morning',
   'No account, ever',
   'Your calendar never leaves your device',
@@ -51,11 +51,11 @@ const plusFeatures = [
 const faqs = [
   {
     q: 'Does it really ring in Silent, Focus or Do Not Disturb?',
-    a: 'In normal circumstances, yes — that is the whole point. On iPhone it uses Apple’s system alarm framework, the same one the built-in Clock app uses. On Android it plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen. What no app can do is ring on a phone that is switched off, out of battery, or has had its permissions revoked — so for anything you truly cannot miss, set a second alarm on another device.',
+    a: 'Behavior is platform-specific. On supported iPhone versions, WakeSharp uses Apple’s AlarmKit, including supported Silent and Focus behavior when alarm permission is granted. On Android it uses an exact alarm, the alarm audio stream, and a full-screen alarm notification when the required permissions and manufacturer settings allow them; Do Not Disturb behavior can depend on notification-policy access. No app can ring on a phone that is switched off, out of battery, or prevented by the operating system — so use a second device for anything you truly cannot miss.',
   },
   {
-    q: 'How do I know my alarm will actually ring?',
-    a: 'Open Settings → Alarm reliability. WakeSharp reads the conditions on your phone that can stop an alarm — permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions — and leads with a plain verdict rather than a promise. Where the platform will not tell us something, it says so instead of showing a green tick, because a checklist that quietly turns unknowns into passes is worse than no checklist at all. If an alarm ever does fail, the app can tell you the provable cause afterwards — or admit that it could not work it out.',
+    q: 'How do I check whether my alarm is configured and ready?',
+    a: 'Open Settings → Alarm reliability. WakeSharp reads known conditions that can stop an alarm — permissions, alarm volume, notification settings, lock-screen takeover, and battery restrictions — and reports whether the current configuration looks ready, needs attention, or cannot ring. It does not turn unknown conditions into a guarantee. If an alarm fails, the app reports a cause only when it can prove one.',
   },
   {
     q: 'Do I have to do maths at 6am?',
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: 'Can I cheat past the mission?',
-    a: 'You can dismiss the alarm without one — your phone’s own stop button always works, and we would not want it any other way. WakeSharp then shows an owed-mission screen next time you open it, so your streak can still be repaired. You can also snooze twice, at a cost of 5 Sharpness each. Strict Mode removes the easy exits by re-ringing until the mission is done.',
+    a: 'You can dismiss the alarm without a mission — the phone’s system Stop or dismiss control remains available. WakeSharp then shows an owed-mission screen next time you open it, so your streak can still be repaired. You can also snooze twice, at a cost of 5 Sharpness each. Optional Strict Mode can re-ring up to three times where the platform permits it.',
   },
   {
     q: 'What does the camera do?',
@@ -110,8 +110,8 @@ const faqs = [
           Wake up <span class="accent">sharp.</span><br />Not just awake.
         </h1>
         <p class="lede mt-6">
-          The alarm that rings through Silent, Focus and Do Not Disturb — and won’t stop until you’ve
-          proved you’re actually up.
+          A mission-based alarm with platform-native ring handling and a readiness check. Complete your
+          mission to earn full morning credit; system Stop and dismiss controls remain available.
         </p>
         <div class="mt-8"><StoreButtons /></div>
       </div>
@@ -141,11 +141,12 @@ const faqs = [
   {/* ── 3. Ring ─────────────────────────────────────────────────────────── */}
   <SunriseSection id="ring">
     <FeatureRow screenshot={iosRing} alt="The WakeSharp alarm ringing, with Start Mission and Snooze" side="left">
-      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">It won’t stop until you’re <span class="accent">sharp</span></h2>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Complete the mission for <span class="accent">full credit</span></h2>
       <p class="lede mt-5">
-        On iPhone, Apple’s AlarmKit fires it over the lock screen even if the app was force-quit. On Android,
-        a full-screen alert on the alarm stream that Do Not Disturb doesn’t silence, and an Extra Loud option
-        that builds up rather than blasting. Either way, the only way out is through.
+        On supported iPhone versions, Apple’s AlarmKit presents the system alarm over the lock screen when
+        alarm access is authorized. On Android, WakeSharp uses an exact alarm, the alarm stream, and a
+        full-screen notification when permissions and manufacturer settings allow them. The system Stop or
+        dismiss control always remains; completing the mission is what earns full morning credit.
       </p>
     </FeatureRow>
   </SunriseSection>
@@ -154,7 +155,7 @@ const faqs = [
   <SunriseSection id="reliable">
     <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_auto]">
       <div class="max-w-2xl">
-        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Know it will ring, <span class="accent">the night before</span></h2>
+        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Check whether it’s ready, <span class="accent">the night before</span></h2>
         <p class="lede mt-5">
           Most alarm apps find out they failed at the same moment you do. WakeSharp checks the things that
           actually stop alarms — permissions, alarm volume, notification settings, lock-screen takeover,
@@ -163,7 +164,7 @@ const faqs = [
         <ul class="mt-7 grid gap-3 sm:grid-cols-2">
           <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
             <strong class="block">A verdict, not a checklist</strong>
-            <span class="dim text-[0.95rem]">One line at the top: it will ring, it may not, or it cannot.</span>
+            <span class="dim text-[0.95rem]">One line at the top: looks ready, needs attention, or cannot ring.</span>
           </li>
           <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
             <strong class="block">Honest about what it can’t see</strong>
@@ -195,8 +196,9 @@ const faqs = [
     <FeatureRow screenshot={iosSmart} alt="The smart alarm rule editor, set to ring 90 minutes before the first meeting" side="right" raised>
       <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Wakes you before your <span class="accent">first meeting</span></h2>
       <p class="lede mt-5">
-        “Ring 90 minutes before my first meeting.” WakeSharp reads your calendar, re-checks it overnight, and
-        moves when the meeting moves. Read-only, on your device, never transmitted.
+        “Ring 90 minutes before my first meeting.” WakeSharp reads your calendar on-device and can adjust the
+        wake time after it receives a refresh opportunity and sees that the event moved. Read-only, optional,
+        and never transmitted.
       </p>
     </FeatureRow>
   </SunriseSection>
@@ -204,11 +206,12 @@ const faqs = [
   {/* ── 6. Mission ──────────────────────────────────────────────────────── */}
   <SunriseSection id="mission">
     <FeatureRow screenshot={iosMission} alt="The math mission: solve 6 minus 3 to silence the alarm" side="left">
-      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Four ways to <span class="accent">prove you’re up</span></h2>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Four ways to <span class="accent">complete your mission</span></h2>
       <p class="lede mt-5">
         Solve a math sprint. Scan something across the room. Scan a barcode in the kitchen. Or get up and walk
         — it counts steps, and shaking the phone doesn’t fool it. Pick one per alarm, or let “Surprise me”
-        choose. Strict Mode re-rings until you finish; snoozing costs 5 Sharpness a time, twice.
+        choose. Optional Strict Mode can re-ring up to three times where supported; snoozing costs 5
+        Sharpness a time, twice.
       </p>
     </FeatureRow>
   </SunriseSection>

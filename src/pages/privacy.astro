@@ -72,7 +72,7 @@ import { SITE } from '../config/site';
   <h2>Permissions, and why each one exists</h2>
   <p>On iPhone, WakeSharp asks for:</p>
   <ul>
-    <li><strong>Alarms</strong> — so the alarm can ring loudly and reliably through Silent mode and Focus, using Apple's system alarm framework.</li>
+    <li><strong>Alarms</strong> — so WakeSharp can present scheduled system alarms through AlarmKit, including supported Silent mode and Focus behavior.</li>
     <li><strong>Calendar</strong> — optional, read-only, for smart alarms only.</li>
     <li><strong>Camera</strong> — optional, only for an alarm you have set to a scan mission, and only while that mission is running. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong> — optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
