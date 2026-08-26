@@ -31,7 +31,7 @@ export const SITE = {
   name: 'WakeSharp',
   tagline: 'Wake up sharp. Not just awake.',
   description:
-    'The alarm that gets you meeting-ready. A mission silences it — solve, scan or walk — a brain warm-up scores how sharp you woke up, and smart alarms read your calendar so you wake before your first meeting.',
+    'The alarm that gets you meeting-ready. Complete a mission for full morning credit, warm up with brain games, and optionally use on-device calendar access to plan before your first meeting.',
   url: 'https://wakesharp.app',
   email: 'support@wakesharp.app',
   /** The entity that publishes both apps, and the one named in the legal pages. */
@@ -99,8 +99,8 @@ export const anyStoreLive = (): boolean => isLive(SITE.stores.ios) || isLive(SIT
  * Shown in the footer of every page, and echoed in Terms section 8.
  *
  * This belongs on the marketing page, not only in the legal text. The homepage
- * makes strong reliability claims ("it won't stop until you're sharp"); the
- * qualification has to be visible to the same reader.
+ * describes platform alarm behavior; the qualification has to be visible to
+ * the same reader.
  */
 export const SAFETY_NOTICE =
   'WakeSharp is not a medical device. Your phone’s settings, battery restrictions or power state can prevent any alarm from sounding. Use a second, independent alarm for anything you cannot afford to be late for.';

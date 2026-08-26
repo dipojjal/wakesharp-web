@@ -25,6 +25,11 @@ const DIST = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 
 /** Substrings that must never appear in rendered text. */
 const BANNED = [
+  { needle: 'impossible to dismiss', why: 'the system Stop or dismiss control remains available on both platforms' },
+  { needle: 'won’t stop', why: 'the system Stop or dismiss control remains available on both platforms' },
+  { needle: "won't stop", why: 'the system Stop or dismiss control remains available on both platforms' },
+  { needle: 'only way out', why: 'the system Stop or dismiss control remains available on both platforms' },
+  { needle: 'forces you awake', why: 'WakeSharp cannot guarantee a person is awake and system dismissal remains available' },
   // GameRegistry.dailyPremiumGameCount is 3, and warmupPlan(excluding:) drops
   // whatever the mission just played. A subscriber does meet all five games in a
   // morning — four in the warm-up, one as the mission — but never five *warm-up*
