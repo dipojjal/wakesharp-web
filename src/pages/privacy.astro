@@ -5,10 +5,10 @@ import { SITE } from '../config/site';
 
 <LegalLayout
   title="Privacy Policy — WakeSharp"
-  description="WakeSharp has no accounts and no ads. Your alarms, scores and calendar data stay on your device; anonymous usage analytics help us improve the app."
+  description="WakeSharp has no accounts and no ads. Core alarm, score and calendar data stay on your device; optional analytics and referrals use bounded anonymous records."
   path="/privacy"
   heading="Privacy Policy"
-  intro="WakeSharp is an alarm clock that runs on your phone. It has no accounts and no advertising. Your alarms, scores and calendar events stay on your device; what does leave it — anonymous usage analytics and subscription data — is listed on this page, exactly."
+  intro="WakeSharp is an alarm clock that runs on your phone. It has no accounts and no advertising. Your core alarm, score and calendar data stay on your device; the bounded data used for optional analytics, attribution, purchases and referrals is listed on this page, exactly."
 >
   <div class="callout">
     <h2 class="!mt-0">The short version</h2>
@@ -17,7 +17,9 @@ import { SITE } from '../config/site';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>only on your device</strong>.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (scan missions) and your <strong>step count</strong> (walking missions) are optional, used only while that mission is running, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Two things leave your device: <strong>anonymous usage analytics</strong> (which screens you use and where you get stuck, keyed to a random ID — never your name, and never the content of your alarms or calendar) and <strong>purchase data</strong> if you buy WakeSharp Plus.</li>
+      <li><strong>Anonymous usage analytics</strong> describe which features are used and where people get stuck. You can turn them off. They never contain alarm labels or calendar content.</li>
+      <li>If you explicitly join referrals, WakeSharp also sends a random installation credential, a referral code or claim, and signed qualifying-day assertions. The optional service is described below and can be deleted independently of your on-device mornings.</li>
+      <li><strong>Purchase data</strong> goes to Apple or Google and RevenueCat if you buy or receive WakeSharp Plus.</li>
       <li>No advertising ID. No location. No tracking across other apps or websites, and nothing is ever sold.</li>
     </ul>
   </div>
@@ -41,14 +43,15 @@ import { SITE } from '../config/site';
 
   <h2>What stays on your device</h2>
   <p>
-    Everything WakeSharp knows about your mornings is written to a local database on your phone
-    (SwiftData on iOS, Room on Android) and never uploaded:
+    WakeSharp's detailed morning data is written to a local database on your phone
+    (SwiftData on iOS, Room on Android). It is not uploaded. If you explicitly use referrals, the server
+    receives only a signed assertion that a qualifying day occurred, not the detailed morning record:
   </p>
   <ul>
     <li>Your alarms, their times, repeat days and settings.</li>
     <li>Your smart-alarm rules and the wake times computed from them.</li>
     <li>A journal of alarms scheduled, fired, snoozed, missed or silenced by a completed mission.</li>
-    <li>Your warm-up game results, personal baseline, daily Sharpness scores, streaks and freeze tokens.</li>
+    <li>Your warm-up game results, personal baseline, daily Sharpness scores, streaks and freeze tokens. A referral assertion says only that full credit occurred on a local day within the allowed time.</li>
     <li>Your app preferences.</li>
   </ul>
   <p>
@@ -72,7 +75,7 @@ import { SITE } from '../config/site';
   <h2>Permissions, and why each one exists</h2>
   <p>On iPhone, WakeSharp asks for:</p>
   <ul>
-    <li><strong>Alarms</strong> — so the alarm can ring loudly and reliably through Silent mode and Focus, using Apple's system alarm framework.</li>
+    <li><strong>Alarms</strong> — so WakeSharp can present scheduled system alarms through AlarmKit, including supported Silent mode and Focus behavior.</li>
     <li><strong>Calendar</strong> — optional, read-only, for smart alarms only.</li>
     <li><strong>Camera</strong> — optional, only for an alarm you have set to a scan mission, and only while that mission is running. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong> — optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
@@ -178,7 +181,7 @@ import { SITE } from '../config/site';
     </thead>
     <tbody>
       <tr><td>A randomly generated, per-install analytics ID</td><td>To count you once. It is created on your device, is not derived from your name, email or any identifier you can be traced by, and resets if you reinstall the app.</td></tr>
-      <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
+      <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), bounded acquisition fields, your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not referral credentials, and not your signature.</td></tr>
       <tr><td>Masked session recordings — a replay of screen layouts where <strong>all text and images are obscured</strong> before anything leaves your device</td><td>To see where people get stuck. What we can watch back is the shape of the interaction, not what was on your screen.</td></tr>
       <tr><td>Device model, operating-system version, app version, language, and the approximate region PostHog derives from the request's IP address</td><td>To diagnose device-specific problems and see roughly where users are. We see country-level information, not your location.</td></tr>
     </tbody>
@@ -192,6 +195,41 @@ import { SITE } from '../config/site';
   <p>
     There is no advertising involved: this data is never combined with third-party data, never used to
     target you, and never sold.
+  </p>
+
+  <h2>First-party acquisition measurement</h2>
+  <p>
+    WakeSharp measures where an install came from without an advertising identifier, an ATT prompt,
+    fingerprinting, cross-app tracking or automatic clipboard reading. Android can read Google Play's
+    Install Referrer once and keeps only normalized source, channel, campaign, ad-group and creative
+    fields; the raw referrer is discarded. On iPhone, Apple Search Ads attribution is read through
+    AdServices without storing or logging Apple's token. Other eligible iPhone campaigns are reported by
+    Apple's aggregate AdAttributionKit postbacks. Those postbacks are not joined to a person or installation.
+  </p>
+
+  <h2>Optional referrals</h2>
+  <p>
+    Referrals are off by default and do not affect whether an alarm rings. If you choose to create or claim
+    a referral, WakeSharp registers an anonymous installation public key after Apple App Attest or Google
+    Play Integrity validation. The attestation payload and raw Play referrer are discarded after validation.
+    The service stores the public key, a one-way hash of a random install credential, an anonymous
+    RevenueCat app-user ID, the referral code and claim, qualifying local-day assertions, reward status and
+    a bounded audit trail. It never receives alarm labels, times, calendar contents, meeting details,
+    Sharpness results or sensor data.
+  </p>
+  <p>
+    A signed qualifying-day assertion contains a random event ID, local day, timestamp, time-zone offset and
+    the number of minutes taken to complete the mission. It must represent full credit from a real wake alarm.
+    Duplicate days, replayed requests, self-referrals, expired claims and failed integrity checks are rejected.
+    RevenueCat receives the existing anonymous app-user ID and the entitlement expiry needed to fulfill an
+    approved reward. Lifetime users receive recognition only; no redundant entitlement is created.
+  </p>
+  <p>
+    Referral records are held in an encrypted-in-transit Neon Postgres database in the United States.
+    Normalized records expire 180 days after final activity. You can delete the installation credential and
+    directly associated assertions from WakeSharp Settings; a minimal anonymized audit record remains only
+    until the same 180-day limit. Neon's privacy policy is at{' '}
+    <a href="https://neon.com/privacy-policy" rel="noopener">neon.com/privacy-policy</a>.
   </p>
 
   <h2 id="contact-form">The contact form on this website</h2>
@@ -212,7 +250,8 @@ import { SITE } from '../config/site';
 
   <h2>How long data is kept, and how to delete it</h2>
   <ul>
-    <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. We hold no copy, so there is nothing for us to delete.</li>
+    <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes it. Referral assertions, if you opted in, are separate and can be deleted from Settings before uninstalling.</li>
+    <li><strong>Referral records</strong> — expire 180 days after final activity. An authenticated deletion request immediately revokes and anonymizes the installation credential, removes successful-day assertions and invalidates its referral link.</li>
     <li><strong>Purchase records at RevenueCat</strong> — kept while the record exists, under RevenueCat's own retention policy.</li>
     <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are kept for a shorter period under PostHog's retention settings. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li>
@@ -226,10 +265,9 @@ import { SITE } from '../config/site';
 
   <h2>Children's privacy</h2>
   <p>
-    WakeSharp is rated 4+ / Everyone and is suitable for all ages, but it is not directed at children and it
-    collects no personal information from anyone, including children. We do not knowingly collect data from
-    children under 13 (or the equivalent age in your country), because we do not knowingly collect personal
-    data from anybody.
+    WakeSharp is rated 4+ / Everyone and is suitable for all ages, but it is not directed at children. It
+    does not request names, email addresses, phone numbers or precise location. The limited anonymous
+    technical records described above apply in the same way regardless of age.
   </p>
 
   <h2>Your rights</h2>
@@ -238,10 +276,9 @@ import { SITE } from '../config/site';
     access, correct, delete, port or object to the processing of your personal data.
   </p>
   <p>
-    In practice those rights are unusually easy to exercise here: <strong>we hold nothing that identifies
-    you</strong>. Your on-device data is already in your hands — you can see it in the app and destroy it by
-    uninstalling. The only records connected to you at all are the anonymous subscription and analytics
-    records described above, and the deletion routes for both are in the previous section.
+    In practice, we hold no name or contact identity for an app installation. Your on-device data is already
+    in your hands — you can see it in the app and destroy it by uninstalling. Anonymous subscription,
+    analytics and optional referral records use the deletion routes described above.
   </p>
   <p>
     Where we do process data, our legal basis is the performance of our contract with you (validating a
@@ -251,9 +288,11 @@ import { SITE } from '../config/site';
 
   <h2>Security</h2>
   <p>
-    Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
-    passcode. Traffic to RevenueCat and PostHog uses HTTPS. No system is perfectly secure, but the surface
-    here is deliberately tiny: there is no WakeSharp server and no WakeSharp database.
+    Your detailed morning data stays inside your phone's app sandbox and is protected by your device's own
+    encryption and passcode. Traffic to RevenueCat, PostHog and the optional referral service uses HTTPS.
+    Referral API calls use an installation credential plus a device-held signing key, replay protection and
+    integrity validation. No system is perfectly secure, so referral rewards remain independent of essential
+    alarm behavior.
   </p>
 
   <h2>Changes to this policy</h2>

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { GUIDES } from '../content/guides';
+---
+
+<BaseLayout
+  title="Alarm reliability, wake missions, calendar, and privacy guides | WakeSharp"
+  description="Source-backed WakeSharp guides for alarm reliability, heavy sleepers, brain games, local calendar rules, and privacy on iPhone and Android."
+  path="/guides"
+>
+  <section class="min-h-[70svh] bg-[var(--color-morning-cream)] px-6 py-16 text-[var(--color-morning-text)] sm:py-24">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-coral-ink)]">WakeSharp guides</p>
+      <h1 class="mt-3 max-w-4xl text-[clamp(2.5rem,7vw,4.5rem)] leading-[1.04]">Alarm advice with platform names and sources</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-[var(--color-morning-dim)]">
+        Ten focused guides, each reviewed against current first-party documentation and illustrated with real WakeSharp UI.
+      </p>
+      <ul class="mt-12 grid gap-5 md:grid-cols-2">
+        {GUIDES.map((guide) => (
+          <li>
+            <a class="block h-full rounded-[var(--radius-card)] bg-white p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-raised)]" href={`/${guide.slug}`}>
+              <span class="text-sm font-bold uppercase tracking-[0.1em] text-[var(--color-coral-ink)]">{guide.eyebrow}</span>
+              <h2 class="mt-2 text-2xl">{guide.heading}</h2>
+              <p class="mt-3 leading-7 text-[var(--color-morning-dim)]">{guide.description}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

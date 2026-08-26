@@ -1,0 +1,158 @@
+---
+import { Image } from 'astro:assets';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GuideJsonLd from '../components/GuideJsonLd.astro';
+import GuideStoreCta from '../components/GuideStoreCta.astro';
+import { GUIDE_BY_SLUG, GUIDES, type Guide } from '../content/guides';
+
+import iosHome from '../assets/screens/ios/home.png';
+import iosRing from '../assets/screens/ios/ring.png';
+import iosMission from '../assets/screens/ios/mission.png';
+import iosGames from '../assets/screens/ios/games.png';
+import iosReveal from '../assets/screens/ios/reveal.png';
+import iosSmart from '../assets/screens/ios/smart.png';
+import androidStats from '../assets/screens/android/stats.png';
+
+const SCREENSHOTS = {
+  home: iosHome,
+  ring: iosRing,
+  mission: iosMission,
+  games: iosGames,
+  reveal: iosReveal,
+  smart: iosSmart,
+  stats: androidStats,
+};
+
+export const getStaticPaths = (() =>
+  GUIDES.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }))) satisfies GetStaticPaths;
+
+const { guide } = Astro.props as { guide: Guide };
+const screenshot = SCREENSHOTS[guide.screenshot];
+const related = guide.related.map((slug) => GUIDE_BY_SLUG.get(slug)).filter(Boolean) as Guide[];
+const path = `/${guide.slug}`;
+---
+
+<BaseLayout
+  title={`${guide.title} | WakeSharp`}
+  description={guide.description}
+  path={path}
+  ogImage={screenshot.src}
+  ogImageAlt={guide.screenshotAlt}
+  ogImageWidth={screenshot.width}
+  ogImageHeight={screenshot.height}
+>
+  <GuideJsonLd guide={guide} image={screenshot.src} />
+
+  <article class="bg-[var(--color-morning-cream)] text-[var(--color-morning-text)]" data-guide-intent={guide.intent}>
+    <header class="border-b border-[color-mix(in_srgb,var(--color-morning-text)_12%,transparent)] px-6 py-14 sm:py-20">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-morning-dim)]">
+            <a class="underline underline-offset-2" href="/">WakeSharp</a>
+            <span aria-hidden="true"> / </span>
+            <a class="underline underline-offset-2" href="/guides">Guides</a>
+          </nav>
+          <p class="mt-8 text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-coral-ink)]">{guide.eyebrow}</p>
+          <h1 class="mt-3 text-[clamp(2.35rem,7vw,4.5rem)] leading-[1.04]">{guide.heading}</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-[var(--color-morning-dim)]">{guide.intro}</p>
+          <p class="mt-5 text-sm text-[var(--color-morning-dim)]">Reviewed against cited first-party sources on August 25, 2026.</p>
+        </div>
+        <div class="mx-auto max-w-[300px]">
+          <Image
+            src={screenshot}
+            alt={guide.screenshotAlt}
+            widths={[260, 520, 780]}
+            sizes="(min-width: 1024px) 300px, 260px"
+            loading="eager"
+            class="rounded-[2rem] shadow-2xl"
+            data-real-app-ui="true"
+          />
+        </div>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-4xl px-6 py-14 sm:py-20">
+      <section aria-labelledby="platform-heading">
+        <h2 id="platform-heading" class="text-3xl">Platform-specific behavior</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <div class="rounded-[var(--radius-card)] bg-white p-6 shadow-[var(--shadow-card)]">
+            <h3 class="text-xl">iPhone</h3>
+            <p class="mt-3 leading-7 text-[var(--color-morning-dim)]">{guide.platform.ios}</p>
+          </div>
+          <div class="rounded-[var(--radius-card)] bg-white p-6 shadow-[var(--shadow-card)]">
+            <h3 class="text-xl">Android</h3>
+            <p class="mt-3 leading-7 text-[var(--color-morning-dim)]">{guide.platform.android}</p>
+          </div>
+        </div>
+      </section>
+
+      {guide.sections.map((section) => (
+        <section class="mt-14">
+          <h2 class="text-3xl">{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p class="mt-5 text-lg leading-8 text-[var(--color-morning-dim)]">{paragraph}</p>
+          ))}
+          {section.bullets && (
+            <ul class="mt-6 list-disc space-y-3 pl-6 text-lg leading-8 text-[var(--color-morning-dim)]">
+              {section.bullets.map((item) => <li>{item}</li>)}
+            </ul>
+          )}
+        </section>
+      ))}
+
+      {guide.comparison && (
+        <section class="mt-14 overflow-x-auto" aria-labelledby="comparison-heading">
+          <h2 id="comparison-heading" class="text-3xl">Side-by-side</h2>
+          <table class="mt-6 w-full min-w-[620px] border-collapse text-left">
+            <caption class="mb-3 text-left text-sm text-[var(--color-morning-dim)]">{guide.comparison.caption}</caption>
+            <thead>
+              <tr>{guide.comparison.headers.map((cell) => <th class="border-b-2 border-[var(--color-morning-text)] p-3">{cell}</th>)}</tr>
+            </thead>
+            <tbody>
+              {guide.comparison.rows.map((row) => (
+                <tr>{row.map((cell) => <td class="border-b border-[color-mix(in_srgb,var(--color-morning-text)_14%,transparent)] p-3 align-top">{cell}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+
+      <section class="mt-14" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="text-3xl">Questions</h2>
+        <div class="mt-6 space-y-4">
+          {guide.faq.map((item) => (
+            <details class="rounded-[var(--radius-card)] bg-white p-5 shadow-[var(--shadow-card)]">
+              <summary class="cursor-pointer font-bold">{item.question}</summary>
+              <p class="mt-3 leading-7 text-[var(--color-morning-dim)]">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section class="mt-14" aria-labelledby="sources-heading">
+        <h2 id="sources-heading" class="text-3xl">Sources</h2>
+        <p class="mt-3 text-[var(--color-morning-dim)]">First-party references, checked {guide.sources[0]?.checked}.</p>
+        <ol class="source-list mt-5 list-decimal space-y-3 pl-6">
+          {guide.sources.map((item) => (
+            <li>
+              <a class="font-semibold underline underline-offset-2" href={item.url} rel="noreferrer">{item.title}</a>
+              <span class="text-[var(--color-morning-dim)]"> — {item.publisher}; checked {item.checked}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mt-14" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="text-3xl">Related WakeSharp guides</h2>
+        <ul class="mt-5 grid gap-3 sm:grid-cols-3">
+          {related.map((item) => (
+            <li><a class="block h-full rounded-2xl bg-white p-4 font-bold shadow-[var(--shadow-card)] hover:underline" href={`/${item.slug}`}>{item.heading}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <div class="mt-14"><GuideStoreCta angle={guide.angle} /></div>
+    </div>
+  </article>
+</BaseLayout>

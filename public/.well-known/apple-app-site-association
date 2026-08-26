@@ -5,7 +5,8 @@
         "appIDs": ["W4HPRW2JT4.com.wakesharp.app"],
         "components": [
           { "/": "/c/*", "comment": "Beat My Wake challenge links" },
-          { "/": "/p/*", "comment": "Wake pact invite links" }
+          { "/": "/p/*", "comment": "Wake pact invite links" },
+          { "/": "/r/*", "comment": "Explicit WakeSharp referral links" }
         ]
       }
     ]
