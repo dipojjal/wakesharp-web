@@ -1,0 +1,55 @@
+---
+/**
+ * One post in the /blog grid. `featured` renders the newest post as a wide
+ * two-column card (image beside text) above the regular three-up grid —
+ * the pattern the big content blogs use to give the latest piece a stage.
+ */
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { CATEGORY_LABELS } from '../lib/blog-categories';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  featured?: boolean;
+}
+const { post, featured = false } = Astro.props;
+const { title, description, pubDate, heroImage, heroImageAlt, category } = post.data;
+const dateLabel = pubDate.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+});
+const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
+---
+
+<a
+  href={`/blog/${post.id}`}
+  class:list={[
+    'card group block overflow-hidden transition-shadow hover:shadow-[var(--shadow-raised)]',
+    featured && 'md:grid md:grid-cols-2 md:items-center',
+  ]}
+>
+  <Picture
+    src={heroImage}
+    alt={heroImageAlt}
+    widths={featured ? [400, 800, 1200] : [300, 600]}
+    sizes={featured ? '(min-width: 768px) 44rem, 92vw' : '(min-width: 1024px) 22rem, 92vw'}
+    formats={['avif', 'webp']}
+    fallbackFormat={fallback}
+    class="aspect-video h-full w-full object-cover"
+    loading={featured ? 'eager' : 'lazy'}
+    decoding="async"
+  />
+  <div class:list={['p-5', featured && 'md:p-8']}>
+    <p class="text-xs font-bold uppercase tracking-wider text-[var(--color-coral-ink)]">
+      {CATEGORY_LABELS[category]}
+    </p>
+    <h2 class:list={['mt-2 font-extrabold', featured ? 'text-2xl sm:text-3xl' : 'text-lg']}>
+      {title}
+    </h2>
+    <p class:list={['mt-2 dim', featured ? 'text-base leading-relaxed' : 'text-sm']}>
+      {description}
+    </p>
+    <p class="mt-3 text-xs dim">{dateLabel}</p>
+  </div>
+</a>

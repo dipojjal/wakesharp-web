@@ -1,0 +1,32 @@
+---
+/**
+ * Shell for the /blog listing. Like LegalLayout it sits deliberately outside
+ * the homepage's sunrise ramp on a flat morning surface — long-form reading
+ * wants maximal legibility, not atmosphere — but it uses the site's wide
+ * max-w-6xl container because it wraps a card grid, not a reading column.
+ */
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;
+  heading: string;
+  intro?: string;
+  noindex?: boolean;
+}
+const { title, description, path, heading, intro, noindex } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} path={path} noindex={noindex}>
+  <div
+    data-tone="morning"
+    class="bg-[var(--color-morning-cream)] px-4 py-14 text-[var(--color-morning-text)] sm:px-6 sm:py-20"
+  >
+    <div class="mx-auto w-full max-w-6xl">
+      <h1 class="text-4xl sm:text-5xl">{heading}</h1>
+      {intro && <p class="lede mt-4">{intro}</p>}
+      <div class="mt-10 sm:mt-12"><slot /></div>
+    </div>
+  </div>
+</BaseLayout>

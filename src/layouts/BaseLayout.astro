@@ -9,14 +9,30 @@ interface Props {
   description?: string;
   path: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article';
+  image?: string;
+  imageAlt?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
-const { title, description, path, noindex } = Astro.props;
+const { title, description, path, noindex, ogType, image, imageAlt, publishedTime, modifiedTime } =
+  Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} path={path} noindex={noindex} />
+    <BaseHead
+      title={title}
+      description={description}
+      path={path}
+      noindex={noindex}
+      ogType={ogType}
+      image={image}
+      imageAlt={imageAlt}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+    />
   </head>
   <body class="min-h-dvh">
     <a class="skip-link" href="#main">Skip to content</a>

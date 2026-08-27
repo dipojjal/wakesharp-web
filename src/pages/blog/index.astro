@@ -1,0 +1,41 @@
+---
+/**
+ * /blog — the article index. Newest post gets the wide featured card; the rest
+ * flow into a three-up grid. Deliberately a single list, not pagination: a
+ * paginated /blog/[...page] route would share the /blog/:x route shape with
+ * [slug].astro and a purely numeric slug would collide. If the archive ever
+ * outgrows one page (~150+ posts), add /blog/page/[page].astro and reserve
+ * the literal slug "page" — documented in docs/blog-schedule.md.
+ */
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getPublishedPosts } from '../../lib/blog';
+
+const posts = await getPublishedPosts();
+const [featured, ...rest] = posts;
+---
+
+<BlogLayout
+  title="Blog — WakeSharp"
+  description="Sleep science, morning routines and product news from the maker of WakeSharp — the alarm that gets you meeting-ready."
+  path="/blog"
+  heading="The WakeSharp Blog"
+  intro="Sleep science, morning routines and the occasional product update — from the maker of the alarm that checks you're actually sharp."
+>
+  {
+    featured ? (
+      <div class="space-y-8">
+        <BlogCard post={featured} featured />
+        {rest.length > 0 && (
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post) => (
+              <BlogCard post={post} />
+            ))}
+          </div>
+        )}
+      </div>
+    ) : (
+      <p class="lede">The first article is on its way — check back shortly.</p>
+    )
+  }
+</BlogLayout>

@@ -7,9 +7,10 @@
  * IntersectionObserver. Holding one translucent night bar the whole way down keeps
  * the page at zero JS and reads correctly over both the dark and the light bands.
  *
- * There is no mobile drawer, so below `md` the nav collapses to Contact alone: the
- * four section links all point at homepage anchors a phone visitor can reach by
- * scrolling, while /contact is a page they otherwise could not get to at all.
+ * There is no mobile drawer, so below `md` the nav collapses to Blog and Contact:
+ * the four section links all point at homepage anchors a phone visitor can reach
+ * by scrolling, while /blog and /contact are real pages they otherwise could not
+ * get to at all.
  */
 ---
 
@@ -25,6 +26,7 @@
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#features">Features</a>
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#sharp">Sharpness</a>
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#pricing">Pricing</a>
+      <a class="hover:text-[var(--color-night-text)]" href="/blog">Blog</a>
       <a class="hover:text-[var(--color-night-text)]" href="/contact">Contact</a>
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#faq">FAQ</a>
     </nav>

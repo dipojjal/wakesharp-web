@@ -1,0 +1,47 @@
+---
+/**
+ * End-of-article download card. Rendered by BlogPostLayout after the markdown
+ * body, so plain .md posts get a store CTA without MDX or hand-typed store
+ * links (scripts/check-copy.mjs only permits the canonical URLs, which
+ * StoreButtons reads from src/config/site.ts).
+ *
+ * Styles are self-contained on purpose: the sitewide `.callout` class is
+ * scoped `.legal .callout` inside LegalLayout and does not exist here.
+ */
+import StoreButtons from './StoreButtons.astro';
+
+interface Props {
+  heading?: string;
+  body?: string;
+}
+const {
+  heading = 'Wake up sharp tomorrow',
+  body = 'WakeSharp is free: every mission, Strict Mode and the reliability check included. Setting your first alarm takes about ten seconds.',
+} = Astro.props;
+---
+
+<aside class="cta-card" aria-label="Get WakeSharp">
+  <h2>{heading}</h2>
+  <p>{body}</p>
+  <StoreButtons tone="light" />
+</aside>
+
+<style>
+  .cta-card {
+    margin-top: 3rem;
+    border-radius: var(--radius-card);
+    background: var(--color-morning-surface);
+    border: 1px solid color-mix(in srgb, var(--color-morning-text) 12%, transparent);
+    box-shadow: var(--shadow-card);
+    padding: 1.75rem;
+  }
+  .cta-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+  }
+  .cta-card p {
+    margin: 0 0 1.25rem;
+    color: var(--tone-dim);
+    line-height: 1.6;
+  }
+</style>

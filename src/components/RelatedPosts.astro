@@ -1,0 +1,36 @@
+---
+/**
+ * "Related reading" block: newest posts in the same category. Renders nothing
+ * when the category has no other posts yet — expected during the first weeks
+ * of the publishing schedule.
+ */
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+const { posts } = Astro.props;
+---
+
+{
+  posts.length > 0 && (
+    <nav
+      aria-label="Related articles"
+      class="mt-14 border-t border-[color-mix(in_srgb,var(--color-morning-text)_15%,transparent)] pt-10"
+    >
+      <h2 class="text-xl">Related reading</h2>
+      <ul class="mt-5 grid gap-4 sm:grid-cols-3">
+        {posts.map((p) => (
+          <li>
+            <a
+              href={`/blog/${p.id}`}
+              class="font-semibold text-[var(--color-coral-ink)] underline underline-offset-2"
+            >
+              {p.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
