@@ -117,6 +117,13 @@ These rules scan every built page, articles included. Violations fail the build.
 - Never hand-type store URLs in markdown — the end-of-article CTA (with official badges) is added by the layout automatically.
 - No `[[placeholder]]` text.
 
+## Style laws (added Aug 27 — binding for every future article)
+
+- **No em dashes (—) and no en dashes (–), ever.** Restructure with commas, periods, colons, or parentheses instead. Hyphens inside compound words ("wake-up", "16-9") are fine. Mechanical gate before committing:
+  `perl -ne 'print "$.: $_" if /[\x{2013}\x{2014}\x{200B}-\x{200D}\x{FEFF}\x{2060}]/' src/content/blog/<slug>.md` must print nothing.
+- **No watermarking.** No AI attribution or meta commentary anywhere in the article, no hidden/zero-width Unicode characters, no unusual punctuation fingerprints; plain standard punctuation only. Commit messages for posts are short and plain, in the repo's existing style, with no attribution trailers.
+- **Written by Opus 5 at maximum thinking effort.** The publishing routine delegates the writing step to an Opus 5 subagent with thinking effort maxed; don't draft article prose in the orchestrating session.
+
 ## Article shape (what "good" looks like here)
 
 ~1,600–2,200 words. Hook with a concrete failure scene → reframe as biology, not character → mechanism with **real, named sources** (we cite studies; Alarmy doesn't — it's a trust edge) → numbered practical fixes → ONE WakeSharp feature tied to *this* article's problem (never a generic pitch; mention honestly what the app can't do when relevant) → 3–4 question FAQ with `##` heading "FAQ" on troubleshooting/science posts (snippet play) → link 1–3 related earlier posts inline. Voice: precise, safety-forward, lightly wry, anti-hype — the site's existing register. The safety notice appears in every footer; don't contradict it (no "guaranteed wake-up" claims).
