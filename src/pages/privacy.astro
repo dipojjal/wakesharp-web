@@ -5,19 +5,19 @@ import { SITE } from '../config/site';
 
 <LegalLayout
   title="Privacy Policy — WakeSharp"
-  description="WakeSharp has no accounts and no ads. Your alarms, scores and calendar data stay on your device; anonymous usage analytics help us improve the app."
+  description="WakeSharp needs no account and shows no ads. Your alarms and calendar data live on your device; an optional Apple/Google account can back them up, and anonymous analytics help us improve the app."
   path="/privacy"
   heading="Privacy Policy"
-  intro="WakeSharp is an alarm clock that runs on your phone. It has no accounts and no advertising. Your alarms, scores and calendar events stay on your device; what does leave it — anonymous usage analytics and subscription data — is listed on this page, exactly."
+  intro="WakeSharp is an alarm clock that runs on your phone. It requires no account and shows no advertising. Your alarms, scores and calendar events live on your device; what can leave it — anonymous usage analytics, subscription data, and the optional account backup you may choose to create — is listed on this page, exactly."
 >
   <div class="callout">
     <h2 class="!mt-0">The short version</h2>
     <ul>
-      <li>There is no WakeSharp account. We never ask for your name, email or phone number.</li>
-      <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>only on your device</strong>.</li>
+      <li>No account is required, ever. You can optionally sign in with Apple or Google to back up your alarms and progress — that is the account's only job, and every feature works identically without it.</li>
+      <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (scan missions) and your <strong>step count</strong> (walking missions) are optional, used only while that mission is running, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Two things leave your device: <strong>anonymous usage analytics</strong> (which screens you use and where you get stuck, keyed to a random ID — never your name, and never the content of your alarms or calendar) and <strong>purchase data</strong> if you buy WakeSharp Plus.</li>
+      <li>Up to three things leave your device: <strong>anonymous usage analytics</strong> (which screens you use and where you get stuck, keyed to a random ID — never your name, and never the content of your alarms or calendar), <strong>purchase data</strong> if you buy WakeSharp Plus, and <strong>your backup</strong> if you choose to create the optional account.</li>
       <li>No advertising ID. No location. No tracking across other apps or websites, and nothing is ever sold.</li>
     </ul>
   </div>
@@ -31,8 +31,8 @@ import { SITE } from '../config/site';
 
   <h2>What WakeSharp does not do</h2>
   <ul>
-    <li>It does not create an account or a user profile.</li>
-    <li>It does not collect your name, email address, phone number or contacts.</li>
+    <li>It does not require an account or build a profile of you. The optional sign-in exists to back up and restore your own data, nothing else — no feature is ever gated on it.</li>
+    <li>It does not collect your name, phone number or contacts. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
     <li>It does not request or use your location.</li>
     <li>It does not use an advertising identifier, and it shows no ads.</li>
     <li>It does not track you across other apps or websites. The usage analytics described below measure WakeSharp itself, are keyed to a random per-install ID, and are never combined with outside data or used for advertising.</li>
@@ -53,7 +53,42 @@ import { SITE } from '../config/site';
   </ul>
   <p>
     On Android the app declares <code>android:allowBackup="false"</code>, so this data is not copied into
-    Android's cloud backup. Deleting the app removes all of it.
+    Android's cloud backup. Deleting the app removes all of it. The only copy that can exist anywhere else
+    is the one you create yourself with the optional account, described next.
+  </p>
+
+  <h2>The optional account and cloud backup</h2>
+  <p>
+    You can sign in with <strong>Apple</strong> or <strong>Google</strong> — those are the only options;
+    there is no email-and-password login — to back up your WakeSharp data and restore it on a new phone.
+    This is entirely optional, off by default, and alarms never depend on it: backup runs quietly after
+    your data changes and can fail or be offline without affecting anything you rely on at 6am.
+  </p>
+  <p>If you create an account, this is stored in your private backup:</p>
+  <ul>
+    <li>Your <strong>sign-in identity</strong>: a random account ID and the email your provider discloses (with Sign in with Apple you can hide your real address behind Apple's relay).</li>
+    <li>Your <strong>alarms and settings</strong> — times, repeat days, labels, missions, snooze rules, smart-alarm rules and shift rotations, and your app preferences.</li>
+    <li>Your <strong>progress</strong> — daily Sharpness scores, streak and freeze tokens, game results and personal baselines, and the journal of past alarms (only completed history; never diagnostics about your device).</li>
+    <li>Your <strong>mission references</strong> — the small thumbnail and on-device fingerprint of a spot or photo target you enrolled. The full photographs are never stored, on your device or in the cloud.</li>
+  </ul>
+  <p>
+    Deliberately <strong>not</strong> in the backup: your calendar events (smart rules are backed up, the
+    events they read are not), camera frames, step counts, your finger-signature, and device diagnostics.
+  </p>
+  <p>
+    The backup is hosted for us by <strong>Supabase, Inc.</strong> on infrastructure in the
+    <strong>United States</strong>, as our processor under their data processing terms, including standard
+    contractual clauses where required for transfers from the UK or the EEA. Every row is protected by
+    database-level rules that make it readable by your account and no other. Supabase's privacy policy is
+    at <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>.
+  </p>
+  <p>
+    The account is never connected to the anonymous analytics described below — your account ID and email
+    are not sent to our analytics service. Signing out keeps everything on your phone and simply stops
+    backups. Deleting the account — in the app at <em>Settings → Account → Delete account</em>, or as
+    described at <a href="/account/delete">wakesharp.app/account/delete</a> — permanently removes the
+    backup and the login itself (for Sign in with Apple, the sign-in token is revoked with Apple), while
+    the data on your phone is kept.
   </p>
 
   <h2>Calendar access — optional, read-only, and it never leaves your phone</h2>
@@ -146,7 +181,7 @@ import { SITE } from '../config/site';
       <tr><th>What is sent</th><th>Why</th></tr>
     </thead>
     <tbody>
-      <tr><td>A randomly generated, anonymous app user ID</td><td>To tie a receipt to an install. It is not derived from your name, email or any device identifier you can be traced by.</td></tr>
+      <tr><td>A randomly generated, anonymous app user ID — or, if you created the optional account, your random account ID</td><td>To tie a receipt to an install, and — when you sign in — to let WakeSharp Plus follow your account across your devices. Neither is derived from your name, email or any device identifier you can be traced by.</td></tr>
       <tr><td>The store receipt / purchase token from Apple or Google</td><td>To validate the purchase and decide whether Plus is unlocked.</td></tr>
       <tr><td>IP address, and the country derived from it or from your store account</td><td>Sent with every network request; used for fraud checks and to price and report by region.</td></tr>
       <tr><td>Device model, operating-system version and app version</td><td>Sent by the SDK with each request, and used to diagnose purchase problems.</td></tr>
@@ -212,7 +247,8 @@ import { SITE } from '../config/site';
 
   <h2>How long data is kept, and how to delete it</h2>
   <ul>
-    <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. We hold no copy, so there is nothing for us to delete.</li>
+    <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. Unless you created the optional account, we hold no copy, so there is nothing for us to delete.</li>
+    <li><strong>The optional account backup</strong> — kept until you delete the account, then removed immediately and permanently: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>
     <li><strong>Purchase records at RevenueCat</strong> — kept while the record exists, under RevenueCat's own retention policy.</li>
     <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are kept for a shorter period under PostHog's retention settings. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li>
@@ -226,10 +262,11 @@ import { SITE } from '../config/site';
 
   <h2>Children's privacy</h2>
   <p>
-    WakeSharp is rated 4+ / Everyone and is suitable for all ages, but it is not directed at children and it
-    collects no personal information from anyone, including children. We do not knowingly collect data from
-    children under 13 (or the equivalent age in your country), because we do not knowingly collect personal
-    data from anybody.
+    WakeSharp is rated 4+ / Everyone and is suitable for all ages, but it is not directed at children. It
+    requires no account and, without one, collects no personal information from anyone, including children.
+    We do not knowingly let children under 13 (or the equivalent age in your country) create the optional
+    account, and we do not knowingly collect personal data from them; if you believe a child has created
+    one, email us and we will delete it.
   </p>
 
   <h2>Your rights</h2>
@@ -238,10 +275,13 @@ import { SITE } from '../config/site';
     access, correct, delete, port or object to the processing of your personal data.
   </p>
   <p>
-    In practice those rights are unusually easy to exercise here: <strong>we hold nothing that identifies
-    you</strong>. Your on-device data is already in your hands — you can see it in the app and destroy it by
-    uninstalling. The only records connected to you at all are the anonymous subscription and analytics
-    records described above, and the deletion routes for both are in the previous section.
+    In practice those rights are unusually easy to exercise here. Unless you created the optional account,
+    <strong>we hold nothing that identifies you</strong>: your on-device data is already in your hands, and
+    the only records connected to you at all are the anonymous subscription and analytics records described
+    above, with deletion routes in the previous section. If you did create an account, everything we hold
+    for it is the backup described in its own section — you can read it back in the app, and access,
+    portability and erasure are all satisfied by restoring to a device or deleting the account yourself,
+    with no need to write to us (though you always can).
   </p>
   <p>
     Where we do process data, our legal basis is the performance of our contract with you (validating a
@@ -252,8 +292,10 @@ import { SITE } from '../config/site';
   <h2>Security</h2>
   <p>
     Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
-    passcode. Traffic to RevenueCat and PostHog uses HTTPS. No system is perfectly secure, but the surface
-    here is deliberately tiny: there is no WakeSharp server and no WakeSharp database.
+    passcode. Traffic to RevenueCat, PostHog and the backup service uses HTTPS. No system is perfectly
+    secure, but the surface here is deliberately tiny: alarms never depend on any server, and the only
+    WakeSharp database that exists is the optional backup you may choose to create — isolated per account
+    by database-level access rules, and deletable by you at any moment.
   </p>
 
   <h2>Changes to this policy</h2>
