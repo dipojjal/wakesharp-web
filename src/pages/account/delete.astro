@@ -1,0 +1,58 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { SITE } from '../../config/site';
+---
+
+<!--
+  The account-deletion resource Google Play's Data safety form links to.
+  Deletion itself is in-app (and complete); this page documents it and offers
+  the email fallback for people who no longer have the app installed.
+-->
+<LegalLayout
+  title="Delete your account — WakeSharp"
+  description="How to delete your optional WakeSharp account and its cloud backup, from inside the app or by email."
+  path="/account/delete"
+  heading="Delete your WakeSharp account"
+  intro="WakeSharp accounts are optional — they exist only to back up your alarms, settings, scores and streak so you can restore them on a new phone. Deleting yours removes that backup and the login itself, permanently."
+>
+  <h2>Delete it in the app</h2>
+  <ol>
+    <li>Open WakeSharp and go to <strong>Settings</strong>.</li>
+    <li>Tap <strong>Account</strong>.</li>
+    <li>Tap <strong>Delete account</strong> and confirm.</li>
+  </ol>
+  <p>
+    That's the whole flow. It permanently deletes your login (Sign in with Apple or
+    Google), your cloud backup — alarms, settings, wake-up history, scores, streak,
+    and any enrolled photo or scan reference thumbnails — and, for Sign in with
+    Apple, revokes the sign-in token with Apple. There is no waiting period and no
+    partial retention: the account row and everything attached to it are removed
+    together.
+  </p>
+
+  <h2>What is not deleted</h2>
+  <ul>
+    <li>
+      <strong>The data on your phone.</strong> Your alarms, scores and settings stay
+      on your device — deleting the account is not deleting your alarms. Remove the
+      app itself if you want the on-device data gone too.
+    </li>
+    <li>
+      <strong>Purchases.</strong> WakeSharp Plus belongs to your App Store or Google
+      Play account, not your WakeSharp account, and survives deletion.
+    </li>
+    <li>
+      <strong>Anonymous usage analytics</strong>, which were never linked to your
+      account in the first place — see the <a href="/privacy">privacy policy</a>.
+    </li>
+  </ul>
+
+  <h2>If you no longer have the app</h2>
+  <p>
+    Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> from the address you
+    signed in with (for Sign in with Apple with a hidden address, mention the
+    approximate sign-up date instead) and we'll delete the account for you. We
+    verify the request and complete the deletion within 30 days, almost always
+    much sooner.
+  </p>
+</LegalLayout>
