@@ -14,7 +14,9 @@
     { "source": "/help", "destination": "/support", "permanent": true }
   ],
   "functions": {
-    "api/contact.ts": { "maxDuration": 10 }
+    "api/contact.ts": { "maxDuration": 10 },
+    "api/referrals/*.ts": { "maxDuration": 10 },
+    "api/internal/referrals/*.ts": { "maxDuration": 15 }
   },
   "headers": [
     {
@@ -41,6 +43,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/r/:code", "destination": "/api/referrals/landing" },
     { "source": "/c/:payload", "destination": "/c" },
     { "source": "/p/:payload", "destination": "/p" }
   ]

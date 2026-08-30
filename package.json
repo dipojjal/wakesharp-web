@@ -14,15 +14,18 @@
     "assets:prep": "node scripts/prep-assets.mjs",
     "contrast": "node scripts/check-contrast.mjs",
     "copy": "node scripts/check-copy.mjs",
-    "verify": "npm run contrast && npm run build && npm run copy"
+    "verify": "npm run contrast && npm run build && npm run copy && npm run growth:test",
+    "growth:test": "tsx --test tests/growth/*.test.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/nunito": "^5.2.5",
+    "@neondatabase/serverless": "^1.1.0",
     "@vercel/analytics": "^2.0.1",
     "astro": "^7.2.2",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "zod": "^4.4.3"
   },
   "optionalDependencies": {
     "@img/sharp-libvips-linux-x64": "^1.2.0",
@@ -33,6 +36,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.12",
     "typescript": "^5.9.0"
   }
 }
