@@ -232,11 +232,21 @@ BEGIN
     IF v_install.onboarding_completed_at IS NULL THEN RETURN false; END IF;
 
     -- Condition 3: three qualifying mornings, on distinct local days, at least
-    -- 18 hours apart, all at or after the server-recorded first_open_at. That
-    -- floor is half the anti-forgery story; the other half is the ceiling
+    -- 18 hours apart, all at or after created_at.
+    --
+    -- **The floor is created_at, NOT first_open_at.** first_open_at arrives in
+    -- the register-install request body and is stored verbatim, so it is the
+    -- device's word rather than the server's: backdating it by 23h59m, the most
+    -- the 24-hour claim window allows, would let two mornings be posted at once
+    -- and the third only ~12 hours later, halving the bar this rule exists to
+    -- set. created_at is absent from that INSERT's column list and untouched by
+    -- its ON CONFLICT UPDATE, so it is now() as the database saw it and nothing
+    -- a client sends can move it.
+    --
+    -- That floor is half the anti-forgery story; the other half is the ceiling
     -- enforced on occurred_at at insert time in growth_record_success. Together
     -- they mean the third morning cannot exist until the installation has
-    -- really been around ~36 hours, whatever the device clock claims.
+    -- really been registered for ~36 hours, whatever the device clock claims.
     --
     -- Spacing is judged on occurred_at rather than on arrival, deliberately: a
     -- phone that spent three days offline flushes its whole outbox at once and
@@ -254,7 +264,7 @@ BEGIN
          AND c.local_day <> a.local_day
          AND c.local_day <> b.local_day
         WHERE a.installation_id = p_installation_id
-          AND a.occurred_at >= v_install.first_open_at
+          AND a.occurred_at >= v_install.created_at
     ) INTO v_has_three;
     IF NOT v_has_three THEN RETURN false; END IF;
 
@@ -426,11 +436,21 @@ BEGIN
     DELETE FROM growth_attestation_challenges
     WHERE expires_at < p_now OR consumed_at < p_now - interval '1 hour';
 
-    -- No in-flight work can block expiry any more: there are no reward grants
-    -- to fulfil, and a confirmed claim outlives its referred installation on
-    -- purpose (referred_installation_id is ON DELETE SET NULL), so retention
-    -- can never quietly take an inviter's earned progress back down.
-    DELETE FROM growth_anonymous_installations WHERE expires_at < p_now;
+    -- A confirmed claim outlives its referred installation on purpose
+    -- (referred_installation_id is ON DELETE SET NULL), so pruning a dormant
+    -- referee never takes an inviter's earned progress back down.
+    --
+    -- The inviter side needs an explicit guard instead, because their claims and
+    -- their unlock both cascade from this row: someone who reached twenty and
+    -- then did not open the app for 180 days would otherwise be silently
+    -- un-unlocked, and "unlocks permanently" would not be true. The row is
+    -- anonymous either way, so keeping it costs nothing anyone can read.
+    DELETE FROM growth_anonymous_installations
+    WHERE expires_at < p_now
+      AND NOT EXISTS (
+          SELECT 1 FROM growth_squad_unlocks u
+          WHERE u.installation_id = growth_anonymous_installations.id
+      );
     GET DIAGNOSTICS v_installations = ROW_COUNT;
 
     PERFORM set_config('wakesharp.retention_mode', 'on', true);

@@ -39,9 +39,13 @@ test('confirmation requires onboarding and three qualifying mornings', () => {
 });
 
 test('the three mornings are anchored to the server clock at both ends', () => {
-  // Floor: nothing before the server-recorded first open can count. Without it,
-  // backdating a device mints three "days" in a minute.
-  assert.match(migration, /a\.occurred_at >= v_install\.first_open_at/);
+  // Floor: created_at, the one timestamp on the installation the client cannot
+  // set. first_open_at arrives in the register-install body and is stored
+  // verbatim, so anchoring on it would let a backdated device halve the bar.
+  assert.match(migration, /a\.occurred_at >= v_install\.created_at/);
+  assert.doesNotMatch(migration, /a\.occurred_at >= v_install\.first_open_at/);
+  const register = readFileSync(new URL('../../api/referrals/register-install.ts', import.meta.url), 'utf8');
+  assert.doesNotMatch(register, /created_at/);
   // Ceiling: nothing after the server's own now. Without it, fast-forwarding does.
   assert.match(migration, /p_occurred_at > p_now \+ interval '10 minutes'/);
   // ...and the route must let p_now default to the database's now(), never pass
@@ -66,6 +70,9 @@ test('retention cannot take an inviter\'s earned progress back down', () => {
   // The referred installation detaches from its claim instead of cascading it
   // away, so pruning a dormant referee never decrements the inviter.
   assert.match(migration, /referred_installation_id uuid UNIQUE REFERENCES growth_anonymous_installations\(id\) ON DELETE SET NULL/);
+  // ...and an inviter who reached twenty is never pruned, or their claims and
+  // their unlock would both cascade away and "permanently" would be false.
+  assert.match(migration, /NOT EXISTS \(\s*\n\s*SELECT 1 FROM growth_squad_unlocks u/);
 });
 
 test('the unlock is twenty, recorded once, and never fires early', () => {

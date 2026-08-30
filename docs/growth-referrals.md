@@ -54,7 +54,7 @@ when all three of these hold:
 1. it was claimed within 24 hours of the referred installation's first open;
 2. that installation has recorded `onboarding_completed_at`;
 3. it has three qualifying mornings on distinct local days, at least 18 hours
-   apart, all at or after the server-recorded `first_open_at`.
+   apart, all at or after the database-written `created_at`.
 
 There is **no window** on the three mornings. Three in three days and three
 across three weeks are the same outcome.
@@ -63,8 +63,16 @@ Three mornings on their own would stop nothing: backdating a phone's clock mints
 three distinct local days in under a minute. What makes the bar real is that both
 ends of the range are pinned to a clock the device does not own.
 
-- **Floor** — `a.occurred_at >= v_install.first_open_at`, a value the server
-  wrote at registration. This is what defeats backdating.
+- **Floor** — `a.occurred_at >= v_install.created_at`, the registration instant
+  the database wrote. This is what defeats backdating.
+
+  ⚠️ **Not `first_open_at`.** That column looks like a server value and is not:
+  it arrives in the `register-install` body (`firstOpenAt`) and is stored
+  verbatim, bounded only against the future. Anchoring on it let an attacker
+  register now while claiming a first open 23h59m ago, post two mornings at
+  once, and confirm about twelve real hours later. `created_at` is absent from
+  that INSERT's column list and untouched by its `ON CONFLICT` update, so it is
+  `now()` as the database saw it.
 - **Ceiling** — `p_occurred_at > p_now + interval '10 minutes'` is rejected,
   where `p_now` is the database's own `now()`. This is what defeats
   fast-forwarding. The route must therefore call `growth_record_success` with
@@ -101,6 +109,16 @@ Progress is counted, not stored, and the count only ever goes up:
 **detaches** from its claim (`ON DELETE SET NULL`) instead of cascading it away,
 so 180-day retention can never quietly take back progress somebody earned. The
 claim survives the person, which is also the better privacy answer.
+
+The inviter side needs an explicit guard rather than a detach, because their
+claims and their unlock both cascade from their installation row: `growth_prune_expired`
+skips any installation holding a `growth_squad_unlocks` row, or someone who
+reached twenty and then stopped opening the app for 180 days would be silently
+un-unlocked.
+
+`pendingSignups` counts only claims that could still confirm — a detached
+(pruned) or revoked (deleted) referee is excluded, or "still warming up" would
+drift upward for years and quietly become a lie.
 
 `/api/referrals/status` returns `confirmedSignups`, `pendingSignups` and
 `squadUnlocked`. `pendingSignups` exists so the client's counter never reads as
