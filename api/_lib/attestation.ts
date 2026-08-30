@@ -76,7 +76,20 @@ export async function verifyAttestation(input: {
   } catch {
     throw new ApiError(503, 'attestation_unavailable');
   }
-  if (!response.ok) throw new ApiError(response.status >= 500 ? 503 : 401, 'attestation_failed');
+  if (!response.ok) {
+    // A 5xx is the verifier being down or misconfigured; it is not this device
+    // being rejected, and it must not be reported as though it were. The iOS
+    // client treats `attestation_failed` as "this key is no good": it deletes a
+    // perfectly healthy Secure Enclave key and calls generateKey + attestKey
+    // again, on every foreground, for as long as the outage lasts — spending
+    // Apple's per-device key-creation and attestation limits on a fault that has
+    // nothing to do with the key, which can leave real devices unable to attest
+    // after the verifier is fixed. `attestation_unavailable` already means
+    // exactly this one line above.
+    throw response.status >= 500
+      ? new ApiError(503, 'attestation_unavailable')
+      : new ApiError(401, 'attestation_failed');
+  }
   const parsed = verifierResponseSchema.safeParse(await response.json().catch(() => null));
   if (!parsed.success || parsed.data.provider !== expectedProvider) throw new ApiError(401, 'attestation_failed');
 

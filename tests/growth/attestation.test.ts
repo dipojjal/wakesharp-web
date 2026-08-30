@@ -87,3 +87,40 @@ test('private verifier must bind install and entitlement identity fields', async
     (error: unknown) => error instanceof ApiError && error.code === 'attestation_request_mismatch',
   );
 });
+
+// A verifier outage must not look like a rejected device. The iOS client keys
+// its App Attest key rotation off the error code alone (it never reads the HTTP
+// status), so collapsing 5xx into `attestation_failed` makes every foreground
+// throw away a healthy Secure Enclave key and re-attest, burning Apple's
+// per-device limits on an outage.
+test('a verifier 5xx is unavailable, not a failed attestation', async () => {
+  const base = {
+    platform: 'ios' as const,
+    publicKey: 'cHVibGlj',
+    appVersion: '2.5',
+    firstOpenAt: '2026-08-30T00:00:00Z',
+    revenueCatAppUserId: '$RCAnonymousID:abc',
+    claimEligible: true,
+    challengeId: '0f8bcb1c-1f0f-4a2f-9a0f-2e2f3a4b5c6d',
+    challenge: 'Zm9vYmFyYmF6cXV4Zm9vYmFyYmF6cXV4Zm9vYmFyYmE',
+    attestation: { provider: 'app_attest' as const, kind: 'initial' as const, token: 'dG9rZW4' },
+  };
+  const previous = { url: process.env.ATTESTATION_VERIFIER_URL, secret: process.env.ATTESTATION_VERIFIER_SECRET };
+  process.env.ATTESTATION_VERIFIER_URL = 'https://verifier.invalid/check';
+  process.env.ATTESTATION_VERIFIER_SECRET = 'secret';
+  try {
+    for (const [status, expected] of [[503, 'attestation_unavailable'], [500, 'attestation_unavailable'],
+      [401, 'attestation_failed'], [400, 'attestation_failed']] as [number, string][]) {
+      const stub = (async () => new Response('{}', { status })) as unknown as typeof fetch;
+      await assert.rejects(() => verifyAttestation(base, stub), (error: unknown) => {
+        assert.equal((error as { code: string }).code, expected, `status ${status}`);
+        return true;
+      });
+    }
+  } finally {
+    if (previous.url === undefined) delete process.env.ATTESTATION_VERIFIER_URL;
+    else process.env.ATTESTATION_VERIFIER_URL = previous.url;
+    if (previous.secret === undefined) delete process.env.ATTESTATION_VERIFIER_SECRET;
+    else process.env.ATTESTATION_VERIFIER_SECRET = previous.secret;
+  }
+});
