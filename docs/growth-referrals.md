@@ -156,8 +156,12 @@ In rough order of how much work each is:
   strictly increasing signature counter held in `app_attest_keys`.
 
   Two things remain before it can pass a real device:
-  - **A Play Integrity service account.** `PLAY_INTEGRITY_SERVICE_ACCOUNT` is
-    unset, so the Android half answers 503 and only iOS can register.
+  - **A Play Integrity service account.** The Cloud project (WakeSharp,
+    `346044402255`) was linked to the Play app on 2026-08-30 and the Android
+    client now builds with that number, so what remains is a service account in
+    that project with the Play Integrity API enabled, set as
+    `PLAY_INTEGRITY_SERVICE_ACCOUNT`. Until it exists the Android half answers
+    503 and only iOS can register.
   - **No real device has attested yet.** The suite covers every check against
     synthetic devices, which proves the logic and not Apple's actual bytes.
 - No Neon database is provisioned and the migration has not been applied.
