@@ -147,12 +147,19 @@ screen. There is no reward state left behind them.
 
 In rough order of how much work each is:
 
-- **The attestation verifier does not exist.** `api/_lib/attestation.ts` delegates
-  to `ATTESTATION_VERIFIER_URL`, a private service that is in neither repo, and
-  there is deliberately no development bypass. Until it is built and hosted,
-  `register-install` returns 503 `attestation_not_configured` and no
-  installation can register — so nothing downstream of it can be exercised at
-  all. This is the long pole, well ahead of everything else here.
+- ~~The attestation verifier does not exist.~~ **Built 2026-08-30**, in the
+  private app repo at `supabase/functions/attestation-verifier` (Supabase edge
+  function, `verify_jwt = false`, authenticated by the shared
+  `ATTESTATION_VERIFIER_SECRET` which is set here as a Vercel production secret).
+  It verifies App Attest attestations and assertions in full — certificate chain
+  to Apple's embedded root, nonce binding, app id, key identifier, and a
+  strictly increasing signature counter held in `app_attest_keys`.
+
+  Two things remain before it can pass a real device:
+  - **A Play Integrity service account.** `PLAY_INTEGRITY_SERVICE_ACCOUNT` is
+    unset, so the Android half answers 503 and only iOS can register.
+  - **No real device has attested yet.** The suite covers every check against
+    synthetic devices, which proves the logic and not Apple's actual bytes.
 - No Neon database is provisioned and the migration has not been applied.
   `DATABASE_URL` is unset in production.
 - The referral privacy disclosure has not been written against current `main`.
