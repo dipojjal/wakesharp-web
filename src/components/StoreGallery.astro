@@ -12,23 +12,53 @@
 import { Picture } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-const load = (mods: Record<string, { default: ImageMetadata }>): ImageMetadata[] =>
+/**
+ * Returns [frame number, image] pairs. The NUMBER keys the caption, not the
+ * array position: a frame withheld for a claim problem must not shift every
+ * caption after it onto the wrong picture.
+ */
+const load = (mods: Record<string, { default: ImageMetadata }>): [string, ImageMetadata][] =>
   Object.keys(mods)
     .sort()
-    .map((k) => mods[k]!.default);
+    .map((k) => [k.slice(-6, -4), mods[k]!.default]);
 
 const ios = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/ios/*.png', { eager: true }));
 const android = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/android/*.png', { eager: true }));
 
-const CAPTIONS = [
-  'Home screen with the next alarm and a smart calendar rule',
-  'The alarm ringing over the lock screen',
-  'The math mission that silences the alarm',
-  'The warm-up games — five of them, three every morning',
-  'The daily Sharpness Score reveal',
-  'The smart alarm rule editor',
-  'The Sharpness trend and streak stats',
-];
+/**
+ * Frame number → what that frame shows, its baked-in headline included. These
+ * images are mostly TEXT, so the headline is the part a screen-reader user is
+ * otherwise missing. If tools/screenshots/shotlist.py changes a headline in the
+ * app repo, this changes with it in the same commit.
+ */
+const CAPTIONS: Record<string, string> = {
+  '01': 'Home screen with the next alarm and a smart calendar rule, headlined “Wake up sharp. Not just awake.”',
+  '02': 'The alarm ringing over the lock screen, headlined “Complete a mission for full credit”',
+  '03': 'The Mind Games mission that silences the alarm, headlined “Solve to silence”',
+  '04': 'The warm-up games, headlined “5 brain games. 3 every morning.” and noting that the rotation comes with WakeSharp Plus',
+  '05': 'The daily Sharpness Score reveal, scored against your own baseline',
+  '06': 'The smart alarm rule editor, headlined “Wakes you before your first meeting”',
+  '07': 'The Sharpness trend and streak stats: streaks and freezes free, full history with WakeSharp Plus',
+};
+
+/**
+ * Frames whose shipped artwork still carries a claim the app cannot keep.
+ *
+ * play-phone/02 reads “It won't stop until you're sharp” over “Rings loud
+ * through Silent and Do Not Disturb” — the absolute dismissal claim that
+ * claims-matrix.md rules Prohibited, plus an unqualified Do Not Disturb promise.
+ * tools/screenshots/shotlist.py in the app repo has already been corrected and
+ * ios-6.9 was re-rendered against it; play-phone has not been regenerated yet,
+ * so there is no honest Android render to show.
+ *
+ * A rail of six is a far smaller cost than one wrong sentence in 96pt type, and
+ * check-copy.mjs cannot see this text because it is pixels. Delete the entry as
+ * soon as the app repo regenerates Design/Screenshots/play-phone/.
+ */
+const WITHHELD: Record<string, ReadonlySet<string>> = {
+  ios: new Set(),
+  android: new Set(['02']),
+};
 
 const rails = [
   { key: 'ios', label: 'iPhone', store: 'App Store', shots: ios },
@@ -60,11 +90,11 @@ const rails = [
       <div id={`rail-${r.key}`} role="tabpanel" aria-labelledby={`tab-${r.key}`} data-rail={r.key}>
         <h3 class="no-js-only mb-4 text-lg font-bold">{r.label} — as shown on the {r.store}</h3>
         <ul class="store-rail flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5">
-          {r.shots.map((shot, i) => (
+          {r.shots.filter(([n]) => !WITHHELD[r.key]!.has(n)).map(([n, shot]) => (
             <li class="shrink-0 snap-start">
               <Picture
                 src={shot}
-                alt={`WakeSharp on ${r.label}: ${CAPTIONS[i] ?? 'app screenshot'}`}
+                alt={`WakeSharp on ${r.label}: ${CAPTIONS[n] ?? 'app screenshot'}`}
                 widths={[220, 440]}
                 sizes="220px"
                 formats={['avif', 'webp']}

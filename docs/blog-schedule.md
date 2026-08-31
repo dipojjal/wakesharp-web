@@ -112,8 +112,35 @@ ET offsets for this schedule: **-04:00** (EDT) through the whole Aug 28 – Sep 
 These rules scan every built page, articles included. Violations fail the build.
 
 - **Never use the bare word "focus"** unless `iPhone`/`iOS`/`Apple`/`Silent` appears within 240 characters (it's reserved for Apple's Focus mode). Use *focused, focusing, concentration, clarity, attention* instead.
-- `alarmkit`, `force-quit` need an iOS/Apple word within 240 chars; `extra loud`, `build-up` need `Android` nearby.
+- `alarmkit`, `force-quit` need an iOS/Apple word within 240 chars; `extra loud`, `build-up` need `Android` nearby. So do `gentle start`, `widget` and `live activity` (all iOS-only; Android has no home-screen widget).
 - Banned outright: "trusted by", "coming soon", "not released yet", "unlimited alarms" (say "as many alarms as you need"), "Apple App Store" (say "the App Store"), "all five games"/"all 5 games"/"all 5 warm-up games", "3 brain games", "30-day trend", "30-day sharpness", "celebration styles".
+
+### The 2.2 claim rules (added Aug 30 — these are the ones articles keep getting wrong)
+
+Five published posts had to be swept because this section did not exist yet. Read it before drafting
+any paragraph that describes what the app does.
+
+- **There is no barcode or QR mission, and there never was.** `code_scan` was deleted from the app's
+  `GameRegistry.MissionRoute`. Codes exist only as targets you register under "My spots & codes"
+  *inside* Scan an Object. Never write "scan a barcode" or "a QR code mission". The sanctioned
+  wording is **"scan a real object"**.
+- **The missions and their tiers.** Free: **Mind Games** (arithmetic) and **Photo Proof** (photograph
+  the day's prompt). Plus: Memory Match, Sequence Recall, Scan an Object, Walk It Off, Surprise Me.
+  The gate acts **when you create an alarm, never when one rings**. "Math sprint" is not a mission
+  name; **Math Sprint** is a warm-up game. **Reaction Tap is a warm-up game and can never dismiss an
+  alarm** — one article claimed it could.
+- **"Every alarm and every mission is free forever" is prohibited.** The canonical line, verbatim from
+  the shipped paywall, is **"Your alarm rings free, forever. No ads."**
+- **No absolute dismissal claims.** The system Stop button always works, on both platforms. Never
+  "it won't stop until…", "keeps ringing until…", "the only way out", "impossible to dismiss".
+  Strict Mode books **four** re-rings in advance (45 seconds, then 4, 8 and 12 minutes) and always
+  needs **"where supported"**.
+- **Snoozing is a policy, not a fixed rule.** Off, Standard (two 5-minute snoozes, -5 Sharpness each),
+  or Tighten (10, then 5, then 2). Those three are free; a custom policy is Plus.
+- **Never mention the referral programme or Wake Squad.** Wake Squad is not built and the referral
+  service answers 503.
+- **The app has no sleep tracking.** You may write *about* sleep tracking and cite other vendors'
+  devices; never imply WakeSharp does it.
 - Never hand-type store URLs in markdown — the end-of-article CTA (with official badges) is added by the layout automatically.
 - No `[[placeholder]]` text.
 

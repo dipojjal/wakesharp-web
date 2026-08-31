@@ -1,10 +1,16 @@
 /**
  * THE one file to edit when the stores change.
  *
- * Both apps are live — iOS 1.0 on the App Store since 2026-08-22, Android on
- * Google Play since 2026-08-18, both as "WakeSharp: Math Alarm Clock" from
- * KineticBit Inc. StoreButtons, the JSON-LD, the Smart App Banner and the footer
- * all read from here, so a store change is a one-file change.
+ * Both apps are live — iOS on the App Store since 2026-08-22 (2.1 since
+ * 2026-08-26), Android on Google Play since 2026-08-18, both from KineticBit Inc.
+ * StoreButtons, the JSON-LD, the Smart App Banner and the footer all read from
+ * here, so a store change is a one-file change.
+ *
+ * The two listing NAMES have diverged and neither is ours to guess. Verified
+ * 2026-08-30: the App Store reads "WakeSharp: Loud Alarm Clock" and Play still
+ * reads "WakeSharp: Math Alarm Clock". Re-read both before quoting either name
+ * anywhere on this site — itunes.apple.com/lookup?id=6801198703&country=us needs
+ * no credential and settles the Apple half in one request.
  *
  * `state` stays in the type because it is load-bearing in the other direction:
  * if a listing is ever pulled, flipping it back to 'coming-soon' removes every
@@ -30,14 +36,15 @@ export interface StoreConfig {
 export const SITE = {
   name: 'WakeSharp',
   tagline: 'Wake up sharp. Not just awake.',
+  /** The sitewide meta + OG description (BaseHead) and the JSON-LD one. */
   description:
-    'The alarm that gets you meeting-ready. A mission silences it — solve, scan or walk — a brain warm-up scores how sharp you woke up, and smart alarms read your calendar so you wake before your first meeting.',
+    'The alarm that gets you meeting-ready. A mission earns the morning — solve it, photograph it, scan it or walk it — a brain warm-up scores how sharp you woke up, and smart alarms read your calendar so you wake before your first meeting.',
   url: 'https://wakesharp.app',
   email: 'support@wakesharp.app',
   /** The entity that publishes both apps, and the one named in the legal pages. */
   publisher: 'KineticBit Inc.',
   /** Stamped on the legal pages. Bump when their content materially changes. */
-  lastUpdated: '2026-08-23',
+  lastUpdated: '2026-08-30',
 
   /**
    * Governing law for the Terms. KineticBit Inc. is at 1044 Acoustic Way,

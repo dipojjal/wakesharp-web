@@ -18,56 +18,95 @@ import iosReveal from '../assets/screens/ios/reveal.png';
 import androidStats from '../assets/screens/android/stats.png';
 
 const trust = [
-  'Rings through Silent, Focus and Do Not Disturb',
-  'Tells you what could stop it — before the morning',
-  'No account, ever',
-  'Your calendar never leaves your device',
-  'Every alarm free, forever',
+  'Rings through Silent and Focus on iPhone',
+  'Tells you what could stop it — the night before',
+  'No sign-up required, and no ads',
+  'Your calendar and your camera never leave your phone',
+  'Your alarm rings free, forever',
+];
+
+// The five missions the alarm editor actually offers, in its order.
+// GameCatalog.json's `isPremium` is the source of truth for `tier`; the gate
+// runs when you build an alarm, never when one rings.
+const missions = [
+  {
+    name: 'Mind Games',
+    tier: 'Free',
+    body: 'Three arithmetic problems at easy, standard or hard. The one every other mission falls back to.',
+  },
+  {
+    name: 'Photo Proof',
+    tier: 'Free',
+    body: 'Photograph the sky, your bed made, a glass of water. Six prompts on a daily rotation, so there is nothing to line up the night before.',
+  },
+  {
+    name: 'Scan an Object',
+    tier: 'Plus',
+    body: 'Point the camera at something across the room. Twenty everyday objects in the catalogue, recognised on the phone itself.',
+  },
+  {
+    name: 'Walk It Off',
+    tier: 'Plus',
+    body: 'Get out of bed and take the steps. It reads the step counter and watches your cadence, so shaking the phone counts for nothing.',
+  },
+  {
+    name: 'Surprise me',
+    tier: 'Plus',
+    body: 'Rolls Mind Games, a scan or a walk — fixed for that alarm on that day, so you find out when it rings.',
+  },
 ];
 
 // Mirrors the gates the shipped paywall actually enforces. If these lists and
 // PaywallView/PaywallScreen ever disagree, the app is right and this is wrong.
 const freeFeatures = [
   'As many alarms as you need',
-  'Every mission type — math, scan, walk and barcode',
+  'Two wake-up missions — Mind Games and Photo Proof',
   'All 13 alarm tones',
-  'Strict Mode, and the reliability check',
-  'One smart calendar alarm',
-  'One shift rotation, one alarm profile',
-  'Streaks and freeze tokens',
-  'A warm-up game after every mission',
-  'Your 7-day Sharpness trend',
+  'Strict Mode, the snooze presets, and the reliability check',
+  'One smart calendar alarm, one shift rotation, one profile',
+  'Search, sorting and the Today view',
+  'Streaks, freeze tokens and milestones',
+  'A warm-up game after every mission, and your 7-day trend',
+  'Wake with a friend, and the watch app on both wrists',
+  'Three alarm wallpapers and the Classic Lark scene',
 ];
 
+// Items 2-6 are the paywall's five bullets, in the paywall's order, so the two
+// can be diffed line for line in front of a reviewer.
 const plusFeatures = [
   'Everything in Free',
-  'Three warm-up games every morning, rotating through all five across the week',
-  'Scan missions on every alarm, not just one',
+  'Every wake-up mission beyond Mind Games and Photo Proof',
+  'Three warm-up games every morning, rotating',
+  'Your full Sharpness history',
   'Unlimited smart calendar alarms',
-  'Your full Sharpness history, however far back it goes',
   'Lark scenes, alarm wallpapers and celebrations',
+  'As many shift rotations and profiles as you like, and a custom snooze policy',
 ];
 
 const faqs = [
   {
     q: 'Does it really ring in Silent, Focus or Do Not Disturb?',
-    a: 'In normal circumstances, yes — that is the whole point. On iPhone it uses Apple’s system alarm framework, the same one the built-in Clock app uses. On Android it plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen. What no app can do is ring on a phone that is switched off, out of battery, or has had its permissions revoked — so for anything you truly cannot miss, set a second alarm on another device.',
+    a: 'Behaviour is platform-specific, and it depends on permission. On iPhone, WakeSharp uses Apple’s AlarmKit, which supports ringing through Silent mode and Focus once you have granted alarm access — decline or revoke it and WakeSharp cannot schedule anything at all. On Android it plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen, provided the exact-alarm, notification and lock-screen permissions are in place. What no app can do is ring on a phone that is switched off or out of battery, so for anything you truly cannot miss, set a second alarm on another device.',
   },
   {
-    q: 'How do I know my alarm will actually ring?',
+    q: 'How do I check my alarm is actually going to ring?',
     a: 'Open Settings → Alarm reliability. WakeSharp reads the conditions on your phone that can stop an alarm — permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions — and leads with a plain verdict rather than a promise. Where the platform will not tell us something, it says so instead of showing a green tick, because a checklist that quietly turns unknowns into passes is worse than no checklist at all. If an alarm ever does fail, the app can tell you the provable cause afterwards — or admit that it could not work it out.',
   },
   {
     q: 'Do I have to do maths at 6am?',
-    a: 'Only if you want to. A mission can be a math sprint, scanning an object across the room, scanning a barcode, or getting up and walking — or “Surprise me”, which picks one for you each day. Every mission has a way out that ends in a math sprint at full credit, so a dead camera or a phone on the nightstand never traps you.',
+    a: 'Only if you want to. The two free missions are Mind Games, which is three arithmetic problems, and Photo Proof, which just asks for a photo of something — the sky, your bed made, a glass of water, on a prompt that rotates daily. Plus adds scanning a real object across the room, walking a set number of steps, and “Surprise me”, which picks one and fixes it for that alarm on that day so there is nothing to stage the night before. Every mission has a way out that ends in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.',
   },
   {
     q: 'Can I cheat past the mission?',
-    a: 'You can dismiss the alarm without one — your phone’s own stop button always works, and we would not want it any other way. WakeSharp then shows an owed-mission screen next time you open it, so your streak can still be repaired. You can also snooze twice, at a cost of 5 Sharpness each. Strict Mode removes the easy exits by re-ringing until the mission is done.',
+    a: 'You can dismiss the alarm without one — your phone’s own stop button always works, and we would not want it any other way. WakeSharp then shows an owed-mission screen next time you open it, and a makeup mission can keep your streak alive at half credit. Snoozing is a policy you choose rather than a rule you are given: off, a standard two snoozes of five minutes, or Tighten, which shortens each gap and raises the difficulty as it goes. Every snooze costs Sharpness. Strict Mode, where supported, books four re-rings in advance — at 45 seconds, then 4, 8 and 12 minutes — and completing the mission cancels whichever have not fired yet.',
   },
   {
     q: 'What does the camera do?',
-    a: 'Only the scan mission uses it, and only while that mission is running. Frames are classified on your device — Apple’s Vision framework on iPhone, a small bundled model on Android — to check whether you are looking at the thing you chose. Nothing is uploaded, nothing is saved, and no frame outlives the mission. Decline the permission and every other mission still works.',
+    a: 'Two missions use it, and only while that mission is running or while you are setting it up. Scan an Object classifies frames on your device — Apple’s Vision framework on iPhone, a small bundled model on Android — to check you are looking at the thing you chose. Photo Proof asks for one photograph, and the verified version compares it against a reference you enrolled, also on your device. Nothing is uploaded, nothing is added to your photo library, and the full photograph is never kept — only a small fingerprint of it. Decline the permission and every other mission still works.',
+  },
+  {
+    q: 'Does WakeSharp track my sleep?',
+    a: 'No. There is no sleep tracking of any kind — no microphone listening overnight, no sleep staging, no score for your night, and no opinion about when you fell asleep. The step counter is read during the walking mission and at no other time. WakeSharp measures how sharp you are once you are up, and nothing before that. The only sleep-shaped things in it are a bedtime you set yourself and an optional wind-down reminder.',
   },
   {
     q: 'What exactly does it read from my calendar?',
@@ -75,11 +114,19 @@ const faqs = [
   },
   {
     q: 'Do I need an account?',
-    a: 'No. There isn’t one to make. No email, no password, no sign-in.',
+    a: 'No, and nothing is gated behind one — there is no email and no password anywhere in the app. You can optionally sign in with Apple or Google for a single purpose: to back up your alarms, settings, scores and streak so they come back on a new phone. It is off by default, every feature works signed out, and an alarm never waits on the network to ring. Delete it from Settings → Account, or at wakesharp.app/account/delete.',
+  },
+  {
+    q: 'What happens if my watch is dead?',
+    a: 'Your phone rings. The watch taps you awake first and WakeSharp shifts the phone alarm a few minutes later as the backup, so only a dismissal on the watch cancels it. A flat watch, one out of range, or one you have not opened in 36 hours all leave the phone alarm exactly where it was. Strict Mode’s guard alarms ring on the phone regardless.',
   },
   {
     q: 'What is free and what is Plus?',
-    a: 'Every alarm and every mission is free forever, along with all 13 alarm tones, Strict Mode, the reliability check, streaks, a warm-up game after each mission, one smart calendar alarm and your 7-day trend. Plus adds three rotating warm-up games each morning, scan missions on every alarm, unlimited smart alarms, your full Sharpness history, and the Lark scenes and wallpapers. Nothing that wakes you up is ever behind it.',
+    a: 'Your alarm rings free, forever, with no ads. Free covers as many alarms as you need, the Mind Games and Photo Proof missions, all 13 alarm tones, Strict Mode, the snooze presets, the reliability check, streaks and freeze tokens, a warm-up game after each mission, one smart calendar alarm, one shift rotation, one profile, the watch app and your 7-day Sharpness trend. Plus adds the other missions — scan, walk and Surprise me — three rotating warm-up games each morning, unlimited smart calendar alarms, as many rotations and profiles as you like, your full Sharpness history, a custom snooze policy, and the Lark scenes, wallpapers and celebrations.',
+  },
+  {
+    q: 'What happens to my Plus alarms if I stop paying?',
+    a: 'They keep working. The check happens when you build an alarm, not when it rings, so an alarm already carrying a scan or a walk goes on running it whether or not a subscription is active. What you lose is setting up new ones, along with the extra warm-up games and the full history.',
   },
   {
     q: 'Is Lifetime a subscription?',
@@ -91,7 +138,7 @@ const faqs = [
   },
   {
     q: 'Does it track me?',
-    a: 'No advertising ID, no location, no account to profile, and no tracking across other apps. What leaves your device: anonymous usage analytics (a random ID and which screens you use — never your alarms, calendar or camera), plus subscription data if you buy Plus. The privacy policy lists every byte.',
+    a: 'No advertising ID, no location, and no tracking across other apps. What leaves your device: anonymous usage analytics (a random ID and which screens you use — never your alarms, calendar or camera), subscription data if you buy Plus, and your own backup if you chose to create an account. Your account is never joined to the analytics. The privacy policy lists every byte.',
   },
 ];
 ---
@@ -110,8 +157,8 @@ const faqs = [
           Wake up <span class="accent">sharp.</span><br />Not just awake.
         </h1>
         <p class="lede mt-6">
-          The alarm that rings through Silent, Focus and Do Not Disturb — and won’t stop until you’ve
-          proved you’re actually up.
+          A swipe is something a barely conscious person can do. WakeSharp asks for a mission instead —
+          solve it, photograph it, scan it or walk it — and then scores how sharp you actually woke up.
         </p>
         <div class="mt-8"><StoreButtons /></div>
       </div>
@@ -141,11 +188,12 @@ const faqs = [
   {/* ── 3. Ring ─────────────────────────────────────────────────────────── */}
   <SunriseSection id="ring">
     <FeatureRow screenshot={iosRing} alt="The WakeSharp alarm ringing, with Start Mission and Snooze" side="left">
-      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">It won’t stop until you’re <span class="accent">sharp</span></h2>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Complete the mission for <span class="accent">full credit</span></h2>
       <p class="lede mt-5">
-        On iPhone, Apple’s AlarmKit fires it over the lock screen even if the app was force-quit. On Android,
-        a full-screen alert on the alarm stream that Do Not Disturb doesn’t silence, and an Extra Loud option
-        that builds up rather than blasting. Either way, the only way out is through.
+        On iPhone, Apple’s AlarmKit presents a system alarm over the lock screen — through Silent mode and
+        Focus once alarm access is granted, even if the app was force-quit. On Android, an exact alarm on the
+        alarm stream that Do Not Disturb doesn’t silence, with Extra Loud and a build-up ramp that climbs
+        instead of blasting. The system’s own stop button always works; the mission is what earns the morning.
       </p>
     </FeatureRow>
   </SunriseSection>
@@ -190,37 +238,68 @@ const faqs = [
     </div>
   </SunriseSection>
 
-  {/* ── 5. Smart alarms ─────────────────────────────────────────────────── */}
+  {/* ── 5. Smart alarms & real schedules ────────────────────────────────── */}
   <SunriseSection id="smart">
     <FeatureRow screenshot={iosSmart} alt="The smart alarm rule editor, set to ring 90 minutes before the first meeting" side="right" raised>
       <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Wakes you before your <span class="accent">first meeting</span></h2>
       <p class="lede mt-5">
-        “Ring 90 minutes before my first meeting.” WakeSharp reads your calendar, re-checks it overnight, and
-        moves when the meeting moves. Read-only, on your device, never transmitted.
+        “Ring 90 minutes before my first meeting.” WakeSharp reads your calendar on your device, re-checks it
+        overnight, and moves the alarm when the meeting moves. Read-only, optional, never transmitted.
+      </p>
+      <p class="mt-4 dim">
+        Not every week is a week, either. Shift rotations handle the patterns that aren’t weekly — two days
+        on, two nights, four off — with a preview calendar and a way to skip a single date without deleting
+        anything. Profiles swap a whole set of alarms at once for work, vacation or on call. Search, sorting
+        and a Today view keep the list honest when there are a lot of them.
+      </p>
+      <p class="mt-3 dim text-sm">
+        Name what you’re waking up for — a workout, a commute, breakfast — and the label writes itself. One
+        smart rule, one rotation and one profile are free; Plus lifts all three.
       </p>
     </FeatureRow>
   </SunriseSection>
 
-  {/* ── 6. Mission ──────────────────────────────────────────────────────── */}
+  {/* ── 6. Missions ─────────────────────────────────────────────────────── */}
   <SunriseSection id="mission">
-    <FeatureRow screenshot={iosMission} alt="The math mission: solve 6 minus 3 to silence the alarm" side="left">
-      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Four ways to <span class="accent">prove you’re up</span></h2>
+    <FeatureRow screenshot={iosMission} alt="The Mind Games mission: solve 6 minus 3 to silence the alarm" side="left">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Five ways to <span class="accent">get you up</span></h2>
       <p class="lede mt-5">
-        Solve a math sprint. Scan something across the room. Scan a barcode in the kitchen. Or get up and walk
-        — it counts steps, and shaking the phone doesn’t fool it. Pick one per alarm, or let “Surprise me”
-        choose. Strict Mode re-rings until you finish; snoozing costs 5 Sharpness a time, twice.
+        Something has to happen before the morning counts, and you pick what. Mind Games and Photo Proof are
+        free; the rest come with Plus. Every one of them has a way out that ends in Mind Games at full credit,
+        so a dead camera or a phone with no step counter never leaves you stuck.
       </p>
     </FeatureRow>
+
+    <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        missions.map((m) => (
+          <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
+            <div class="flex items-baseline justify-between gap-3">
+              <strong>{m.name}</strong>
+              <span class="dim text-xs font-semibold uppercase tracking-wide">{m.tier}</span>
+            </div>
+            <span class="dim mt-1 block text-[0.95rem]">{m.body}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="dim mt-6 max-w-3xl text-sm">
+      The mission is chosen when you build the alarm, never when it rings — an alarm already carrying a scan
+      or a walk keeps running it whatever happens to a subscription. Strict Mode, where supported, books four
+      re-rings in advance, and snoozing is a policy you set rather than a rule you’re given.
+    </p>
   </SunriseSection>
 
   {/* ── 7. Warm-up ──────────────────────────────────────────────────────── */}
   <SunriseSection id="games">
     <FeatureRow screenshot={iosGames} alt="The Memory Match warm-up game" side="right">
-      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">5 <span class="accent">brain games.</span> 3 every morning.</h2>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">A two-minute <span class="accent">warm-up</span> while the kettle boils</h2>
       <p class="lede mt-5">
-        Math Sprint, Memory Match, Sequence Recall, Word Dash and Reaction Tap — a short warm-up while the
-        kettle boils. Free gives you a game after every mission; Plus runs three each morning and rotates
-        them, so the whole set comes round inside a week — and never repeats whatever the mission just made you do.
+        Math Sprint, Memory Match, Sequence Recall, Word Dash and Reaction Tap. Free plays one after your
+        mission, drawn from a pool of two. Plus plays three each morning and rotates them, so the whole set
+        comes round inside a week — and never repeats whatever the mission just made you do. None of it is
+        compulsory; the alarm is already off by then.
       </p>
     </FeatureRow>
   </SunriseSection>
@@ -230,8 +309,10 @@ const faqs = [
     <FeatureRow screenshot={iosReveal} alt="The daily Sharpness Score reveal" side="left" scrim>
       <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Know how <span class="accent">sharp</span> you woke up</h2>
       <p class="lede mt-5">
-        One number out of 100, scored against your own rolling baseline — not against strangers. Yesterday’s
-        you is the only benchmark that means anything at 6am.
+        One number out of 100, scored against your own rolling baseline — not against strangers. The physical
+        missions stay out of it: a scan, a walk and a photo are only ever compared against themselves, because
+        crossing the room is not an arithmetic score. Yesterday’s you is the only benchmark that means
+        anything at 6am.
       </p>
     </FeatureRow>
   </SunriseSection>
@@ -241,36 +322,121 @@ const faqs = [
     <FeatureRow screenshot={androidStats} alt="The Sharpness trend chart with a streak counter" side="right">
       <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Watch yourself get <span class="accent">sharper</span></h2>
       <p class="lede mt-5">
-        A streak, a trend line, and a freeze token for the days life happens. Seven days of history free —
-        with Plus, everything you have ever logged, however far back that goes.
+        A streak, a trend line, and a freeze token every seven mornings — you can bank two, so life is allowed
+        to happen twice. Milestones land at 7, 30, 100 and 365. Miss a morning outright and a makeup mission
+        keeps the chain alive at half credit. Seven days of history free; with Plus, everything you have ever
+        logged, however far back that goes.
       </p>
     </FeatureRow>
   </SunriseSection>
 
-  {/* ── 10. Both platforms ──────────────────────────────────────────────── */}
+  {/* ── 10. Wake together ───────────────────────────────────────────────── */}
+  <SunriseSection id="together">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_auto]">
+      <div class="max-w-2xl">
+        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Bring <span class="accent">someone with you</span></h2>
+        <p class="lede mt-5">
+          Share a link and the phone that opens it sets the same alarm, then rings it on its own. Nothing to
+          join, nothing to sign up for, and no server in the middle.
+        </p>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+          <div class="card p-6">
+            <strong class="block">Wake with a friend</strong>
+            <span class="dim mt-1 block text-[0.95rem]">
+              You send a link; their phone builds the alarm locally. Everyone keeps their own copy, so changing
+              yours doesn’t reach into theirs.
+            </span>
+          </div>
+          <div class="card p-6">
+            <strong class="block">Beat my wake</strong>
+            <span class="dim mt-1 block text-[0.95rem]">
+              Finish a mission and you can challenge someone to the identical problem set — same seed, same
+              rounds, same difficulty. Then you find out which of you was actually awake.
+            </span>
+          </div>
+        </div>
+        <p class="dim mt-6 text-sm">
+          Both are free, and both are just links: the phone that receives one does all the work itself.
+        </p>
+      </div>
+
+      <div class="hidden justify-self-center lg:block">
+        <Lark pose="waking" width={230} />
+      </div>
+    </div>
+  </SunriseSection>
+
+  {/* ── 11. Both platforms ──────────────────────────────────────────────── */}
   <SunriseSection id="platforms">
     <div class="max-w-2xl">
       <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Same app. <span class="accent">Both phones.</span></h2>
       <p class="lede mt-5">
-        Built natively twice — SwiftUI on iOS, Kotlin and Compose on Android. Not a wrapper. Requires
+        Built natively twice — SwiftUI on iOS, Kotlin and Compose on Android. Not a wrapper, which is the only
+        reason each side can do the things only it can do. Requires
         {' '}{SITE.requirements.ios} or {SITE.requirements.android}.
       </p>
       <p class="mt-4 dim">
         There’s a watch app on both wrists, too — watchOS 26 or Wear OS 3. It taps you awake before the room
-        hears anything, and the phone alarm is shifted a few minutes later as the backup. Only a dismissal
-        from the watch cancels it.
+        hears anything, and the phone alarm shifts a few minutes later as the backup. Only a dismissal from
+        the watch cancels it: a flat watch, one out of range, or one you haven’t opened in 36 hours all leave
+        the phone alarm exactly where it was. There’s a complication for the watch face as well.
+      </p>
+      <p class="mt-4 dim">
+        There is no account to make, but you can sign in with Apple or Google if you want one thing from it:
+        a backup, so your alarms, settings, scores and streak come back on a new phone. It is off by default,
+        everything works signed out, and nothing at 6am ever waits on the network.
       </p>
     </div>
     <StoreGallery />
   </SunriseSection>
 
-  {/* ── 11. Pricing ─────────────────────────────────────────────────────── */}
+  {/* ── 12. Make it yours ───────────────────────────────────────────────── */}
+  <SunriseSection id="yours">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Make the morning <span class="accent">yours</span></h2>
+      <p class="lede mt-5">
+        The alarm you actually want to hear, behind the picture you actually want to see.
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="card p-6">
+        <strong class="block">13 tones, all free</strong>
+        <span class="dim mt-1 block text-[0.95rem]">
+          From Dawn to Smoke Alarm, and every one of them ships a gentler twin as well.
+        </span>
+      </div>
+      <div class="card p-6">
+        <strong class="block">Wallpapers and scenes</strong>
+        <span class="dim mt-1 block text-[0.95rem]">
+          Three wallpapers free and five with Plus, and the Lark gains four more scenes, each with its own
+          celebration.
+        </span>
+      </div>
+      <div class="card p-6">
+        <strong class="block">Light, dark, or neither</strong>
+        <span class="dim mt-1 block text-[0.95rem]">
+          Pick an appearance or let it match your device, and the palette shifts with the hour either way.
+        </span>
+      </div>
+      <div class="card p-6">
+        <strong class="block">A softer landing</strong>
+        <span class="dim mt-1 block text-[0.95rem]">
+          Gentle start on iPhone opens the tone quiet and climbs to full about 25 seconds in. On Android, a
+          sunrise brightens the screen and raises the volume before the alarm.
+        </span>
+      </div>
+    </div>
+  </SunriseSection>
+
+  {/* ── 13. Pricing ─────────────────────────────────────────────────────── */}
   <SunriseSection id="pricing">
     <div class="max-w-2xl">
-      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Every alarm is <span class="accent">free forever</span></h2>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Your alarm rings <span class="accent">free, forever</span></h2>
       <p class="lede mt-5">
-        So is every mission, and all 13 tones. Plus is for the morning after the alarm — more warm-up games,
-        more smart rules, and the whole history. Nothing that wakes you up is ever behind it.
+        No ads, either. Two of the five missions are free as well, along with all 13 tones, Strict Mode, the
+        snooze presets and the reliability check. Plus is for the morning after the alarm — the other
+        missions, more warm-up games, more smart rules, and the whole history.
       </p>
     </div>
 
@@ -278,7 +444,7 @@ const faqs = [
       <div class="card p-7">
         <h3 class="text-xl">Free</h3>
         <p class="mt-1 text-4xl font-extrabold">$0</p>
-        <p class="mt-1 text-sm dim">No account, no trial to forget about.</p>
+        <p class="mt-1 text-sm dim">No sign-up, no trial to forget about.</p>
         <ul class="mt-6 space-y-2.5 text-[0.97rem]">
           {freeFeatures.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-success)] font-bold">✓</span><span>{f}</span></li>)}
         </ul>
@@ -308,6 +474,12 @@ const faqs = [
       </div>
     </div>
 
+    <p class="mt-8 max-w-2xl dim">
+      Plus is checked when you build an alarm, not when it rings. An alarm already carrying a scan or a walk
+      keeps running it whether or not a subscription is active — nothing you have already set stops working.
+      What lapses is setting up new ones.
+    </p>
+
     <p class="mt-6 max-w-2xl text-sm dim">
       Monthly and annual are billed by Apple or Google and renew until cancelled — cancel any time in your
       store account, and note that deleting the app does not cancel a subscription. Lifetime is a single
@@ -315,7 +487,7 @@ const faqs = [
     </p>
   </SunriseSection>
 
-  {/* ── 12. FAQ ─────────────────────────────────────────────────────────── */}
+  {/* ── 14. FAQ ─────────────────────────────────────────────────────────── */}
   <SunriseSection id="faq">
     <h2 class="text-[clamp(1.9rem,5vw,3rem)]">Questions, <span class="accent">answered</span></h2>
     <div class="mt-8 max-w-3xl divide-y divide-black/10">
@@ -333,7 +505,7 @@ const faqs = [
     </div>
   </SunriseSection>
 
-  {/* ── 13. Final CTA ───────────────────────────────────────────────────── */}
+  {/* ── 15. Final CTA ───────────────────────────────────────────────────── */}
   <SunriseSection id="cta" anchor="get">
     <div class="flex flex-col items-center text-center">
       <Lark pose="encouraging" width={170} />

@@ -39,7 +39,7 @@ Individually:
 
 | Command | What it checks |
 |---|---|
-| `npm run contrast` | Walks all 13 sunrise bands at 21 interpolated steps and fails if any tone's text, dim or accent colour drops below WCAG AA. Lighthouse **cannot** catch this — its contrast audit skips text sitting on a gradient. |
+| `npm run contrast` | Walks all 15 sunrise bands at 21 interpolated steps and fails if any tone's text, dim or accent colour drops below WCAG AA. Bands marked `cards: true` are walked twice, once on the raw band and once through the translucent card fill they carry — a card grid lightens its background by 6%, which is enough to fail `dim` on the darker stops. Lighthouse **cannot** catch any of this — its contrast audit skips text sitting on a gradient. |
 | `npm run build` | `astro check` (typecheck) then the static build. |
 | `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. |
 
@@ -86,6 +86,11 @@ separate archive. Don't treat this repo as the system of record for screenshots.
 
 Both apps are live — Google Play since 2026-08-18, the App Store since 2026-08-22, both
 as *WakeSharp: Math Alarm Clock* from KineticBit Inc.
+
+The two listing **names have since diverged**: verified 2026-08-30, the App Store reads
+*WakeSharp: Loud Alarm Clock* (2.1, released 2026-08-26) while Play still reads *WakeSharp:
+Math Alarm Clock*. `itunes.apple.com/lookup?id=6801198703&country=us` settles the Apple half with
+no credential. Re-read both before quoting either name.
 
 **`src/config/site.ts` is the only file to edit when that changes.** `StoreButtons`, the
 JSON-LD, the Smart App Banner, the footer and the install CTAs on `/c`, `/p` and `/404`

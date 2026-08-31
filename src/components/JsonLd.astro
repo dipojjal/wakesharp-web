@@ -16,14 +16,18 @@ const live = [
   isLive(SITE.stores.android) ? SITE.stores.android.url : null,
 ].filter(Boolean);
 
-/** What Plus actually unlocks, per the paywall both apps ship. */
-const PLUS = 'Three rotating warm-up games each morning, scan missions on every alarm, unlimited smart calendar alarms, your full Sharpness history, and the Lark scenes, wallpapers and celebrations.';
+/** The five paywall bullets, verbatim and in the order both apps ship them. */
+const PLUS = 'Every wake-up mission beyond Mind Games and Photo Proof, three warm-up games every morning rotating, your full Sharpness history, unlimited smart calendar alarms, and Lark scenes, alarm wallpapers and celebrations.';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'MobileApplication',
   name: SITE.name,
-  alternateName: 'WakeSharp: Math Alarm Clock',
+  // The two listings carry different names as of 2026-08-30 — the App Store
+  // renamed to "Loud Alarm Clock", Play did not. An array is the only honest
+  // single value here. Re-read both listings before editing:
+  // itunes.apple.com/lookup?id=6801198703&country=us and the Play listing.
+  alternateName: ['WakeSharp: Loud Alarm Clock', 'WakeSharp: Math Alarm Clock'],
   description: SITE.description,
   url: SITE.url,
   image: new URL('/og.png', SITE.url).href,
@@ -39,7 +43,7 @@ const schema = {
       name: 'WakeSharp (free)',
       price: '0',
       priceCurrency: 'USD',
-      description: 'Every alarm and every mission, free forever — including all thirteen alarm tones.',
+      description: 'Your alarm rings free, forever, with no ads — including the Mind Games and Photo Proof missions, Strict Mode, the alarm reliability check and all thirteen alarm tones.',
     },
     {
       '@type': 'Offer',

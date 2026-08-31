@@ -18,8 +18,15 @@ const src = readFileSync(join(ROOT, 'src/config/sunrise.ts'), 'utf8');
 
 // Parse the config without a TS toolchain — the shapes are fixed and literal.
 const SUNRISE = [...src.matchAll(
-  /\{\s*id:\s*'([^']+)',\s*from:\s*'(#[0-9A-Fa-f]{6})',\s*to:\s*'(#[0-9A-Fa-f]{6})',\s*tone:\s*'(\w+)'(,\s*scrim:\s*true)?\s*\}/g
-)].map((m) => ({ id: m[1], from: m[2], to: m[3], tone: m[4], scrim: Boolean(m[5]) }));
+  /\{\s*id:\s*'([^']+)',\s*from:\s*'(#[0-9A-Fa-f]{6})',\s*to:\s*'(#[0-9A-Fa-f]{6})',\s*tone:\s*'(\w+)'((?:,\s*\w+:\s*true)*)\s*\}/g
+)].map((m) => ({
+  id: m[1],
+  from: m[2],
+  to: m[3],
+  tone: m[4],
+  scrim: /scrim:\s*true/.test(m[5]),
+  cards: /cards:\s*true/.test(m[5]),
+}));
 
 const TONES = Object.fromEntries([...src.matchAll(
   /^\s{2}(\w+):\s*\{\s*text:\s*'(#[0-9A-Fa-f]{6})',\s*dim:\s*'(#[0-9A-Fa-f]{6})',\s*accent:\s*'(#[0-9A-Fa-f]{6})'\s*\}/gm
@@ -27,6 +34,23 @@ const TONES = Object.fromEntries([...src.matchAll(
 
 const scrimMatch = src.match(/SCRIM = \{\s*color:\s*'(#[0-9A-Fa-f]{6})',\s*alpha:\s*([\d.]+)/);
 const SCRIM = { color: scrimMatch[1], alpha: Number(scrimMatch[2]) };
+
+/**
+ * The translucent card fill the dark bands use for feature grids —
+ * Tailwind's `bg-white/[0.06]`, as in the `reliable` and `mission` sections.
+ *
+ * This exists because walking the raw band is not enough: a 6% white wash
+ * LIGHTENS the background, and `dim` (#ADADCC) is the token with the least
+ * headroom on the night ramp. At #4C2E59 the raw band measures 5.22:1 and the
+ * card interior measures 4.35:1 — a real AA failure that a raw-band-only walk
+ * reports as passing with margin. A card grid was very nearly shipped onto
+ * exactly that stop.
+ *
+ * Only for the translucent dark-band pattern. `.card` on the light bands is
+ * opaque `--color-morning-surface` (#ffffff), which is band-independent and
+ * needs no check.
+ */
+const CARD = { color: '#FFFFFF', alpha: 0.06 };
 
 if (!SUNRISE.length || !Object.keys(TONES).length) {
   console.error('Could not parse src/config/sunrise.ts — did its shape change?');
@@ -58,9 +82,15 @@ for (const band of SUNRISE) {
     let bg = mix(from, to, i / (STEPS - 1));
     // Content in a scrimmed section never touches the raw band.
     if (band.scrim) bg = over(rgb(SCRIM.color), bg, SCRIM.alpha);
-    for (const key of ['text', 'dim', 'accent']) {
-      const r = ratio(rgb(tone[key]), bg);
-      if (r < worst[key]) { worst[key] = r; worstAt[key] = hex(bg); }
+    // A `cards: true` band is measured on BOTH surfaces: copy sits directly on
+    // the band in some rows and inside a translucent card in others, so the
+    // worst case is the worse of the two, not whichever one we thought to walk.
+    const surfaces = band.cards ? [bg, over(rgb(CARD.color), bg, CARD.alpha)] : [bg];
+    for (const surface of surfaces) {
+      for (const key of ['text', 'dim', 'accent']) {
+        const r = ratio(rgb(tone[key]), surface);
+        if (r < worst[key]) { worst[key] = r; worstAt[key] = hex(surface); }
+      }
     }
   }
 

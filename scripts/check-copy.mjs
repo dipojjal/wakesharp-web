@@ -23,8 +23,65 @@ import { fileURLToPath } from 'node:url';
 
 const DIST = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 
-/** Substrings that must never appear in rendered text. */
+/**
+ * Substrings that must never appear in rendered text.
+ *
+ * An entry is either a plain `needle` (substring, lowercased) or a `re`. Adding
+ * `unless` makes the rule skip a match whose SENTENCE also matches it — the
+ * sentence being the text back to the previous [.!?;]. That exists because the
+ * honest sentence and the false one often share a noun: "scanning a barcode in
+ * the kitchen" must fail while "there is no barcode mission" must pass, and no
+ * amount of word-boundary tuning separates those two.
+ */
 const BANNED = [
+  // ── 2.2 mission tiering ────────────────────────────────────────────────
+  // GameCatalog.json marks object_scan, walk_steps, memory_match,
+  // sequence_recall and the surprise sentinel isPremium; only math_sprint
+  // (Mind Games) and photo_proof (Photo Proof) are free, and the gate runs at
+  // alarm creation, never at ring time. claims-matrix.md rules the old promise
+  // Prohibited from 2.2 and names wakesharp.app as a surface still carrying it.
+  // The replacement is the shipped paywall footer, verbatim.
+  { needle: 'every alarm and every mission', why: 'GameCatalog.json gates five of seven missions — say "Your alarm rings free, forever. No ads." (PaywallView.swift:537)' },
+  { needle: 'every mission is free', why: 'GameCatalog.json gates five of seven missions' },
+  { needle: 'every mission stays free', why: 'GameCatalog.json gates five of seven missions' },
+  { needle: 'every mission type', why: 'GameCatalog.json gates five of seven missions — name the two free ones or the five Plus ones, never all of them' },
+  { needle: 'scan missions on every alarm', why: 'the pre-2.2 per-alarm scan cap is gone; object_scan is isPremium outright' },
+  { needle: 'nothing that wakes you up is ever behind', why: 'Scan an Object, Walk It Off and Surprise Me are all Plus at creation' },
+
+  // ── a mission that never shipped ───────────────────────────────────────
+  // GameRegistry.MissionRoute has six cases and code_scan is not one of them.
+  // Barcodes and QR codes exist only as targets registered under "My spots &
+  // codes" INSIDE Scan an Object, which is why the ban is on the affirmative
+  // phrasings rather than on the bare word: /support legitimately explains what
+  // a registered code actually is.
+  { re: /\bscan(?:ning)? a (?:bar ?code|qr code)\b/g, why: 'no barcode mission exists — GameRegistry.MissionRoute has no code_scan; a code is a target inside Scan an Object' },
+  { re: /\bbar ?code mission\b|\bqr[- ]?code mission\b/g, unless: /\b(?:no|not|never|isn\u2019t|isn't|does ?n\u2019t|does ?n't|cannot|can\u2019t|can't)\b/, why: 'no barcode mission exists — GameRegistry.MissionRoute has no code_scan' },
+  { re: /\bscan(?:ning)? a code\b/g, unless: /spots ?(?:&|and) ?codes|as a target|that specific target/, why: 'a registered code is a target inside Scan an Object, not a mission — say "scan a real object"' },
+
+  // ── absolute dismissal ─────────────────────────────────────────────────
+  // Prohibited in claims-matrix.md: the OS Stop/dismiss control exists on both
+  // platforms, and Strict Mode is four alarms booked in advance, not a loop —
+  // AlarmPlanning.guardOffsetsMinutes = [4, 8, 12] plus quickGuardSeconds = 45.
+  // The apostrophe variants are both spelled out on purpose: the site renders
+  // U+2019 and strip() does not normalise it, so an ASCII-only needle would
+  // silently never match.
+  { needle: 'impossible to dismiss', why: 'the system Stop control exists on both platforms — Prohibited, claims-matrix.md' },
+  { needle: 'the only way out', why: 'the system Stop control exists on both platforms — Prohibited, claims-matrix.md' },
+  { re: /\b(?:won\u2019t|won't|will not|doesn\u2019t|doesn't|does not) stop until\b/g, why: 'AlarmPlanning books four guards and then stops — say how many times it re-rings' },
+  { re: /\b(?:keeps?|kept) ringing until\b|\bre-?rings? until\b/g, why: 'AlarmPlanning.guardOffsetsMinutes = [4, 8, 12] + quickGuardSeconds = 45 — bounded, not a loop' },
+  { re: /until you(?:\u2019ve| have|'ve)? (?:prove|proved|proven)\b/g, why: '"keeps ringing until you prove you are up" is Prohibited in claims-matrix.md' },
+
+  // ── wallpapers ─────────────────────────────────────────────────────────
+  // Prohibited from v6. WallpaperCatalog.json: first_light, city_ledge and
+  // above_the_clouds are isPremium:false; only lighthouse and summit are Plus.
+  { needle: 'two wallpapers', why: 'WallpaperCatalog.json ships three free wallpapers since v6 — Above the Clouds moved to free' },
+
+  // ── built but dark, or not built ───────────────────────────────────────
+  // Wake Squad does not exist, and every referral route answers 503
+  // referrals_disabled until Gate C. Advertising either is selling a 503.
+  { needle: 'wake squad', why: 'not built — referral-spec.md records it as unbuilt' },
+  { re: /\brefer a friend\b|\breferral (?:programme|program|bonus|reward|link)\b/g, why: 'every referral route answers 503 referrals_disabled (api/_lib/referrals.ts); Gate C not passed' },
+
   // GameRegistry.dailyPremiumGameCount is 3, and warmupPlan(excluding:) drops
   // whatever the mission just played. A subscriber does meet all five games in a
   // morning — four in the warm-up, one as the mission — but never five *warm-up*
@@ -79,6 +136,19 @@ const SCOPED = [
   // iPhone users a feature that cannot exist for them.
   { needle: 'extra loud', scope: ['android'] },
   { needle: 'build-up', scope: ['android'] },
+  // Gentle start is the iOS alarm-editor toggle: iOS will not let an app change
+  // alarm volume, so it ships a version of the tone that begins quiet. Android
+  // has a real volume ramp instead. Scoped as the two-word phrase and never the
+  // bare word "gentle", because Android's own escalation curve is called Gentle
+  // and a rule on the bare word would be wrong in both directions.
+  { needle: 'gentle start', scope: ['iphone', 'ios', 'apple'] },
+  // iOS-only surfaces. ios/WakeSharpWidgets ships a Next Alarm widget and a
+  // Live Activity; nothing under android/app/src/main matches *widget* and
+  // android/wear has no tile or complication. Android's Glance widget is
+  // deliberately deferred, so an unscoped widget claim promises Android users a
+  // feature that does not exist for them.
+  { needle: 'live activity', scope: ['iphone', 'ios', 'apple'] },
+  { needle: 'widget', scope: ['iphone', 'ios', 'apple', 'watch'] },
 ];
 
 /**
@@ -100,7 +170,14 @@ const LISTING_LINK = /https:\/\/(?:apps\.apple\.com\/\S*?app\/[^"'\s]+|play\.goo
 const BANNED_RAW = [
   { re: /\[\[/, why: 'unfilled "[[…]]" placeholder — one shipped live on /terms, a page both apps link to' },
   { re: /com\.dipojjal\.wakesharp/i, why: 'dead package id — renamed to com.wakesharp.app on 2026-08-14' },
-  { re: /WakeSharp: Alarm Clock &amp; Games|WakeSharp: Alarm Clock & Games/i, why: 'the store name is "WakeSharp: Math Alarm Clock"' },
+  // The two live listings no longer share a name: verified 2026-08-30, the App
+  // Store reads "WakeSharp: Loud Alarm Clock" while Play still reads
+  // "WakeSharp: Math Alarm Clock". Both are legitimate; this bans only the dead
+  // pre-launch name. Re-read both listings before changing anything here — it is
+  // the one rule in this file whose ground truth lives outside both repos.
+  // itunes.apple.com/lookup?id=6801198703&country=us needs no credential.
+  { re: /WakeSharp: Alarm Clock &amp; Games|WakeSharp: Alarm Clock & Games/i, why: 'dead pre-launch name — the live listings are "WakeSharp: Loud Alarm Clock" (App Store) and "WakeSharp: Math Alarm Clock" (Play)' },
+  { re: /\bcode[_-]scan\b/i, why: 'dead mission route — code_scan was deleted from GameRegistry.MissionRoute and never had a host on either platform' },
 ];
 
 const html = [];
@@ -120,18 +197,70 @@ const strip = (s) =>
     .replace(/&[a-z]+;/gi, ' ')
     .replace(/\s+/g, ' ');
 
+/**
+ * The copy that `strip()` throws away: meta/OG descriptions, alt text, and the
+ * JSON-LD body.
+ *
+ * This is not a nicety. The prohibited "every alarm and every mission, free
+ * forever" claim shipped inside JsonLd.astro's Offer description, where it sat
+ * in a <script> block that strip() deletes — no BANNED rule could ever have
+ * seen it. Same blind spot covers every <meta name="description">.
+ *
+ * Deliberately a narrow attribute list. Taking every attribute would drag
+ * `class` in, and Tailwind's `focus:` utilities would then trip the platform
+ * rule for "focus" on every page that has a link.
+ */
+const META_ATTR = /\b(?:content|alt|title|aria-label)\s*=\s*"([^"]*)"/gi;
+const LD_JSON = /<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi;
+
+const metaFields = (raw) => {
+  const out = [];
+  for (const m of raw.matchAll(META_ATTR)) out.push(m[1]);
+  for (const m of raw.matchAll(LD_JSON)) out.push(m[1]);
+  return out.map((f) => f.replace(/\s+/g, ' ').toLowerCase());
+};
+
+/** The sentence a match sits in — back to the previous [.!?;] — for `unless`. */
+const sentenceAt = (hay, index) => {
+  const start = Math.max(0, ...['.', '!', '?', ';'].map((c) => hay.lastIndexOf(c, index)));
+  const endCandidates = ['.', '!', '?', ';'].map((c) => hay.indexOf(c, index)).filter((i) => i !== -1);
+  const end = endCandidates.length ? Math.min(...endCandidates) : hay.length;
+  return hay.slice(start, end + 1);
+};
+
+/** Every place a BANNED needle may hide: the rendered text plus each meta field. */
+const banHaystacks = (text, fields) => [text, ...fields];
+
 let problems = 0;
 let sawCanonical = false;
 
 for (const file of html) {
   const raw = readFileSync(file, 'utf8');
   const text = strip(raw).toLowerCase();
+  const fields = metaFields(raw);
   const name = file.replace(DIST + '/', '');
 
-  for (const { needle, why } of BANNED) {
-    if (text.includes(needle)) {
-      console.error(`  ✗ ${name}: banned phrase "${needle}" — ${why}`);
+  for (const { needle, re, unless, why } of BANNED) {
+    for (const hay of banHaystacks(text, fields)) {
+      if (needle) {
+        const i = hay.indexOf(needle);
+        if (i === -1) continue;
+        if (unless && unless.test(sentenceAt(hay, i))) continue;
+        console.error(`  ✗ ${name}: banned phrase "${needle}" — ${why}`);
+        problems++;
+        break;
+      }
+      let hit = null;
+      for (const m of hay.matchAll(re)) {
+        if (unless && unless.test(sentenceAt(hay, m.index))) continue;
+        hit = m;
+        break;
+      }
+      if (!hit) continue;
+      console.error(`  ✗ ${name}: banned phrase "${hit[0]}" — ${why}`);
+      console.error(`      …${hay.slice(Math.max(0, hit.index - 70), hit.index + 70).trim()}…`);
       problems++;
+      break;
     }
   }
 

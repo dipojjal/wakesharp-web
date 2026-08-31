@@ -80,8 +80,8 @@ import { SITE } from '../config/site';
     built-in clock uses on each platform.
   </p>
   <ul>
-    <li><strong>On iPhone</strong>, WakeSharp uses Apple's system alarm framework, which is designed to sound through Silent mode and Focus.</li>
-    <li><strong>On Android</strong>, the alarm plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen. There is no extra permission prompt for this.</li>
+    <li><strong>On iPhone</strong>, WakeSharp uses Apple's AlarmKit, which supports sounding through Silent mode and Focus <strong>once you have granted alarm permission</strong>. Decline or revoke it and WakeSharp cannot schedule an alarm at all.</li>
+    <li><strong>On Android</strong>, the alarm plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen — <strong>when the exact-alarm, notification and lock-screen permissions are in place</strong>. There is no extra prompt for the alarm stream itself, but a blocked notification or a battery restriction can still stop the alert.</li>
   </ul>
   <p>
     What neither platform can do is ring on a phone that is powered off, out of battery, or has had the app's
@@ -90,10 +90,11 @@ import { SITE } from '../config/site';
 
   <h2>Missions, snoozing and Strict Mode</h2>
   <ul>
-    <li><strong>The mission</strong> is what silences the alarm. A math sprint is three quick arithmetic problems at easy, standard or hard. You can pick a different kind per alarm instead: scan an object with the camera, scan a code you registered in advance, or walk a set number of steps. “Surprise me” picks one for you — fixed for that alarm on that day, so you cannot stage it the night before.</li>
-    <li><strong>Every mission has a way out</strong> that ends in a math sprint at full credit, so a dead camera or a phone with no step counter can never leave you stuck with an alarm you cannot silence.</li>
-    <li><strong>Snoozing</strong> is capped at twice a day, five minutes each, and costs 5 Sharpness per snooze (capped at −10).</li>
-    <li><strong>Strict Mode</strong> pre-schedules guard alarms — 45 seconds later, then at 4, 8 and 12 minutes; only a completed mission cancels them. Turn it on per alarm.</li>
+    <li><strong>The mission</strong> is what earns you full credit for the morning. Two are free: <em>Mind Games</em>, three quick arithmetic problems at easy, standard or hard, and <em>Photo Proof</em>, which asks for a single photograph — the day's rotating prompt, or a target you enrolled for that alarm. WakeSharp Plus adds <em>Memory Match</em>, <em>Sequence Recall</em>, <em>Scan an Object</em>, <em>Walk It Off</em> and <em>Surprise Me</em>, which picks one for you and fixes it for that alarm on that day, so you cannot stage it the night before. <strong>The choice is gated when you create or edit an alarm, never when one rings</strong> — an alarm already set to a Plus mission keeps running it.</li>
+    <li><strong>My spots &amp; codes</strong> is where <em>Scan an Object</em> gets personal. Photograph a place you will walk to, like the kettle or the front door, or register a QR or barcode you stick where the morning should send you, like the bathroom mirror or the coffee tin. An alarm can then ask for that specific target. It is a feature <em>inside</em> the scan mission rather than a mission of its own, and neither the photograph nor the code is stored — only a fingerprint of each.</li>
+    <li><strong>Every mission has a way out</strong> that ends in Mind Games at full credit, so a dead camera or a phone with no step counter can never leave you stuck with an alarm you cannot silence.</li>
+    <li><strong>Snoozing</strong> is a setting per alarm, not a fixed rule. <em>Off</em> removes the button entirely. <em>Standard</em> allows two snoozes of five minutes, at 5 Sharpness each and no worse than −10 for the day. <em>Tighten</em> allows three, at 10, then 5, then 2 minutes, raises the mission's difficulty each time, and stops at −15. All three presets are free; a fully custom policy is part of WakeSharp Plus.</li>
+    <li><strong>Strict Mode</strong>, where supported, pre-schedules four guard alarms — 45 seconds later, then at 4, 8 and 12 minutes. They are real alarms booked in advance, so they ring whether or not the app is running, and completing the mission cancels whichever have not fired yet. It is four re-rings, not an endless loop, and the system's own stop button still ends each one. Turn it on per alarm.</li>
     <li><strong>Dismissing without a mission</strong> is possible — the system's own stop button always works. WakeSharp then shows an owed-mission screen the next time you open it, so your streak can still be repaired.</li>
   </ul>
 
@@ -105,23 +106,50 @@ import { SITE } from '../config/site';
     Your events never leave your device; see the <a href="/privacy">Privacy Policy</a>.
   </p>
   <p>
-    Free includes one smart rule and one shift rotation; Plus lifts both limits. A shift rotation is for
+    Free includes one smart rule, one shift rotation and one alarm profile; Plus lifts all three limits. A
+    shift rotation is for
     patterns that aren't weekly — 4-on / 4-off from an anchor date, each phase with its own time, and a
     preview calendar so you can check it before you sleep on it.
   </p>
 
   <h2>The Sharpness Score</h2>
   <p>
-    After a mission you can run an optional two-minute warm-up. Free plays a game after each mission; Plus
-    plays three of the five each morning on a rotation, skipping whichever one the mission just made you do.
+    After a mission you can run an optional warm-up. Free draws one game from a two-game pool, Math Sprint
+    and Reaction Tap; Plus plays three of the five each morning on a rotation, around two minutes in all.
+    Either way the warm-up skips whichever game the mission just made you play, so solving arithmetic to
+    silence the alarm never hands you more arithmetic as a warm-up.
     Your score is measured against your own
     rolling baseline, not against other people, so it settles around 100 as the app learns your normal. A bad
     morning is a dip against yesterday's you, nothing more. It is not a clinical or cognitive test.
   </p>
+  <p>
+    <strong>The physical missions do not feed the score.</strong> Scan an Object, Walk It Off and Photo Proof
+    are recorded in full, but they are only ever compared against themselves. A walk to the bathroom takes
+    thirty seconds and a mental sum takes two, so folding one into a score built from accuracy and speed
+    would peg a flawless morning near the floor. Getting up is counted — just not as sharpness.
+  </p>
+
+  <h2>Backup, and moving to a new phone</h2>
+  <p>
+    There is no account to make, and nothing is gated behind one. You can optionally sign in with
+    <strong>Apple</strong> or <strong>Google</strong> — those are the only options, and there is no
+    email-and-password login — for a single purpose: to back up your alarms, settings, scores and streak so
+    they come back on a new phone.
+  </p>
+  <ul>
+    <li><strong>It is off by default</strong>, and every feature works signed out. Backup runs quietly after your data changes, and an alarm never waits on the network to ring.</li>
+    <li><strong>To move to a new phone</strong>, install WakeSharp, sign in with the same Apple or Google account, and restore. Newer changes already on the new device are kept.</li>
+    <li><strong>Signing out</strong> keeps everything on your phone and simply stops backing it up.</li>
+    <li><strong>Deleting the account</strong> — in the app at <em>Settings → Account → Delete account</em>, or as described at <a href="/account/delete">wakesharp.app/account/delete</a> — permanently removes the backup and the login, while the data on your phone is kept.</li>
+  </ul>
+  <p>
+    A subscription is separate from all of this: it lives with your App Store or Google Play account, so
+    Restore Purchases brings Plus back whether or not you ever sign in to WakeSharp.
+  </p>
 
   <h2>Purchases and WakeSharp Plus</h2>
   <ul>
-    <li><strong>What Plus adds:</strong> three rotating warm-up games every morning, scan missions on every alarm, your full Sharpness history, unlimited smart calendar alarms and shift rotations, and the Lark scenes, wallpapers and celebrations. Every alarm, every mission, all 13 alarm tones and the reliability check are free, forever.</li>
+    <li><strong>What Plus adds:</strong> every wake-up mission beyond Mind Games and Photo Proof, three warm-up games every morning on a rotation, your full Sharpness history, unlimited smart calendar alarms, and the Lark scenes, alarm wallpapers and celebrations. It also lifts the one-each limit on alarm profiles and shift rotations, unlocks the two Plus wallpapers and the four Plus Lark scenes, and lets you write a custom snooze policy. <strong>Your alarm rings free, forever. No ads.</strong> Every alarm you set, both free missions, Strict Mode where supported, the snooze presets, all 13 alarm tones, streaks and freezes and the reliability check cost nothing.</li>
     <li><strong>Plus Lifetime</strong> is a one-time purchase rather than a subscription: it never renews, and there is nothing to cancel.</li>
     <li><strong>Restoring a purchase:</strong> open the paywall and tap <em>Restore</em>. Make sure you are signed in with the same Apple or Google account you bought with.</li>
     <li><strong>Cancelling:</strong> <a href="https://apps.apple.com/account/subscriptions" rel="noopener">App Store subscriptions</a> or <a href="https://play.google.com/store/account/subscriptions" rel="noopener">Google Play subscriptions</a>. Deleting the app does not cancel a subscription.</li>
