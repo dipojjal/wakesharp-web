@@ -17,7 +17,7 @@ import { SITE } from '../config/site';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object and Photo Proof) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Up to three things leave your device: <strong>anonymous usage analytics</strong> (which screens you use and where you get stuck, keyed to a random ID — never your name, and never the content of your alarms or calendar), <strong>purchase data</strong> if you buy WakeSharp Plus, and <strong>your backup</strong> if you choose to create the optional account.</li>
+      <li>Up to three things leave your device: <strong>anonymous usage analytics</strong> (which screens you use, where you get stuck, and a crash report if the app stops unexpectedly — all keyed to a random ID, never your name, and never the content of your alarms or calendar), <strong>purchase data</strong> if you buy WakeSharp Plus, and <strong>your backup</strong> if you choose to create the optional account.</li>
       <li>No advertising ID. No location. No tracking across other apps or websites, and nothing is ever sold.</li>
     </ul>
   </div>
@@ -227,10 +227,34 @@ import { SITE } from '../config/site';
     <tbody>
       <tr><td>A randomly generated, per-install analytics ID</td><td>To count you once. It is created on your device, is not derived from your name, email or any identifier you can be traced by, and resets if you reinstall the app.</td></tr>
       <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
-      <tr><td>Masked session recordings — a replay of screen layouts where <strong>all text and images are obscured</strong> before anything leaves your device</td><td>To see where people get stuck. What we can watch back is the shape of the interaction, not what was on your screen.</td></tr>
+      <tr><td>Session recordings — a replay of the app's own screens, with the things listed below blanked out on your device before anything is sent</td><td>To see where people get stuck, and to diagnose faults we cannot reproduce — a paywall that never loaded its prices, a purchase that failed silently.</td></tr>
+      <tr><td>Crash reports — when WakeSharp stops unexpectedly, the error's type and message and the stack trace showing which of our code was running, sent the next time you open the app</td><td>To find and fix crashes. A stack trace describes our code, not your data: no alarm, calendar, photo or account content is included.</td></tr>
       <tr><td>Device model, operating-system version, app version, language, and the approximate region PostHog derives from the request's IP address</td><td>To diagnose device-specific problems and see roughly where users are. We see country-level information, not your location.</td></tr>
     </tbody>
   </table>
+  <p>
+    <strong>What a session recording does and does not show.</strong> A recording is a series of
+    screenshots of WakeSharp's own interface, so we can see the screens you moved through, the buttons
+    and prices you were shown, and where you tapped. Before any frame leaves your device, these are
+    blanked out:
+  </p>
+  <ul>
+    <li>the camera viewfinder in the photo and scan missions;</li>
+    <li>the photos you take to complete a mission, and the reference photos you save;</li>
+    <li>anything you typed or named yourself — alarm labels, activity names, profile names, rotation
+      and shift names, the names you give scanned spots and photo references, the name you enter for a
+      wake pact, and your alarm search text;</li>
+    <li>the titles of your calendar events, everywhere they appear.</li>
+  </ul>
+  <p>
+    Fields the operating system marks as a password or as sensitive autofill are blanked automatically
+    as well; in practice WakeSharp has no password field at all, because signing in uses Apple or Google
+    and happens on their screens rather than ours. Recordings are deleted after 30 days.
+  </p>
+  <p>
+    If you would rather send none of this, turn it off in <em>Settings → Product analytics</em> in the
+    app. Everything else works exactly the same with it off.
+  </p>
   <p>
     PostHog processes this in the <strong>United States</strong>, as our processor and under their data
     processing agreement, including standard contractual clauses where required for transfers from the UK
@@ -263,7 +287,7 @@ import { SITE } from '../config/site';
     <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. Unless you created the optional account, we hold no copy, so there is nothing for us to delete.</li>
     <li><strong>The optional account backup</strong> — kept until you delete the account, then removed immediately and permanently: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>
     <li><strong>Purchase records at RevenueCat</strong> — kept while the record exists, under RevenueCat's own retention policy.</li>
-    <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are kept for a shorter period under PostHog's retention settings. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
+    <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li>
       Because both the subscription ID and the analytics ID are anonymous, neither you nor we can identify
       your record from the app itself. For the subscription record, email us from the address on your Apple
