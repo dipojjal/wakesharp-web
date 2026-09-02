@@ -1,29 +1,35 @@
 ---
 /**
- * "Related reading" block: newest posts in the same category. Renders nothing
- * when the category has no other posts yet — expected during the first weeks
- * of the publishing schedule.
+ * "Related reading" block: newest posts in the same category and language.
+ * Renders nothing when the category has no other posts yet — expected during
+ * the first weeks of the publishing schedule, and for a while in every new
+ * language.
  */
 import type { CollectionEntry } from 'astro:content';
+import { getCatalog } from '../i18n/catalog';
+import type { EnabledLocale } from '../i18n/config';
+import { postPath } from '../lib/blog';
 
 interface Props {
   posts: CollectionEntry<'blog'>[];
+  locale: EnabledLocale;
 }
-const { posts } = Astro.props;
+const { posts, locale } = Astro.props;
+const t = getCatalog(locale.code).blog.related;
 ---
 
 {
   posts.length > 0 && (
     <nav
-      aria-label="Related articles"
+      aria-label={t.aria}
       class="mt-14 border-t border-[color-mix(in_srgb,var(--color-morning-text)_15%,transparent)] pt-10"
     >
-      <h2 class="text-xl">Related reading</h2>
+      <h2 class="text-xl">{t.heading}</h2>
       <ul class="mt-5 grid gap-4 sm:grid-cols-3">
         {posts.map((p) => (
           <li>
             <a
-              href={`/blog/${p.id}`}
+              href={postPath(p)}
               class="font-semibold text-[var(--color-coral-ink)] underline underline-offset-2"
             >
               {p.data.title}

@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 @import '@fontsource-variable/nunito/wght.css';
+/* Arabic joins Nunito's stack. Fontsource declares a unicode-range per face, so the
+   file is only fetched on a page that actually renders Arabic glyphs. */
+@import '@fontsource-variable/noto-sans-arabic/wght.css';
 
 /*
  * WakeSharp brand tokens, ported verbatim from the app's design system:
@@ -37,7 +40,7 @@
      It MUST be wired to --font-sans: Tailwind Preflight derives body's
      font-family from that token, and setting only a --font-display alias
      renders the whole site in system sans while still shipping the webfont. */
-  --font-sans: 'Nunito Variable', ui-rounded, 'SF Pro Rounded', system-ui, sans-serif;
+  --font-sans: 'Nunito Variable', 'Noto Sans Arabic Variable', ui-rounded, 'SF Pro Rounded', system-ui, sans-serif;
 
   --radius-card: 20px;
 
@@ -187,7 +190,7 @@
     /* fixed, not absolute: an absolutely-positioned skip link is measured from
        the document, so once the page is scrolled it focuses off-screen. */
     position: fixed;
-    left: 24px;
+    inset-inline-start: 24px;
     top: -100px;
     z-index: 100;
     padding: 0.75rem 1.25rem;
@@ -237,9 +240,31 @@
      skip genuinely hidden inputs but will fill anything still in the layout. */
   .honeypot {
     position: absolute;
-    left: -9999px;
+    inset-inline-start: -9999px;
     width: 1px;
     height: 1px;
     overflow: hidden;
   }
+}
+
+/* ── Script-specific type ─────────────────────────────────────────────────────
+ * Deliberately outside every layer: Tailwind's utilities layer would otherwise
+ * beat these no matter their specificity, and `tracking-*` on a joined script
+ * is exactly the utility that has to lose.
+ *
+ * Japanese and Hindi take system stacks rather than a shipped webfont: a CJK
+ * or Devanagari face is megabytes, every phone already has a good one, and
+ * Nunito stays first so digits and the wordmark still match.
+ */
+html[lang='ja'] {
+  --font-sans: 'Nunito Variable', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, 'Noto Sans JP', 'Noto Sans CJK JP', system-ui, sans-serif;
+}
+html[lang='hi'] {
+  --font-sans: 'Nunito Variable', 'Noto Sans Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Nirmala UI', Mangal, system-ui, sans-serif;
+}
+/* Arabic is a joined script: any letter-spacing pulls the letters apart, and
+   the headings' negative tracking is the worst offender. CJK never tracks either. */
+html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']),
+html[lang='ja'] :is(h1, h2, h3, [class*='tracking-']) {
+  letter-spacing: 0;
 }

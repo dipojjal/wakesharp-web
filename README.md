@@ -161,8 +161,9 @@ menu and the footer list are plain links.
 To add a language: copy `src/i18n/en/` to `src/i18n/<code>/` and translate it following
 `docs/i18n/glossary.md`; run `npx tsx scripts/check-i18n.mjs <code>` until it passes; register the
 catalog in `src/i18n/catalog.ts`; flip `enabled` in `src/i18n/config.ts`; add the path to the two
-`/:lang(…)` rewrites in `vercel.json`; `npm run verify`. The blog is English-only until translated
-posts land under `src/content/blog/<lang>/` (a later phase).
+`/:lang(…)` rewrites in `vercel.json`; `npm run verify`. Translated posts live under
+`src/content/blog/<locale path>/<slug>.md` with `lang` set; a locale gets its own `/<path>/blog` index
+once it has one, and the header's Blog link follows.
 
 ## Licence
 

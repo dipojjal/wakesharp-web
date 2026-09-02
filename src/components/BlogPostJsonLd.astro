@@ -6,6 +6,7 @@
  */
 import { SITE } from '../config/site';
 import type { CollectionEntry } from 'astro:content';
+import { localeByCode } from '../i18n/config';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -22,6 +23,7 @@ const schema = {
   '@type': 'BlogPosting',
   headline: title,
   description,
+  inLanguage: localeByCode(post.data.lang)?.hreflang ?? 'en',
   image: [imageUrl],
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate ?? pubDate).toISOString(),

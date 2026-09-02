@@ -1,11 +1,13 @@
 ---
 /**
- * Shell for the /blog listing. Like LegalLayout it sits deliberately outside
+ * Shell for a /blog listing. Like LegalLayout it sits deliberately outside
  * the homepage's sunrise ramp on a flat morning surface — long-form reading
  * wants maximal legibility, not atmosphere — but it uses the site's wide
  * max-w-6xl container because it wraps a card grid, not a reading column.
  */
 import BaseLayout from './BaseLayout.astro';
+import type { Alternate } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
   title: string;
@@ -14,11 +16,24 @@ interface Props {
   heading: string;
   intro?: string;
   noindex?: boolean;
+  locale?: EnabledLocale;
+  alternates?: Alternate[];
+  switchTo?: Alternate[];
+  fallbackPath?: string;
 }
-const { title, description, path, heading, intro, noindex } = Astro.props;
+const { title, description, path, heading, intro, noindex, locale, alternates, switchTo, fallbackPath } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} path={path} noindex={noindex}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  noindex={noindex}
+  locale={locale}
+  alternates={alternates}
+  switchTo={switchTo}
+  fallbackPath={fallbackPath}
+>
   <div
     data-tone="morning"
     class="bg-[var(--color-morning-cream)] px-4 py-14 text-[var(--color-morning-text)] sm:px-6 sm:py-20"

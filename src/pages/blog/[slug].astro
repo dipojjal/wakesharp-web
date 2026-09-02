@@ -1,18 +1,19 @@
 ---
 /**
- * /blog/<slug> — one page per published post. Paths come exclusively from
- * getPublishedPosts(): a draft or future-dated post is never generated, which
- * also keeps it out of the sitemap automatically.
+ * /blog/<slug> — one page per published English post. Paths come exclusively
+ * from getPublishedPosts(): a draft or future-dated post is never generated,
+ * which also keeps it out of the sitemap automatically. Translations are
+ * served by src/pages/[lang]/blog/[slug].astro.
  */
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
-import { getPublishedPosts, getRelatedPosts, readingTime } from '../../lib/blog';
+import { getPublishedPosts, getRelatedPosts, readingMinutes, slugOf } from '../../lib/blog';
 
 export async function getStaticPaths() {
-  const posts = await getPublishedPosts();
+  const posts = await getPublishedPosts('en');
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: slugOf(post) },
     props: { post, related: getRelatedPosts(post, posts, 3) },
   }));
 }
@@ -23,9 +24,8 @@ interface Props {
 }
 const { post, related } = Astro.props;
 const { Content } = await render(post);
-const minutes = readingTime(post.body ?? '');
 ---
 
-<BlogPostLayout post={post} related={related} minutes={minutes}>
+<BlogPostLayout post={post} related={related} minutes={readingMinutes(post.body ?? '')}>
   <Content />
 </BlogPostLayout>

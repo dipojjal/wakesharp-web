@@ -46,7 +46,7 @@
     { "source": "/r/:code", "destination": "/api/referrals/landing" },
     { "source": "/c/:payload", "destination": "/c" },
     { "source": "/p/:payload", "destination": "/p" },
-    { "source": "/:lang(es|ru|tr)/c/:payload", "destination": "/:lang/c" },
-    { "source": "/:lang(es|ru|tr)/p/:payload", "destination": "/:lang/p" }
+    { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/c/:payload", "destination": "/:lang/c" },
+    { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/p/:payload", "destination": "/:lang/p" }
   ]
 }

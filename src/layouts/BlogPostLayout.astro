@@ -4,26 +4,36 @@
  * surface (same reasoning as LegalLayout — readable, not atmospheric), with
  * the article's own OG card, BlogPosting JSON-LD, an end-of-article store CTA
  * and same-category related links.
+ *
+ * The chrome reads the post's language from its frontmatter, so one layout
+ * serves every locale; hreflang pairs a post with its other language versions.
  */
 import BaseLayout from './BaseLayout.astro';
 import { Picture, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config/site';
-import { CATEGORY_LABELS } from '../lib/blog-categories';
 import BlogCTA from '../components/BlogCTA.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import BlogPostJsonLd from '../components/BlogPostJsonLd.astro';
-import { formatDate as fmtDate } from '../i18n/dates';
+import { getCatalog } from '../i18n/catalog';
+import { formatDate } from '../i18n/dates';
+import { interpolate } from '../i18n/rich';
+import { localePath, resolveLocale } from '../i18n/routes';
+import { postAlternates, postPath, postSwitchTargets } from '../lib/blog';
 
 interface Props {
   post: CollectionEntry<'blog'>;
   related: CollectionEntry<'blog'>[];
-  minutes: string;
+  minutes: number;
 }
 const { post, related, minutes } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, category, tags } =
   post.data;
-const path = `/blog/${post.id}`;
+const locale = resolveLocale(post.data.lang);
+const t = getCatalog(locale.code).blog;
+const path = postPath(post);
+const alternates = await postAlternates(post);
+const switchTo = await postSwitchTargets(post);
 
 // One 1200×630 JPG derivative reused for og:image and the JSON-LD image — JPG
 // specifically because OG crawlers (notably Facebook's) handle AVIF/WebP
@@ -36,15 +46,16 @@ const ogImage = await getImage({
   fit: 'cover',
 });
 const ogImageUrl = new URL(ogImage.src, SITE.url).href;
-
-const formatDate = (d: Date): string => fmtDate(d, 'en');
 const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
 ---
 
 <BaseLayout
-  title={`${title} — WakeSharp Blog`}
+  title={`${title}${t.titleSuffix}`}
   description={description}
   path={path}
+  locale={locale}
+  alternates={alternates}
+  switchTo={switchTo}
   ogType="article"
   image={ogImage.src}
   imageAlt={heroImageAlt}
@@ -59,17 +70,17 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
   >
     <div class="mx-auto w-full max-w-[68ch]">
       <a
-        href="/blog"
+        href={localePath(locale, '/blog')}
         class="text-sm font-semibold text-[var(--color-coral-ink)] underline underline-offset-2"
-        >&larr; All articles</a
+        >{t.allArticles}</a
       >
       <p class="mt-6 text-xs font-bold uppercase tracking-wider text-[var(--color-coral-ink)]">
-        {CATEGORY_LABELS[category]}
+        {t.categories[category]}
       </p>
       <h1 class="mt-2 text-4xl sm:text-5xl">{title}</h1>
       <p class="mt-4 text-sm dim">
-        {formatDate(pubDate)} &middot; {minutes}{
-          updatedDate && <> &middot; Updated {formatDate(updatedDate)}</>
+        {formatDate(pubDate, locale)} &middot; {interpolate(t.minRead, { minutes })}{
+          updatedDate && <> &middot; {interpolate(t.updated, { date: formatDate(updatedDate, locale) })}</>
         }
       </p>
 
@@ -87,21 +98,21 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
 
       <div class="prose mt-10"><slot /></div>
 
-      <BlogCTA />
+      <BlogCTA locale={locale} />
 
       {
         tags.length > 0 && (
-          <ul class="mt-10 flex flex-wrap gap-2" aria-label="Tags">
-            {tags.map((t) => (
+          <ul class="mt-10 flex flex-wrap gap-2" aria-label={t.tagsAria}>
+            {tags.map((tag) => (
               <li class="rounded-full bg-[var(--color-morning-surface)] px-3 py-1 text-xs font-semibold shadow-[var(--shadow-card)]">
-                {t}
+                {tag}
               </li>
             ))}
           </ul>
         )
       }
 
-      <RelatedPosts posts={related} />
+      <RelatedPosts posts={related} locale={locale} />
     </div>
   </article>
 </BaseLayout>
@@ -109,7 +120,8 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
 <style is:global>
   /* Forked from LegalLayout's .legal block — same reading rhythm, plus the
      img/blockquote/code/table rules a long-form article body needs. Global
-     because the markdown body arrives via <slot /> from another file. */
+     because the markdown body arrives via <slot /> from another file.
+     Logical properties throughout, so the Arabic pages mirror for free. */
   .prose h2 {
     font-size: 1.4rem;
     margin-top: 2.5rem;
@@ -126,8 +138,8 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
     line-height: 1.7;
   }
   .prose p { margin-block: 0.9rem; }
-  .prose ul { list-style: disc; padding-left: 1.4rem; margin-block: 0.9rem; }
-  .prose ol { list-style: decimal; padding-left: 1.4rem; margin-block: 0.9rem; }
+  .prose ul { list-style: disc; padding-inline-start: 1.4rem; margin-block: 0.9rem; }
+  .prose ol { list-style: decimal; padding-inline-start: 1.4rem; margin-block: 0.9rem; }
   .prose li { margin-block: 0.4rem; }
   .prose a {
     color: var(--color-coral-ink);
@@ -143,8 +155,8 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
     box-shadow: var(--shadow-card);
   }
   .prose blockquote {
-    border-left: 4px solid var(--color-coral);
-    padding-left: 1.25rem;
+    border-inline-start: 4px solid var(--color-coral);
+    padding-inline-start: 1.25rem;
     margin-block: 1.5rem;
     font-style: italic;
     color: var(--tone-dim);
@@ -182,7 +194,7 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
   .prose td {
     border: 1px solid color-mix(in srgb, var(--color-morning-text) 15%, transparent);
     padding: 0.6rem 0.75rem;
-    text-align: left;
+    text-align: start;
     vertical-align: top;
   }
   .prose th {

@@ -1,0 +1,38 @@
+---
+/**
+ * /<locale>/blog/<slug> — one page per published translated post, for every
+ * enabled locale other than English. Related posts are drawn from the same
+ * language only.
+ */
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { DEFAULT_LOCALE, enabledLocales } from '../../../i18n/config';
+import { getPublishedPosts, getRelatedPosts, readingMinutes, slugOf } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of enabledLocales()) {
+    if (locale.code === DEFAULT_LOCALE) continue;
+    const posts = await getPublishedPosts(locale.code);
+    for (const post of posts) {
+      paths.push({
+        params: { lang: locale.path, slug: slugOf(post) },
+        props: { post, related: getRelatedPosts(post, posts, 3) },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  related: CollectionEntry<'blog'>[];
+}
+const { post, related } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogPostLayout post={post} related={related} minutes={readingMinutes(post.body ?? '')}>
+  <Content />
+</BlogPostLayout>

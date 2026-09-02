@@ -9,18 +9,20 @@
  * scoped `.legal .callout` inside LegalLayout and does not exist here.
  */
 import StoreButtons from './StoreButtons.astro';
+import { getCatalog } from '../i18n/catalog';
+import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
+  locale: EnabledLocale;
   heading?: string;
   body?: string;
 }
-const {
-  heading = 'Wake up sharp tomorrow',
-  body = 'Your alarm rings free, forever, with no ads. Mind Games, Photo Proof and the reliability check are included. Setting your first alarm takes about ten seconds.',
-} = Astro.props;
+const { locale } = Astro.props;
+const t = getCatalog(locale.code).blog.cta;
+const { heading = t.heading, body = t.body } = Astro.props;
 ---
 
-<aside class="cta-card" aria-label="Get WakeSharp">
+<aside class="cta-card" aria-label={t.aria}>
   <h2>{heading}</h2>
   <p>{body}</p>
   <StoreButtons tone="light" />

@@ -107,6 +107,16 @@ draft: false   # optional kill-switch, independent of pubDate
 
 ET offsets for this schedule: **-04:00** (EDT) through the whole Aug 28 – Sep 21 window.
 
+## Translated posts (added Sep 2)
+
+The site is multilingual (`src/i18n/`), and the blog carries translations alongside the English archive. The routine only ever writes English posts; translations are a separate, manual step.
+
+- **English posts stay flat at `src/content/blog/<slug>.md`**, exactly as above. Never write under a subfolder.
+- A translation lives at **`src/content/blog/<locale path>/<slug>.md`** (`es/`, `ru/`, `tr/`, `pt-br/`, `id/`, `uk/`, `de/`, `ar/`, `fr/`, `hi/`, `ja/`), keeps the **English filename**, and adds **`lang: <code>`** (`pt-BR` for the `pt-br/` folder, otherwise the folder name). It is served at `/<locale path>/blog/<slug>`; the English post and its translations link to each other with hreflang automatically, and a language gets its own `/<locale path>/blog` index as soon as it has one post.
+- `heroImage` gains one more `../`: `../../../assets/blog/<slug>/hero.jpg` (translations reuse the English hero). `heroImageAlt`, `title`, `description` (still ≤ 160 characters) and the body are translated; `category`, `tags` and `pubDate` are copied from the English post.
+- Never set a `slug:` field (it silently replaces the id), never use a locale path (`es`, `de`, `pt-br`, …) as a slug, and only set `translationOf: <english-slug>` when the translated filename must differ from the English one.
+- The style laws and the claim rules apply in every language, including the no-dash gate. `npx tsx scripts/check-blog-post.mjs <file>` checks one file against this whole contract; `src/lib/blog-i18n.ts` enforces the placement at build time, and `npm run copy` fails on any English sentence that survived untranslated on a localized page.
+
 ## Copy linter (`npm run copy` — runs inside `npm run verify`)
 
 These rules scan every built page, articles included. Violations fail the build.
@@ -143,7 +153,6 @@ any paragraph that describes what the app does.
   devices; never imply WakeSharp does it.
 - Never hand-type store URLs in markdown — the end-of-article CTA (with official badges) is added by the layout automatically.
 - No `[[placeholder]]` text.
-- The site now builds localized pages (`/es`, `/ru`, `/tr`) from the catalogs in `src/i18n/`. Articles stay English-only for now: never write under `src/content/blog/<lang>/`, never set a `slug:` field in frontmatter (it silently replaces the id), and never use a locale path (`es`, `ru`, `tr`, `pt-br`, …) as a slug.
 
 ## Style laws (added Aug 27 — binding for every future article)
 

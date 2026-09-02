@@ -15,15 +15,17 @@
  */
 import LanguageMenu from './LanguageMenu.astro';
 import { getCatalog } from '../i18n/catalog';
-import { blogPath, localePath, type Alternate } from '../i18n/routes';
+import { localePath, type Alternate } from '../i18n/routes';
 import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
   locale: EnabledLocale;
   switchTo: Alternate[];
   fallbackPath: string;
+  /** The Blog link target: the locale's own index when it has posts, else /blog. */
+  blogHref: string;
 }
-const { locale, switchTo, fallbackPath } = Astro.props;
+const { locale, switchTo, fallbackPath, blogHref } = Astro.props;
 const t = getCatalog(locale.code).shell;
 const href = (p: string): string => localePath(locale, p);
 ---
@@ -41,7 +43,7 @@ const href = (p: string): string => localePath(locale, p);
     <nav aria-label={t.nav.aria} class="flex items-center gap-5 text-sm font-semibold text-[var(--color-night-dim)] md:gap-7">
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#features')}>{t.nav.features}</a>
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#pricing')}>{t.nav.pricing}</a>
-      <a class="hover:text-[var(--color-night-text)]" href={blogPath(locale)}>{t.nav.blog}</a>
+      <a class="hover:text-[var(--color-night-text)]" href={blogHref}>{t.nav.blog}</a>
       <a class="hover:text-[var(--color-night-text)]" href={href('/contact')}>{t.nav.contact}</a>
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#faq')}>{t.nav.faq}</a>
     </nav>

@@ -1,0 +1,52 @@
+---
+/**
+ * /<locale>/blog — the article index for a language that has at least one
+ * translated post. A locale with no posts gets no index, and its header link
+ * points at the English blog instead (see blogIndexPath in src/lib/blog.ts).
+ */
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { getCatalog } from '../../../i18n/catalog';
+import { DEFAULT_LOCALE } from '../../../i18n/config';
+import { localeFromParams, localePath } from '../../../i18n/routes';
+import { blogIndexAlternates, getPublishedPosts, localesWithBlog } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+  const locales = await localesWithBlog();
+  return locales.filter((l) => l.code !== DEFAULT_LOCALE).map((l) => ({ params: { lang: l.path } }));
+}
+
+const locale = localeFromParams(Astro.params);
+const t = getCatalog(locale.code).blog;
+const posts = await getPublishedPosts(locale.code);
+const [featured, ...rest] = posts;
+const alternates = await blogIndexAlternates();
+---
+
+<BlogLayout
+  title={t.index.title}
+  description={t.index.description}
+  path={localePath(locale, '/blog')}
+  heading={t.index.heading}
+  intro={t.index.intro}
+  locale={locale}
+  alternates={alternates}
+  switchTo={alternates}
+>
+  {
+    featured ? (
+      <div class="space-y-8">
+        <BlogCard post={featured} featured />
+        {rest.length > 0 && (
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post) => (
+              <BlogCard post={post} />
+            ))}
+          </div>
+        )}
+      </div>
+    ) : (
+      <p class="lede">{t.index.empty}</p>
+    )
+  }
+</BlogLayout>

@@ -11,5 +11,6 @@ import { accountDelete } from './account-delete';
 import { share } from './share';
 import { legal } from './legal';
 import { notFound } from './not-found';
+import { blog } from './blog';
 
-export const en = { shell, home, support, contact, accountDelete, share, legal, notFound };
+export const en = { shell, home, support, contact, accountDelete, share, legal, notFound, blog };

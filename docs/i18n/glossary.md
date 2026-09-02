@@ -98,3 +98,31 @@ template.
 4. The safety notice, the "app is in English" note and the free-tier line.
 5. Dates render correctly at the bottom of the legal pages (`Intl.DateTimeFormat`).
 6. Nothing in the English "claims" list above has been softened or dropped.
+
+## Blog posts
+
+Translated articles live at `src/content/blog/<locale path>/<slug>.md` and keep the English
+filename. Translate `title`, `description` (160 characters or fewer, still), `heroImageAlt` and
+the body; copy `pubDate`, `category` and `tags`; add `lang: <code>`; `heroImage` gains one more
+`../` (`../../../assets/blog/<slug>/hero.jpg`). The blog's style laws apply in every language:
+no em or en dashes anywhere (restructure the sentence instead), no zero-width characters, no AI
+attribution or meta commentary, and every cited source stays the same link. Internal links stay
+`/blog/<slug>` unless that post exists in your language, in which case use
+`/<locale path>/blog/<slug>`. Run `npx tsx scripts/check-blog-post.mjs <file>` on every file.
+
+## Language notes
+
+- **Portuguese (pt-BR)**: Brazilian, `você`; App Store and Google Play keep their names.
+- **Indonesian**: `Anda`; Indonesian rarely needs glosses for Latin feature names, but add them
+  on first use anyway.
+- **Ukrainian**: `ви` in lowercase; never fall back to Russian phrasing for product terms.
+- **German**: `du`; about 30% longer than English, so keep nav labels, card titles and pricing
+  lines tight; compound nouns may hyphenate at the template's discretion.
+- **Arabic**: formal Modern Standard Arabic. The site renders these pages right-to-left
+  (`dir="rtl"`), so write naturally in Arabic order; keep Latin feature names as they are and let
+  the browser handle the bidirectional text. An arrow in a path like "Settings → Alarm reliability"
+  should point the way the reader reads (←). Use Western digits (0-9) so numbers match the prices.
+- **Hindi**: `आप` register, standard Devanagari; keep feature names in Latin script with a
+  Devanagari gloss on first use.
+- **Japanese**: です/ます; full-width punctuation (、。「」); no spaces between Japanese text and
+  Latin feature names are needed. Headings' `pre`, `accent` and `post` carry no surrounding spaces.

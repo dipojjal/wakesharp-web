@@ -6,6 +6,7 @@ import Analytics from '@vercel/analytics/astro';
 import { getCatalog } from '../i18n/catalog';
 import { alternatesFor, resolveLocale, type Alternate } from '../i18n/routes';
 import { defaultLocale, type EnabledLocale } from '../i18n/config';
+import { blogIndexPath } from '../lib/blog';
 
 interface Props {
   title: string;
@@ -45,6 +46,8 @@ const {
   canonicalOverride,
 } = Astro.props;
 const shell = getCatalog(locale.code).shell;
+// The locale's own /blog index when it has posts, else the English one.
+const blogHref = await blogIndexPath(locale);
 ---
 
 <!doctype html>
@@ -67,9 +70,9 @@ const shell = getCatalog(locale.code).shell;
   </head>
   <body class="min-h-dvh">
     <a class="skip-link" href="#main">{shell.skipLink}</a>
-    <Header locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
+    <Header locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} blogHref={blogHref} />
     <main id="main"><slot /></main>
-    <Footer locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
+    <Footer locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} blogHref={blogHref} />
     <Analytics />
   </body>
 </html>

@@ -119,3 +119,6 @@ export function isDefaultLocale(locale: Pick<Locale, 'code'> | string): boolean 
 export function defaultLocale(): EnabledLocale {
   return localeByCode(DEFAULT_LOCALE) as EnabledLocale;
 }
+
+/** Every declared code, enabled or not, as a tuple for zod enums. */
+export const LOCALE_CODES = LOCALES.map((l) => l.code) as [LocaleCode, ...LocaleCode[]];

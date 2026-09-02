@@ -1,14 +1,18 @@
 ---
 /**
- * One post in the /blog grid. `featured` renders the newest post as a wide
+ * One post in a /blog grid. `featured` renders the newest post as a wide
  * two-column card (image beside text) above the regular three-up grid —
  * the pattern the big content blogs use to give the latest piece a stage.
+ * The card reads its language from the post, so a Spanish index shows
+ * Spanish dates and category labels without being told.
  */
 import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { CATEGORY_LABELS } from '../lib/blog-categories';
-import { readingTime } from '../lib/blog';
+import { getCatalog } from '../i18n/catalog';
 import { formatDate } from '../i18n/dates';
+import { interpolate } from '../i18n/rich';
+import { resolveLocale } from '../i18n/routes';
+import { postPath, readingMinutes } from '../lib/blog';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -16,13 +20,15 @@ interface Props {
 }
 const { post, featured = false } = Astro.props;
 const { title, description, pubDate, heroImage, heroImageAlt, category } = post.data;
-const dateLabel = formatDate(pubDate, 'en', 'short');
-const minutes = readingTime(post.body ?? '');
+const locale = resolveLocale(post.data.lang);
+const t = getCatalog(locale.code).blog;
+const dateLabel = formatDate(pubDate, locale, 'short');
+const minutes = interpolate(t.minRead, { minutes: readingMinutes(post.body ?? '') });
 const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
 ---
 
 <a
-  href={`/blog/${post.id}`}
+  href={postPath(post)}
   class:list={[
     'card group block overflow-hidden transition-shadow hover:shadow-[var(--shadow-raised)]',
     featured && 'md:grid md:grid-cols-2 md:items-center',
@@ -41,7 +47,7 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
   />
   <div class:list={['p-5', featured && 'md:p-8']}>
     <p class="text-xs font-bold uppercase tracking-wider text-[var(--color-coral-ink)]">
-      {CATEGORY_LABELS[category]}
+      {t.categories[category]}
     </p>
     <h2 class:list={['mt-2 font-extrabold', featured ? 'text-2xl sm:text-3xl' : 'text-lg']}>
       {title}
