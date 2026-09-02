@@ -19,7 +19,6 @@ export const shell = {
   nav: {
     aria: `Главное меню`,
     features: `Функции`,
-    sharpness: `Sharpness`,
     pricing: `Цены`,
     blog: `Блог`,
     contact: `Контакты`,

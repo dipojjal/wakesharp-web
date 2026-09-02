@@ -20,7 +20,6 @@ export const shell = {
   nav: {
     aria: `Main`,
     features: `Features`,
-    sharpness: `Sharpness`,
     pricing: `Pricing`,
     blog: `Blog`,
     contact: `Contact`,

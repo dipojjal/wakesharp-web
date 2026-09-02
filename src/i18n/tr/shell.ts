@@ -17,7 +17,6 @@ export const shell = {
   nav: {
     aria: `Ana menü`,
     features: `Özellikler`,
-    sharpness: `Sharpness`,
     pricing: `Fiyatlar`,
     blog: `Blog`,
     contact: `İletişim`,
