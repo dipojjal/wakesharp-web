@@ -15,6 +15,10 @@ import { ptBR } from './pt-BR';
 import { id } from './id';
 import { uk } from './uk';
 import { de } from './de';
+import { fr } from './fr';
+import { ja } from './ja';
+import { hi } from './hi';
+import { ar } from './ar';
 import type { EnabledLocaleCode } from './config';
 
 export type Catalog = typeof en;
@@ -28,6 +32,10 @@ export const CATALOGS = {
   id,
   uk,
   de,
+  ar,
+  fr,
+  hi,
+  ja,
 } satisfies Record<EnabledLocaleCode, Catalog>;
 
 export function getCatalog(locale: EnabledLocaleCode | { code: EnabledLocaleCode }): Catalog {

@@ -126,3 +126,19 @@ attribution or meta commentary, and every cited source stays the same link. Inte
   Devanagari gloss on first use.
 - **Japanese**: です/ます; full-width punctuation (、。「」); no spaces between Japanese text and
   Latin feature names are needed. Headings' `pre`, `accent` and `post` carry no surrounding spaces.
+
+### OS feature names, per vendor
+
+Use the vendor's own name for the reader's platform. Getting these wrong names a real but
+different feature, which is worse than leaving the term in English.
+
+| English | iOS (Apple) | Android (Google) |
+|---|---|---|
+| Silent mode | 消音モード / Sessiz mod / وضع الصامت / mode Silence | マナーモード |
+| Focus | 集中モード / Odak / التركيز / Concentration | — |
+| Do Not Disturb | — | サイレントモード / Rahatsız Etmeyin / عدم الإزعاج / Ne pas déranger |
+
+Japanese is the trap: **Do Not Disturb is サイレントモード**, not おやすみ時間モード, which is
+Bedtime mode — a Digital Wellbeing feature that does not gate alarms. Because サイレントモード
+sits awkwardly beside Apple's 消音モード, name the platform when a sentence lists both
+(「消音モードや集中モード、Androidのサイレントモードでも…」).

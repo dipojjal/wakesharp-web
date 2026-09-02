@@ -52,10 +52,10 @@ export const LOCALES = [
   { code: 'uk', path: 'uk', hreflang: 'uk', og: 'uk_UA', name: 'Українська', dir: 'ltr', dateLocale: 'uk', enabled: true },
   { code: 'de', path: 'de', hreflang: 'de', og: 'de_DE', name: 'Deutsch', dir: 'ltr', dateLocale: 'de', enabled: true },
   // Phase 3 — `ar` is the first right-to-left locale; see docs/i18n/glossary.md
-  { code: 'ar', path: 'ar', hreflang: 'ar', og: 'ar_AR', name: 'العربية', dir: 'rtl', dateLocale: 'ar', enabled: false },
-  { code: 'fr', path: 'fr', hreflang: 'fr', og: 'fr_FR', name: 'Français', dir: 'ltr', dateLocale: 'fr', enabled: false },
-  { code: 'hi', path: 'hi', hreflang: 'hi', og: 'hi_IN', name: 'हिन्दी', dir: 'ltr', dateLocale: 'hi', enabled: false },
-  { code: 'ja', path: 'ja', hreflang: 'ja', og: 'ja_JP', name: '日本語', dir: 'ltr', dateLocale: 'ja', enabled: false },
+  { code: 'ar', path: 'ar', hreflang: 'ar', og: 'ar_AR', name: 'العربية', dir: 'rtl', dateLocale: 'ar', enabled: true },
+  { code: 'fr', path: 'fr', hreflang: 'fr', og: 'fr_FR', name: 'Français', dir: 'ltr', dateLocale: 'fr', enabled: true },
+  { code: 'hi', path: 'hi', hreflang: 'hi', og: 'hi_IN', name: 'हिन्दी', dir: 'ltr', dateLocale: 'hi', enabled: true },
+  { code: 'ja', path: 'ja', hreflang: 'ja', og: 'ja_JP', name: '日本語', dir: 'ltr', dateLocale: 'ja', enabled: true },
 ] as const satisfies readonly Locale[];
 
 export type LocaleEntry = (typeof LOCALES)[number];

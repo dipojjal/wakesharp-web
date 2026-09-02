@@ -230,7 +230,10 @@ const BANNED_BY_LOCALE = {
   ],
   ja: [
     { needle: 'すべてのミッションが無料', why: 'five of seven missions are Plus' },
-    { needle: '止められない', why: 'the system Stop control exists on both platforms' },
+    // 突き止める ("to ascertain") contains this needle; its negative is the report
+    // admitting it could not work out why an alarm failed, which is the opposite
+    // of a claim that the alarm cannot be stopped.
+    { needle: '止められない', unless: /突き止められない/, why: 'the system Stop control exists on both platforms' },
     { needle: '解くまで鳴り続け', why: 'Strict Mode is four re-rings, not a loop' },
     { needle: 'アラーム無制限', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
@@ -351,6 +354,18 @@ const sentenceAt = (hay, index) => {
   return hay.slice(start, end + 1);
 };
 
+/**
+ * The characters immediately around a match, for a locale rule's `unless`.
+ *
+ * Deliberately not `sentenceAt`: that splits on [.!?;], which Japanese and
+ * Chinese do not use, so a whole paragraph would read as one sentence and an
+ * `unless` would pardon far more than the compound it was written for. A
+ * language without word boundaries needs a tight window instead — wide enough
+ * to see the compound the needle is buried in, narrow enough that a real claim
+ * later in the paragraph still fires.
+ */
+const neighbourhood = (hay, i, needle) => hay.slice(Math.max(0, i - 12), i + needle.length + 12);
+
 /** Every place a BANNED needle may hide: the rendered text plus each meta field. */
 const banHaystacks = (text, fields) => [text, ...fields];
 
@@ -424,8 +439,18 @@ for (const file of html) {
     }
   } else {
     const localText = stripped.toLocaleLowerCase(loc.hreflang);
-    for (const { needle, why } of BANNED_BY_LOCALE[loc.code] ?? []) {
-      const i = localText.indexOf(needle);
+    for (const { needle, unless, why } of BANNED_BY_LOCALE[loc.code] ?? []) {
+      let i = -1;
+      for (let from = 0; from <= localText.length; ) {
+        const at = localText.indexOf(needle, from);
+        if (at === -1) break;
+        if (unless && unless.test(neighbourhood(localText, at, needle))) {
+          from = at + 1;
+          continue;
+        }
+        i = at;
+        break;
+      }
       if (i === -1) continue;
       console.error(`  ✗ ${name}: banned phrase "${needle}" — ${why}`);
       console.error(`      …${localText.slice(Math.max(0, i - 70), i + 70).trim()}…`);

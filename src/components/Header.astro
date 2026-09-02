@@ -40,7 +40,13 @@ const href = (p: string): string => localePath(locale, p);
       <span class="sr-only">{t.brandHome}</span>
     </a>
 
-    <nav aria-label={t.nav.aria} class="flex items-center gap-5 text-sm font-semibold text-[var(--color-night-dim)] md:gap-7">
+    {/* nowrap: a nav label of two words wraps inside its flex item and makes the
+        whole header taller — Arabic "تواصل معنا", French "Fonctions". Inherited
+        by the links, so it is one rule rather than five. */}
+    <nav
+      aria-label={t.nav.aria}
+      class="flex items-center gap-4 whitespace-nowrap text-sm font-semibold text-[var(--color-night-dim)] sm:gap-5 md:gap-7"
+    >
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#features')}>{t.nav.features}</a>
       <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#pricing')}>{t.nav.pricing}</a>
       <a class="hover:text-[var(--color-night-text)]" href={blogHref}>{t.nav.blog}</a>
