@@ -33,7 +33,14 @@ export function compareShape(reference: unknown, candidate: unknown, path = ''):
       out.push({ path, problem: `expected a string, got ${typeof candidate}` });
       return out;
     }
-    if (reference.trim() !== '' && candidate.trim() === '') out.push({ path, problem: 'empty translation' });
+    // A heading is split into {pre, accent, post} around the highlighted phrase.
+    // Word order differs by language: Portuguese and Turkish put the accent last,
+    // so an empty `pre` or `post` is correct there, not a missing translation.
+    // `accent` itself is never allowed to be empty — the highlight would vanish.
+    const isOptionalHeadingPart = /(^|\.)heading\.(pre|post)$/.test(path);
+    if (reference.trim() !== '' && candidate.trim() === '' && !isOptionalHeadingPart) {
+      out.push({ path, problem: 'empty translation' });
+    }
     const refVars = keySet(reference, PLACEHOLDER);
     const candVars = keySet(candidate, PLACEHOLDER);
     if (refVars !== candVars) out.push({ path, problem: `placeholders differ: English has {${refVars}}, translation has {${candVars}}` });

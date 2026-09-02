@@ -11,6 +11,9 @@ import { en } from './en';
 import { es } from './es';
 import { ru } from './ru';
 import { tr } from './tr';
+import { ptBR } from './pt-BR';
+import { id } from './id';
+import { uk } from './uk';
 import type { EnabledLocaleCode } from './config';
 
 export type Catalog = typeof en;
@@ -20,6 +23,9 @@ export const CATALOGS = {
   es,
   ru,
   tr,
+  'pt-BR': ptBR,
+  id,
+  uk,
 } satisfies Record<EnabledLocaleCode, Catalog>;
 
 export function getCatalog(locale: EnabledLocaleCode | { code: EnabledLocaleCode }): Catalog {

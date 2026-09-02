@@ -47,9 +47,9 @@ export const LOCALES = [
   { code: 'ru', path: 'ru', hreflang: 'ru', og: 'ru_RU', name: 'Русский', dir: 'ltr', dateLocale: 'ru', enabled: true },
   { code: 'tr', path: 'tr', hreflang: 'tr', og: 'tr_TR', name: 'Türkçe', dir: 'ltr', dateLocale: 'tr', enabled: true },
   // Phase 2
-  { code: 'pt-BR', path: 'pt-br', hreflang: 'pt-BR', og: 'pt_BR', name: 'Português (Brasil)', dir: 'ltr', dateLocale: 'pt-BR', enabled: false },
-  { code: 'id', path: 'id', hreflang: 'id', og: 'id_ID', name: 'Bahasa Indonesia', dir: 'ltr', dateLocale: 'id', enabled: false },
-  { code: 'uk', path: 'uk', hreflang: 'uk', og: 'uk_UA', name: 'Українська', dir: 'ltr', dateLocale: 'uk', enabled: false },
+  { code: 'pt-BR', path: 'pt-br', hreflang: 'pt-BR', og: 'pt_BR', name: 'Português (Brasil)', dir: 'ltr', dateLocale: 'pt-BR', enabled: true },
+  { code: 'id', path: 'id', hreflang: 'id', og: 'id_ID', name: 'Bahasa Indonesia', dir: 'ltr', dateLocale: 'id', enabled: true },
+  { code: 'uk', path: 'uk', hreflang: 'uk', og: 'uk_UA', name: 'Українська', dir: 'ltr', dateLocale: 'uk', enabled: true },
   { code: 'de', path: 'de', hreflang: 'de', og: 'de_DE', name: 'Deutsch', dir: 'ltr', dateLocale: 'de', enabled: false },
   // Phase 3 — `ar` is the first right-to-left locale; see docs/i18n/glossary.md
   { code: 'ar', path: 'ar', hreflang: 'ar', og: 'ar_AR', name: 'العربية', dir: 'rtl', dateLocale: 'ar', enabled: false },
