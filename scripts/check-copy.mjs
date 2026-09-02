@@ -296,6 +296,38 @@ const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-er
 /** Of those, the indexable ones, which must carry the x-default hreflang link. */
 const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', 'account/delete.html', 'c.html', 'p.html']);
 /** Localized routes that wrap the English legal text on purpose: no untranslated-sentence check. */
+/**
+ * Product and feature names the glossary keeps in English, because the app is
+ * English-only and a reader has to find the same words on screen.
+ *
+ * Deliberately NOT the OS features. Focus, Silent mode and Do Not Disturb must
+ * become the vendor's localized name, so listing them here would fail every
+ * locale that got them right.
+ *
+ * "Beat my wake" and "Wake with a friend" are why this check exists: they read
+ * like sentences rather than product names, were missing from the keep-table,
+ * and all eleven locales translated them before anyone noticed.
+ */
+const MUST_STAY_ENGLISH = [
+  'WakeSharp',
+  'Sharpness Score',
+  'Mind Games',
+  'Photo Proof',
+  'Memory Match',
+  'Sequence Recall',
+  'Word Dash',
+  'Reaction Tap',
+  'Scan an Object',
+  'Walk It Off',
+  'Strict Mode',
+  'My spots & codes',
+  'Gentle start',
+  'Extra Loud',
+  'Alarm reliability',
+  'Beat my wake',
+  'Wake with a friend',
+];
+
 const ENGLISH_BODY_BY_DESIGN = new Set(['privacy.html', 'terms.html']);
 
 const OTHER_LOCALES = enabledLocales().filter((l) => l.code !== DEFAULT_LOCALE);
@@ -468,6 +500,22 @@ for (const file of html) {
         if (!text.includes(sentence)) continue;
         console.error(`  ✗ ${name}: English sentence survived untranslated`);
         console.error(`      …${sentence.slice(0, 140)}…`);
+        problems++;
+      }
+
+      // The inverse: a name the glossary keeps in English must survive here too.
+      //
+      // Case-SENSITIVE, and that is the whole subtlety. The capitalised name is
+      // the product; the same words in lower case are ordinary prose the blog is
+      // supposed to translate. An English article writes "WakeSharp checks alarm
+      // reliability the night before" and "scan a real object" — neither names a
+      // feature, and a case-insensitive match would demand English inside a
+      // correctly translated Spanish sentence.
+      const englishRaw = strip(readFileSync(counterpartFile, 'utf8'));
+      for (const term of MUST_STAY_ENGLISH) {
+        if (!englishRaw.includes(term)) continue;
+        if (stripped.includes(term)) continue;
+        console.error(`  ✗ ${name}: feature name "${term}" was translated — the glossary keeps it in English`);
         problems++;
       }
     }

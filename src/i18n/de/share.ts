@@ -1,7 +1,7 @@
 import { share as en } from '../en/share';
 
 /**
- * Die beiden Link-Landeseiten, /c (eine „Schlag meinen Morgen“-Herausforderung)
+ * Die beiden Link-Landeseiten, /c (eine „Beat my wake“-Herausforderung)
  * und /p (eine Weck-Verabredung). Die `script`-Strings liest der Inline-Decoder
  * jeder Seite; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}` und
  * `{days}` füllt dieses Skript aus dem Link selbst.
@@ -10,7 +10,7 @@ export const share = {
   challenge: {
     title: `Eine Weck-Herausforderung — WakeSharp`,
     description: `Jemand hat dich zu einem WakeSharp-Morgen herausgefordert.`,
-    heading: `Schlag meinen Morgen`,
+    heading: `Beat my wake (Schlag meinen Morgen)`,
     intro: `Jemand glaubt, hellwacher aufgewacht zu sein, als du es sein wirst.`,
     opening: `Herausforderung wird geöffnet …`,
     cta: `Öffne diesen Link auf deinem Telefon mit installiertem WakeSharp, um dieselbe Morgenmission mit demselben Seed zu spielen, und sieh, ob du sie schlägst.`,

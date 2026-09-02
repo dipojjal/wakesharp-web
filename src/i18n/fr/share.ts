@@ -1,7 +1,7 @@
 import { share as en } from '../en/share';
 
 /**
- * Les deux pages d’atterrissage des liens, /c (un défi « Battez mon réveil ») et
+ * Les deux pages d’atterrissage des liens, /c (un défi « Beat my wake ») et
  * /p (un pacte de réveil). Les chaînes `script` sont lues par le décodeur en
  * ligne de chaque page ; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`,
  * `{time}` et `{days}` sont remplis par ce script à partir du lien lui-même.
@@ -10,7 +10,7 @@ export const share = {
   challenge: {
     title: `Un défi du réveil — WakeSharp`,
     description: `Quelqu’un vous a lancé un défi pour une matinée WakeSharp.`,
-    heading: `Battez mon réveil`,
+    heading: `Beat my wake (battez mon réveil)`,
     intro: `Quelqu’un pense s’être réveillé plus affûté que vous ne le ferez.`,
     opening: `Ouverture du défi…`,
     cta: `Ouvrez ce lien sur votre téléphone, avec WakeSharp installé, pour jouer la même mission du matin, avec la même graine, et voir si vous faites mieux.`,

@@ -41,11 +41,19 @@ parentheses the first time it appears on a page when the meaning is not obvious.
 | Strict Mode | four pre-booked re-rings |
 | Tighten | the snooze preset that shortens each gap |
 | Mind Games, Memory Match, Sequence Recall, Word Dash, Reaction Tap | the five warm-up games. Mind Games, Memory Match and Sequence Recall are also missions, so they appear in both lists |
+| Wake with a friend | the shared-alarm feature; a literal row title in the alarm editor on both platforms |
+| Beat my wake | the challenge you send after a mission; the app's own share text reads "Beat my wake: 12s on 5 problems" |
 | My spots & codes | the registered targets inside Scan an Object |
 | Gentle start | the iOS quiet-opening tone option |
 | Extra Loud | the Android volume option |
 | Alarm reliability | the Settings screen that checks the phone |
 | App Store, Google Play, Apple, Google, iPhone, Android, watchOS, Wear OS, AlarmKit, Focus, Do Not Disturb, Silent mode | vendor names and OS features; use the vendor's official localized name where one exists (for example Apple's localized name for Focus and Silent mode, Google's for Do Not Disturb) |
+
+These two are easy to miss because they read like sentences rather than product names, and
+every locale translated them before they were listed here. They are shipped English UI: a
+reader who was sent a "Beat my wake" link has already seen those exact words in the message,
+and "Wake with a friend" is a row they will tap in the alarm editor. Both keep their sentence
+case, matching the app.
 
 Store buttons, prices (`$4.99`), the email address and the trademark lines are supplied by
 the site and never appear in a catalog.

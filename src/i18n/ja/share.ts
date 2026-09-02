@@ -1,7 +1,7 @@
 import { share as en } from '../en/share';
 
 /**
- * リンクの受け皿となる2つのページ、/c（「目覚め対決」の挑戦）と /p（起床の
+ * リンクの受け皿となる2つのページ、/c（「Beat my wake」の挑戦）と /p（起床の
  * 約束）。`script` の文字列は各ページのインラインのデコーダーが読み、
  * `{name}`、`{rounds}`、`{difficulty}`、`{seconds}`、`{time}`、`{days}` は
  * リンク自体からそのスクリプトが埋めます。
@@ -10,7 +10,7 @@ export const share = {
   challenge: {
     title: `目覚め対決の招待｜WakeSharp`,
     description: `WakeSharpの朝の対決に招待されています。`,
-    heading: `目覚め対決`,
+    heading: `Beat my wake（目覚め対決）`,
     intro: `だれかが、あなたより冴えて起きたと思っているようです。`,
     opening: `対決を開いています…`,
     cta: `WakeSharpをインストールしたスマホでこのリンクを開くと、同じ朝のミッションを同じシードでプレイして、勝てるかどうか確かめられます。`,

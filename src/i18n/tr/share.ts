@@ -8,7 +8,7 @@ export const share = {
   challenge: {
     title: `Bir uyanma meydan okuması — WakeSharp`,
     description: `Biri size bir WakeSharp sabahı için meydan okudu.`,
-    heading: `Beni geç`,
+    heading: `Beat my wake (uyanışımı geçin)`,
     intro: `Biri sizden daha zinde uyandığını düşünüyor.`,
     opening: `Meydan okuma açılıyor…`,
     cta: `Aynı sabah görevini aynı tohum değeriyle oynamak ve onu geçip geçemediğinizi görmek için bu bağlantıyı WakeSharp yüklü telefonunuzda açın.`,

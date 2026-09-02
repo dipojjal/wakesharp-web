@@ -1,7 +1,7 @@
 import { share as en } from '../en/share';
 
 /**
- * Dua halaman pendaratan tautan, /c (tantangan "Kalahkan bangun pagiku") dan
+ * Dua halaman pendaratan tautan, /c (tantangan "Beat my wake") dan
  * /p (pakta bangun pagi). String `script` dibaca oleh dekoder inline tiap
  * halaman; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}` dan
  * `{days}` diisi skrip itu dari tautannya sendiri.
@@ -10,7 +10,7 @@ export const share = {
   challenge: {
     title: `Tantangan bangun pagi — WakeSharp`,
     description: `Seseorang menantang Anda untuk pagi ala WakeSharp.`,
-    heading: `Kalahkan bangun pagiku`,
+    heading: `Beat my wake (kalahkan bangun pagiku)`,
     intro: `Seseorang yakin bangunnya lebih sigap daripada Anda nanti.`,
     opening: `Membuka tantangan…`,
     cta: `Buka tautan ini di ponsel Anda yang sudah terpasang WakeSharp untuk memainkan misi pagi yang sama, dengan seed yang sama, dan lihat apakah Anda bisa mengalahkannya.`,

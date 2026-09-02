@@ -1,7 +1,7 @@
 import { share as en } from '../en/share';
 
 /**
- * Las dos páginas de aterrizaje de enlaces, /c (un reto «Supera mi despertar»)
+ * Las dos páginas de aterrizaje de enlaces, /c (un reto «Beat my wake»)
  * y /p (un pacto para despertar). Las cadenas de `script` las lee el
  * decodificador de cada página; `{name}`, `{rounds}`, `{difficulty}`,
  * `{seconds}`, `{time}` y `{days}` los rellena ese script desde el enlace.
@@ -10,7 +10,7 @@ export const share = {
   challenge: {
     title: `Un reto para despertar — WakeSharp`,
     description: `Alguien te ha retado a una mañana de WakeSharp.`,
-    heading: `Supera mi despertar`,
+    heading: `Beat my wake (supera mi despertar)`,
     intro: `Alguien cree que despertó más lúcido de lo que tú vas a despertar.`,
     opening: `Abriendo el reto…`,
     cta: `Abre este enlace en tu teléfono con WakeSharp instalado para jugar la misma misión matutina, con la misma semilla, y ver si lo superas.`,
