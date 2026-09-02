@@ -136,9 +136,11 @@ any paragraph that describes what the app does.
   wording is **"scan a real object"**.
 - **The missions and their tiers.** Free: **Mind Games** (arithmetic) and **Photo Proof** (photograph
   the day's prompt). Plus: Memory Match, Sequence Recall, Scan an Object, Walk It Off, Surprise Me.
-  The gate acts **when you create an alarm, never when one rings**. "Math sprint" is not a mission
-  name; **Math Sprint** is a warm-up game. **Reaction Tap is a warm-up game and can never dismiss an
-  alarm** — one article claimed it could.
+  The gate acts **when you create an alarm, never when one rings**. Mind Games is both the free
+  mission and one of the five warm-up games — one game in two roles, so naming it in both lists is
+  correct, not a contradiction. **"Math Sprint" is a dead name**: the catalog renamed it to Mind
+  Games on 2026-08-23 and no shipped build has shown it since; `npm run copy` fails on it.
+  **Reaction Tap is a warm-up game and can never dismiss an alarm** — one article claimed it could.
 - **"Every alarm and every mission is free forever" is prohibited.** The canonical line, verbatim from
   the shipped paywall, is **"Your alarm rings free, forever. No ads."**
 - **No absolute dismissal claims.** The system Stop button always works, on both platforms. Never

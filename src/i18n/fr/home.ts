@@ -51,15 +51,17 @@ export const home = {
 
   mission: {
     alt: `La mission Mind Games : résolvez 6 moins 3 pour faire taire l’alarme`,
-    heading: { pre: `Cinq façons de `, accent: `vous faire lever`, post: `` },
+    heading: { pre: `Sept façons de `, accent: `vous faire lever`, post: `` },
     lede: `Il faut que quelque chose se passe avant que la matinée compte, et c’est vous qui choisissez quoi. Mind Games (calcul mental) et Photo Proof (preuve par photo) sont gratuites ; les autres viennent avec Plus. Chacune a une porte de sortie qui se termine par Mind Games avec tout le crédit, pour qu’un appareil photo en panne ou un téléphone sans podomètre ne vous laisse jamais coincé.`,
-    /** Les cinq missions proposées par l’éditeur d’alarme, dans son ordre. `tier` vaut Gratuit ou Plus. */
+    /** Les sept missions proposées par l’éditeur d’alarme, dans son ordre. `tier` vaut Gratuit ou Plus. */
     missions: [
       { name: `Mind Games`, tier: `Gratuit`, body: `Trois opérations d’arithmétique, en niveau facile, standard ou difficile. Celle vers laquelle toutes les autres se replient.` },
       { name: `Photo Proof`, tier: `Gratuit`, body: `Photographiez le ciel, votre lit fait, un verre d’eau. Six consignes en rotation quotidienne, donc rien à préparer la veille.` },
+      { name: `Memory Match`, tier: `Plus`, body: `Retrouvez les paires : retournez les cartes deux par deux jusqu’à les avoir toutes appariées. Quatre paires en niveau facile, huit en difficile.` },
+      { name: `Sequence Recall`, tier: `Plus`, body: `Répétez la séquence : regardez-la, puis rejouez-la. Elle commence à trois étapes et gagne une étape à chaque manche.` },
       { name: `Scan an Object`, tier: `Plus`, body: `Scannez un objet : pointez l’appareil photo vers quelque chose à l’autre bout de la pièce. Vingt objets du quotidien au catalogue, reconnus sur le téléphone lui-même.` },
       { name: `Walk It Off`, tier: `Plus`, body: `Marchez pour émerger : sortez du lit et faites les pas. Elle lit le podomètre et surveille votre cadence, donc secouer le téléphone ne compte pour rien.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Surprenez-moi : tire au sort Mind Games, un scan ou une marche — fixé pour cette alarme ce jour-là, donc vous le découvrez quand elle sonne.` },
+      { name: `Surprise me`, tier: `Plus`, body: `Surprenez-moi : tire au sort l’une des autres — fixée pour cette alarme ce jour-là, donc vous le découvrez quand elle sonne.` },
     ],
     note: `La mission se choisit quand vous créez l’alarme, jamais quand elle sonne — une alarme qui porte déjà un scan ou une marche continue de l’exécuter, quoi qu’il arrive à un abonnement. Strict Mode (mode strict), là où c’est pris en charge, réserve à l’avance quatre nouvelles sonneries, et le rappel d’alarme est un réglage que vous définissez plutôt qu’une règle qu’on vous impose.`,
   },
@@ -67,7 +69,7 @@ export const home = {
   games: {
     alt: `Le jeu d’échauffement Memory Match`,
     heading: { pre: `Un `, accent: `échauffement`, post: ` de deux minutes, le temps que la bouilloire chauffe` },
-    lede: `Math Sprint, Memory Match, Sequence Recall, Word Dash et Reaction Tap : calcul rapide, mémoire, séquences, mots et réflexes. En version gratuite, vous en jouez un après votre mission, tiré d’un lot de deux. Plus en propose trois chaque matin et les fait tourner, si bien que l’ensemble passe en moins d’une semaine — et ne répète jamais ce que la mission vient de vous faire faire. Rien de tout cela n’est obligatoire ; à ce stade, l’alarme est déjà éteinte.`,
+    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash et Reaction Tap : calcul rapide, mémoire, séquences, mots et réflexes. En version gratuite, vous en jouez un après votre mission, tiré d’un lot de deux. Plus en propose trois chaque matin et les fait tourner, si bien que l’ensemble passe en moins d’une semaine — et ne répète jamais ce que la mission vient de vous faire faire. Rien de tout cela n’est obligatoire ; à ce stade, l’alarme est déjà éteinte.`,
   },
 
   sharp: {
@@ -134,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Votre alarme sonne `, accent: `gratuitement, pour toujours`, post: `` },
-    lede: `Sans publicité non plus. Deux des cinq missions sont gratuites elles aussi, avec les 13 sonneries, Strict Mode, les préréglages de rappel d’alarme et la vérification de fiabilité. Plus, c’est pour la matinée d’après l’alarme — les autres missions, plus de jeux d’échauffement, plus de règles intelligentes, et tout l’historique.`,
+    lede: `Sans publicité non plus. Deux des sept missions sont gratuites elles aussi, avec les 13 sonneries, Strict Mode, les préréglages de rappel d’alarme et la vérification de fiabilité. Plus, c’est pour la matinée d’après l’alarme — les autres missions, plus de jeux d’échauffement, plus de règles intelligentes, et tout l’historique.`,
     free: {
       name: `Gratuit`,
       price: `$0`,
@@ -188,7 +190,7 @@ export const home = {
       },
       {
         q: `Dois-je faire des calculs à 6 h du matin ?`,
-        a: `Seulement si vous en avez envie. Les deux missions gratuites sont Mind Games, qui consiste en trois opérations d’arithmétique, et Photo Proof, qui demande simplement une photo de quelque chose — le ciel, votre lit fait, un verre d’eau, selon une consigne qui change chaque jour. Plus ajoute le scan d’un objet réel à l’autre bout de la pièce, la marche d’un nombre de pas donné, et « Surprise me », qui en choisit une et la fixe pour cette alarme ce jour-là, si bien qu’il n’y a rien à préparer la veille. Chaque mission a une porte de sortie qui se termine par Mind Games avec tout le crédit, pour qu’un appareil photo en panne ou un téléphone laissé sur la table de nuit ne vous piège jamais.`,
+        a: `Seulement si vous en avez envie. Les deux missions gratuites sont Mind Games, qui consiste en trois opérations d’arithmétique, et Photo Proof, qui demande simplement une photo de quelque chose — le ciel, votre lit fait, un verre d’eau, selon une consigne qui change chaque jour. Plus ajoute Memory Match, Sequence Recall, le scan d’un objet réel à l’autre bout de la pièce, la marche d’un nombre de pas donné, et « Surprise me », qui en choisit une et la fixe pour cette alarme ce jour-là, si bien qu’il n’y a rien à préparer la veille. Chaque mission a une porte de sortie qui se termine par Mind Games avec tout le crédit, pour qu’un appareil photo en panne ou un téléphone laissé sur la table de nuit ne vous piège jamais.`,
       },
       {
         q: `Puis-je tricher et sauter la mission ?`,
@@ -216,7 +218,7 @@ export const home = {
       },
       {
         q: `Qu’est-ce qui est gratuit et qu’est-ce qui relève de Plus ?`,
-        a: `Votre alarme sonne gratuitement, pour toujours, sans publicité. L’offre gratuite couvre autant d’alarmes que nécessaire, les missions Mind Games et Photo Proof, les 13 sonneries d’alarme, Strict Mode, les préréglages de rappel d’alarme, la vérification de fiabilité, les séries et les jetons de gel, un jeu d’échauffement après chaque mission, une alarme d’agenda intelligente, une rotation d’équipe, un profil, l’application de montre et votre tendance Sharpness sur 7 jours. Plus ajoute les autres missions — le scan, la marche et Surprise me —, trois jeux d’échauffement en rotation chaque matin, des alarmes d’agenda intelligentes sans limite, autant de rotations et de profils que vous voulez, tout votre historique Sharpness, une politique de rappel d’alarme personnalisée, ainsi que les scènes du Lark, les fonds d’écran et les célébrations.`,
+        a: `Votre alarme sonne gratuitement, pour toujours, sans publicité. L’offre gratuite couvre autant d’alarmes que nécessaire, les missions Mind Games et Photo Proof, les 13 sonneries d’alarme, Strict Mode, les préréglages de rappel d’alarme, la vérification de fiabilité, les séries et les jetons de gel, un jeu d’échauffement après chaque mission, une alarme d’agenda intelligente, une rotation d’équipe, un profil, l’application de montre et votre tendance Sharpness sur 7 jours. Plus ajoute les cinq autres missions — Memory Match, Sequence Recall, le scan, la marche et Surprise me —, trois jeux d’échauffement en rotation chaque matin, des alarmes d’agenda intelligentes sans limite, autant de rotations et de profils que vous voulez, tout votre historique Sharpness, une politique de rappel d’alarme personnalisée, ainsi que les scènes du Lark, les fonds d’écran et les célébrations.`,
       },
       {
         q: `Qu’arrive-t-il à mes alarmes Plus si j’arrête de payer ?`,

@@ -275,6 +275,7 @@ const BANNED_RAW = [
   // itunes.apple.com/lookup?id=6801198703&country=us needs no credential.
   { re: /WakeSharp: Alarm Clock &amp; Games|WakeSharp: Alarm Clock & Games/i, why: 'dead pre-launch name — the live listings are "WakeSharp: Loud Alarm Clock" (App Store) and "WakeSharp: Math Alarm Clock" (Play)' },
   { re: /\bcode[_-]scan\b/i, why: 'dead mission route — code_scan was deleted from GameRegistry.MissionRoute and never had a host on either platform' },
+  { re: /\bMath Sprint\b/i, why: 'dead game name — GameCatalog.json renamed math_sprint to "Mind Games" on 2026-08-23 (app commit d320d71); the site kept the old name for the warm-up game while already using the new one for the mission' },
 ];
 
 /**

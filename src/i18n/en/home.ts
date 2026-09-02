@@ -49,15 +49,24 @@ export const home = {
 
   mission: {
     alt: `The Mind Games mission: solve 6 minus 3 to silence the alarm`,
-    heading: { pre: `Five ways to `, accent: `get you up`, post: `` },
+    heading: { pre: `Seven ways to `, accent: `get you up`, post: `` },
     lede: `Something has to happen before the morning counts, and you pick what. Mind Games and Photo Proof are free; the rest come with Plus. Every one of them has a way out that ends in Mind Games at full credit, so a dead camera or a phone with no step counter never leaves you stuck.`,
-    /** The five missions the alarm editor offers, in its order. `tier` is Free or Plus. */
+    /**
+     * The seven missions the alarm editor offers, free ones first.
+     *
+     * Memory Match and Sequence Recall are warm-up games *and* missions — they
+     * carry `supportsMission` in GameCatalog.json — which is why they appear in
+     * both this list and `games`. Leaving them out here is what made this page
+     * claim five missions while support.ts and check-copy.mjs both said seven.
+     */
     missions: [
       { name: `Mind Games`, tier: `Free`, body: `Three arithmetic problems at easy, standard or hard. The one every other mission falls back to.` },
       { name: `Photo Proof`, tier: `Free`, body: `Photograph the sky, your bed made, a glass of water. Six prompts on a daily rotation, so there is nothing to line up the night before.` },
+      { name: `Memory Match`, tier: `Plus`, body: `Turn cards over two at a time until every pair is matched. Four pairs at easy, eight at hard.` },
+      { name: `Sequence Recall`, tier: `Plus`, body: `Watch a sequence, then play it back. It starts at three steps and grows a step each round.` },
       { name: `Scan an Object`, tier: `Plus`, body: `Point the camera at something across the room. Twenty everyday objects in the catalogue, recognised on the phone itself.` },
       { name: `Walk It Off`, tier: `Plus`, body: `Get out of bed and take the steps. It reads the step counter and watches your cadence, so shaking the phone counts for nothing.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Rolls Mind Games, a scan or a walk — fixed for that alarm on that day, so you find out when it rings.` },
+      { name: `Surprise me`, tier: `Plus`, body: `Rolls one of the others — fixed for that alarm on that day, so you find out when it rings.` },
     ],
     note: `The mission is chosen when you build the alarm, never when it rings — an alarm already carrying a scan or a walk keeps running it whatever happens to a subscription. Strict Mode, where supported, books four re-rings in advance, and snoozing is a policy you set rather than a rule you’re given.`,
   },
@@ -65,7 +74,7 @@ export const home = {
   games: {
     alt: `The Memory Match warm-up game`,
     heading: { pre: `A two-minute `, accent: `warm-up`, post: ` while the kettle boils` },
-    lede: `Math Sprint, Memory Match, Sequence Recall, Word Dash and Reaction Tap. Free plays one after your mission, drawn from a pool of two. Plus plays three each morning and rotates them, so the whole set comes round inside a week — and never repeats whatever the mission just made you do. None of it is compulsory; the alarm is already off by then.`,
+    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash and Reaction Tap. Free plays one after your mission, drawn from a pool of two. Plus plays three each morning and rotates them, so the whole set comes round inside a week — and never repeats whatever the mission just made you do. None of it is compulsory; the alarm is already off by then.`,
   },
 
   sharp: {
@@ -132,7 +141,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Your alarm rings `, accent: `free, forever`, post: `` },
-    lede: `No ads, either. Two of the five missions are free as well, along with all 13 tones, Strict Mode, the snooze presets and the reliability check. Plus is for the morning after the alarm — the other missions, more warm-up games, more smart rules, and the whole history.`,
+    lede: `No ads, either. Two of the seven missions are free as well, along with all 13 tones, Strict Mode, the snooze presets and the reliability check. Plus is for the morning after the alarm — the other missions, more warm-up games, more smart rules, and the whole history.`,
     free: {
       name: `Free`,
       price: `$0`,
@@ -186,7 +195,7 @@ export const home = {
       },
       {
         q: `Do I have to do maths at 6am?`,
-        a: `Only if you want to. The two free missions are Mind Games, which is three arithmetic problems, and Photo Proof, which just asks for a photo of something — the sky, your bed made, a glass of water, on a prompt that rotates daily. Plus adds scanning a real object across the room, walking a set number of steps, and “Surprise me”, which picks one and fixes it for that alarm on that day so there is nothing to stage the night before. Every mission has a way out that ends in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.`,
+        a: `Only if you want to. The two free missions are Mind Games, which is three arithmetic problems, and Photo Proof, which just asks for a photo of something — the sky, your bed made, a glass of water, on a prompt that rotates daily. Plus adds Memory Match, Sequence Recall, scanning a real object across the room, walking a set number of steps, and “Surprise me”, which picks one and fixes it for that alarm on that day so there is nothing to stage the night before. Every mission has a way out that ends in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.`,
       },
       {
         q: `Can I cheat past the mission?`,
@@ -214,7 +223,7 @@ export const home = {
       },
       {
         q: `What is free and what is Plus?`,
-        a: `Your alarm rings free, forever, with no ads. Free covers as many alarms as you need, the Mind Games and Photo Proof missions, all 13 alarm tones, Strict Mode, the snooze presets, the reliability check, streaks and freeze tokens, a warm-up game after each mission, one smart calendar alarm, one shift rotation, one profile, the watch app and your 7-day Sharpness trend. Plus adds the other missions — scan, walk and Surprise me — three rotating warm-up games each morning, unlimited smart calendar alarms, as many rotations and profiles as you like, your full Sharpness history, a custom snooze policy, and the Lark scenes, wallpapers and celebrations.`,
+        a: `Your alarm rings free, forever, with no ads. Free covers as many alarms as you need, the Mind Games and Photo Proof missions, all 13 alarm tones, Strict Mode, the snooze presets, the reliability check, streaks and freeze tokens, a warm-up game after each mission, one smart calendar alarm, one shift rotation, one profile, the watch app and your 7-day Sharpness trend. Plus adds the other five missions — Memory Match, Sequence Recall, scan, walk and Surprise me — three rotating warm-up games each morning, unlimited smart calendar alarms, as many rotations and profiles as you like, your full Sharpness history, a custom snooze policy, and the Lark scenes, wallpapers and celebrations.`,
       },
       {
         q: `What happens to my Plus alarms if I stop paying?`,

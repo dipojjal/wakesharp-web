@@ -40,7 +40,7 @@ parentheses the first time it appears on a page when the meaning is not obvious.
 | Surprise me / Surprise Me | the randomised mission |
 | Strict Mode | four pre-booked re-rings |
 | Tighten | the snooze preset that shortens each gap |
-| Math Sprint, Memory Match, Sequence Recall, Word Dash, Reaction Tap | the five warm-up games |
+| Mind Games, Memory Match, Sequence Recall, Word Dash, Reaction Tap | the five warm-up games. Mind Games, Memory Match and Sequence Recall are also missions, so they appear in both lists |
 | My spots & codes | the registered targets inside Scan an Object |
 | Gentle start | the iOS quiet-opening tone option |
 | Extra Loud | the Android volume option |

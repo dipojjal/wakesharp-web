@@ -51,15 +51,17 @@ export const home = {
 
   mission: {
     alt: `A missão Mind Games: resolva 6 menos 3 para silenciar o alarme`,
-    heading: { pre: `Cinco jeitos de `, accent: `tirar você da cama`, post: `` },
+    heading: { pre: `Sete jeitos de `, accent: `tirar você da cama`, post: `` },
     lede: `Alguma coisa precisa acontecer antes que a manhã conte, e você escolhe o quê. Mind Games (contas de aritmética) e Photo Proof (prova por foto) são de graça; o resto vem com o Plus. Todas têm uma saída que termina em Mind Games com crédito total, então uma câmera morta ou um celular sem contador de passos nunca deixa você preso.`,
-    /** As cinco missões que o editor de alarmes oferece, na ordem dele. `tier` é Grátis ou Plus. */
+    /** As sete missões que o editor de alarmes oferece, na ordem dele. `tier` é Grátis ou Plus. */
     missions: [
       { name: `Mind Games`, tier: `Grátis`, body: `Três problemas de aritmética, no nível fácil, padrão ou difícil. A missão à qual todas as outras recorrem.` },
       { name: `Photo Proof`, tier: `Grátis`, body: `Fotografe o céu, a cama arrumada, um copo d’água. Seis temas em rodízio diário, então não há nada para preparar na noite anterior.` },
+      { name: `Memory Match`, tier: `Plus`, body: `Encontre os pares: vire as cartas duas a duas até emparelhar todas. Quatro pares no nível fácil, oito no difícil.` },
+      { name: `Sequence Recall`, tier: `Plus`, body: `Repita a sequência: observe e depois reproduza. Ela começa com três passos e ganha um passo a cada rodada.` },
       { name: `Scan an Object`, tier: `Plus`, body: `Escaneie um objeto: aponte a câmera para algo do outro lado do quarto. Vinte objetos do dia a dia no catálogo, reconhecidos no próprio celular.` },
       { name: `Walk It Off`, tier: `Plus`, body: `Caminhe para despertar: saia da cama e dê os passos. Ele lê o contador de passos e observa sua cadência, então sacudir o celular não vale nada.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Surpreenda-me: sorteia entre Mind Games, um escaneamento ou uma caminhada — fixado para aquele alarme naquele dia, então você só descobre quando ele toca.` },
+      { name: `Surprise me`, tier: `Plus`, body: `Surpreenda-me: sorteia uma das outras — fixada para aquele alarme naquele dia, então você só descobre quando ele toca.` },
     ],
     note: `A missão é escolhida quando você cria o alarme, nunca quando ele toca — um alarme que já carrega um escaneamento ou uma caminhada continua executando essa missão, aconteça o que acontecer com a assinatura. O Strict Mode (modo rigoroso), em aparelhos compatíveis, agenda quatro repetições do alarme com antecedência, e a soneca é uma política que você define, não uma regra imposta a você.`,
   },
@@ -67,7 +69,7 @@ export const home = {
   games: {
     alt: `O jogo de aquecimento Memory Match`,
     heading: { pre: `Um `, accent: `aquecimento`, post: ` de dois minutos enquanto o café passa` },
-    lede: `Math Sprint, Memory Match, Sequence Recall, Word Dash e Reaction Tap: cálculo rápido, memória, sequências, palavras e reflexos. No plano Grátis, você joga um depois da missão, sorteado de um par de jogos. Com o Plus, são três por manhã, em rodízio, então o conjunto inteiro passa em menos de uma semana — e nunca repete o que a missão acabou de fazer você fazer. Nada disso é obrigatório; a essa altura o alarme já está desligado.`,
+    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash e Reaction Tap: cálculo rápido, memória, sequências, palavras e reflexos. No plano Grátis, você joga um depois da missão, sorteado de um par de jogos. Com o Plus, são três por manhã, em rodízio, então o conjunto inteiro passa em menos de uma semana — e nunca repete o que a missão acabou de fazer você fazer. Nada disso é obrigatório; a essa altura o alarme já está desligado.`,
   },
 
   sharp: {
@@ -134,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Seu alarme toca `, accent: `de graça, para sempre`, post: `` },
-    lede: `E sem anúncios. Duas das cinco missões também são de graça, junto com os 13 toques, o Strict Mode, as predefinições de soneca e a verificação de confiabilidade. O Plus é para a manhã depois do alarme — as outras missões, mais jogos de aquecimento, mais regras inteligentes e o histórico inteiro.`,
+    lede: `E sem anúncios. Duas das sete missões também são de graça, junto com os 13 toques, o Strict Mode, as predefinições de soneca e a verificação de confiabilidade. O Plus é para a manhã depois do alarme — as outras missões, mais jogos de aquecimento, mais regras inteligentes e o histórico inteiro.`,
     free: {
       name: `Grátis`,
       price: `$0`,
@@ -188,7 +190,7 @@ export const home = {
       },
       {
         q: `Eu preciso fazer contas às 6 da manhã?`,
-        a: `Só se você quiser. As duas missões gratuitas são Mind Games, que são três problemas de aritmética, e Photo Proof, que só pede uma foto de alguma coisa — o céu, a cama arrumada, um copo d’água, seguindo um tema que muda todo dia. O Plus acrescenta escanear um objeto real do outro lado do quarto, caminhar um número definido de passos e o “Surprise me”, que escolhe uma delas e a fixa para aquele alarme naquele dia, então não há nada para preparar na noite anterior. Toda missão tem uma saída que termina em Mind Games com crédito total, então uma câmera morta ou um celular deixado na mesa de cabeceira nunca prende você.`,
+        a: `Só se você quiser. As duas missões gratuitas são Mind Games, que são três problemas de aritmética, e Photo Proof, que só pede uma foto de alguma coisa — o céu, a cama arrumada, um copo d’água, seguindo um tema que muda todo dia. O Plus acrescenta Memory Match, Sequence Recall, escanear um objeto real do outro lado do quarto, caminhar um número definido de passos e o “Surprise me”, que escolhe uma delas e a fixa para aquele alarme naquele dia, então não há nada para preparar na noite anterior. Toda missão tem uma saída que termina em Mind Games com crédito total, então uma câmera morta ou um celular deixado na mesa de cabeceira nunca prende você.`,
       },
       {
         q: `Dá para trapacear e pular a missão?`,
@@ -216,7 +218,7 @@ export const home = {
       },
       {
         q: `O que é de graça e o que é Plus?`,
-        a: `Seu alarme toca de graça, para sempre, sem anúncios. O plano Grátis inclui quantos alarmes você precisar, as missões Mind Games e Photo Proof, todos os 13 toques de alarme, o Strict Mode, as predefinições de soneca, a verificação de confiabilidade, sequências e congelamentos, um jogo de aquecimento depois de cada missão, um alarme inteligente de calendário, uma escala de turnos, um perfil, o app de relógio e sua tendência de Sharpness de 7 dias. O Plus acrescenta as outras missões — escanear, caminhar e Surprise me —, três jogos de aquecimento em rodízio a cada manhã, alarmes inteligentes de calendário sem limite, quantas escalas e perfis você quiser, seu histórico completo de Sharpness, uma política de soneca personalizada e as cenas do Lark, os papéis de parede e as comemorações.`,
+        a: `Seu alarme toca de graça, para sempre, sem anúncios. O plano Grátis inclui quantos alarmes você precisar, as missões Mind Games e Photo Proof, todos os 13 toques de alarme, o Strict Mode, as predefinições de soneca, a verificação de confiabilidade, sequências e congelamentos, um jogo de aquecimento depois de cada missão, um alarme inteligente de calendário, uma escala de turnos, um perfil, o app de relógio e sua tendência de Sharpness de 7 dias. O Plus acrescenta as outras cinco missões — Memory Match, Sequence Recall, escanear, caminhar e Surprise me —, três jogos de aquecimento em rodízio a cada manhã, alarmes inteligentes de calendário sem limite, quantas escalas e perfis você quiser, seu histórico completo de Sharpness, uma política de soneca personalizada e as cenas do Lark, os papéis de parede e as comemorações.`,
       },
       {
         q: `O que acontece com meus alarmes Plus se eu parar de pagar?`,

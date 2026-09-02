@@ -51,15 +51,17 @@ export const home = {
 
   mission: {
     alt: `Misi Mind Games: selesaikan 6 dikurangi 3 untuk mematikan alarm`,
-    heading: { pre: `Lima cara untuk `, accent: `membangunkan Anda`, post: `` },
+    heading: { pre: `Tujuh cara untuk `, accent: `membangunkan Anda`, post: `` },
     lede: `Sesuatu harus terjadi sebelum pagi Anda dihitung, dan Anda yang memilih apa. Mind Games (soal hitung) dan Photo Proof (bukti foto) gratis; sisanya hadir bersama Plus. Setiap misi punya jalan keluar yang berakhir di Mind Games dengan nilai penuh, jadi kamera yang mati atau ponsel tanpa penghitung langkah tidak akan pernah membuat Anda terjebak.`,
-    /** Lima misi yang ditawarkan editor alarm, sesuai urutannya. `tier` adalah Gratis atau Plus. */
+    /** Tujuh misi yang ditawarkan editor alarm, sesuai urutannya. `tier` adalah Gratis atau Plus. */
     missions: [
       { name: `Mind Games`, tier: `Gratis`, body: `Tiga soal aritmetika di tingkat mudah, standar, atau sulit. Misi cadangan bagi semua misi lainnya.` },
       { name: `Photo Proof`, tier: `Gratis`, body: `Foto langit, tempat tidur yang sudah dirapikan, segelas air. Enam petunjuk yang bergilir tiap hari, jadi tidak ada yang perlu disiapkan malam sebelumnya.` },
+      { name: `Memory Match`, tier: `Plus`, body: `Cocokkan memori: balik kartu dua per dua sampai setiap pasangan cocok. Empat pasang di tingkat mudah, delapan di tingkat sulit.` },
+      { name: `Sequence Recall`, tier: `Plus`, body: `Ingat urutan: perhatikan satu urutan, lalu ulangi. Dimulai dari tiga langkah dan bertambah satu langkah tiap ronde.` },
       { name: `Scan an Object`, tier: `Plus`, body: `Pindai objek: arahkan kamera ke sesuatu di seberang ruangan. Dua puluh benda sehari-hari ada di katalognya, dikenali langsung di ponsel.` },
       { name: `Walk It Off`, tier: `Plus`, body: `Jalan kaki dulu: turun dari tempat tidur dan melangkahlah. Misi ini membaca penghitung langkah dan mengamati irama langkah Anda, jadi mengguncang ponsel tidak ada gunanya.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Kejutkan saya: mengundi Mind Games, pindai, atau jalan kaki, lalu menguncinya untuk alarm itu pada hari itu, jadi Anda baru tahu saat alarm berbunyi.` },
+      { name: `Surprise me`, tier: `Plus`, body: `Kejutkan saya: mengundi salah satu misi lainnya, lalu menguncinya untuk alarm itu pada hari itu, jadi Anda baru tahu saat alarm berbunyi.` },
     ],
     note: `Misi dipilih saat Anda membuat alarm, bukan saat alarm berbunyi: alarm yang sudah membawa misi pindai atau jalan kaki akan terus menjalankannya, apa pun yang terjadi pada langganan. Strict Mode (mode ketat), di perangkat yang mendukung, memesan empat dering ulang di muka, dan menunda alarm adalah kebijakan yang Anda tentukan sendiri, bukan aturan yang dipaksakan kepada Anda.`,
   },
@@ -67,7 +69,7 @@ export const home = {
   games: {
     alt: `Permainan pemanasan Memory Match`,
     heading: { pre: `Dua menit `, accent: `pemanasan`, post: ` sambil menunggu air mendidih` },
-    lede: `Math Sprint, Memory Match, Sequence Recall, Word Dash, dan Reaction Tap: sprint hitung, mencocokkan memori, mengingat urutan, adu kata, dan ketuk reaksi. Paket Gratis memainkan satu permainan setelah misi Anda, diambil dari dua pilihan. Plus memainkan tiga setiap pagi dan menggilirnya, sehingga seluruh set berputar dalam seminggu, dan tidak pernah mengulang apa yang baru saja misi minta Anda lakukan. Tidak ada yang wajib; saat itu alarm sudah mati.`,
+    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash, dan Reaction Tap: sprint hitung, mencocokkan memori, mengingat urutan, adu kata, dan ketuk reaksi. Paket Gratis memainkan satu permainan setelah misi Anda, diambil dari dua pilihan. Plus memainkan tiga setiap pagi dan menggilirnya, sehingga seluruh set berputar dalam seminggu, dan tidak pernah mengulang apa yang baru saja misi minta Anda lakukan. Tidak ada yang wajib; saat itu alarm sudah mati.`,
   },
 
   sharp: {
@@ -134,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Alarm Anda berbunyi `, accent: `gratis, selamanya`, post: `` },
-    lede: `Tanpa iklan pula. Dua dari lima misi juga gratis, bersama semua 13 nada, Strict Mode, preset tunda, dan pemeriksaan keandalan. Plus untuk pagi setelah alarm: misi lainnya, lebih banyak permainan pemanasan, lebih banyak aturan pintar, dan seluruh riwayat.`,
+    lede: `Tanpa iklan pula. Dua dari tujuh misi juga gratis, bersama semua 13 nada, Strict Mode, preset tunda, dan pemeriksaan keandalan. Plus untuk pagi setelah alarm: misi lainnya, lebih banyak permainan pemanasan, lebih banyak aturan pintar, dan seluruh riwayat.`,
     free: {
       name: `Gratis`,
       price: `$0`,
@@ -188,7 +190,7 @@ export const home = {
       },
       {
         q: `Apakah saya harus berhitung pada pukul 6 pagi?`,
-        a: `Hanya jika Anda mau. Dua misi gratisnya adalah Mind Games, yaitu tiga soal aritmetika, dan Photo Proof, yang hanya meminta foto sesuatu (langit, tempat tidur yang sudah dirapikan, segelas air) sesuai petunjuk yang bergilir tiap hari. Plus menambahkan memindai benda nyata di seberang ruangan, berjalan sejumlah langkah tertentu, dan “Surprise me”, yang memilih salah satunya dan menguncinya untuk alarm itu pada hari itu, jadi tidak ada yang bisa diatur malam sebelumnya. Setiap misi punya jalan keluar yang berakhir di Mind Games dengan nilai penuh, jadi kamera yang mati atau ponsel yang tertinggal di nakas tidak pernah menjebak Anda.`,
+        a: `Hanya jika Anda mau. Dua misi gratisnya adalah Mind Games, yaitu tiga soal aritmetika, dan Photo Proof, yang hanya meminta foto sesuatu (langit, tempat tidur yang sudah dirapikan, segelas air) sesuai petunjuk yang bergilir tiap hari. Plus menambahkan Memory Match, Sequence Recall, memindai benda nyata di seberang ruangan, berjalan sejumlah langkah tertentu, dan “Surprise me”, yang memilih salah satunya dan menguncinya untuk alarm itu pada hari itu, jadi tidak ada yang bisa diatur malam sebelumnya. Setiap misi punya jalan keluar yang berakhir di Mind Games dengan nilai penuh, jadi kamera yang mati atau ponsel yang tertinggal di nakas tidak pernah menjebak Anda.`,
       },
       {
         q: `Bisakah saya curang dan melewati misi?`,
@@ -216,7 +218,7 @@ export const home = {
       },
       {
         q: `Apa yang gratis dan apa yang Plus?`,
-        a: `Alarm Anda berbunyi gratis, selamanya, tanpa iklan. Gratis mencakup alarm sebanyak yang Anda butuhkan, misi Mind Games dan Photo Proof, semua 13 nada alarm, Strict Mode, preset tunda, pemeriksaan keandalan, runtunan dan token pembeku, satu permainan pemanasan setelah setiap misi, satu alarm kalender pintar, satu rotasi shift, satu profil, aplikasi jam tangan, dan tren Sharpness 7 hari Anda. Plus menambahkan misi lainnya (pindai, jalan kaki, dan Surprise me), tiga permainan pemanasan bergiliran setiap pagi, alarm kalender pintar tanpa batas jumlah, rotasi dan profil sebanyak yang Anda mau, riwayat Sharpness lengkap Anda, kebijakan tunda kustom, serta adegan Lark, wallpaper, dan perayaan.`,
+        a: `Alarm Anda berbunyi gratis, selamanya, tanpa iklan. Gratis mencakup alarm sebanyak yang Anda butuhkan, misi Mind Games dan Photo Proof, semua 13 nada alarm, Strict Mode, preset tunda, pemeriksaan keandalan, runtunan dan token pembeku, satu permainan pemanasan setelah setiap misi, satu alarm kalender pintar, satu rotasi shift, satu profil, aplikasi jam tangan, dan tren Sharpness 7 hari Anda. Plus menambahkan lima misi lainnya (Memory Match, Sequence Recall, pindai, jalan kaki, dan Surprise me), tiga permainan pemanasan bergiliran setiap pagi, alarm kalender pintar tanpa batas jumlah, rotasi dan profil sebanyak yang Anda mau, riwayat Sharpness lengkap Anda, kebijakan tunda kustom, serta adegan Lark, wallpaper, dan perayaan.`,
       },
       {
         q: `Apa yang terjadi pada alarm Plus saya jika saya berhenti membayar?`,

@@ -49,15 +49,17 @@ export const home = {
 
   mission: {
     alt: `Mind Games görevi: alarmı susturmak için 6 eksi 3’ü çözün`,
-    heading: { pre: `Sizi `, accent: `yataktan kaldırmanın`, post: ` beş yolu` },
+    heading: { pre: `Sizi `, accent: `yataktan kaldırmanın`, post: ` yedi yolu` },
     lede: `Sabahın sayılması için bir şey olması gerekir; neyin olacağını siz seçersiniz. Mind Games (zihin oyunları) ve Photo Proof (fotoğrafla kanıt) ücretsizdir; geri kalanı Plus ile gelir. Her birinin, Mind Games’te tam puanla biten bir çıkış yolu vardır; böylece bitmiş bir kamera ya da adım sayarı olmayan bir telefon sizi asla çaresiz bırakmaz.`,
-    /** The five missions the alarm editor offers, in its order. `tier` is Ücretsiz or Plus. */
+    /** The seven missions the alarm editor offers, in its order. `tier` is Ücretsiz or Plus. */
     missions: [
       { name: `Mind Games`, tier: `Ücretsiz`, body: `Kolay, standart veya zor düzeyde üç aritmetik problemi. Diğer bütün görevlerin son çare olarak döndüğü görev.` },
       { name: `Photo Proof`, tier: `Ücretsiz`, body: `Gökyüzünü, toplanmış yatağınızı, bir bardak suyu fotoğraflayın. Günlük rotasyonla altı farklı istek; yani bir gece önceden hazırlanacak hiçbir şey yok.` },
+      { name: `Memory Match`, tier: `Plus`, body: `Hafıza eşleştirme: her çift eşleşene kadar kartları ikişer ikişer çevirin. Kolay düzeyde dört çift, zor düzeyde sekiz.` },
+      { name: `Sequence Recall`, tier: `Plus`, body: `Dizi hatırlama: bir diziyi izleyin, sonra aynısını tekrarlayın. Üç adımla başlar ve her turda bir adım uzar.` },
       { name: `Scan an Object`, tier: `Plus`, body: `Nesne tarama: kamerayı odanın öbür ucundaki bir şeye tutun. Katalogda yirmi gündelik nesne; hepsi telefonun kendisinde tanınır.` },
       { name: `Walk It Off`, tier: `Plus`, body: `Yürüyerek uyanma: yataktan kalkın ve adımları atın. Adım sayarı okur ve temponuzu izler; yani telefonu sallamak hiçbir işe yaramaz.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Sürpriz: Mind Games, bir tarama ya da bir yürüyüş arasından seçer — o gün o alarm için sabittir, yani ne çıktığını alarm çaldığında öğrenirsiniz.` },
+      { name: `Surprise me`, tier: `Plus`, body: `Sürpriz: diğerlerinden birini seçer — o gün o alarm için sabittir, yani ne çıktığını alarm çaldığında öğrenirsiniz.` },
     ],
     note: `Görev, alarmı kurarken seçilir, çaldığında asla — üzerinde zaten bir tarama ya da yürüyüş olan bir alarm, aboneliğe ne olursa olsun onu çalıştırmaya devam eder. Strict Mode (katı mod), desteklenen cihazlarda dört yeniden çalmayı önceden ayırtır; erteleme ise size dayatılan bir kural değil, sizin belirlediğiniz bir politikadır.`,
   },
@@ -65,7 +67,7 @@ export const home = {
   games: {
     alt: `Memory Match ısınma oyunu`,
     heading: { pre: `İki dakikalık bir `, accent: `ısınma`, post: `, çay demlenirken` },
-    lede: `Beş ısınma oyunu: Math Sprint (hızlı matematik), Memory Match (hafıza eşleştirme), Sequence Recall (dizi hatırlama), Word Dash (kelime koşusu) ve Reaction Tap (tepki dokunuşu). Ücretsiz sürüm görevinizden sonra iki oyunluk bir havuzdan bir tane oynatır. Plus her sabah üç tane oynatır ve bunları döndürür; böylece tüm set bir hafta içinde tamamlanır — ve görevin az önce size yaptırdığı şeyi asla tekrarlamaz. Hiçbiri zorunlu değil; o noktada alarm zaten kapanmıştır.`,
+    lede: `Beş ısınma oyunu: Mind Games (hızlı matematik), Memory Match (hafıza eşleştirme), Sequence Recall (dizi hatırlama), Word Dash (kelime koşusu) ve Reaction Tap (tepki dokunuşu). Ücretsiz sürüm görevinizden sonra iki oyunluk bir havuzdan bir tane oynatır. Plus her sabah üç tane oynatır ve bunları döndürür; böylece tüm set bir hafta içinde tamamlanır — ve görevin az önce size yaptırdığı şeyi asla tekrarlamaz. Hiçbiri zorunlu değil; o noktada alarm zaten kapanmıştır.`,
   },
 
   sharp: {
@@ -131,7 +133,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Alarmınız `, accent: `sonsuza dek ücretsiz`, post: ` çalar` },
-    lede: `Reklam da yok. Beş görevden ikisi de ücretsiz; 13 sesin tamamı, Strict Mode, erteleme ön ayarları ve güvenilirlik kontrolü de öyle. Plus, alarmdan sonraki sabah içindir — diğer görevler, daha fazla ısınma oyunu, daha fazla akıllı kural ve geçmişin tamamı.`,
+    lede: `Reklam da yok. Yedi görevden ikisi de ücretsiz; 13 sesin tamamı, Strict Mode, erteleme ön ayarları ve güvenilirlik kontrolü de öyle. Plus, alarmdan sonraki sabah içindir — diğer görevler, daha fazla ısınma oyunu, daha fazla akıllı kural ve geçmişin tamamı.`,
     free: {
       name: `Ücretsiz`,
       price: `$0`,
@@ -185,7 +187,7 @@ export const home = {
       },
       {
         q: `Sabah 6’da matematik yapmak zorunda mıyım?`,
-        a: `Yalnızca isterseniz. İki ücretsiz görev, üç aritmetik probleminden oluşan Mind Games ve sadece bir şeyin fotoğrafını isteyen Photo Proof’tur — gökyüzü, toplanmış yatağınız, bir bardak su; istek her gün değişir. Plus, odanın öbür ucundaki gerçek bir nesneyi taramayı, belirli sayıda adım atmayı ve “Surprise me”yi (beni şaşırt) ekler; bu sonuncusu birini seçip o gün o alarm için sabitler, yani bir gece önceden sahnelenecek bir şey yoktur. Her görevin Mind Games’te tam puanla biten bir çıkış yolu vardır; böylece bitmiş bir kamera ya da komodinde kalmış bir telefon sizi asla kapana kıstırmaz.`,
+        a: `Yalnızca isterseniz. İki ücretsiz görev, üç aritmetik probleminden oluşan Mind Games ve sadece bir şeyin fotoğrafını isteyen Photo Proof’tur — gökyüzü, toplanmış yatağınız, bir bardak su; istek her gün değişir. Plus, Memory Match’i, Sequence Recall’u, odanın öbür ucundaki gerçek bir nesneyi taramayı, belirli sayıda adım atmayı ve “Surprise me”yi (beni şaşırt) ekler; bu sonuncusu birini seçip o gün o alarm için sabitler, yani bir gece önceden sahnelenecek bir şey yoktur. Her görevin Mind Games’te tam puanla biten bir çıkış yolu vardır; böylece bitmiş bir kamera ya da komodinde kalmış bir telefon sizi asla kapana kıstırmaz.`,
       },
       {
         q: `Görevi atlatıp hile yapabilir miyim?`,
@@ -213,7 +215,7 @@ export const home = {
       },
       {
         q: `Neler ücretsiz, neler Plus?`,
-        a: `Alarmınız sonsuza dek ücretsiz çalar, reklamsız. Ücretsiz sürüm şunları kapsar: ihtiyacınız kadar alarm, Mind Games ve Photo Proof görevleri, 13 alarm sesinin tamamı, Strict Mode, erteleme ön ayarları, güvenilirlik kontrolü, seriler ve dondurma hakları, her görevden sonra bir ısınma oyunu, bir akıllı takvim alarmı, bir vardiya rotasyonu, bir profil, saat uygulaması ve 7 günlük Sharpness trendiniz. Plus şunları ekler: diğer görevler — tarama, yürüyüş ve Surprise me — her sabah dönüşümlü üç ısınma oyunu, sınırsız akıllı takvim alarmı, istediğiniz kadar rotasyon ve profil, tüm Sharpness geçmişiniz, özel bir erteleme politikası ve Lark sahneleri, duvar kâğıtları ve kutlamalar.`,
+        a: `Alarmınız sonsuza dek ücretsiz çalar, reklamsız. Ücretsiz sürüm şunları kapsar: ihtiyacınız kadar alarm, Mind Games ve Photo Proof görevleri, 13 alarm sesinin tamamı, Strict Mode, erteleme ön ayarları, güvenilirlik kontrolü, seriler ve dondurma hakları, her görevden sonra bir ısınma oyunu, bir akıllı takvim alarmı, bir vardiya rotasyonu, bir profil, saat uygulaması ve 7 günlük Sharpness trendiniz. Plus şunları ekler: diğer görevler — Memory Match, Sequence Recall, tarama, yürüyüş ve Surprise me — her sabah dönüşümlü üç ısınma oyunu, sınırsız akıllı takvim alarmı, istediğiniz kadar rotasyon ve profil, tüm Sharpness geçmişiniz, özel bir erteleme politikası ve Lark sahneleri, duvar kâğıtları ve kutlamalar.`,
       },
       {
         q: `Ödemeyi bırakırsam Plus alarmlarıma ne olur?`,

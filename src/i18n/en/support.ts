@@ -77,7 +77,7 @@ export const support = {
 
   sharpness: {
     heading: `The Sharpness Score`,
-    body: `After a mission you can run an optional warm-up. Free draws one game from a two-game pool, Math Sprint and Reaction Tap; Plus plays three of the five each morning on a rotation, around two minutes in all. Either way the warm-up skips whichever game the mission just made you play, so solving arithmetic to silence the alarm never hands you more arithmetic as a warm-up. Your score is measured against your own rolling baseline, not against other people, so it settles around 100 as the app learns your normal. A bad morning is a dip against yesterday's you, nothing more. It is not a clinical or cognitive test.`,
+    body: `After a mission you can run an optional warm-up. Free draws one game from a two-game pool, Mind Games and Reaction Tap; Plus plays three of the five each morning on a rotation, around two minutes in all. Either way the warm-up skips whichever game the mission just made you play, so solving arithmetic to silence the alarm never hands you more arithmetic as a warm-up. Your score is measured against your own rolling baseline, not against other people, so it settles around 100 as the app learns your normal. A bad morning is a dip against yesterday's you, nothing more. It is not a clinical or cognitive test.`,
     physical: `**The physical missions do not feed the score.** Scan an Object, Walk It Off and Photo Proof are recorded in full, but they are only ever compared against themselves. A walk to the bathroom takes thirty seconds and a mental sum takes two, so folding one into a score built from accuracy and speed would peg a flawless morning near the floor. Getting up is counted — just not as sharpness.`,
   },
 

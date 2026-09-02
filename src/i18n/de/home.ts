@@ -51,15 +51,17 @@ export const home = {
 
   mission: {
     alt: `Die Mission Mind Games: Löse 6 minus 3, um den Alarm zu beenden`,
-    heading: { pre: `Fünf Wege, dich `, accent: `aus dem Bett zu holen`, post: `` },
+    heading: { pre: `Sieben Wege, dich `, accent: `aus dem Bett zu holen`, post: `` },
     lede: `Bevor der Morgen zählt, muss etwas passieren, und du wählst, was. Mind Games (Kopfrechnen) und Photo Proof (Fotobeweis) sind kostenlos, der Rest kommt mit Plus. Jede Mission hat einen Ausweg, der in Mind Games mit voller Wertung endet — eine kaputte Kamera oder ein Telefon ohne Schrittzähler lässt dich also nie feststecken.`,
-    /** Die fünf Missionen, die der Alarm-Editor anbietet, in seiner Reihenfolge. `tier` ist Kostenlos oder Plus. */
+    /** Die sieben Missionen, die der Alarm-Editor anbietet, in seiner Reihenfolge. `tier` ist Kostenlos oder Plus. */
     missions: [
       { name: `Mind Games`, tier: `Kostenlos`, body: `Drei Rechenaufgaben in leicht, normal oder schwer. Die Mission, auf die jede andere zurückfällt.` },
       { name: `Photo Proof`, tier: `Kostenlos`, body: `Fotografiere den Himmel, dein gemachtes Bett, ein Glas Wasser. Sechs Motive im Tageswechsel, es gibt also nichts, was du am Abend vorher zurechtlegen könntest.` },
+      { name: `Memory Match`, tier: `Plus`, body: `Paare finden: Deck immer zwei Karten auf, bis jedes Paar gefunden ist. Vier Paare in leicht, acht in schwer.` },
+      { name: `Sequence Recall`, tier: `Plus`, body: `Sequenz merken: Sieh dir eine Folge an und spiel sie nach. Sie beginnt bei drei Schritten und wächst pro Runde um einen.` },
       { name: `Scan an Object`, tier: `Plus`, body: `Objekt scannen: Richte die Kamera auf etwas auf der anderen Seite des Zimmers. Zwanzig Alltagsgegenstände im Katalog, erkannt auf dem Telefon selbst.` },
       { name: `Walk It Off`, tier: `Plus`, body: `Lauf dich wach: Steh auf und mach die Schritte. Die App liest den Schrittzähler und achtet auf deinen Rhythmus, Schütteln bringt also nichts.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Überrasch mich: würfelt zwischen Mind Games, einem Scan und einem Spaziergang — festgelegt für diesen Alarm an diesem Tag, du erfährst es also erst, wenn er klingelt.` },
+      { name: `Surprise me`, tier: `Plus`, body: `Überrasch mich: würfelt eine der anderen Missionen aus — festgelegt für diesen Alarm an diesem Tag, du erfährst es also erst, wenn er klingelt.` },
     ],
     note: `Die Mission wird beim Anlegen des Alarms gewählt, nie beim Klingeln — ein Alarm, der bereits einen Scan oder einen Spaziergang trägt, führt ihn weiter aus, was auch immer mit einem Abo passiert. Strict Mode (strenger Modus) bucht, wo unterstützt, vier Wiederholungen im Voraus, und Schlummern ist eine Regel, die du selbst festlegst, keine, die dir vorgegeben wird.`,
   },
@@ -67,7 +69,7 @@ export const home = {
   games: {
     alt: `Das Aufwärmspiel Memory Match`,
     heading: { pre: `Zwei Minuten `, accent: `Aufwärmen`, post: `, während das Wasser kocht` },
-    lede: `Math Sprint, Memory Match, Sequence Recall, Word Dash und Reaction Tap: Kopfrechnen, Gedächtnis, Sequenzen, Wörter und Reaktion. Kostenlos spielst du eines nach deiner Mission, gezogen aus einem Paar. Mit Plus sind es drei pro Morgen im Wechsel, sodass der ganze Satz innerhalb einer Woche durch ist — und nie das wiederholt, was die Mission dir gerade abverlangt hat. Pflicht ist nichts davon; der Alarm ist zu dem Zeitpunkt längst aus.`,
+    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash und Reaction Tap: Kopfrechnen, Gedächtnis, Sequenzen, Wörter und Reaktion. Kostenlos spielst du eines nach deiner Mission, gezogen aus einem Paar. Mit Plus sind es drei pro Morgen im Wechsel, sodass der ganze Satz innerhalb einer Woche durch ist — und nie das wiederholt, was die Mission dir gerade abverlangt hat. Pflicht ist nichts davon; der Alarm ist zu dem Zeitpunkt längst aus.`,
   },
 
   sharp: {
@@ -134,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Dein Alarm klingelt `, accent: `kostenlos, für immer`, post: `` },
-    lede: `Und ohne Werbung. Zwei der fünf Missionen sind ebenfalls kostenlos, dazu alle 13 Töne, Strict Mode, die Schlummer-Voreinstellungen und die Zuverlässigkeitsprüfung. Plus ist für den Morgen nach dem Alarm — die übrigen Missionen, mehr Aufwärmspiele, mehr smarte Regeln und der ganze Verlauf.`,
+    lede: `Und ohne Werbung. Zwei der sieben Missionen sind ebenfalls kostenlos, dazu alle 13 Töne, Strict Mode, die Schlummer-Voreinstellungen und die Zuverlässigkeitsprüfung. Plus ist für den Morgen nach dem Alarm — die übrigen Missionen, mehr Aufwärmspiele, mehr smarte Regeln und der ganze Verlauf.`,
     free: {
       name: `Kostenlos`,
       price: `$0`,
@@ -188,7 +190,7 @@ export const home = {
       },
       {
         q: `Muss ich um 6 Uhr morgens rechnen?`,
-        a: `Nur wenn du willst. Die zwei kostenlosen Missionen sind Mind Games, drei Rechenaufgaben, und Photo Proof, das einfach ein Foto von etwas verlangt — dem Himmel, deinem gemachten Bett, einem Glas Wasser, nach einem Motiv, das täglich wechselt. Plus ergänzt das Scannen eines echten Gegenstands auf der anderen Seite des Zimmers, eine festgelegte Zahl Schritte und „Surprise me“, das eine davon auswählt und für diesen Alarm an diesem Tag festlegt, sodass sich am Abend vorher nichts vorbereiten lässt. Jede Mission hat einen Ausweg, der in Mind Games mit voller Wertung endet — eine kaputte Kamera oder ein Telefon auf dem Nachttisch bringt dich also nie in die Falle.`,
+        a: `Nur wenn du willst. Die zwei kostenlosen Missionen sind Mind Games, drei Rechenaufgaben, und Photo Proof, das einfach ein Foto von etwas verlangt — dem Himmel, deinem gemachten Bett, einem Glas Wasser, nach einem Motiv, das täglich wechselt. Plus ergänzt Memory Match, Sequence Recall, das Scannen eines echten Gegenstands auf der anderen Seite des Zimmers, eine festgelegte Zahl Schritte und „Surprise me“, das eine davon auswählt und für diesen Alarm an diesem Tag festlegt, sodass sich am Abend vorher nichts vorbereiten lässt. Jede Mission hat einen Ausweg, der in Mind Games mit voller Wertung endet — eine kaputte Kamera oder ein Telefon auf dem Nachttisch bringt dich also nie in die Falle.`,
       },
       {
         q: `Kann ich die Mission umgehen?`,
@@ -216,7 +218,7 @@ export const home = {
       },
       {
         q: `Was ist kostenlos und was ist Plus?`,
-        a: `Dein Alarm klingelt kostenlos, für immer, ohne Werbung. Kostenlos sind so viele Alarme, wie du brauchst, die Missionen Mind Games und Photo Proof, alle 13 Alarmtöne, Strict Mode, die Schlummer-Voreinstellungen, die Zuverlässigkeitsprüfung, Serien und Freeze-Tokens, ein Aufwärmspiel nach jeder Mission, ein smarter Kalenderalarm, ein Schichtrhythmus, ein Profil, die Uhren-App und dein 7-Tage-Sharpness-Trend. Plus ergänzt die übrigen Missionen — Scan an Object, Walk It Off und Surprise me —, drei wechselnde Aufwärmspiele pro Morgen, smarte Kalenderalarme ohne Limit, so viele Schichtrhythmen und Profile, wie du magst, deinen vollständigen Sharpness-Verlauf, eine eigene Schlummer-Regel sowie die Lark-Szenen, Hintergrundbilder und Feiern.`,
+        a: `Dein Alarm klingelt kostenlos, für immer, ohne Werbung. Kostenlos sind so viele Alarme, wie du brauchst, die Missionen Mind Games und Photo Proof, alle 13 Alarmtöne, Strict Mode, die Schlummer-Voreinstellungen, die Zuverlässigkeitsprüfung, Serien und Freeze-Tokens, ein Aufwärmspiel nach jeder Mission, ein smarter Kalenderalarm, ein Schichtrhythmus, ein Profil, die Uhren-App und dein 7-Tage-Sharpness-Trend. Plus ergänzt die übrigen fünf Missionen — Memory Match, Sequence Recall, Scan an Object, Walk It Off und Surprise me —, drei wechselnde Aufwärmspiele pro Morgen, smarte Kalenderalarme ohne Limit, so viele Schichtrhythmen und Profile, wie du magst, deinen vollständigen Sharpness-Verlauf, eine eigene Schlummer-Regel sowie die Lark-Szenen, Hintergrundbilder und Feiern.`,
       },
       {
         q: `Was passiert mit meinen Plus-Alarmen, wenn ich nicht mehr zahle?`,
