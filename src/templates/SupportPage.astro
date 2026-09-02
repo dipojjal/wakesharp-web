@@ -1,0 +1,101 @@
+---
+/** /support in every locale. Copy: src/i18n/<locale>/support.ts. */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Rich from '../i18n/Rich.astro';
+import { SITE } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, localePath } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const { support: t, shell } = getCatalog(locale.code);
+
+const vars = { email: SITE.email, ios: shell.requirements.ios, android: shell.requirements.android };
+const links = {
+  email: `mailto:${SITE.email}`,
+  'terms-safety': `${localePath(locale, '/terms')}#safety`,
+  privacy: localePath(locale, '/privacy'),
+  'account-delete': localePath(locale, '/account/delete'),
+  'apple-subs': 'https://apps.apple.com/account/subscriptions',
+  'google-subs': 'https://play.google.com/store/account/subscriptions',
+};
+---
+
+<LegalLayout
+  title={t.title}
+  description={t.description}
+  path={localePath(locale, '/support')}
+  heading={t.heading}
+  intro={t.intro}
+  locale={locale}
+  alternates={alternatesFor('/support')}
+>
+  <div class="callout">
+    <h2 class="!mt-0">{t.getInTouch.heading}</h2>
+    <p class="!mb-0"><Rich text={t.getInTouch.body} vars={vars} links={links} /></p>
+  </div>
+
+  <h2>{t.requirements.heading}</h2>
+  <p><Rich text={t.requirements.body} vars={vars} links={links} /></p>
+
+  <h2>{t.didntRing.heading}</h2>
+  <div class="callout">
+    <p class="!mb-0"><Rich text={t.didntRing.callout} vars={vars} links={links} /></p>
+  </div>
+  <p><Rich text={t.didntRing.report} vars={vars} links={links} /></p>
+
+  <h3>{t.didntRing.iphone.heading}</h3>
+  <ol>
+    {t.didntRing.iphone.steps.map((s) => <li><Rich text={s} vars={vars} links={links} /></li>)}
+  </ol>
+
+  <h3>{t.didntRing.android.heading}</h3>
+  <ol>
+    {t.didntRing.android.steps.map((s) => <li><Rich text={s} vars={vars} links={links} /></li>)}
+  </ol>
+
+  <div class="callout callout--warn">
+    <p class="!mb-0"><Rich text={t.didntRing.warning} vars={vars} links={links} /></p>
+  </div>
+
+  <h2>{t.ringsThrough.heading}</h2>
+  <p><Rich text={t.ringsThrough.body} vars={vars} links={links} /></p>
+  <ul>
+    {t.ringsThrough.items.map((s) => <li><Rich text={s} vars={vars} links={links} /></li>)}
+  </ul>
+  <p><Rich text={t.ringsThrough.limit} vars={vars} links={links} /></p>
+
+  <h2>{t.missions.heading}</h2>
+  <ul>
+    {t.missions.items.map((s) => <li><Rich text={s} vars={vars} links={links} /></li>)}
+  </ul>
+
+  <h2>{t.smartAlarms.heading}</h2>
+  <p><Rich text={t.smartAlarms.body} vars={vars} links={links} /></p>
+  <p><Rich text={t.smartAlarms.limits} vars={vars} links={links} /></p>
+
+  <h2>{t.sharpness.heading}</h2>
+  <p><Rich text={t.sharpness.body} vars={vars} links={links} /></p>
+  <p><Rich text={t.sharpness.physical} vars={vars} links={links} /></p>
+
+  <h2>{t.backup.heading}</h2>
+  <p><Rich text={t.backup.body} vars={vars} links={links} /></p>
+  <ul>
+    {t.backup.items.map((s) => <li><Rich text={s} vars={vars} links={links} /></li>)}
+  </ul>
+  <p><Rich text={t.backup.subscription} vars={vars} links={links} /></p>
+
+  <h2>{t.purchases.heading}</h2>
+  <ul>
+    {t.purchases.items.map((s) => <li><Rich text={s} vars={vars} links={links} /></li>)}
+  </ul>
+
+  <h2>{t.deleting.heading}</h2>
+  <p><Rich text={t.deleting.body} vars={vars} links={links} /></p>
+
+  <h2>{t.feedback.heading}</h2>
+  <p><Rich text={t.feedback.body} vars={vars} links={links} /></p>
+</LegalLayout>

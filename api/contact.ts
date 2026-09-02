@@ -10,8 +10,11 @@
  * `dist`, so a type error here fails `astro check`, and therefore `npm run build`.
  *
  * The response is a 303 to a static result page rather than JSON. That is what lets
- * the form work with zero client-side JavaScript.
+ * the form work with zero client-side JavaScript. The localized forms send a hidden
+ * `lang` field; it is matched against the locale registry and never echoed, so the
+ * redirect target is always one of the site's own result pages.
  */
+import { DEFAULT_LOCALE, enabledLocales } from '../src/i18n/config.js';
 
 const TO = 'support@wakesharp.app';
 const FROM = 'WakeSharp Contact <support@wakesharp.app>';
@@ -29,11 +32,18 @@ const AUTO_REPLY_TEXT = [
   "If you didn't submit the contact form at wakesharp.app, you can ignore this email.",
 ].join('\n');
 
-const SENT = '/contact-sent';
-const FAILED = '/contact-error';
-
 /** Longest accepted value per field. Anything longer is treated as junk. */
 const LIMITS = { name: 80, email: 160, topic: 60, device: 120, message: 4000 } as const;
+
+/**
+ * The result page for the visitor's language: `/es/contact-sent` when `lang`
+ * names an enabled non-default locale path, otherwise the English page. Anything
+ * that is not exactly a registry path falls back to English.
+ */
+const resultPath = (page: 'contact-sent' | 'contact-error', lang: string): string => {
+  const locale = enabledLocales().find((l) => l.path === lang && l.code !== DEFAULT_LOCALE);
+  return locale ? `/${locale.path}/${page}` : `/${page}`;
+};
 
 /**
  * `Response.redirect()` requires an absolute URL and throws a TypeError on a
@@ -54,14 +64,17 @@ export async function POST(request: Request): Promise<Response> {
   try {
     form = new URLSearchParams(await request.text());
   } catch {
-    return seeOther(FAILED);
+    return seeOther(resultPath('contact-error', ''));
   }
 
   const field = (key: string): string => (form.get(key) ?? '').trim();
+  const lang = field('lang');
+  const sent = resultPath('contact-sent', lang);
+  const failed = resultPath('contact-error', lang);
 
   // Honeypot. A bot that fills it gets the success page and nothing is sent, so a
   // scripted submitter never learns it was rejected.
-  if (field('company') !== '') return seeOther(SENT);
+  if (field('company') !== '') return seeOther(sent);
 
   const name = field('name');
   const email = field('email');
@@ -80,12 +93,12 @@ export async function POST(request: Request): Promise<Response> {
   // reject values that would poison the Reply-To header.
   const emailLooksReal = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  if (!name || !email || !message || !emailLooksReal || tooLong) return seeOther(FAILED);
+  if (!name || !email || !message || !emailLooksReal || tooLong) return seeOther(failed);
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error('[contact] RESEND_API_KEY is not set — nothing was sent.');
-    return seeOther(FAILED);
+    return seeOther(failed);
   }
 
   const text = [
@@ -93,6 +106,7 @@ export async function POST(request: Request): Promise<Response> {
     `Email:  ${email}`,
     `Topic:  ${topic || '(not given)'}`,
     `Device: ${device || '(not given)'}`,
+    ...(lang ? [`Lang:   ${oneLine(lang).slice(0, 12)}`] : []),
     '',
     message,
   ].join('\n');
@@ -119,11 +133,11 @@ export async function POST(request: Request): Promise<Response> {
 
     if (!res.ok) {
       console.error(`[contact] Resend returned ${res.status}: ${await res.text()}`);
-      return seeOther(FAILED);
+      return seeOther(failed);
     }
   } catch (err) {
     console.error('[contact] Request to Resend failed:', err);
-    return seeOther(FAILED);
+    return seeOther(failed);
   }
 
   // Best-effort acknowledgement to the submitter. The notification above has already
@@ -151,5 +165,5 @@ export async function POST(request: Request): Promise<Response> {
     console.error('[contact] Auto-reply request failed:', err);
   }
 
-  return seeOther(SENT);
+  return seeOther(sent);
 }

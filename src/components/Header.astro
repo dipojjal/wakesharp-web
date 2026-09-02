@@ -10,32 +10,49 @@
  * There is no mobile drawer, so below `md` the nav collapses to Blog and Contact:
  * the four section links all point at homepage anchors a phone visitor can reach
  * by scrolling, while /blog and /contact are real pages they otherwise could not
- * get to at all.
+ * get to at all. The language menu sits beside the CTA and shrinks to a bare
+ * globe below `sm` for the same reason.
  */
+import LanguageMenu from './LanguageMenu.astro';
+import { getCatalog } from '../i18n/catalog';
+import { blogPath, localePath, type Alternate } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
+
+interface Props {
+  locale: EnabledLocale;
+  switchTo: Alternate[];
+  fallbackPath: string;
+}
+const { locale, switchTo, fallbackPath } = Astro.props;
+const t = getCatalog(locale.code).shell;
+const href = (p: string): string => localePath(locale, p);
 ---
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[color-mix(in_srgb,var(--color-night-surface)_82%,transparent)] backdrop-blur-md">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
-    <a href="/" class="flex items-center gap-2.5 text-[var(--color-night-text)]">
+    <a href={href('/')} class="flex items-center gap-2.5 text-[var(--color-night-text)]">
       <img src="/icon-192.png" alt="" width="28" height="28" class="rounded-[8px]" />
       {/* Below `sm` the wordmark would collide with the always-visible Blog and
           Contact links, so the app icon carries the brand alone there. */}
       <span class="hidden text-lg font-extrabold tracking-[-0.02em] sm:inline" aria-hidden="true">WakeSharp</span>
-      <span class="sr-only">WakeSharp — home</span>
+      <span class="sr-only">{t.brandHome}</span>
     </a>
 
-    <nav aria-label="Main" class="flex items-center gap-5 text-sm font-semibold text-[var(--color-night-dim)] md:gap-7">
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#features">Features</a>
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#sharp">Sharpness</a>
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#pricing">Pricing</a>
-      <a class="hover:text-[var(--color-night-text)]" href="/blog">Blog</a>
-      <a class="hover:text-[var(--color-night-text)]" href="/contact">Contact</a>
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href="/#faq">FAQ</a>
+    <nav aria-label={t.nav.aria} class="flex items-center gap-5 text-sm font-semibold text-[var(--color-night-dim)] md:gap-7">
+      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#features')}>{t.nav.features}</a>
+      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#sharp')}>{t.nav.sharpness}</a>
+      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#pricing')}>{t.nav.pricing}</a>
+      <a class="hover:text-[var(--color-night-text)]" href={blogPath(locale)}>{t.nav.blog}</a>
+      <a class="hover:text-[var(--color-night-text)]" href={href('/contact')}>{t.nav.contact}</a>
+      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#faq')}>{t.nav.faq}</a>
     </nav>
 
-    <a
-      href="/#get"
-      class="pill bg-[var(--color-coral)] px-4 py-2 text-sm text-[var(--color-night-deep)]"
-    >Get WakeSharp</a>
+    <div class="flex items-center gap-2 sm:gap-3">
+      <LanguageMenu locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
+      <a
+        href={href('/#get')}
+        class="pill bg-[var(--color-coral)] px-4 py-2 text-sm text-[var(--color-night-deep)]"
+      >{t.nav.cta}</a>
+    </div>
   </div>
 </header>

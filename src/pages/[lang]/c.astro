@@ -1,0 +1,8 @@
+---
+/** /<locale>/c — rendered for every enabled non-default locale. */
+import ChallengePage from '../../templates/ChallengePage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<ChallengePage locale={localeFromParams(Astro.params)} />

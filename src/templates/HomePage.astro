@@ -1,0 +1,322 @@
+---
+/**
+ * The homepage, rendered once per locale. src/pages/index.astro mounts it for
+ * English; src/pages/[lang]/index.astro for every other enabled locale. Every
+ * word comes from src/i18n/<locale>/home.ts — nothing here is English-specific.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SunriseSection from '../components/SunriseSection.astro';
+import FeatureRow from '../components/FeatureRow.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import StoreGallery from '../components/StoreGallery.astro';
+import Lark from '../components/Lark.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Rich from '../i18n/Rich.astro';
+import { SITE } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, localePath } from '../i18n/routes';
+import { isDefaultLocale, type EnabledLocale } from '../i18n/config';
+
+import iosHome from '../assets/screens/ios/home.png';
+import iosRing from '../assets/screens/ios/ring.png';
+import iosSmart from '../assets/screens/ios/smart.png';
+import iosMission from '../assets/screens/ios/mission.png';
+import iosGames from '../assets/screens/ios/games.png';
+import iosReveal from '../assets/screens/ios/reveal.png';
+import androidStats from '../assets/screens/android/stats.png';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const { home: t, shell } = getCatalog(locale.code);
+const english = isDefaultLocale(locale);
+
+// Everything a catalog string may interpolate. Prices and requirements are
+// never typed into a translation; they come from the one config file.
+const vars = {
+  ios: shell.requirements.ios,
+  android: shell.requirements.android,
+  annual: SITE.plus.annual,
+  lifetime: SITE.plus.lifetime,
+  trialDays: SITE.plus.trialDays,
+};
+const links = { terms: localePath(locale, '/terms') };
+---
+
+<BaseLayout
+  title={t.title}
+  description={shell.siteDescription}
+  path={localePath(locale, '/')}
+  locale={locale}
+  alternates={alternatesFor('/')}
+>
+  <JsonLd locale={locale} />
+
+  {/* ── 1. Hero ─────────────────────────────────────────────────────────── */}
+  <SunriseSection id="hero" class="!pt-16 sm:!pt-20">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
+      <div>
+        <div class="mb-6 lg:hidden">
+          <Lark pose="asleep" width={150} breathe glow priority />
+        </div>
+        <h1 class="text-[clamp(2.5rem,8vw,4.25rem)] leading-[1.05]">
+          {t.hero.heading.pre}<span class="accent">{t.hero.heading.accent}</span><br />{t.hero.heading.post}
+        </h1>
+        <p class="lede mt-6">{t.hero.lede}</p>
+        <div class="mt-8"><StoreButtons /></div>
+      </div>
+
+      <div class="relative flex justify-center lg:block">
+        <div class="pointer-events-none absolute -top-4 -left-10 z-10 hidden lg:block">
+          <Lark pose="asleep" width={165} breathe glow priority />
+        </div>
+        <PhoneFrame src={iosHome} alt={t.hero.phoneAlt} width={300} tilt={-3.5} priority class="lg:ml-auto lg:mr-2 lg:mt-28" />
+      </div>
+    </div>
+  </SunriseSection>
+
+  {/* ── 2. Trust strip ──────────────────────────────────────────────────── */}
+  <SunriseSection id="trust" class="!py-10" anchor="features">
+    <ul class="flex flex-wrap justify-center gap-3">
+      {
+        t.trust.map((item) => (
+          <li class="rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-sm font-semibold">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </SunriseSection>
+
+  {/* ── 3. Ring ─────────────────────────────────────────────────────────── */}
+  <SunriseSection id="ring">
+    <FeatureRow screenshot={iosRing} alt={t.ring.alt} side="left">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.ring.heading.pre}<span class="accent">{t.ring.heading.accent}</span>{t.ring.heading.post}</h2>
+      <p class="lede mt-5">{t.ring.lede}</p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 4. Reliability ──────────────────────────────────────────────────── */}
+  <SunriseSection id="reliable">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_auto]">
+      <div class="max-w-2xl">
+        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.reliable.heading.pre}<span class="accent">{t.reliable.heading.accent}</span>{t.reliable.heading.post}</h2>
+        <p class="lede mt-5">{t.reliable.lede}</p>
+        <ul class="mt-7 grid gap-3 sm:grid-cols-2">
+          {
+            t.reliable.items.map((item) => (
+              <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
+                <strong class="block">{item.title}</strong>
+                <span class="dim text-[0.95rem]">{item.body}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="dim mt-6 text-sm">{t.reliable.note}</p>
+      </div>
+
+      <div class="hidden justify-self-center lg:block">
+        <Lark pose="focused" width={230} />
+      </div>
+    </div>
+  </SunriseSection>
+
+  {/* ── 5. Smart alarms & real schedules ────────────────────────────────── */}
+  <SunriseSection id="smart">
+    <FeatureRow screenshot={iosSmart} alt={t.smart.alt} side="right" raised>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.smart.heading.pre}<span class="accent">{t.smart.heading.accent}</span>{t.smart.heading.post}</h2>
+      <p class="lede mt-5">{t.smart.lede}</p>
+      <p class="mt-4 dim">{t.smart.shifts}</p>
+      <p class="mt-3 dim text-sm">{t.smart.labels}</p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 6. Missions ─────────────────────────────────────────────────────── */}
+  <SunriseSection id="mission">
+    <FeatureRow screenshot={iosMission} alt={t.mission.alt} side="left">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.mission.heading.pre}<span class="accent">{t.mission.heading.accent}</span>{t.mission.heading.post}</h2>
+      <p class="lede mt-5">{t.mission.lede}</p>
+    </FeatureRow>
+
+    <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        t.mission.missions.map((m) => (
+          <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
+            <div class="flex items-baseline justify-between gap-3">
+              <strong>{m.name}</strong>
+              <span class="dim text-xs font-semibold uppercase tracking-wide">{m.tier}</span>
+            </div>
+            <span class="dim mt-1 block text-[0.95rem]">{m.body}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="dim mt-6 max-w-3xl text-sm">{t.mission.note}</p>
+  </SunriseSection>
+
+  {/* ── 7. Warm-up ──────────────────────────────────────────────────────── */}
+  <SunriseSection id="games">
+    <FeatureRow screenshot={iosGames} alt={t.games.alt} side="right">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.games.heading.pre}<span class="accent">{t.games.heading.accent}</span>{t.games.heading.post}</h2>
+      <p class="lede mt-5">{t.games.lede}</p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 8. Sharpness — scrim mandatory, see src/config/sunrise.ts ───────── */}
+  <SunriseSection id="sharp" class="min-h-[100svh] flex items-center">
+    <FeatureRow screenshot={iosReveal} alt={t.sharp.alt} side="left" scrim>
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.sharp.heading.pre}<span class="accent">{t.sharp.heading.accent}</span>{t.sharp.heading.post}</h2>
+      <p class="lede mt-5">{t.sharp.lede}</p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 9. Streaks & trends ─────────────────────────────────────────────── */}
+  <SunriseSection id="stats">
+    <FeatureRow screenshot={androidStats} alt={t.stats.alt} side="right">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.stats.heading.pre}<span class="accent">{t.stats.heading.accent}</span>{t.stats.heading.post}</h2>
+      <p class="lede mt-5">{t.stats.lede}</p>
+    </FeatureRow>
+  </SunriseSection>
+
+  {/* ── 10. Wake together ───────────────────────────────────────────────── */}
+  <SunriseSection id="together">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_auto]">
+      <div class="max-w-2xl">
+        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.together.heading.pre}<span class="accent">{t.together.heading.accent}</span>{t.together.heading.post}</h2>
+        <p class="lede mt-5">{t.together.lede}</p>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+          {
+            t.together.cards.map((card) => (
+              <div class="card p-6">
+                <strong class="block">{card.title}</strong>
+                <span class="dim mt-1 block text-[0.95rem]">{card.body}</span>
+              </div>
+            ))
+          }
+        </div>
+        <p class="dim mt-6 text-sm">{t.together.note}</p>
+      </div>
+
+      <div class="hidden justify-self-center lg:block">
+        <Lark pose="waking" width={230} />
+      </div>
+    </div>
+  </SunriseSection>
+
+  {/* ── 11. Both platforms ──────────────────────────────────────────────── */}
+  <SunriseSection id="platforms">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.platforms.heading.pre}<span class="accent">{t.platforms.heading.accent}</span>{t.platforms.heading.post}</h2>
+      <p class="lede mt-5"><Rich text={t.platforms.lede} vars={vars} /></p>
+      <p class="mt-4 dim">{t.platforms.watch}</p>
+      <p class="mt-4 dim">{t.platforms.account}</p>
+    </div>
+    <StoreGallery />
+  </SunriseSection>
+
+  {/* ── 12. Make it yours ───────────────────────────────────────────────── */}
+  <SunriseSection id="yours">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.yours.heading.pre}<span class="accent">{t.yours.heading.accent}</span>{t.yours.heading.post}</h2>
+      <p class="lede mt-5">{t.yours.lede}</p>
+    </div>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        t.yours.cards.map((card) => (
+          <div class="card p-6">
+            <strong class="block">{card.title}</strong>
+            <span class="dim mt-1 block text-[0.95rem]">{card.body}</span>
+          </div>
+        ))
+      }
+    </div>
+  </SunriseSection>
+
+  {/* ── 13. Pricing ─────────────────────────────────────────────────────── */}
+  <SunriseSection id="pricing">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.pricing.heading.pre}<span class="accent">{t.pricing.heading.accent}</span>{t.pricing.heading.post}</h2>
+      <p class="lede mt-5">{t.pricing.lede}</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <div class="card p-7">
+        <h3 class="text-xl">{t.pricing.free.name}</h3>
+        <p class="mt-1 text-4xl font-extrabold">{t.pricing.free.price}</p>
+        <p class="mt-1 text-sm dim">{t.pricing.free.tagline}</p>
+        <ul class="mt-6 space-y-2.5 text-[0.97rem]">
+          {t.pricing.free.features.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-success)] font-bold">✓</span><span>{f}</span></li>)}
+        </ul>
+      </div>
+
+      <div class="card relative p-7 ring-2 ring-[var(--color-coral)]">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-xl">{t.pricing.plus.name}</h3>
+            <p class="mt-1 text-4xl font-extrabold">
+              {SITE.plus.monthly}<span class="text-base font-semibold dim">{t.pricing.plus.perMonth}</span>
+            </p>
+          </div>
+          <div class="hidden sm:block"><Lark pose="celebrating" width={100} /></div>
+        </div>
+
+        {/* Three ways to pay, one entitlement — not three tiers. Lifetime is a
+            single payment and must never be shown as a renewing plan. */}
+        <ul class="mt-4 space-y-1.5 text-sm dim">
+          <li><Rich text={t.pricing.plus.annual} vars={vars} strongClass="font-semibold" /></li>
+          <li><Rich text={t.pricing.plus.lifetime} vars={vars} strongClass="font-semibold" /></li>
+        </ul>
+
+        <ul class="mt-6 space-y-2.5 text-[0.97rem]">
+          {t.pricing.plus.features.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-coral-ink)] font-bold">✓</span><span>{f}</span></li>)}
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-8 max-w-2xl dim">{t.pricing.lapse}</p>
+
+    <p class="mt-6 max-w-2xl text-sm dim">
+      <Rich text={t.pricing.billing} links={links} linkClass="underline underline-offset-2" />
+    </p>
+    {!english && <p class="mt-3 max-w-2xl text-sm dim">{t.pricing.usdNote}</p>}
+  </SunriseSection>
+
+  {/* ── 14. FAQ ─────────────────────────────────────────────────────────── */}
+  <SunriseSection id="faq">
+    <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.faq.heading.pre}<span class="accent">{t.faq.heading.accent}</span>{t.faq.heading.post}</h2>
+    <div class="mt-8 max-w-3xl divide-y divide-black/10">
+      {
+        t.faq.items.map((f) => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold">
+              {f.q}
+              <span aria-hidden="true" class="shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 leading-relaxed dim">{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </SunriseSection>
+
+  {/* ── 15. Final CTA ───────────────────────────────────────────────────── */}
+  <SunriseSection id="cta" anchor="get">
+    <div class="flex flex-col items-center text-center">
+      <Lark pose="encouraging" width={170} />
+      <h2 class="mt-6 text-[clamp(1.9rem,5vw,3rem)]">{t.cta.heading.pre}<span class="accent">{t.cta.heading.accent}</span>{t.cta.heading.post}</h2>
+      <p class="lede mx-auto mt-5 text-center">{t.cta.lede}</p>
+      <div class="mt-8"><StoreButtons tone="light" align="center" /></div>
+    </div>
+  </SunriseSection>
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .group-open\:rotate-45 { transition: none; }
+  }
+</style>

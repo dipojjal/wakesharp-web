@@ -1,0 +1,40 @@
+---
+/**
+ * Renders a catalog string that may carry the inline markup defined in rich.ts.
+ * Every text node is JSX text, so translations are escaped like any other copy.
+ */
+import { richNodes, type Vars } from './rich';
+
+interface Props {
+  text: string;
+  vars?: Vars;
+  /** href per link key used in `text`. A key with no href fails the build. */
+  links?: Record<string, string>;
+  linkClass?: string;
+  strongClass?: string;
+}
+const { text, vars = {}, links = {}, linkClass, strongClass } = Astro.props;
+const nodes = richNodes(text, vars);
+for (const n of nodes) {
+  if (n.type === 'link' && !(n.key in links)) {
+    throw new Error(`Rich text uses link key "${n.key}" but no href was passed for it: "${text}"`);
+  }
+}
+const isExternal = (href: string): boolean => /^https?:\/\//.test(href);
+---
+
+{
+  nodes.map((n) =>
+    n.type === 'text' ? (
+      n.value
+    ) : n.type === 'strong' ? (
+      <strong class={strongClass}>{n.value}</strong>
+    ) : n.type === 'em' ? (
+      <em>{n.value}</em>
+    ) : (
+      <a href={links[n.key]} class={linkClass} rel={isExternal(links[n.key] as string) ? 'noopener' : undefined}>
+        {n.value}
+      </a>
+    ),
+  )
+}

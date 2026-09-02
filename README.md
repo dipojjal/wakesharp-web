@@ -41,7 +41,8 @@ Individually:
 |---|---|
 | `npm run contrast` | Walks all 15 sunrise bands at 21 interpolated steps and fails if any tone's text, dim or accent colour drops below WCAG AA. Bands marked `cards: true` are walked twice, once on the raw band and once through the translucent card fill they carry — a card grid lightens its background by 6%, which is enough to fail `dim` on the darker stops. Lighthouse **cannot** catch any of this — its contrast audit skips text sitting on a gradient. |
 | `npm run build` | `astro check` (typecheck) then the static build. |
-| `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. |
+| `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. On the localized pages it checks each locale's own seed list of prohibited claims instead, and it fails if an enabled locale is only partly built, lacks `<html lang>` or the x-default hreflang link, or still carries an English sentence verbatim. |
+| `npm run i18n:test` | The rich-text parser, the URL helpers and a structural diff of every registered catalog against the English one (keys, array lengths, `{placeholders}`, link keys, balanced markup). |
 
 ## The contact form
 
@@ -127,15 +128,41 @@ src/
 │  ├─ site.ts        ← store state, pricing, publisher, governing law
 │  └─ sunrise.ts     ← the night→morning gradient ramp + per-tone ink
 ├─ styles/global.css ← brand tokens ported from the app's Palette.swift
+├─ i18n/             ← config.ts (the locale registry), one catalog folder per
+│                      language (en/ is the schema), rich.ts + Rich.astro
+├─ templates/        ← the pages themselves, one per Tier A page, locale-agnostic
 ├─ layouts/          ← BaseLayout, LegalLayout
-├─ components/       ← Header, Footer, SunriseSection, PhoneFrame, Lark, …
-├─ pages/            ← index, privacy, terms, support, contact(+sent/error),
-│                      c, p, 404
+├─ components/       ← Header, Footer, LanguageMenu, SunriseSection, Lark, …
+├─ pages/            ← English mounts of the templates at the root, plus
+│  └─ [lang]/          the same pages for every other enabled locale
 └─ assets/           ← screens/, store/, mascot/  (generated, committed)
 public/badges/       ← official App Store / Google Play artwork, unmodified
 scripts/             ← prep-assets, build-og, check-contrast, check-copy
 api/contact.ts       ← Vercel function, not Astro — see "The contact form"
 ```
+
+## Languages
+
+The site ships in English at the root, un-prefixed, plus every locale flagged `enabled` in
+`src/i18n/config.ts`, each under `/<path>/…` (`/es/support`). Copy lives in typed catalogs under
+`src/i18n/<code>/`; `src/i18n/en/` is the schema, and a translation ends every file with
+`satisfies typeof en.<file>`, so a missing or extra key fails `astro check`. Pages are templates in
+`src/templates/`, mounted once by `src/pages/*.astro` for English and once by
+`src/pages/[lang]/*.astro` for everything else.
+
+The privacy policy and the terms stay English and binding — both apps hardcode their English URLs.
+`/<locale>/privacy` and `/<locale>/terms` wrap the English body under a translated notice and
+canonicalize to the English page, so the language selector never dead-ends.
+
+There is no Accept-Language redirect, and there must never be one: App Review and search engines
+fetch the English paths, and a redirect would put a hop on `/privacy`. The header `<details>`
+menu and the footer list are plain links.
+
+To add a language: copy `src/i18n/en/` to `src/i18n/<code>/` and translate it following
+`docs/i18n/glossary.md`; run `npx tsx scripts/check-i18n.mjs <code>` until it passes; register the
+catalog in `src/i18n/catalog.ts`; flip `enabled` in `src/i18n/config.ts`; add the path to the two
+`/:lang(…)` rewrites in `vercel.json`; `npm run verify`. The blog is English-only until translated
+posts land under `src/content/blog/<lang>/` (a later phase).
 
 ## Licence
 

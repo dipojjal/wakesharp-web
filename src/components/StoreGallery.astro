@@ -8,9 +8,15 @@
  *
  * CSS scroll-snap, no carousel library. The toggle is ~8 lines of vanilla JS
  * flipping one attribute; with JS off both rails render, each with its own heading.
+ *
+ * Captions and labels come from the home catalog (`home.gallery`), keyed on the
+ * frame number. The screenshots themselves stay the English store artwork.
  */
 import { Picture } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { getCatalog } from '../i18n/catalog';
+import { interpolate } from '../i18n/rich';
+import { resolveLocale } from '../i18n/routes';
 
 /**
  * Returns [frame number, image] pairs. The NUMBER keys the caption, not the
@@ -25,21 +31,14 @@ const load = (mods: Record<string, { default: ImageMetadata }>): [string, ImageM
 const ios = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/ios/*.png', { eager: true }));
 const android = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/android/*.png', { eager: true }));
 
+const t = getCatalog(resolveLocale(Astro.currentLocale).code).home.gallery;
 /**
  * Frame number → what that frame shows, its baked-in headline included. These
  * images are mostly TEXT, so the headline is the part a screen-reader user is
  * otherwise missing. If tools/screenshots/shotlist.py changes a headline in the
- * app repo, this changes with it in the same commit.
+ * app repo, the catalogs change with it in the same commit.
  */
-const CAPTIONS: Record<string, string> = {
-  '01': 'Home screen with the next alarm and a smart calendar rule, headlined “Wake up sharp. Not just awake.”',
-  '02': 'The alarm ringing over the lock screen, headlined “Complete a mission for full credit”',
-  '03': 'The Mind Games mission that silences the alarm, headlined “Solve to silence”',
-  '04': 'The warm-up games, headlined “5 brain games. 3 every morning.” and noting that the rotation comes with WakeSharp Plus',
-  '05': 'The daily Sharpness Score reveal, scored against your own baseline',
-  '06': 'The smart alarm rule editor, headlined “Wakes you before your first meeting”',
-  '07': 'The Sharpness trend and streak stats: streaks and freezes free, full history with WakeSharp Plus',
-};
+const CAPTIONS: Record<string, string> = t.captions;
 
 /**
  * Frames whose shipped artwork still carries a claim the app cannot keep.
@@ -61,13 +60,13 @@ const WITHHELD: Record<string, ReadonlySet<string>> = {
 };
 
 const rails = [
-  { key: 'ios', label: 'iPhone', store: 'App Store', shots: ios },
-  { key: 'android', label: 'Android', store: 'Google Play', shots: android },
+  { key: 'ios', label: t.rails.ios.label, store: t.rails.ios.store, shots: ios },
+  { key: 'android', label: t.rails.android.label, store: t.rails.android.store, shots: android },
 ];
 ---
 
 <div id="store-gallery" data-platform="ios" class="mt-10">
-  <div role="tablist" aria-label="Choose a platform" class="js-only mb-6 inline-flex rounded-full border border-black/10 bg-white/60 p-1">
+  <div role="tablist" aria-label={t.tablistAria} class="js-only mb-6 inline-flex rounded-full border border-black/10 bg-white/60 p-1">
     {
       rails.map((r, i) => (
         <button
@@ -88,13 +87,13 @@ const rails = [
   {
     rails.map((r) => (
       <div id={`rail-${r.key}`} role="tabpanel" aria-labelledby={`tab-${r.key}`} data-rail={r.key}>
-        <h3 class="no-js-only mb-4 text-lg font-bold">{r.label} — as shown on the {r.store}</h3>
+        <h3 class="no-js-only mb-4 text-lg font-bold">{interpolate(t.railHeading, { label: r.label, store: r.store })}</h3>
         <ul class="store-rail flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5">
           {r.shots.filter(([n]) => !WITHHELD[r.key]!.has(n)).map(([n, shot]) => (
             <li class="shrink-0 snap-start">
               <Picture
                 src={shot}
-                alt={`WakeSharp on ${r.label}: ${CAPTIONS[n] ?? 'app screenshot'}`}
+                alt={interpolate(t.altTemplate, { label: r.label, caption: CAPTIONS[n] ?? t.fallbackCaption })}
                 widths={[220, 440]}
                 sizes="220px"
                 formats={['avif', 'webp']}

@@ -1,0 +1,8 @@
+---
+/** /<locale>/contact-error — rendered for every enabled non-default locale. */
+import ContactErrorPage from '../../templates/ContactErrorPage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<ContactErrorPage locale={localeFromParams(Astro.params)} />

@@ -1,210 +1,24 @@
 ---
+/**
+ * https://wakesharp.app/terms is hardcoded in both shipped apps' paywalls and
+ * must keep answering 200 in English with no redirect. The body lives in
+ * src/templates/TermsBody.astro so the localized wrappers can reuse it.
+ */
 import LegalLayout from '../layouts/LegalLayout.astro';
-import { SITE } from '../config/site';
+import TermsBody from '../templates/TermsBody.astro';
+import { TERMS } from '../templates/legal-copy';
+import { alternatesFor, resolveLocale } from '../i18n/routes';
 ---
 
 <LegalLayout
-  title="Terms of Service — WakeSharp"
-  description="The agreement covering your use of WakeSharp, including subscription terms and an important safety notice about relying on any alarm."
+  title={TERMS.title}
+  description={TERMS.description}
   path="/terms"
-  heading="Terms of Service"
-  intro="These terms cover your use of the WakeSharp app. They also serve as the end-user licence agreement for WakeSharp. Please read section 8 in particular — it is about relying on an alarm."
+  heading={TERMS.heading}
+  intro={TERMS.intro}
+  locale={resolveLocale('en')}
+  alternates={[]}
+  switchTo={alternatesFor('/terms')}
 >
-  <h2>1. Accepting these terms</h2>
-  <p>
-    By downloading, installing or using WakeSharp you agree to these terms. If you do not agree, please do
-    not use the app. WakeSharp is provided by {SITE.publisher} ("we", "us").
-  </p>
-
-  <h2>2. Who can use WakeSharp</h2>
-  <p>
-    Anyone can use WakeSharp. If you are under the age of majority where you live, you may use it with the
-    involvement of a parent or guardian, who accepts these terms on your behalf. Only the account holder for
-    an Apple or Google account may make purchases through it.
-  </p>
-
-  <h2>3. Your licence</h2>
-  <p>
-    We grant you a personal, non-exclusive, non-transferable, revocable licence to use WakeSharp on devices
-    you own or control, in line with the App Store or Google Play rules that apply to you. You may not:
-  </p>
-  <ul>
-    <li>copy, sell, rent, sublicense or redistribute the app;</li>
-    <li>reverse-engineer, decompile or disassemble it, except where that restriction is prohibited by law;</li>
-    <li>remove or obscure any notice of ownership; or</li>
-    <li>use it in a way that breaks the law or the store's own terms.</li>
-  </ul>
-  <p>
-    WakeSharp, its name, the Lark character and all its artwork, audio and code remain ours. Nothing here
-    transfers ownership.
-  </p>
-
-  <h2>4. WakeSharp Plus</h2>
-  <p>
-    Your alarm rings free, forever, with no advertising. The free tier covers every alarm you set, the
-    Mind Games and Photo Proof missions, Strict Mode where supported, the snooze presets, the alarm
-    reliability check and all 13 alarm tones.
-  </p>
-  <p>
-    WakeSharp Plus is optional. It adds every wake-up mission beyond Mind Games and Photo Proof, three
-    warm-up games every morning on a rotation, your full Sharpness history, unlimited smart calendar alarms,
-    more alarm profiles and shift rotations, a custom snooze policy, and the Lark scenes, wallpapers and
-    celebrations. It can be bought as a subscription or as a one-time purchase.
-  </p>
-  <p>
-    <strong>A mission is gated only when you create or edit an alarm, never when one rings.</strong> An alarm
-    that already carries a Plus mission keeps running it, whatever has happened to your subscription since.
-  </p>
-
-  <h3>Subscriptions (monthly and annual)</h3>
-  <ul>
-    <li><strong>Price.</strong> {SITE.plus.monthly} per month, or {SITE.plus.annual} per year. Prices shown in the app come from the store and may differ by region, tax and currency; the price shown at purchase is the price that applies.</li>
-    <li><strong>Free trial.</strong> The annual plan includes a {SITE.plus.trialDays}-day free trial where the store offers one, for new subscribers only. If you cancel before the trial ends you are not charged. Unused trial time is forfeited when you subscribe.</li>
-    <li><strong>Auto-renewal.</strong> Subscriptions renew automatically at the end of each period unless you cancel at least 24 hours before it ends. Your Apple or Google account is charged for renewal within 24 hours of the period ending.</li>
-    <li><strong>Billing and cancellation are handled by the store, not by us.</strong> Manage or cancel in your <a href="https://apps.apple.com/account/subscriptions" rel="noopener">App Store subscription settings</a> or <a href="https://play.google.com/store/account/subscriptions" rel="noopener">Google Play subscription settings</a>. We cannot cancel a subscription for you.</li>
-    <li><strong>Deleting the app does not cancel a subscription.</strong></li>
-    <li><strong>Refunds</strong> are governed by Apple's or Google's refund policy, whichever store you bought from. We do not process payments and cannot issue refunds directly, but tell us if something went wrong and we will help where we can.</li>
-    <li><strong>Changes to price or benefits</strong> will be notified before they take effect, and you can cancel before renewing.</li>
-  </ul>
-
-  <h3>Plus Lifetime (a one-time purchase)</h3>
-  <ul>
-    <li><strong>It is not a subscription.</strong> WakeSharp Plus Lifetime is a single payment of {SITE.plus.lifetime}. It does not renew, you are never billed again, and there is nothing to cancel — the auto-renewal and cancellation terms above do not apply to it.</li>
-    <li><strong>No free trial.</strong> The {SITE.plus.trialDays}-day free trial belongs to the annual subscription only.</li>
-    <li><strong>What it covers.</strong> The WakeSharp Plus features in this app, on the store account you bought it with, for as long as the app remains available on that store and runs on your device. It is not a promise that any particular feature will exist forever; section 5 governs changes.</li>
-    <li><strong>Restoring it.</strong> Reinstalling or moving to a new device restores it through <em>Restore Purchases</em> on the Plus screen, using the same store account.</li>
-    <li><strong>Refunds</strong> are governed by Apple's or Google's refund policy for one-time purchases, whichever store you bought from.</li>
-  </ul>
-
-  <h2>5. Changes to the app</h2>
-  <p>
-    We may add, change or remove features over time as the app and the platforms it runs on evolve. If we
-    remove something material from WakeSharp Plus during a period you have paid for, you may cancel and seek
-    a pro-rata refund through the store. If you bought Plus Lifetime there is no period to pro-rate; your
-    remedy is a refund request to the store under its own policy for one-time purchases.
-  </p>
-
-  <h2>6. Your calendar</h2>
-  <p>
-    If you enable smart alarms, you confirm you are entitled to let the app read the calendars on your
-    device. WakeSharp reads them on your device only, read-only, solely to compute a wake time. See the{' '}
-    <a href="/privacy">Privacy Policy</a>.
-  </p>
-
-  <h2>7. Availability</h2>
-  <p>
-    WakeSharp runs on your device and does not need a server to ring an alarm. We do not promise the app
-    will be uninterrupted or error-free, and platform changes, OS updates or device settings outside our
-    control can affect it.
-  </p>
-
-  <h2 id="safety">8. Important safety notice — please read this</h2>
-  <div class="callout callout--warn">
-    <p>
-      <strong>WakeSharp is not a medical device, a safety device, or a life-critical system. Do not rely on
-      it — or on any single alarm app — as your only means of waking up for something that matters.</strong>
-    </p>
-    <p>WakeSharp schedules alarms through the operating system, and the operating system decides whether they sound. An alarm can fail to ring for reasons entirely outside our control, including:</p>
-    <ul>
-      <li>the device being switched off, out of battery, or restarting;</li>
-      <li>battery-saver, power-saving or "optimisation" settings, or the app being force-stopped;</li>
-      <li>permissions being denied, revoked or changed by a system update;</li>
-      <li>volume, headphones, Bluetooth routing, or a hardware fault;</li>
-      <li>operating-system bugs, changes or scheduling limits; or</li>
-      <li>a bug in WakeSharp itself.</li>
-    </ul>
-    <p>
-      <strong>If being woken is important — a flight, an exam, a medical appointment, a shift, anything with
-      real consequences — set a second, independent alarm on another device.</strong>
-    </p>
-    <p>
-      The Sharpness Score is a bit of fun and a way of tracking your own mornings against your own baseline.
-      It is not a clinical or cognitive assessment, it does not measure fitness to drive or work, and it must
-      never be used to make a medical or safety decision. WakeSharp is not a treatment for any sleep
-      condition. If you are worried about your sleep or alertness, speak to a doctor.
-    </p>
-  </div>
-
-  <h2>9. No warranties</h2>
-  <p>
-    To the fullest extent the law allows, WakeSharp is provided "as is" and "as available", without
-    warranties of any kind, express or implied, including any implied warranty of merchantability, fitness
-    for a particular purpose or non-infringement. Some jurisdictions do not allow the exclusion of implied
-    warranties, so parts of this may not apply to you, and nothing here removes rights you have as a
-    consumer that cannot be waived.
-  </p>
-
-  <h2>10. Limitation of liability</h2>
-  <p>
-    To the fullest extent the law allows, we are not liable for any indirect, incidental, special,
-    consequential or punitive damages, or for any loss of profits, data, opportunity, or goodwill, arising
-    from your use of or inability to use WakeSharp — <strong>including any consequence of an alarm not
-    sounding, sounding late, or being dismissed</strong>.
-  </p>
-  <p>
-    Where liability cannot be excluded, our total liability to you is limited to the greater of the amount
-    you paid for WakeSharp in the twelve months before the claim, or ten US dollars.
-  </p>
-  <p>
-    Nothing in these terms excludes or limits liability for death or personal injury caused by negligence,
-    for fraud, or for anything else that cannot be limited by law.
-  </p>
-
-  <h2>11. Indemnity</h2>
-  <p>
-    You agree to indemnify us against claims arising from your misuse of WakeSharp or your breach of these
-    terms, to the extent the law allows.
-  </p>
-
-  <h2>12. Ending this agreement</h2>
-  <p>
-    You can end this agreement at any time by deleting the app (cancel any subscription separately through
-    the store). We may suspend or end your licence if you materially breach these terms. Sections 8, 9, 10
-    and 11 survive.
-  </p>
-
-  <h2>13. Terms required by Apple (App Store downloads only)</h2>
-  <p>If you got WakeSharp from the App Store, the following also applies:</p>
-  <ul>
-    <li>This agreement is between you and us only, <strong>not with Apple</strong>. Apple is not responsible for the app or its content.</li>
-    <li>Your licence to use WakeSharp is limited to use on Apple-branded devices you own or control, as permitted by the App Store Terms of Service.</li>
-    <li>Apple has <strong>no obligation to provide maintenance or support</strong> for WakeSharp.</li>
-    <li>If the app fails to conform to any applicable warranty, you may notify Apple and Apple will refund the purchase price; to the maximum extent permitted by law, Apple has no other warranty obligation.</li>
-    <li>We, not Apple, are responsible for addressing any claim relating to the app, including product liability, failure to conform to legal requirements, and consumer-protection claims.</li>
-    <li>We, not Apple, are responsible for investigating and defending any third-party claim that the app infringes intellectual property rights.</li>
-    <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as "terrorist supporting", and are not on any U.S. Government restricted-parties list.</li>
-    <li><strong>Apple and its subsidiaries are third-party beneficiaries of these terms</strong> and may enforce them against you.</li>
-  </ul>
-
-  <h2>14. Terms for Google Play downloads</h2>
-  <p>
-    If you got WakeSharp from Google Play, your use is also subject to the Google Play Terms of Service.
-    Google is not a party to this agreement and is not responsible for the app.
-  </p>
-
-  <h2>15. Governing law</h2>
-  <p>
-    These terms are governed by the laws of <strong>{SITE.jurisdiction.law}</strong>, without regard to
-    conflict-of-law rules, and the courts of <strong>{SITE.jurisdiction.courts}</strong> have non-exclusive
-    jurisdiction. If you are a consumer, this does not deprive you of the protection of the mandatory laws of
-    the country where you live, or of your right to bring proceedings there.
-  </p>
-
-  <h2>16. Changes to these terms</h2>
-  <p>
-    We may update these terms. The date at the top of this page shows when they last changed, and continuing
-    to use WakeSharp after a change means you accept the updated terms.
-  </p>
-
-  <h2>17. Everything else</h2>
-  <p>
-    If any part of these terms is found unenforceable, the rest continues to apply. Our not enforcing a
-    provision is not a waiver of it. These terms, with the <a href="/privacy">Privacy Policy</a>, are the
-    entire agreement between us about WakeSharp.
-  </p>
-
-  <h2>18. Contact</h2>
-  <p>
-    <a href={`mailto:${SITE.email}`}>{SITE.email}</a> — {SITE.publisher}, publisher of WakeSharp.
-  </p>
+  <TermsBody />
 </LegalLayout>

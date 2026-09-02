@@ -13,6 +13,7 @@ import { CATEGORY_LABELS } from '../lib/blog-categories';
 import BlogCTA from '../components/BlogCTA.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import BlogPostJsonLd from '../components/BlogPostJsonLd.astro';
+import { formatDate as fmtDate } from '../i18n/dates';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -36,8 +37,7 @@ const ogImage = await getImage({
 });
 const ogImageUrl = new URL(ogImage.src, SITE.url).href;
 
-const formatDate = (d: Date): string =>
-  d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const formatDate = (d: Date): string => fmtDate(d, 'en');
 const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
 ---
 

@@ -3,10 +3,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '@vercel/analytics/astro';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, resolveLocale, type Alternate } from '../i18n/routes';
+import { defaultLocale, type EnabledLocale } from '../i18n/config';
 
 interface Props {
   title: string;
   description?: string;
+  /** Root-relative path of THIS page, locale prefix included, e.g. "/es/support". */
   path: string;
   noindex?: boolean;
   ogType?: 'website' | 'article';
@@ -14,13 +18,37 @@ interface Props {
   imageAlt?: string;
   publishedTime?: string;
   modifiedTime?: string;
+  /** Defaults to Astro.currentLocale, which the [lang] routes set from their param. */
+  locale?: EnabledLocale;
+  /** The locales this page exists in, for hreflang. Defaults to English only. */
+  alternates?: Alternate[];
+  /** Language-selector targets. Defaults to `alternates`; a locale missing from it links to `fallbackPath`. */
+  switchTo?: Alternate[];
+  fallbackPath?: string;
+  /** For pages that duplicate an English page (the localized legal routes). */
+  canonicalOverride?: string;
 }
-const { title, description, path, noindex, ogType, image, imageAlt, publishedTime, modifiedTime } =
-  Astro.props;
+const {
+  title,
+  description,
+  path,
+  noindex,
+  ogType,
+  image,
+  imageAlt,
+  publishedTime,
+  modifiedTime,
+  locale = resolveLocale(Astro.currentLocale),
+  alternates = alternatesFor(path, [defaultLocale()]),
+  switchTo = alternates,
+  fallbackPath = '/',
+  canonicalOverride,
+} = Astro.props;
+const shell = getCatalog(locale.code).shell;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale.hreflang} dir={locale.dir}>
   <head>
     <BaseHead
       title={title}
@@ -32,13 +60,16 @@ const { title, description, path, noindex, ogType, image, imageAlt, publishedTim
       imageAlt={imageAlt}
       publishedTime={publishedTime}
       modifiedTime={modifiedTime}
+      locale={locale}
+      alternates={alternates}
+      canonicalOverride={canonicalOverride}
     />
   </head>
   <body class="min-h-dvh">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <Header />
+    <a class="skip-link" href="#main">{shell.skipLink}</a>
+    <Header locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
     <main id="main"><slot /></main>
-    <Footer />
+    <Footer locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
     <Analytics />
   </body>
 </html>

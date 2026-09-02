@@ -1,21 +1,57 @@
 ---
+/**
+ * The one 404 page. A static host serves only the root dist/404.html, so there
+ * is no per-locale 404 route: the English body renders first, one hidden block
+ * per enabled locale follows, and a six-line inline script reveals the block
+ * matching the URL's first segment (`/es/...` → Spanish). Without JS it is the
+ * English page it always was.
+ */
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StoreButtons from '../components/StoreButtons.astro';
+import { getCatalog } from '../i18n/catalog';
+import { DEFAULT_LOCALE, enabledLocales } from '../i18n/config';
+import { localePath, resolveLocale } from '../i18n/routes';
 import asleep from '../assets/mascot/asleep.png';
+
+const english = resolveLocale(DEFAULT_LOCALE);
+const blocks = enabledLocales().map((l) => ({ locale: l, t: getCatalog(l.code).notFound, shell: getCatalog(l.code).shell }));
 ---
 
-<BaseLayout title="Page not found — WakeSharp" path="/404" noindex>
-  <div data-tone="night" class="flex min-h-[70dvh] flex-col items-center justify-center gap-6 bg-[var(--color-night-deep)] px-6 py-20 text-center text-[var(--color-night-text)]">
-    <Image src={asleep} alt="WakeSharp mascot, asleep" width={220} densities={[1, 2]} class="drop-shadow-[var(--shadow-lark)]" />
-    <h1 class="text-4xl sm:text-5xl">This page is still <span class="accent">asleep.</span></h1>
-    <p class="lede mx-auto text-center">
-      We couldn't find that one. The Lark suggests going back to the start.
-    </p>
-    <div class="flex flex-wrap justify-center gap-3">
-      <a href="/" class="pill bg-[var(--color-coral)] px-5 py-3 text-[var(--color-night-deep)]">Back to WakeSharp</a>
-      <a href="/support" class="pill bg-[var(--color-night-elevated)] px-5 py-3">Get support</a>
-    </div>
-    <div class="mt-2"><StoreButtons align="center" /></div>
-  </div>
+<BaseLayout title={getCatalog(english.code).notFound.title} path="/404" noindex locale={english} alternates={[]}>
+  {
+    blocks.map(({ locale, t, shell }) => (
+      <div
+        data-lang-block={locale.path}
+        lang={locale.hreflang}
+        dir={locale.dir}
+        hidden={locale.code !== DEFAULT_LOCALE}
+        data-tone="night"
+        class="flex min-h-[70dvh] flex-col items-center justify-center gap-6 bg-[var(--color-night-deep)] px-6 py-20 text-center text-[var(--color-night-text)]"
+      >
+        <Image src={asleep} alt={t.mascotAlt} width={220} densities={[1, 2]} class="drop-shadow-[var(--shadow-lark)]" />
+        <h1 class="text-4xl sm:text-5xl">{t.heading.pre}<span class="accent">{t.heading.accent}</span>{t.heading.post}</h1>
+        <p class="lede mx-auto text-center">{t.body}</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href={localePath(locale, '/')} class="pill bg-[var(--color-coral)] px-5 py-3 text-[var(--color-night-deep)]">{t.backHome}</a>
+          <a href={localePath(locale, '/support')} class="pill bg-[var(--color-night-elevated)] px-5 py-3">{t.support}</a>
+        </div>
+        <div class="mt-2"><StoreButtons align="center" /></div>
+        {locale.code !== DEFAULT_LOCALE && <p class="text-sm opacity-80">{shell.appLanguageNote}</p>}
+      </div>
+    ))
+  }
 </BaseLayout>
+
+<script is:inline>
+  (function () {
+    var seg = location.pathname.split('/')[1];
+    if (!seg) return;
+    var block = document.querySelector('[data-lang-block="' + (window.CSS && CSS.escape ? CSS.escape(seg) : seg.replace(/["\\]/g, '')) + '"]');
+    if (!block || !block.hidden) return;
+    var blocks = document.querySelectorAll('[data-lang-block]');
+    for (var i = 0; i < blocks.length; i++) blocks[i].hidden = blocks[i] !== block;
+    document.documentElement.lang = block.getAttribute('lang');
+    document.documentElement.dir = block.getAttribute('dir');
+  })();
+</script>

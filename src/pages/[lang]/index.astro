@@ -1,0 +1,8 @@
+---
+/** /<locale> — rendered for every enabled non-default locale. */
+import HomePage from '../../templates/HomePage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<HomePage locale={localeFromParams(Astro.params)} />

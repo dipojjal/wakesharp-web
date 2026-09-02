@@ -25,8 +25,15 @@
  * artwork, so the link's accessible name matches what is on screen and voice
  * control users can say what they see (WCAG 2.5.3). That is why the previous
  * sr-only spans are gone — with real badges they would have duplicated it.
+ *
+ * On every localized page a one-line note follows the badges: the apps ship in
+ * English only, and the site must not imply otherwise. English pages carry
+ * nothing extra.
  */
 import { SITE, anyStoreLive, type StoreConfig } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { isDefaultLocale } from '../i18n/config';
+import { resolveLocale } from '../i18n/routes';
 
 interface Props {
   /** Dark bands get elevated-night secondary; light bands get white. */
@@ -41,6 +48,9 @@ const secondary =
   tone === 'dark'
     ? 'bg-[var(--color-night-elevated)] text-[var(--color-night-text)]'
     : 'bg-white text-[var(--color-morning-text)] border border-[color-mix(in_srgb,var(--color-morning-text)_12%,transparent)]';
+
+const locale = resolveLocale(Astro.currentLocale);
+const languageNote = isDefaultLocale(locale) ? null : getCatalog(locale.code).shell.appLanguageNote;
 ---
 
 <div class:list={['flex flex-col gap-3', align === 'center' && 'items-center']}>
@@ -61,7 +71,7 @@ const secondary =
             <a
               href={s.url}
               class:list={[
-                'pill min-w-[9.25rem] flex-1 px-5 py-3 text-left sm:flex-none',
+                'pill min-w-[9.25rem] flex-1 px-5 py-3 text-start sm:flex-none',
                 i === 0 ? 'bg-[var(--color-coral)] text-[var(--color-night-deep)]' : secondary,
               ]}
             >
@@ -76,6 +86,7 @@ const secondary =
           ))
     }
   </div>
+  {languageNote && <p class:list={['text-sm opacity-80', align === 'center' && 'text-center']}>{languageNote}</p>}
 </div>
 
 <style>

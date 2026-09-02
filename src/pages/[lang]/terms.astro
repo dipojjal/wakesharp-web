@@ -1,0 +1,36 @@
+---
+/**
+ * /<locale>/terms — a translated wrapper around the English terms, so the
+ * language selector never dead-ends on a legal page. The English text is the
+ * binding version; the page canonicalizes to /terms and emits no hreflang.
+ */
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import TermsBody from '../../templates/TermsBody.astro';
+import Rich from '../../i18n/Rich.astro';
+import { SITE } from '../../config/site';
+import { getCatalog } from '../../i18n/catalog';
+import { TERMS } from '../../templates/legal-copy';
+import { alternatesFor, localeFromParams, localePath, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+
+const locale = localeFromParams(Astro.params);
+const t = getCatalog(locale.code).legal;
+---
+
+<LegalLayout
+  title={t.terms.title}
+  description={TERMS.description}
+  path={localePath(locale, '/terms')}
+  heading={t.terms.heading}
+  intro={TERMS.intro}
+  introLang="en"
+  locale={locale}
+  alternates={[]}
+  switchTo={alternatesFor('/terms')}
+  canonicalOverride="/terms"
+>
+  <div class="callout callout--warn" slot="notice">
+    <p class="!mb-0"><Rich text={t.englishOnly} vars={{ email: SITE.email }} links={{ email: `mailto:${SITE.email}` }} /></p>
+  </div>
+  <div lang="en"><TermsBody /></div>
+</LegalLayout>

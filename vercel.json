@@ -45,6 +45,8 @@
   "rewrites": [
     { "source": "/r/:code", "destination": "/api/referrals/landing" },
     { "source": "/c/:payload", "destination": "/c" },
-    { "source": "/p/:payload", "destination": "/p" }
+    { "source": "/p/:payload", "destination": "/p" },
+    { "source": "/:lang(es|ru|tr)/c/:payload", "destination": "/:lang/c" },
+    { "source": "/:lang(es|ru|tr)/p/:payload", "destination": "/:lang/p" }
   ]
 }

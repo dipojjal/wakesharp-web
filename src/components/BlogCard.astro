@@ -8,6 +8,7 @@ import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { CATEGORY_LABELS } from '../lib/blog-categories';
 import { readingTime } from '../lib/blog';
+import { formatDate } from '../i18n/dates';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -15,11 +16,7 @@ interface Props {
 }
 const { post, featured = false } = Astro.props;
 const { title, description, pubDate, heroImage, heroImageAlt, category } = post.data;
-const dateLabel = pubDate.toLocaleDateString('en-GB', {
-  day: 'numeric',
-  month: 'short',
-  year: 'numeric',
-});
+const dateLabel = formatDate(pubDate, 'en', 'short');
 const minutes = readingTime(post.body ?? '');
 const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
 ---

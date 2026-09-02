@@ -1,0 +1,149 @@
+---
+/**
+ * The destination for `wakesharp.app/c/<payload>` (and `/<locale>/c/<payload>`).
+ *
+ * A **static page plus a rewrite**, not an Astro `[payload]` dynamic route. This
+ * site is `output: 'static'` with `build.format: 'file'`, so a dynamic route needs
+ * `getStaticPaths`, and there is no way to enumerate every challenge payload that
+ * will ever exist. `vercel.json` rewrites `/c/:payload` (and the locale-prefixed
+ * form) here and the page reads the path itself.
+ *
+ * The decoder below is a port of `ChallengeCodec`. `Docs/IDENTIFIERS.md` in the app
+ * repo carries the byte-level format, and the golden vectors in either test suite
+ * are the conformance fixtures.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, localePath } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const { challenge: t, get } = getCatalog(locale.code).share;
+const base = localePath(locale, '/c');
+---
+
+<LegalLayout
+  title={t.title}
+  description={t.description}
+  path={base}
+  heading={t.heading}
+  intro={t.intro}
+  locale={locale}
+  alternates={alternatesFor('/c')}
+>
+  <div class="callout">
+    <p id="challenge-summary" class="!mb-0">{t.opening}</p>
+  </div>
+
+  <p id="challenge-cta" hidden>{t.cta}</p>
+
+  <p id="challenge-error" hidden>{t.error}</p>
+
+  <h2>{get.heading}</h2>
+  <p>{get.body}</p>
+  <StoreButtons tone="light" />
+</LegalLayout>
+
+<script is:inline define:vars={{ S: t.script, BASE: base }}>
+  // Port of ChallengeCodec. Kept inline and dependency-free: this page has to
+  // render a stranger's link on a cold visit, and a bundle is a slower way to
+  // say "12 standard rounds in 31.4s". `S` (the strings) and `BASE` (this
+  // page's own path, locale prefix included) are injected by define:vars.
+  (function () {
+    var ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+
+    function base64UrlDecode(text) {
+      var values = [];
+      for (var i = 0; i < text.length; i++) {
+        var index = ALPHABET.indexOf(text[i]);
+        if (index < 0) return null;
+        values.push(index);
+      }
+      var bytes = [];
+      for (var j = 0; j < values.length; j += 4) {
+        var remaining = values.length - j;
+        if (remaining < 2) return null;
+        var chunk = (values[j] << 18) | (values[j + 1] << 12) |
+          ((remaining > 2 ? values[j + 2] : 0) << 6) | (remaining > 3 ? values[j + 3] : 0);
+        bytes.push((chunk >> 16) & 0xff);
+        if (remaining > 2) bytes.push((chunk >> 8) & 0xff);
+        if (remaining > 3) bytes.push(chunk & 0xff);
+      }
+      return bytes;
+    }
+
+    // CRC-16/CCITT-FALSE. Not a signature: it catches a truncated paste, which
+    // is the only failure this page can actually do something about.
+    function crc16(bytes) {
+      var crc = 0xffff;
+      for (var i = 0; i < bytes.length; i++) {
+        crc ^= bytes[i] << 8;
+        for (var b = 0; b < 8; b++) {
+          crc = (crc & 0x8000) !== 0 ? ((crc << 1) ^ 0x1021) & 0xffff : (crc << 1) & 0xffff;
+        }
+      }
+      return crc;
+    }
+
+    // The challenge format: version, seed(8), rounds, difficulty, elapsedMs(4),
+    // name length, name, CRC. See Docs/IDENTIFIERS.md in the app repo.
+    var DIFFICULTY = { 0: S.difficulty.easy, 1: S.difficulty.standard, 2: S.difficulty.hard };
+
+    function decode(payload) {
+      var bytes = base64UrlDecode(payload);
+      if (!bytes || bytes.length < 18 || bytes[0] !== 1) return null;
+      var nameLength = bytes[15];
+      var expected = 16 + nameLength + 2;
+      if (bytes.length !== expected) return null;
+      var carried = bytes[expected - 2] | (bytes[expected - 1] << 8);
+      if (crc16(bytes.slice(0, expected - 2)) !== carried) return null;
+      var elapsed = bytes[11] | (bytes[12] << 8) | (bytes[13] << 16) | (bytes[14] << 24);
+      var name = new TextDecoder().decode(new Uint8Array(bytes.slice(16, 16 + nameLength)));
+      return {
+        rounds: bytes[9],
+        difficulty: DIFFICULTY[bytes[10]] || S.difficulty.standard,
+        seconds: (elapsed >>> 0) / 1000,
+        name: name,
+      };
+    }
+
+    function fill(template, values) {
+      return template.replace(/\{([a-zA-Z]+)\}/g, function (m, key) {
+        return Object.prototype.hasOwnProperty.call(values, key) ? String(values[key]) : m;
+      });
+    }
+
+    var path = location.pathname;
+    var payload = path.indexOf(BASE + '/') === 0 ? path.slice(BASE.length + 1) : '';
+    var summary = document.getElementById('challenge-summary');
+    var cta = document.getElementById('challenge-cta');
+    var error = document.getElementById('challenge-error');
+    var pact = payload ? decode(payload) : null;
+
+    // Keep the payload when switching language, so the link survives the switch.
+    if (payload) {
+      var alts = document.querySelectorAll('a[data-lang-alt]');
+      for (var k = 0; k < alts.length; k++) {
+        alts[k].setAttribute('href', alts[k].getAttribute('href') + '/' + payload);
+      }
+    }
+
+    if (!pact) {
+      summary.hidden = true;
+      error.hidden = false;
+      return;
+    }
+    // The name is a stranger's text: written with textContent, never innerHTML.
+    summary.textContent = fill(S.summary, {
+      name: pact.name ? pact.name : S.anonymous,
+      rounds: pact.rounds,
+      difficulty: pact.difficulty,
+      seconds: pact.seconds.toFixed(1),
+    });
+    cta.hidden = false;
+  })();
+</script>

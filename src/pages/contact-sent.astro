@@ -1,25 +1,6 @@
 ---
-import LegalLayout from '../layouts/LegalLayout.astro';
-import { SITE } from '../config/site';
+import ContactSentPage from '../templates/ContactSentPage.astro';
+import { resolveLocale } from '../i18n/routes';
 ---
 
-<LegalLayout
-  title="Message sent — WakeSharp"
-  description="Your message to WakeSharp has been sent."
-  path="/contact-sent"
-  heading="Message sent"
-  intro="Thanks — it is on its way to my inbox."
-  showUpdated={false}
-  noindex={true}
->
-  <p>
-    I usually reply within <strong>2–3 business days</strong>, from{' '}
-    <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. If you hear nothing, check your spam folder before
-    assuming it went missing.
-  </p>
-  <p>
-    While you wait, the <a href="/support">Support page</a> covers the questions that come up most —
-    including the full checklist for an alarm that did not ring.
-  </p>
-  <p><a href="/">Back to the homepage</a></p>
-</LegalLayout>
+<ContactSentPage locale={resolveLocale('en')} />

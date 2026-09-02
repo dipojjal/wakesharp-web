@@ -1,11 +1,14 @@
 ---
 import { SITE, isLive } from '../config/site';
 import '../styles/global.css';
+import { getCatalog } from '../i18n/catalog';
+import type { Alternate } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
   title: string;
   description?: string;
-  /** Path only, e.g. "/privacy". Canonical is built from SITE.url. */
+  /** Path only, e.g. "/privacy" or "/es/privacy". Canonical is built from SITE.url. */
   path: string;
   noindex?: boolean;
   /** Blog posts pass 'article'; everything else keeps the default. */
@@ -16,29 +19,51 @@ interface Props {
   /** ISO 8601 datetimes, rendered only when ogType is 'article'. */
   publishedTime?: string;
   modifiedTime?: string;
+  locale: EnabledLocale;
+  /** Every locale this page exists in, self included. One entry means no hreflang. */
+  alternates: Alternate[];
+  /** A page that duplicates another (the localized legal routes) points its canonical there. */
+  canonicalOverride?: string;
 }
 
 const {
   title,
-  description = SITE.description,
+  description,
   path,
   noindex = false,
   ogType = 'website',
   image,
-  imageAlt = 'WakeSharp — wake up sharp, not just awake.',
+  imageAlt,
   publishedTime,
   modifiedTime,
+  locale,
+  alternates,
+  canonicalOverride,
 } = Astro.props;
-const canonical = new URL(path, SITE.url).href.replace(/\/$/, '') || SITE.url;
+const shell = getCatalog(locale.code).shell;
+const metaDescription = description ?? shell.siteDescription;
+const ogAlt = imageAlt ?? shell.ogImageAlt;
+
+const absolute = (p: string): string => new URL(p, SITE.url).href.replace(/\/$/, '') || SITE.url;
+const canonical = absolute(canonicalOverride ?? path);
 const ogImage = image ? new URL(image, SITE.url).href : new URL('/og.png', SITE.url).href;
+
+// hreflang only where a choice exists. x-default is the English page: it is
+// what a visitor with no matching language should get, and it is the page
+// every localized version was translated from.
+const hreflangs = alternates.length > 1 ? alternates : [];
+const xDefault = hreflangs.find((a) => a.locale.code === 'en');
+const otherLocales = hreflangs.filter((a) => a.locale.code !== locale.code);
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
-<meta name="description" content={description} />
+<meta name="description" content={metaDescription} />
 <link rel="canonical" href={canonical} />
 {noindex && <meta name="robots" content="noindex, follow" />}
+{hreflangs.map((a) => <link rel="alternate" hreflang={a.locale.hreflang} href={absolute(a.href)} />)}
+{xDefault && <link rel="alternate" hreflang="x-default" href={absolute(xDefault.href)} />}
 
 <meta name="theme-color" content="#121229" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
@@ -46,17 +71,19 @@ const ogImage = image ? new URL(image, SITE.url).href : new URL('/og.png', SITE.
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="alternate" type="application/rss+xml" title="WakeSharp Blog" href="/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title={shell.rssTitle} href="/rss.xml" />
 
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content={locale.og} />
+{otherLocales.map((a) => <meta property="og:locale:alternate" content={a.locale.og} />)}
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:description" content={metaDescription} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content={imageAlt} />
+<meta property="og:image:alt" content={ogAlt} />
 {ogType === 'article' && publishedTime && (
   <meta property="article:published_time" content={publishedTime} />
 )}
@@ -65,7 +92,7 @@ const ogImage = image ? new URL(image, SITE.url).href : new URL('/og.png', SITE.
 )}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={metaDescription} />
 <meta name="twitter:image" content={ogImage} />
 
 {/* Smart App Banner. Safari shows an install/open strip on iPhone; the id is

@@ -1,6 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Rich from '../i18n/Rich.astro';
 import { SITE } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { formatDate, parseLocalNoon } from '../i18n/dates';
+import { interpolate } from '../i18n/rich';
+import { resolveLocale, type Alternate } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
   title: string;
@@ -8,22 +14,51 @@ interface Props {
   path: string;
   heading: string;
   intro?: string;
+  /** Set when the intro is not in the page's language (the localized legal routes keep the English intro). */
+  introLang?: string;
   /** Off for pages that are not versioned documents, e.g. the contact form. */
   showUpdated?: boolean;
   noindex?: boolean;
+  locale?: EnabledLocale;
+  alternates?: Alternate[];
+  switchTo?: Alternate[];
+  fallbackPath?: string;
+  canonicalOverride?: string;
 }
-const { title, description, path, heading, intro, showUpdated = true, noindex } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  heading,
+  intro,
+  introLang,
+  showUpdated = true,
+  noindex,
+  locale = resolveLocale(Astro.currentLocale),
+  alternates,
+  switchTo,
+  fallbackPath,
+  canonicalOverride,
+} = Astro.props;
+const t = getCatalog(locale.code).shell.legalLayout;
 
-// Parse at local noon: `new Date('2026-08-14')` is UTC midnight, which renders as
-// the previous day for anyone west of UTC.
-const updated = new Date(`${SITE.lastUpdated}T12:00:00`).toLocaleDateString('en-GB', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-});
+// SITE.lastUpdated is parsed at local noon: UTC midnight renders as the
+// previous day for anyone west of UTC (see src/i18n/dates.ts).
+const updated = interpolate(t.lastUpdated, { date: formatDate(parseLocalNoon(SITE.lastUpdated), locale) });
+const hasNotice = Astro.slots.has('notice');
 ---
 
-<BaseLayout title={title} description={description} path={path} noindex={noindex}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  noindex={noindex}
+  locale={locale}
+  alternates={alternates}
+  switchTo={switchTo}
+  fallbackPath={fallbackPath}
+  canonicalOverride={canonicalOverride}
+>
   <!--
     Legal pages are a flat morning surface, deliberately outside the sunrise ramp.
     These URLs are hardcoded in both shipped apps' paywalls; they need to be
@@ -32,15 +67,20 @@ const updated = new Date(`${SITE.lastUpdated}T12:00:00`).toLocaleDateString('en-
   <div data-tone="morning" class="bg-[var(--color-morning-cream)] px-6 py-14 text-[var(--color-morning-text)] sm:py-20">
     <div class="mx-auto w-full max-w-[68ch]">
       <h1 class="text-4xl sm:text-5xl">{heading}</h1>
-      {showUpdated && <p class="mt-3 text-sm dim">Last updated {updated}</p>}
-      {intro && <p class="mt-6 text-lg leading-relaxed">{intro}</p>}
+      {showUpdated && <p class="mt-3 text-sm dim">{updated}</p>}
+      {hasNotice && <div class="legal mt-6"><slot name="notice" /></div>}
+      {intro && <p class="mt-6 text-lg leading-relaxed" lang={introLang}>{intro}</p>}
 
       <div class="legal mt-10"><slot /></div>
 
       <hr class="my-12 border-[color-mix(in_srgb,var(--color-morning-text)_15%,transparent)]" />
       <p class="text-sm dim">
-        Questions about this page? Email{' '}
-        <a class="font-semibold text-[var(--color-coral-ink)] underline underline-offset-2" href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+        <Rich
+          text={t.questions}
+          vars={{ email: SITE.email }}
+          links={{ email: `mailto:${SITE.email}` }}
+          linkClass="font-semibold text-[var(--color-coral-ink)] underline underline-offset-2"
+        />
       </p>
     </div>
   </div>
@@ -63,8 +103,8 @@ const updated = new Date(`${SITE.lastUpdated}T12:00:00`).toLocaleDateString('en-
     line-height: 1.7;
   }
   .legal p { margin-block: 0.9rem; }
-  .legal ul { list-style: disc; padding-left: 1.4rem; margin-block: 0.9rem; }
-  .legal ol { list-style: decimal; padding-left: 1.4rem; margin-block: 0.9rem; }
+  .legal ul { list-style: disc; padding-inline-start: 1.4rem; margin-block: 0.9rem; }
+  .legal ol { list-style: decimal; padding-inline-start: 1.4rem; margin-block: 0.9rem; }
   .legal li { margin-block: 0.4rem; }
   .legal a {
     color: var(--color-coral-ink);
@@ -83,7 +123,7 @@ const updated = new Date(`${SITE.lastUpdated}T12:00:00`).toLocaleDateString('en-
   .legal td {
     border: 1px solid color-mix(in srgb, var(--color-morning-text) 15%, transparent);
     padding: 0.6rem 0.75rem;
-    text-align: left;
+    text-align: start;
     vertical-align: top;
   }
   .legal th { background: color-mix(in srgb, var(--color-morning-text) 5%, transparent); font-weight: 700; }

@@ -1,0 +1,70 @@
+---
+/**
+ * The header language switcher.
+ *
+ * A <details> disclosure, the site's existing zero-JS pattern (the FAQ): no
+ * script, keyboard-operable natively, and it fits the header without a drawer.
+ * Each option is a real link to the same page in that locale when it exists
+ * there, otherwise to that locale's home, so a crawler and a visitor without JS
+ * see exactly the same thing. Renders nothing while only one locale is enabled.
+ *
+ * There is deliberately no Accept-Language redirect anywhere on the site: App
+ * Review and search engines fetch the English paths, and a redirect would put a
+ * hop on /privacy. Known and accepted: the panel does not close on an outside
+ * click or Escape without JS.
+ */
+import { getCatalog } from '../i18n/catalog';
+import { enabledLocales, type EnabledLocale } from '../i18n/config';
+import { localePath, type Alternate } from '../i18n/routes';
+
+interface Props {
+  locale: EnabledLocale;
+  switchTo: Alternate[];
+  fallbackPath: string;
+}
+const { locale, switchTo, fallbackPath } = Astro.props;
+const t = getCatalog(locale.code).shell;
+const options = enabledLocales().map((l) => ({
+  locale: l,
+  href: switchTo.find((a) => a.locale.code === l.code)?.href ?? localePath(l, fallbackPath),
+  current: l.code === locale.code,
+}));
+---
+
+{
+  options.length > 1 && (
+    <details class="lang-menu relative">
+      <summary class="flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1.5 text-xs font-bold text-[var(--color-night-dim)] hover:text-[var(--color-night-text)]">
+        <span class="sr-only">{t.language.label}: </span>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        <span class="hidden sm:inline">{locale.code.toUpperCase()}</span>
+      </summary>
+      <ul class="absolute end-0 top-full z-50 mt-2 min-w-[11rem] rounded-2xl border border-white/10 bg-[var(--color-night-surface)] p-1.5 shadow-[0_12px_32px_rgb(0_0_0/0.35)]">
+        {options.map((o) => (
+          <li>
+            <a
+              href={o.href}
+              hreflang={o.locale.hreflang}
+              lang={o.locale.hreflang}
+              rel={o.current ? undefined : 'alternate'}
+              data-lang-alt
+              aria-current={o.current ? 'true' : undefined}
+              class="block rounded-xl px-3 py-2 text-sm font-semibold text-[var(--color-night-dim)] hover:bg-white/[0.06] hover:text-[var(--color-night-text)] aria-[current=true]:text-[var(--color-amber)]"
+            >
+              {o.locale.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}
+
+<style>
+  .lang-menu summary::-webkit-details-marker { display: none; }
+  .lang-menu summary::marker { content: ''; }
+  .lang-menu[open] summary { color: var(--color-night-text); }
+</style>

@@ -1,0 +1,119 @@
+---
+/** /contact in every locale. Copy: src/i18n/<locale>/contact.ts (form). */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Rich from '../i18n/Rich.astro';
+import { SITE } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, localePath } from '../i18n/routes';
+import { isDefaultLocale, type EnabledLocale } from '../i18n/config';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const t = getCatalog(locale.code).contact.form;
+
+/**
+ * The `value=` the inbox receives stays English in every locale, so the
+ * support mailbox reads one vocabulary whatever the visitor's language.
+ */
+const TOPIC_VALUES = {
+  alarm: "An alarm didn't ring",
+  bug: 'Bug report',
+  billing: 'Subscription or billing',
+  feature: 'Feature request',
+  other: 'Something else',
+} as const;
+const topics = (Object.keys(TOPIC_VALUES) as (keyof typeof TOPIC_VALUES)[]).map((k) => ({
+  value: TOPIC_VALUES[k],
+  label: t.topics[k],
+}));
+
+const vars = { email: SITE.email };
+const links = { email: `mailto:${SITE.email}`, privacy: `${localePath(locale, '/privacy')}#contact-form` };
+---
+
+<LegalLayout
+  title={t.title}
+  description={t.description}
+  path={localePath(locale, '/contact')}
+  heading={t.heading}
+  intro={t.intro}
+  showUpdated={false}
+  locale={locale}
+  alternates={alternatesFor('/contact')}
+>
+  <div class="callout">
+    <p class="!mb-0"><Rich text={t.callout} vars={vars} links={links} /></p>
+  </div>
+
+  <!--
+    Zero JS by design: a plain POST to the Vercel function at /api/contact, which
+    answers with a 303 to a static result page. No fetch, no JSON, no success-state
+    script. The action must have no trailing slash — vercel.json sets
+    trailingSlash:false, so /api/contact/ would cost a 308 hop before the POST lands.
+    The hidden `lang` field is how the function knows which locale's result page
+    to redirect to; it is validated against the registry, never echoed.
+  -->
+  <form method="POST" action="/api/contact" class="mt-8 grid gap-5">
+    {!isDefaultLocale(locale) && <input type="hidden" name="lang" value={locale.path} />}
+    <div>
+      <label class="field-label" for="name">{t.nameLabel}</label>
+      <input class="field" id="name" name="name" type="text" required maxlength="80" autocomplete="name" />
+    </div>
+
+    <div>
+      <label class="field-label" for="email">{t.emailLabel}</label>
+      <input class="field" id="email" name="email" type="email" required maxlength="160" autocomplete="email" />
+      <p class="mt-1.5 text-sm dim">{t.emailHint}</p>
+    </div>
+
+    <div>
+      <label class="field-label" for="topic">{t.topicLabel}</label>
+      <select class="field" id="topic" name="topic" required>
+        <option value="" disabled selected>{t.topicPlaceholder}</option>
+        {topics.map((o) => <option value={o.value}>{o.label}</option>)}
+      </select>
+    </div>
+
+    <div>
+      <label class="field-label" for="device">
+        {t.deviceLabel} <span class="field-hint">{t.deviceHint}</span>
+      </label>
+      <input
+        class="field"
+        id="device"
+        name="device"
+        type="text"
+        maxlength="120"
+        placeholder={t.devicePlaceholder}
+      />
+    </div>
+
+    <div>
+      <label class="field-label" for="message">{t.messageLabel}</label>
+      <textarea class="field" id="message" name="message" required maxlength="4000" rows="9"></textarea>
+      <p class="mt-1.5 text-sm dim">{t.messageHint}</p>
+    </div>
+
+    <!--
+      Honeypot. Off-screen rather than display:none, and tabindex=-1 so it stays out
+      of the tab order (which is also what keeps aria-hidden legitimate here).
+    -->
+    <div class="honeypot" aria-hidden="true">
+      <label for="company">{t.honeypotLabel}</label>
+      <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="mt-2">
+      <button
+        type="submit"
+        class="pill bg-[var(--color-coral-ink)] px-6 py-3 text-[var(--color-morning-cream)]"
+      >{t.submit}</button>
+    </div>
+
+    <p class="text-sm dim">
+      <Rich text={t.privacyNote} vars={vars} links={links} />
+    </p>
+  </form>
+</LegalLayout>

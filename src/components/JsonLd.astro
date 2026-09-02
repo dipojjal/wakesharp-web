@@ -1,5 +1,8 @@
 ---
 import { SITE, isLive } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { localePath, resolveLocale } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
 
 /**
  * MobileApplication, not SoftwareApplication — it is the narrower type. Both
@@ -10,7 +13,16 @@ import { SITE, isLive } from '../config/site';
  * Still no `aggregateRating`. Neither store has a single rating yet, and
  * inventing one would be both false and a structured-data penalty. Add it only
  * from real numbers, and keep it in step with them.
+ *
+ * `inLanguage`, `url` and `description` follow the page's locale; the Offer
+ * descriptions are the paywall's own English bullets and stay that way.
  */
+interface Props {
+  locale?: EnabledLocale;
+}
+const { locale = resolveLocale(Astro.currentLocale) } = Astro.props;
+const shell = getCatalog(locale.code).shell;
+
 const live = [
   isLive(SITE.stores.ios) ? SITE.stores.ios.url : null,
   isLive(SITE.stores.android) ? SITE.stores.android.url : null,
@@ -28,8 +40,9 @@ const schema = {
   // single value here. Re-read both listings before editing:
   // itunes.apple.com/lookup?id=6801198703&country=us and the Play listing.
   alternateName: ['WakeSharp: Loud Alarm Clock', 'WakeSharp: Math Alarm Clock'],
-  description: SITE.description,
-  url: SITE.url,
+  description: shell.siteDescription,
+  url: new URL(localePath(locale, '/'), SITE.url).href.replace(/\/$/, ''),
+  inLanguage: locale.hreflang,
   image: new URL('/og.png', SITE.url).href,
   applicationCategory: 'ProductivityApplication',
   applicationSubCategory: 'Alarm Clock',

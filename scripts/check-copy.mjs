@@ -15,13 +15,21 @@
  * "AlarmKit" appear in Play copy). Marketing claims about how the alarm rings
  * must name the platform they are true of.
  *
- *   node scripts/check-copy.mjs        # checks dist/ after a build
+ * Localized pages (dist/<locale>.html and dist/<locale>/…) get their own pass:
+ * the English phrase rules cannot see a Turkish sentence, so each locale carries
+ * a seed list of the claims that matter most, every locale must be built in
+ * full, and no English sentence may survive untranslated. The registry in
+ * src/i18n/config.ts says which locales exist, which is why this runs under tsx.
+ *
+ *   npm run copy        # checks dist/ after a build
  */
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { DEFAULT_LOCALE, enabledLocales } from '../src/i18n/config';
 
-const DIST = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist');
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const DIST = join(ROOT, 'dist');
 
 /**
  * Substrings that must never appear in rendered text.
@@ -55,7 +63,7 @@ const BANNED = [
   // phrasings rather than on the bare word: /support legitimately explains what
   // a registered code actually is.
   { re: /\bscan(?:ning)? a (?:bar ?code|qr code)\b/g, why: 'no barcode mission exists — GameRegistry.MissionRoute has no code_scan; a code is a target inside Scan an Object' },
-  { re: /\bbar ?code mission\b|\bqr[- ]?code mission\b/g, unless: /\b(?:no|not|never|isn\u2019t|isn't|does ?n\u2019t|does ?n't|cannot|can\u2019t|can't)\b/, why: 'no barcode mission exists — GameRegistry.MissionRoute has no code_scan' },
+  { re: /\bbar ?code mission\b|\bqr[- ]?code mission\b/g, unless: /\b(?:no|not|never|isn’t|isn't|does ?n’t|does ?n't|cannot|can’t|can't)\b/, why: 'no barcode mission exists — GameRegistry.MissionRoute has no code_scan' },
   { re: /\bscan(?:ning)? a code\b/g, unless: /spots ?(?:&|and) ?codes|as a target|that specific target/, why: 'a registered code is a target inside Scan an Object, not a mission — say "scan a real object"' },
 
   // ── absolute dismissal ─────────────────────────────────────────────────
@@ -67,9 +75,9 @@ const BANNED = [
   // silently never match.
   { needle: 'impossible to dismiss', why: 'the system Stop control exists on both platforms — Prohibited, claims-matrix.md' },
   { needle: 'the only way out', why: 'the system Stop control exists on both platforms — Prohibited, claims-matrix.md' },
-  { re: /\b(?:won\u2019t|won't|will not|doesn\u2019t|doesn't|does not) stop until\b/g, why: 'AlarmPlanning books four guards and then stops — say how many times it re-rings' },
+  { re: /\b(?:won’t|won't|will not|doesn’t|doesn't|does not) stop until\b/g, why: 'AlarmPlanning books four guards and then stops — say how many times it re-rings' },
   { re: /\b(?:keeps?|kept) ringing until\b|\bre-?rings? until\b/g, why: 'AlarmPlanning.guardOffsetsMinutes = [4, 8, 12] + quickGuardSeconds = 45 — bounded, not a loop' },
-  { re: /until you(?:\u2019ve| have|'ve)? (?:prove|proved|proven)\b/g, why: '"keeps ringing until you prove you are up" is Prohibited in claims-matrix.md' },
+  { re: /until you(?:’ve| have|'ve)? (?:prove|proved|proven)\b/g, why: '"keeps ringing until you prove you are up" is Prohibited in claims-matrix.md' },
 
   // ── wallpapers ─────────────────────────────────────────────────────────
   // Prohibited from v6. WallpaperCatalog.json: first_light, city_ledge and
@@ -152,6 +160,42 @@ const SCOPED = [
 ];
 
 /**
+ * The same product truths, per locale, as the translator is most likely to
+ * phrase them. Seeds, not a full grammar: docs/i18n/glossary.md carries the
+ * rules the translations are reviewed against, and this catches the phrasings
+ * a machine draft reaches for first. Compared with the locale's own lowercasing
+ * (Turkish dotless i breaks plain toLowerCase()).
+ */
+const BANNED_BY_LOCALE = {
+  es: [
+    { needle: 'todas las misiones son gratis', why: 'five of seven missions are Plus' },
+    { needle: 'imposible de descartar', why: 'the system Stop control exists on both platforms' },
+    { needle: 'imposible de apagar', why: 'the system Stop control exists on both platforms' },
+    { needle: 'no se detendrá hasta', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'no parará hasta', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'alarmas ilimitadas', why: 'AlarmPlanning.armedAlarmBudget = 96 — say "todas las alarmas que necesites"' },
+  ],
+  ru: [
+    { needle: 'все миссии бесплатны', why: 'five of seven missions are Plus' },
+    { needle: 'невозможно отключить', why: 'the system Stop control exists on both platforms' },
+    { needle: 'невозможно выключить', why: 'the system Stop control exists on both platforms' },
+    { needle: 'не остановится, пока', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'не замолчит, пока', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'неограниченное количество будильников', why: 'AlarmPlanning.armedAlarmBudget = 96' },
+    { needle: 'безлимитные будильники', why: 'AlarmPlanning.armedAlarmBudget = 96' },
+  ],
+  tr: [
+    { needle: 'tüm görevler ücretsiz', why: 'five of seven missions are Plus' },
+    { needle: 'bütün görevler ücretsiz', why: 'five of seven missions are Plus' },
+    { needle: 'kapatılması imkansız', why: 'the system Stop control exists on both platforms' },
+    { needle: 'kapatılması imkânsız', why: 'the system Stop control exists on both platforms' },
+    { needle: 'kadar durmaz', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'kadar susmaz', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'sınırsız alarm', why: 'AlarmPlanning.armedAlarmBudget = 96' },
+  ],
+};
+
+/**
  * Both apps are live, so the listings are the destination — but only these two.
  * Anything else matching a store-listing shape is a typo or a stale package id
  * (com.dipojjal.wakesharp was renamed to com.wakesharp.app on 2026-08-14) and
@@ -180,6 +224,28 @@ const BANNED_RAW = [
   { re: /\bcode[_-]scan\b/i, why: 'dead mission route — code_scan was deleted from GameRegistry.MissionRoute and never had a host on either platform' },
 ];
 
+/**
+ * English sentences that legitimately survive on a localized page: vendor
+ * attribution that must stay verbatim, and the address.
+ */
+const UNTRANSLATED_ALLOW = [
+  // Fragments, not whole sentences: the splitter cuts at "U.S.", so a full
+  // trademark line never matches its own first half.
+  'trademarks of apple inc',
+  'service mark of apple inc',
+  'trademarks of google llc',
+  'support@wakesharp.app',
+];
+
+/** Pages every enabled locale must ship, relative to dist/<path>/ (the home page is dist/<path>.html). */
+const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-error.html', 'account/delete.html', 'c.html', 'p.html', 'privacy.html', 'terms.html'];
+/** Of those, the indexable ones, which must carry the x-default hreflang link. */
+const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', 'account/delete.html', 'c.html', 'p.html']);
+/** Localized routes that wrap the English legal text on purpose: no untranslated-sentence check. */
+const ENGLISH_BODY_BY_DESIGN = new Set(['privacy.html', 'terms.html']);
+
+const OTHER_LOCALES = enabledLocales().filter((l) => l.code !== DEFAULT_LOCALE);
+
 const html = [];
 (function walk(dir) {
   for (const e of readdirSync(dir)) {
@@ -194,6 +260,13 @@ const strip = (s) =>
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
+    // Astro escapes expression output, so an apostrophe in a catalog string
+    // arrives as &#39;. Decode the numeric forms before matching, or a needle
+    // like "won't stop until" could never fire on a localized template.
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
     .replace(/&[a-z]+;/gi, ' ')
     .replace(/\s+/g, ' ');
 
@@ -231,52 +304,102 @@ const sentenceAt = (hay, index) => {
 /** Every place a BANNED needle may hide: the rendered text plus each meta field. */
 const banHaystacks = (text, fields) => [text, ...fields];
 
+/** `es` for dist/es.html and dist/es/…; undefined for an English page. */
+const localeOf = (name) => {
+  const first = name.split('/')[0];
+  const base = first.endsWith('.html') ? first.slice(0, -5) : first;
+  return OTHER_LOCALES.find((l) => l.path === base);
+};
+
+/** dist/es/support.html → support.html; dist/es.html → index.html. */
+const englishCounterpart = (name, loc) => (name === `${loc.path}.html` ? 'index.html' : name.slice(loc.path.length + 1));
+
+/** Sentences of the English page long enough to be unmistakable when they survive verbatim. */
+const sentencesOf = (text) =>
+  text
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length >= 45 && !UNTRANSLATED_ALLOW.some((a) => s.includes(a)));
+
 let problems = 0;
 let sawCanonical = false;
 
 for (const file of html) {
   const raw = readFileSync(file, 'utf8');
-  const text = strip(raw).toLowerCase();
+  const stripped = strip(raw);
+  const text = stripped.toLowerCase();
   const fields = metaFields(raw);
   const name = file.replace(DIST + '/', '');
+  const loc = localeOf(name);
 
-  for (const { needle, re, unless, why } of BANNED) {
-    for (const hay of banHaystacks(text, fields)) {
-      if (needle) {
-        const i = hay.indexOf(needle);
-        if (i === -1) continue;
-        if (unless && unless.test(sentenceAt(hay, i))) continue;
-        console.error(`  ✗ ${name}: banned phrase "${needle}" — ${why}`);
+  if (!loc) {
+    for (const { needle, re, unless, why } of BANNED) {
+      for (const hay of banHaystacks(text, fields)) {
+        if (needle) {
+          const i = hay.indexOf(needle);
+          if (i === -1) continue;
+          if (unless && unless.test(sentenceAt(hay, i))) continue;
+          console.error(`  ✗ ${name}: banned phrase "${needle}" — ${why}`);
+          problems++;
+          break;
+        }
+        let hit = null;
+        for (const m of hay.matchAll(re)) {
+          if (unless && unless.test(sentenceAt(hay, m.index))) continue;
+          hit = m;
+          break;
+        }
+        if (!hit) continue;
+        console.error(`  ✗ ${name}: banned phrase "${hit[0]}" — ${why}`);
+        console.error(`      …${hay.slice(Math.max(0, hit.index - 70), hit.index + 70).trim()}…`);
         problems++;
         break;
       }
-      let hit = null;
-      for (const m of hay.matchAll(re)) {
-        if (unless && unless.test(sentenceAt(hay, m.index))) continue;
-        hit = m;
-        break;
-      }
-      if (!hit) continue;
-      console.error(`  ✗ ${name}: banned phrase "${hit[0]}" — ${why}`);
-      console.error(`      …${hay.slice(Math.max(0, hit.index - 70), hit.index + 70).trim()}…`);
-      problems++;
-      break;
     }
-  }
 
-  for (const { needle, scope } of SCOPED) {
-    // Whole words only. A substring match fires on "autofocus" for "focus" and
-    // on "focused" for the same reason, which is a false positive that trains
-    // people to reword true copy around a broken check.
-    const re = new RegExp(`\\b${needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g');
-    for (const m of text.matchAll(re)) {
-      const i = m.index;
-      const window = text.slice(Math.max(0, i - 240), i + 240);
-      if (!scope.some((w) => window.includes(w))) {
-        console.error(`  ✗ ${name}: "${needle}" used without naming the platform it applies to`);
-        console.error(`      …${text.slice(Math.max(0, i - 70), i + 70).trim()}…`);
+    for (const { needle, scope } of SCOPED) {
+      // Whole words only. A substring match fires on "autofocus" for "focus" and
+      // on "focused" for the same reason, which is a false positive that trains
+      // people to reword true copy around a broken check.
+      const re = new RegExp(`\\b${needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g');
+      for (const m of text.matchAll(re)) {
+        const i = m.index;
+        const window = text.slice(Math.max(0, i - 240), i + 240);
+        if (!scope.some((w) => window.includes(w))) {
+          console.error(`  ✗ ${name}: "${needle}" used without naming the platform it applies to`);
+          console.error(`      …${text.slice(Math.max(0, i - 70), i + 70).trim()}…`);
+          problems++;
+        }
+      }
+    }
+  } else {
+    const localText = stripped.toLocaleLowerCase(loc.hreflang);
+    for (const { needle, why } of BANNED_BY_LOCALE[loc.code] ?? []) {
+      const i = localText.indexOf(needle);
+      if (i === -1) continue;
+      console.error(`  ✗ ${name}: banned phrase "${needle}" — ${why}`);
+      console.error(`      …${localText.slice(Math.max(0, i - 70), i + 70).trim()}…`);
+      problems++;
+    }
+
+    // An English sentence surviving verbatim is a key that never got translated —
+    // or a template that never read the catalog. Either way it is a bug.
+    const counterpart = englishCounterpart(name, loc);
+    const counterpartFile = join(DIST, counterpart);
+    if (!ENGLISH_BODY_BY_DESIGN.has(counterpart) && existsSync(counterpartFile)) {
+      const englishText = strip(readFileSync(counterpartFile, 'utf8')).toLowerCase();
+      for (const sentence of sentencesOf(englishText)) {
+        if (!text.includes(sentence)) continue;
+        console.error(`  ✗ ${name}: English sentence survived untranslated`);
+        console.error(`      …${sentence.slice(0, 140)}…`);
         problems++;
       }
+    }
+
+    const expectedLang = `<html lang="${loc.hreflang}"`;
+    if (!raw.includes(expectedLang)) {
+      console.error(`  ✗ ${name}: missing ${expectedLang}`);
+      problems++;
     }
   }
 
@@ -309,11 +432,50 @@ if (!sawCanonical) {
   problems++;
 }
 
-// The two URLs frozen into both shipped app binaries must exist as real pages.
-for (const required of ['privacy.html', 'terms.html', 'support.html']) {
-  if (!html.some((f) => f.endsWith('/' + required))) {
-    console.error(`  ✗ dist/${required} is missing — a paywall link in both shipped apps points at it`);
+// The URLs frozen into both shipped app binaries (and filed with the stores)
+// must exist as real English pages at the root — exact paths, not suffixes, so
+// dist/es/privacy.html can never satisfy this on the root's behalf.
+for (const required of ['privacy.html', 'terms.html', 'support.html', 'account/delete.html']) {
+  if (!existsSync(join(DIST, required))) {
+    console.error(`  ✗ dist/${required} is missing — a paywall or store link points at it`);
     problems++;
+  }
+}
+
+// The default locale is never prefixed. Astro writes the 404 body of /en/… to
+// disk if a route ever emits that param, and Vercel would serve it as a 200.
+for (const forbidden of [`${DEFAULT_LOCALE}.html`, DEFAULT_LOCALE]) {
+  if (existsSync(join(DIST, forbidden))) {
+    console.error(`  ✗ dist/${forbidden} exists — the default locale must never be built under a prefix`);
+    problems++;
+  }
+}
+
+// Every enabled locale ships in full, or not at all.
+const vercel = JSON.parse(readFileSync(join(ROOT, 'vercel.json'), 'utf8'));
+for (const loc of OTHER_LOCALES) {
+  const pages = [{ file: `${loc.path}.html`, logical: 'index.html' }, ...TIER_A.map((f) => ({ file: `${loc.path}/${f}`, logical: f }))];
+  for (const { file, logical } of pages) {
+    const p = join(DIST, file);
+    if (!existsSync(p)) {
+      console.error(`  ✗ dist/${file} is missing — locale "${loc.code}" is enabled but only partly built`);
+      problems++;
+      continue;
+    }
+    if (NEEDS_X_DEFAULT.has(logical) && !readFileSync(p, 'utf8').includes('hreflang="x-default"')) {
+      console.error(`  ✗ dist/${file}: no x-default hreflang link — is BaseLayout getting the page's alternates?`);
+      problems++;
+    }
+  }
+  // The share links must reach the localized landing pages through the same
+  // rewrite the English ones use; a locale missing from the alternation 404s.
+  for (const page of ['c', 'p']) {
+    const rule = (vercel.rewrites ?? []).find((r) => new RegExp(`^/:lang\\([^)]+\\)/${page}/:payload$`).test(r.source));
+    const alternation = rule ? rule.source.match(/\(([^)]+)\)/)[1].split('|') : [];
+    if (!alternation.includes(loc.path)) {
+      console.error(`  ✗ vercel.json: no rewrite for /${loc.path}/${page}/:payload — add "${loc.path}" to the /:lang(…)/${page}/:payload alternation`);
+      problems++;
+    }
   }
 }
 

@@ -1,0 +1,36 @@
+---
+/**
+ * /<locale>/privacy — a translated wrapper around the English policy, so the
+ * language selector never dead-ends on a legal page. The English text is the
+ * binding version; the page canonicalizes to /privacy and emits no hreflang.
+ */
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import PrivacyBody from '../../templates/PrivacyBody.astro';
+import Rich from '../../i18n/Rich.astro';
+import { SITE } from '../../config/site';
+import { getCatalog } from '../../i18n/catalog';
+import { PRIVACY } from '../../templates/legal-copy';
+import { alternatesFor, localeFromParams, localePath, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+
+const locale = localeFromParams(Astro.params);
+const t = getCatalog(locale.code).legal;
+---
+
+<LegalLayout
+  title={t.privacy.title}
+  description={PRIVACY.description}
+  path={localePath(locale, '/privacy')}
+  heading={t.privacy.heading}
+  intro={PRIVACY.intro}
+  introLang="en"
+  locale={locale}
+  alternates={[]}
+  switchTo={alternatesFor('/privacy')}
+  canonicalOverride="/privacy"
+>
+  <div class="callout callout--warn" slot="notice">
+    <p class="!mb-0"><Rich text={t.englishOnly} vars={{ email: SITE.email }} links={{ email: `mailto:${SITE.email}` }} /></p>
+  </div>
+  <div lang="en"><PrivacyBody /></div>
+</LegalLayout>

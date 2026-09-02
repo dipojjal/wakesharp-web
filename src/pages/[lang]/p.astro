@@ -1,0 +1,8 @@
+---
+/** /<locale>/p — rendered for every enabled non-default locale. */
+import PactPage from '../../templates/PactPage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<PactPage locale={localeFromParams(Astro.params)} />

@@ -1,0 +1,40 @@
+---
+/** /contact-error: the 303 destination when the form could not deliver. noindex, no hreflang. */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Rich from '../i18n/Rich.astro';
+import { SITE } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, localePath } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const t = getCatalog(locale.code).contact.error;
+const vars = { email: SITE.email };
+const links = { email: `mailto:${SITE.email}` };
+---
+
+<LegalLayout
+  title={t.title}
+  description={t.description}
+  path={localePath(locale, '/contact-error')}
+  heading={t.heading}
+  intro={t.intro}
+  showUpdated={false}
+  noindex={true}
+  locale={locale}
+  alternates={[]}
+  switchTo={alternatesFor('/contact-error')}
+>
+  <div class="callout callout--warn">
+    <p class="!mb-0"><Rich text={t.callout} vars={vars} links={links} /></p>
+  </div>
+
+  <p>{t.body}</p>
+
+  <p>
+    <a href={localePath(locale, '/contact')}>{t.backToForm}</a> · <a href={localePath(locale, '/support')}>{t.support}</a> · <a href={localePath(locale, '/')}>{t.homepage}</a>
+  </p>
+</LegalLayout>

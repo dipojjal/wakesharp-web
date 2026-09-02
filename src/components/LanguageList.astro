@@ -1,0 +1,47 @@
+---
+/**
+ * The footer language list: every enabled locale by its own name, as plain
+ * links. This is the crawlable, no-JS-at-all path to every translation.
+ */
+import { getCatalog } from '../i18n/catalog';
+import { enabledLocales, type EnabledLocale } from '../i18n/config';
+import { localePath, type Alternate } from '../i18n/routes';
+
+interface Props {
+  locale: EnabledLocale;
+  switchTo: Alternate[];
+  fallbackPath: string;
+}
+const { locale, switchTo, fallbackPath } = Astro.props;
+const t = getCatalog(locale.code).shell;
+const options = enabledLocales().map((l) => ({
+  locale: l,
+  href: switchTo.find((a) => a.locale.code === l.code)?.href ?? localePath(l, fallbackPath),
+  current: l.code === locale.code,
+}));
+---
+
+{
+  options.length > 1 && (
+    <nav aria-label={t.language.listAria} class="mt-10">
+      <h2 class="text-sm font-bold uppercase tracking-wider text-[var(--color-night-dim)]">{t.language.label}</h2>
+      <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        {options.map((o) => (
+          <li>
+            <a
+              href={o.href}
+              hreflang={o.locale.hreflang}
+              lang={o.locale.hreflang}
+              rel={o.current ? undefined : 'alternate'}
+              data-lang-alt
+              aria-current={o.current ? 'true' : undefined}
+              class="hover:text-[var(--color-amber)] aria-[current=true]:font-bold aria-[current=true]:text-[var(--color-amber)]"
+            >
+              {o.locale.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}

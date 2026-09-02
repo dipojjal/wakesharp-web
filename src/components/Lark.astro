@@ -6,8 +6,12 @@
  * by scripts/prep-assets.mjs and are NOT square (532x864, 635x831, ...). Passing
  * both width and height would make sharp resize to those exact dimensions and
  * distort the character, so only `width` is passed and Astro derives the height.
+ *
+ * The alt text is localized through the shell catalog, keyed on the pose.
  */
 import { Image } from 'astro:assets';
+import { getCatalog } from '../i18n/catalog';
+import { resolveLocale } from '../i18n/routes';
 import hero from '../assets/mascot/hero.png';
 import asleep from '../assets/mascot/asleep.png';
 import waking from '../assets/mascot/waking.png';
@@ -28,11 +32,12 @@ interface Props {
   priority?: boolean;
 }
 const { pose, width = 200, breathe = false, glow = false, class: cls = '', priority = false } = Astro.props;
+const alt = getCatalog(resolveLocale(Astro.currentLocale).code).shell.lark[pose];
 ---
 
 <Image
   src={POSES[pose]}
-  alt={`WakeSharp mascot, ${pose}`}
+  alt={alt}
   width={width}
   densities={[1, 2]}
   format="webp"

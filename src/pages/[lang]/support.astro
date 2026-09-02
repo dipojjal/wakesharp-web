@@ -1,0 +1,8 @@
+---
+/** /<locale>/support — rendered for every enabled non-default locale. */
+import SupportPage from '../../templates/SupportPage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<SupportPage locale={localeFromParams(Astro.params)} />

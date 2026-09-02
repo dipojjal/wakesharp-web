@@ -143,6 +143,7 @@ any paragraph that describes what the app does.
   devices; never imply WakeSharp does it.
 - Never hand-type store URLs in markdown — the end-of-article CTA (with official badges) is added by the layout automatically.
 - No `[[placeholder]]` text.
+- The site now builds localized pages (`/es`, `/ru`, `/tr`) from the catalogs in `src/i18n/`. Articles stay English-only for now: never write under `src/content/blog/<lang>/`, never set a `slug:` field in frontmatter (it silently replaces the id), and never use a locale path (`es`, `ru`, `tr`, `pt-br`, …) as a slug.
 
 ## Style laws (added Aug 27 — binding for every future article)
 

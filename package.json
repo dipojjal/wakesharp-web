@@ -13,9 +13,10 @@
     "check": "astro check",
     "assets:prep": "node scripts/prep-assets.mjs",
     "contrast": "node scripts/check-contrast.mjs",
-    "copy": "node scripts/check-copy.mjs",
-    "verify": "npm run contrast && npm run build && npm run copy && npm run growth:test",
-    "growth:test": "tsx --test tests/growth/*.test.ts"
+    "copy": "tsx scripts/check-copy.mjs",
+    "verify": "npm run contrast && npm run build && npm run copy && npm run growth:test && npm run i18n:test",
+    "growth:test": "tsx --test tests/growth/*.test.ts",
+    "i18n:test": "tsx --test tests/i18n/*.test.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
