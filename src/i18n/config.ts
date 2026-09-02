@@ -50,7 +50,7 @@ export const LOCALES = [
   { code: 'pt-BR', path: 'pt-br', hreflang: 'pt-BR', og: 'pt_BR', name: 'Português (Brasil)', dir: 'ltr', dateLocale: 'pt-BR', enabled: true },
   { code: 'id', path: 'id', hreflang: 'id', og: 'id_ID', name: 'Bahasa Indonesia', dir: 'ltr', dateLocale: 'id', enabled: true },
   { code: 'uk', path: 'uk', hreflang: 'uk', og: 'uk_UA', name: 'Українська', dir: 'ltr', dateLocale: 'uk', enabled: true },
-  { code: 'de', path: 'de', hreflang: 'de', og: 'de_DE', name: 'Deutsch', dir: 'ltr', dateLocale: 'de', enabled: false },
+  { code: 'de', path: 'de', hreflang: 'de', og: 'de_DE', name: 'Deutsch', dir: 'ltr', dateLocale: 'de', enabled: true },
   // Phase 3 — `ar` is the first right-to-left locale; see docs/i18n/glossary.md
   { code: 'ar', path: 'ar', hreflang: 'ar', og: 'ar_AR', name: 'العربية', dir: 'rtl', dateLocale: 'ar', enabled: false },
   { code: 'fr', path: 'fr', hreflang: 'fr', og: 'fr_FR', name: 'Français', dir: 'ltr', dateLocale: 'fr', enabled: false },

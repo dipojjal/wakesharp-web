@@ -50,9 +50,11 @@ const href = (p: string): string => localePath(locale, p);
 
     <div class="flex items-center gap-2 sm:gap-3">
       <LanguageMenu locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
+      {/* whitespace-nowrap: a two-word CTA wraps inside the pill in the longer
+          languages (German "WakeSharp laden") and doubles the header height. */}
       <a
         href={href('/#get')}
-        class="pill bg-[var(--color-coral)] px-4 py-2 text-sm text-[var(--color-night-deep)]"
+        class="pill whitespace-nowrap bg-[var(--color-coral)] px-4 py-2 text-sm text-[var(--color-night-deep)]"
       >{t.nav.cta}</a>
     </div>
   </div>
