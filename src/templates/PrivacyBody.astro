@@ -15,7 +15,7 @@ import { SITE } from '../config/site';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object and Photo Proof) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Up to three things leave your device: <strong>anonymous usage analytics</strong> (which screens you use, where you get stuck, and a crash report if the app stops unexpectedly — all keyed to a random ID, never your name, and never the content of your alarms or calendar), <strong>purchase data</strong> if you buy WakeSharp Plus, and <strong>your backup</strong> if you choose to create the optional account.</li>
+      <li>Up to three things leave your device: <strong>anonymous usage analytics</strong> (which screens you use, where you get stuck, your answers to the few setup questions, and a crash report if the app stops unexpectedly — all keyed to random IDs, never your name, and never the content of your alarms or calendar; the setup answers are also kept in a small table of our own, described below), <strong>purchase data</strong> if you buy WakeSharp Plus, and <strong>your backup</strong> if you choose to create the optional account.</li>
       <li>No advertising ID. No location. No tracking across other apps or websites, and nothing is ever sold.</li>
     </ul>
   </div>
@@ -264,6 +264,23 @@ import { SITE } from '../config/site';
     target you, and never sold.
   </p>
 
+  <h2>Your setup answers</h2>
+  <p>
+    When you first set up WakeSharp it asks a handful of questions — how many alarms you set, whether you
+    turn the alarm off and go back to sleep, how long it takes you to feel awake, how you feel right after
+    waking — and records the choices you make on the way to your first alarm: wake time, bedtime, mission,
+    difficulty, sound, wallpaper, and whether you allowed alarms. These answers reach our analytics service
+    as part of the usage events described above. On iPhone they are <strong>also stored in a small table
+    of our own</strong>, hosted for us by Supabase in the United States under the same terms as the backup.
+    (The Android app does not send them yet.)
+  </p>
+  <ul>
+    <li>Each row is keyed by a random ID created on your device for this purpose alone — not the analytics ID, not the subscription ID, and not anything derived from your name, email or device.</li>
+    <li>It holds only answers from that fixed list of setup questions, sent through a write-only channel that accepts nothing else. Never the content of your alarms, your calendar, or anything you typed.</li>
+    <li>Why we keep our own copy: so that if you later create the optional account, your first-day answers can be connected to it, and we can learn how the way people start relates to what they go on to do. Until you sign in — and most people never do — the row is anonymous, and nothing can read it back.</li>
+    <li>Rows are deleted 180 days after the last answer. Deleting the optional account deletes them at once. Turning off <em>Settings → Product analytics</em> in the app stops them being sent at all.</li>
+  </ul>
+
   <h2 id="contact-form">The contact form on this website</h2>
   <p>
     This section is about <a href="/contact">wakesharp.app/contact</a> only. The app itself never sends a
@@ -285,6 +302,7 @@ import { SITE } from '../config/site';
     <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. Unless you created the optional account, we hold no copy, so there is nothing for us to delete.</li>
     <li><strong>The optional account backup</strong> — kept until you delete the account, then removed immediately and permanently: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>
     <li><strong>Purchase records at RevenueCat</strong> — kept while the record exists, under RevenueCat's own retention policy.</li>
+    <li><strong>Your setup answers in our own table</strong> — deleted 180 days after the last answer, or at once when you delete the optional account. Turning off product analytics in the app stops new answers being sent.</li>
     <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li>
       Because both the subscription ID and the analytics ID are anonymous, neither you nor we can identify
@@ -329,8 +347,9 @@ import { SITE } from '../config/site';
     Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
     passcode. Traffic to RevenueCat, PostHog and the backup service uses HTTPS. No system is perfectly
     secure, but the surface here is deliberately tiny: alarms never depend on any server, and the only
-    WakeSharp database that exists is the optional backup you may choose to create — isolated per account
-    by database-level access rules, and deletable by you at any moment.
+    WakeSharp data held on a server is the optional backup you may choose to create — isolated per account
+    by database-level access rules, and deletable by you at any moment — plus the small table of setup
+    answers described above, which no app or account can read back.
   </p>
 
   <h2>Changes to this policy</h2>

@@ -44,7 +44,7 @@ export const SITE = {
   /** The entity that publishes both apps, and the one named in the legal pages. */
   publisher: 'KineticBit Inc.',
   /** Stamped on the legal pages. Bump when their content materially changes. */
-  lastUpdated: '2026-08-31',
+  lastUpdated: '2026-09-03',
 
   /**
    * Governing law for the Terms. KineticBit Inc. is at 1044 Acoustic Way,
