@@ -24,7 +24,7 @@ export const blog = {
   cta: {
     aria: `Baixar WakeSharp`,
     heading: `Acorde afiado amanhã`,
-    body: `Seu alarme toca de graça, para sempre, sem anúncios. Mind Games (contas de aritmética), Photo Proof (prova por foto) e a verificação de confiabilidade estão incluídos. Configurar seu primeiro alarme leva uns dez segundos.`,
+    body: `Seu alarme toca de graça, para sempre. Mind Games (contas de aritmética), Photo Proof (prova por foto) e a verificação de confiabilidade estão incluídos. Configurar seu primeiro alarme leva uns dez segundos.`,
   },
   /** Um rótulo por categoria de src/lib/blog-categories.ts; uma categoria nova precisa de um em cada idioma. */
   categories: {

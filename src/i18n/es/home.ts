@@ -18,7 +18,7 @@ export const home = {
   trust: [
     `Suena en iPhone incluso en modo Silencio y Concentración`,
     `Te avisa la noche anterior de lo que podría impedir que suene`,
-    `Sin registro y sin anuncios`,
+    `Sin registro`,
     `Tu calendario y tu cámara nunca salen de tu teléfono`,
     `Tu alarma suena gratis, para siempre`,
   ],
@@ -136,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Tu alarma suena `, accent: `gratis, para siempre`, post: `` },
-    lede: `Sin anuncios, además. Dos de las siete misiones también son gratis, junto con los 13 tonos, Strict Mode, los preajustes de posponer y la comprobación de fiabilidad. Plus es para la mañana después de la alarma: las otras misiones, más juegos de calentamiento, más reglas inteligentes y el historial completo.`,
+    lede: `Dos de las siete misiones también son gratis, junto con los 13 tonos, Strict Mode, los preajustes de posponer y la comprobación de fiabilidad. Plus es para la mañana después de la alarma: las otras misiones, más juegos de calentamiento, más reglas inteligentes y el historial completo.`,
     free: {
       name: `Gratis`,
       price: `$0`,
@@ -218,7 +218,7 @@ export const home = {
       },
       {
         q: `¿Qué es gratis y qué es Plus?`,
-        a: `Tu alarma suena gratis, para siempre, y sin anuncios. El plan Gratis incluye todas las alarmas que necesites, las misiones Mind Games y Photo Proof, los 13 tonos de alarma, Strict Mode, los preajustes de posponer, la comprobación de fiabilidad, rachas y comodines de congelación, un juego de calentamiento después de cada misión, una alarma inteligente de calendario, una rotación de turnos, un perfil, la app de reloj y tu tendencia de Sharpness de 7 días. Plus añade las otras cinco misiones —Memory Match, Sequence Recall, escanear, caminar y Surprise me—, tres juegos de calentamiento en rotación cada mañana, alarmas inteligentes de calendario sin límite, todas las rotaciones y perfiles que quieras, tu historial completo de Sharpness, una política de posponer personalizada, y las escenas de Lark, los fondos y las celebraciones.`,
+        a: `Tu alarma suena gratis, para siempre. El plan Gratis incluye todas las alarmas que necesites, las misiones Mind Games y Photo Proof, los 13 tonos de alarma, Strict Mode, los preajustes de posponer, la comprobación de fiabilidad, rachas y comodines de congelación, un juego de calentamiento después de cada misión, una alarma inteligente de calendario, una rotación de turnos, un perfil, la app de reloj y tu tendencia de Sharpness de 7 días. Plus añade las otras cinco misiones —Memory Match, Sequence Recall, escanear, caminar y Surprise me—, tres juegos de calentamiento en rotación cada mañana, alarmas inteligentes de calendario sin límite, todas las rotaciones y perfiles que quieras, tu historial completo de Sharpness, una política de posponer personalizada, y las escenas de Lark, los fondos y las celebraciones.`,
       },
       {
         q: `¿Qué pasa con mis alarmas Plus si dejo de pagar?`,
@@ -234,7 +234,7 @@ export const home = {
       },
       {
         q: `¿Me rastrea?`,
-        a: `Sin ID de publicidad, sin ubicación y sin rastreo entre otras apps. Lo que sale de tu dispositivo: analíticas de uso anónimas (un ID aleatorio y qué pantallas usas; nunca tus alarmas, calendario ni cámara), datos de suscripción si compras Plus, y tu propia copia de seguridad si decidiste crear una cuenta. Tu cuenta nunca se cruza con las analíticas. La política de privacidad enumera cada byte.`,
+        a: `Sin ubicación, y WakeSharp no te rastrea entre otras apps. El banner de la versión gratuita lo sirve Google y puede usar el ID de publicidad de tu dispositivo; en iPhone solo si lo permites cuando se te pregunta. Plus quita los anuncios por completo. Lo que sale de tu dispositivo: analíticas de uso anónimas (un ID aleatorio y qué pantallas usas; nunca tus alarmas, calendario ni cámara), datos de suscripción si compras Plus, y tu propia copia de seguridad si decidiste crear una cuenta. Tu cuenta nunca se cruza con las analíticas. La política de privacidad enumera cada byte.`,
       },
     ],
   },

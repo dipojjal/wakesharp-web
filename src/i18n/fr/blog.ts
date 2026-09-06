@@ -25,7 +25,7 @@ export const blog = {
   cta: {
     aria: `Obtenir WakeSharp`,
     heading: `Réveillez-vous affûté demain`,
-    body: `Votre alarme sonne gratuitement, pour toujours, sans publicité. Mind Games, Photo Proof et la vérification de fiabilité sont inclus. Régler votre première alarme prend une dizaine de secondes.`,
+    body: `Votre alarme sonne gratuitement, pour toujours. Mind Games, Photo Proof et la vérification de fiabilité sont inclus. Régler votre première alarme prend une dizaine de secondes.`,
   },
   /** Un libellé par catégorie de src/lib/blog-categories.ts ; une nouvelle catégorie en exige un dans chaque langue. */
   categories: {

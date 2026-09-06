@@ -18,7 +18,7 @@ export const home = {
   trust: [
     `Berbunyi menembus Mode Hening dan Fokus di iPhone`,
     `Memberi tahu apa yang bisa menghentikannya, sejak malam sebelumnya`,
-    `Tanpa perlu mendaftar, dan tanpa iklan`,
+    `Tanpa perlu mendaftar`,
     `Kalender dan kamera Anda tidak pernah keluar dari ponsel`,
     `Alarm Anda berbunyi gratis, selamanya`,
   ],
@@ -136,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Alarm Anda berbunyi `, accent: `gratis, selamanya`, post: `` },
-    lede: `Tanpa iklan pula. Dua dari tujuh misi juga gratis, bersama semua 13 nada, Strict Mode, preset tunda, dan pemeriksaan keandalan. Plus untuk pagi setelah alarm: misi lainnya, lebih banyak permainan pemanasan, lebih banyak aturan pintar, dan seluruh riwayat.`,
+    lede: `Dua dari tujuh misi juga gratis, bersama semua 13 nada, Strict Mode, preset tunda, dan pemeriksaan keandalan. Plus untuk pagi setelah alarm: misi lainnya, lebih banyak permainan pemanasan, lebih banyak aturan pintar, dan seluruh riwayat.`,
     free: {
       name: `Gratis`,
       price: `$0`,
@@ -218,7 +218,7 @@ export const home = {
       },
       {
         q: `Apa yang gratis dan apa yang Plus?`,
-        a: `Alarm Anda berbunyi gratis, selamanya, tanpa iklan. Gratis mencakup alarm sebanyak yang Anda butuhkan, misi Mind Games dan Photo Proof, semua 13 nada alarm, Strict Mode, preset tunda, pemeriksaan keandalan, runtunan dan token pembeku, satu permainan pemanasan setelah setiap misi, satu alarm kalender pintar, satu rotasi shift, satu profil, aplikasi jam tangan, dan tren Sharpness 7 hari Anda. Plus menambahkan lima misi lainnya (Memory Match, Sequence Recall, pindai, jalan kaki, dan Surprise me), tiga permainan pemanasan bergiliran setiap pagi, alarm kalender pintar tanpa batas jumlah, rotasi dan profil sebanyak yang Anda mau, riwayat Sharpness lengkap Anda, kebijakan tunda kustom, serta adegan Lark, wallpaper, dan perayaan.`,
+        a: `Alarm Anda berbunyi gratis, selamanya. Gratis mencakup alarm sebanyak yang Anda butuhkan, misi Mind Games dan Photo Proof, semua 13 nada alarm, Strict Mode, preset tunda, pemeriksaan keandalan, runtunan dan token pembeku, satu permainan pemanasan setelah setiap misi, satu alarm kalender pintar, satu rotasi shift, satu profil, aplikasi jam tangan, dan tren Sharpness 7 hari Anda. Plus menambahkan lima misi lainnya (Memory Match, Sequence Recall, pindai, jalan kaki, dan Surprise me), tiga permainan pemanasan bergiliran setiap pagi, alarm kalender pintar tanpa batas jumlah, rotasi dan profil sebanyak yang Anda mau, riwayat Sharpness lengkap Anda, kebijakan tunda kustom, serta adegan Lark, wallpaper, dan perayaan.`,
       },
       {
         q: `Apa yang terjadi pada alarm Plus saya jika saya berhenti membayar?`,
@@ -234,7 +234,7 @@ export const home = {
       },
       {
         q: `Apakah aplikasi ini melacak saya?`,
-        a: `Tidak ada ID iklan, tidak ada lokasi, dan tidak ada pelacakan lintas aplikasi lain. Yang keluar dari perangkat Anda: analitik penggunaan anonim (ID acak dan layar mana yang Anda pakai; tidak pernah alarm, kalender, atau kamera Anda), data langganan jika Anda membeli Plus, dan cadangan Anda sendiri jika Anda memilih membuat akun. Akun Anda tidak pernah digabungkan dengan analitik. Kebijakan privasi mencantumkan setiap byte-nya.`,
+        a: `Tidak ada lokasi, dan WakeSharp sendiri tidak melacak Anda lintas aplikasi lain. Banner iklan di versi gratis berasal dari Google dan dapat memakai ID iklan perangkat Anda; di iPhone hanya jika Anda mengizinkannya saat ditanya. Plus menghapus iklan sepenuhnya. Yang keluar dari perangkat Anda: analitik penggunaan anonim (ID acak dan layar mana yang Anda pakai; tidak pernah alarm, kalender, atau kamera Anda), data langganan jika Anda membeli Plus, dan cadangan Anda sendiri jika Anda memilih membuat akun. Akun Anda tidak pernah digabungkan dengan analitik. Kebijakan privasi mencantumkan setiap byte-nya.`,
       },
     ],
   },

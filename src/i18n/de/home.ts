@@ -18,7 +18,7 @@ export const home = {
   trust: [
     `Klingelt auf dem iPhone durch Lautlos-Modus und Fokus`,
     `Sagt dir schon am Abend vorher, was ihn stoppen könnte`,
-    `Keine Anmeldung nötig, keine Werbung`,
+    `Keine Anmeldung nötig`,
     `Dein Kalender und deine Kamera verlassen dein Telefon nie`,
     `Dein Alarm klingelt kostenlos, für immer`,
   ],
@@ -136,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Dein Alarm klingelt `, accent: `kostenlos, für immer`, post: `` },
-    lede: `Und ohne Werbung. Zwei der sieben Missionen sind ebenfalls kostenlos, dazu alle 13 Töne, Strict Mode, die Schlummer-Voreinstellungen und die Zuverlässigkeitsprüfung. Plus ist für den Morgen nach dem Alarm — die übrigen Missionen, mehr Aufwärmspiele, mehr smarte Regeln und der ganze Verlauf.`,
+    lede: `Zwei der sieben Missionen sind ebenfalls kostenlos, dazu alle 13 Töne, Strict Mode, die Schlummer-Voreinstellungen und die Zuverlässigkeitsprüfung. Plus ist für den Morgen nach dem Alarm — die übrigen Missionen, mehr Aufwärmspiele, mehr smarte Regeln und der ganze Verlauf.`,
     free: {
       name: `Kostenlos`,
       price: `$0`,
@@ -218,7 +218,7 @@ export const home = {
       },
       {
         q: `Was ist kostenlos und was ist Plus?`,
-        a: `Dein Alarm klingelt kostenlos, für immer, ohne Werbung. Kostenlos sind so viele Alarme, wie du brauchst, die Missionen Mind Games und Photo Proof, alle 13 Alarmtöne, Strict Mode, die Schlummer-Voreinstellungen, die Zuverlässigkeitsprüfung, Serien und Freeze-Tokens, ein Aufwärmspiel nach jeder Mission, ein smarter Kalenderalarm, ein Schichtrhythmus, ein Profil, die Uhren-App und dein 7-Tage-Sharpness-Trend. Plus ergänzt die übrigen fünf Missionen — Memory Match, Sequence Recall, Scan an Object, Walk It Off und Surprise me —, drei wechselnde Aufwärmspiele pro Morgen, smarte Kalenderalarme ohne Limit, so viele Schichtrhythmen und Profile, wie du magst, deinen vollständigen Sharpness-Verlauf, eine eigene Schlummer-Regel sowie die Lark-Szenen, Hintergrundbilder und Feiern.`,
+        a: `Dein Alarm klingelt kostenlos, für immer. Kostenlos sind so viele Alarme, wie du brauchst, die Missionen Mind Games und Photo Proof, alle 13 Alarmtöne, Strict Mode, die Schlummer-Voreinstellungen, die Zuverlässigkeitsprüfung, Serien und Freeze-Tokens, ein Aufwärmspiel nach jeder Mission, ein smarter Kalenderalarm, ein Schichtrhythmus, ein Profil, die Uhren-App und dein 7-Tage-Sharpness-Trend. Plus ergänzt die übrigen fünf Missionen — Memory Match, Sequence Recall, Scan an Object, Walk It Off und Surprise me —, drei wechselnde Aufwärmspiele pro Morgen, smarte Kalenderalarme ohne Limit, so viele Schichtrhythmen und Profile, wie du magst, deinen vollständigen Sharpness-Verlauf, eine eigene Schlummer-Regel sowie die Lark-Szenen, Hintergrundbilder und Feiern.`,
       },
       {
         q: `Was passiert mit meinen Plus-Alarmen, wenn ich nicht mehr zahle?`,
@@ -234,7 +234,7 @@ export const home = {
       },
       {
         q: `Verfolgt mich die App?`,
-        a: `Keine Werbe-ID, kein Standort und kein Tracking über andere Apps hinweg. Was dein Gerät verlässt: anonyme Nutzungsstatistiken (eine zufällige ID und welche Bildschirme du nutzt — nie deine Alarme, deinen Kalender oder deine Kamera), Abodaten, wenn du Plus kaufst, und dein eigenes Backup, falls du ein Konto angelegt hast. Dein Konto wird nie mit den Statistiken verknüpft. Die Datenschutzerklärung listet jedes Byte auf.`,
+        a: `Kein Standort, und WakeSharp selbst verfolgt dich nicht über andere Apps hinweg. Das Werbebanner der kostenlosen Version kommt von Google und kann die Werbe-ID deines Geräts nutzen; auf dem iPhone nur, wenn du es bei der Nachfrage erlaubst. Plus entfernt die Werbung ganz. Was dein Gerät verlässt: anonyme Nutzungsstatistiken (eine zufällige ID und welche Bildschirme du nutzt — nie deine Alarme, deinen Kalender oder deine Kamera), Abodaten, wenn du Plus kaufst, und dein eigenes Backup, falls du ein Konto angelegt hast. Dein Konto wird nie mit den Statistiken verknüpft. Die Datenschutzerklärung listet jedes Byte auf.`,
       },
     ],
   },

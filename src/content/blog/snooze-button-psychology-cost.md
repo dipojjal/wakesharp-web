@@ -86,7 +86,7 @@ The system Stop button on your phone always works, on both platforms, and we are
 
 And the honest scientific limit: nothing above proves that capping your snoozes improves your cognition. Sundelin's data suggest a bounded snooze is not harming it. A snooze policy converts an automatic response into a finite, visible one, which is a claim about interface design rather than neuroscience. That is a smaller claim than most alarm apps make, and it happens to be true.
 
-Your alarm rings free, forever. No ads. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
+Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
 
 ## FAQ
 

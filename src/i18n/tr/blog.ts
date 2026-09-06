@@ -17,7 +17,7 @@ export const blog = {
   cta: {
     aria: `WakeSharp’ı indirin`,
     heading: `Yarın zinde uyanın`,
-    body: `Alarmınız sonsuza dek ücretsiz çalar, reklamsız. Mind Games, Photo Proof ve güvenilirlik kontrolü dahildir. İlk alarmınızı kurmak yaklaşık on saniye sürer.`,
+    body: `Alarmınız sonsuza dek ücretsiz çalar. Mind Games, Photo Proof ve güvenilirlik kontrolü dahildir. İlk alarmınızı kurmak yaklaşık on saniye sürer.`,
   },
   categories: {
     'sleep-science': `Uyku bilimi`,

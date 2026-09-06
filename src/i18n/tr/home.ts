@@ -16,7 +16,7 @@ export const home = {
   trust: [
     `iPhone’da Sessiz mod ve Odak açıkken de çalar`,
     `Onu neyin durdurabileceğini söyler — bir gece önceden`,
-    `Kayıt gerekmez, reklam yok`,
+    `Kayıt gerekmez`,
     `Takviminiz ve kameranız telefonunuzdan asla çıkmaz`,
     `Alarmınız sonsuza dek ücretsiz çalar`,
   ],
@@ -215,7 +215,7 @@ export const home = {
       },
       {
         q: `Neler ücretsiz, neler Plus?`,
-        a: `Alarmınız sonsuza dek ücretsiz çalar, reklamsız. Ücretsiz sürüm şunları kapsar: ihtiyacınız kadar alarm, Mind Games ve Photo Proof görevleri, 13 alarm sesinin tamamı, Strict Mode, erteleme ön ayarları, güvenilirlik kontrolü, seriler ve dondurma hakları, her görevden sonra bir ısınma oyunu, bir akıllı takvim alarmı, bir vardiya rotasyonu, bir profil, saat uygulaması ve 7 günlük Sharpness trendiniz. Plus şunları ekler: diğer görevler — Memory Match, Sequence Recall, tarama, yürüyüş ve Surprise me — her sabah dönüşümlü üç ısınma oyunu, sınırsız akıllı takvim alarmı, istediğiniz kadar rotasyon ve profil, tüm Sharpness geçmişiniz, özel bir erteleme politikası ve Lark sahneleri, duvar kâğıtları ve kutlamalar.`,
+        a: `Alarmınız sonsuza dek ücretsiz çalar. Ücretsiz sürüm şunları kapsar: ihtiyacınız kadar alarm, Mind Games ve Photo Proof görevleri, 13 alarm sesinin tamamı, Strict Mode, erteleme ön ayarları, güvenilirlik kontrolü, seriler ve dondurma hakları, her görevden sonra bir ısınma oyunu, bir akıllı takvim alarmı, bir vardiya rotasyonu, bir profil, saat uygulaması ve 7 günlük Sharpness trendiniz. Plus şunları ekler: diğer görevler — Memory Match, Sequence Recall, tarama, yürüyüş ve Surprise me — her sabah dönüşümlü üç ısınma oyunu, sınırsız akıllı takvim alarmı, istediğiniz kadar rotasyon ve profil, tüm Sharpness geçmişiniz, özel bir erteleme politikası ve Lark sahneleri, duvar kâğıtları ve kutlamalar.`,
       },
       {
         q: `Ödemeyi bırakırsam Plus alarmlarıma ne olur?`,

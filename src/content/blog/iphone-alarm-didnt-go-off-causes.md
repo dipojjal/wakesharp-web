@@ -115,7 +115,7 @@ That is the job of WakeSharp's reliability check, which is free and lives at Set
 
 On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted alarm permission the alarm sounds through Silent mode and Focus the way the Clock app does. That permission is the whole foundation: decline or revoke it and WakeSharp cannot schedule an alarm at all, which is exactly what the reliability check will tell you first.
 
-For cause number seven, missions are the point. The alarm rings and full credit needs Mind Games (three arithmetic problems) or Photo Proof (photograph the day's rotating prompt), with Memory Match, Sequence Recall, Scan an Object, Walk It Off and Surprise Me on Plus. The Stop button always works, on both platforms. What changes is that dismissing an alarm now requires enough of you to be awake to notice you are doing it. Your alarm rings free, forever. No ads.
+For cause number seven, missions are the point. The alarm rings and full credit needs Mind Games (three arithmetic problems) or Photo Proof (photograph the day's rotating prompt), with Memory Match, Sequence Recall, Scan an Object, Walk It Off and Surprise Me on Plus. The Stop button always works, on both platforms. What changes is that dismissing an alarm now requires enough of you to be awake to notice you are doing it. Your alarm rings free, forever, and Plus is ad-free.
 
 The limit is the honest one, and it is the same limit every alarm app has: WakeSharp is not a medical device, your phone's settings, battery restrictions or power state can prevent any alarm from sounding, and you should use a second, independent alarm for anything you cannot afford to be late for.
 

@@ -25,7 +25,7 @@ export const blog = {
   cta: {
     aria: `WakeSharp laden`,
     heading: `Morgen hellwach aufwachen`,
-    body: `Dein Alarm klingelt kostenlos, für immer, ohne Werbung. Mind Games (Kopfrechnen), Photo Proof (Fotobeweis) und die Zuverlässigkeitsprüfung sind dabei. Deinen ersten Alarm stellst du in etwa zehn Sekunden.`,
+    body: `Dein Alarm klingelt kostenlos, für immer. Mind Games (Kopfrechnen), Photo Proof (Fotobeweis) und die Zuverlässigkeitsprüfung sind dabei. Deinen ersten Alarm stellst du in etwa zehn Sekunden.`,
   },
   /** Ein Label je Kategorie aus src/lib/blog-categories.ts; eine neue Kategorie braucht eins in jeder Sprache. */
   categories: {

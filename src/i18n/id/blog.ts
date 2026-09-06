@@ -22,7 +22,7 @@ export const blog = {
   cta: {
     aria: `Unduh WakeSharp`,
     heading: `Bangun sigap besok pagi`,
-    body: `Alarm Anda berbunyi gratis, selamanya, tanpa iklan. Mind Games, Photo Proof, dan pemeriksaan keandalan sudah termasuk. Menyetel alarm pertama Anda hanya butuh sekitar sepuluh detik.`,
+    body: `Alarm Anda berbunyi gratis, selamanya. Mind Games, Photo Proof, dan pemeriksaan keandalan sudah termasuk. Menyetel alarm pertama Anda hanya butuh sekitar sepuluh detik.`,
   },
   /** Satu label per kategori di src/lib/blog-categories.ts; kategori baru butuh label di setiap lokal. */
   categories: {

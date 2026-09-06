@@ -78,7 +78,7 @@ Now the limits, which are the part most alarm apps leave out.
 
 The system Stop button on your phone always works, on both platforms, and we will not design around pretending otherwise. Strict Mode books four re-rings in advance, at 45 seconds and then 4, 8 and 12 minutes, where supported. No alarm app can guarantee it will wake you, and for anything genuinely consequential you should keep a second alarm on a separate device. If the mornings after a short night are the specific problem, the mechanism is in [Sleep Inertia: Why You Wake Up Groggy](/blog/sleep-inertia-why-you-wake-up-groggy).
 
-Your alarm rings free, forever. No ads. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
+Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
 
 ## FAQ
 

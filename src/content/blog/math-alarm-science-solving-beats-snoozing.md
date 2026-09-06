@@ -68,7 +68,7 @@ The honest limit first. No published trial has tested WakeSharp's missions again
 
 Second, the design details that matter here. Snoozing is a policy you set, not a rule we impose: Off, Standard (two five-minute snoozes, five Sharpness points off each), or Tighten, which shortens the gaps to ten minutes, then five, then two. Those three are free. Strict Mode books four re-rings in advance, at 45 seconds and then 4, 8 and 12 minutes, where supported. The system Stop button on your phone always works, on both platforms, and we are not going to design around pretending otherwise. Mind Games also runs as one of the warm-up games afterwards, which is where the Sharpness Score comes from: it compares this morning's performance against your own baseline, not against some ideal stranger.
 
-Your alarm rings free, forever. No ads. Mind Games and Photo Proof are the free missions; the Plus missions gate when you create an alarm, never when one rings.
+Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions; the Plus missions gate when you create an alarm, never when one rings.
 
 ## FAQ
 

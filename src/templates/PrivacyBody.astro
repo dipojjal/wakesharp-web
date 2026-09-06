@@ -15,8 +15,8 @@ import { SITE } from '../config/site';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object and Photo Proof) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Up to three things leave your device: <strong>anonymous usage analytics</strong> (which screens you use, where you get stuck, your answers to the few setup questions, and a crash report if the app stops unexpectedly — all keyed to random IDs, never your name, and never the content of your alarms or calendar; the setup answers are also kept in a small table of our own, described below), <strong>purchase data</strong> if you buy WakeSharp Plus, and <strong>your backup</strong> if you choose to create the optional account.</li>
-      <li>No advertising ID. No location. No tracking across other apps or websites, and nothing is ever sold.</li>
+      <li>Up to four things leave your device: <strong>anonymous usage analytics</strong> (which screens you use, where you get stuck, your answers to the few setup questions, and a crash report if the app stops unexpectedly — all keyed to random IDs, never your name, and never the content of your alarms or calendar; the setup answers are also kept in a small table of our own, described below), <strong>purchase data</strong> if you buy WakeSharp Plus, <strong>your backup</strong> if you choose to create the optional account, and, on the free tier, the <strong>advertising request</strong> that fetches the banner ad described below.</li>
+      <li>No location, and nothing is ever sold. The free tier shows a banner ad, which uses your device's advertising ID; WakeSharp Plus removes it, and so does declining the tracking prompt on iPhone. Everything about it is in <a href="#advertising">Advertising</a>.</li>
     </ul>
   </div>
 
@@ -32,8 +32,7 @@ import { SITE } from '../config/site';
     <li>It does not require an account or build a profile of you. The optional sign-in exists to back up and restore your own data, nothing else — no feature is ever gated on it.</li>
     <li>It does not collect your name, phone number or contacts. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
     <li>It does not request or use your location.</li>
-    <li>It does not use an advertising identifier, and it shows no ads.</li>
-    <li>It does not track you across other apps or websites. The usage analytics described below measure WakeSharp itself, are keyed to a random per-install ID, and are never combined with outside data or used for advertising.</li>
+    <li>It does not track you across other apps or websites <em>through its own analytics</em>. The usage analytics described below measure WakeSharp itself, are keyed to a random per-install ID, and are never combined with outside data or used for advertising. The banner ad on the free tier is a separate matter, described in <a href="#advertising">Advertising</a>: it is served by Google, and on iPhone it can only use the advertising ID if you allow it when asked.</li>
     <li>It does not sell or share personal information, in the sense those words are given by the CCPA/CPRA.</li>
   </ul>
 
@@ -171,7 +170,7 @@ import { SITE } from '../config/site';
 
   <h2>Purchases and WakeSharp Plus</h2>
   <p>
-    Your alarm rings free, forever, with no ads. WakeSharp Plus is optional: a subscription at
+    Your alarm rings free, forever. WakeSharp Plus is optional, and one of the things it removes is the banner ad: a subscription at
     {SITE.plus.monthly}/month or {SITE.plus.annual}/year, or a one-time {SITE.plus.lifetime} Lifetime
     purchase that never renews. It adds every wake-up mission beyond Mind Games and Photo Proof, three
     warm-up games every morning on a rotation, your full Sharpness history, unlimited smart calendar alarms,
@@ -262,6 +261,44 @@ import { SITE } from '../config/site';
   <p>
     There is no advertising involved: this data is never combined with third-party data, never used to
     target you, and never sold.
+  </p>
+
+  <h2 id="advertising">Advertising</h2>
+  <p>
+    The free tier of WakeSharp shows a small banner ad, supplied by <strong>Google AdMob</strong>. There
+    is one above the tab bar and one on each of the Nest and Insights tabs. There are no ads between
+    screens, none over an alarm, and none while a mission is running.
+  </p>
+  <ul>
+    <li>
+      <strong>Who never sees one.</strong> Anyone with WakeSharp Plus, including during a free trial, and
+      anyone who installed WakeSharp before the version that introduced ads. If a subscription starts
+      mid-session the banners disappear at once.
+    </li>
+    <li>
+      <strong>What Google receives.</strong> To fill an ad request, Google receives your device's
+      advertising identifier, your approximate location as inferred from your IP address, your device
+      model and operating system, and whether the ad was shown, seen or tapped. It never receives your
+      alarms, your calendar, your camera, your Sharpness scores, or anything you typed into the app.
+    </li>
+    <li>
+      <strong>On iPhone.</strong> Before any of that, iOS asks you to allow or refuse tracking. Refuse,
+      and the advertising identifier is not available to Google at all; you still see a banner, but a
+      non-personalised one. You can change the answer later in Settings, Privacy &amp; Security, Tracking.
+    </li>
+    <li>
+      <strong>In the EEA, the UK and Switzerland</strong>, and in the US states with their own privacy
+      laws, Google's consent form appears before the first ad loads and records your choice. You can
+      reopen it at any time from <em>Settings, Privacy options</em> inside the app.
+    </li>
+  </ul>
+  <p>
+    Google acts as an independent controller for the advertising data it collects. What it does with it is
+    governed by its own policies:{' '}
+    <a href="https://business.safety.google/privacy/" rel="noopener">Google's privacy and terms</a> and its{' '}
+    <a href="https://support.google.com/admob/answer/9012903" rel="noopener">list of advertising partners</a>.
+    We receive only aggregate reporting from Google: how many ads were shown and what they earned. We never
+    receive a profile of you, and we never combine ad data with the analytics described above.
   </p>
 
   <h2>Your setup answers</h2>

@@ -104,7 +104,7 @@ The maddening part of all this is that none of it is visible from the alarm scre
 
 WakeSharp's alarm reliability check exists for that gap. It reads the conditions on your device that can genuinely silence an alarm, including exact-alarm permission, notification settings, alarm volume and Android battery restrictions, and reports what it finds in plain language. Where it detects a restriction it can deep-link you to the right settings screen, which on a Samsung device saves you a real expedition.
 
-Its limits are the ones listed above, and they apply to WakeSharp exactly as they apply to everything else. It can detect and warn. It cannot grant itself a permission, and it cannot override a manufacturer's battery manager. Where the platform refuses to tell it something, it says so rather than showing a green tick it has not earned. No alarm app is a guarantee. For a flight or an exam, still set a second alarm on a separate device. Your alarm rings free, forever. No ads.
+Its limits are the ones listed above, and they apply to WakeSharp exactly as they apply to everything else. It can detect and warn. It cannot grant itself a permission, and it cannot override a manufacturer's battery manager. Where the platform refuses to tell it something, it says so rather than showing a green tick it has not earned. No alarm app is a guarantee. For a flight or an exam, still set a second alarm on a separate device. Your alarm rings free, forever, and Plus is ad-free.
 
 If you would rather work from a pre-bed list than a post-mortem, [tonight's 6-point checklist for an alarm that actually rings](/blog/alarm-reliability-checklist-tonight) covers the same ground in about three minutes.
 

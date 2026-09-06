@@ -16,7 +16,7 @@ export const home = {
   trust: [
     `Rings through Silent and Focus on iPhone`,
     `Tells you what could stop it — the night before`,
-    `No sign-up required, and no ads`,
+    `No sign-up required`,
     `Your calendar and your camera never leave your phone`,
     `Your alarm rings free, forever`,
   ],
@@ -141,7 +141,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Your alarm rings `, accent: `free, forever`, post: `` },
-    lede: `No ads, either. Two of the seven missions are free as well, along with all 13 tones, Strict Mode, the snooze presets and the reliability check. Plus is for the morning after the alarm — the other missions, more warm-up games, more smart rules, and the whole history.`,
+    lede: `Two of the seven missions are free as well, along with all 13 tones, Strict Mode, the snooze presets and the reliability check. Plus is for the morning after the alarm — the other missions, more warm-up games, more smart rules, and the whole history.`,
     free: {
       name: `Free`,
       price: `$0`,
@@ -223,7 +223,7 @@ export const home = {
       },
       {
         q: `What is free and what is Plus?`,
-        a: `Your alarm rings free, forever, with no ads. Free covers as many alarms as you need, the Mind Games and Photo Proof missions, all 13 alarm tones, Strict Mode, the snooze presets, the reliability check, streaks and freeze tokens, a warm-up game after each mission, one smart calendar alarm, one shift rotation, one profile, the watch app and your 7-day Sharpness trend. Plus adds the other five missions — Memory Match, Sequence Recall, scan, walk and Surprise me — three rotating warm-up games each morning, unlimited smart calendar alarms, as many rotations and profiles as you like, your full Sharpness history, a custom snooze policy, and the Lark scenes, wallpapers and celebrations.`,
+        a: `Your alarm rings free, forever. Free covers as many alarms as you need, the Mind Games and Photo Proof missions, all 13 alarm tones, Strict Mode, the snooze presets, the reliability check, streaks and freeze tokens, a warm-up game after each mission, one smart calendar alarm, one shift rotation, one profile, the watch app and your 7-day Sharpness trend. Plus adds the other five missions — Memory Match, Sequence Recall, scan, walk and Surprise me — three rotating warm-up games each morning, unlimited smart calendar alarms, as many rotations and profiles as you like, your full Sharpness history, a custom snooze policy, and the Lark scenes, wallpapers and celebrations.`,
       },
       {
         q: `What happens to my Plus alarms if I stop paying?`,
@@ -239,7 +239,7 @@ export const home = {
       },
       {
         q: `Does it track me?`,
-        a: `No advertising ID, no location, and no tracking across other apps. What leaves your device: anonymous usage analytics (a random ID and which screens you use — never your alarms, calendar or camera), subscription data if you buy Plus, and your own backup if you chose to create an account. Your account is never joined to the analytics. The privacy policy lists every byte.`,
+        a: `No location, and WakeSharp itself does not track you across other apps. The banner ad on the free tier comes from Google and can use your device's advertising ID; on iPhone only if you allow it when asked, and Plus removes the ads entirely. What leaves your device: anonymous usage analytics (a random ID and which screens you use — never your alarms, calendar or camera), subscription data if you buy Plus, and your own backup if you chose to create an account. Your account is never joined to the analytics. The privacy policy lists every byte.`,
       },
     ],
   },

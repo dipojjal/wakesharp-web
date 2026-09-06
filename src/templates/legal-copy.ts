@@ -5,10 +5,10 @@
 export const PRIVACY = {
   title: 'Privacy Policy — WakeSharp',
   description:
-    'WakeSharp needs no account and shows no ads. Your alarms and calendar data live on your device; an optional Apple/Google account can back them up, and anonymous analytics help us improve the app.',
+    'WakeSharp needs no account. Your alarms and calendar data live on your device; an optional Apple/Google account can back them up, anonymous analytics help us improve the app, and the free tier shows a banner ad.',
   heading: 'Privacy Policy',
   intro:
-    'WakeSharp is an alarm clock that runs on your phone. It requires no account and shows no advertising. Your alarms, scores and calendar events live on your device; what can leave it — anonymous usage analytics, subscription data, and the optional account backup you may choose to create — is listed on this page, exactly.',
+    'WakeSharp is an alarm clock that runs on your phone. It requires no account. Your alarms, scores and calendar events live on your device; what can leave it — anonymous usage analytics, subscription data, the optional account backup you may choose to create, and the advertising request behind the banner on the free tier — is listed on this page, exactly.',
 };
 
 export const TERMS = {

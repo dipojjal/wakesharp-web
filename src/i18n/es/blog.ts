@@ -17,7 +17,7 @@ export const blog = {
   cta: {
     aria: `Descarga WakeSharp`,
     heading: `Despierta lúcido mañana`,
-    body: `Tu alarma suena gratis, para siempre, y sin anuncios. Mind Games, Photo Proof y la comprobación de fiabilidad están incluidos. Poner tu primera alarma lleva unos diez segundos.`,
+    body: `Tu alarma suena gratis, para siempre. Mind Games, Photo Proof y la comprobación de fiabilidad están incluidos. Poner tu primera alarma lleva unos diez segundos.`,
   },
   categories: {
     'sleep-science': `Ciencia del sueño`,

@@ -89,7 +89,7 @@ Play one at minute five and another at minute twenty five for a week and you get
 
 Now the limits. A Sharpness score is a rough cognitive check, not a clinical test. It moves with your bedtime, your stress, a noisy street, how familiar the game has become, and plain randomness. It will tell you that this morning was worse than your usual. It will not tell you why. WakeSharp does not track your sleep and does not pretend to. And nothing in the app shortens the biology: the cortisol awakening response takes the time it takes, and a short night buys a longer fog whatever your alarm does. What measurement buys you is knowing which mornings you should not schedule a hard conversation into.
 
-Your alarm rings free, forever. No ads.
+Your alarm rings free, forever, and Plus is ad-free.
 
 ## FAQ
 

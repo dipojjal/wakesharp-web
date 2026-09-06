@@ -24,7 +24,7 @@ export const blog = {
   cta: {
     aria: `WakeSharpを入手`,
     heading: `明日は冴えた頭で目覚める`,
-    body: `アラームはずっと無料で鳴ります。広告もありません。Mind Games（暗算）、Photo Proof（写真で証明）、信頼性チェックも含まれます。最初のアラームの設定は10秒ほどで終わります。`,
+    body: `アラームはずっと無料で鳴ります。Mind Games（暗算）、Photo Proof（写真で証明）、信頼性チェックも含まれます。最初のアラームの設定は10秒ほどで終わります。`,
   },
   /** src/lib/blog-categories.ts のカテゴリごとに1つ。新しいカテゴリはすべての言語で必要です。 */
   categories: {

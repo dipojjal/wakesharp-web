@@ -112,7 +112,7 @@ Todos los puntos de esa lista comparten una forma: el teléfono sabía, con hora
 
 Eso es lo que hace Alarm reliability, la comprobación de fiabilidad de la alarma de WakeSharp, y es gratis. Ejecuta esta misma clase de comprobación en tu dispositivo y nombra la cosa concreta que te habría dejado en silencio: un permiso que falta, un volumen de alarma demasiado bajo, los ajustes de notificaciones, las restricciones de batería. La clave es nombrarla. Empieza por un veredicto claro en lugar de una tranquilizadora marca verde, y cuando la plataforma no le dice algo, lo reconoce en vez de adivinar. En iPhone, WakeSharp suena a través de AlarmKit de Apple, así que una vez concedido el permiso de alarmas, la alarma suena en modo Silencio y Concentración igual que lo hace la app Reloj.
 
-Los límites honestos: un comprobador solo puede ver lo que el sistema operativo decide exponer, así que no puede descartar todas las causas, y no puede prometer que vas a despertar. WakeSharp no es un dispositivo médico. Para una mañana que no puedas permitirte perder, pon igualmente esa segunda alarma independiente. Tu alarma suena gratis, para siempre. Sin anuncios.
+Los límites honestos: un comprobador solo puede ver lo que el sistema operativo decide exponer, así que no puede descartar todas las causas, y no puede prometer que vas a despertar. WakeSharp no es un dispositivo médico. Para una mañana que no puedas permitirte perder, pon igualmente esa segunda alarma independiente. Tu alarma suena gratis, para siempre. Y Plus es sin anuncios.
 
 ## Preguntas frecuentes
 

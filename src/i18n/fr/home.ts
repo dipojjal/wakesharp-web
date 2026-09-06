@@ -18,7 +18,7 @@ export const home = {
   trust: [
     `Sonne en mode Silence et en Concentration sur iPhone`,
     `Vous dit ce qui pourrait l’empêcher de sonner — dès la veille au soir`,
-    `Sans inscription et sans publicité`,
+    `Sans inscription`,
     `Votre agenda et votre appareil photo ne quittent jamais votre téléphone`,
     `Votre alarme sonne gratuitement, pour toujours`,
   ],
@@ -136,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Votre alarme sonne `, accent: `gratuitement, pour toujours`, post: `` },
-    lede: `Sans publicité non plus. Deux des sept missions sont gratuites elles aussi, avec les 13 sonneries, Strict Mode, les préréglages de rappel d’alarme et la vérification de fiabilité. Plus, c’est pour la matinée d’après l’alarme — les autres missions, plus de jeux d’échauffement, plus de règles intelligentes, et tout l’historique.`,
+    lede: `Deux des sept missions sont gratuites elles aussi, avec les 13 sonneries, Strict Mode, les préréglages de rappel d’alarme et la vérification de fiabilité. Plus, c’est pour la matinée d’après l’alarme — les autres missions, plus de jeux d’échauffement, plus de règles intelligentes, et tout l’historique.`,
     free: {
       name: `Gratuit`,
       price: `$0`,
@@ -218,7 +218,7 @@ export const home = {
       },
       {
         q: `Qu’est-ce qui est gratuit et qu’est-ce qui relève de Plus ?`,
-        a: `Votre alarme sonne gratuitement, pour toujours, sans publicité. L’offre gratuite couvre autant d’alarmes que nécessaire, les missions Mind Games et Photo Proof, les 13 sonneries d’alarme, Strict Mode, les préréglages de rappel d’alarme, la vérification de fiabilité, les séries et les jetons de gel, un jeu d’échauffement après chaque mission, une alarme d’agenda intelligente, une rotation d’équipe, un profil, l’application de montre et votre tendance Sharpness sur 7 jours. Plus ajoute les cinq autres missions — Memory Match, Sequence Recall, le scan, la marche et Surprise me —, trois jeux d’échauffement en rotation chaque matin, des alarmes d’agenda intelligentes sans limite, autant de rotations et de profils que vous voulez, tout votre historique Sharpness, une politique de rappel d’alarme personnalisée, ainsi que les scènes du Lark, les fonds d’écran et les célébrations.`,
+        a: `Votre alarme sonne gratuitement, pour toujours. L’offre gratuite couvre autant d’alarmes que nécessaire, les missions Mind Games et Photo Proof, les 13 sonneries d’alarme, Strict Mode, les préréglages de rappel d’alarme, la vérification de fiabilité, les séries et les jetons de gel, un jeu d’échauffement après chaque mission, une alarme d’agenda intelligente, une rotation d’équipe, un profil, l’application de montre et votre tendance Sharpness sur 7 jours. Plus ajoute les cinq autres missions — Memory Match, Sequence Recall, le scan, la marche et Surprise me —, trois jeux d’échauffement en rotation chaque matin, des alarmes d’agenda intelligentes sans limite, autant de rotations et de profils que vous voulez, tout votre historique Sharpness, une politique de rappel d’alarme personnalisée, ainsi que les scènes du Lark, les fonds d’écran et les célébrations.`,
       },
       {
         q: `Qu’arrive-t-il à mes alarmes Plus si j’arrête de payer ?`,
@@ -234,7 +234,7 @@ export const home = {
       },
       {
         q: `Est-ce qu’il me piste ?`,
-        a: `Aucun identifiant publicitaire, aucune localisation, et aucun suivi à travers d’autres applications. Ce qui quitte votre appareil : des statistiques d’usage anonymes (un identifiant aléatoire et les écrans que vous utilisez — jamais vos alarmes, votre agenda ni votre appareil photo), les données d’abonnement si vous achetez Plus, et votre propre sauvegarde si vous avez choisi de créer un compte. Votre compte n’est jamais rapproché de ces statistiques. La politique de confidentialité liste chaque octet.`,
+        a: `Aucune localisation, et WakeSharp ne vous suit pas à travers d’autres applications. La bannière de la version gratuite est servie par Google et peut utiliser l’identifiant publicitaire de votre appareil ; sur iPhone, uniquement si vous l’autorisez lorsqu’on vous le demande. Plus supprime les publicités. Ce qui quitte votre appareil : des statistiques d’usage anonymes (un identifiant aléatoire et les écrans que vous utilisez — jamais vos alarmes, votre agenda ni votre appareil photo), les données d’abonnement si vous achetez Plus, et votre propre sauvegarde si vous avez choisi de créer un compte. Votre compte n’est jamais rapproché de ces statistiques. La politique de confidentialité liste chaque octet.`,
       },
     ],
   },

@@ -24,7 +24,7 @@ export const blog = {
   cta: {
     aria: `Get WakeSharp`,
     heading: `Wake up sharp tomorrow`,
-    body: `Your alarm rings free, forever, with no ads. Mind Games, Photo Proof and the reliability check are included. Setting your first alarm takes about ten seconds.`,
+    body: `Your alarm rings free, forever. Mind Games, Photo Proof and the reliability check are included. Setting your first alarm takes about ten seconds.`,
   },
   /** One label per category in src/lib/blog-categories.ts; a new category needs one in every locale. */
   categories: CATEGORY_LABELS,

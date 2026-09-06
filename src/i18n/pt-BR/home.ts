@@ -18,7 +18,7 @@ export const home = {
   trust: [
     `Toca no iPhone mesmo no Modo Silencioso e no Foco`,
     `Avisa o que pode impedir o toque — na noite anterior`,
-    `Sem cadastro e sem anúncios`,
+    `Sem cadastro`,
     `Seu calendário e sua câmera nunca saem do seu celular`,
     `Seu alarme toca de graça, para sempre`,
   ],
@@ -136,7 +136,7 @@ export const home = {
 
   pricing: {
     heading: { pre: `Seu alarme toca `, accent: `de graça, para sempre`, post: `` },
-    lede: `E sem anúncios. Duas das sete missões também são de graça, junto com os 13 toques, o Strict Mode, as predefinições de soneca e a verificação de confiabilidade. O Plus é para a manhã depois do alarme — as outras missões, mais jogos de aquecimento, mais regras inteligentes e o histórico inteiro.`,
+    lede: `Duas das sete missões também são de graça, junto com os 13 toques, o Strict Mode, as predefinições de soneca e a verificação de confiabilidade. O Plus é para a manhã depois do alarme — as outras missões, mais jogos de aquecimento, mais regras inteligentes e o histórico inteiro.`,
     free: {
       name: `Grátis`,
       price: `$0`,
@@ -218,7 +218,7 @@ export const home = {
       },
       {
         q: `O que é de graça e o que é Plus?`,
-        a: `Seu alarme toca de graça, para sempre, sem anúncios. O plano Grátis inclui quantos alarmes você precisar, as missões Mind Games e Photo Proof, todos os 13 toques de alarme, o Strict Mode, as predefinições de soneca, a verificação de confiabilidade, sequências e congelamentos, um jogo de aquecimento depois de cada missão, um alarme inteligente de calendário, uma escala de turnos, um perfil, o app de relógio e sua tendência de Sharpness de 7 dias. O Plus acrescenta as outras cinco missões — Memory Match, Sequence Recall, escanear, caminhar e Surprise me —, três jogos de aquecimento em rodízio a cada manhã, alarmes inteligentes de calendário sem limite, quantas escalas e perfis você quiser, seu histórico completo de Sharpness, uma política de soneca personalizada e as cenas do Lark, os papéis de parede e as comemorações.`,
+        a: `Seu alarme toca de graça, para sempre. O plano Grátis inclui quantos alarmes você precisar, as missões Mind Games e Photo Proof, todos os 13 toques de alarme, o Strict Mode, as predefinições de soneca, a verificação de confiabilidade, sequências e congelamentos, um jogo de aquecimento depois de cada missão, um alarme inteligente de calendário, uma escala de turnos, um perfil, o app de relógio e sua tendência de Sharpness de 7 dias. O Plus acrescenta as outras cinco missões — Memory Match, Sequence Recall, escanear, caminhar e Surprise me —, três jogos de aquecimento em rodízio a cada manhã, alarmes inteligentes de calendário sem limite, quantas escalas e perfis você quiser, seu histórico completo de Sharpness, uma política de soneca personalizada e as cenas do Lark, os papéis de parede e as comemorações.`,
       },
       {
         q: `O que acontece com meus alarmes Plus se eu parar de pagar?`,
@@ -234,7 +234,7 @@ export const home = {
       },
       {
         q: `Ele me rastreia?`,
-        a: `Sem ID de publicidade, sem localização e sem rastreamento entre outros apps. O que sai do seu aparelho: estatísticas de uso anônimas (um ID aleatório e quais telas você usa — nunca seus alarmes, calendário ou câmera), dados de assinatura se você comprar o Plus, e seu próprio backup se você optou por criar uma conta. Sua conta nunca é cruzada com essas estatísticas. A política de privacidade lista cada byte.`,
+        a: `Sem localização, e o próprio WakeSharp não rastreia você entre outros apps. O banner da versão gratuita vem do Google e pode usar o ID de publicidade do seu aparelho; no iPhone, só se você permitir quando for perguntado. O Plus remove os anúncios. O que sai do seu aparelho: estatísticas de uso anônimas (um ID aleatório e quais telas você usa — nunca seus alarmes, calendário ou câmera), dados de assinatura se você comprar o Plus, e seu próprio backup se você optou por criar uma conta. Sua conta nunca é cruzada com essas estatísticas. A política de privacidade lista cada byte.`,
       },
     ],
   },
