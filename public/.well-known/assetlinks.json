@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wakesharp.app",
+      "sha256_cert_fingerprints": [
+        "26:A5:22:90:1C:A7:40:2B:C9:9B:A8:C6:DE:0A:32:E4:5F:31:04:E2:ED:32:EF:B9:A5:36:32:54:06:DC:34:E9"
+      ]
+    }
+  }
+]
