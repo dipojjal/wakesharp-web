@@ -5,10 +5,11 @@
 export const PRIVACY = {
   title: 'Privacy Policy — WakeSharp',
   description:
-    'WakeSharp needs no account. Your alarms and calendar data live on your device; an optional Apple/Google account can back them up, anonymous analytics help us improve the app, and the free tier shows a banner ad.',
+    'How WakeSharp handles optional accounts, purchases, product analytics, campaign measurement, creator codes and advertising, and how to control your privacy choices.',
   heading: 'Privacy Policy',
   intro:
-    'WakeSharp is an alarm clock that runs on your phone. It requires no account. Your alarms, scores and calendar events live on your device; what can leave it — anonymous usage analytics, subscription data, the optional account backup you may choose to create, and the advertising request behind the banner on the free tier — is listed on this page, exactly.',
+    'WakeSharp is an alarm clock that runs on your phone and requires no account. This policy explains local data, optional backups, purchases, product and marketing measurement, and advertising. Measurement records use pseudonymous identifiers that can link to your account when you sign in.',
+  lastUpdated: '2026-09-12',
 };
 
 export const TERMS = {

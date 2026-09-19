@@ -556,6 +556,50 @@ if (!sawCanonical) {
   problems++;
 }
 
+// Search consoles are pointed at /sitemap.xml (robots.txt and BaseHead). The
+// integration writes sitemap-index.xml; the alias copies it to sitemap.xml.
+for (const required of ['sitemap-index.xml', 'sitemap.xml', 'sitemap-0.xml']) {
+  if (!existsSync(join(DIST, required))) {
+    console.error(`  ✗ dist/${required} is missing — crawlers are told to fetch /sitemap.xml`);
+    problems++;
+  }
+}
+if (existsSync(join(DIST, 'sitemap.xml'))) {
+  const index = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+  if (!index.includes('<sitemapindex') || !index.includes('https://wakesharp.app/sitemap-0.xml')) {
+    console.error('  ✗ dist/sitemap.xml must be a sitemap index that lists sitemap-0.xml');
+    problems++;
+  }
+}
+if (existsSync(join(DIST, 'sitemap-0.xml'))) {
+  const body = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
+  for (const loc of [
+    'https://wakesharp.app',
+    'https://wakesharp.app/privacy',
+    'https://wakesharp.app/terms',
+    'https://wakesharp.app/support',
+    'https://wakesharp.app/blog',
+  ]) {
+    if (!body.includes(`<loc>${loc}</loc>`)) {
+      console.error(`  ✗ dist/sitemap-0.xml is missing <loc>${loc}</loc>`);
+      problems++;
+    }
+  }
+  for (const loc of [
+    'https://wakesharp.app/contact-sent',
+    'https://wakesharp.app/contact-error',
+    'https://wakesharp.app/c',
+    'https://wakesharp.app/p',
+    'https://wakesharp.app/es/privacy',
+    'https://wakesharp.app/es/terms',
+  ]) {
+    if (body.includes(`<loc>${loc}</loc>`)) {
+      console.error(`  ✗ dist/sitemap-0.xml must not list ${loc}`);
+      problems++;
+    }
+  }
+}
+
 // The URLs frozen into both shipped app binaries (and filed with the stores)
 // must exist as real English pages at the root — exact paths, not suffixes, so
 // dist/es/privacy.html can never satisfy this on the root's behalf.

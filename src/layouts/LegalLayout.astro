@@ -18,6 +18,7 @@ interface Props {
   introLang?: string;
   /** Off for pages that are not versioned documents, e.g. the contact form. */
   showUpdated?: boolean;
+  lastUpdated?: string;
   noindex?: boolean;
   locale?: EnabledLocale;
   alternates?: Alternate[];
@@ -33,6 +34,7 @@ const {
   intro,
   introLang,
   showUpdated = true,
+  lastUpdated = SITE.lastUpdated,
   noindex,
   locale = resolveLocale(Astro.currentLocale),
   alternates,
@@ -44,7 +46,7 @@ const t = getCatalog(locale.code).shell.legalLayout;
 
 // SITE.lastUpdated is parsed at local noon: UTC midnight renders as the
 // previous day for anyone west of UTC (see src/i18n/dates.ts).
-const updated = interpolate(t.lastUpdated, { date: formatDate(parseLocalNoon(SITE.lastUpdated), locale) });
+const updated = interpolate(t.lastUpdated, { date: formatDate(parseLocalNoon(lastUpdated), locale) });
 const hasNotice = Astro.slots.has('notice');
 ---
 

@@ -11,12 +11,12 @@ import { SITE } from '../config/site';
   <div class="callout">
     <h2 class="!mt-0">The short version</h2>
     <ul>
-      <li>No account is required, ever. You can optionally sign in with Apple or Google to back up your alarms and progress — that is the account's only job, and every feature works identically without it.</li>
+      <li>No account is required. You can optionally sign in with Apple or Google to back up your alarms and progress and link your WakeSharp Plus purchases across your devices.</li>
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Up to four things leave your device: <strong>anonymous usage analytics</strong> (which screens you use, where you get stuck, your answers to the few setup questions, and a crash report if the app stops unexpectedly — all keyed to random IDs, never your name, and never the content of your alarms or calendar; the setup answers are also kept in a small table of our own, described below), <strong>purchase data</strong> if you buy WakeSharp Plus, <strong>your backup</strong> if you choose to create the optional account, and, on the free tier, the <strong>advertising request</strong> that fetches the banner ad described below.</li>
-      <li>No location, and nothing is ever sold. The free tier shows a banner ad, which uses your device's advertising ID; WakeSharp Plus removes it, and so does declining the tracking prompt on iPhone. Everything about it is in <a href="#advertising">Advertising</a>.</li>
+      <li>Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, an optional <strong>account backup</strong>, and requests for <strong>banner ads</strong> where ads are offered. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
+      <li>WakeSharp does not request precise location. Network services receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission, regional privacy choices and whether an ad can load are separate controls.</li>
     </ul>
   </div>
 
@@ -29,11 +29,11 @@ import { SITE } from '../config/site';
 
   <h2>What WakeSharp does not do</h2>
   <ul>
-    <li>It does not require an account or build a profile of you. The optional sign-in exists to back up and restore your own data, nothing else — no feature is ever gated on it.</li>
+    <li>It does not require an account. Sign-in supports backup, restoration and purchase continuity.</li>
     <li>It does not collect your name, phone number or contacts. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
-    <li>It does not request or use your location.</li>
-    <li>It does not track you across other apps or websites <em>through its own analytics</em>. The usage analytics described below measure WakeSharp itself, are keyed to a random per-install ID, and are never combined with outside data or used for advertising. The banner ad on the free tier is a separate matter, described in <a href="#advertising">Advertising</a>: it is served by Google, and on iPhone it can only use the advertising ID if you allow it when asked.</li>
-    <li>It does not sell or share personal information, in the sense those words are given by the CCPA/CPRA.</li>
+    <li>It does not request GPS or precise location. Approximate location inferred from IP addresses is described below.</li>
+    <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, IDFA requires your permission through Apple's tracking prompt.</li>
+    <li>We do not sell customer lists. Advertising and measurement may involve sharing with the providers and enabled advertising partners described below; regional privacy choices apply to that processing.</li>
   </ul>
 
   <h2>What stays on your device</h2>
@@ -80,9 +80,10 @@ import { SITE } from '../config/site';
     at <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>.
   </p>
   <p>
-    The account is never connected to the anonymous analytics described below — your account ID and email
-    are not sent to our analytics service. Signing out keeps everything on your phone and simply stops
-    backups. Deleting the account — in the app at <em>Settings → Account → Delete account</em>, or as
+    Your random account ID can also become your RevenueCat customer ID, linking purchase and measurement
+    records across your devices. Your email is not sent by WakeSharp to PostHog or AppsFlyer as a marketing
+    attribute. Signing out keeps your local data and stops account backups. Deleting the account — in the
+    app at <em>Settings → Account → Delete account</em>, or as
     described at <a href="/account/delete">wakesharp.app/account/delete</a> — permanently removes the
     backup and the login itself (for Sign in with Apple, the sign-in token is revoked with Apple), while
     the data on your phone is kept.
@@ -109,10 +110,12 @@ import { SITE } from '../config/site';
     <li><strong>Camera</strong> — optional, only for an alarm you have set to Scan an Object, Fetch, Photo Proof, First Light, Face Check or Fruit Slash, when you enrol a target and while that mission runs. Face Check and Fruit Slash use the front camera. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong> — optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
     <li><strong>Notifications</strong> — for the optional pre-bed wind-down reminder, the reliability warning that rides with it, and the report shown when an alarm did not ring.</li>
+    <li><strong>Tracking</strong> — optional, to measure marketing and personalize advertising where ads are offered. Declining does not prevent alarm use or purchasing a plan.</li>
   </ul>
-  <p>On Android, the app declares exactly these permissions:</p>
+  <p>On Android, the app's permissions include:</p>
   <ul>
     <li><code>INTERNET</code> — for the subscription and analytics services described below. No alarm needs it.</li>
+    <li><code>com.google.android.gms.permission.AD_ID</code> — for permitted advertising and attribution. Deleting or restricting your advertising ID does not prevent purchasing a plan.</li>
     <li><code>USE_EXACT_ALARM</code> — to schedule an alarm that fires at the exact minute you asked for.</li>
     <li><code>SCHEDULE_EXACT_ALARM</code> — the same thing on Android 12 and 12L only, which predate the permission above. It is dropped from the build on Android 13 and later.</li>
     <li><code>USE_FULL_SCREEN_INTENT</code> — to show the ringing screen over the lock screen.</li>
@@ -189,7 +192,7 @@ import { SITE } from '../config/site';
     <li>
       <strong>The Walk It Off mission</strong> reads your device's own step counter, and only while that mission
       is running, to check that the steps it asked for actually happened. It is a count, not a route:
-      WakeSharp never requests or receives your location.
+      this mission never requests your location.
     </li>
     <li>
       Decline any of these permissions and nothing breaks. The mission falls back to Mind Games at full
@@ -199,11 +202,10 @@ import { SITE } from '../config/site';
 
   <h2>Purchases and WakeSharp Plus</h2>
   <p>
-    Your alarm rings free, forever. WakeSharp Plus is optional, and one of the things it removes is the banner ad: a subscription at
-    {SITE.plus.monthly}/month or {SITE.plus.annual}/year, or a one-time {SITE.plus.lifetime} Lifetime
-    purchase that never renews. It adds every wake-up mission beyond Mind Games, Photo Proof and Colour Clash, three
-    warm-up games every morning on a rotation, your full Sharpness history, unlimited smart calendar alarms,
-    and the Lark scenes, wallpapers and celebrations.
+    WakeSharp offers subscription and Lifetime plans. Availability of free access, ads, trials and
+    introductory offers can vary with the plan or paywall shown to you. Your paywall displays the current
+    price, trial terms and renewal period before purchase. Lifetime is a one-time purchase that does not
+    renew. Marketing measurement uses the same privacy controls regardless of which paywall is displayed.
   </p>
   <p>
     If you buy it, the purchase itself is handled entirely by <strong>Apple</strong> or{' '}
@@ -220,10 +222,11 @@ import { SITE } from '../config/site';
       <tr><th>What is sent</th><th>Why</th></tr>
     </thead>
     <tbody>
-      <tr><td>A randomly generated, anonymous app user ID — or, if you created the optional account, your random account ID</td><td>To tie a receipt to an install, and — when you sign in — to let WakeSharp Plus follow your account across your devices. Neither is derived from your name, email or any device identifier you can be traced by.</td></tr>
+      <tr><td>A generated app user ID, or your random account ID when signed in</td><td>To associate receipts with your subscription record and let WakeSharp Plus follow your account across devices. These identifiers are pseudonymous and can link records.</td></tr>
       <tr><td>The store receipt / purchase token from Apple or Google</td><td>To validate the purchase and decide whether Plus is unlocked.</td></tr>
       <tr><td>IP address, and the country derived from it or from your store account</td><td>Sent with every network request; used for fraud checks and to price and report by region.</td></tr>
       <tr><td>Device model, operating-system version and app version</td><td>Sent by the SDK with each request, and used to diagnose purchase problems.</td></tr>
+      <tr><td>AppsFlyer ID, permitted advertising/vendor identifiers, paywall assignment and optional creator credit</td><td>To match verified subscription outcomes to acquisition and paywall measurement while honoring measurement choices.</td></tr>
     </tbody>
   </table>
   <p>
@@ -233,25 +236,25 @@ import { SITE } from '../config/site';
     <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>.
   </p>
   <p>
-    RevenueCat also shows us <strong>anonymous, aggregate</strong> subscription numbers — how many trials
-    started, how many subscriptions are active. We cannot identify you from it. RevenueCat additionally
-    forwards subscription events (a trial started, a renewal, a cancellation) to our analytics project
-    described in the next section, keyed to the same random analytics ID — so we can see, in aggregate,
-    how free users become subscribers.
+    RevenueCat provides customer purchase histories and aggregate subscription reports. It forwards
+    verified trial, purchase, renewal, cancellation, expiration and refund events to PostHog and, when an
+    eligible AppsFlyer identifier is available, to AppsFlyer. Delivery can continue while the app is closed.
+    Cancelling a subscription is different from receiving a refund. Payment card details are not included.
   </p>
 
   <h2>Usage analytics and session replay (PostHog)</h2>
   <p>
     WakeSharp uses <strong>PostHog, Inc.</strong>, a product-analytics service, to understand how the app
     is used — which screens people visit, where onboarding is abandoned, whether the paywall is confusing.
-    This is the only analytics SDK in the app, and it works without knowing who you are:
+    Records use pseudonymous identifiers and can be joined to subscription and campaign measurement:
   </p>
   <table>
     <thead>
       <tr><th>What is sent</th><th>Why</th></tr>
     </thead>
     <tbody>
-      <tr><td>A randomly generated, per-install analytics ID</td><td>To count you once. It is created on your device, is not derived from your name, email or any identifier you can be traced by, and resets if you reinstall the app.</td></tr>
+      <tr><td>A per-install analytics ID and your current RevenueCat customer ID</td><td>To count activity and join it to verified purchase and ad-revenue outcomes. The subscription ID may be your random account ID after sign-in.</td></tr>
+      <tr><td>Campaign context, original paywall assignment, current monetization policy, and optional source or validated creator-code answers</td><td>To compare acquisition channels and paywalls. Self-reported creator assistance is kept distinct from attributed acquisition.</td></tr>
       <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
       <tr><td>Session recordings — a replay of the app's own screens, with the things listed below blanked out on your device before anything is sent</td><td>To see where people get stuck, and to diagnose faults we cannot reproduce — a paywall that never loaded its prices, a purchase that failed silently.</td></tr>
       <tr><td>Crash reports — when WakeSharp stops unexpectedly, the error's type and message and the stack trace showing which of our code was running, sent the next time you open the app</td><td>To find and fix crashes. A stack trace describes our code, not your data: no alarm, calendar, photo or account content is included.</td></tr>
@@ -269,7 +272,7 @@ import { SITE } from '../config/site';
     <li>the photos you take to complete a mission, and the reference photos you save;</li>
     <li>anything you typed or named yourself — alarm labels, activity names, profile names, rotation
       and shift names, the names you give scanned spots and photo references, the name you enter for a
-      wake pact, and your alarm search text;</li>
+      wake pact, your alarm search text, and the creator-code input;</li>
     <li>the titles of your calendar events, everywhere they appear.</li>
   </ul>
   <p>
@@ -288,13 +291,43 @@ import { SITE } from '../config/site';
     <a href="https://posthog.com/privacy" rel="noopener">posthog.com/privacy</a>.
   </p>
   <p>
-    There is no advertising involved: this data is never combined with third-party data, never used to
-    target you, and never sold.
+    We use PostHog to analyze product behavior, subscription outcomes, campaign performance and ad revenue.
+    Session recordings are for diagnosing product problems. We do not send the recordings to advertising partners.
+  </p>
+
+  <h2 id="marketing-measurement">Marketing measurement and creator codes (AppsFlyer)</h2>
+  <p>
+    AppsFlyer helps us understand which campaigns lead to a first app open, trial or payment. It receives
+    app and SDK identifiers, permitted advertising identifiers, device and network information including
+    IP-derived approximate location, campaign and deep-link context, selected app events and ad-impression
+    revenue. RevenueCat sends verified subscription events associated with the AppsFlyer ID. AppsFlyer
+    counts first opens; a store download that is never opened is a separate measure.
+  </p>
+  <p>
+    Enabled advertising partners may receive conversion information under the applicable consent and
+    platform restrictions. Apple's aggregate attribution can provide limited campaign results without an
+    advertising identifier. AppsFlyer's processing is described in its{' '}
+    <a href="https://www.appsflyer.com/legal/services-privacy-policy/" rel="noopener">services privacy policy</a>.
+    We do not send alarm content, calendar events, camera frames, contact lists or payment card details to AppsFlyer.
+  </p>
+  <p>
+    The optional source question and creator-code field record who you say introduced WakeSharp.
+    TikTok handles are validated against a public, read-only creator catalog hosted by Supabase. Confirmed
+    credit is stored locally and attached to PostHog and RevenueCat measurement. Codes do not change your
+    price or grant rewards, and they do not replace AppsFlyer's attributed campaign. Skipping or a failed
+    lookup never prevents setup.
+  </p>
+  <p>
+    Turn off <em>Settings → Product analytics</em> to stop new PostHog and AppsFlyer collection from the app
+    and clear the RevenueCat attribution identifiers used for future AppsFlyer delivery. This does not
+    erase already delivered events or cancel billing; essential purchase validation continues. Updates
+    made offline take effect on connected services after synchronization. You can also change Apple's
+    tracking permission in iOS Settings and reopen the regional privacy form in WakeSharp Settings.
   </p>
 
   <h2 id="advertising">Advertising</h2>
   <p>
-    The free tier of WakeSharp shows a small banner ad, supplied by <strong>Google AdMob</strong>. There
+    Where WakeSharp offers access supported by ads, it can show banners supplied by <strong>Google AdMob</strong>. There
     is one above the tab bar and one on each of the Nest and Insights tabs. There are no ads between
     screens, none over an alarm, and none while a mission is running.
   </p>
@@ -326,8 +359,9 @@ import { SITE } from '../config/site';
     governed by its own policies:{' '}
     <a href="https://business.safety.google/privacy/" rel="noopener">Google's privacy and terms</a> and its{' '}
     <a href="https://support.google.com/admob/answer/9012903" rel="noopener">list of advertising partners</a>.
-    We receive only aggregate reporting from Google: how many ads were shown and what they earned. We never
-    receive a profile of you, and we never combine ad data with the analytics described above.
+    We receive aggregate reporting from Google and impression-revenue callbacks in the app. These callbacks
+    include amount, currency and precision and are sent to PostHog and, while enabled, AppsFlyer to compare
+    ad revenue with subscription revenue and marketing costs.
   </p>
 
   <h2>Your setup answers</h2>
@@ -370,19 +404,19 @@ import { SITE } from '../config/site';
     <li><strong>Purchase records at RevenueCat</strong> — kept while the record exists, under RevenueCat's own retention policy.</li>
     <li><strong>Your setup answers in our own table</strong> — deleted 180 days after the last answer, or at once when you delete the optional account. Turning off product analytics in the app stops new answers being sent.</li>
     <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
+    <li><strong>Marketing records at AppsFlyer</strong> — retained according to the service's applicable retention settings and our measurement needs. Contact us to request access or deletion. Turning analytics off stops future collection; it does not itself delete historical records.</li>
     <li>
-      Because both the subscription ID and the analytics ID are anonymous, neither you nor we can identify
-      your record from the app itself. For the subscription record, email us from the address on your Apple
-      or Google receipt and include the purchase date — we will use the store transaction to locate and
-      delete it.
+      Subscription and analytics records are pseudonymous and may link to your account. For help locating
+      a purchase record, contact us with the store transaction and purchase date. Do not send payment card
+      details. Account deletion, analytics deletion and store subscription cancellation are separate actions.
     </li>
   </ul>
   <p>Cancelling a subscription is separate and is done in your App Store or Google Play account. Deleting the app does not cancel a subscription. A Lifetime purchase is not a subscription and has nothing to cancel.</p>
 
   <h2>Children's privacy</h2>
   <p>
-    WakeSharp is rated 4+ / Everyone and is suitable for all ages, but it is not directed at children. It
-    requires no account and, without one, collects no personal information from anyone, including children.
+    WakeSharp is a general-audience app and is not directed at children. Using it without an account can
+    still involve the pseudonymous analytics, purchase and advertising data described above.
     We do not knowingly let children under 13 (or the equivalent age in your country) create the optional
     account, and we do not knowingly collect personal data from them; if you believe a child has created
     one, email us and we will delete it.
@@ -394,28 +428,24 @@ import { SITE } from '../config/site';
     access, correct, delete, port or object to the processing of your personal data.
   </p>
   <p>
-    In practice those rights are unusually easy to exercise here. Unless you created the optional account,
-    <strong>we hold nothing that identifies you</strong>: your on-device data is already in your hands, and
-    the only records connected to you at all are the anonymous subscription and analytics records described
-    above, with deletion routes in the previous section. If you did create an account, everything we hold
-    for it is the backup described in its own section — you can read it back in the app, and access,
-    portability and erasure are all satisfied by restoring to a device or deleting the account yourself,
-    with no need to write to us (though you always can).
+    You can manage local data and your optional backup in the app. Contact us about access, correction,
+    portability or deletion of subscription, product-analytics or marketing records. We may need enough
+    information to locate the relevant pseudonymous identifiers and verify the request. Deleting a backup
+    does not automatically remove records held by every measurement or billing provider.
   </p>
   <p>
     Where we do process data, our legal basis is the performance of our contract with you (validating a
     subscription you bought), and our legitimate interest in understanding how the app is used and in
-    preventing payment fraud. You have the right to complain to your local data-protection authority.
+    preventing payment fraud. Where consent is required for analytics, marketing measurement or advertising,
+    we request it and respect withdrawal. You have the right to complain to your local data-protection authority.
   </p>
 
   <h2>Security</h2>
   <p>
     Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
-    passcode. Traffic to RevenueCat, PostHog and the backup service uses HTTPS. No system is perfectly
-    secure, but the surface here is deliberately tiny: alarms never depend on any server, and the only
-    WakeSharp data held on a server is the optional backup you may choose to create — isolated per account
-    by database-level access rules, and deletable by you at any moment — plus the small table of setup
-    answers described above, which no app or account can read back.
+    passcode. Traffic to RevenueCat, PostHog, AppsFlyer and the backup service uses HTTPS. No system is perfectly
+    secure. Alarm execution does not depend on a marketing server. Backups are isolated by account access
+    rules; subscription, analytics, marketing and setup records are held by the services described above.
   </p>
 
   <h2>Changes to this policy</h2>

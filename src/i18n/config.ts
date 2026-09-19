@@ -71,7 +71,7 @@ export const DEFAULT_LOCALE = 'en' satisfies EnabledLocaleCode;
  */
 export const RESERVED_ROOT_SEGMENTS = [
   'blog', 'privacy', 'terms', 'support', 'contact', 'contact-sent', 'contact-error',
-  'c', 'p', 'r', 'account', 'api', '404', 'rss.xml', '_astro', 'badges',
+  'c', 'p', 'r', 'account', 'api', '404', 'rss.xml', 'sitemap.xml', '_astro', 'badges',
 ] as const;
 
 export function enabledLocales(): EnabledLocale[] {

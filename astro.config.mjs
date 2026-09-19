@@ -1,8 +1,12 @@
 // @ts-check
+import { copyFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { DEFAULT_LOCALE, enabledLocales } from './src/i18n/config';
+import { includeInSitemap } from './src/lib/sitemap';
 
 const locales = enabledLocales();
 
@@ -35,13 +39,7 @@ const config = {
   },
   integrations: [
     sitemap({
-      // The two contact result pages are 303 destinations, not content — they
-      // carry `noindex` in the head. The localized legal routes canonicalize to
-      // the English page, so they stay out too.
-      filter: (page) => {
-        const path = new URL(page).pathname;
-        return !/\/contact-(sent|error)$/.test(path) && !/^\/[a-z-]+\/(privacy|terms)$/.test(path);
-      },
+      filter: includeInSitemap,
       // Keys are URL segments, values hreflang tags. The integration groups URLs
       // by the path after the segment and emits xhtml:link alternates for each
       // group with more than one member. x-default is emitted by BaseHead only.
@@ -50,6 +48,20 @@ const config = {
         locales: Object.fromEntries(locales.map((l) => [l.path, l.hreflang])),
       },
     }),
+    // Search consoles look for /sitemap.xml. @astrojs/sitemap always writes
+    // sitemap-index.xml; copy it so the conventional URL is the same document.
+    {
+      name: 'sitemap-xml-alias',
+      hooks: {
+        'astro:build:done': async ({ dir, logger }) => {
+          const destDir = fileURLToPath(dir);
+          const from = path.join(destDir, 'sitemap-index.xml');
+          const to = path.join(destDir, 'sitemap.xml');
+          await copyFile(from, to);
+          logger.info(`\`sitemap.xml\` created at \`${path.relative(process.cwd(), destDir)}\``);
+        },
+      },
+    },
   ],
   vite: { plugins: [tailwindcss()] },
   // URL-variant safety nets live in vercel.json as real 308s. Astro's `redirects`
