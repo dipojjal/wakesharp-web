@@ -15,8 +15,8 @@ import { SITE } from '../config/site';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
-      <li>Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, an optional <strong>account backup</strong>, and requests for <strong>banner ads</strong> where ads are offered. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
-      <li>WakeSharp does not request precise location. Network services receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission, regional privacy choices and whether an ad can load are separate controls.</li>
+      <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong> and an optional <strong>account backup</strong>. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
+      <li>WakeSharp does not request precise location. Network services receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
 
@@ -32,7 +32,7 @@ import { SITE } from '../config/site';
     <li>It does not require an account. Sign-in supports backup, restoration and purchase continuity.</li>
     <li>It does not collect your name, phone number or contacts. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
     <li>It does not request GPS or precise location. Approximate location inferred from IP addresses is described below.</li>
-    <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, IDFA requires your permission through Apple's tracking prompt.</li>
+    <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, from version 2.10, the advertising identifier is read only after you allow tracking through Apple's prompt; before that version, and after a refusal, it is not read at all.</li>
     <li>We do not sell customer lists. Advertising and measurement may involve sharing with the providers and enabled advertising partners described below; regional privacy choices apply to that processing.</li>
   </ul>
 
@@ -110,7 +110,7 @@ import { SITE } from '../config/site';
     <li><strong>Camera</strong> — optional, only for an alarm you have set to Scan an Object, Fetch, Photo Proof, First Light, Face Check or Fruit Slash, when you enrol a target and while that mission runs. Face Check and Fruit Slash use the front camera. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong> — optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
     <li><strong>Notifications</strong> — for the optional pre-bed wind-down reminder, the reliability warning that rides with it, and the report shown when an alarm did not ring.</li>
-    <li><strong>Tracking</strong> — optional, to measure marketing and personalize advertising where ads are offered. Declining does not prevent alarm use or purchasing a plan.</li>
+    <li><strong>Tracking</strong> — optional, from version 2.10, to measure which advert or link brought you to WakeSharp and whether it led to a trial or a subscription. It is never used to show you adverts inside WakeSharp, because there are none. Declining does not prevent alarm use or purchasing a plan.</li>
   </ul>
   <p>On Android, the app's permissions include:</p>
   <ul>
@@ -291,7 +291,7 @@ import { SITE } from '../config/site';
     <a href="https://posthog.com/privacy" rel="noopener">posthog.com/privacy</a>.
   </p>
   <p>
-    We use PostHog to analyze product behavior, subscription outcomes, campaign performance and ad revenue.
+    We use PostHog to analyze product behavior, subscription outcomes and campaign performance.
     Session recordings are for diagnosing product problems. We do not send the recordings to advertising partners.
   </p>
 
@@ -299,8 +299,8 @@ import { SITE } from '../config/site';
   <p>
     AppsFlyer helps us understand which campaigns lead to a first app open, trial or payment. It receives
     app and SDK identifiers, permitted advertising identifiers, device and network information including
-    IP-derived approximate location, campaign and deep-link context, selected app events and ad-impression
-    revenue. RevenueCat sends verified subscription events associated with the AppsFlyer ID. AppsFlyer
+    IP-derived approximate location, campaign and deep-link context, and selected app events: a paywall
+    view, the end of setup, and the first and third mornings you complete a mission. RevenueCat sends verified subscription events associated with the AppsFlyer ID. AppsFlyer
     counts first opens; a store download that is never opened is a separate measure.
   </p>
   <p>
@@ -327,42 +327,43 @@ import { SITE } from '../config/site';
 
   <h2 id="advertising">Advertising</h2>
   <p>
-    Where WakeSharp offers access supported by ads, it can show banners supplied by <strong>Google AdMob</strong>. There
-    is one above the tab bar and one on each of the Nest and Insights tabs. There are no ads between
-    screens, none over an alarm, and none while a mission is running.
+    <strong>WakeSharp shows no ads.</strong> Earlier versions could show banners supplied by Google AdMob
+    on a free tier; that tier and the ad SDK were both removed in September 2026, and nothing in the app
+    requests, loads or displays an advert. This section is about the other direction: we buy ads
+    elsewhere, and we measure whether they work.
   </p>
   <ul>
     <li>
-      <strong>Who never sees one.</strong> Anyone with WakeSharp Plus, including during a free trial, and
-      anyone who installed WakeSharp before the version that introduced ads. If a subscription starts
-      mid-session the banners disappear at once.
+      <strong>What we measure.</strong> When an advert or a link brings someone to the App Store or Google
+      Play and they install WakeSharp, our measurement provider AppsFlyer reports which campaign that
+      install came from, and whether it later led to a trial or a subscription. That is the whole purpose:
+      to spend less on adverts that do not work.
     </li>
     <li>
-      <strong>What Google receives.</strong> To fill an ad request, Google receives your device's
-      advertising identifier, your approximate location as inferred from your IP address, your device
-      model and operating system, and whether the ad was shown, seen or tapped. It never receives your
-      alarms, your calendar, your camera, your Sharpness scores, or anything you typed into the app.
+      <strong>What an advertising network receives.</strong> Where a network is enabled, it can receive the
+      fact of an install and of those subscription events, with the identifiers your privacy choices
+      permit. It never receives your alarms, your missions, your calendar, your camera frames, your
+      Sharpness scores or anything you typed into the app.
     </li>
     <li>
-      <strong>On iPhone.</strong> Before any of that, iOS asks you to allow or refuse tracking. Refuse,
-      and the advertising identifier is not available to Google at all; you still see a banner, but a
-      non-personalised one. You can change the answer later in Settings, Privacy &amp; Security, Tracking.
+      <strong>On iPhone, from version 2.10.</strong> Early in setup, WakeSharp explains what this measures
+      and then iOS asks you to allow or refuse tracking. Refuse, and the advertising identifier is never
+      read and advertising networks receive only aggregated campaign results. Either answer continues
+      setup, and nothing about the app, its price or its features depends on your choice. You can change
+      it at any time in Settings, Privacy &amp; Security, Tracking. Versions before 2.10 do not ask, and do
+      not read the identifier.
+    </li>
+    <li>
+      <strong>On Android</strong>, the advertising ID is used for the same measurement where your regional
+      privacy choices permit it. Deleting or restricting it does not prevent using or buying anything.
     </li>
     <li>
       <strong>In the EEA, the UK and Switzerland</strong>, and in the US states with their own privacy
-      laws, Google's consent form appears before the first ad loads and records your choice. You can
-      reopen it at any time from <em>Settings, Privacy options</em> inside the app.
+      laws, a consent form appears before that measurement begins and records your choice. You can reopen
+      it at any time from <em>Settings, Privacy options</em> inside the app. If you refuse there, iPhone
+      does not additionally ask you about tracking.
     </li>
   </ul>
-  <p>
-    Google acts as an independent controller for the advertising data it collects. What it does with it is
-    governed by its own policies:{' '}
-    <a href="https://business.safety.google/privacy/" rel="noopener">Google's privacy and terms</a> and its{' '}
-    <a href="https://support.google.com/admob/answer/9012903" rel="noopener">list of advertising partners</a>.
-    We receive aggregate reporting from Google and impression-revenue callbacks in the app. These callbacks
-    include amount, currency and precision and are sent to PostHog and, while enabled, AppsFlyer to compare
-    ad revenue with subscription revenue and marketing costs.
-  </p>
 
   <h2>Your setup answers</h2>
   <p>
