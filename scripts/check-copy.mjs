@@ -557,22 +557,24 @@ if (!sawCanonical) {
 }
 
 // Search consoles are pointed at /sitemap.xml (robots.txt and BaseHead). The
-// integration writes sitemap-index.xml; the alias copies it to sitemap.xml.
-for (const required of ['sitemap-index.xml', 'sitemap.xml', 'sitemap-0.xml']) {
-  if (!existsSync(join(DIST, required))) {
-    console.error(`  ✗ dist/${required} is missing — crawlers are told to fetch /sitemap.xml`);
+// integration writes sitemap-index.xml + sitemap-0.xml; the build hook in
+// astro.config.mjs renames the chunk to sitemap.xml and drops the index.
+if (!existsSync(join(DIST, 'sitemap.xml'))) {
+  console.error('  ✗ dist/sitemap.xml is missing — crawlers are told to fetch /sitemap.xml');
+  problems++;
+}
+for (const leftover of ['sitemap-index.xml', 'sitemap-0.xml']) {
+  if (existsSync(join(DIST, leftover))) {
+    console.error(`  ✗ dist/${leftover} should not exist — every URL belongs in dist/sitemap.xml`);
     problems++;
   }
 }
 if (existsSync(join(DIST, 'sitemap.xml'))) {
-  const index = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
-  if (!index.includes('<sitemapindex') || !index.includes('https://wakesharp.app/sitemap-0.xml')) {
-    console.error('  ✗ dist/sitemap.xml must be a sitemap index that lists sitemap-0.xml');
+  const body = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+  if (!body.includes('<urlset') || body.includes('<sitemapindex')) {
+    console.error('  ✗ dist/sitemap.xml must be a <urlset> listing every page, not a sitemap index');
     problems++;
   }
-}
-if (existsSync(join(DIST, 'sitemap-0.xml'))) {
-  const body = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
   for (const loc of [
     'https://wakesharp.app',
     'https://wakesharp.app/privacy',
@@ -581,7 +583,7 @@ if (existsSync(join(DIST, 'sitemap-0.xml'))) {
     'https://wakesharp.app/blog',
   ]) {
     if (!body.includes(`<loc>${loc}</loc>`)) {
-      console.error(`  ✗ dist/sitemap-0.xml is missing <loc>${loc}</loc>`);
+      console.error(`  ✗ dist/sitemap.xml is missing <loc>${loc}</loc>`);
       problems++;
     }
   }
@@ -594,7 +596,7 @@ if (existsSync(join(DIST, 'sitemap-0.xml'))) {
     'https://wakesharp.app/es/terms',
   ]) {
     if (body.includes(`<loc>${loc}</loc>`)) {
-      console.error(`  ✗ dist/sitemap-0.xml must not list ${loc}`);
+      console.error(`  ✗ dist/sitemap.xml must not list ${loc}`);
       problems++;
     }
   }

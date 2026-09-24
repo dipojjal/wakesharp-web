@@ -1,5 +1,5 @@
 // @ts-check
-import { copyFile } from 'node:fs/promises';
+import { readdir, rename, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
@@ -48,16 +48,25 @@ const config = {
         locales: Object.fromEntries(locales.map((l) => [l.path, l.hreflang])),
       },
     }),
-    // Search consoles look for /sitemap.xml. @astrojs/sitemap always writes
-    // sitemap-index.xml; copy it so the conventional URL is the same document.
+    // Search consoles look for /sitemap.xml. @astrojs/sitemap always writes an
+    // index (sitemap-index.xml) pointing at numbered chunks (sitemap-0.xml, …),
+    // one per 45,000 URLs. The site fits in one chunk, so that chunk becomes
+    // /sitemap.xml itself and the index is dropped: one file, every URL.
+    // vercel.json 308s the old paths here.
     {
-      name: 'sitemap-xml-alias',
+      name: 'single-sitemap-xml',
       hooks: {
         'astro:build:done': async ({ dir, logger }) => {
           const destDir = fileURLToPath(dir);
-          const from = path.join(destDir, 'sitemap-index.xml');
-          const to = path.join(destDir, 'sitemap.xml');
-          await copyFile(from, to);
+          const chunks = (await readdir(destDir)).filter((f) => /^sitemap-\d+\.xml$/.test(f));
+          if (chunks.length !== 1) {
+            throw new Error(
+              `Expected exactly one sitemap chunk, found ${chunks.length} (${chunks.join(', ')}). ` +
+                'Past 45,000 URLs /sitemap.xml has to become a sitemap index again.',
+            );
+          }
+          await rename(path.join(destDir, chunks[0]), path.join(destDir, 'sitemap.xml'));
+          await rm(path.join(destDir, 'sitemap-index.xml'));
           logger.info(`\`sitemap.xml\` created at \`${path.relative(process.cwd(), destDir)}\``);
         },
       },
