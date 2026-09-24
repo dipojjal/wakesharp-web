@@ -1,0 +1,121 @@
+---
+/**
+ * /features/<slug> — a keyword landing page (src/content/features/). English
+ * only, on the legal pages' reading surface: the phrase people search as the
+ * <h1>, what the feature asks of you, an honest account of its limits, a short
+ * FAQ, the posts that go deeper, and the install card.
+ *
+ * Structured data: WebPage (about the app node on the homepage) and a
+ * BreadcrumbList matching the visible breadcrumb, Home › Features › this page.
+ */
+import { render } from 'astro:content';
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import PhoneFrame from '../../components/PhoneFrame.astro';
+import StoreButtons from '../../components/StoreButtons.astro';
+import BlogCTA from '../../components/BlogCTA.astro';
+import { SITE } from '../../config/site';
+import { pageTitle } from '../../lib/seo';
+import { featurePath, getFeaturePages, type FeaturePage } from '../../lib/features';
+import { getPublishedPosts, postPath } from '../../lib/blog';
+import { resolveLocale } from '../../i18n/routes';
+
+export async function getStaticPaths() {
+  const pages = await getFeaturePages();
+  return pages.map((page) => ({ params: { slug: page.id }, props: { page } }));
+}
+
+interface Props {
+  page: FeaturePage;
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+const { title, seoTitle, description, lede, screenshot, screenshotAlt, faq, related } = page.data;
+const path = featurePath(page);
+const url = new URL(path, SITE.url).href;
+
+// A related slug that is not a live post is a typo, and a dead link: fail the build.
+const posts = await getPublishedPosts('en');
+const relatedPosts = related.map((slug) => {
+  const post = posts.find((p) => p.id === slug);
+  if (!post) throw new Error(`${page.id}: related post "${slug}" is not a published English post`);
+  return post;
+});
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: title,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE.url}/#website` },
+      about: { '@id': `${SITE.url}/#app` },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: SITE.name, item: SITE.url },
+        { '@type': 'ListItem', position: 2, name: 'Features', item: new URL('/features', SITE.url).href },
+        { '@type': 'ListItem', position: 3, name: title },
+      ],
+    },
+  ],
+};
+---
+
+<LegalLayout
+  title={pageTitle(seoTitle ?? title, ' — WakeSharp')}
+  description={description}
+  path={path}
+  heading={title}
+  intro={lede}
+  showUpdated={false}
+  locale={resolveLocale('en')}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <nav slot="notice" aria-label="Breadcrumb" class="text-sm">
+    <a href="/">Home</a> › <a href="/features">Features</a> › <span aria-current="page">{title}</span>
+  </nav>
+
+  <div class="not-prose my-8 flex flex-col items-center gap-8 sm:flex-row sm:items-start">
+    {screenshot && screenshotAlt && <PhoneFrame src={screenshot} alt={screenshotAlt} width={220} priority />}
+    <div class="flex-1"><StoreButtons tone="light" /></div>
+  </div>
+
+  <Content />
+
+  {
+    faq.length > 0 && (
+      <>
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <>
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </>
+        ))}
+      </>
+    )
+  }
+
+  {
+    relatedPosts.length > 0 && (
+      <>
+        <h2>Related reading</h2>
+        <ul>
+          {relatedPosts.map((p) => (
+            <li><a href={postPath(p)}>{p.data.title}</a></li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  <BlogCTA locale={resolveLocale('en')} />
+</LegalLayout>

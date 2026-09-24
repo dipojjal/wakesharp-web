@@ -27,6 +27,8 @@ test('indexable marketing, legal, support and blog URLs stay in the sitemap', ()
     '/blog/sleep-inertia-why-you-wake-up-groggy',
     '/tr/blog/sleep-inertia-why-you-wake-up-groggy',
     '/about',
+    '/features',
+    '/features/math-alarm-clock',
   ]) {
     assert.equal(includeInSitemap(url(path)), true, path);
   }
@@ -69,6 +71,8 @@ test('priority ranks by page type and is the same in every language', () => {
     ['/terms', 0.3],
     ['/ar/account/delete', 0.3],
     ['/about', 0.5],
+    ['/features', 0.6],
+    ['/features/math-alarm-clock', 0.7],
   ] as const) {
     assert.equal(sitemapPriority(url(path)), priority, path);
   }

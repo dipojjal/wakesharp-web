@@ -19,6 +19,7 @@ import { getCatalog } from '../i18n/catalog';
 import { alternatesFor, localePath } from '../i18n/routes';
 import { isDefaultLocale, type EnabledLocale } from '../i18n/config';
 import { blogIndexPath, getPublishedPosts, postPath, sourceSlugOf } from '../lib/blog';
+import { missionPages } from '../lib/features';
 
 import iosHome from '../assets/screens/ios/home.png';
 import iosRing from '../assets/screens/ios/ring.png';
@@ -60,6 +61,9 @@ const featured = FEATURED.map((slug) => localPosts.find((p) => sourceSlugOf(p) =
   .filter((p): p is NonNullable<typeof p> => Boolean(p))
   .slice(0, 3);
 const blogHref = await blogIndexPath(locale);
+
+// The landing pages are English, so only the English cards link to them.
+const missionHref = english ? await missionPages() : new Map<string, string>();
 ---
 
 <BaseLayout
@@ -150,6 +154,7 @@ const blogHref = await blogIndexPath(locale);
       <p class="lede mt-5">{t.smart.lede}</p>
       <p class="mt-4 dim">{t.smart.shifts}</p>
       <p class="mt-3 dim text-sm">{t.smart.labels}</p>
+      {english && <p class="mt-4 text-sm"><a href="/features/calendar-alarm-clock" class="font-semibold underline underline-offset-2">How the calendar alarm works</a></p>}
     </FeatureRow>
   </SunriseSection>
 
@@ -165,7 +170,11 @@ const blogHref = await blogIndexPath(locale);
         t.mission.missions.map((m) => (
           <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
             <div class="flex items-baseline justify-between gap-3">
-              <strong>{m.name}</strong>
+              {missionHref.has(m.name) ? (
+                <a href={missionHref.get(m.name)} class="font-bold underline underline-offset-2">{m.name}</a>
+              ) : (
+                <strong>{m.name}</strong>
+              )}
               <span class="dim text-xs font-semibold uppercase tracking-wide">{m.kind}</span>
             </div>
             <span class="dim mt-1 block text-[0.95rem]">{m.body}</span>
@@ -175,6 +184,7 @@ const blogHref = await blogIndexPath(locale);
     </ul>
 
     <p class="dim mt-6 max-w-3xl text-sm">{t.mission.note}</p>
+    {english && <p class="mt-3 text-sm"><a href="/features" class="font-semibold underline underline-offset-2">Every mission, and how each one works</a></p>}
   </SunriseSection>
 
   {/* ── 7. Warm-up ──────────────────────────────────────────────────────── */}

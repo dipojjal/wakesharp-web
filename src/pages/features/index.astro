@@ -1,0 +1,31 @@
+---
+/**
+ * /features — the hub the landing pages hang off, and the middle step of their
+ * breadcrumb. English only, like the pages it lists.
+ */
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { featurePath, getFeaturePages } from '../../lib/features';
+import { resolveLocale } from '../../i18n/routes';
+
+const pages = await getFeaturePages();
+---
+
+<BlogLayout
+  title="WakeSharp Features: Missions and Alarms for Heavy Sleepers"
+  description="What WakeSharp asks of you before the morning counts: math, puzzles, a photo, steps or your voice, plus smart alarms that follow your calendar."
+  path="/features"
+  heading="What WakeSharp can ask of you"
+  intro="An alarm clock for heavy sleepers that wants a mission, not a swipe. Pick the kind that suits your mornings."
+  locale={resolveLocale('en')}
+>
+  <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      pages.map((page) => (
+        <li class="card p-6">
+          <a href={featurePath(page)} class="text-xl font-bold underline-offset-2 hover:underline">{page.data.title}</a>
+          <p class="mt-2 text-[0.97rem] dim">{page.data.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</BlogLayout>

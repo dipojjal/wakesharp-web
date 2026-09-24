@@ -77,4 +77,38 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+/**
+ * Keyword landing pages, one per kind of mission or feature people search for
+ * ("math alarm clock", "calendar alarm"), served at /features/<slug>. English
+ * only. The filename is the slug. The body is the page's Markdown; everything
+ * a template needs around it lives in the frontmatter. Claims follow the same
+ * rules as the rest of the site (docs/blog-schedule.md, "The claim rules").
+ */
+const features = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/features' }),
+  schema: ({ image }) =>
+    z
+      .object({
+        /** The <h1>: the search phrase, plainly. */
+        title: z.string().min(1),
+        seoTitle: z.string().min(1).max(TITLE_MAX).optional(),
+        /** Meta description, 70 to 160 characters. The copy check reads it with the rest of the page. */
+        description: z.string().min(70).max(160),
+        /** The paragraph under the <h1>. */
+        lede: z.string().min(1),
+        /** Position on the /features hub. */
+        order: z.number().int(),
+        /** The English mission names this page covers; the homepage links them here. */
+        missions: z.array(z.string().min(1)).default([]),
+        screenshot: image().optional(),
+        screenshotAlt: z.string().min(1).optional(),
+        faq: z.array(z.object({ q: z.string().min(1), a: z.string().min(1) })).default([]),
+        /** Slugs of English posts to list under "Related reading". */
+        related: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
+      })
+      .refine((d) => !d.screenshot === !d.screenshotAlt, {
+        message: 'a screenshot needs screenshotAlt, and screenshotAlt needs a screenshot',
+      }),
+});
+
+export const collections = { blog, features };
