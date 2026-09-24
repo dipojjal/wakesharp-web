@@ -22,8 +22,8 @@ for (const locale of enabledLocales()) {
   for (const path of ['/contact-sent', '/contact-error'] as const) {
     EXCLUDED_PATHS.add(localePath(locale, path));
   }
-  // Share-link decoder shells. The useful URL is /c/:payload (a rewrite), not
-  // the bare page the rewrite lands on.
+  // Share-link decoder shells, noindex in every language: vercel.json rewrites
+  // every /c/:payload onto the one file, and the bare page decodes nothing.
   for (const path of ['/c', '/p'] as const) {
     EXCLUDED_PATHS.add(localePath(locale, path));
   }

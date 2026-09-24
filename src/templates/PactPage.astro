@@ -24,6 +24,10 @@ interface Props {
 const { locale } = Astro.props;
 const { pact: t, get } = getCatalog(locale.code).share;
 const base = localePath(locale, '/p');
+// noindex: every /p/<payload> URL serves this one file, so without it any string
+// after /p/ is an indexable page, and the bare /p is an empty shell. No hreflang
+// for the same reason. The language menu still offers every locale (switchTo),
+// and the script below extends those links with the payload.
 ---
 
 <LegalLayout
@@ -33,7 +37,10 @@ const base = localePath(locale, '/p');
   heading={t.heading}
   intro={t.intro}
   locale={locale}
-  alternates={alternatesFor('/p')}
+  noindex
+  showUpdated={false}
+  alternates={[]}
+  switchTo={alternatesFor('/p')}
 >
   <div class="callout">
     <p id="pact-summary" class="!mb-0">{t.opening}</p>

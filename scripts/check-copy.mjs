@@ -294,7 +294,13 @@ const UNTRANSLATED_ALLOW = [
 /** Pages every enabled locale must ship, relative to dist/<path>/ (the home page is dist/<path>.html). */
 const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-error.html', 'account/delete.html', 'c.html', 'p.html', 'privacy.html', 'terms.html'];
 /** Of those, the indexable ones, which must carry the x-default hreflang link. */
-const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', 'account/delete.html', 'c.html', 'p.html']);
+const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', 'account/delete.html']);
+/**
+ * The share-link decoders. vercel.json rewrites every /c/<payload> and
+ * /p/<payload> onto these files, so each one stands for an unbounded set of
+ * URLs: they must be noindex, and carry no hreflang, in every language.
+ */
+const SHARE_SHELLS = ['c.html', 'p.html'];
 /** Localized routes that wrap the English legal text on purpose: no untranslated-sentence check. */
 /**
  * Product and feature names the glossary keeps in English, because the app is
@@ -636,6 +642,23 @@ for (const forbidden of [`${DEFAULT_LOCALE}.html`, DEFAULT_LOCALE]) {
   if (existsSync(join(DIST, forbidden))) {
     console.error(`  ✗ dist/${forbidden} exists — the default locale must never be built under a prefix`);
     problems++;
+  }
+}
+
+// The share-link decoders stay out of search in every language.
+for (const prefix of ['', ...OTHER_LOCALES.map((l) => `${l.path}/`)]) {
+  for (const shell of SHARE_SHELLS) {
+    const p = join(DIST, prefix + shell);
+    if (!existsSync(p)) continue; // a missing locale page is reported below
+    const head = readFileSync(p, 'utf8');
+    if (!/<meta name="robots" content="noindex/.test(head)) {
+      console.error(`  ✗ dist/${prefix}${shell}: no noindex — every /${shell.slice(0, 1)}/<payload> URL would be indexable`);
+      problems++;
+    }
+    if (/<link rel="alternate" hreflang=/.test(head)) {
+      console.error(`  ✗ dist/${prefix}${shell}: carries hreflang — a noindex share shell must not`);
+      problems++;
+    }
   }
 }
 

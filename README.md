@@ -41,7 +41,7 @@ Individually:
 |---|---|
 | `npm run contrast` | Walks all 15 sunrise bands at 21 interpolated steps and fails if any tone's text, dim or accent colour drops below WCAG AA. Bands marked `cards: true` are walked twice, once on the raw band and once through the translucent card fill they carry — a card grid lightens its background by 6%, which is enough to fail `dim` on the darker stops. Lighthouse **cannot** catch any of this — its contrast audit skips text sitting on a gradient. |
 | `npm run build` | `astro check` (typecheck) then the static build. |
-| `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. On the localized pages it checks each locale's own seed list of prohibited claims instead, and it fails if an enabled locale is only partly built, lacks `<html lang>` or the x-default hreflang link, or still carries an English sentence verbatim. |
+| `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. On the localized pages it checks each locale's own seed list of prohibited claims instead, and it fails if an enabled locale is only partly built, lacks `<html lang>` or the x-default hreflang link, or still carries an English sentence verbatim. The `/c` and `/p` share-link decoders must be `noindex` with no hreflang in every language, because a rewrite serves each of them for an unbounded set of URLs. |
 | `npm run i18n:test` | The rich-text parser, the URL helpers and a structural diff of every registered catalog against the English one (keys, array lengths, `{placeholders}`, link keys, balanced markup). |
 
 ## The contact form
@@ -176,8 +176,18 @@ licensed.
 `RESEND_API_KEY` must exist under Settings → Environment Variables for Production, Preview
 and Development, or `/contact` sends every submission to `/contact-error`.
 
-The framework preset is pinned in-repo: `vercel.json` sets `"framework": "astro"` (build
-`astro build`, output `dist`), which overrides the dashboard. The project was first
-created by `vercel link`, which does not detect the framework — it was left as "Other",
-whose default output directory is `public/`, and a git-triggered build would have served
-the wrong directory.
+The framework preset is pinned in-repo: `vercel.json` sets `"framework": "astro"` (output
+`dist`), which overrides the dashboard. The project was first created by `vercel link`,
+which does not detect the framework — it was left as "Other", whose default output
+directory is `public/`, and a git-triggered build would have served the wrong directory.
+
+`vercel.json` also sets `"buildCommand": "npm run verify"`, so every deploy (production,
+previews, Dependabot, the scheduled blog routine) runs the contrast walk, the typecheck,
+the copy rules and both test suites. A failure fails the deploy and the previous one stays
+live, which is the point: nothing else gates a push to `main`.
+
+The project's own `wakesharp-web.vercel.app` alias 308s to `https://wakesharp.app` for
+every path except `/api/`, `/.well-known/` and `/_vercel/` (the daily cron request to
+`/api/internal/referrals/prune` must never meet a redirect, whichever host it uses), and
+any `*.vercel.app` host answers with `X-Robots-Tag: noindex`, so preview deployments stay
+out of search too.
