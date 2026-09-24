@@ -1,0 +1,134 @@
+---
+/**
+ * /compare/wakesharp-vs-alarmy — an honest comparison with the best-known
+ * alarm app for heavy sleepers. English only.
+ *
+ * Every Alarmy fact here comes from its own US App Store listing or its own
+ * site (alar.my), read on CHECKED below, and the page says so. Where Alarmy's
+ * listing is silent, the table says what the listing says rather than claiming
+ * the feature is missing. Update CHECKED and re-read both sources before
+ * changing any figure: prices and features move.
+ *
+ * Wording note for the copy linter: never "scan a barcode" or "barcode
+ * mission", even about Alarmy; "QR and barcode scanning" describes it.
+ */
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import BlogCTA from '../../components/BlogCTA.astro';
+import { SITE } from '../../config/site';
+import { resolveLocale } from '../../i18n/routes';
+
+const CHECKED = 'September 24, 2026';
+const ALARMY_APP_STORE = 'https://apps.apple.com/us/app/alarmy-loud-alarm-clock/id1163786766';
+const ALARMY_SITE = 'https://alar.my/';
+const url = new URL('/compare/wakesharp-vs-alarmy', SITE.url).href;
+
+const rows: [string, string, string][] = [
+  ['How it is sold', `WakeSharp Unlimited: a ${SITE.unlimited.trialDays}-day free trial of the yearly plan, then ${SITE.unlimited.annual} a year, or ${SITE.unlimited.monthly} a month with no trial`, 'Free to download; in-app purchases listed from $4.99 to $69.99'],
+  ['Ads', 'None', 'The App Store listing says “Contains Advertising”'],
+  ['Wake-up missions', 'Arithmetic, memory, sequence, colour and typing puzzles; a photo of a spot you chose; a real object across the room; finding something; a face check; steps; daylight at a window; counting down by sevens or naming five things out loud; or a surprise', 'Math, memory game, shake, typing, squats, QR and barcode scanning, walking and photo'],
+  ['Sleep and snore tracking', 'None: WakeSharp does no sleep tracking', 'A sleep tracker with snore recording'],
+  ['Sleep sounds', 'Optional wind-down audio', 'Calm sleep sounds, ASMR and rain'],
+  ['A check that the alarm will ring', 'Settings > Alarm reliability reads permissions, volume, notifications, lock-screen takeover and battery restrictions', 'Not mentioned in its listing'],
+  ['Alarms that follow your calendar', 'Smart alarms can move when your first meeting moves; calendar content stays on the phone', 'Not mentioned in its listing'],
+  ['A score for how you woke up', 'The Sharpness Score, from an optional two-minute brain warm-up after the mission', 'Not mentioned in its listing'],
+  ['App Store rating', 'New in 2026, with few ratings so far', '4.8 from 247,236 ratings'],
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: 'WakeSharp vs Alarmy',
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE.url}/#website` },
+      about: { '@id': `${SITE.url}/#app` },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: SITE.name, item: SITE.url },
+        { '@type': 'ListItem', position: 2, name: 'WakeSharp vs Alarmy' },
+      ],
+    },
+  ],
+};
+---
+
+<LegalLayout
+  title="WakeSharp vs Alarmy: Which Alarm App for Heavy Sleepers?"
+  description={`An honest comparison of WakeSharp and Alarmy for heavy sleepers: missions, price, ads, sleep tracking and alarm checks, as of ${CHECKED}.`}
+  path="/compare/wakesharp-vs-alarmy"
+  heading="WakeSharp vs Alarmy"
+  intro="Both are alarm clocks for heavy sleepers that ask you to do something before the morning counts. They make different trade-offs. This page is written by WakeSharp, so it is worth reading with that in mind: every Alarmy fact below comes from Alarmy’s own App Store listing or website, and where those are silent, the table says so instead of guessing."
+  showUpdated={false}
+  locale={resolveLocale('en')}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <nav slot="notice" aria-label="Breadcrumb" class="text-sm">
+    <a href="/">Home</a> › <span aria-current="page">WakeSharp vs Alarmy</span>
+  </nav>
+
+  <h2>At a glance</h2>
+  <p>US prices and features, read from both apps’ own listings on {CHECKED}.</p>
+  <div class="overflow-x-auto">
+    <table>
+      <thead>
+        <tr><th scope="col"></th><th scope="col">WakeSharp</th><th scope="col">Alarmy</th></tr>
+      </thead>
+      <tbody>
+        {rows.map(([label, ours, theirs]) => (
+          <tr><th scope="row">{label}</th><td>{ours}</td><td>{theirs}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Choose Alarmy if…</h2>
+  <ul>
+    <li><strong>You want to start without paying.</strong> Alarmy is free to download and its own site says most features work without premium; the trade is advertising in the app.</li>
+    <li><strong>You want sleep and snore tracking.</strong> Alarmy includes a sleep tracker that records snoring. WakeSharp does no sleep tracking at all, on purpose.</li>
+    <li><strong>You want a physical mission.</strong> Alarmy’s squats and shaking are the kind of movement WakeSharp does not ask for.</li>
+    <li><strong>You want what millions already use.</strong> Its App Store rating comes from a quarter of a million people. WakeSharp is new.</li>
+  </ul>
+
+  <h2>Choose WakeSharp if…</h2>
+  <ul>
+    <li><strong>You want no ads in your face at 6am.</strong> WakeSharp shows none.</li>
+    <li><strong>You want to know tonight whether it will ring.</strong> The <a href="/support">alarm reliability check</a> reads the settings that actually stop alarms and leads with a verdict: it will ring, it may not, or it cannot.</li>
+    <li><strong>Your wake time depends on your calendar.</strong> <a href="/features/calendar-alarm-clock">Smart alarms</a> can move when your first meeting moves, with the calendar read on the phone.</li>
+    <li><strong>You want a mission that needs your brain, not just your legs.</strong> <a href="/features/math-alarm-clock">Arithmetic</a>, <a href="/features/puzzle-alarm-clock">memory and word puzzles</a>, <a href="/features/photo-alarm-clock">a photo of a spot you chose</a>, <a href="/features/walking-alarm-clock">steps or daylight at a window</a>, or an answer said out loud, several in a row if you like.</li>
+    <li><strong>You want to see how sharp you actually woke up.</strong> An optional two-minute warm-up scores you against your own baseline, not against strangers.</li>
+  </ul>
+
+  <h2>What neither of them can do</h2>
+  <p>
+    No alarm app can ring on a phone that is switched off or out of battery, and none can promise you will get up.
+    Your phone’s own controls always work, which is how it should be. For a morning you truly cannot miss, set a second
+    alarm on a separate device, whichever app you choose.
+  </p>
+
+  <p>
+    Alarmy is not the only choice. We compare six alarm apps, and the clock your phone already has, in
+    <a href="/blog/best-alarm-apps-for-heavy-sleepers">the best alarm apps for heavy sleepers</a>.
+  </p>
+
+  <h2>Sources</h2>
+  <ul>
+    <li><a href={ALARMY_APP_STORE}>Alarmy on the App Store (US)</a>, read {CHECKED}: price, advertising, in-app purchases, rating and the tracker.</li>
+    <li><a href={ALARMY_SITE}>Alarmy’s website</a>, read {CHECKED}: mission types and what premium adds.</li>
+    <li>WakeSharp: this site’s <a href="/#pricing">pricing</a> and <a href="/features">features</a>.</li>
+  </ul>
+  <p class="text-sm">
+    Alarmy is a trademark of Delight Room Co., Ltd. WakeSharp and {SITE.publisher} are not affiliated with or endorsed by
+    Delight Room. If anything here is out of date, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we will
+    correct it.
+  </p>
+
+  <BlogCTA locale={resolveLocale('en')} />
+</LegalLayout>

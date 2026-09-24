@@ -29,6 +29,7 @@ test('indexable marketing, legal, support and blog URLs stay in the sitemap', ()
     '/about',
     '/features',
     '/features/math-alarm-clock',
+    '/compare/wakesharp-vs-alarmy',
   ]) {
     assert.equal(includeInSitemap(url(path)), true, path);
   }
@@ -73,6 +74,7 @@ test('priority ranks by page type and is the same in every language', () => {
     ['/about', 0.5],
     ['/features', 0.6],
     ['/features/math-alarm-clock', 0.7],
+    ['/compare/wakesharp-vs-alarmy', 0.7],
   ] as const) {
     assert.equal(sitemapPriority(url(path)), priority, path);
   }
