@@ -7,7 +7,7 @@ import { support as en } from '../en/support';
  * e `{trialDays}` os preços, todos de src/config/site.ts.
  */
 export const support = {
-  title: `Suporte do WakeSharp: alarme que não toca, missões e cobrança`,
+  title: `Suporte WakeSharp: alarme que não toca, missões e cobrança`,
   description: `Ajuda com o WakeSharp: por que um alarme pode não tocar, como funcionam as missões e o Sharpness Score, e como gerenciar sua assinatura.`,
   heading: `Suporte`,
   intro: `O WakeSharp é uma equipe pequena, e quem responde ao e-mail é uma pessoa de verdade.`,

@@ -8,8 +8,8 @@ import { support as en } from '../en/support';
  * de src/config/site.ts.
  */
 export const support = {
-  title: `Assistance WakeSharp : alarme qui ne sonne pas, missions et paiement`,
-  description: `Trouvez de l’aide sur WakeSharp : pourquoi une alarme peut ne pas sonner, comment fonctionnent les missions et le score de Vivacité, et comment gérer votre abonnement.`,
+  title: `Aide WakeSharp : alarme qui ne sonne pas, missions, paiement`,
+  description: `De l’aide sur WakeSharp : pourquoi une alarme peut ne pas sonner, comment marchent les missions et le score de Vivacité, et comment gérer l’abonnement.`,
   heading: `Assistance`,
   intro: `WakeSharp est une petite équipe, et c’est un humain qui répond aux e-mails.`,
 

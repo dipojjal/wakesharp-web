@@ -2,7 +2,7 @@ import { blog as en } from '../en/blog';
 
 export const blog = {
   index: {
-    title: `Ciencia del sueño y consejos para despertar — Blog de WakeSharp`,
+    title: `Ciencia del sueño y despertar — Blog de WakeSharp`,
     description: `Guías respaldadas por estudios para despertar a tiempo y despejado: inercia del sueño, posponer, alarmas que fallan, cafeína, melatonina y mañanas mejores.`,
     heading: `El blog de WakeSharp`,
     intro: `Ciencia del sueño, rutinas matutinas y alguna que otra novedad del producto, del creador de la alarma que comprueba si de verdad estás lúcido.`,
