@@ -244,6 +244,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: ``, accent: `ブログ`, post: `から` },
+    more: `記事をすべて読む`,
+  },
+
   cta: {
     heading: { pre: `明日の朝は`, accent: `今夜`, post: `から始まります` },
     lede: `アラームを1つ設定してみてください。冴えた朝がどんなものか、わかります。`,

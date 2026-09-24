@@ -38,7 +38,7 @@ Midsleep is the clock time exactly halfway between falling asleep and waking up.
 
 Notice how little the duration told you. The lie-in bought ninety extra minutes of sleep, but the midpoint of the night moved almost three hours. Someone sleeping exactly seven hours on both nights can still carry three hours of social jet lag, because amount and timing are different variables and only one of them shows up in a tracker's headline number.
 
-Two hours and forty-five minutes is roughly New York to Los Angeles. You fly it every Friday night and fly back every Monday morning, and unlike a real traveller you never get the intervening week to adjust.
+Two hours and forty-five minutes is roughly New York to Los Angeles. You fly it every Friday night and [fly back every Monday morning](/blog/long-weekend-sleep-tuesday-monday), and unlike a real traveller you never get the intervening week to adjust.
 
 One honesty note from the people who invented the measure. Roenneberg's group has published a self-critical review of their own concept, flagging that the calculation mixes the shift in timing together with the sleep debt accumulated across the work week. The number is a useful diagnostic, not a lab measurement.
 
@@ -78,7 +78,7 @@ That changes the tone of the advice. You are not being scolded for enjoying a we
 
 5. **Move the bedtime, not the wake time.** The real lever, and the hardest. Every hour reclaimed at the front of Friday and Saturday night is one you do not fight for at 6:30 on Monday. If your late nights are less about plans and more about reclaiming the day, that is [a well-documented pattern](/blog/revenge-bedtime-procrastination) with its own fixes.
 
-6. **Dim the Sunday evening, and shift gradually if you are far out.** Lower the lighting after nine and keep bright screens off your face, so melatonin onset arrives on schedule. If your midsleep has drifted more than about two hours, do not correct it in one night. Move it fifteen to thirty minutes per day, anchoring each morning with light, which is the same [one-week reset](/blog/back-to-school-sleep-schedule-reset) that works for a school-year restart.
+6. **Dim the Sunday evening, and shift gradually if you are far out.** Lower the lighting after nine and keep bright screens off your face, so [melatonin onset](/blog/melatonin-less-is-more) arrives on schedule. If your midsleep has drifted more than about two hours, do not correct it in one night. Move it fifteen to thirty minutes per day, anchoring each morning with light, which is the same [one-week reset](/blog/back-to-school-sleep-schedule-reset) that works for a school-year restart.
 
 A necessary exception. Shift workers, people on call, and parents of infants cannot do most of this, and pretending otherwise is insulting. If your schedule is imposed rather than chosen, the useful subset is: protect total sleep first, take light where you can get it, and do not add self-blame to sleep deprivation.
 

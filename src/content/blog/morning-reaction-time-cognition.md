@@ -57,7 +57,7 @@ Milliseconds are hard to care about, so translate them.
 
 At 100 km/h you cover about 28 metres every second. An extra 300 milliseconds before your foot moves is roughly 8 metres of road that you drove through while unavailable. That is not a study, it is arithmetic, but it is the kind of arithmetic that turns a number on a screen into a bumper.
 
-For scale on the effects themselves: Dawson and Reid put sustained wakefulness and alcohol on the same axis and found that after 17 to 24 hours awake, psychomotor impairment reached levels equivalent to a blood alcohol concentration of roughly 0.05 to 0.10 percent ([Dawson and Reid, *Nature*, 1997](https://www.nature.com/articles/40775)). Sleep inertia is a different physiological state from prolonged wakefulness, so that is not a like-for-like swap. The useful point is that impairments of this general size are the kind we write laws about, and we do not usually apply the same seriousness to the first twenty minutes of a Tuesday.
+For scale on the effects themselves: Dawson and Reid put sustained wakefulness and alcohol on the same axis and found that after 17 to 24 hours awake, psychomotor impairment reached levels equivalent to a blood alcohol concentration of roughly 0.05 to 0.10 percent ([Dawson and Reid, *Nature*, 1997](https://www.nature.com/articles/40775)). Sleep inertia is a different physiological state from [prolonged wakefulness](/blog/all-nighter-vs-sleep-exam), so that is not a like-for-like swap. The useful point is that impairments of this general size are the kind we write laws about, and we do not usually apply the same seriousness to the first twenty minutes of a Tuesday.
 
 ## Five things that move the number
 

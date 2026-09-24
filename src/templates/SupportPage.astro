@@ -4,6 +4,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 import Rich from '../i18n/Rich.astro';
 import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
+import { getPublishedPosts, postPath, sourceSlugOf } from '../lib/blog';
 import { alternatesFor, localePath } from '../i18n/routes';
 import type { EnabledLocale } from '../i18n/config';
 
@@ -21,6 +22,18 @@ const vars = {
   monthly: SITE.unlimited.monthly,
   trialDays: SITE.unlimited.trialDays,
 };
+// The troubleshooting posts that go deeper than the checklists below, in this
+// page's language only; a language with none of them shows no list.
+const GUIDES = [
+  'iphone-alarm-didnt-go-off-causes',
+  'android-alarm-not-ringing-battery-optimizer',
+  'will-alarm-ring-on-silent-dnd',
+  'alarm-reliability-checklist-tonight',
+];
+const localPosts = await getPublishedPosts(locale.code);
+const guides = GUIDES.map((slug) => localPosts.find((p) => sourceSlugOf(p) === slug)).filter(
+  (p): p is NonNullable<typeof p> => Boolean(p),
+);
 const links = {
   email: `mailto:${SITE.email}`,
   'terms-safety': `${localePath(locale, '/terms')}#safety`,
@@ -67,6 +80,19 @@ const links = {
   <div class="callout callout--warn">
     <p class="!mb-0"><Rich text={t.didntRing.warning} vars={vars} links={links} /></p>
   </div>
+
+  {
+    guides.length > 0 && (
+      <>
+        <h3>{t.didntRing.guidesHeading}</h3>
+        <ul>
+          {guides.map((p) => (
+            <li><a href={postPath(p)}>{p.data.title}</a></li>
+          ))}
+        </ul>
+      </>
+    )
+  }
 
   <h2>{t.ringsThrough.heading}</h2>
   <p><Rich text={t.ringsThrough.body} vars={vars} links={links} /></p>

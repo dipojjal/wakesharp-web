@@ -114,7 +114,7 @@ And sometimes it genuinely is a bug, and none of this is your fault. The 2024 re
 
 Every cause above shares one shape. The phone knew, hours in advance, that the conditions were wrong. It just had no reason to mention it.
 
-That is the job of WakeSharp's reliability check, which lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out.
+That is the job of WakeSharp's reliability check, which lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out. The same checks for both iPhone and Android, step by step, are on [WakeSharp's support page](/support).
 
 On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted alarm permission the alarm sounds through Silent mode and Focus the way the Clock app does. That permission is the whole foundation: decline or revoke it and WakeSharp cannot schedule an alarm at all, which is exactly what the reliability check will tell you first.
 

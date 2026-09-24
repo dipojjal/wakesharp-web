@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**起きられるかどうかが本当に重要なときは、別の端末にもう1つアラームを設定してください。**WakeSharpはOSを通じてアラームを予約し、鳴らすかどうかを決めるのはOSです。[安全に関する注意事項](terms-safety)もご覧ください。`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `くわしいガイド`,
   },
 
   ringsThrough: {

@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**Jika dibangunkan benar-benar penting, setel alarm kedua di perangkat lain.** WakeSharp menjadwalkan alarm lewat sistem operasi, dan OS-lah yang memutuskan apakah alarm itu berbunyi. Lihat [pemberitahuan keselamatan](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Panduan lengkap`,
   },
 
   ringsThrough: {

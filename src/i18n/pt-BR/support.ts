@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**Se acordar realmente importa, configure um segundo alarme em outro aparelho.** O WakeSharp agenda os alarmes através do sistema operacional, e é o sistema que decide se eles tocam. Veja o [aviso de segurança](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Guias mais completos`,
   },
 
   ringsThrough: {

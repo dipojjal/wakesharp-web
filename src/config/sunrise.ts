@@ -68,6 +68,8 @@ export const SUNRISE = [
   { id: 'yours', from: '#FCC88E', to: '#FDDCBA', tone: 'dawn' },
   { id: 'pricing', from: '#FDDCBA', to: '#FFF3E2', tone: 'morning' },
   { id: 'faq', from: '#FFF3E2', to: '#FFF7EB', tone: 'morning' },
+  // Only rendered where the page's language has posts to show (HomePage).
+  { id: 'from-blog', from: '#FFF7EB', to: '#FFF7EB', tone: 'morning' },
   { id: 'cta', from: '#FFF7EB', to: '#FFF7EB', tone: 'morning' },
 ] as const satisfies readonly SunriseStop[];
 

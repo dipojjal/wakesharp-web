@@ -81,7 +81,7 @@ Start with the part most apps leave out. **WakeSharp does not track your sleep.*
 
 What WakeSharp measures is the other end: how sharp you are in the minutes after waking. Once you clear your alarm's mission, an optional warm-up of brain games such as Mind Games or Reaction Tap (three of the five, on a rotation) produces a **Sharpness Score**, graded against your own rolling baseline rather than against strangers. That is a proxy for morning cognitive state, and a proxy is the right tool in a heat wave, because what you want to know is whether the heat is costing you anything that matters by daylight.
 
-There is decent reason to think it will show. When researchers followed university students through a Boston heat wave, those in buildings without air conditioning were measurably slower on reaction-time tests and worse on working memory than students in cooled dorms ([Cedeno Laurent et al., *PLOS Medicine*, 2018](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002605)). Wrecked deep sleep and ambient heat push in the same direction, on the exact functions a morning warm-up measures.
+There is decent reason to think it will show. When researchers followed university students through a Boston heat wave, those in buildings without air conditioning were measurably slower on reaction-time tests and worse on working memory than students in cooled dorms ([Cedeno Laurent et al., *PLOS Medicine*, 2018](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002605)). Wrecked deep sleep and ambient heat push in the same direction, on [the exact functions a morning warm-up measures](/blog/morning-reaction-time-cognition).
 
 So the practical use is simple: run the warm-up every morning across a hot week and the week after the weather breaks, then compare the shape of the line. A sag that recovers is a better reason to buy a dehumidifier than a vague feeling is. No sag is also useful information.
 
@@ -103,7 +103,7 @@ Stack the small effects, because none wins alone. Shade the windows by day and v
 
 ### Does a fan actually help you sleep when it is hot?
 
-Yes, up to a point. A fan speeds evaporation from your skin, which is real cooling, and its noise covers the street sounds that come with open windows. Above roughly 35 degrees Celsius it stops helping and can make things worse, because the air it moves is hotter than you are. Below that, aim it across the room rather than at your head.
+Yes, up to a point. A fan speeds evaporation from your skin, which is real cooling, and [its noise covers the street sounds](/blog/white-pink-brown-noise-sleep) that come with open windows. Above roughly 35 degrees Celsius it stops helping and can make things worse, because the air it moves is hotter than you are. Below that, aim it across the room rather than at your head.
 
 ### Why do I keep waking up at 3am when it is hot?
 

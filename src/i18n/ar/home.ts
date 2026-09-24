@@ -243,6 +243,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: `من `, accent: `المدونة`, post: `` },
+    more: `كل المقالات`,
+  },
+
   cta: {
     heading: { pre: `صباح الغد يبدأ `, accent: `الليلة`, post: `` },
     lede: `اضبط منبهًا واحدًا. واكتشف كيف يكون الصباح صافي الذهن فعلًا.`,

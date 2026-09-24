@@ -49,6 +49,8 @@ export const support = {
       ],
     },
     warning: `**Si être réveillé compte vraiment, programmez une seconde alarme sur un autre appareil.** WakeSharp programme les alarmes via le système d’exploitation, et c’est le système qui décide si elles sonnent. Voir l’[avis de sécurité](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Guides détaillés`,
   },
 
   ringsThrough: {

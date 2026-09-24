@@ -18,6 +18,7 @@ import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
 import { alternatesFor, localePath } from '../i18n/routes';
 import { isDefaultLocale, type EnabledLocale } from '../i18n/config';
+import { blogIndexPath, getPublishedPosts, postPath, sourceSlugOf } from '../lib/blog';
 
 import iosHome from '../assets/screens/ios/home.png';
 import iosRing from '../assets/screens/ios/ring.png';
@@ -44,6 +45,21 @@ const vars = {
   trialDays: SITE.unlimited.trialDays,
 };
 const links = { terms: localePath(locale, '/terms') };
+
+// "From the blog": the evergreen posts that answer what people search before
+// they need an alarm like this, in this page's language only. A locale with
+// none of them translated shows nothing rather than English titles.
+const FEATURED = [
+  'sleep-inertia-why-you-wake-up-groggy',
+  'math-alarm-science-solving-beats-snoozing',
+  'iphone-alarm-didnt-go-off-causes',
+  'alarm-reliability-checklist-tonight',
+];
+const localPosts = await getPublishedPosts(locale.code);
+const featured = FEATURED.map((slug) => localPosts.find((p) => sourceSlugOf(p) === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p))
+  .slice(0, 3);
+const blogHref = await blogIndexPath(locale);
 ---
 
 <BaseLayout
@@ -295,7 +311,25 @@ const links = { terms: localePath(locale, '/terms') };
     </div>
   </SunriseSection>
 
-  {/* ── 15. Final CTA ───────────────────────────────────────────────────── */}
+  {/* ── 15. From the blog ───────────────────────────────────────────────── */}
+  {
+    featured.length > 0 && (
+      <SunriseSection id="from-blog">
+        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.fromBlog.heading.pre}<span class="accent">{t.fromBlog.heading.accent}</span>{t.fromBlog.heading.post}</h2>
+        <ul class="mt-8 grid gap-6 md:grid-cols-3">
+          {featured.map((p) => (
+            <li class="card p-6">
+              <a href={postPath(p)} class="text-lg font-bold leading-snug underline-offset-2 hover:underline">{p.data.title}</a>
+              <p class="mt-2 text-[0.95rem] dim">{p.data.description}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6"><a href={blogHref} class="font-semibold underline underline-offset-2">{t.fromBlog.more}</a></p>
+      </SunriseSection>
+    )
+  }
+
+  {/* ── 16. Final CTA ───────────────────────────────────────────────────── */}
   <SunriseSection id="cta" anchor="get">
     <div class="flex flex-col items-center text-center">
       <Lark pose="encouraging" width={170} />

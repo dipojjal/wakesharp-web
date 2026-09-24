@@ -246,6 +246,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: `Dari `, accent: `blog`, post: `` },
+    more: `Baca semua artikel`,
+  },
+
   cta: {
     heading: { pre: `Pagi esok dimulai `, accent: `malam ini`, post: `` },
     lede: `Setel satu alarm. Rasakan sendiri seperti apa pagi yang sigap itu.`,

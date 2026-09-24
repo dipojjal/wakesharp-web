@@ -87,7 +87,7 @@ The least interesting failure on this list is also one of the most common, and i
 
 So do not plug in and walk away. Plug in and wait for the screen to acknowledge it. Two seconds of looking is the whole check.
 
-While the phone is in your hand, put it somewhere the sound can leave it: a hard surface, speaker grille clear, not face down on a duvet and not under a pillow. Soft furnishings absorb a startling amount of a small speaker.
+While the phone is in your hand, put it somewhere the sound can leave it: a hard surface, speaker grille clear, not face down on a duvet and not under a pillow. Soft furnishings absorb a startling amount of a small speaker. If you run [white, pink or brown noise](/blog/white-pink-brown-noise-sleep) all night, test the alarm over it once.
 
 ### 6. Set the backup, on something that is not this phone
 
@@ -113,7 +113,7 @@ And no configuration, on any platform, can promise you will wake up. Anyone clai
 
 Every item on that list shares a shape: the phone knew, hours ahead of time, that the conditions were wrong, and had no reason to mention it.
 
-That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does.
+That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does. The same checklist, split by platform, is on [WakeSharp's support page](/support).
 
 The honest limits: a checker can only see what the operating system chooses to expose, so it cannot rule out every cause, and it cannot promise you will wake up. WakeSharp is not a medical device. For a morning you cannot afford to miss, still set that second, independent alarm.
 
