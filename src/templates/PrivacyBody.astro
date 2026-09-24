@@ -277,6 +277,11 @@ import { SITE } from '../config/site';
     <li>the titles of your calendar events, everywhere they appear.</li>
   </ul>
   <p>
+    One exception: on iPhone, the profile menu in the alarm editor is drawn by iOS rather than by
+    WakeSharp and cannot be blanked, so the profile names it lists can appear in a recording while that
+    menu is open.
+  </p>
+  <p>
     Fields the operating system marks as a password or as sensitive autofill are blanked automatically
     as well; in practice WakeSharp has no password field at all, because signing in uses Apple or Google
     and happens on their screens rather than ours. Recordings are deleted after 30 days.
