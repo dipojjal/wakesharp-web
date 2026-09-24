@@ -1,9 +1,9 @@
 ---
 /**
- * "Related reading" block: newest posts in the same category and language.
- * Renders nothing when the category has no other posts yet — expected during
- * the first weeks of the publishing schedule, and for a while in every new
- * language.
+ * "Related reading" block: the posts in the same language that share the most
+ * tags and category with this one (src/lib/related-posts.ts). Renders nothing
+ * only when the language has no other post at all, which is expected for a
+ * while in every new language.
  */
 import type { CollectionEntry } from 'astro:content';
 import { getCatalog } from '../i18n/catalog';
