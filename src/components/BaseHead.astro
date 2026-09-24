@@ -60,8 +60,11 @@ const otherLocales = hreflangs.filter((a) => a.locale.code !== locale.code);
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={metaDescription} />
-<link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, follow" />}
+{/* A noindex page names no canonical: the two signals would contradict each
+    other. Indexable pages opt into large image previews (Discover shows the
+    1200px post heroes only with this). */}
+{!noindex && <link rel="canonical" href={canonical} />}
+<meta name="robots" content={noindex ? 'noindex, follow' : 'max-image-preview:large'} />
 {hreflangs.map((a) => <link rel="alternate" hreflang={a.locale.hreflang} href={absolute(a.href)} />)}
 {xDefault && <link rel="alternate" hreflang="x-default" href={absolute(xDefault.href)} />}
 
