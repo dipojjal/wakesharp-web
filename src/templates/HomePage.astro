@@ -79,8 +79,10 @@ const missionHref = english ? await missionPages() : new Map<string, string>();
   <SunriseSection id="hero" class="!pt-16 sm:!pt-20">
     <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
       <div>
+        {/* Both hero Larks share width 165, so they resolve to the same image
+            URLs and the browser downloads one file; this one is drawn at 150. */}
         <div class="mb-6 lg:hidden">
-          <Lark pose="asleep" width={150} breathe glow priority />
+          <Lark pose="asleep" width={165} breathe glow priority class="w-[150px]" />
         </div>
         {/* The kicker is part of the <h1> on purpose: it carries the query the
             page targets, while the tagline below it stays the brand line. */}
