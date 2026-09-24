@@ -7,12 +7,14 @@ import type { EnabledLocale } from '../i18n/config';
 /**
  * MobileApplication, not SoftwareApplication — it is the narrower type. Both
  * store URLs are present now that the apps are live; `offers` describes the real
- * pricing: free to install, with an optional subscription and a one-time
- * lifetime purchase.
+ * pricing: WakeSharp Unlimited, yearly with a free trial or monthly without one.
+ * There is no free tier and no Lifetime offer (claims-matrix.md), so neither
+ * appears here.
  *
- * Still no `aggregateRating`. Neither store has a single rating yet, and
- * inventing one would be both false and a structured-data penalty. Add it only
- * from real numbers, and keep it in step with them.
+ * Still no `aggregateRating`. The ratings live on the stores (one on the App
+ * Store as of 2026-09-24), and Google's review-snippet rules forbid marking up
+ * ratings copied from another site; inventing one would be false as well as a
+ * structured-data penalty. Add it only from reviews collected on this site.
  *
  * `inLanguage`, `url` and `description` follow the page's locale; the Offer
  * descriptions are the paywall's own English bullets and stay that way.
@@ -28,18 +30,17 @@ const live = [
   isLive(SITE.stores.android) ? SITE.stores.android.url : null,
 ].filter(Boolean);
 
-/** The five paywall bullets, verbatim and in the order both apps ship them. */
-const PLUS = 'Every wake-up mission beyond Mind Games and Photo Proof, three warm-up games every morning rotating, your full Sharpness history, unlimited smart calendar alarms, and Lark scenes, alarm wallpapers and celebrations.';
+/** What Unlimited is, in the App Store description's own words. */
+const UNLIMITED = 'Every wake-up mission, warm-up rotation, Lark scene, alarm wallpaper, smart alarm, profile, rotation and your full Sharpness history. No ads.';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'MobileApplication',
   name: SITE.name,
-  // The two listings carry different names as of 2026-08-30 — the App Store
-  // renamed to "Loud Alarm Clock", Play did not. An array is the only honest
-  // single value here. Re-read both listings before editing:
+  // The two listings carry different names as of 2026-09-24. An array is the
+  // only honest single value here. Re-read both listings before editing:
   // itunes.apple.com/lookup?id=6801198703&country=us and the Play listing.
-  alternateName: ['WakeSharp: Loud Alarm Clock', 'WakeSharp: Math Alarm Clock'],
+  alternateName: ['Loud Alarm Clock - WakeSharp', 'WakeSharp: Loud Alarm Clock'],
   description: shell.siteDescription,
   url: new URL(localePath(locale, '/'), SITE.url).href.replace(/\/$/, ''),
   inLanguage: locale.hreflang,
@@ -53,31 +54,17 @@ const schema = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'WakeSharp (free)',
-      price: '0',
+      name: 'WakeSharp Unlimited (yearly)',
+      price: SITE.unlimited.annual.replace('$', ''),
       priceCurrency: 'USD',
-      description: 'Your alarm rings free, forever, with a banner ad — including the Mind Games and Photo Proof missions, Strict Mode, the alarm reliability check and all thirteen alarm tones.',
+      description: `${UNLIMITED} A ${SITE.unlimited.trialDays}-day free trial for eligible new subscribers, then ${SITE.unlimited.annual} per year. Renews until cancelled.`,
     },
     {
       '@type': 'Offer',
-      name: 'WakeSharp Plus (monthly)',
-      price: SITE.plus.monthly.replace('$', ''),
+      name: 'WakeSharp Unlimited (monthly)',
+      price: SITE.unlimited.monthly.replace('$', ''),
       priceCurrency: 'USD',
-      description: PLUS,
-    },
-    {
-      '@type': 'Offer',
-      name: 'WakeSharp Plus (annual)',
-      price: SITE.plus.annual.replace('$', ''),
-      priceCurrency: 'USD',
-      description: `${PLUS} Includes a ${SITE.plus.trialDays}-day free trial for new subscribers.`,
-    },
-    {
-      '@type': 'Offer',
-      name: 'WakeSharp Plus (lifetime)',
-      price: SITE.plus.lifetime.replace('$', ''),
-      priceCurrency: 'USD',
-      description: `${PLUS} A single payment — it does not renew.`,
+      description: `${UNLIMITED} ${SITE.unlimited.monthly} per month, with no trial. Renews until cancelled.`,
     },
   ],
   privacyPolicy: new URL('/privacy', SITE.url).href,

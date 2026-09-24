@@ -61,7 +61,7 @@ Content mix: sleep science (16) · troubleshooting & reliability SEO (7) · morn
 | 39 | Wed Sep 16, 8:00 AM | Morning Light: The Free Circadian Tool You're Using Wrong | `morning-light-circadian-tool` · sleep-science | morning sunlight benefits | Lux numbers (indoor vs. outdoor), the 10-minute window, cloudy-day truth, window-glass myth. Tie: walk mission doubles as a light dose. |
 | 40 | Wed Sep 16, 7:00 PM | Bedroom Audit: Temperature, Light and Noise, By the Numbers | `bedroom-audit-temperature-light-noise` · tips-and-tricks | best bedroom temperature sleep | Checklist post with actual numbers (18–20°C, <10 lux, <30 dB) and cheap fixes ranked by effect size. Tie: run the audit, watch the week's trend. |
 | 41 | Thu Sep 17, 8:00 AM | What a Streak Does to Your Brain (the Honest Version) | `streak-psychology-honest` · productivity | habit streak psychology | Loss aversion, the what-the-hell effect after a broken streak, why freeze tokens exist. Honest about gamification's limits — rare take. Tie: WakeSharp streaks + freezes, designed for recovery not guilt. |
-| 42 | Thu Sep 17, 7:00 PM | Strict Mode Psychology: Why Removing Your Escape Hatch Works | `strict-mode-commitment-device` · product-updates | commitment device psychology | Ulysses contracts from Schelling to snooze caps; when self-binding helps and when it backfires. Tie: Strict Mode re-rings until the mission completes; the safety notice stays in view — honesty even here. |
+| 42 | Thu Sep 17, 7:00 PM | **RETIRED, do not write:** Strict Mode was removed in 2.12 (claims-matrix.md). Was "Strict Mode Psychology: Why Removing Your Escape Hatch Works" | `strict-mode-commitment-device` · product-updates | commitment device psychology | Ulysses contracts from Schelling to snooze caps; when self-binding helps and when it backfires. Tie: Strict Mode re-rings until the mission completes; the safety notice stays in view — honesty even here. |
 
 ## Week 4 — final stretch (Fri Sep 18 – Mon Sep 21)
 
@@ -125,30 +125,48 @@ These rules scan every built page, articles included. Violations fail the build.
 - `alarmkit`, `force-quit` need an iOS/Apple word within 240 chars; `extra loud`, `build-up` need `Android` nearby. So do `gentle start`, `widget` and `live activity` (all iOS-only; Android has no home-screen widget).
 - Banned outright: "trusted by", "coming soon", "not released yet", "unlimited alarms" (say "as many alarms as you need"), "Apple App Store" (say "the App Store"), "all five games"/"all 5 games"/"all 5 warm-up games", "3 brain games", "30-day trend", "30-day sharpness", "celebration styles".
 
-### The 2.2 claim rules (added Aug 30 — these are the ones articles keep getting wrong)
+### The claim rules (rewritten Sep 24 for the 2.10 pricing — these are the ones articles keep getting wrong)
 
-Five published posts had to be swept because this section did not exist yet. Read it before drafting
-any paragraph that describes what the app does.
+The source of truth is the app repo's `Docs/marketing-execution/claims-matrix.md`. Every sentence
+about the app must be true for the build a reader downloads today **and** for the next one (2.10
+through 2.13 as of Sep 24), so write about what a mission asks of you, never about how the alarm
+comes back after a snooze or a stop: that mechanism changed between those versions. Read this
+before drafting any paragraph that describes what the app does.
 
-- **There is no barcode or QR mission, and there never was.** `code_scan` was deleted from the app's
-  `GameRegistry.MissionRoute`. Codes exist only as targets you register under "My spots & codes"
-  *inside* Scan an Object. Never write "scan a barcode" or "a QR code mission". The sanctioned
-  wording is **"scan a real object"**.
-- **The missions and their tiers.** Free: **Mind Games** (arithmetic) and **Photo Proof** (photograph
-  the day's prompt). Plus: Memory Match, Sequence Recall, Scan an Object, Walk It Off, Surprise Me.
-  The gate acts **when you create an alarm, never when one rings**. Mind Games is both the free
-  mission and one of the five warm-up games — one game in two roles, so naming it in both lists is
-  correct, not a contradiction. **"Math Sprint" is a dead name**: the catalog renamed it to Mind
-  Games on 2026-08-23 and no shipped build has shown it since; `npm run copy` fails on it.
-  **Reaction Tap is a warm-up game and can never dismiss an alarm** — one article claimed it could.
-- **"Every alarm and every mission is free forever" is prohibited.** The canonical line, verbatim from
-  the shipped paywall, is **"Your alarm rings free, forever. No ads."**
-- **No absolute dismissal claims.** The system Stop button always works, on both platforms. Never
-  "it won't stop until…", "keeps ringing until…", "the only way out", "impossible to dismiss".
-  Strict Mode books **four** re-rings in advance (45 seconds, then 4, 8 and 12 minutes) and always
-  needs **"where supported"**.
-- **Snoozing is a policy, not a fixed rule.** Off, Standard (two 5-minute snoozes, -5 Sharpness each),
-  or Tighten (10, then 5, then 2). Those three are free; a custom policy is Plus.
+- **There is no free tier, and never write about pricing in a post.** The app is sold as
+  **WakeSharp Unlimited**, and the end-of-article card (added by the layout) already carries the
+  trial and its price. Never write "free", "Plus", "Lifetime", "free missions", "ad-free with Plus"
+  or "Your alarm rings free, forever" about the app; `npm run copy` fails on all of them, and a
+  failing check now fails the deploy. "WakeSharp shows no ads." is true and allowed.
+- **There is no barcode or QR mission, and there never was.** Codes exist only as targets you
+  register under "My spots & codes" *inside* Scan an Object. Never write "scan a barcode" or "a QR
+  code mission". The sanctioned wording is **"scan a real object"**.
+- **The missions**, described by kind, never by count (there are fourteen plus Surprise Me):
+  arithmetic and puzzles (**Mind Games**, **Memory Match**, **Sequence Recall**, **Colour Clash**,
+  **Type It Out**), the camera (**Photo Proof**: retake the photo of the spot you chose the night
+  before; **Scan an Object**; **Fetch**; **Face Check**; **Fruit Slash**), movement (**Walk It Off**;
+  **First Light**: walk to a window and hold your phone in the light) and voice (**Serial Sevens**,
+  **Name Five**), plus **Surprise Me**, a different mission every morning. An alarm can ask for
+  several in a row. Photo Proof is **not** a daily rotating prompt any more; never write "the day's
+  prompt". **"Math Sprint" is a dead name** (now Mind Games). **Reaction Tap and Word Dash are
+  warm-up games only** and can never dismiss an alarm.
+- **The warm-up and the score.** After the mission, an optional warm-up plays three of the five
+  brain games (Mind Games, Memory Match, Sequence Recall, Word Dash, Reaction Tap) on a rotation,
+  and it produces the Sharpness Score: an in-app score against your own baseline, never a clinical
+  or cognitive test.
+- **Dismissing and snoozing: describe the mission, not the mechanism.** Never mention Strict Mode
+  (retired in 2.12), snooze presets or policies (Off, Standard, Tighten), re-ring counts, owed
+  missions or makeup missions, and never write that "the system Stop button always works" (in 2.12
+  the iPhone alert's button snoozes for a minute instead). The version-proof sentences are:
+  "However you quiet the alarm, the morning only counts once the mission is done." and "Your
+  phone's own controls always work: nothing stops you switching the phone off." Never "it won't
+  stop until…", "keeps ringing until…", "the only way out", "impossible to dismiss".
+- **Silent, Focus and Do Not Disturb.** On iPhone, AlarmKit rings through Silent mode and Focus once
+  alarm permission is granted. On Android the alarm stream rings through silent mode, and through
+  Do Not Disturb **when it allows alarms**; Total Silence mutes every sound, alarms included. Never
+  "through Do Not Disturb" on its own, never "Do Not Disturb doesn't silence it".
+- **Privacy.** Never "no tracking" or "WakeSharp doesn't track you": it measures which ad brought
+  someone to the app, on iPhone only with permission. Say that, or say nothing.
 - **Never mention the referral programme or Wake Squad.** Wake Squad is not built and the referral
   service answers 503.
 - **The app has no sleep tracking.** You may write *about* sleep tracking and cite other vendors'

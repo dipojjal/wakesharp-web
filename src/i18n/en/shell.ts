@@ -47,6 +47,7 @@ export const shell = {
     terms: `Terms of Service`,
     support: `Support`,
     deleteAccount: `Delete your account`,
+    about: `About`,
     contactForm: `Contact form`,
     builtBy: `Built by {publisher}, a small independent studio.`,
     pleaseNote: `Please note.`,
@@ -57,10 +58,11 @@ export const shell = {
   },
 
   /**
-   * Shown near the store buttons on every localized page (never on English).
-   * The apps ship in English only; the site must not imply otherwise.
+   * Shown near the store buttons on a localized page whose language the app
+   * itself does not ship in (StoreButtons reads SITE.appLanguages), so the site
+   * never implies an app in, say, Japanese. Name the languages in this locale.
    */
-  appLanguageNote: `The WakeSharp app itself is currently in English.`,
+  appLanguageNote: `The WakeSharp app is available in English, Spanish, Russian, Turkish, German, French and Arabic.`,
 
   legalLayout: {
     lastUpdated: `Last updated {date}`,

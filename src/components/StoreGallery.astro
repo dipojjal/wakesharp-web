@@ -50,13 +50,18 @@ const CAPTIONS: Record<string, string> = t.captions;
  * ios-6.9 was re-rendered against it; play-phone has not been regenerated yet,
  * so there is no honest Android render to show.
  *
- * A rail of six is a far smaller cost than one wrong sentence in 96pt type, and
- * check-copy.mjs cannot see this text because it is pixels. Delete the entry as
- * soon as the app repo regenerates Design/Screenshots/play-phone/.
+ * 04 and 07 on both rails print the pricing the app retired with 2.10: 04 says
+ * the warm-up rotation comes "With WakeSharp Plus", and 07 reads "Streaks and
+ * freezes, free. Your full history with WakeSharp Plus." There is no free tier
+ * and no Plus any more (claims-matrix.md), so both wait for a re-render too.
+ *
+ * A shorter rail is a far smaller cost than one wrong sentence in 96pt type, and
+ * check-copy.mjs cannot see this text because it is pixels. Delete an entry as
+ * soon as the app repo regenerates the frame it names.
  */
 const WITHHELD: Record<string, ReadonlySet<string>> = {
-  ios: new Set(),
-  android: new Set(['02']),
+  ios: new Set(['04', '07']),
+  android: new Set(['02', '04', '07']),
 };
 
 const rails = [

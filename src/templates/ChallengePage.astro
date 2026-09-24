@@ -14,7 +14,9 @@
  */
 import LegalLayout from '../layouts/LegalLayout.astro';
 import StoreButtons from '../components/StoreButtons.astro';
+import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
+import { interpolate } from '../i18n/rich';
 import { alternatesFor, localePath } from '../i18n/routes';
 import type { EnabledLocale } from '../i18n/config';
 
@@ -44,7 +46,7 @@ const base = localePath(locale, '/c');
   <p id="challenge-error" hidden>{t.error}</p>
 
   <h2>{get.heading}</h2>
-  <p>{get.body}</p>
+  <p>{interpolate(get.body, { annual: SITE.unlimited.annual, trialDays: SITE.unlimited.trialDays })}</p>
   <StoreButtons tone="light" />
 </LegalLayout>
 

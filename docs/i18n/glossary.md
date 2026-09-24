@@ -22,27 +22,35 @@ English sentence that survived untranslated. Read this whole page before draftin
 - Register any new locale in `src/i18n/catalog.ts` and flip `enabled` in
   `src/i18n/config.ts`; nothing else is needed to route it.
 
-## Terms that stay in English
+## Product names: English, or the app's own translation
 
-Product and feature names are not translated, because the app itself is in English and a
-reader has to be able to find the same words on screen. Gloss a feature name in
-parentheses the first time it appears on a page when the meaning is not obvious.
+The app itself ships in seven languages: English, Spanish, Russian, Turkish, German, French and
+Arabic (`SITE.appLanguages`). A reader has to be able to find the same words on screen, so:
 
-| Keep | Meaning, for the gloss |
+- **On `es`, `ru`, `tr`, `de`, `fr` and `ar` pages, use the app's own localized names**, copied, never
+  translated afresh. Mission and game names come from the mission picker's own catalog,
+  `ios/Packages/WakeSharpKit/Sources/WSGames/Resources/GameCatalog.<lang>.json` (it can differ from
+  `Localizable.xcstrings`, and the picker is what a reader sees): Mind Games is _Juegos Mentales_ /
+  _Задачки_ / _Zihin Oyunları_ / _Kopfrechnen_ / _Jeux d’esprit_ / _ألعاب ذهنية_. Other feature names
+  and the plan come from `Localizable.xcstrings`: _WakeSharp Ilimitado_ / _Безлимитный_ / _Sınırsız_ /
+  _Unbegrenzt_ / _Illimité_ / _غير محدود_. `npm run copy` does not force English there.
+- **On `pt-BR`, `id`, `uk`, `hi` and `ja` pages the app falls back to English**, so the names below
+  stay in English, glossed in parentheses the first time they appear on a page when the meaning is
+  not obvious. `npm run copy` fails if one of them is translated there.
+
+| Keep (on pages in a language the app does not ship) | Meaning, for the gloss |
 |---|---|
-| WakeSharp, WakeSharp Plus, Plus, Lifetime | the app, its paid tier, the one-time purchase |
+| WakeSharp, WakeSharp Unlimited, Unlimited | the app, and the one plan it is sold as |
 | Sharpness, Sharpness Score | the morning score out of 100 against your own baseline |
 | the Lark | the mascot bird |
-| Mind Games | the arithmetic mission |
-| Photo Proof | the photograph mission |
-| Scan an Object | the camera-recognition mission |
-| Walk It Off | the step-count mission |
-| Surprise me / Surprise Me | the randomised mission |
-| Strict Mode | four pre-booked re-rings |
-| Tighten | the snooze preset that shortens each gap |
-| Mind Games, Memory Match, Sequence Recall, Word Dash, Reaction Tap | the five warm-up games. Mind Games, Memory Match and Sequence Recall are also missions, so they appear in both lists |
-| Wake with a friend | the shared-alarm feature; a literal row title in the alarm editor on both platforms |
-| Beat my wake | the challenge you send after a mission; the app's own share text reads "Beat my wake: 12s on 5 problems" |
+| Mind Games, Memory Match, Sequence Recall, Colour Clash, Type It Out | the brain missions |
+| Photo Proof, Scan an Object, Fetch, Face Check, Fruit Slash | the camera missions |
+| Walk It Off, First Light | the movement missions |
+| Serial Sevens, Name Five | the spoken missions |
+| Surprise Me | a different mission every morning |
+| Mind Games, Memory Match, Sequence Recall, Word Dash, Reaction Tap | the five warm-up games. The first three are also missions, so they appear in both lists |
+| Wake with a friend | the shared-alarm feature |
+| Beat my wake | the challenge you send after a mission |
 | My spots & codes | the registered targets inside Scan an Object |
 | Gentle start | the iOS quiet-opening tone option |
 | Extra Loud | the Android volume option |
@@ -75,21 +83,30 @@ not copy English quotation marks or apostrophes where your language uses others.
 
 ## Claims that must survive translation exactly
 
-These are enforced on the English pages by `scripts/check-copy.mjs` and seeded per locale
-in `BANNED_BY_LOCALE` there. They are product truths, not style.
+These are enforced on the English pages by `scripts/check-copy.mjs` and seeded per locale in
+`BANNED_BY_LOCALE` there. They are product truths, not style, and they come from the app repo's
+`Docs/marketing-execution/claims-matrix.md`.
 
-- The alarm can always be dismissed with the phone's own stop button. Never "impossible to
-  dismiss", never "won't stop until", never "the only way out". Strict Mode is **four**
-  re-rings (45 seconds, then 4, 8 and 12 minutes) and always "where supported".
-- "Your alarm rings free, forever. No ads." is the canonical free-tier line. Never "every
-  mission is free" or "every alarm and every mission, free forever": five of the seven
-  missions are Plus.
-- Say "as many alarms as you need", never "unlimited alarms".
+- **There is no free tier.** The app is sold as WakeSharp Unlimited: a 7-day free trial of the
+  yearly plan for eligible new subscribers, then the yearly price, or the monthly plan with no
+  trial. The trial never appears without the price that follows it, and prices come from
+  `src/config/site.ts` as `{annual}`, `{monthly}` and `{trialDays}`, never typed into a catalog.
+  Never "free, forever", never "free missions", never "Plus". Lifetime is no longer sold.
+- **"WakeSharp shows no ads."** Never "no tracking": it measures which ad brought someone in, on
+  iPhone only with permission.
+- **Describe the mission, never the dismissal mechanism.** It changed between app versions, so the
+  site never says how many times the alarm comes back, never names Strict Mode (retired) or snooze
+  presets, and never "impossible to dismiss", "won't stop until" or "the only way out". The
+  version-proof line: however you quiet the alarm, the morning only counts once the mission is done.
+- **Do Not Disturb:** on Android the alarm rings through Do Not Disturb *when it allows alarms*;
+  never the unqualified promise.
+- Say "as many alarms as you need", never "unlimited alarms" — which is why the plan name must not
+  be followed by "alarms" in a sentence that reads like that claim.
 - There is no barcode or QR mission. Codes are targets registered inside Scan an Object.
 - The app has no sleep tracking. Never imply it does.
 - No social proof ("trusted by", ratings) may be invented.
-- The apps are in English. Every localized page carries `shell.appLanguageNote` next to
-  the store buttons; translate it plainly.
+- On `pt-BR`, `id`, `uk`, `hi` and `ja` pages, `shell.appLanguageNote` sits next to the store buttons
+  and names the seven languages the app ships in; translate it plainly.
 
 ## Length and layout
 

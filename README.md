@@ -88,10 +88,14 @@ separate archive. Don't treat this repo as the system of record for screenshots.
 Both apps are live — Google Play since 2026-08-18, the App Store since 2026-08-22, both
 as *WakeSharp: Math Alarm Clock* from KineticBit Inc.
 
-The two listing **names have since diverged**: verified 2026-08-30, the App Store reads
-*WakeSharp: Loud Alarm Clock* (2.1, released 2026-08-26) while Play still reads *WakeSharp:
-Math Alarm Clock*. `itunes.apple.com/lookup?id=6801198703&country=us` settles the Apple half with
-no credential. Re-read both before quoting either name.
+The two listing **names have since changed**: verified 2026-09-24, the App Store reads
+*Loud Alarm Clock - WakeSharp* and Play reads *WakeSharp: Loud Alarm Clock*.
+`itunes.apple.com/lookup?id=6801198703&country=us` settles the Apple half with no credential.
+Re-read both before quoting either name.
+
+Since 2.10 the app is sold only as **WakeSharp Unlimited** (a 7-day free trial of the yearly plan,
+or monthly with no trial), with no free tier and no ads; Lifetime is no longer sold. The prices
+live in `SITE.unlimited`, and every page that states the trial states the price after it.
 
 **`src/config/site.ts` is the only file to edit when that changes.** `StoreButtons`, the
 JSON-LD, the Smart App Banner, the footer and the install CTAs on `/c`, `/p` and `/404`
@@ -107,18 +111,21 @@ before launch.
 
 ## Where the copy comes from
 
-The **app source is authoritative, not the live store description** — the App Store text
-is an older draft that still says "all five games on a daily rotation", which the app's
-own paywall retired on 2026-08-16. When a claim on this site needs settling, read:
+The **app repo is authoritative, not the live store description**. When a claim on this site
+needs settling, read:
 
-- `ios/Packages/WakeSharpKit/Sources/WSGames/GameRegistry.swift` — how many warm-up games
-  exist, how many a Plus morning runs, and which are free.
-- `ios/WakeSharp/Features/Paywall/PaywallView.swift` — the five Plus gates, verbatim. The
-  site's `plusFeatures` list mirrors it so the two can never contradict each other in
-  front of a reviewer.
+- `Docs/marketing-execution/claims-matrix.md` — which claims are Supported, Qualified or
+  Prohibited, with the approved wording for each. It is the reason the site has no free tier,
+  no Strict Mode and no "Plus", and why Do Not Disturb always comes with "when it allows alarms".
+- `ios/Packages/WakeSharpKit/Sources/WSGames/Resources/GameCatalog.json` — every mission and
+  warm-up game, and the one-line `blurb` for each, which the homepage uses verbatim.
+- `Docs/store-metadata/listings.json` — the store copy per locale, and the app's localized plan
+  and feature names, which the `es`, `ru`, `tr`, `de`, `fr` and `ar` pages reuse.
 
-`scripts/check-copy.mjs` encodes the decisions that came out of that reading, with the
-constant or file that settles each one in its `why` string.
+The site describes only what holds for the build a reader downloads today and for the next one,
+so it names missions by kind and never how the alarm comes back after a snooze.
+`scripts/check-copy.mjs` encodes the decisions that came out of that reading, with the source
+that settles each one in its `why` string.
 
 ## Structure
 

@@ -9,7 +9,9 @@
  * scoped `.legal .callout` inside LegalLayout and does not exist here.
  */
 import StoreButtons from './StoreButtons.astro';
+import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
+import { interpolate } from '../i18n/rich';
 import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
@@ -20,11 +22,13 @@ interface Props {
 const { locale } = Astro.props;
 const t = getCatalog(locale.code).blog.cta;
 const { heading = t.heading, body = t.body } = Astro.props;
+// Prices come from the one config file, never from a catalog or a post.
+const vars = { annual: SITE.unlimited.annual, monthly: SITE.unlimited.monthly, trialDays: SITE.unlimited.trialDays };
 ---
 
 <aside class="cta-card" aria-label={t.aria}>
   <h2>{heading}</h2>
-  <p>{body}</p>
+  <p>{interpolate(body, vars)}</p>
   <StoreButtons tone="light" />
 </aside>
 

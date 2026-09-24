@@ -11,7 +11,7 @@ import { SITE } from '../config/site';
   <div class="callout">
     <h2 class="!mt-0">The short version</h2>
     <ul>
-      <li>No account is required. You can optionally sign in with Apple or Google to back up your alarms and progress and link your WakeSharp Plus purchases across your devices.</li>
+      <li>No account is required. You can optionally sign in with Apple or Google to back up your alarms and progress and link your WakeSharp Unlimited purchases across your devices.</li>
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
@@ -200,12 +200,13 @@ import { SITE } from '../config/site';
     </li>
   </ul>
 
-  <h2>Purchases and WakeSharp Plus</h2>
+  <h2>Purchases and WakeSharp Unlimited</h2>
   <p>
-    WakeSharp offers subscription and Lifetime plans. Availability of free access, ads, trials and
-    introductory offers can vary with the plan or paywall shown to you. Your paywall displays the current
-    price, trial terms and renewal period before purchase. Lifetime is a one-time purchase that does not
-    renew. Marketing measurement uses the same privacy controls regardless of which paywall is displayed.
+    WakeSharp is sold as a subscription, WakeSharp Unlimited. Trials and introductory offers can vary with
+    the paywall shown to you, and your paywall displays the current price, trial terms and renewal period
+    before purchase. Lifetime, a one-time purchase that does not renew, is no longer sold, and existing
+    Lifetime purchases stay valid. Marketing measurement uses the same privacy controls regardless of which
+    paywall is displayed.
   </p>
   <p>
     If you buy it, the purchase itself is handled entirely by <strong>Apple</strong> or{' '}
@@ -213,7 +214,7 @@ import { SITE } from '../config/site';
     details.
   </p>
   <p>
-    To know whether Plus is unlocked, WakeSharp uses <strong>RevenueCat, Inc.</strong>, a
+    To know whether WakeSharp Unlimited is unlocked, WakeSharp uses <strong>RevenueCat, Inc.</strong>, a
     subscription-management service. When you open the paywall or restore a purchase, the RevenueCat SDK
     sends:
   </p>
@@ -222,8 +223,8 @@ import { SITE } from '../config/site';
       <tr><th>What is sent</th><th>Why</th></tr>
     </thead>
     <tbody>
-      <tr><td>A generated app user ID, or your random account ID when signed in</td><td>To associate receipts with your subscription record and let WakeSharp Plus follow your account across devices. These identifiers are pseudonymous and can link records.</td></tr>
-      <tr><td>The store receipt / purchase token from Apple or Google</td><td>To validate the purchase and decide whether Plus is unlocked.</td></tr>
+      <tr><td>A generated app user ID, or your random account ID when signed in</td><td>To associate receipts with your subscription record and let WakeSharp Unlimited follow your account across devices. These identifiers are pseudonymous and can link records.</td></tr>
+      <tr><td>The store receipt / purchase token from Apple or Google</td><td>To validate the purchase and decide whether WakeSharp Unlimited is unlocked.</td></tr>
       <tr><td>IP address, and the country derived from it or from your store account</td><td>Sent with every network request; used for fraud checks and to price and report by region.</td></tr>
       <tr><td>Device model, operating-system version and app version</td><td>Sent by the SDK with each request, and used to diagnose purchase problems.</td></tr>
       <tr><td>AppsFlyer ID, permitted advertising/vendor identifiers, paywall assignment and your optional source answer</td><td>To match verified subscription outcomes to acquisition and paywall measurement while honoring measurement choices.</td></tr>
@@ -255,7 +256,7 @@ import { SITE } from '../config/site';
     <tbody>
       <tr><td>A per-install analytics ID and your current RevenueCat customer ID</td><td>To count activity and join it to verified purchase and ad-revenue outcomes. The subscription ID may be your random account ID after sign-in.</td></tr>
       <tr><td>Campaign context, original paywall assignment, current monetization policy, and your optional source answer</td><td>To compare acquisition channels and paywalls. Self-reported sources are kept distinct from attributed acquisition.</td></tr>
-      <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
+      <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether WakeSharp Unlimited is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
       <tr><td>Session recordings — a replay of the app's own screens, with the things listed below blanked out on your device before anything is sent</td><td>To see where people get stuck, and to diagnose faults we cannot reproduce — a paywall that never loaded its prices, a purchase that failed silently.</td></tr>
       <tr><td>Crash reports — when WakeSharp stops unexpectedly, the error's type and message and the stack trace showing which of our code was running, sent the next time you open the app</td><td>To find and fix crashes. A stack trace describes our code, not your data: no alarm, calendar, photo or account content is included.</td></tr>
       <tr><td>Device model, operating-system version, app version, language, and the approximate region PostHog derives from the request's IP address</td><td>To diagnose device-specific problems and see roughly where users are. We see country-level information, not your location.</td></tr>

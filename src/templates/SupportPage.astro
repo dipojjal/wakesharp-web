@@ -13,7 +13,14 @@ interface Props {
 const { locale } = Astro.props;
 const { support: t, shell } = getCatalog(locale.code);
 
-const vars = { email: SITE.email, ios: shell.requirements.ios, android: shell.requirements.android };
+const vars = {
+  email: SITE.email,
+  ios: shell.requirements.ios,
+  android: shell.requirements.android,
+  annual: SITE.unlimited.annual,
+  monthly: SITE.unlimited.monthly,
+  trialDays: SITE.unlimited.trialDays,
+};
 const links = {
   email: `mailto:${SITE.email}`,
   'terms-safety': `${localePath(locale, '/terms')}#safety`,
