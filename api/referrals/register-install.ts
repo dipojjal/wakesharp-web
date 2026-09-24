@@ -3,7 +3,10 @@ import { importInstallPublicKey, credentialDigest, newInstallCredential, sha256 
 import { query } from '../_lib/db.js';
 import { verifyAttestation, attestationSchema } from '../_lib/attestation.js';
 import { ApiError, endpoint, json, methodNotAllowed, readJson } from '../_lib/http.js';
+import { enforceRateLimit } from '../_lib/rate-limit.js';
 import { assertReferralApiEnabled } from '../_lib/referrals.js';
+
+const REGISTRATIONS_PER_NETWORK_PER_HOUR = 30;
 
 const requestSchema = z.object({
   platform: z.enum(['ios', 'android']),
@@ -23,6 +26,7 @@ export function GET(): Response { return methodNotAllowed('POST'); }
 export async function POST(request: Request): Promise<Response> {
   return endpoint(async () => {
     assertReferralApiEnabled();
+    await enforceRateLimit(request, 'register-install', REGISTRATIONS_PER_NETWORK_PER_HOUR, 3600);
     const { value } = await readJson(request, requestSchema);
     const firstOpenAt = new Date(value.firstOpenAt);
     if (firstOpenAt.getTime() > Date.now() + 10 * 60_000 || firstOpenAt.getTime() < Date.UTC(2010, 0, 1)) {
@@ -30,42 +34,44 @@ export async function POST(request: Request): Promise<Response> {
     }
     const publicKey = importInstallPublicKey(value.publicKey);
     const publicKeyHash = sha256(publicKey.der);
-    const existingRevenueCatIdentity = await query<{ public_key_hash: Uint8Array }>(
-      `SELECT public_key_hash
-         FROM growth_anonymous_installations
-        WHERE revenuecat_app_user_id = $1
-          AND revoked_at IS NULL
-        LIMIT 1`,
-      [value.revenueCatAppUserId],
-    );
-    if (
-      existingRevenueCatIdentity[0]
-      && !Buffer.from(existingRevenueCatIdentity[0].public_key_hash).equals(Buffer.from(publicKeyHash))
-    ) {
-      throw new ApiError(409, 'installation_identity_conflict');
-    }
-    const challenges = await query<{ id: string }>(
-      `SELECT id
-         FROM growth_attestation_challenges
+    // The challenge is spent before verification, whatever its outcome (G2-02).
+    // It used to be consumed only after a successful verification, so a failed
+    // one left it reusable, and one challenge could drive unlimited calls to
+    // the verifier and to Google's quota-limited decode endpoint.
+    const consumed = await query<{ id: string }>(
+      `UPDATE growth_attestation_challenges
+          SET consumed_at = now()
         WHERE id = $1
           AND platform = $2
           AND public_key_hash = $3
           AND challenge_hash = $4
           AND consumed_at IS NULL
           AND expires_at > now()
-        LIMIT 1`,
+        RETURNING id`,
       [value.challengeId, value.platform, publicKeyHash, sha256(value.challenge)],
     );
-    if (!challenges[0]) throw new ApiError(401, 'attestation_challenge_invalid');
-    const attestation = await verifyAttestation(value);
-    const consumed = await query<{ id: string }>(
-      `UPDATE growth_attestation_challenges
-          SET consumed_at = now()
-        WHERE id = $1 AND consumed_at IS NULL AND expires_at > now()
-        RETURNING id`,
-      [value.challengeId],
+    if (!consumed[0]) throw new ApiError(401, 'attestation_challenge_invalid');
+    // After the challenge, so the 409 is no oracle for whether an identity is
+    // registered (G1-05), and only against live rows (G1-03). The apps now
+    // send an id derived from the install key, not the RevenueCat id that
+    // became the account's UUID after sign-in, so a second install of one
+    // account no longer collides here.
+    const existingIdentity = await query<{ public_key_hash: Uint8Array }>(
+      `SELECT public_key_hash
+         FROM growth_anonymous_installations
+        WHERE revenuecat_app_user_id = $1
+          AND revoked_at IS NULL
+          AND expires_at > now()
+        LIMIT 1`,
+      [value.revenueCatAppUserId],
     );
-    if (!consumed[0]) throw new ApiError(409, 'attestation_challenge_replayed');
+    if (
+      existingIdentity[0]
+      && !Buffer.from(existingIdentity[0].public_key_hash).equals(Buffer.from(publicKeyHash))
+    ) {
+      throw new ApiError(409, 'installation_identity_conflict');
+    }
+    const attestation = await verifyAttestation(value);
     const credential = newInstallCredential();
     let rows: { id: string; expires_at: string }[];
     try {

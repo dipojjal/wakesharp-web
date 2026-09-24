@@ -13,6 +13,9 @@
     { "source": "/eula", "destination": "/terms", "permanent": true },
     { "source": "/help", "destination": "/support", "permanent": true }
   ],
+  "crons": [
+    { "path": "/api/internal/referrals/prune", "schedule": "17 3 * * *" }
+  ],
   "functions": {
     "api/contact.ts": { "maxDuration": 10 },
     "api/referrals/*.ts": { "maxDuration": 10 },

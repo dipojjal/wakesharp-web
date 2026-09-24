@@ -25,7 +25,7 @@ Every authenticated request uses:
 - `X-WakeSharp-Nonce`: a fresh base64url value
 - `X-WakeSharp-Signature`: Ed25519 or hardware-backed P-256 over `METHOD\nPATH\nTIMESTAMP\nNONCE\nSHA256(body)`
 
-The server stores only an HMAC of the opaque credential. A request nonce can be used once. Before registration, the app obtains a ten-minute, single-use attestation challenge bound to the installation public key. App Attest initial attestations, later assertions, and Play Integrity standard requests must cryptographically bind their verdict to that challenge plus the platform, public key, app version, first-open instant, RevenueCat anonymous ID, and fresh-install eligibility. The private provider adapter returns only the known app identifier, provider key identifier, challenge hash, and bound request hash; a mismatch, replay, expiry, or missing configuration fails closed. Existing installations can invite, but only an attested fresh-install cohort may claim within its first 24 hours. There is no production bypass.
+The server stores only an HMAC of the opaque credential. A request nonce can be used once. Before registration, the app obtains a ten-minute, single-use attestation challenge bound to the installation public key. App Attest initial attestations, later assertions, and Play Integrity standard requests must cryptographically bind their verdict to that challenge plus the platform, public key, app version, first-open instant, install identifier, and fresh-install eligibility. The API still names that field `revenueCatAppUserId`, but from app 2.13 the apps send `install-` and the first 16 bytes of SHA-256 over the install public key's DER (`ReferralPolicy.installIdentifier` in the app repo): RevenueCat's id becomes the account's UUID after sign-in, which made every later install of the same account a 409 and stored the UUID beside wake-up times. The private provider adapter returns only the known app identifier, provider key identifier, challenge hash, and bound request hash; a mismatch, replay, expiry, or missing configuration fails closed. Existing installations can invite, but only an attested fresh-install cohort may claim within its first 24 hours. There is no production bypass.
 
 ## Endpoints
 
@@ -40,7 +40,8 @@ The server stores only an HMAC of the opaque credential. A request nonce can be 
 | `POST /api/referrals/status` | Signed install request | Return bounded status without exposing another installation or provider identifier. |
 | `POST /api/referrals/delete` | Signed install request plus explicit confirmation | Revoke and anonymize the installation and delete its success assertions. |
 | `GET /r/{code}` | Public code | Universal/app-link destination; provides explicit iOS code copying and a Play referrer. |
-| `GET/POST /api/internal/referrals/operations` | Operations bearer secret | Counts and 180-day pruning. No cron is scheduled. |
+| `GET/POST /api/internal/referrals/operations` | Operations bearer secret | Counts, and a manual 180-day prune. |
+| `GET /api/internal/referrals/prune` | `CRON_SECRET` (Vercel cron) | The daily retention run at 03:17 UTC: `growth_prune_expired()` and the rate-limit rows. |
 
 Apple aggregate attribution (`/api/attribution/apple`) is **not part of this
 merge** and remains on `codex/growth-s3-organic` with the organic guides.
@@ -130,10 +131,46 @@ already-shipped clients keep decoding the payload — their structs are
 non-optional and a missing field is a hard decode failure, not a degraded
 screen. There is no reward state left behind them.
 
+## 2.13 fixes (`db/migrations/002_referrals_2_13.sql`)
+
+Apply `002` after `001`. It re-creates two functions and adds one table and
+one index; nothing in it enables the API.
+
+- **An existing claim answers first (G1-01).** `growth_claim_referral` used to
+  check eligibility and the 24-hour window before looking for the claim this
+  installation already holds, so re-opening an invite link on day two turned a
+  valid claim into `claim_window_expired`, and the app retried it on every
+  launch. The same code is now idempotent at any age; another code is
+  `different_referral_already_claimed`.
+- **One live installation per App Attest key (G2-01, G2-V02).** A partial
+  unique index on `attestation_key_hash`; the verifier binds each App Attest
+  key to one install key as well. `verifyAttestation` no longer stores a
+  client-chosen `keyId` when the verifier returns none (Android).
+- **Rate limits (G1-05, G2-02).** `/challenge` and `/register-install` allow 30
+  calls per caller network per hour: an IPv4 address, or for IPv6 both the /64
+  (one line, 30) and the /48 (a site or a carrier pool, 8 times that). Each
+  budget is keyed by an HMAC under `REFERRAL_CREDENTIAL_PEPPER`, so no address
+  is stored. An
+  install key holds at most 3 live challenges. `register-install` now spends
+  the challenge before calling the verifier, whatever the outcome, and checks
+  the identity only after that, against live rows.
+- **A replayed success assertion writes nothing (G1-05).** No audit row and no
+  re-evaluation; the answer comes from the stored assertion.
+- **Only a verdict is a refusal.** `verifyAttestation` answers 401
+  `attestation_failed` or `attestation_key_unknown` only when the verifier
+  says so about the device or its key. Anything else (a secret mismatch, a
+  wrong URL, a gateway 429, a request the verifier could not read, a
+  challenge spent twice, any 5xx, and a 200 that is not a valid verdict or
+  names another provider or app id) is 503 `attestation_unavailable`, because
+  iOS replaces its App Attest key on a refusal.
+- **Retention runs (G1-04).** The daily Vercel cron calls
+  `/api/internal/referrals/prune`. Set `CRON_SECRET` in the Vercel project or
+  the route refuses; before `DATABASE_URL` exists it prunes nothing.
+
 ## Gate C/G activation checklist
 
 1. Provision a dedicated Neon database through the existing Vercel project and record region, owner and recovery policy.
-2. Review and apply `db/migrations/001_growth_referrals.sql` to a non-production branch first; execute the concurrency, replay, deletion, retention and provider-timeout integration matrix.
+2. Review and apply `db/migrations/001_growth_referrals.sql` and then `002_referrals_2_13.sql` to a non-production branch first; execute the concurrency, replay, deletion, retention and provider-timeout integration matrix. Set `CRON_SECRET` so the daily prune runs.
 3. Configure the private stateful App Attest and Play Integrity verifier. Verify invalid, expired, replayed and reinstall-risk verdicts on physical devices.
 4. Add the Play signing certificate fingerprint to `assetlinks.json`; it is intentionally not guessed in this branch.
 5. **Write the privacy disclosure for referrals against current `main`.** The

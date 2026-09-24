@@ -90,10 +90,64 @@ test('raw referrers and attestation payloads have no database columns', () => {
   assert.doesNotMatch(migration, /raw_referrer|attestation_token|apple_token/i);
 });
 
-test('referral routes are wired without a scheduled production job', () => {
+test('referral routes are wired, and the only scheduled job is retention', () => {
   assert.ok(vercel.rewrites.some((entry: { source: string }) => entry.source === '/r/:code'));
-  assert.equal('crons' in vercel, false);
+  // G1-04: growth_prune_expired existed and nothing called it.
+  assert.deepEqual(vercel.crons, [{ path: '/api/internal/referrals/prune', schedule: '17 3 * * *' }]);
+  const prune = readFileSync(new URL('../../api/internal/referrals/prune.ts', import.meta.url), 'utf8');
+  assert.match(prune, /growth_prune_expired\(\)/);
+  assert.match(prune, /growth_prune_rate_limits\(\)/);
+  assert.match(prune, /CRON_SECRET/);
   const components = association.applinks.details[0].components;
   assert.ok(components.some((entry: { '/': string }) => entry['/'] === '/r/*'));
   assert.ok(vercel.functions['api/referrals/*.ts']);
+});
+
+const fixes = readFileSync(new URL('../../db/migrations/002_referrals_2_13.sql', import.meta.url), 'utf8');
+
+// G1-01: an existing claim answers before the window and eligibility checks.
+test('re-claiming the same code is idempotent at any age', () => {
+  const claim = fixes.slice(fixes.indexOf('CREATE OR REPLACE FUNCTION growth_claim_referral'));
+  const body = claim.slice(0, claim.indexOf('$$;'));
+  const existing = body.indexOf('FROM growth_referral_claims');
+  assert.ok(existing > 0);
+  assert.ok(existing < body.indexOf("'claim_install_ineligible'"));
+  assert.ok(existing < body.indexOf("'claim_window_expired'"));
+  assert.ok(body.indexOf("'different_referral_already_claimed'") < body.indexOf("'claim_window_expired'"));
+});
+
+// G2-01 / G2-V02: one live installation per App Attest key.
+test('an App Attest key stands behind one live installation', () => {
+  assert.match(fixes, /CREATE UNIQUE INDEX IF NOT EXISTS growth_installations_live_app_attest_key_idx/);
+  assert.match(fixes, /WHERE attestation_provider = 'app_attest'\s*\n\s*AND attestation_key_hash IS NOT NULL\s*\n\s*AND revoked_at IS NULL/);
+  const attestation = readFileSync(new URL('../../api/_lib/attestation.ts', import.meta.url), 'utf8');
+  assert.doesNotMatch(attestation, /\?\? input\.attestation\.keyId/);
+});
+
+// G2-02 / G1-05: a challenge is spent before verification, and the
+// unauthenticated routes are limited per network.
+test('the challenge is spent before the verifier is called', () => {
+  const consume = registerRoute.indexOf('SET consumed_at = now()');
+  assert.ok(consume > 0);
+  assert.ok(consume < registerRoute.indexOf('await verifyAttestation(value)'));
+  // The identity check follows the challenge and only counts live rows (G1-03).
+  const identity = registerRoute.indexOf('installation_identity_conflict');
+  assert.ok(consume < identity);
+  assert.match(registerRoute, /AND expires_at > now\(\)\s*\n\s*LIMIT 1/);
+  assert.match(registerRoute, /enforceRateLimit\(request, 'register-install'/);
+  const challenge = readFileSync(new URL('../../api/referrals/challenge.ts', import.meta.url), 'utf8');
+  assert.match(challenge, /enforceRateLimit\(request, 'challenge'/);
+  assert.match(challenge, /challenge_limit/);
+  assert.match(fixes, /CREATE TABLE IF NOT EXISTS growth_rate_limits/);
+});
+
+// G1-05 (c): a replayed success assertion appends nothing.
+test('a replayed success assertion writes no audit row', () => {
+  const success = fixes.slice(fixes.indexOf('CREATE OR REPLACE FUNCTION growth_record_success'));
+  const replay = success.indexOf('IF NOT FOUND THEN');
+  assert.ok(replay > 0);
+  assert.ok(replay < success.indexOf('INSERT INTO growth_referral_audit'));
+  assert.ok(success.indexOf('RETURN;', replay) < success.indexOf('INSERT INTO growth_referral_audit'));
+  // The ceiling and the floor stay exactly as 001 set them.
+  assert.match(success, /p_occurred_at > p_now \+ interval '10 minutes'/);
 });

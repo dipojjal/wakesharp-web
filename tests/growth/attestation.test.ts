@@ -109,11 +109,23 @@ test('a verifier 5xx is unavailable, not a failed attestation', async () => {
   process.env.ATTESTATION_VERIFIER_URL = 'https://verifier.invalid/check';
   process.env.ATTESTATION_VERIFIER_SECRET = 'secret';
   try {
-    for (const [status, expected] of [[503, 'attestation_unavailable'], [500, 'attestation_unavailable'],
-      [401, 'attestation_failed'], [400, 'attestation_failed']] as [number, string][]) {
-      const stub = (async () => new Response('{}', { status })) as unknown as typeof fetch;
+    // Only a verdict on the device or its key is a refusal (2.13 review).
+    const cases: [number, string, string][] = [
+      [401, '{"error":"attestation_failed"}', 'attestation_failed'],
+      [401, '{"error":"attestation_key_unknown"}', 'attestation_key_unknown'],
+      [503, '{"error":"verifier_error"}', 'attestation_unavailable'],
+      [500, '{}', 'attestation_unavailable'],
+      [401, '{"error":"unauthorized"}', 'attestation_unavailable'],
+      [401, '{}', 'attestation_unavailable'],
+      [400, '{"error":"request_malformed"}', 'attestation_unavailable'],
+      [404, 'Not Found', 'attestation_unavailable'],
+      [409, '{"error":"challenge_replayed"}', 'attestation_unavailable'],
+      [429, '{}', 'attestation_unavailable'],
+    ];
+    for (const [status, body, expected] of cases) {
+      const stub = (async () => new Response(body, { status })) as unknown as typeof fetch;
       await assert.rejects(() => verifyAttestation(base, stub), (error: unknown) => {
-        assert.equal((error as { code: string }).code, expected, `status ${status}`);
+        assert.equal((error as { code: string }).code, expected, `status ${status} ${body}`);
         return true;
       });
     }
@@ -123,4 +135,58 @@ test('a verifier 5xx is unavailable, not a failed attestation', async () => {
     if (previous.secret === undefined) delete process.env.ATTESTATION_VERIFIER_SECRET;
     else process.env.ATTESTATION_VERIFIER_SECRET = previous.secret;
   }
+});
+
+// 2.13 review, LOW 7: a 200 that is not a verdict is configuration too. A
+// wrong ATTESTATION_VERIFIER_URL that serves a page answers 200.
+test('a 200 that is not a valid verdict is unavailable, not a failed attestation', async () => {
+  process.env.ATTESTATION_VERIFIER_URL = 'https://verifier.invalid/check';
+  process.env.ATTESTATION_VERIFIER_SECRET = 'test-secret';
+  const verdict = {
+    valid: true,
+    provider: 'play_integrity',
+    appId: 'com.wakesharp.app',
+    challengeHash: createHash('sha256').update(base.challenge).digest('hex'),
+    requestHash: createHash('sha256').update(attestationBinding(base)).digest('hex'),
+  };
+  const bodies = [
+    '<!doctype html><title>Welcome</title>',
+    '{}',
+    JSON.stringify({ ...verdict, valid: false }),
+    JSON.stringify({ ...verdict, extra: 'field' }),
+    JSON.stringify({ ...verdict, provider: 'app_attest' }),
+    JSON.stringify({ ...verdict, appId: 'com.example.other' }),
+  ];
+  const original = console.error;
+  console.error = () => {};
+  try {
+    for (const body of bodies) {
+      const fetcher = (async () => new Response(body, { status: 200 })) as unknown as typeof fetch;
+      await assert.rejects(verifyAttestation(base, fetcher), (error: unknown) => {
+        assert.ok(error instanceof ApiError, body);
+        assert.equal(error.code, 'attestation_unavailable', body);
+        assert.equal(error.status, 503, body);
+        return true;
+      });
+    }
+  } finally {
+    console.error = original;
+  }
+});
+
+// G2-01: Android has no provider key. The client's own `keyId` used to be
+// hashed and stored as though the verifier had attested it.
+test('a key id the verifier did not derive is never stored', async () => {
+  process.env.ATTESTATION_VERIFIER_URL = 'https://verifier.invalid/check';
+  process.env.ATTESTATION_VERIFIER_SECRET = 'test-secret';
+  const input = { ...base, attestation: { ...base.attestation, keyId: 'client-chosen-key' } };
+  const fetcher: typeof fetch = async () => new Response(JSON.stringify({
+    valid: true,
+    provider: 'play_integrity',
+    appId: 'com.wakesharp.app',
+    challengeHash: createHash('sha256').update(base.challenge).digest('hex'),
+    requestHash: createHash('sha256').update(attestationBinding(input)).digest('hex'),
+  }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+  const result = await verifyAttestation(input, fetcher);
+  assert.equal(result.keyHash, null);
 });

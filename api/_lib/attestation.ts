@@ -77,26 +77,41 @@ export async function verifyAttestation(input: {
     throw new ApiError(503, 'attestation_unavailable');
   }
   if (!response.ok) {
-    // A 5xx is the verifier being down or misconfigured; it is not this device
-    // being rejected, and it must not be reported as though it were. The iOS
-    // client treats `attestation_failed` as "this key is no good": it deletes a
-    // perfectly healthy Secure Enclave key and calls generateKey + attestKey
-    // again, on every foreground, for as long as the outage lasts — spending
-    // Apple's per-device key-creation and attestation limits on a fault that has
-    // nothing to do with the key, which can leave real devices unable to attest
-    // after the verifier is fixed. `attestation_unavailable` already means
-    // exactly this one line above.
-    throw response.status >= 500
-      ? new ApiError(503, 'attestation_unavailable')
-      : new ApiError(401, 'attestation_failed');
+    // Only the verifier's verdict on the device or its key is a refusal: a 401
+    // carrying `attestation_failed` or `attestation_key_unknown`. The iOS
+    // client treats either as "this key is no good" and replaces a Secure
+    // Enclave key, spending Apple's per-device key-creation and attestation
+    // limits. Everything else is not about the device and must never be
+    // reported as though it were: a 5xx, and every other non-2xx, such as a
+    // secret that does not match the verifier's (401 without a verdict), a
+    // wrong URL (404), a gateway's 429, a request the verifier could not read
+    // (400) or a challenge spent twice. `attestation_unavailable` means "not
+    // your device; this retries on its own" (2.13 review).
+    const verdict = await response.json().catch(() => null) as { error?: unknown } | null;
+    const code = typeof verdict?.error === 'string' ? verdict.error : '';
+    if (response.status === 401 && (code === 'attestation_failed' || code === 'attestation_key_unknown')) {
+      throw new ApiError(401, code);
+    }
+    throw new ApiError(503, 'attestation_unavailable');
   }
+  // A 200 that is not the verifier's answer (a wrong ATTESTATION_VERIFIER_URL
+  // serving a page, a proxy's own reply, a contract drift) or that names
+  // another provider or app is our configuration, not a verdict on the
+  // device, and must never read as `attestation_failed`: the iOS client
+  // replaces its App Attest key on that code (2.13 review).
   const parsed = verifierResponseSchema.safeParse(await response.json().catch(() => null));
-  if (!parsed.success || parsed.data.provider !== expectedProvider) throw new ApiError(401, 'attestation_failed');
+  if (!parsed.success || parsed.data.provider !== expectedProvider) {
+    console.error('attestation verifier answered 200 without a valid verdict');
+    throw new ApiError(503, 'attestation_unavailable');
+  }
 
   const expectedAppId = input.platform === 'ios'
     ? (process.env.WAKESHARP_IOS_APP_ID ?? 'W4HPRW2JT4.com.wakesharp.app')
     : (process.env.WAKESHARP_ANDROID_PACKAGE ?? 'com.wakesharp.app');
-  if (parsed.data.appId !== expectedAppId) throw new ApiError(401, 'attestation_failed');
+  if (parsed.data.appId !== expectedAppId) {
+    console.error('attestation verifier is configured for another app id');
+    throw new ApiError(503, 'attestation_unavailable');
+  }
   const expectedChallengeHash = sha256(input.challenge);
   const verifiedChallengeHash = Buffer.from(parsed.data.challengeHash, 'hex');
   if (!safeEqual(expectedChallengeHash, verifiedChallengeHash)) {
@@ -107,6 +122,9 @@ export async function verifyAttestation(input: {
   if (!safeEqual(expectedRequestHash, verifiedRequestHash)) {
     throw new ApiError(401, 'attestation_request_mismatch');
   }
-  const keyId = parsed.data.keyId ?? input.attestation.keyId;
+  // Only a key the verifier derived itself (G2-01). Android has no provider
+  // key, and falling back to the client's `keyId` stored the hash of a value
+  // the device chose as if it were an attested key.
+  const keyId = parsed.data.keyId;
   return { provider: expectedProvider, keyHash: keyId ? sha256(keyId) : null };
 }
