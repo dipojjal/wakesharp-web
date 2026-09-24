@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { DEFAULT_LOCALE, enabledLocales, localeByCode, type EnabledLocale, type LocaleCode } from '../i18n/config';
 import { localePath, type Alternate } from '../i18n/routes';
 import { placementProblems, slugOfId, sourceSlugOf as sourceOf } from './blog-i18n';
+import { rankRelated } from './related-posts';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
@@ -94,11 +95,9 @@ export async function postSwitchTargets(post: BlogPost): Promise<Alternate[]> {
   );
 }
 
-/** Newest posts sharing the given post's category and language, excluding itself. */
+/** The posts in the same language that share the most with this one; see src/lib/related-posts.ts. */
 export function getRelatedPosts(post: BlogPost, allPostsInLocale: BlogPost[], limit = 3): BlogPost[] {
-  return allPostsInLocale
-    .filter((p) => p.id !== post.id && p.data.category === post.data.category)
-    .slice(0, limit);
+  return rankRelated(post, allPostsInLocale, limit);
 }
 
 const WORDS_PER_MINUTE = 200;
