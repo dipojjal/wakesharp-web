@@ -27,6 +27,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE, enabledLocales } from '../src/i18n/config';
+import { SITE } from '../src/config/site';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
@@ -42,19 +43,25 @@ const DIST = join(ROOT, 'dist');
  * amount of word-boundary tuning separates those two.
  */
 const BANNED = [
-  // ── 2.2 mission tiering ────────────────────────────────────────────────
-  // GameCatalog.json marks object_scan, walk_steps, memory_match,
-  // sequence_recall and the surprise sentinel isPremium; only math_sprint
-  // (Mind Games) and photo_proof (Photo Proof) are free, and the gate runs at
-  // alarm creation, never at ring time. claims-matrix.md rules the old promise
-  // Prohibited from 2.2 and names wakesharp.app as a surface still carrying it.
-  // The replacement is the shipped paywall footer, verbatim.
-  { needle: 'every alarm and every mission', why: 'GameCatalog.json gates five of seven missions — say "Your alarm rings free, forever. No ads." (PaywallView.swift:537)' },
-  { needle: 'every mission is free', why: 'GameCatalog.json gates five of seven missions' },
-  { needle: 'every mission stays free', why: 'GameCatalog.json gates five of seven missions' },
-  { needle: 'every mission type', why: 'GameCatalog.json gates five of seven missions — name the two free ones or the five Plus ones, never all of them' },
-  { needle: 'scan missions on every alarm', why: 'the pre-2.2 per-alarm scan cap is gone; object_scan is isPremium outright' },
-  { needle: 'nothing that wakes you up is ever behind', why: 'Scan an Object, Walk It Off and Surprise Me are all Plus at creation' },
+  // ── how the app is sold (2.10) ─────────────────────────────────────────
+  // There is no free tier: the app is sold as WakeSharp Unlimited, yearly with
+  // a free trial for eligible new subscribers or monthly without one, and it
+  // shows no ads. claims-matrix.md rules every free-tier sentence Prohibited
+  // and says to remove "Your alarm rings free, forever" from the site; Lifetime
+  // is no longer sold (existing purchases stay valid). Approved wording:
+  // "Start a 7-day free trial of WakeSharp Unlimited." and "WakeSharp shows no
+  // ads." The trial always travels with the price that follows it.
+  { needle: 'every alarm and every mission', why: 'no free tier (claims-matrix.md) — every mission comes with WakeSharp Unlimited' },
+  { needle: 'every mission is free', why: 'no free tier (claims-matrix.md)' },
+  { needle: 'every mission stays free', why: 'no free tier (claims-matrix.md)' },
+  { needle: 'nothing that wakes you up is ever behind', why: 'no free tier — the whole app is WakeSharp Unlimited' },
+  { re: /\bfree,? forever\b/g, why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited and says to remove it from the site' },
+  { needle: 'rings free', why: 'no free tier (claims-matrix.md)' },
+  { re: /\bfree (?:tier|plan|version)\b/g, unless: /\b(?:earlier|removed|no longer|there is no|isn’t|isn't)\b/, why: 'no free tier since 2.10 (claims-matrix.md)' },
+  { re: /\bfree missions?\b/g, why: 'no free tier — every mission comes with WakeSharp Unlimited' },
+  { re: /\bbanner ads?\b/g, unless: /\b(?:earlier|removed|no longer)\b/, why: 'no ad SDK ships — "WakeSharp shows no ads." (claims-matrix.md)' },
+  { re: /\bplus (?:removes|is ad-free)\b|\bad-free with plus\b/g, why: 'there is no ad-supported tier to contrast against (claims-matrix.md)' },
+  { needle: 'lifetime plan', why: 'Lifetime is no longer sold; only purchases already made stay valid (Terms section 4)' },
 
   // ── a mission that never shipped ───────────────────────────────────────
   // GameRegistry.MissionRoute has six cases and code_scan is not one of them.
@@ -67,22 +74,30 @@ const BANNED = [
   { re: /\bscan(?:ning)? a code\b/g, unless: /spots ?(?:&|and) ?codes|as a target|that specific target/, why: 'a registered code is a target inside Scan an Object, not a mission — say "scan a real object"' },
 
   // ── absolute dismissal ─────────────────────────────────────────────────
-  // Prohibited in claims-matrix.md: the OS Stop/dismiss control exists on both
-  // platforms, and Strict Mode is four alarms booked in advance, not a loop —
-  // AlarmPlanning.guardOffsetsMinutes = [4, 8, 12] plus quickGuardSeconds = 45.
+  // Prohibited in claims-matrix.md: the OS exits exist on both platforms
+  // (switching the phone off, force-stopping on Android, revoking the alarm
+  // permission), and how the alarm comes back after a snooze or a stop changed
+  // between 2.10 and 2.12 — so the site describes the mission, never a promise
+  // that the alarm cannot end. Strict Mode was retired in 2.12.
   // The apostrophe variants are both spelled out on purpose: the site renders
   // U+2019 and strip() does not normalise it, so an ASCII-only needle would
   // silently never match.
   { needle: 'impossible to dismiss', why: 'the system Stop control exists on both platforms — Prohibited, claims-matrix.md' },
   { needle: 'the only way out', why: 'the system Stop control exists on both platforms — Prohibited, claims-matrix.md' },
-  { re: /\b(?:won’t|won't|will not|doesn’t|doesn't|does not) stop until\b/g, why: 'AlarmPlanning books four guards and then stops — say how many times it re-rings' },
-  { re: /\b(?:keeps?|kept) ringing until\b|\bre-?rings? until\b/g, why: 'AlarmPlanning.guardOffsetsMinutes = [4, 8, 12] + quickGuardSeconds = 45 — bounded, not a loop' },
+  { re: /\b(?:won’t|won't|will not|doesn’t|doesn't|does not) stop until\b/g, why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
+  { re: /\b(?:keeps?|kept) ringing until\b|\bre-?rings? until\b/g, why: '"keeps ringing" reads as continuous sound and the OS exits exist — Prohibited, claims-matrix.md' },
+  { needle: 'strict mode', why: 'retired in 2.12 (claims-matrix.md), and version-dependent before that — describe the mission, not the re-rings' },
+  // Do Not Disturb silences the alarm when its exceptions leave alarms out,
+  // and Total Silence always does (claims-matrix.md, G6-01).
+  { re: /\bdo not disturb (?:does(?:n’t|n't| not)|never) silences?\b/g, why: 'Do Not Disturb can silence it — say "through Do Not Disturb when it allows alarms" (claims-matrix.md)' },
+  { re: /\bthrough do not disturb\b/g, unless: /allows alarms/, why: 'never "through Do Not Disturb" on its own — add "when it allows alarms" (claims-matrix.md)' },
+  { re: /\bno tracking\b|\bdoes(?:n’t|n't| not) track you\b/g, why: 'claims-matrix.md: never "no tracking" — say what happens: "With your permission, WakeSharp learns which ad brought you here."' },
   { re: /until you(?:’ve| have|'ve)? (?:prove|proved|proven)\b/g, why: '"keeps ringing until you prove you are up" is Prohibited in claims-matrix.md' },
 
   // ── wallpapers ─────────────────────────────────────────────────────────
-  // Prohibited from v6. WallpaperCatalog.json: first_light, city_ledge and
-  // above_the_clouds are isPremium:false; only lighthouse and summit are Plus.
-  { needle: 'two wallpapers', why: 'WallpaperCatalog.json ships three free wallpapers since v6 — Above the Clouds moved to free' },
+  // Every scene and wallpaper is included with Unlimited; there is no free set
+  // (claims-matrix.md), so no free/paid wallpaper split may be described.
+  { re: /\bfree (?:alarm )?wallpapers?\b|\bwallpapers? (?:are |is )?free\b/g, why: 'every wallpaper and scene is included with WakeSharp Unlimited; there is no free set (claims-matrix.md)' },
 
   // ── built but dark, or not built ───────────────────────────────────────
   // Wake Squad does not exist, and every referral route answers 503
@@ -103,7 +118,7 @@ const BANNED = [
   // ceiling, so the site says "as many alarms as you need" instead. This is a
   // deliberate divergence from the store copy, not an oversight.
   { needle: 'unlimited alarms', why: 'AlarmPlanning.armedAlarmBudget = 96 is a real ceiling — say "as many alarms as you need"' },
-  { needle: 'trusted by', why: 'zero ratings on both stores — no social proof may be fabricated' },
+  { needle: 'trusted by', why: 'the stores hold a handful of ratings, and no social proof may be fabricated or borrowed' },
   { needle: 'apple app store', why: 'Apple style: "the App Store", never "Apple App Store"' },
   { needle: 'itunes app store', why: 'Apple style: "the App Store"' },
 
@@ -114,6 +129,7 @@ const BANNED = [
   // Counts that moved. Five warm-up games ship (GameRegistry.allWarmupGames) and
   // Plus history is uncapped (StatsView.trendDays is nil for subscribers), so the
   // old "3 games" and "30-day trend" numbers are wrong wherever they survive.
+  { re: /\b(?:seven|7) (?:wake-up )?missions\b|\bfive of (?:the )?seven\b/g, why: 'fourteen missions plus Surprise Me (GameCatalog.json) — describe them by kind, not by count' },
   { needle: '3 brain games', why: 'GameRegistry.allWarmupGames has five entries' },
   { needle: 'three brain games', why: 'GameRegistry.allWarmupGames has five entries' },
   { needle: '30-day trend', why: 'Plus history is uncapped — StatsView.trendDays is nil when premium' },
@@ -168,82 +184,104 @@ const SCOPED = [
  */
 const BANNED_BY_LOCALE = {
   es: [
-    { needle: 'todas las misiones son gratis', why: 'five of seven missions are Plus' },
+    { needle: 'gratis, para siempre', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'suena gratis', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'todas las misiones son gratis', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'imposible de descartar', why: 'the system Stop control exists on both platforms' },
     { needle: 'imposible de apagar', why: 'the system Stop control exists on both platforms' },
-    { needle: 'no se detendrá hasta', why: 'Strict Mode is four re-rings, not a loop' },
-    { needle: 'no parará hasta', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'no se detendrá hasta', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
+    { needle: 'no parará hasta', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'alarmas ilimitadas', why: 'AlarmPlanning.armedAlarmBudget = 96 — say "todas las alarmas que necesites"' },
   ],
   ru: [
-    { needle: 'все миссии бесплатны', why: 'five of seven missions are Plus' },
+    { needle: 'бесплатно, навсегда', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'звонит бесплатно', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'все миссии бесплатны', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'невозможно отключить', why: 'the system Stop control exists on both platforms' },
     { needle: 'невозможно выключить', why: 'the system Stop control exists on both platforms' },
-    { needle: 'не остановится, пока', why: 'Strict Mode is four re-rings, not a loop' },
-    { needle: 'не замолчит, пока', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'не остановится, пока', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
+    { needle: 'не замолчит, пока', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'неограниченное количество будильников', why: 'AlarmPlanning.armedAlarmBudget = 96' },
     { needle: 'безлимитные будильники', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   'pt-BR': [
-    { needle: 'todas as missões são grátis', why: 'five of seven missions are Plus' },
-    { needle: 'todas as missões são gratuitas', why: 'five of seven missions are Plus' },
+    { needle: 'de graça, para sempre', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'toca de graça', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'todas as missões são grátis', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
+    { needle: 'todas as missões são gratuitas', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'impossível de desligar', why: 'the system Stop control exists on both platforms' },
-    { needle: 'não para até', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'não para até', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'alarmes ilimitados', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   id: [
-    { needle: 'semua misi gratis', why: 'five of seven missions are Plus' },
+    { needle: 'gratis, selamanya', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'berbunyi gratis', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'semua misi gratis', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'tidak bisa dimatikan', why: 'the system Stop control exists on both platforms' },
-    { needle: 'tidak akan berhenti sampai', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'tidak akan berhenti sampai', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'alarm tanpa batas', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   uk: [
-    { needle: 'усі місії безкоштовні', why: 'five of seven missions are Plus' },
+    { needle: 'безкоштовно, назавжди', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'дзвонить безкоштовно', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'усі місії безкоштовні', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'неможливо вимкнути', why: 'the system Stop control exists on both platforms' },
-    { needle: 'не зупиниться, поки', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'не зупиниться, поки', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'необмежена кількість будильників', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   de: [
-    { needle: 'alle missionen sind kostenlos', why: 'five of seven missions are Plus' },
+    { needle: 'kostenlos, für immer', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'klingelt kostenlos', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'alle missionen sind kostenlos', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'unmöglich auszuschalten', why: 'the system Stop control exists on both platforms' },
-    { needle: 'hört nicht auf, bis', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'hört nicht auf, bis', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'unbegrenzte alarme', why: 'AlarmPlanning.armedAlarmBudget = 96' },
     { needle: 'unbegrenzt viele alarme', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   ar: [
-    { needle: 'جميع المهام مجانية', why: 'five of seven missions are Plus' },
+    { needle: 'مجانًا، إلى الأبد', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'يرن مجانًا', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'جميع المهام مجانية', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'يستحيل إيقافه', why: 'the system Stop control exists on both platforms' },
-    { needle: 'لن يتوقف حتى', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'لن يتوقف حتى', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'منبهات غير محدودة', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   fr: [
-    { needle: 'toutes les missions sont gratuites', why: 'five of seven missions are Plus' },
+    { needle: 'gratuitement, pour toujours', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'sonne gratuitement', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'toutes les missions sont gratuites', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'impossible à arrêter', why: 'the system Stop control exists on both platforms' },
-    { needle: 'ne s’arrête pas tant que', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'ne s’arrête pas tant que', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'alarmes illimitées', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   hi: [
-    { needle: 'सभी मिशन मुफ़्त', why: 'five of seven missions are Plus' },
+    { needle: 'मुफ़्त, हमेशा', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'मुफ़्त बजता है', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'सभी मिशन मुफ़्त', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'बंद करना असंभव', why: 'the system Stop control exists on both platforms' },
-    { needle: 'तब तक नहीं रुकेगा', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'तब तक नहीं रुकेगा', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'असीमित अलार्म', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   ja: [
-    { needle: 'すべてのミッションが無料', why: 'five of seven missions are Plus' },
+    { needle: 'ずっと無料', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: '無料で鳴ります', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'すべてのミッションが無料', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     // 突き止める ("to ascertain") contains this needle; its negative is the report
     // admitting it could not work out why an alarm failed, which is the opposite
     // of a claim that the alarm cannot be stopped.
     { needle: '止められない', unless: /突き止められない/, why: 'the system Stop control exists on both platforms' },
-    { needle: '解くまで鳴り続け', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: '解くまで鳴り続け', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'アラーム無制限', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
   tr: [
-    { needle: 'tüm görevler ücretsiz', why: 'five of seven missions are Plus' },
-    { needle: 'bütün görevler ücretsiz', why: 'five of seven missions are Plus' },
+    { needle: 'sonsuza dek ücretsiz', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'ücretsiz çalar', why: 'no free tier — claims-matrix.md rules "Your alarm rings free, forever" Prohibited in every language' },
+    { needle: 'tüm görevler ücretsiz', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
+    { needle: 'bütün görevler ücretsiz', why: 'no free tier — every mission comes with WakeSharp Unlimited (claims-matrix.md)' },
     { needle: 'kapatılması imkansız', why: 'the system Stop control exists on both platforms' },
     { needle: 'kapatılması imkânsız', why: 'the system Stop control exists on both platforms' },
-    { needle: 'kadar durmaz', why: 'Strict Mode is four re-rings, not a loop' },
-    { needle: 'kadar susmaz', why: 'Strict Mode is four re-rings, not a loop' },
+    { needle: 'kadar durmaz', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
+    { needle: 'kadar susmaz', why: 'the OS exits always exist — Prohibited, claims-matrix.md' },
     { needle: 'sınırsız alarm', why: 'AlarmPlanning.armedAlarmBudget = 96' },
   ],
 };
@@ -267,13 +305,17 @@ const LISTING_LINK = /https:\/\/(?:apps\.apple\.com\/\S*?app\/[^"'\s]+|play\.goo
 const BANNED_RAW = [
   { re: /\[\[/, why: 'unfilled "[[…]]" placeholder — one shipped live on /terms, a page both apps link to' },
   { re: /com\.dipojjal\.wakesharp/i, why: 'dead package id — renamed to com.wakesharp.app on 2026-08-14' },
-  // The two live listings no longer share a name: verified 2026-08-30, the App
-  // Store reads "WakeSharp: Loud Alarm Clock" while Play still reads
-  // "WakeSharp: Math Alarm Clock". Both are legitimate; this bans only the dead
-  // pre-launch name. Re-read both listings before changing anything here — it is
-  // the one rule in this file whose ground truth lives outside both repos.
+  // The two live listings no longer share a name: verified 2026-09-24, the App
+  // Store reads "Loud Alarm Clock - WakeSharp" and Play reads "WakeSharp: Loud
+  // Alarm Clock". This bans the names neither listing carries any more. Re-read
+  // both listings before changing anything here — it is the one rule in this
+  // file whose ground truth lives outside both repos.
   // itunes.apple.com/lookup?id=6801198703&country=us needs no credential.
-  { re: /WakeSharp: Alarm Clock &amp; Games|WakeSharp: Alarm Clock & Games/i, why: 'dead pre-launch name — the live listings are "WakeSharp: Loud Alarm Clock" (App Store) and "WakeSharp: Math Alarm Clock" (Play)' },
+  { re: /WakeSharp: Alarm Clock &amp; Games|WakeSharp: Alarm Clock & Games|WakeSharp: Math Alarm Clock/i, why: 'a listing name neither store uses any more — the live listings are "Loud Alarm Clock - WakeSharp" (App Store) and "WakeSharp: Loud Alarm Clock" (Play)' },
+  // Raw HTML on purpose: this reaches every locale, every attribute and the
+  // JSON-LD. "WakeSharp Plus" survives only as an internal entitlement id.
+  { re: /WakeSharp Plus\b/i, why: 'the plan is WakeSharp Unlimited since 2.10 (claims-matrix.md)' },
+  { re: /\$59\.99/, why: 'the Lifetime price — Lifetime is no longer sold (Terms section 4)' },
   { re: /\bcode[_-]scan\b/i, why: 'dead mission route — code_scan was deleted from GameRegistry.MissionRoute and never had a host on either platform' },
   { re: /\bMath Sprint\b/i, why: 'dead game name — GameCatalog.json renamed math_sprint to "Mind Games" on 2026-08-23 (app commit d320d71); the site kept the old name for the warm-up game while already using the new one for the mission' },
 ];
@@ -303,8 +345,11 @@ const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', '
 const SHARE_SHELLS = ['c.html', 'p.html'];
 /** Localized routes that wrap the English legal text on purpose: no untranslated-sentence check. */
 /**
- * Product and feature names the glossary keeps in English, because the app is
- * English-only and a reader has to find the same words on screen.
+ * Product and feature names the glossary keeps in English on pages whose
+ * language the app does not ship in (SITE.appLanguages), because there the app
+ * falls back to English and a reader has to find the same words on screen. In
+ * the languages the app does ship, the page uses the app's own localized names
+ * (docs/i18n/glossary.md), so this list does not apply there.
  *
  * Deliberately NOT the OS features. Focus, Silent mode and Do Not Disturb must
  * become the vendor's localized name, so listing them here would fail every
@@ -325,7 +370,15 @@ const MUST_STAY_ENGLISH = [
   'Reaction Tap',
   'Scan an Object',
   'Walk It Off',
-  'Strict Mode',
+  'Colour Clash',
+  'Type It Out',
+  'Fetch',
+  'Face Check',
+  'Fruit Slash',
+  'First Light',
+  'Serial Sevens',
+  'Name Five',
+  'Surprise Me',
   'My spots & codes',
   'Gentle start',
   'Extra Loud',
@@ -518,7 +571,8 @@ for (const file of html) {
       // feature, and a case-insensitive match would demand English inside a
       // correctly translated Spanish sentence.
       const englishRaw = strip(readFileSync(counterpartFile, 'utf8'));
-      for (const term of MUST_STAY_ENGLISH) {
+      const appSpeaksIt = SITE.appLanguages.includes(loc.code);
+      for (const term of appSpeaksIt ? [] : MUST_STAY_ENGLISH) {
         if (!englishRaw.includes(term)) continue;
         if (stripped.includes(term)) continue;
         console.error(`  ✗ ${name}: feature name "${term}" was translated — the glossary keeps it in English`);

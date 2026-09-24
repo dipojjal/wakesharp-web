@@ -17,7 +17,7 @@ export const accountDelete = {
     heading: `What is not deleted`,
     items: [
       `**The data on your phone.** Your alarms, scores and settings stay on your device — deleting the account is not deleting your alarms. Remove the app itself if you want the on-device data gone too.`,
-      `**Purchases.** WakeSharp Plus belongs to your App Store or Google Play account, not your WakeSharp account, and survives deletion.`,
+      `**Purchases.** A WakeSharp Unlimited subscription, like a Lifetime purchase, belongs to your App Store or Google Play account, not your WakeSharp account, and survives deletion.`,
       `**Anonymous usage analytics**, which were never linked to your account in the first place — see the [privacy policy](privacy).`,
     ],
   },

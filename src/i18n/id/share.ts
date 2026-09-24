@@ -39,6 +39,7 @@ export const share = {
   },
   get: {
     heading: `Unduh WakeSharp`,
-    body: `Gratis, dan menyetel alarm pertama Anda hanya butuh sekitar sepuluh detik.`,
+    /** `{trialDays}` dan `{annual}` berasal dari src/config/site.ts; uji coba tidak pernah tampil tanpa harganya. */
+    body: `Mulai dengan uji coba gratis {trialDays} hari untuk WakeSharp Unlimited, lalu {annual} per tahun. Menyetel alarm pertama Anda hanya butuh sekitar sepuluh detik.`,
   },
 } satisfies typeof en;

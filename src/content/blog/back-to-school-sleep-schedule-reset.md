@@ -2,6 +2,7 @@
 title: "Back-to-School Mornings: Reset a Summer Sleep Schedule in One Week"
 description: "A seven-day plan to shift a summer sleep schedule earlier by 15 minutes a day, anchored with morning light, and how to keep the new wake time honest."
 pubDate: 2026-08-29T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/back-to-school-sleep-schedule-reset/hero.jpg
 heroImageAlt: "Flat illustration of a bedroom at dawn: a school backpack and a small alarm clock in warm morning light, with the night sky receding on the left and a row of rising bars on the right suggesting a wake time shifting earlier day by day."
 category: morning-routines
@@ -75,13 +76,13 @@ For older students running their own schedule, the other weekend hazard is the 1
 
 The hard part of this plan is not the plan. It is Day 4, at the new wake time, when swatting the alarm and reclaiming forty minutes is both available and extremely attractive. A schedule that only exists on paper collapses at exactly that moment, and each collapse costs you a day of progress.
 
-That specific failure is what WakeSharp is built around. Earning full credit for the morning requires completing a mission that needs actual cognition: Mind Games, a short arithmetic sprint, or Photo Proof, which sends you to photograph what the morning names and takes you out of the bedroom entirely. WakeSharp Plus adds memory, sequence, object scanning and walking missions on top of those two. The mission is not there to punish anyone. It is there to make the decision to get up and the decision to dismiss the alarm the same decision, so that a half-asleep brain cannot quietly separate them. Strict Mode, where supported, books four re-rings in advance, at 45 seconds and then at 4, 8 and 12 minutes, and completing the mission cancels the ones still to come. Snoozing is a setting: off, or two five-minute snoozes, or a tightening 10, then 5, then 2. Both matter most on the days when the plan is working but does not yet feel like it. Streaks, with freeze tokens for the mornings that legitimately go wrong, give the whole seven days something to point at.
+That specific failure is what WakeSharp is built around. Earning full credit for the morning requires completing a mission that needs actual cognition: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before, so choose one outside the bedroom. Other missions ask for memory, a sequence, scanning a real object across the room, real steps or an answer said out loud. The mission is not there to punish anyone. It is there because a half-asleep brain will happily swat an alarm and call it a morning, and however you quiet the alarm, the morning only counts once the mission is done. That matters most on the days when the plan is working but does not yet feel like it. Streaks, with freeze tokens for the mornings that legitimately go wrong, give the whole seven days something to point at.
 
-And if the reset is a household project rather than a solo one, wake-up pacts let two people see each other's mornings, which for a lot of teenagers is a more persuasive accountability structure than a parent on the stairs.
+And if the reset is a household project rather than a solo one, a wake-up pact puts two people on the same alarm from one shared link, which for a lot of teenagers is a more persuasive accountability structure than a parent on the stairs.
 
 Now the honest part. No alarm app can make anyone wake up, and this one makes no such claim. It cannot manufacture sleep that was never scheduled: if bedtime is 1 a.m. and the bus is at 6:40, a mission will get someone out of bed into a day they are too tired to use, which is not a win. It cannot move your school's start time, and it cannot substitute for morning light, which is doing most of the actual clock-shifting work here. It is a device for making a wake time you already chose stick. The schedule and the daylight are the intervention. The app just stops the schedule from being quietly negotiated away at 6:15 on a Thursday.
 
-Everything runs on the device, with no account required and nothing about anyone's sleep leaving the phone, which is worth knowing before you install anything on a kid's device.
+No WakeSharp account is required, camera and calendar processing happen on the phone, the app shows no ads, and it does no sleep tracking of any kind, which is worth knowing before you install anything on a kid's device.
 
 ## FAQ
 

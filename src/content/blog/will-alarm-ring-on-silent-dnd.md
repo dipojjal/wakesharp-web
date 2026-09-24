@@ -2,6 +2,7 @@
 title: "Will Your Alarm Ring on Silent? iPhone and Android, Answered"
 description: "Does your alarm ring on silent? Yes on both iPhone and Android, with real exceptions. A platform by platform truth table for Silent, Focus and Do Not Disturb."
 pubDate: 2026-09-02T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/will-alarm-ring-on-silent-dnd/hero.jpg
 heroImageAlt: "Flat editorial illustration of a phone lying on a nightstand at night, a small coral mute switch flipped on its side while amber and coral sound waves ring out from the glowing alarm bell on its screen, a cream crescent moon resting beside it against a deep indigo sky."
 category: tips-and-tricks
@@ -104,7 +105,7 @@ The iPhone version of the same list, none of which is the silent switch either, 
 
 The pattern across both platforms is the same: the mute controls are innocent, the quiet controls are guilty, and your phone never volunteers which is which.
 
-WakeSharp's position on this is meant to be boring. On iPhone, its mission alarms are scheduled through Apple's AlarmKit, so once you have granted alarm permission (a separate prompt from notifications) they ring through Silent mode and through a Focus mode the way a Clock alarm does. On Android, WakeSharp plays on the alarm audio stream, which Do Not Disturb allows by default, and that part holds up. What no Android app can promise is that it is still running at 7am, because that decision belongs to your phone maker's battery manager. So the app's free alarm reliability check reads the conditions that actually matter on your specific device, including alarm permission, alarm volume and battery restrictions, and where the platform refuses to tell it something it says so rather than showing a green tick it has not earned. Your alarm rings free, forever, and Plus is ad-free.
+WakeSharp's position on this is meant to be boring. On iPhone, its mission alarms are scheduled through Apple's AlarmKit, so once you have granted alarm permission (a separate prompt from notifications) they ring through Silent mode and through a Focus mode the way a Clock alarm does. On Android, WakeSharp plays on the alarm audio stream, which rings through silent mode, and through Do Not Disturb when it allows alarms, as it does out of the box; Total Silence mutes every sound, alarms included. What no Android app can promise is that it is still running at 7am, because that decision belongs to your phone maker's battery manager. So the app's alarm reliability check, under Settings > Alarm reliability, reads the conditions that actually matter on your specific device, including alarm permission, alarm volume and battery restrictions, and where the platform refuses to tell it something it says so rather than showing a green tick it has not earned.
 
 The limit is the one every alarm app has, and we would rather write it down than let you discover it: WakeSharp is not a medical device, and settings, battery restrictions or a flat battery can stop any alarm on any phone. For a flight or an exam, set a second alarm on a separate device.
 
@@ -122,4 +123,4 @@ No, not by default on either platform. On iPhone, Do Not Disturb is a Focus mode
 Normally yes, because vibrate mode changes the ring and notification streams while the alarm stream keeps its own volume. The exception is phone-maker specific: some Clock apps, Samsung's in particular, include a setting that makes alarms vibrate only when the phone is muted. Check your Clock app's own settings, not just the system sound settings.
 
 **Do third-party alarm apps ring on silent?**
-On iPhone it depends entirely on how the app schedules the alarm. An app using Apple's AlarmKit rings through Silent mode and a Focus mode once you grant it alarm permission; an app that only sends notifications does not. On Android, any app can use the alarm audio stream and get through Do Not Disturb, but battery optimization can stop the app before the alarm ever fires, which is the far more common failure.
+On iPhone it depends entirely on how the app schedules the alarm. An app using Apple's AlarmKit rings through Silent mode and a Focus mode once you grant it alarm permission; an app that only sends notifications does not. On Android, any app can use the alarm audio stream and get through Do Not Disturb when it allows alarms, but battery optimization can stop the app before the alarm ever fires, which is the far more common failure.

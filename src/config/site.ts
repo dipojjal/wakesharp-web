@@ -6,9 +6,9 @@
  * StoreButtons, the JSON-LD, the Smart App Banner and the footer all read from
  * here, so a store change is a one-file change.
  *
- * The two listing NAMES have diverged and neither is ours to guess. Verified
- * 2026-08-30: the App Store reads "WakeSharp: Loud Alarm Clock" and Play still
- * reads "WakeSharp: Math Alarm Clock". Re-read both before quoting either name
+ * The two listing NAMES differ and neither is ours to guess. Verified
+ * 2026-09-24: the App Store reads "Loud Alarm Clock - WakeSharp" and Play reads
+ * "WakeSharp: Loud Alarm Clock". Re-read both before quoting either name
  * anywhere on this site — itunes.apple.com/lookup?id=6801198703&country=us needs
  * no credential and settles the Apple half in one request.
  *
@@ -36,15 +36,20 @@ export interface StoreConfig {
 export const SITE = {
   name: 'WakeSharp',
   tagline: 'Wake up sharp. Not just awake.',
-  /** The sitewide meta + OG description (BaseHead) and the JSON-LD one. */
+  /**
+   * The sitewide meta + OG description (BaseHead) and the JSON-LD one. At most
+   * 155 characters, so search results show all of it, and it leads with the
+   * query the homepage targets. "Quiet", never "turn off": the phone's own
+   * controls always work, so no mission is the only way to stop an alarm.
+   */
   description:
-    'The alarm that gets you meeting-ready. A mission earns the morning — solve it, photograph it, scan it or walk it — a brain warm-up scores how sharp you woke up, and smart alarms read your calendar so you wake before your first meeting.',
+    'An alarm clock for heavy sleepers: quiet it by solving quick math, photographing a spot or walking it off, then see how sharp you woke up.',
   url: 'https://wakesharp.app',
   email: 'support@wakesharp.app',
   /** The entity that publishes both apps, and the one named in the legal pages. */
   publisher: 'KineticBit Inc.',
   /** Stamped on the legal pages. Bump when their content materially changes. */
-  lastUpdated: '2026-09-07',
+  lastUpdated: '2026-09-24',
 
   /**
    * Governing law for the Terms. KineticBit Inc. is at 1044 Acoustic Way,
@@ -61,11 +66,22 @@ export const SITE = {
   requirements: { ios: 'iOS 26 or later', android: 'Android 8.0 or later' },
 
   /**
-   * Monthly and annual renew; lifetime is a single payment. The trial is attached
-   * to the annual plan only — the terms say so, and it is not ours to widen.
-   * The app itself never hardcodes these; RevenueCat serves them at runtime.
+   * WakeSharp Unlimited, the only way the app is sold since 2.10: there is no
+   * free tier. Both plans renew; the free trial is attached to the yearly plan
+   * only, for eligible new subscribers, and every mention of it must sit beside
+   * the price that follows it (claims-matrix.md, App Review 3.1.2(c)). Lifetime
+   * is no longer sold; existing Lifetime purchases stay valid, which the Terms
+   * say. The app itself never hardcodes these; RevenueCat serves them at runtime.
    */
-  plus: { monthly: '$4.99', annual: '$34.99', lifetime: '$59.99', trialDays: 7 },
+  unlimited: { monthly: '$4.99', annual: '$34.99', trialDays: 7 },
+
+  /**
+   * The languages the app itself ships in (iOS CFBundleLocalizations and the
+   * Android values-* folders, and the live App Store listing's languages, all
+   * checked 2026-09-24), as this site's locale codes. A localized page in any
+   * other language says which languages the app offers (StoreButtons).
+   */
+  appLanguages: ['en', 'es', 'ru', 'tr', 'de', 'fr', 'ar'],
 
   /** Needed by the Smart App Banner, which takes the bare id and not a URL. */
   appStoreId: '6801198703',
@@ -94,7 +110,8 @@ export const SITE = {
   lastUpdated: string;
   jurisdiction: { law: string; courts: string };
   requirements: { ios: string; android: string };
-  plus: { monthly: string; annual: string; lifetime: string; trialDays: number };
+  unlimited: { monthly: string; annual: string; trialDays: number };
+  appLanguages: readonly string[];
   appStoreId: string;
   stores: { ios: StoreConfig; android: StoreConfig };
 };
@@ -106,7 +123,7 @@ export const anyStoreLive = (): boolean => isLive(SITE.stores.ios) || isLive(SIT
  * Shown in the footer of every page, and echoed in Terms section 8.
  *
  * This belongs on the marketing page, not only in the legal text. The homepage
- * makes strong reliability claims ("it won't stop until you're sharp"); the
+ * makes strong reliability claims ("Know it will ring, the night before"); the
  * qualification has to be visible to the same reader.
  */
 export const SAFETY_NOTICE =

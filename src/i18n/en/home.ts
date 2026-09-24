@@ -2,29 +2,37 @@
  * The homepage. Headings are split into {pre, accent, post} because the
  * highlighted word is a <span class="accent"> in the template; keep the
  * surrounding spaces inside the strings. `{ios}`, `{android}`, `{annual}`,
- * `{lifetime}` and `{trialDays}` come from src/config/site.ts.
+ * `{monthly}` and `{trialDays}` come from src/config/site.ts.
+ *
+ * Every claim here has to hold for the build a reader downloads today and for
+ * the next one (2.10 through 2.13 as of 2026-09-24), which is why the page
+ * describes missions by kind and never how many times the alarm comes back:
+ * that mechanism changes between those versions. The source is the app repo's
+ * Docs/marketing-execution/claims-matrix.md and the App Store description.
  */
 export const home = {
-  title: `WakeSharp — Wake up sharp. Not just awake.`,
+  title: `WakeSharp — Alarm Clock for Heavy Sleepers, With Missions`,
 
   hero: {
+    /** Rendered inside the <h1>, above the tagline: the query the page targets. */
+    kicker: `The alarm clock for heavy sleepers`,
     heading: { pre: `Wake up `, accent: `sharp.`, post: `Not just awake.` },
-    lede: `A swipe is something a barely conscious person can do. WakeSharp asks for a mission instead — solve it, photograph it, scan it or walk it — and then scores how sharp you actually woke up.`,
+    lede: `For heavy sleepers who need more than a snooze button. A swipe is something a barely conscious person can do, so WakeSharp asks for a mission instead — solve it, photograph it, walk it or say it out loud — and then scores how sharp you actually woke up.`,
     phoneAlt: `WakeSharp home screen at night, showing a 6:40 AM alarm and a smart calendar rule`,
   },
 
   trust: [
     `Rings through Silent and Focus on iPhone`,
     `Tells you what could stop it — the night before`,
-    `No sign-up required`,
-    `Your calendar and your camera never leave your phone`,
-    `Your alarm rings free, forever`,
+    `No WakeSharp account required`,
+    `Camera and calendar processing happen on your phone`,
+    `WakeSharp shows no ads`,
   ],
 
   ring: {
     alt: `The WakeSharp alarm ringing, with Start Mission and Snooze`,
     heading: { pre: `Complete the mission for `, accent: `full credit`, post: `` },
-    lede: `On iPhone, Apple’s AlarmKit presents a system alarm over the lock screen — through Silent mode and Focus once alarm access is granted, even if the app was force-quit. On Android, an exact alarm on the alarm stream that Do Not Disturb doesn’t silence, with Extra Loud and a build-up ramp that climbs instead of blasting. The system’s own stop button always works; the mission is what earns the morning.`,
+    lede: `On iPhone, Apple’s AlarmKit presents a system alarm over the lock screen — through Silent mode and Focus once alarm access is granted, even if the app was force-quit. On Android, an exact alarm on the alarm stream rings through silent mode, and through Do Not Disturb when it allows alarms, with Extra Loud and a build-up ramp that climbs instead of blasting. However you quiet it, the morning only counts once the mission is done.`,
   },
 
   reliable: {
@@ -36,7 +44,7 @@ export const home = {
       { title: `One-tap fixes where they exist`, body: `And plain instructions where they don’t.` },
       { title: `“It didn’t ring” gets an answer`, body: `The provable cause — or an admission that we couldn’t tell.` },
     ],
-    note: `It is free, it is in Settings, and the pre-bed reminder folds the worst finding in so you see it while there is still time to fix it.`,
+    note: `It lives in Settings, and the pre-bed reminder folds the worst finding in so you see it while there is still time to fix it.`,
   },
 
   smart: {
@@ -44,49 +52,55 @@ export const home = {
     heading: { pre: `Wakes you before your `, accent: `first meeting`, post: `` },
     lede: `“Ring 90 minutes before my first meeting.” WakeSharp reads your calendar on your device, re-checks it overnight, and moves the alarm when the meeting moves. Read-only, optional, never transmitted.`,
     shifts: `Not every week is a week, either. Shift rotations handle the patterns that aren’t weekly — two days on, two nights, four off — with a preview calendar and a way to skip a single date without deleting anything. Profiles swap a whole set of alarms at once for work, vacation or on call. Search, sorting and a Today view keep the list honest when there are a lot of them.`,
-    labels: `Name what you’re waking up for — a workout, a commute, breakfast — and the label writes itself. One smart rule, one rotation and one profile are free; Plus lifts all three.`,
+    labels: `Name what you’re waking up for — a workout, a commute, breakfast — and the label writes itself.`,
   },
 
   mission: {
-    alt: `The Mind Games mission: solve 6 minus 3 to silence the alarm`,
-    heading: { pre: `Seven ways to `, accent: `get you up`, post: `` },
-    lede: `Something has to happen before the morning counts, and you pick what. Mind Games and Photo Proof are free; the rest come with Plus. Every one of them has a way out that ends in Mind Games at full credit, so a dead camera or a phone with no step counter never leaves you stuck.`,
+    alt: `The Mind Games mission: solve 9 minus 4 to silence the alarm`,
+    heading: { pre: `Missions that `, accent: `get you up`, post: `` },
+    lede: `Something has to happen before the morning counts, and you pick what: arithmetic, a puzzle, a photo of the spot you chose last night, real steps, or an answer said out loud. An alarm can ask for several in a row, in the order you choose, and if one can’t run that morning — a dead camera, a phone with no step counter — WakeSharp falls back to one that can.`,
     /**
-     * The seven missions the alarm editor offers, free ones first.
-     *
-     * Memory Match and Sequence Recall are warm-up games *and* missions — they
-     * carry `supportsMission` in GameCatalog.json — which is why they appear in
-     * both this list and `games`. Leaving them out here is what made this page
-     * claim five missions while support.ts and check-copy.mjs both said seven.
+     * Every mission the alarm editor offers (GameCatalog.json entries with
+     * `supportsMission`), grouped by what they ask of you. `kind` is the small
+     * label in each card's corner. The one-liners are the catalog's own
+     * `blurb`s, which claims-matrix.md rules Supported as written.
      */
     missions: [
-      { name: `Mind Games`, tier: `Free`, body: `Three arithmetic problems at easy, standard or hard. The one every other mission falls back to.` },
-      { name: `Photo Proof`, tier: `Free`, body: `Photograph the sky, your bed made, a glass of water. Six prompts on a daily rotation, so there is nothing to line up the night before.` },
-      { name: `Memory Match`, tier: `Plus`, body: `Turn cards over two at a time until every pair is matched. Four pairs at easy, eight at hard.` },
-      { name: `Sequence Recall`, tier: `Plus`, body: `Watch a sequence, then play it back. It starts at three steps and grows a step each round.` },
-      { name: `Scan an Object`, tier: `Plus`, body: `Point the camera at something across the room. Twenty everyday objects in the catalogue, recognised on the phone itself.` },
-      { name: `Walk It Off`, tier: `Plus`, body: `Get out of bed and take the steps. It reads the step counter and watches your cadence, so shaking the phone counts for nothing.` },
-      { name: `Surprise me`, tier: `Plus`, body: `Rolls one of the others — fixed for that alarm on that day, so you find out when it rings.` },
+      { name: `Mind Games`, kind: `Brain`, body: `Quick arithmetic rounds you have to get right.` },
+      { name: `Memory Match`, kind: `Brain`, body: `Turn over the cards and find every pair.` },
+      { name: `Sequence Recall`, kind: `Brain`, body: `Repeat a tap pattern that grows each round.` },
+      { name: `Colour Clash`, kind: `Brain`, body: `Tap the ink colour, not the word.` },
+      { name: `Type It Out`, kind: `Brain`, body: `Type out a line word for word, with autocorrect off.` },
+      { name: `Photo Proof`, kind: `Camera`, body: `Retake the photo of the spot you chose the night before.` },
+      { name: `Scan an Object`, kind: `Camera`, body: `Get up and point the camera at a bottle, a mug or a sink.` },
+      { name: `Fetch`, kind: `Camera`, body: `Go and find something blue, or something you drink from.` },
+      { name: `Face Check`, kind: `Camera`, body: `Open your eyes for the camera, then follow the prompt.` },
+      { name: `Fruit Slash`, kind: `Camera`, body: `Slice the fruit out of the air with your finger.` },
+      { name: `Walk It Off`, kind: `Movement`, body: `Take real steps, counted by your phone.` },
+      { name: `First Light`, kind: `Movement`, body: `Walk to a window and hold your phone in the light.` },
+      { name: `Serial Sevens`, kind: `Voice`, body: `Count down by sevens, out loud.` },
+      { name: `Name Five`, kind: `Voice`, body: `Name five things from a category, out loud.` },
+      { name: `Surprise Me`, kind: `Any`, body: `A different mission every morning.` },
     ],
-    note: `The mission is chosen when you build the alarm, never when it rings — an alarm already carrying a scan or a walk keeps running it whatever happens to a subscription. Strict Mode, where supported, books four re-rings in advance, and snoozing is a policy you set rather than a rule you’re given.`,
+    note: `Missions are part of the alarm you build, so the deal is made the night before, not negotiated at 6am.`,
   },
 
   games: {
     alt: `The Memory Match warm-up game`,
     heading: { pre: `A two-minute `, accent: `warm-up`, post: ` while the kettle boils` },
-    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash and Reaction Tap. Free plays one after your mission, drawn from a pool of two. Plus plays three each morning and rotates them, so the whole set comes round inside a week — and never repeats whatever the mission just made you do. None of it is compulsory; the alarm is already off by then.`,
+    lede: `Mind Games, Memory Match, Sequence Recall, Word Dash and Reaction Tap. Three play each morning and rotate, so the whole set comes round inside a week — and the warm-up never repeats whatever the mission just made you do. None of it is compulsory; the alarm is already off by then.`,
   },
 
   sharp: {
     alt: `The daily Sharpness Score reveal`,
     heading: { pre: `Know how `, accent: `sharp`, post: ` you woke up` },
-    lede: `One number out of 100, scored against your own rolling baseline — not against strangers. The physical missions stay out of it: a scan, a walk and a photo are only ever compared against themselves, because crossing the room is not an arithmetic score. Yesterday’s you is the only benchmark that means anything at 6am.`,
+    lede: `One number out of 100 from the warm-up, scored against your own rolling baseline — not against strangers. It is an in-app score, not a clinical test, and yesterday’s you is the only benchmark that means anything at 6am.`,
   },
 
   stats: {
     alt: `The Sharpness trend chart with a streak counter`,
     heading: { pre: `Watch yourself get `, accent: `sharper`, post: `` },
-    lede: `A streak, a trend line, and a freeze token every seven mornings — you can bank two, so life is allowed to happen twice. Milestones land at 7, 30, 100 and 365. Miss a morning outright and a makeup mission keeps the chain alive at half credit. Seven days of history free; with Plus, everything you have ever logged, however far back that goes.`,
+    lede: `A streak, a trend line, and freeze tokens for the mornings life gets in the way. Milestones land at 7, 30, 100 and 365, and your full Sharpness history goes back as far as you do.`,
   },
 
   together: {
@@ -96,7 +110,7 @@ export const home = {
       { title: `Wake with a friend`, body: `You send a link; their phone builds the alarm locally. Everyone keeps their own copy, so changing yours doesn’t reach into theirs.` },
       { title: `Beat my wake`, body: `Finish a mission and you can challenge someone to the identical problem set — same seed, same rounds, same difficulty. Then you find out which of you was actually awake.` },
     ],
-    note: `Both are free, and both are just links: the phone that receives one does all the work itself.`,
+    note: `Both are just links: the phone that receives one does all the work itself.`,
   },
 
   platforms: {
@@ -116,15 +130,18 @@ export const home = {
     railHeading: `{label} — as shown on the {store}`,
     altTemplate: `WakeSharp on {label}: {caption}`,
     fallbackCaption: `app screenshot`,
-    /** Frame number → what that frame shows, its baked-in headline included. */
+    /**
+     * Frame number → what that frame shows, its baked-in headline included.
+     * Frames 04 and 07 are withheld (StoreGallery.astro) because their artwork
+     * still prints the retired free tier and "WakeSharp Plus", so they have no
+     * caption until the app repo re-renders them.
+     */
     captions: {
       '01': `Home screen with the next alarm and a smart calendar rule, headlined “Wake up sharp. Not just awake.”`,
       '02': `The alarm ringing over the lock screen, headlined “Complete a mission for full credit”`,
       '03': `The Mind Games mission that silences the alarm, headlined “Solve to silence”`,
-      '04': `The warm-up games, headlined “5 brain games. 3 every morning.” and noting that the rotation comes with WakeSharp Plus`,
       '05': `The daily Sharpness Score reveal, scored against your own baseline`,
       '06': `The smart alarm rule editor, headlined “Wakes you before your first meeting”`,
-      '07': `The Sharpness trend and streak stats: streaks and freezes free, full history with WakeSharp Plus`,
     },
   },
 
@@ -132,62 +149,46 @@ export const home = {
     heading: { pre: `Make the morning `, accent: `yours`, post: `` },
     lede: `The alarm you actually want to hear, behind the picture you actually want to see.`,
     cards: [
-      { title: `13 tones, all free`, body: `From Dawn to Smoke Alarm, and every one of them ships a gentler twin as well.` },
-      { title: `Wallpapers and scenes`, body: `Three wallpapers free and five with Plus, and the Lark gains four more scenes, each with its own celebration.` },
+      { title: `Tones for every sleeper`, body: `From Dawn to Smoke Alarm, and every one of them ships a gentler twin as well.` },
+      { title: `Wallpapers and scenes`, body: `Every alarm wallpaper and every Lark scene is included, and each scene brings its own celebration.` },
       { title: `Light, dark, or neither`, body: `Pick an appearance or let it match your device, and the palette shifts with the hour either way.` },
       { title: `A softer landing`, body: `Gentle start on iPhone opens the tone quiet and climbs to full about 25 seconds in. On Android, a sunrise brightens the screen and raises the volume before the alarm.` },
     ],
   },
 
   pricing: {
-    heading: { pre: `Your alarm rings `, accent: `free, forever`, post: `` },
-    lede: `Two of the seven missions are free as well, along with all 13 tones, Strict Mode, the snooze presets and the reliability check. Plus is for the morning after the alarm — the other missions, more warm-up games, more smart rules, and the whole history.`,
-    free: {
-      name: `Free`,
-      price: `$0`,
-      tagline: `No sign-up, no trial to forget about.`,
-      /** Mirrors the gates the shipped paywall actually enforces. */
+    heading: { pre: `One plan, `, accent: `everything in it`, post: `` },
+    lede: `WakeSharp Unlimited is the whole app: every wake-up mission, the daily warm-up, smart calendar alarms, shift rotations and profiles, your full Sharpness history, and every Lark scene and wallpaper. WakeSharp shows no ads.`,
+    unlimited: {
+      name: `WakeSharp Unlimited`,
+      perYear: `/year`,
+      /** The trial and the price that follows it always travel together. */
+      trial: `Start with a **{trialDays}-day free trial**, then {annual} a year`,
+      monthly: `or **{monthly} a month**, with no trial`,
       features: [
-        `As many alarms as you need`,
-        `Two wake-up missions — Mind Games and Photo Proof`,
-        `All 13 alarm tones`,
-        `Strict Mode, the snooze presets, and the reliability check`,
-        `One smart calendar alarm, one shift rotation, one profile`,
-        `Search, sorting and the Today view`,
-        `Streaks, freeze tokens and milestones`,
-        `A warm-up game after every mission, and your 7-day trend`,
-        `Wake with a friend, and the watch app on both wrists`,
-        `Three alarm wallpapers and the Classic Lark scene`,
-      ],
-    },
-    plus: {
-      name: `WakeSharp Plus`,
-      perMonth: `/month`,
-      annual: `or **{annual}/year**, with a {trialDays}-day free trial`,
-      lifetime: `or **{lifetime} once** — Lifetime, which never renews`,
-      /** Items 2-6 are the paywall's five bullets, in the paywall's order. */
-      features: [
-        `Everything in Free`,
-        `Every wake-up mission beyond Mind Games and Photo Proof`,
+        `Every wake-up mission, and several in a row if you like`,
         `Three warm-up games every morning, rotating`,
         `Your full Sharpness history`,
-        `Unlimited smart calendar alarms`,
-        `Lark scenes, alarm wallpapers and celebrations`,
-        `As many shift rotations and profiles as you like, and a custom snooze policy`,
+        `Smart calendar alarms that can move when your first meeting does`,
+        `Shift rotations, profiles, and as many alarms as you need`,
+        `The reliability check and every alarm tone`,
+        `Every Lark scene, alarm wallpaper and celebration`,
+        `Wake with a friend, and the watch app on both wrists`,
+        `No ads`,
       ],
     },
-    lapse: `Plus is checked when you build an alarm, not when it rings. An alarm already carrying a scan or a walk keeps running it whether or not a subscription is active — nothing you have already set stops working. What lapses is setting up new ones.`,
-    billing: `Monthly and annual are billed by Apple or Google and renew until cancelled — cancel any time in your store account, and note that deleting the app does not cancel a subscription. Lifetime is a single payment with nothing to cancel. See the [Terms](terms).`,
+    billing: `Yearly and monthly are billed by Apple or Google and renew until cancelled — cancel any time in your store account, and note that deleting the app does not cancel a subscription. The free trial is for eligible new subscribers. See the [Terms](terms).`,
     /** Shown on localized pages only: the stores localize prices at runtime. */
     usdNote: `Prices are shown in US dollars; the App Store and Google Play show the price for your country.`,
   },
 
   faq: {
     heading: { pre: `Questions, `, accent: `answered`, post: `` },
+    /** Answers may use {annual}, {monthly} and {trialDays}; prices never appear in a catalog. */
     items: [
       {
         q: `Does it really ring in Silent, Focus or Do Not Disturb?`,
-        a: `Behaviour is platform-specific, and it depends on permission. On iPhone, WakeSharp uses Apple’s AlarmKit, which supports ringing through Silent mode and Focus once you have granted alarm access — decline or revoke it and WakeSharp cannot schedule anything at all. On Android it plays on the dedicated alarm audio stream, which Do Not Disturb does not silence, and shows a full-screen alert over the lock screen, provided the exact-alarm, notification and lock-screen permissions are in place. What no app can do is ring on a phone that is switched off or out of battery, so for anything you truly cannot miss, set a second alarm on another device.`,
+        a: `Behaviour is platform-specific, and it depends on permission. On iPhone, WakeSharp uses Apple’s AlarmKit, which supports ringing through Silent mode and Focus once you have granted alarm access — decline or revoke it and WakeSharp cannot schedule anything at all. On Android it plays on the dedicated alarm stream, which rings through silent mode, and through Do Not Disturb when it allows alarms — Total Silence mutes every sound, alarms included — and it shows a full-screen alert over the lock screen, provided the exact-alarm, notification and lock-screen permissions are in place. What no app can do is ring on a phone that is switched off or out of battery, so for anything you truly cannot miss, set a second alarm on another device.`,
       },
       {
         q: `How do I check my alarm is actually going to ring?`,
@@ -195,19 +196,19 @@ export const home = {
       },
       {
         q: `Do I have to do maths at 6am?`,
-        a: `Only if you want to. The two free missions are Mind Games, which is three arithmetic problems, and Photo Proof, which just asks for a photo of something — the sky, your bed made, a glass of water, on a prompt that rotates daily. Plus adds Memory Match, Sequence Recall, scanning a real object across the room, walking a set number of steps, and “Surprise me”, which picks one and fixes it for that alarm on that day so there is nothing to stage the night before. Every mission has a way out that ends in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.`,
+        a: `Only if you want to. Missions come in several kinds: arithmetic and puzzles, a photo of a spot you chose the night before, scanning a real object across the room, walking or heading to a window, typing a line, or answering out loud. Pick the ones that suit you, and an alarm can ask for more than one. Surprise Me picks a different one every morning, so there is nothing to stage the night before.`,
       },
       {
         q: `Can I cheat past the mission?`,
-        a: `You can dismiss the alarm without one — your phone’s own stop button always works, and we would not want it any other way. WakeSharp then shows an owed-mission screen next time you open it, and a makeup mission can keep your streak alive at half credit. Snoozing is a policy you choose rather than a rule you are given: off, a standard two snoozes of five minutes, or Tighten, which shortens each gap and raises the difficulty as it goes. Every snooze costs Sharpness. Strict Mode, where supported, books four re-rings in advance — at 45 seconds, then 4, 8 and 12 minutes — and completing the mission cancels whichever have not fired yet.`,
+        a: `Your phone’s own controls always work — you can switch it off, and no app should be able to stop that. Inside WakeSharp, though, stopping or snoozing the alarm doesn’t finish the morning: it only counts once the mission is done.`,
       },
       {
         q: `What does the camera do?`,
-        a: `Two missions use it, and only while that mission is running or while you are setting it up. Scan an Object classifies frames on your device — Apple’s Vision framework on iPhone, a small bundled model on Android — to check you are looking at the thing you chose. Photo Proof asks for one photograph, and the verified version compares it against a reference you enrolled, also on your device. Nothing is uploaded, nothing is added to your photo library, and the full photograph is never kept — only a small fingerprint of it. Decline the permission and every other mission still works.`,
+        a: `Only the missions that need it — Photo Proof, Scan an Object, Fetch, Face Check and Fruit Slash among them — and only while one of them is running or while you are setting it up. Recognising objects and matching photos happen on your device. Decline the permission and every mission that doesn’t need the camera still works. The privacy policy says exactly what, if anything, leaves your phone and when.`,
       },
       {
         q: `Does WakeSharp track my sleep?`,
-        a: `No. There is no sleep tracking of any kind — no microphone listening overnight, no sleep staging, no score for your night, and no opinion about when you fell asleep. The step counter is read during the walking mission and at no other time. WakeSharp measures how sharp you are once you are up, and nothing before that. The only sleep-shaped things in it are a bedtime you set yourself and an optional wind-down reminder.`,
+        a: `No. There is no sleep tracking of any kind — no microphone listening overnight, no sleep staging, no score for your night, and no opinion about when you fell asleep. The step counter is read during the walking mission and at no other time. WakeSharp measures how sharp you are once you are up, and nothing before that. The only sleep-shaped things in it are a bedtime you plan yourself and optional wind-down audio.`,
       },
       {
         q: `What exactly does it read from my calendar?`,
@@ -215,31 +216,27 @@ export const home = {
       },
       {
         q: `Do I need an account?`,
-        a: `No, and nothing is gated behind one — there is no email and no password anywhere in the app. You can optionally sign in with Apple or Google for a single purpose: to back up your alarms, settings, scores and streak so they come back on a new phone. It is off by default, every feature works signed out, and an alarm never waits on the network to ring. Delete it from Settings → Account, or at wakesharp.app/account/delete.`,
+        a: `No WakeSharp account is required — there is no email and no password anywhere in the app. You can optionally sign in with Apple or Google for a single purpose: to back up your alarms, settings, scores and streak so they come back on a new phone. It is off by default, every feature works signed out, and an alarm never waits on the network to ring. Delete it from Settings → Account, or at wakesharp.app/account/delete.`,
       },
       {
         q: `What happens if my watch is dead?`,
-        a: `Your phone rings. The watch taps you awake first and WakeSharp shifts the phone alarm a few minutes later as the backup, so only a dismissal on the watch cancels it. A flat watch, one out of range, or one you have not opened in 36 hours all leave the phone alarm exactly where it was. Strict Mode’s guard alarms ring on the phone regardless.`,
+        a: `Your phone rings. The watch taps you awake first and WakeSharp shifts the phone alarm a few minutes later as the backup, so only a dismissal on the watch cancels it. A flat watch, one out of range, or one you have not opened in 36 hours all leave the phone alarm exactly where it was.`,
       },
       {
-        q: `What is free and what is Plus?`,
-        a: `Your alarm rings free, forever. Free covers as many alarms as you need, the Mind Games and Photo Proof missions, all 13 alarm tones, Strict Mode, the snooze presets, the reliability check, streaks and freeze tokens, a warm-up game after each mission, one smart calendar alarm, one shift rotation, one profile, the watch app and your 7-day Sharpness trend. Plus adds the other five missions — Memory Match, Sequence Recall, scan, walk and Surprise me — three rotating warm-up games each morning, unlimited smart calendar alarms, as many rotations and profiles as you like, your full Sharpness history, a custom snooze policy, and the Lark scenes, wallpapers and celebrations.`,
+        q: `What does WakeSharp cost?`,
+        a: `There is one plan, WakeSharp Unlimited, and it includes everything. New subscribers can start with a {trialDays}-day free trial of the yearly plan, then {annual} a year, or choose the monthly plan at {monthly} a month, which has no trial. Prices are in US dollars; the App Store and Google Play show the price for your country. WakeSharp shows no ads.`,
       },
       {
-        q: `What happens to my Plus alarms if I stop paying?`,
-        a: `They keep working. The check happens when you build an alarm, not when it rings, so an alarm already carrying a scan or a walk goes on running it whether or not a subscription is active. What you lose is setting up new ones, along with the extra warm-up games and the full history.`,
-      },
-      {
-        q: `Is Lifetime a subscription?`,
-        a: `No. Lifetime is a single payment for the same WakeSharp Plus features — it does not renew, and there is nothing to cancel. Monthly and annual do renew until you stop them. The 7-day free trial belongs to the annual plan.`,
+        q: `I bought Lifetime. Do I keep it?`,
+        a: `Yes. Lifetime was a single payment and it stays yours: nothing renews and there is nothing to cancel. Restore Purchases brings it back on a new phone, using the same Apple or Google account.`,
       },
       {
         q: `How do I cancel?`,
-        a: `Through the App Store or Google Play, any time. Deleting the app does not cancel a subscription. Lifetime has nothing to cancel — it is a one-time purchase, and Restore Purchases brings it back on a new phone.`,
+        a: `Through the App Store or Google Play, any time, including during the free trial. Deleting the app does not cancel a subscription.`,
       },
       {
         q: `Does it track me?`,
-        a: `No location, and WakeSharp itself does not track you across other apps. The banner ad on the free tier comes from Google and can use your device's advertising ID; on iPhone only if you allow it when asked, and Plus removes the ads entirely. What leaves your device: anonymous usage analytics (a random ID and which screens you use — never your alarms, calendar or camera), subscription data if you buy Plus, and your own backup if you chose to create an account. Your account is never joined to the analytics. The privacy policy lists every byte.`,
+        a: `WakeSharp shows no ads, but it does buy ads elsewhere, and it measures which ad or link brought you to the app and whether that led to a trial or a subscription. On iPhone it asks first: refuse, and your advertising identifier is never read and ad networks see only aggregated campaign results. Android works as the privacy policy describes. Product analytics can be turned off in Settings, and your alarm labels and calendar details are never sent. The privacy policy lists exactly what leaves your device.`,
       },
     ],
   },

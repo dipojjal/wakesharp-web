@@ -2,6 +2,7 @@
 title: "Tonight's 6-Point Checklist for an Alarm That Actually Rings"
 description: "Six checks to run before bed so your alarm actually rings: volume, permissions, Do Not Disturb, battery limits, the charger, and one backup."
 pubDate: 2026-08-31T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/alarm-reliability-checklist-tonight/hero.jpg
 heroImageAlt: "Flat illustration of a phone charging on a bedside table at night, a small checklist floating beside it, in coral and amber against deep indigo."
 category: tips-and-tricks
@@ -109,9 +110,9 @@ And no configuration, on any platform, can promise you will wake up. Anyone clai
 
 Every item on that list shares a shape: the phone knew, hours ahead of time, that the conditions were wrong, and had no reason to mention it.
 
-That is what WakeSharp's alarm reliability check does, and it is free. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does.
+That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does.
 
-The honest limits: a checker can only see what the operating system chooses to expose, so it cannot rule out every cause, and it cannot promise you will wake up. WakeSharp is not a medical device. For a morning you cannot afford to miss, still set that second, independent alarm. Your alarm rings free, forever, and Plus is ad-free.
+The honest limits: a checker can only see what the operating system chooses to expose, so it cannot rule out every cause, and it cannot promise you will wake up. WakeSharp is not a medical device. For a morning you cannot afford to miss, still set that second, independent alarm.
 
 ## FAQ
 

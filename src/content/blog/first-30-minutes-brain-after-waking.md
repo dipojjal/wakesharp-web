@@ -2,6 +2,7 @@
 title: "The First 30 Minutes: What Happens in Your Brain Between Alarm and Coffee"
 description: "A minute-by-minute account of the first half hour after your alarm: the cortisol surge, leftover adenosine, and why your prefrontal cortex arrives last."
 pubDate: 2026-09-05T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/first-30-minutes-brain-after-waking/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedside scene at dawn: a phone and a coffee mug on a nightstand beneath a window of rising coral and amber light, with a chain of dots growing from small and dark to large and bright across the frame."
 category: sleep-science
@@ -83,13 +84,11 @@ Recovery is not purely passive. If the prefrontal region is the one lagging, giv
 
 Everything above is a population average. Your own curve is the one you live in, and it is close to invisible from the inside, which is the trap. Van Dongen and colleagues showed the general version of the problem: across two weeks of restricted sleep, objective performance degraded cumulatively while subjective sleepiness ratings flattened out and failed to distinguish six hours a night from four ([Van Dongen et al., *Sleep*, 2003](https://pubmed.ncbi.nlm.nih.gov/12683469/)). People are poor judges of their own impairment; a number helps where a feeling cannot.
 
-That is what WakeSharp's warm-up games are for, and they are a separate thing from missions. Missions are what you complete to dismiss an alarm: Mind Games and Photo Proof on the free tier, with Memory Match, Sequence Recall, Scan an Object, Walk It Off and Surprise Me on Plus. Warm-up games run after the alarm is already off, in exactly the window this article is about, and they produce a Sharpness score measured against your own rolling baseline. Mind Games appears in both roles, which is intentional. Reaction Tap is warm-up only and can never dismiss an alarm.
+That is what WakeSharp's warm-up games are for, and they are a separate thing from missions. Missions are what an alarm asks of you when it rings: arithmetic and puzzles such as Mind Games, a photo or a real object for the camera, real steps, or an answer said out loud. However you quiet the alarm, the morning only counts once the mission is done. The warm-up is optional and runs after the alarm is already off, in exactly the window this article is about: three of the five brain games on a rotation, producing a Sharpness score measured against your own rolling baseline. Mind Games, Memory Match and Sequence Recall appear in both roles, which is intentional, though the warm-up skips whichever game the mission just made you play. Reaction Tap and Word Dash are warm-up only and can never dismiss an alarm.
 
 Play one at minute five and another at minute twenty five for a week and you get a rough picture of your own recovery curve: how steep it is, and which nights flatten it.
 
 Now the limits. A Sharpness score is a rough cognitive check, not a clinical test. It moves with your bedtime, your stress, a noisy street, how familiar the game has become, and plain randomness. It will tell you that this morning was worse than your usual. It will not tell you why. WakeSharp does not track your sleep and does not pretend to. And nothing in the app shortens the biology: the cortisol awakening response takes the time it takes, and a short night buys a longer fog whatever your alarm does. What measurement buys you is knowing which mornings you should not schedule a hard conversation into.
-
-Your alarm rings free, forever, and Plus is ad-free.
 
 ## FAQ
 

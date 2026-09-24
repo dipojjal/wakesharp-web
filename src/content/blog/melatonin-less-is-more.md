@@ -2,6 +2,7 @@
 title: "Melatonin: Why Less Is More (and When It Does Nothing)"
 description: "Melatonin is a timing signal, not a sedative. What the evidence says about 0.5 mg versus 10 mg gummies, when to take it, and when it does nothing."
 pubDate: 2026-09-07T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/melatonin-less-is-more/hero.jpg
 heroImageAlt: "Flat editorial illustration of one small melatonin tablet beside an oversized gummy, set against a deep indigo night sky with coral and amber rounded shapes."
 category: sleep-science
@@ -71,7 +72,7 @@ And melatonin does approximately nothing for a racing mind at midnight, for untr
 
 Every melatonin protocol above assumes a fixed reference point: a wake time that does not move. Shift the morning around and the evening signal has nothing to anchor to.
 
-That is the honest place WakeSharp fits. A mission alarm puts something between you and the dismiss button, arithmetic in Mind Games or photographing the day's prompt with Photo Proof, so the wake time you chose is the wake time you actually keep. Your alarm rings free, forever. No ads. The limit matters too: the system Stop button always works, no app can guarantee that anyone wakes up, and none of this shifts your circadian phase by itself. It only holds the anchor steady enough for the rest to mean something.
+That is the honest place WakeSharp fits. A mission alarm asks for something that needs a working brain, arithmetic in Mind Games or retaking the photo of the spot you chose the night before with Photo Proof, so the wake time you chose is the wake time you actually keep. However you quiet the alarm, the morning only counts once the mission is done. The limit matters too: your phone's own controls always work (nothing stops you switching the phone off), no app can guarantee that anyone wakes up, and none of this shifts your circadian phase by itself. It only holds the anchor steady enough for the rest to mean something.
 
 ## Talk to a clinician, genuinely
 

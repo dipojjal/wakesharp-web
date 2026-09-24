@@ -2,6 +2,7 @@
 title: "Why the Snooze Button Feels So Good (and What It Costs)"
 description: "Snoozing is not a character flaw, and the research is kinder to it than the headlines. What those eleven minutes actually cost, and what they do not."
 pubDate: 2026-09-04T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/snooze-button-psychology-cost/hero.jpg
 heroImageAlt: "Flat editorial illustration of a hand pressing a large glowing coral snooze button beside a bed, with a row of five sunrises fading from bright amber to grey in the window behind it."
 category: morning-routines
@@ -76,17 +77,15 @@ Three things, none of which are the ones you have been sold.
 
 The problem this article describes is specific: snoozing is a fast, automatic, zero-effort response to a cue, and its cost is repetition rather than the sleep itself. So the useful intervention is not to abolish snoozing. It is to make the number finite and to make each press cost something you can feel.
 
-In WakeSharp, snoozing is a policy you set when you build the alarm, not a rule imposed on you. **Off** means the button is not there. **Standard** gives you two five-minute snoozes and takes five Sharpness points off each time you use one. **Tighten** keeps the snoozes but shortens the gaps: ten minutes, then five, then two, so the runway visibly runs out. Those three are free. A custom policy is a Plus feature.
+In WakeSharp, the cost is the mission. You choose it when you build the alarm, so the deal is made the night before rather than negotiated at 6:00: arithmetic in Mind Games, a puzzle, a photo of the spot you chose last night, a real object across the room, a short walk. However you quiet the alarm, the morning only counts once the mission is done, so each press buys you minutes, not a finished morning. The finite number is still yours to decide, as in point 2.
 
-The Sharpness penalty is not punishment, it is a price tag. A press that costs nothing is invisible. A press that costs five points shows up in the score, which compares this morning against your own baseline rather than an idealised stranger's.
+The mission is not punishment, it is a price tag. A press that costs nothing is invisible. A press that leaves the whole task still waiting for you is not.
 
 Now the limits, which matter more than the pitch.
 
-The system Stop button on your phone always works, on both platforms, and we are not going to design around pretending otherwise. Strict Mode books four re-rings in advance, at 45 seconds and then 4, 8 and 12 minutes, where supported. No alarm app can guarantee it will wake you. For anything genuinely consequential, keep a second, independent alarm on a separate device.
+Your phone's own controls always work: nothing stops you switching the phone off, and we are not going to design around pretending otherwise. No alarm app can guarantee it will wake you. For anything genuinely consequential, keep a second, independent alarm on a separate device.
 
-And the honest scientific limit: nothing above proves that capping your snoozes improves your cognition. Sundelin's data suggest a bounded snooze is not harming it. A snooze policy converts an automatic response into a finite, visible one, which is a claim about interface design rather than neuroscience. That is a smaller claim than most alarm apps make, and it happens to be true.
-
-Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
+And the honest scientific limit: nothing above proves that capping your snoozes improves your cognition. Sundelin's data suggest a bounded snooze is not harming it. A mission converts an automatic response into a deliberate, visible one, which is a claim about interface design rather than neuroscience. That is a smaller claim than most alarm apps make, and it happens to be true.
 
 ## FAQ
 

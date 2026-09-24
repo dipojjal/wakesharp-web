@@ -39,6 +39,7 @@ export const share = {
   },
   get: {
     heading: `WakeSharp लें`,
-    body: `यह मुफ़्त है, और पहला अलार्म लगाने में क़रीब दस सेकंड लगते हैं।`,
+    /** `{trialDays}` और `{annual}` src/config/site.ts से आते हैं; ट्रायल कभी अपनी क़ीमत के बिना नहीं दिखता। */
+    body: `WakeSharp Unlimited के {trialDays} दिन के मुफ़्त ट्रायल से शुरुआत करें, फिर {annual} प्रति साल। पहला अलार्म लगाने में क़रीब दस सेकंड लगते हैं।`,
   },
 } satisfies typeof en;

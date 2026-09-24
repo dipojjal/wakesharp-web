@@ -2,6 +2,7 @@
 title: "Hot Nights, Sharp Mornings: Sleeping Through Late-Summer Heat"
 description: "Heat blocks the core-temperature drop that starts sleep. Six fixes to run tonight, and an honest way to see what a hot night cost you tomorrow."
 pubDate: 2026-09-01T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-in-heat-late-summer/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedroom on a hot late-summer night, with an open window, a small fan on the sill and curtains lifting in coral and amber against a deep indigo sky."
 category: sleep-science
@@ -75,15 +76,15 @@ If that describes you or someone you check on, the list above is not the plan. T
 
 Start with the part most apps leave out. **WakeSharp does not track your sleep.** No stages, no hypnogram, no sleep score. Overnight temperature and stage estimates are a wearable's job, and the studies above were largely done with them.
 
-What WakeSharp measures is the other end: how sharp you are in the minutes after waking. Once you clear your alarm's mission, a short warm-up game such as Mind Games or Reaction Tap produces a **Sharpness Score**, graded against your own rolling baseline rather than against strangers. That is a proxy for morning cognitive state, and a proxy is the right tool in a heat wave, because what you want to know is whether the heat is costing you anything that matters by daylight.
+What WakeSharp measures is the other end: how sharp you are in the minutes after waking. Once you clear your alarm's mission, an optional warm-up of brain games such as Mind Games or Reaction Tap (three of the five, on a rotation) produces a **Sharpness Score**, graded against your own rolling baseline rather than against strangers. That is a proxy for morning cognitive state, and a proxy is the right tool in a heat wave, because what you want to know is whether the heat is costing you anything that matters by daylight.
 
 There is decent reason to think it will show. When researchers followed university students through a Boston heat wave, those in buildings without air conditioning were measurably slower on reaction-time tests and worse on working memory than students in cooled dorms ([Cedeno Laurent et al., *PLOS Medicine*, 2018](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002605)). Wrecked deep sleep and ambient heat push in the same direction, on the exact functions a morning warm-up measures.
 
 So the practical use is simple: run the warm-up every morning across a hot week and the week after the weather breaks, then compare the shape of the line. A sag that recovers is a better reason to buy a dehumidifier than a vague feeling is. No sag is also useful information.
 
-The honest limits. This cannot separate "I slept badly because of the heat" from "I am being cognitively taxed by the heat right now, at 6:30am, in a 28-degree bedroom." Both are real, both are heat, and a one-minute game cannot tell them apart. A single morning tells you almost nothing; only the run of mornings means anything.
+The honest limits. This cannot separate "I slept badly because of the heat" from "I am being cognitively taxed by the heat right now, at 6:30am, in a 28-degree bedroom." Both are real, both are heat, and a two-minute warm-up cannot tell them apart. A single morning tells you almost nothing; only the run of mornings means anything.
 
-On the alarm itself: **your alarm rings free, forever, and Plus is ad-free.** The free missions are Mind Games, a short arithmetic sprint, and Photo Proof, which sends you to photograph the day's prompt, on a hot morning a decent excuse to stand somewhere with moving air. Plus adds Memory Match, Sequence Recall, Scan an Object, Walk It Off and Surprise Me. The tier check happens when you create an alarm, never when one rings. And no app can promise you will wake up, ours included: the system Stop button always works, and it should. What an app can do is make leaving the bed take more than a swipe, which matters after a night your brain spent [fighting the room instead of consolidating memories](/blog/sleep-inertia-why-you-wake-up-groggy).
+On the alarm itself: missions come in several kinds, from arithmetic in Mind Games to camera, movement and voice tasks. First Light sends you to a window to hold your phone in the light, on a hot morning a decent excuse to stand somewhere with moving air. And no app can promise you will wake up, ours included: your phone's own controls always work, and nothing stops you switching the phone off, as it should be. What an app can do is make leaving the bed take more than a swipe, which matters after a night your brain spent [fighting the room instead of consolidating memories](/blog/sleep-inertia-why-you-wake-up-groggy).
 
 Early September is also when hot nights collide with restarting schedules, so if you are dragging a summer bedtime back to something school-shaped, the two jobs are one week's work: see [resetting a summer sleep schedule in one week](/blog/back-to-school-sleep-schedule-reset).
 

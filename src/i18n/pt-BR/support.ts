@@ -3,10 +3,11 @@ import { support as en } from '../en/support';
 /**
  * /support — a URL de suporte do App Store Connect. Chaves de link usadas abaixo:
  * email, terms-safety, privacy, account-delete, apple-subs, google-subs.
- * `{ios}` e `{android}` são as strings de requisitos de src/config/site.ts.
+ * `{ios}` e `{android}` são as strings de requisitos, e `{annual}`, `{monthly}`
+ * e `{trialDays}` os preços, todos de src/config/site.ts.
  */
 export const support = {
-  title: `Suporte — WakeSharp`,
+  title: `Suporte WakeSharp: alarme que não toca, missões e cobrança`,
   description: `Ajuda com o WakeSharp: por que um alarme pode não tocar, como funcionam as missões e o Sharpness Score, e como gerenciar sua assinatura.`,
   heading: `Suporte`,
   intro: `O WakeSharp é uma equipe pequena, e quem responde ao e-mail é uma pessoa de verdade.`,
@@ -54,33 +55,31 @@ export const support = {
     body: `Em circunstâncias normais, sim — esse é o propósito inteiro do app, e é o mesmo mecanismo que o relógio nativo usa em cada plataforma.`,
     items: [
       `**No iPhone**, o WakeSharp usa o AlarmKit da Apple, que permite tocar através do Modo Silencioso e do Foco **depois que você concede a permissão de alarme**. Recuse ou revogue essa permissão e o WakeSharp não consegue agendar alarme nenhum.`,
-      `**No Android**, o alarme toca no canal de áudio dedicado aos alarmes, que o Não Perturbe não silencia, e mostra um alerta em tela cheia sobre a tela de bloqueio — **quando as permissões de alarme exato, de notificação e de tela de bloqueio estão concedidas**. Não há uma solicitação extra para o canal de alarmes em si, mas uma notificação bloqueada ou uma restrição de bateria ainda podem impedir o alerta.`,
+      `**No Android**, o alarme usa o canal de áudio dedicado aos alarmes, que toca mesmo no modo silencioso, e no Não Perturbe quando ele permite alarmes (o Silêncio total cala todos os sons, inclusive os alarmes), e mostra um alerta em tela cheia sobre a tela de bloqueio — **quando as permissões de alarme exato, de notificação e de tela de bloqueio estão concedidas**. Não há uma solicitação extra para o canal de alarmes em si, mas uma notificação bloqueada ou uma restrição de bateria ainda podem impedir o alerta.`,
     ],
     limit: `O que nenhuma das plataformas consegue é tocar em um celular desligado, sem bateria ou que teve as permissões do app revogadas.`,
   },
 
   missions: {
-    heading: `Missões, soneca e Strict Mode`,
+    heading: `Missões e soneca`,
     items: [
-      `**A missão** é o que garante o crédito total pela manhã. Duas são gratuitas: _Mind Games_, três problemas rápidos de aritmética no nível fácil, padrão ou difícil, e _Photo Proof_, que pede uma única fotografia — o tema do dia, em rodízio, ou um alvo que você cadastrou para aquele alarme. O WakeSharp Plus acrescenta _Memory Match_ (memória), _Sequence Recall_ (sequências), _Scan an Object_ (escanear um objeto), _Walk It Off_ (caminhar) e _Surprise Me_ (surpreenda-me), que escolhe uma por você e a fixa para aquele alarme naquele dia, então você não consegue preparar nada na noite anterior. **A escolha é verificada quando você cria ou edita um alarme, nunca quando um toca** — um alarme já configurado com uma missão do Plus continua executando essa missão.`,
+      `**A missão** é o que garante a manhã, e há mais de uma dúzia: quebra-cabeças de aritmética e memória como _Mind Games_ e _Colour Clash_, uma foto de um lugar que você escolheu na noite anterior (_Photo Proof_), um objeto real do outro lado do quarto (_Scan an Object_, _Fetch_), passos (_Walk It Off_), a luz do dia em uma janela (_First Light_), digitar uma frase (_Type It Out_) ou responder em voz alta (_Serial Sevens_, _Name Five_). O _Surprise Me_ escolhe uma diferente a cada manhã. Um alarme pode pedir várias missões seguidas, na ordem que você escolher.`,
       `**My spots & codes** (meus lugares e códigos) é onde o _Scan an Object_ fica pessoal. Fotografe um lugar até onde você vai caminhar, como a cafeteira ou a porta da frente, ou registre um QR code ou um código de barras que você cola onde a manhã deve mandar você, como o espelho do banheiro ou a lata de café. Um alarme pode então pedir aquele alvo específico. É um recurso _dentro_ da missão de escaneamento, não uma missão própria, e nem a fotografia nem o código são armazenados — só uma impressão digital de cada um.`,
-      `**Toda missão tem uma saída** que termina em Mind Games com crédito total, então uma câmera morta ou um celular sem contador de passos nunca deixa você preso a um alarme que você não consegue silenciar.`,
-      `**A soneca** é uma configuração por alarme, não uma regra fixa. _Desligada_ (Off) remove o botão por completo. _Padrão_ (Standard) permite duas sonecas de cinco minutos, a 5 pontos de Sharpness cada e nunca pior que −10 no dia. _Tighten_ (cada vez mais curta) permite três, de 10, depois 5, depois 2 minutos, aumenta a dificuldade da missão a cada vez e para em −15. As três predefinições são gratuitas; uma política totalmente personalizada faz parte do WakeSharp Plus.`,
-      `**O Strict Mode** (modo rigoroso), em aparelhos compatíveis, pré-agenda quatro alarmes de guarda — 45 segundos depois, e então aos 4, 8 e 12 minutos. São alarmes reais, marcados com antecedência, então tocam com o app aberto ou não, e completar a missão cancela os que ainda não tocaram. São quatro repetições, não um loop sem fim, e o botão de parar do próprio sistema ainda encerra cada uma delas. Ative por alarme.`,
-      `**Desligar sem fazer a missão** é possível — o botão de parar do próprio sistema sempre funciona. O WakeSharp então mostra uma tela de missão pendente na próxima vez que você abre o app, para que sua sequência ainda possa ser recuperada.`,
+      `**Se uma missão não puder rodar** naquela manhã — uma câmera quebrada, um celular sem contador de passos —, o WakeSharp recorre a outra que possa, para você não ficar com um alarme que não consegue concluir.`,
+      `**Usar a soneca ou parar o alarme não conclui a manhã.** Não importa como você silencie o alarme: a manhã só conta quando a missão estiver feita. Os controles do seu próprio celular sempre funcionam: desligar o celular, por exemplo, nunca é bloqueado.`,
     ],
   },
 
   smartAlarms: {
     heading: `Alarmes inteligentes de calendário`,
     body: `Uma regra inteligente toca um número definido de minutos antes da sua primeira reunião, limitado entre um horário mais cedo e um mais tarde que você escolhe. O WakeSharp confere seu calendário de novo durante a noite, então, se a reunião mudar, o alarme muda. Se você recusar o acesso ao calendário, todo o resto continua funcionando — você só define os horários por conta própria. Seus eventos nunca saem do seu aparelho; veja a [Política de Privacidade](privacy).`,
-    limits: `O plano Grátis inclui uma regra inteligente, uma escala de turnos e um perfil de alarmes; o Plus tira os três limites. Uma escala de turnos é para padrões que não são semanais — 4 dias de trabalho por 4 de folga a partir de uma data de referência, cada fase com o próprio horário, e um calendário de prévia para você conferir antes de dormir contando com ela.`,
+    limits: `Uma escala de turnos é para padrões que não são semanais — 4 dias de trabalho por 4 de folga a partir de uma data de referência, cada fase com o próprio horário, e um calendário de prévia para você conferir antes de dormir contando com ela.`,
   },
 
   sharpness: {
     heading: `O Sharpness Score`,
-    body: `Depois de uma missão, você pode fazer um aquecimento opcional. O plano Grátis sorteia um jogo de um par, Mind Games (cálculo rápido) e Reaction Tap (reflexos); o Plus joga três dos cinco a cada manhã, em rodízio, uns dois minutos no total. Nos dois casos, o aquecimento pula o jogo que a missão acabou de fazer você jogar, então resolver aritmética para silenciar o alarme nunca entrega mais aritmética como aquecimento. Sua nota — o Sharpness Score, de quão afiado você acordou — é medida contra a sua própria referência móvel, não contra outras pessoas, então ela se acomoda em torno de 100 conforme o app aprende o seu normal. Uma manhã ruim é uma queda em relação ao seu eu de ontem, nada mais. Não é um teste clínico nem cognitivo.`,
-    physical: `**As missões físicas não alimentam a nota.** Scan an Object, Walk It Off e Photo Proof são registradas por inteiro, mas só são comparadas com elas mesmas. Uma caminhada até o banheiro leva trinta segundos e uma conta de cabeça leva dois, então enfiar uma delas em uma nota construída sobre precisão e velocidade deixaria uma manhã impecável cravada perto do mínimo. Levantar conta — só não como Sharpness.`,
+    body: `Depois de uma missão, você pode fazer um aquecimento opcional: três dos cinco jogos de aquecimento a cada manhã, em rodízio, uns dois minutos no total, pulando o jogo que a missão acabou de fazer você jogar. Sua nota — o Sharpness Score, de quão afiado você acordou — é medida contra a sua própria referência móvel, não contra outras pessoas, então ela se acomoda em torno de 100 conforme o app aprende o seu normal. Uma manhã ruim é uma queda em relação ao seu eu de ontem, nada mais. É uma nota dentro do app, não um teste clínico nem cognitivo.`,
+    physical: `**A nota vem do aquecimento.** A missão é o que tira você da cama; o aquecimento mental opcional que vem depois é o que produz seu Sharpness Score, então uma longa caminhada até a cozinha nunca conta contra você.`,
   },
 
   backup: {
@@ -92,16 +91,16 @@ export const support = {
       `**Sair da conta** mantém tudo no seu celular e simplesmente para de fazer backup.`,
       `**Excluir a conta** — no app, em _Ajustes → Conta → Excluir conta_, ou como descrito em [wakesharp.app/account/delete](account-delete) — remove permanentemente o backup e o login, enquanto os dados no seu celular são mantidos.`,
     ],
-    subscription: `A assinatura é separada de tudo isso: ela fica com a sua conta da App Store ou do Google Play, então Restaurar Compras traz o Plus de volta, tenha você feito login no WakeSharp ou não.`,
+    subscription: `A assinatura é separada de tudo isso: ela fica com a sua conta da App Store ou do Google Play, então Restaurar Compras traz o WakeSharp Unlimited de volta, tenha você feito login no WakeSharp ou não.`,
   },
 
   purchases: {
-    heading: `Compras e WakeSharp Plus`,
+    heading: `Compras e WakeSharp Unlimited`,
     items: [
-      `**O que o Plus acrescenta:** todas as missões de despertar além de Mind Games e Photo Proof, três jogos de aquecimento toda manhã em rodízio, seu histórico completo de Sharpness, alarmes inteligentes de calendário sem limite, e as cenas do Lark (a cotovia mascote), os papéis de parede de alarme e as comemorações. Ele também tira o limite de um só para perfis de alarme e escalas de turno, desbloqueia os dois papéis de parede Plus e as quatro cenas Plus do Lark, e permite escrever uma política de soneca personalizada. **Seu alarme toca de graça, para sempre.** O Plus também é sem anúncios: a versão gratuita mostra um banner, e uma assinatura ou um teste o remove. Todo alarme que você configura, as duas missões gratuitas, o Strict Mode em aparelhos compatíveis, as predefinições de soneca, todos os 13 toques de alarme, sequências e congelamentos e a verificação de confiabilidade não custam nada.`,
-      `**O Plus Lifetime** (vitalício) é uma compra única, não uma assinatura: nunca renova, e não há nada para cancelar.`,
+      `**WakeSharp Unlimited** é o app inteiro: todas as missões de despertar, o rodízio diário de aquecimento, seu histórico completo de Sharpness, os alarmes inteligentes de calendário, as escalas de turno e os perfis, e todas as cenas do Lark (a cotovia mascote) e todos os papéis de parede. Novos assinantes podem começar com **{trialDays} dias de teste grátis** do plano anual, depois {annual} por ano, ou escolher o plano mensal de {monthly} por mês, que não tem teste. O WakeSharp não mostra anúncios.`,
+      `**Lifetime** (vitalício) foi uma compra única, e continua válido para todos que o compraram: nunca renova, e não há nada para cancelar.`,
       `**Para restaurar uma compra:** abra a tela de assinatura e toque em _Restore_ (restaurar). Confira se você está com a mesma conta Apple ou Google usada na compra.`,
-      `**Para cancelar:** [assinaturas da App Store](apple-subs) ou [assinaturas do Google Play](google-subs). Excluir o app não cancela uma assinatura.`,
+      `**Para cancelar:** [assinaturas da App Store](apple-subs) ou [assinaturas do Google Play](google-subs), a qualquer momento, inclusive durante o teste grátis. Excluir o app não cancela uma assinatura.`,
       `**Reembolsos** são tratados pela Apple ou pelo Google, não por nós — mas me escreva se algo deu errado e eu ajudo no que puder.`,
     ],
   },

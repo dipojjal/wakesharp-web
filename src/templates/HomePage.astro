@@ -13,6 +13,7 @@ import StoreGallery from '../components/StoreGallery.astro';
 import Lark from '../components/Lark.astro';
 import JsonLd from '../components/JsonLd.astro';
 import Rich from '../i18n/Rich.astro';
+import { interpolate } from '../i18n/rich';
 import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
 import { alternatesFor, localePath } from '../i18n/routes';
@@ -38,9 +39,9 @@ const english = isDefaultLocale(locale);
 const vars = {
   ios: shell.requirements.ios,
   android: shell.requirements.android,
-  annual: SITE.plus.annual,
-  lifetime: SITE.plus.lifetime,
-  trialDays: SITE.plus.trialDays,
+  annual: SITE.unlimited.annual,
+  monthly: SITE.unlimited.monthly,
+  trialDays: SITE.unlimited.trialDays,
 };
 const links = { terms: localePath(locale, '/terms') };
 ---
@@ -61,8 +62,11 @@ const links = { terms: localePath(locale, '/terms') };
         <div class="mb-6 lg:hidden">
           <Lark pose="asleep" width={150} breathe glow priority />
         </div>
+        {/* The kicker is part of the <h1> on purpose: it carries the query the
+            page targets, while the tagline below it stays the brand line. */}
         <h1 class="text-[clamp(2.5rem,8vw,4.25rem)] leading-[1.05]">
-          {t.hero.heading.pre}<span class="accent">{t.hero.heading.accent}</span><br />{t.hero.heading.post}
+          <span class="mb-3 block text-base font-bold uppercase tracking-wider sm:text-lg">{t.hero.kicker}</span>
+          {t.hero.heading.pre}<span class="accent">{t.hero.heading.accent}</span> <br />{t.hero.heading.post}
         </h1>
         <p class="lede mt-6">{t.hero.lede}</p>
         <div class="mt-8"><StoreButtons /></div>
@@ -146,7 +150,7 @@ const links = { terms: localePath(locale, '/terms') };
           <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
             <div class="flex items-baseline justify-between gap-3">
               <strong>{m.name}</strong>
-              <span class="dim text-xs font-semibold uppercase tracking-wide">{m.tier}</span>
+              <span class="dim text-xs font-semibold uppercase tracking-wide">{m.kind}</span>
             </div>
             <span class="dim mt-1 block text-[0.95rem]">{m.body}</span>
           </li>
@@ -243,41 +247,29 @@ const links = { terms: localePath(locale, '/terms') };
       <p class="lede mt-5">{t.pricing.lede}</p>
     </div>
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-2">
-      <div class="card p-7">
-        <h3 class="text-xl">{t.pricing.free.name}</h3>
-        <p class="mt-1 text-4xl font-extrabold">{t.pricing.free.price}</p>
-        <p class="mt-1 text-sm dim">{t.pricing.free.tagline}</p>
-        <ul class="mt-6 space-y-2.5 text-[0.97rem]">
-          {t.pricing.free.features.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-success)] font-bold">✓</span><span>{f}</span></li>)}
-        </ul>
-      </div>
-
-      <div class="card relative p-7 ring-2 ring-[var(--color-coral)]">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-xl">{t.pricing.plus.name}</h3>
-            <p class="mt-1 text-4xl font-extrabold">
-              {SITE.plus.monthly}<span class="text-base font-semibold dim">{t.pricing.plus.perMonth}</span>
-            </p>
-          </div>
-          <div class="hidden sm:block"><Lark pose="celebrating" width={100} /></div>
+    {/* One plan. The billed amount is the largest figure, and the trial never
+        appears without the price that follows it (claims-matrix.md; App Review
+        3.1.2(c) holds the app's own paywall to the same rule). */}
+    <div class="card relative mt-10 max-w-2xl p-7 ring-2 ring-[var(--color-coral)]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="text-xl">{t.pricing.unlimited.name}</h3>
+          <p class="mt-1 text-4xl font-extrabold">
+            {SITE.unlimited.annual}<span class="text-base font-semibold dim">{t.pricing.unlimited.perYear}</span>
+          </p>
         </div>
-
-        {/* Three ways to pay, one entitlement — not three tiers. Lifetime is a
-            single payment and must never be shown as a renewing plan. */}
-        <ul class="mt-4 space-y-1.5 text-sm dim">
-          <li><Rich text={t.pricing.plus.annual} vars={vars} strongClass="font-semibold" /></li>
-          <li><Rich text={t.pricing.plus.lifetime} vars={vars} strongClass="font-semibold" /></li>
-        </ul>
-
-        <ul class="mt-6 space-y-2.5 text-[0.97rem]">
-          {t.pricing.plus.features.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-coral-ink)] font-bold">✓</span><span>{f}</span></li>)}
-        </ul>
+        <div class="hidden sm:block"><Lark pose="celebrating" width={100} /></div>
       </div>
-    </div>
 
-    <p class="mt-8 max-w-2xl dim">{t.pricing.lapse}</p>
+      <ul class="mt-4 space-y-1.5 text-sm dim">
+        <li><Rich text={t.pricing.unlimited.trial} vars={vars} strongClass="font-semibold" /></li>
+        <li><Rich text={t.pricing.unlimited.monthly} vars={vars} strongClass="font-semibold" /></li>
+      </ul>
+
+      <ul class="mt-6 space-y-2.5 text-[0.97rem]">
+        {t.pricing.unlimited.features.map((f) => <li class="flex gap-2.5"><span aria-hidden="true" class="text-[var(--color-coral-ink)] font-bold">✓</span><span>{f}</span></li>)}
+      </ul>
+    </div>
 
     <p class="mt-6 max-w-2xl text-sm dim">
       <Rich text={t.pricing.billing} links={links} linkClass="underline underline-offset-2" />
@@ -296,7 +288,7 @@ const links = { terms: localePath(locale, '/terms') };
               {f.q}
               <span aria-hidden="true" class="shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
             </summary>
-            <p class="mt-3 leading-relaxed dim">{f.a}</p>
+            <p class="mt-3 leading-relaxed dim">{interpolate(f.a, vars)}</p>
           </details>
         ))
       }

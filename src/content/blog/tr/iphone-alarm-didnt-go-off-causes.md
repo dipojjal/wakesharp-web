@@ -2,6 +2,7 @@
 title: "iPhone Alarmı Çalmadı mı? 7 Gerçek Neden"
 description: "iPhone alarmınız hiç çalmadı. Bunu gerçekten açıklayan yedi neden, her birini bu gece nasıl kontrol edeceğiniz ve hangilerinin Apple'a kaldığı."
 pubDate: 2026-08-31T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
 heroImageAlt: "Şafakta komodinin üstünde yüzü yukarı bakacak şekilde duran sessiz bir iPhone'un düz çizimi; koyu çivit mavisi bir yatak odasında mercan ve kehribar ışığıyla aydınlatılmış."
 category: tips-and-tricks
@@ -113,11 +114,11 @@ Bazen de gerçekten bir hatadır ve bunların hiçbiri sizin suçunuz değildir.
 
 Yukarıdaki her nedenin ortak bir biçimi var. Telefon, koşulların yanlış olduğunu saatler öncesinden biliyordu. Yalnızca bundan söz etmek için hiçbir nedeni yoktu.
 
-WakeSharp'ın güvenilirlik kontrolünün işi budur; ücretsizdir ve Settings &gt; Alarm reliability (Ayarlar &gt; alarm güvenilirliği) yolunda durur. Telefonunuzda bir alarmı durdurabilecek koşulları okur: izinler, alarm ses düzeyi, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları. Söz vermek yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde, rahatlatıcı bir yeşil onay işareti göstermek yerine bunu belirtir. Bir alarm gerçekten çalmazsa, çoğu zaman sonrasında kanıtlanabilir nedeni adıyla söyleyebilir ya da bunu çözemediğini itiraf eder.
+WakeSharp'ın güvenilirlik kontrolünün işi budur; Ayarlar &gt; Alarm güvenilirliği yolunda durur. Telefonunuzda bir alarmı durdurabilecek koşulları okur: izinler, alarm ses düzeyi, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları. Söz vermek yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde, rahatlatıcı bir yeşil onay işareti göstermek yerine bunu belirtir. Bir alarm gerçekten çalmazsa, çoğu zaman sonrasında kanıtlanabilir nedeni adıyla söyleyebilir ya da bunu çözemediğini itiraf eder.
 
 iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verdikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur. Bütün temel o izindir: reddeder ya da geri alırsanız WakeSharp hiçbir alarm zamanlayamaz ve güvenilirlik kontrolünün size ilk söyleyeceği şey tam olarak budur.
 
-Yedi numaralı neden için asıl mesele görevlerdir. Alarm çalar ve tam puan için Mind Games (zihin oyunları: üç aritmetik problemi) ya da Photo Proof (fotoğrafla kanıt: günün dönüşümlü isteğini fotoğraflayın) gerekir; Memory Match (hafıza eşleştirme), Sequence Recall (dizi hatırlama), Scan an Object (bir nesne tara), Walk It Off (yürüyerek uyanma) ve Surprise Me (beni şaşırt) ise Plus'tadır. Durdur düğmesi her zaman çalışır, iki platformda da. Değişen şey şu: bir alarmı kapatmak artık, bunu yaptığınızı fark edecek kadarınızın uyanık olmasını gerektirir. Alarmınız sonsuza dek ücretsiz çalar. Reklam yok.
+Yedi numaralı neden için asıl mesele görevlerdir. Alarm çalar ve sabah sizden bir görev ister. Görevlerin birkaç türü var: Zihin Oyunları gibi aritmetik ve bulmaca görevleri; Fotoğraf Kanıtı gibi kamera görevleri (bir önceki akşam seçtiğiniz noktanın fotoğrafını yeniden çekersiniz); Yürüyerek Uyan gibi hareket görevleri; Yediyle Sayma gibi sesli görevler. Beni Şaşırt ise her sabah farklı bir görev verir. Alarmı nasıl susturursanız susturun, sabah ancak görev tamamlandığında sayılır. Telefonunuzun kendi kontrolleri her zaman çalışır: telefonu kapatmanıza hiçbir şey engel olmaz. Değişen şey şu: görevi tamamlamak, bunu yaptığınızı fark edecek kadarınızın uyanık olmasını gerektirir.
 
 Sınır dürüst olanıdır ve her alarm uygulamasının sahip olduğu sınırla aynıdır: WakeSharp bir tıbbi cihaz değildir, telefonunuzun ayarları, pil kısıtlamaları ya da güç durumu herhangi bir alarmın çalmasını engelleyebilir ve geç kalmayı göze alamayacağınız her şey için ikinci, bağımsız bir alarm kullanmalısınız.
 

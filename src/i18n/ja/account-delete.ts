@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `削除されないもの`,
     items: [
       `**端末の中のデータ。**アラーム、スコア、設定は端末に残ります。アカウントの削除は、アラームの削除ではありません。端末上のデータも消したい場合は、アプリ自体を削除してください。`,
-      `**購入。**WakeSharp PlusはWakeSharpのアカウントではなく、App StoreまたはGoogle Playのアカウントに属しているので、削除後も残ります。`,
+      `**購入。**WakeSharp Unlimitedのサブスクリプションは、Lifetimeの購入と同じく、WakeSharpのアカウントではなくApp StoreまたはGoogle Playのアカウントに属しているので、削除後も残ります。`,
       `**匿名の利用状況分析。**そもそもアカウントとひも付いていません。[プライバシーポリシー](privacy)をご覧ください。`,
     ],
   },

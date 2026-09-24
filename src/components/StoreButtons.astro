@@ -50,7 +50,9 @@ const secondary =
     : 'bg-white text-[var(--color-morning-text)] border border-[color-mix(in_srgb,var(--color-morning-text)_12%,transparent)]';
 
 const locale = resolveLocale(Astro.currentLocale);
-const languageNote = isDefaultLocale(locale) ? null : getCatalog(locale.code).shell.appLanguageNote;
+// Only where the app itself does not ship in the page's language.
+const appSpeaksIt = isDefaultLocale(locale) || (SITE.appLanguages as readonly string[]).includes(locale.code);
+const languageNote = appSpeaksIt ? null : getCatalog(locale.code).shell.appLanguageNote;
 ---
 
 <div class:list={['flex flex-col gap-3', align === 'center' && 'items-center']}>

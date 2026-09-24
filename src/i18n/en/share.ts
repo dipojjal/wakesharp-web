@@ -37,6 +37,7 @@ export const share = {
   },
   get: {
     heading: `Get WakeSharp`,
-    body: `It’s free, and setting your first alarm takes about ten seconds.`,
+    /** `{trialDays}` and `{annual}` come from src/config/site.ts; the trial never appears without its price. */
+    body: `Start with a {trialDays}-day free trial of WakeSharp Unlimited, then {annual} a year. Setting your first alarm takes about ten seconds.`,
   },
 };

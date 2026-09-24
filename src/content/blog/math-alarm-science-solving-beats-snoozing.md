@@ -2,6 +2,7 @@
 title: "Math Problems at 6 AM: The Science of Why Solving Beats Snoozing"
 description: "Why your brain fails arithmetic worse right after waking than after a sleepless night, and what a math alarm clock actually does about it."
 pubDate: 2026-09-03T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/math-alarm-science-solving-beats-snoozing/hero.jpg
 heroImageAlt: "A hand holding up a glowing phone in a dark bedroom at dawn, its screen filled with plus, minus and equals signs."
 category: sleep-science
@@ -60,21 +61,19 @@ For the underlying grogginess itself, we go deeper in [Sleep Inertia: Why You Wa
 
 ## Where WakeSharp fits, and where it does not
 
-WakeSharp's free arithmetic mission is called **Mind Games**. To dismiss the alarm, you solve a few problems. That is the whole idea, and the reasoning is the one above: a task you can fail at cannot be completed by a hand that is still asleep. Pressing a button can. That is the entire mechanism, and it is a mechanism about the interface, not about neurochemistry.
+WakeSharp's arithmetic mission is called **Mind Games**: when the alarm rings, it asks you to solve a few problems. That is the whole idea, and the reasoning is the one above: a task you can fail at cannot be completed by a hand that is still asleep. Pressing a button can. That is the entire mechanism, and it is a mechanism about the interface, not about neurochemistry.
 
 Two things follow, and I would rather state them than let them be inferred.
 
-The honest limit first. No published trial has tested WakeSharp's missions against a plain alarm, and the broader literature has not established that any reactive task shortens sleep inertia. What a solvable puzzle reliably does is stop an unconscious dismissal. What it does not do is make the next twenty minutes trustworthy. Plan the morning as though you are impaired, because for a while you are.
+The honest limit first. No published trial has tested WakeSharp's missions against a plain alarm, and the broader literature has not established that any reactive task shortens sleep inertia. What a solvable puzzle reliably does is require you to be conscious while you solve it. What it does not do is make the next twenty minutes trustworthy. Plan the morning as though you are impaired, because for a while you are.
 
-Second, the design details that matter here. Snoozing is a policy you set, not a rule we impose: Off, Standard (two five-minute snoozes, five Sharpness points off each), or Tighten, which shortens the gaps to ten minutes, then five, then two. Those three are free. Strict Mode books four re-rings in advance, at 45 seconds and then 4, 8 and 12 minutes, where supported. The system Stop button on your phone always works, on both platforms, and we are not going to design around pretending otherwise. Mind Games also runs as one of the warm-up games afterwards, which is where the Sharpness Score comes from: it compares this morning's performance against your own baseline, not against some ideal stranger.
-
-Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions; the Plus missions gate when you create an alarm, never when one rings.
+Second, the design details that matter here. Snoozing and stopping do not finish the morning: however you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off, and we are not going to design around pretending otherwise. Mind Games is also one of the five brain games in the optional warm-up that follows the mission. The warm-up plays three of them on a rotation, skipping whichever game the mission just used, and it is where the Sharpness Score comes from: it compares this morning's performance against your own baseline, not against some ideal stranger.
 
 ## FAQ
 
 ### Do math alarm clocks actually work?
 
-They work at the thing they are designed for, which is preventing a dismissal you will not remember making. There is no controlled evidence that solving arithmetic speeds the dissipation of sleep inertia itself. Treat a math alarm clock as a lock on the off switch, not as a stimulant.
+They work at the thing they are designed for, which is preventing a dismissal you will not remember making. There is no controlled evidence that solving arithmetic speeds the dissipation of sleep inertia itself. Treat a math alarm clock as a test that you are awake, not as a stimulant.
 
 ### Is hitting snooze bad for you?
 

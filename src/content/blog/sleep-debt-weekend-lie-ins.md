@@ -2,6 +2,7 @@
 title: "Sleep Debt Is Real. Weekend Lie-Ins Aren't the Fix"
 description: "Recovery sleep repays some of what you lost. It does not repay your body clock. What a weekend lie-in buys back, and what it charges on Monday."
 pubDate: 2026-09-04T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-debt-weekend-lie-ins/hero.jpg
 heroImageAlt: "Flat editorial illustration of a week drawn as seven rounded bars, five short indigo weekdays and two taller coral and amber weekend ones, under a starry night sky with a sunrise rising behind a small bed."
 category: sleep-science
@@ -76,9 +77,7 @@ Now the limits, which are the part most alarm apps leave out.
 
 **WakeSharp cannot measure your sleep debt.** It has no sleep tracking of any kind, does not know what time you fell asleep, and will never tell you your balance. It holds a wake time you chose. That is the whole feature.
 
-The system Stop button on your phone always works, on both platforms, and we will not design around pretending otherwise. Strict Mode books four re-rings in advance, at 45 seconds and then 4, 8 and 12 minutes, where supported. No alarm app can guarantee it will wake you, and for anything genuinely consequential you should keep a second alarm on a separate device. If the mornings after a short night are the specific problem, the mechanism is in [Sleep Inertia: Why You Wake Up Groggy](/blog/sleep-inertia-why-you-wake-up-groggy).
-
-Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
+Your phone's own controls always work: nothing stops you switching the phone off, and we will not design around pretending otherwise. However you quiet the alarm, the morning only counts once the mission is done. No alarm app can guarantee it will wake you, and for anything genuinely consequential you should keep a second alarm on a separate device. If the mornings after a short night are the specific problem, the mechanism is in [Sleep Inertia: Why You Wake Up Groggy](/blog/sleep-inertia-why-you-wake-up-groggy).
 
 ## FAQ
 

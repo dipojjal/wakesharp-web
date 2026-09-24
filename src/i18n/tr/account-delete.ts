@@ -1,6 +1,6 @@
 import { accountDelete as en } from '../en/account-delete';
 
-/** /account/delete in Turkish. In-app labels stay in English (the app ships in English) with a Turkish gloss. */
+/** /account/delete in Turkish. In-app labels are the app's own Turkish labels (the app ships in Turkish). */
 export const accountDelete = {
   title: `Hesabınızı silin — WakeSharp`,
   description: `İsteğe bağlı WakeSharp hesabınızı ve bulut yedeğini uygulama içinden ya da e-postayla nasıl silersiniz.`,
@@ -9,9 +9,9 @@ export const accountDelete = {
   inApp: {
     heading: `Uygulamada silin`,
     steps: [
-      `WakeSharp’ı açın ve **Settings** (Ayarlar) bölümüne gidin.`,
-      `**Account** (Hesap) öğesine dokunun.`,
-      `**Delete account** (Hesabı sil) öğesine dokunun ve onaylayın.`,
+      `WakeSharp’ı açın ve **Ayarlar** bölümüne gidin.`,
+      `**Hesap** öğesine dokunun.`,
+      `**Hesabı sil** öğesine dokunun ve onaylayın.`,
     ],
     body: `Bütün akış bu kadar. Girişinizi (Apple veya Google ile giriş), bulut yedeğinizi — alarmlar, ayarlar, uyanma geçmişi, puanlar, seri ve kayıtlı fotoğraf ya da tarama referanslarının küçük resimleri — kalıcı olarak siler ve Apple ile giriş için giriş belirtecini Apple nezdinde iptal eder. Bekleme süresi ve kısmi saklama yoktur: hesap kaydı ve ona bağlı her şey birlikte kaldırılır.`,
   },
@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `Silinmeyenler`,
     items: [
       `**Telefonunuzdaki veriler.** Alarmlarınız, puanlarınız ve ayarlarınız cihazınızda kalır — hesabı silmek, alarmlarınızı silmek değildir. Cihazdaki verilerin de gitmesini istiyorsanız uygulamanın kendisini kaldırın.`,
-      `**Satın almalar.** WakeSharp Plus, WakeSharp hesabınıza değil, App Store veya Google Play hesabınıza aittir ve silme işleminden etkilenmez.`,
+      `**Satın almalar.** WakeSharp Sınırsız aboneliği, tıpkı bir Lifetime (ömür boyu) satın alımı gibi, WakeSharp hesabınıza değil, App Store veya Google Play hesabınıza aittir ve silme işleminden etkilenmez.`,
       `**Anonim kullanım analitiği**; zaten en başından beri hesabınızla hiç ilişkilendirilmemişti — bkz. [gizlilik politikası](privacy).`,
     ],
   },

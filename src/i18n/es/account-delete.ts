@@ -9,9 +9,9 @@ export const accountDelete = {
   inApp: {
     heading: `Elimínala en la app`,
     steps: [
-      `Abre WakeSharp y ve a **Ajustes** (Settings).`,
-      `Toca **Cuenta** (Account).`,
-      `Toca **Eliminar cuenta** (Delete account) y confirma.`,
+      `Abre WakeSharp y ve a **Ajustes**.`,
+      `Toca **Cuenta**.`,
+      `Toca **Eliminar cuenta** y confirma.`,
     ],
     body: `Ese es todo el proceso. Elimina permanentemente tu inicio de sesión (Iniciar sesión con Apple o Google), tu copia de seguridad en la nube —alarmas, ajustes, historial de despertares, puntuaciones, racha y cualquier miniatura de referencia de fotos o escaneos registrados— y, en el caso de Iniciar sesión con Apple, revoca el token de inicio de sesión ante Apple. No hay periodo de espera ni retención parcial: el registro de la cuenta y todo lo asociado a él se eliminan juntos.`,
   },
@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `Lo que no se elimina`,
     items: [
       `**Los datos de tu teléfono.** Tus alarmas, puntuaciones y ajustes se quedan en tu dispositivo: eliminar la cuenta no es eliminar tus alarmas. Desinstala la app si también quieres que desaparezcan los datos del dispositivo.`,
-      `**Las compras.** WakeSharp Plus pertenece a tu cuenta de App Store o Google Play, no a tu cuenta de WakeSharp, y sobrevive a la eliminación.`,
+      `**Las compras.** Una suscripción a WakeSharp Ilimitado, al igual que una compra Lifetime (de por vida), pertenece a tu cuenta de App Store o Google Play, no a tu cuenta de WakeSharp, y sobrevive a la eliminación.`,
       `**Las analíticas de uso anónimas**, que para empezar nunca estuvieron vinculadas a tu cuenta; consulta la [política de privacidad](privacy).`,
     ],
   },

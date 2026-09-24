@@ -2,6 +2,7 @@
 title: "The Long-Weekend Effect: Why Tuesday Feels Like Double Monday"
 description: "Three days of drift is a small self-inflicted time zone shift. A recovery plan for today, tonight and tomorrow, before the short week starts."
 pubDate: 2026-09-07T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/long-weekend-sleep-tuesday-monday/hero.jpg
 heroImageAlt: "Flat editorial illustration of four rounded panels: three warm coral and amber days with low sunsets and a reclining figure, then a deep indigo night panel holding a small coral alarm clock, with a curving line that rises across the weekend and drops sharply into the dark panel."
 category: sleep-science
@@ -77,15 +78,15 @@ And then Wednesday, which nobody plans for. Wednesday often feels worse than Tue
 
 The hard part of all this is not the plan. It is 6:32 tomorrow morning, when the plan is abstract and forty more minutes is concrete.
 
-That is a commitment problem, not an information problem, so a commitment device is a reasonable answer. WakeSharp has **wake-up pacts**: you agree a wake time with a friend, and they can see whether you actually completed your mission that morning. Not whether you slept well, not whether you dismissed something at 6:31 and rolled over. Whether you did the thing.
+That is a commitment problem, not an information problem, so a commitment device is a reasonable answer. WakeSharp has **wake-up pacts**: you agree a wake time with a friend, send them a link, and their phone sets the same alarm. Nothing is shared but the time, so the witness part is the old-fashioned kind: whoever finishes the mission first texts the other. Not whether you slept well, not whether you dismissed something at 6:31 and rolled over. Whether you did the thing.
 
 Tomorrow is the right day for one, because tomorrow is the day with the biggest gap between what you intend tonight and what you will want at 6:32. Text someone who is in the same short-week hole. Agree on a time. That is the whole setup.
 
 Now the honest limits, because a commitment device that oversells itself stops working.
 
-A pact is social pressure and nothing more. It works because a specific person will see a specific outcome, and it does nothing at all if you and your friend quietly agree to let each other off, which is the most common way these fail. It is also not a wake-up mechanism. No alarm app can promise you will wake up, this one included: the system Stop button always works on both iOS and Android, and it should. Strict Mode books four re-rings in advance, at 45 seconds and then at 4, 8 and 12 minutes, where supported, and completing the mission cancels the ones still to come. Snoozing is a policy you choose: off, two five-minute snoozes, or a tightening 10, then 5, then 2.
+A pact is social pressure and nothing more. It works because a specific person will see a specific outcome, and it does nothing at all if you and your friend quietly agree to let each other off, which is the most common way these fail. It is also not a wake-up mechanism. No alarm app can promise you will wake up, this one included. Your phone's own controls always work: nothing stops you switching the phone off, and nothing should. However you quiet the alarm, the morning only counts once the mission is done.
 
-WakeSharp does no sleep tracking of any kind, so it cannot tell you how far you have drifted or how much you have paid back. It holds a wake time you chose and makes dismissing it require a conscious act. The light and the schedule are the actual intervention. Your alarm rings free, forever, and Plus is ad-free. Mind Games and Photo Proof are the free missions, and the Plus missions gate when you create an alarm, never when one rings.
+WakeSharp does no sleep tracking of any kind, so it cannot tell you how far you have drifted or how much you have paid back. It holds a wake time you chose and asks for a conscious act, the mission, before the morning counts. The light and the schedule are the actual intervention.
 
 For a Tuesday you cannot miss, set a second alarm on a separate device. That is not a marketing problem; it is just correct.
 

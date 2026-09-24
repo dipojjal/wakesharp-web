@@ -7,7 +7,7 @@ import { shell as en } from '../en/shell';
  * sebagai teks literal.
  */
 export const shell = {
-  siteDescription: `Alarm yang membuat Anda siap rapat. Pagi harus ditebus dengan misi (selesaikan soal, ambil foto, pindai objek, atau berjalan kaki), pemanasan otak menilai seberapa sigap Anda saat bangun, dan alarm pintar membaca kalender Anda supaya Anda bangun sebelum rapat pertama.`,
+  siteDescription: `Alarm untuk orang yang susah bangun: bungkam dengan soal hitung cepat, foto satu tempat, atau berjalan kaki, lalu lihat seberapa sigap Anda saat bangun.`,
   tagline: `Bangun sigap. Bukan sekadar terjaga.`,
   requirements: { ios: `iOS 26 atau lebih baru`, android: `Android 8.0 atau lebih baru` },
   ogImageAlt: `WakeSharp — bangun sigap, bukan sekadar terjaga.`,
@@ -43,6 +43,7 @@ export const shell = {
     terms: `Ketentuan Layanan`,
     support: `Dukungan`,
     deleteAccount: `Hapus akun Anda`,
+    about: `Tentang`,
     contactForm: `Formulir kontak`,
     builtBy: `Dibuat oleh {publisher}, sebuah studio independen kecil.`,
     pleaseNote: `Perhatian.`,
@@ -52,7 +53,13 @@ export const shell = {
     rights: `© {year} {publisher}. Hak cipta dilindungi undang-undang.`,
   },
 
-  appLanguageNote: `Aplikasi WakeSharp sendiri saat ini masih berbahasa Inggris.`,
+  /**
+   * Ditampilkan di dekat tombol toko pada halaman terlokalisasi yang bahasanya
+   * tidak tersedia di aplikasi itu sendiri (StoreButtons membaca
+   * SITE.appLanguages), supaya situs tidak pernah menyiratkan aplikasi berbahasa
+   * Indonesia. Sebutkan bahasa-bahasanya dalam bahasa lokal ini.
+   */
+  appLanguageNote: `Aplikasi WakeSharp tersedia dalam bahasa Inggris, Spanyol, Rusia, Turki, Jerman, Prancis, dan Arab.`,
 
   legalLayout: {
     lastUpdated: `Terakhir diperbarui {date}`,

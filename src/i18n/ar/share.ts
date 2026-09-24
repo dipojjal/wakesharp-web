@@ -38,6 +38,7 @@ export const share = {
   },
   get: {
     heading: `احصل على WakeSharp`,
-    body: `إنه مجاني، وضبط منبهك الأول يستغرق نحو عشر ثوانٍ.`,
+    /** تأتي `{trialDays}` و`{annual}` من src/config/site.ts؛ ولا تُذكر الفترة التجريبية أبدًا دون سعرها. */
+    body: `ابدأ بتجربة مجانية لمدة {trialDays} أيام في WakeSharp غير محدود، ثم {annual} سنويًا. وضبط منبهك الأول يستغرق نحو عشر ثوانٍ.`,
   },
 } satisfies typeof en;

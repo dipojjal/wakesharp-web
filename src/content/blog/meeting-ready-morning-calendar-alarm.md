@@ -2,6 +2,7 @@
 title: "The Meeting-Ready Morning: Work Backward From Your Calendar"
 description: "The 8:57 panic join is a scheduling error, not a character flaw. Set the alarm from your first meeting instead of a round number you picked months ago."
 pubDate: 2026-09-08T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/meeting-ready-morning-calendar-alarm/hero.jpg
 heroImageAlt: "Flat editorial illustration of a phone ringing in the dark, a grid of calendar blocks beside it, and a curved arrow sweeping backward from one glowing coral and amber block to the phone."
 category: productivity
@@ -85,15 +86,15 @@ In studies of self-awakening, the ability to wake near a predetermined time with
 
 The reason almost nobody runs this arithmetic nightly is that it is tedious and the inputs change after you have gone to bed.
 
-That is the whole job of WakeSharp's smart calendar alarms. You write a rule in plain language, something like "ring 90 minutes before my first meeting." The app reads your upcoming events read-only and entirely on your device, re-checks them overnight, and moves the alarm when the meeting moves. Nothing about your calendar is transmitted anywhere, because nothing leaves the phone. If the 9:00 quietly becomes an 8:15 at 11 PM, the alarm has already followed it before you find out. One smart calendar alarm is free; Plus lifts the cap if you want several rules. Your alarm rings free, forever. No ads.
+That is the whole job of WakeSharp's smart calendar alarms. You set a rule, something like "ring 90 minutes before my first meeting." The app reads your upcoming events read-only and entirely on your device, re-checks them overnight, and moves the alarm when the meeting moves. Nothing about your calendar is transmitted anywhere, because the events never leave the phone. If the 9:00 quietly becomes an 8:15 at 11 PM, the alarm has already followed it before you find out.
 
 It is optional, and every other part of the app works if you decline calendar access. Now the limits, which matter more than the feature.
 
 **It can only be as right as your calendar is.** A 7:30 airport run that lives in your head is invisible to it. So is the meeting someone mentioned in a message and never sent an invite for. If your calendar is aspirational, the alarm will be aspirational too.
 
-**It does not know your grogginess budget.** WakeSharp has no sleep tracking of any kind: no sleep staging, no microphone, no opinion about when you actually fell asleep. The number in step 2 is one you supply. The app does the subtraction and the rescheduling, not the self-knowledge.
+**It does not know your grogginess budget.** WakeSharp has no sleep tracking of any kind: no sleep staging, no microphone listening overnight, no opinion about when you actually fell asleep. The number in step 2 is one you supply. The app does the subtraction and the rescheduling, not the self-knowledge.
 
-**It is a scheduling tool, not a promise that you will get up.** No alarm app can guarantee that, ours included, and the system Stop button works on both platforms as it should. What a calendar rule fixes is the narrow failure where your schedule drifts out from under a fixed alarm. What it does not fix is being awake, informed, and horizontal anyway. For that, the alarm costs something to dismiss: a mission stands between you and silence, either arithmetic or photographing the day's prompt, and Strict Mode books four re-rings in advance where supported. Separately, the alarm reliability check flags the night before what could stop the alarm ringing at all: volume, battery restrictions, permissions.
+**It is a scheduling tool, not a promise that you will get up.** No alarm app can guarantee that, ours included, and your phone's own controls always work, as they should: nothing stops you switching the phone off. What a calendar rule fixes is the narrow failure where your schedule drifts out from under a fixed alarm. What it does not fix is being awake, informed, and horizontal anyway. For that, the alarm asks for a mission, such as arithmetic or retaking the photo of a spot you chose the night before, and however you quiet the alarm, the morning only counts once the mission is done. Separately, the alarm reliability check flags the night before what could stop the alarm ringing at all: volume, battery restrictions, permissions.
 
 ## FAQ
 
@@ -111,4 +112,4 @@ Not by itself, and it can backfire twice. Waking earlier usually costs sleep, an
 
 ### Can I set an alarm that follows my calendar automatically?
 
-Yes. In WakeSharp you write a rule such as "ring 90 minutes before my first meeting," and the app reads your calendar read-only on your device, re-checks it overnight, and reschedules the alarm when the meeting moves. One such rule is free. The honest caveat is that it inherits your calendar's accuracy: a commitment nobody put on the calendar cannot move your alarm, and neither can a rule fix an alarm that was never going to ring for other reasons, which is what the separate reliability check is for.
+Yes. In WakeSharp you set a rule such as "ring 90 minutes before my first meeting," and the app reads your calendar read-only on your device, re-checks it overnight, and reschedules the alarm when the meeting moves. The honest caveat is that it inherits your calendar's accuracy: a commitment nobody put on the calendar cannot move your alarm, and neither can a rule fix an alarm that was never going to ring for other reasons, which is what the separate reliability check is for.
