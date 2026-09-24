@@ -7,14 +7,16 @@ import { blog as en } from '../en/blog';
  */
 export const blog = {
   index: {
-    title: `Blog — WakeSharp`,
-    description: `Ciência do sono, rotinas matinais e novidades do produto, do criador do WakeSharp — o alarme que deixa você pronto para a reunião.`,
+    title: `Ciência do sono e dicas para acordar — Blog do WakeSharp`,
+    description: `Guias baseados em pesquisas para acordar na hora e com a cabeça clara: inércia do sono, soneca, alarmes que falham, cafeína, melatonina e manhãs melhores.`,
     heading: `O blog do WakeSharp`,
     intro: `Ciência do sono, rotinas matinais e, de vez em quando, uma novidade do produto — do criador do alarme que confere se você está afiado de verdade.`,
     empty: `O primeiro artigo está a caminho — volte em breve.`,
   },
-  /** Anexado ao título de um post na aba do navegador. */
-  titleSuffix: ` — Blog do WakeSharp`,
+  /** Anexado ao título de um post na aba do navegador, quando o título inteiro ainda cabe em 60 caracteres. */
+  titleSuffix: ` — WakeSharp`,
+  /** A linha abaixo do título de um post quando o fundador o revisou. `{name}` é um link para /about. */
+  reviewedBy: `Revisado por {name}`,
   /** Carrega a própria seta, para que um idioma da direita para a esquerda possa apontá-la para o outro lado. */
   allArticles: `← Todos os artigos`,
   updated: `Atualizado em {date}`,
@@ -24,7 +26,8 @@ export const blog = {
   cta: {
     aria: `Baixar WakeSharp`,
     heading: `Acorde afiado amanhã`,
-    body: `Seu alarme toca de graça, para sempre. Mind Games (contas de aritmética), Photo Proof (prova por foto) e a verificação de confiabilidade estão incluídos. Configurar seu primeiro alarme leva uns dez segundos.`,
+    /** `{trialDays}` e `{annual}` vêm de src/config/site.ts; o teste nunca aparece sem o preço. */
+    body: `Comece com {trialDays} dias de teste grátis do WakeSharp Unlimited, depois {annual} por ano. Configurar seu primeiro alarme leva uns dez segundos.`,
   },
   /** Um rótulo por categoria de src/lib/blog-categories.ts; uma categoria nova precisa de um em cada idioma. */
   categories: {

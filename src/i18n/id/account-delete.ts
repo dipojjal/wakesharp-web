@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `Yang tidak dihapus`,
     items: [
       `**Data di ponsel Anda.** Alarm, skor, dan pengaturan tetap ada di perangkat Anda; menghapus akun bukan berarti menghapus alarm Anda. Hapus aplikasinya sendiri jika Anda juga ingin data di perangkat hilang.`,
-      `**Pembelian.** WakeSharp Plus melekat pada akun App Store atau Google Play Anda, bukan akun WakeSharp Anda, dan tetap ada setelah penghapusan.`,
+      `**Pembelian.** Langganan WakeSharp Unlimited, sama seperti pembelian Lifetime, melekat pada akun App Store atau Google Play Anda, bukan akun WakeSharp Anda, dan tetap ada setelah penghapusan.`,
       `**Analitik penggunaan anonim**, yang memang sejak awal tidak pernah ditautkan ke akun Anda; lihat [kebijakan privasi](privacy).`,
     ],
   },

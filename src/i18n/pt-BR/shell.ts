@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * strings que em inglês vêm de site.ts entram aqui como texto literal.
  */
 export const shell = {
-  siteDescription: `O alarme que deixa você pronto para a reunião. A manhã se conquista com uma missão — resolver, fotografar, escanear ou caminhar —, um aquecimento mental mede o quanto você acordou afiado, e os alarmes inteligentes leem seu calendário para você acordar antes da primeira reunião.`,
+  siteDescription: `Um despertador para quem tem sono pesado: para silenciar, resolva contas rápidas, fotografe um lugar ou caminhe, e veja o quanto você acordou afiado.`,
   tagline: `Acorde afiado. Não só acordado.`,
   requirements: { ios: `iOS 26 ou posterior`, android: `Android 8.0 ou posterior` },
   ogImageAlt: `WakeSharp — acorde afiado, não só acordado.`,
@@ -42,6 +42,7 @@ export const shell = {
     terms: `Termos de Serviço`,
     support: `Suporte`,
     deleteAccount: `Excluir sua conta`,
+    about: `Sobre`,
     contactForm: `Formulário de contato`,
     builtBy: `Feito por {publisher}, um pequeno estúdio independente.`,
     pleaseNote: `Atenção.`,
@@ -50,7 +51,12 @@ export const shell = {
     rights: `© {year} {publisher}. Todos os direitos reservados.`,
   },
 
-  appLanguageNote: `O próprio app WakeSharp está atualmente em inglês.`,
+  /**
+   * Aparece perto dos botões das lojas nas páginas em um idioma que o app não
+   * oferece (StoreButtons lê SITE.appLanguages), como o português, para o site
+   * nunca dar a entender que existe um app em português.
+   */
+  appLanguageNote: `O app WakeSharp está disponível em inglês, espanhol, russo, turco, alemão, francês e árabe.`,
 
   legalLayout: {
     lastUpdated: `Última atualização: {date}`,

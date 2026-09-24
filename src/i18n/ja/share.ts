@@ -39,6 +39,7 @@ export const share = {
   },
   get: {
     heading: `WakeSharpを入手`,
-    body: `無料です。最初のアラームの設定は10秒ほどで終わります。`,
+    /** `{trialDays}` と `{annual}` は src/config/site.ts から。無料トライアルは必ずそのあとの価格とセットで書きます。 */
+    body: `WakeSharp Unlimitedの{trialDays}日間の無料トライアルから始めて、その後は年額{annual}。最初のアラームの設定は10秒ほどで終わります。`,
   },
 } satisfies typeof en;

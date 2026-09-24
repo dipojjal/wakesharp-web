@@ -39,6 +39,7 @@ export const share = {
   },
   get: {
     heading: `WakeSharp laden`,
-    body: `Sie ist kostenlos, und deinen ersten Alarm stellst du in etwa zehn Sekunden.`,
+    /** `{trialDays}` und `{annual}` kommen aus src/config/site.ts; die Testphase steht nie ohne ihren Preis. */
+    body: `Starte mit {trialDays} Tagen kostenlos in WakeSharp Unbegrenzt, danach {annual} pro Jahr. Deinen ersten Alarm stellst du in etwa zehn Sekunden.`,
   },
 } satisfies typeof en;

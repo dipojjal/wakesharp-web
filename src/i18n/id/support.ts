@@ -3,10 +3,11 @@ import { support as en } from '../en/support';
 /**
  * /support — URL dukungan di App Store Connect. Kunci tautan yang dipakai di
  * bawah: email, terms-safety, privacy, account-delete, apple-subs, google-subs.
- * `{ios}` dan `{android}` adalah string persyaratan dari src/config/site.ts.
+ * `{ios}` dan `{android}` adalah string persyaratan, sedangkan `{annual}`,
+ * `{monthly}` dan `{trialDays}` adalah harganya, semuanya dari src/config/site.ts.
  */
 export const support = {
-  title: `Dukungan — WakeSharp`,
+  title: `Dukungan WakeSharp: Alarm Tidak Berbunyi, Misi & Tagihan`,
   description: `Dapatkan bantuan untuk WakeSharp: mengapa alarm mungkin tidak berbunyi, cara kerja misi dan Sharpness Score, serta cara mengelola langganan Anda.`,
   heading: `Dukungan`,
   intro: `WakeSharp adalah tim kecil, dan emailnya dijawab oleh manusia.`,
@@ -54,33 +55,31 @@ export const support = {
     body: `Dalam kondisi normal, ya; itulah inti aplikasi ini, dan mekanismenya sama dengan yang dipakai aplikasi jam bawaan di tiap platform.`,
     items: [
       `**Di iPhone**, WakeSharp memakai AlarmKit dari Apple, yang mendukung bunyi menembus Mode Hening dan Fokus **begitu Anda memberikan izin alarm**. Tolak atau cabut izin itu dan WakeSharp tidak bisa menjadwalkan alarm sama sekali.`,
-      `**Di Android**, alarm diputar di saluran audio khusus alarm, yang tidak dibungkam Jangan Ganggu, dan menampilkan peringatan layar penuh di atas layar kunci, **saat izin alarm tepat waktu, notifikasi, dan layar kunci sudah diberikan**. Tidak ada permintaan izin tambahan untuk saluran alarm itu sendiri, tetapi notifikasi yang diblokir atau pembatasan baterai tetap bisa menghentikan peringatannya.`,
+      `**Di Android**, alarm diputar di saluran audio khusus alarm, yang berbunyi menembus mode senyap, dan menembus Jangan Ganggu jika mode itu mengizinkan alarm (Senyap total membungkam semua suara, termasuk alarm), serta menampilkan peringatan layar penuh di atas layar kunci, **saat izin alarm tepat waktu, notifikasi, dan layar kunci sudah diberikan**. Tidak ada permintaan izin tambahan untuk saluran alarm itu sendiri, tetapi notifikasi yang diblokir atau pembatasan baterai tetap bisa menghentikan peringatannya.`,
     ],
     limit: `Yang tidak bisa dilakukan kedua platform adalah berbunyi di ponsel yang dimatikan, kehabisan baterai, atau izin aplikasinya sudah dicabut.`,
   },
 
   missions: {
-    heading: `Misi, tunda, dan Strict Mode`,
+    heading: `Misi dan tunda`,
     items: [
-      `**Misi** adalah yang memberi Anda nilai penuh untuk pagi itu. Dua di antaranya gratis: _Mind Games_ (soal hitung), tiga soal aritmetika cepat di tingkat mudah, standar, atau sulit, dan _Photo Proof_ (bukti foto), yang meminta satu foto: petunjuk yang bergilir hari itu, atau target yang Anda daftarkan untuk alarm tersebut. WakeSharp Plus menambahkan _Memory Match_, _Sequence Recall_, _Scan an Object_ (pindai objek), _Walk It Off_ (jalan kaki), dan _Surprise Me_ (kejutkan saya), yang memilihkan satu untuk Anda dan menguncinya untuk alarm itu pada hari itu, jadi Anda tidak bisa mengaturnya malam sebelumnya. **Pilihannya dibatasi saat Anda membuat atau mengedit alarm, bukan saat alarm berbunyi**: alarm yang sudah disetel ke misi Plus terus menjalankannya.`,
+      `**Misi** adalah yang menebus pagi Anda, dan jumlahnya lebih dari selusin: teka-teki hitung dan memori seperti _Mind Games_ dan _Colour Clash_, foto tempat yang Anda pilih malam sebelumnya (_Photo Proof_), benda nyata di seberang ruangan (_Scan an Object_, _Fetch_), langkah kaki (_Walk It Off_), cahaya siang di jendela (_First Light_), mengetik satu baris (_Type It Out_), atau menjawab dengan suara lantang (_Serial Sevens_, _Name Five_). _Surprise Me_ (kejutkan saya) memilih misi yang berbeda setiap pagi. Satu alarm bisa meminta beberapa misi berturut-turut, sesuai urutan pilihan Anda.`,
       `**My spots & codes** (tempat & kode saya) adalah bagian yang membuat _Scan an Object_ terasa personal. Foto tempat yang akan Anda datangi, seperti ketel atau pintu depan, atau daftarkan kode QR atau barcode yang Anda tempel di tempat yang seharusnya Anda tuju di pagi hari, seperti cermin kamar mandi atau kaleng kopi. Alarm kemudian bisa meminta target spesifik itu. Ini fitur _di dalam_ misi pindai, bukan misi tersendiri, dan baik foto maupun kodenya tidak disimpan; hanya sidik jari dari masing-masing.`,
-      `**Setiap misi punya jalan keluar** yang berakhir di Mind Games dengan nilai penuh, jadi kamera yang mati atau ponsel tanpa penghitung langkah tidak akan pernah membuat Anda terjebak dengan alarm yang tidak bisa Anda bungkam.`,
-      `**Tunda** adalah pengaturan per alarm, bukan aturan tetap. _Nonaktif_ (Off) menghilangkan tombolnya sama sekali. _Standar_ (Standard) mengizinkan dua kali tunda masing-masing lima menit, dengan biaya 5 Sharpness tiap kali dan paling buruk −10 untuk hari itu. _Tighten_ (makin rapat) mengizinkan tiga kali, 10, lalu 5, lalu 2 menit, menaikkan kesulitan misi setiap kali, dan berhenti di −15. Ketiga preset itu gratis; kebijakan yang sepenuhnya kustom adalah bagian dari WakeSharp Plus.`,
-      `**Strict Mode** (mode ketat), di perangkat yang mendukung, menjadwalkan di muka empat alarm penjaga: 45 detik kemudian, lalu pada menit ke-4, 8, dan 12. Semuanya alarm sungguhan yang dipesan di muka, jadi tetap berbunyi baik aplikasi berjalan maupun tidak, dan menyelesaikan misi membatalkan yang belum sempat berbunyi. Ini empat dering ulang, bukan pengulangan tanpa akhir, dan tombol berhenti milik sistem tetap mengakhiri tiap dering. Aktifkan per alarm.`,
-      `**Mematikan alarm tanpa misi** bisa dilakukan; tombol berhenti milik sistem selalu berfungsi. WakeSharp kemudian menampilkan layar misi terutang saat Anda membuka aplikasi lagi, supaya runtunan Anda masih bisa diperbaiki.`,
+      `**Jika sebuah misi tidak bisa berjalan** pagi itu (kamera rusak, ponsel tanpa penghitung langkah), WakeSharp beralih ke misi yang bisa, jadi Anda tidak terjebak dengan alarm yang tidak bisa Anda selesaikan.`,
+      `**Menunda dan menghentikan alarm tidak menuntaskan pagi Anda.** Bagaimanapun cara Anda membungkam alarm, pagi baru dihitung setelah misinya selesai. Kontrol bawaan ponsel Anda selalu berfungsi: mematikan ponsel, misalnya, tidak pernah dihalangi.`,
     ],
   },
 
   smartAlarms: {
     heading: `Alarm kalender pintar`,
     body: `Aturan pintar berbunyi sekian menit sebelum rapat pertama Anda, dibatasi antara waktu bangun paling awal dan paling akhir yang Anda pilih. WakeSharp memeriksa ulang kalender Anda sepanjang malam, jadi jika rapatnya bergeser, alarmnya ikut bergeser. Jika Anda menolak akses kalender, semua yang lain tetap berfungsi; Anda hanya perlu menyetel waktunya sendiri. Acara Anda tidak pernah keluar dari perangkat; lihat [Kebijakan Privasi](privacy).`,
-    limits: `Gratis mencakup satu aturan pintar, satu rotasi shift, dan satu profil alarm; Plus menghapus ketiga batas itu. Rotasi shift ditujukan untuk pola yang tidak mingguan (4 hari kerja / 4 hari libur dari tanggal jangkar, tiap fase dengan waktunya sendiri) dan kalender pratinjau supaya Anda bisa memeriksanya sebelum mempercayakan tidur Anda padanya.`,
+    limits: `Rotasi shift ditujukan untuk pola yang tidak mingguan (4 hari kerja / 4 hari libur dari tanggal jangkar, tiap fase dengan waktunya sendiri) dan kalender pratinjau supaya Anda bisa memeriksanya sebelum mempercayakan tidur Anda padanya.`,
   },
 
   sharpness: {
     heading: `Sharpness Score (skor kesigapan)`,
-    body: `Setelah misi, Anda bisa menjalankan pemanasan opsional. Gratis mengambil satu permainan dari dua pilihan, Mind Games (sprint hitung) dan Reaction Tap (ketuk reaksi); Plus memainkan tiga dari lima setiap pagi secara bergiliran, sekitar dua menit semuanya. Bagaimanapun, pemanasan melewati permainan apa pun yang baru saja misi minta Anda mainkan, jadi berhitung untuk mematikan alarm tidak pernah disambung dengan lebih banyak hitungan sebagai pemanasan. Skor Anda diukur terhadap acuan bergulir Anda sendiri, bukan terhadap orang lain, jadi skornya menetap di sekitar 100 seiring aplikasi mempelajari kondisi normal Anda. Pagi yang buruk hanyalah penurunan dibanding diri Anda kemarin, tidak lebih. Ini bukan tes klinis maupun tes kognitif.`,
-    physical: `**Misi fisik tidak masuk ke skor.** Scan an Object, Walk It Off, dan Photo Proof dicatat sepenuhnya, tetapi hanya pernah dibandingkan dengan dirinya sendiri. Berjalan ke kamar mandi memakan tiga puluh detik dan menghitung dalam kepala memakan dua detik, jadi memasukkan yang satu ke skor yang dibangun dari akurasi dan kecepatan akan menjatuhkan pagi yang sempurna ke dekat dasar. Bangun tetap dihitung; hanya saja bukan sebagai kesigapan.`,
+    body: `Setelah misi, Anda bisa menjalankan pemanasan opsional: tiga dari lima permainan otak setiap pagi, secara bergiliran, sekitar dua menit semuanya, dengan melewati permainan apa pun yang baru saja misi minta Anda mainkan. Skor Anda diukur terhadap acuan bergulir Anda sendiri, bukan terhadap orang lain, jadi skornya menetap di sekitar 100 seiring aplikasi mempelajari kondisi normal Anda. Pagi yang buruk hanyalah penurunan dibanding diri Anda kemarin, tidak lebih. Ini skor di dalam aplikasi, bukan tes klinis maupun tes kognitif.`,
+    physical: `**Skornya berasal dari pemanasan.** Misilah yang membuat Anda bangun; pemanasan otak opsional sesudahnya yang menghasilkan Sharpness Score Anda, jadi berjalan jauh ke dapur tidak pernah merugikan skor Anda.`,
   },
 
   backup: {
@@ -92,16 +91,16 @@ export const support = {
       `**Keluar** menyimpan semuanya di ponsel Anda dan hanya menghentikan pencadangannya.`,
       `**Menghapus akun** (di aplikasi lewat _Pengaturan → Akun → Hapus akun_, atau seperti dijelaskan di [wakesharp.app/account/delete](account-delete)) menghapus cadangan dan login secara permanen, sementara data di ponsel Anda tetap ada.`,
     ],
-    subscription: `Langganan terpisah dari semua ini: langganan melekat pada akun App Store atau Google Play Anda, jadi Restore Purchases (pulihkan pembelian) mengembalikan Plus, baik Anda pernah masuk ke WakeSharp maupun tidak.`,
+    subscription: `Langganan terpisah dari semua ini: langganan melekat pada akun App Store atau Google Play Anda, jadi Restore Purchases (pulihkan pembelian) mengembalikan WakeSharp Unlimited, baik Anda pernah masuk ke WakeSharp maupun tidak.`,
   },
 
   purchases: {
-    heading: `Pembelian dan WakeSharp Plus`,
+    heading: `Pembelian dan WakeSharp Unlimited`,
     items: [
-      `**Yang ditambahkan Plus:** setiap misi bangun di luar Mind Games dan Photo Proof, tiga permainan pemanasan setiap pagi secara bergiliran, riwayat Sharpness lengkap Anda, alarm kalender pintar tanpa batas jumlah, serta adegan Lark, wallpaper alarm, dan perayaan. Plus juga menghapus batas satu-per-jenis untuk profil alarm dan rotasi shift, membuka dua wallpaper Plus dan empat adegan Lark Plus, serta memungkinkan Anda menulis kebijakan tunda kustom. **Alarm Anda berbunyi gratis, selamanya.** Plus juga bebas iklan: versi gratis menampilkan satu banner iklan, dan langganan atau masa uji coba menghapusnya. Setiap alarm yang Anda setel, kedua misi gratis, Strict Mode di perangkat yang mendukung, preset tunda, semua 13 nada alarm, runtunan dan pembeku, serta pemeriksaan keandalan tidak dikenai biaya apa pun.`,
-      `**Plus Lifetime** adalah pembelian sekali bayar, bukan langganan: tidak pernah diperpanjang, dan tidak ada yang perlu dibatalkan.`,
+      `**WakeSharp Unlimited** adalah seluruh aplikasi: setiap misi bangun, rotasi pemanasan harian, riwayat Sharpness lengkap Anda, alarm kalender pintar, rotasi shift dan profil, serta setiap adegan Lark dan wallpaper. Pelanggan baru bisa memulai dengan **uji coba gratis {trialDays} hari** untuk paket tahunan, lalu {annual} per tahun, atau memilih paket bulanan seharga {monthly} per bulan, yang tidak punya masa uji coba. WakeSharp tidak menampilkan iklan.`,
+      `**Lifetime** (seumur hidup) dulu dijual sebagai pembelian sekali bayar, dan tetap berlaku bagi semua yang sudah membelinya: tidak pernah diperpanjang, dan tidak ada yang perlu dibatalkan.`,
       `**Memulihkan pembelian:** buka halaman langganan dan ketuk _Restore_ (pulihkan). Pastikan Anda masuk dengan akun Apple atau Google yang sama dengan yang Anda pakai saat membeli.`,
-      `**Membatalkan:** [langganan App Store](apple-subs) atau [langganan Google Play](google-subs). Menghapus aplikasi tidak membatalkan langganan.`,
+      `**Membatalkan:** [langganan App Store](apple-subs) atau [langganan Google Play](google-subs), kapan saja, termasuk selama masa uji coba gratis. Menghapus aplikasi tidak membatalkan langganan.`,
       `**Pengembalian dana** ditangani oleh Apple atau Google, bukan oleh kami; tetapi kirimi saya email jika ada yang salah, dan saya akan membantu sebisa saya.`,
     ],
   },

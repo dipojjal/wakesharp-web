@@ -7,14 +7,16 @@ import { blog as en } from '../en/blog';
  */
 export const blog = {
   index: {
-    title: `ブログ｜WakeSharp`,
-    description: `睡眠の科学、朝の習慣、そして製品のお知らせ。会議に間に合う頭で起こすアラーム、WakeSharpの作り手から。`,
+    title: `睡眠の科学と目覚めのコツ — WakeSharpブログ`,
+    description: `時間どおりに、すっきりした頭で起きるための、研究にもとづくガイド。睡眠慣性、スヌーズ、鳴らないアラーム、カフェイン、メラトニン、そしてよりよい朝。`,
     heading: `WakeSharpブログ`,
     intro: `睡眠の科学、朝の習慣、そしてときどき製品のアップデート。本当に冴えているかを確かめるアラームの、作り手から。`,
     empty: `最初の記事を準備しています。しばらくしてからまたお越しください。`,
   },
-  /** ブラウザーのタブで記事タイトルの後ろに付きます。 */
-  titleSuffix: `｜WakeSharpブログ`,
+  /** ブラウザーのタブで記事タイトルの後ろに付きます（タイトル全体が60文字に収まる場合）。 */
+  titleSuffix: ` — WakeSharp`,
+  /** 創業者が確認した記事で、見出しの下に出る一行。`{name}` は /about へのリンクです。 */
+  reviewedBy: `レビュー：{name}`,
   /** 矢印を文字列自体が持つので、右から左に読む言語では向きを変えられます。 */
   allArticles: `← 記事一覧`,
   updated: `{date}に更新`,
@@ -24,7 +26,8 @@ export const blog = {
   cta: {
     aria: `WakeSharpを入手`,
     heading: `明日は冴えた頭で目覚める`,
-    body: `アラームはずっと無料で鳴ります。Mind Games（暗算）、Photo Proof（写真で証明）、信頼性チェックも含まれます。最初のアラームの設定は10秒ほどで終わります。`,
+    /** `{trialDays}` と `{annual}` は src/config/site.ts から。無料トライアルは必ずそのあとの価格とセットで書きます。 */
+    body: `WakeSharp Unlimitedの{trialDays}日間の無料トライアルから始めて、その後は年額{annual}。最初のアラームの設定は10秒ほどで終わります。`,
   },
   /** src/lib/blog-categories.ts のカテゴリごとに1つ。新しいカテゴリはすべての言語で必要です。 */
   categories: {

@@ -39,6 +39,7 @@ export const share = {
   },
   get: {
     heading: `Baixe o WakeSharp`,
-    body: `É de graça, e configurar seu primeiro alarme leva uns dez segundos.`,
+    /** `{trialDays}` e `{annual}` vêm de src/config/site.ts; o teste nunca aparece sem o preço. */
+    body: `Comece com {trialDays} dias de teste grátis do WakeSharp Unlimited, depois {annual} por ano. Configurar seu primeiro alarme leva uns dez segundos.`,
   },
 } satisfies typeof en;

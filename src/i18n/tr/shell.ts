@@ -4,9 +4,11 @@ import { shell as en } from '../en/shell';
  * Turkish shell strings. The three values the English file reads from
  * src/config/site.ts (siteDescription, tagline, footer.safetyNotice) are
  * literal translations here; the placeholders are still supplied by the templates.
+ * siteDescription stays at or under 155 characters and leads with the query the
+ * homepage targets ("ağır uyuyanlar için alarm saati").
  */
 export const shell = {
-  siteDescription: `Sizi toplantıya hazır uyandıran alarm. Sabahı bir görev kazandırır — çözün, fotoğraflayın, tarayın ya da yürüyün — bir zihin ısınması ne kadar zinde uyandığınızı puanlar ve akıllı alarmlar takviminizi okuyarak sizi ilk toplantınızdan önce uyandırır.`,
+  siteDescription: `Ağır uyuyanlar için alarm saati: susturmak için hızlı işlem çözün, bir noktayı fotoğraflayın ya da yürüyün, sonra ne kadar zinde uyandığınızı görün.`,
   tagline: `Uyanın, hem de zinde. Sadece uyanık değil.`,
   requirements: { ios: `iOS 26 veya üzeri`, android: `Android 8.0 veya üzeri` },
   ogImageAlt: `WakeSharp — uyanın, hem de zinde; sadece uyanık değil.`,
@@ -34,7 +36,7 @@ export const shell = {
     legal: `Yasal`,
     contact: `İletişim`,
     features: `Özellikler`,
-    sharpnessScore: `Sharpness Score`,
+    sharpnessScore: `Zindelik puanı`,
     pricing: `Fiyatlar`,
     blog: `Blog`,
     faq: `SSS`,
@@ -42,6 +44,7 @@ export const shell = {
     terms: `Hizmet Koşulları`,
     support: `Destek`,
     deleteAccount: `Hesabınızı silin`,
+    about: `Hakkımızda`,
     contactForm: `İletişim formu`,
     builtBy: `Küçük ve bağımsız bir stüdyo olan {publisher} tarafından geliştirildi.`,
     pleaseNote: `Lütfen dikkat.`,
@@ -50,7 +53,12 @@ export const shell = {
     rights: `© {year} {publisher}. Tüm hakları saklıdır.`,
   },
 
-  appLanguageNote: `WakeSharp uygulamasının kendisi şu anda İngilizcedir.`,
+  /**
+   * Shown near the store buttons only on a localized page whose language the app
+   * does not ship in (StoreButtons reads SITE.appLanguages). The app ships in
+   * Turkish, so Turkish pages never show it, but every catalog carries the key.
+   */
+  appLanguageNote: `WakeSharp uygulaması İngilizce, İspanyolca, Rusça, Türkçe, Almanca, Fransızca ve Arapça olarak kullanılabilir.`,
 
   legalLayout: {
     lastUpdated: `Son güncelleme: {date}`,

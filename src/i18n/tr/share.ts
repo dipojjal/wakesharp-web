@@ -37,6 +37,7 @@ export const share = {
   },
   get: {
     heading: `WakeSharp’ı indirin`,
-    body: `Ücretsizdir ve ilk alarmınızı kurmak yaklaşık on saniye sürer.`,
+    /** `{trialDays}` and `{annual}` come from src/config/site.ts; the trial never appears without its price. */
+    body: `WakeSharp Sınırsız’ı {trialDays} gün ücretsiz deneyerek başlayın; ardından yıllık ücret {annual}. İlk alarmınızı kurmak yaklaşık on saniye sürer.`,
   },
 } satisfies typeof en;

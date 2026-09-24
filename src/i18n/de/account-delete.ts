@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `Was nicht gelöscht wird`,
     items: [
       `**Die Daten auf deinem Telefon.** Deine Alarme, Werte und Einstellungen bleiben auf deinem Gerät — das Konto zu löschen löscht nicht deine Alarme. Entferne die App selbst, wenn auch die Daten auf dem Gerät weg sollen.`,
-      `**Käufe.** WakeSharp Plus gehört zu deinem App-Store- oder Google-Play-Konto, nicht zu deinem WakeSharp-Konto, und übersteht die Löschung.`,
+      `**Käufe.** Ein Abo von WakeSharp Unbegrenzt gehört, genau wie ein gekaufter lebenslanger Zugang, zu deinem App-Store- oder Google-Play-Konto, nicht zu deinem WakeSharp-Konto, und übersteht die Löschung.`,
       `**Anonyme Nutzungsstatistiken**, die ohnehin nie mit deinem Konto verknüpft waren — siehe die [Datenschutzerklärung](privacy).`,
     ],
   },

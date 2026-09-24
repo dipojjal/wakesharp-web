@@ -2,13 +2,16 @@ import { blog as en } from '../en/blog';
 
 export const blog = {
   index: {
-    title: `Blog — WakeSharp`,
-    description: `Ciencia del sueño, rutinas matutinas y novedades del producto, del creador de WakeSharp: la alarma que te deja listo para tu primera reunión.`,
+    title: `Ciencia del sueño y consejos para despertar — Blog de WakeSharp`,
+    description: `Guías respaldadas por estudios para despertar a tiempo y despejado: inercia del sueño, posponer, alarmas que fallan, cafeína, melatonina y mañanas mejores.`,
     heading: `El blog de WakeSharp`,
     intro: `Ciencia del sueño, rutinas matutinas y alguna que otra novedad del producto, del creador de la alarma que comprueba si de verdad estás lúcido.`,
     empty: `El primer artículo está en camino: vuelve dentro de poco.`,
   },
-  titleSuffix: ` — Blog de WakeSharp`,
+  /** Se añade al título de un artículo en la pestaña del navegador, cuando el título completo cabe en 60 caracteres. */
+  titleSuffix: ` — WakeSharp`,
+  /** La línea bajo el titular de un artículo cuando el fundador lo ha revisado. `{name}` es un enlace a /about. */
+  reviewedBy: `Revisado por {name}`,
   allArticles: `← Todos los artículos`,
   updated: `Actualizado el {date}`,
   minRead: `{minutes} min de lectura`,
@@ -17,7 +20,8 @@ export const blog = {
   cta: {
     aria: `Descarga WakeSharp`,
     heading: `Despierta lúcido mañana`,
-    body: `Tu alarma suena gratis, para siempre. Mind Games, Photo Proof y la comprobación de fiabilidad están incluidos. Poner tu primera alarma lleva unos diez segundos.`,
+    /** `{trialDays}` y `{annual}` vienen de src/config/site.ts; la prueba nunca aparece sin su precio. */
+    body: `Empieza con {trialDays} días de prueba gratis de WakeSharp Ilimitado, y después {annual} al año. Poner tu primera alarma lleva unos diez segundos.`,
   },
   categories: {
     'sleep-science': `Ciencia del sueño`,

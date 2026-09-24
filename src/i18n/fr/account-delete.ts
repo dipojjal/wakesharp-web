@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `Ce qui n’est pas supprimé`,
     items: [
       `**Les données sur votre téléphone.** Vos alarmes, scores et réglages restent sur votre appareil — supprimer le compte, ce n’est pas supprimer vos alarmes. Retirez l’application elle-même si vous voulez aussi effacer les données locales.`,
-      `**Les achats.** WakeSharp Plus appartient à votre compte App Store ou Google Play, pas à votre compte WakeSharp, et survit à la suppression.`,
+      `**Les achats.** Un abonnement WakeSharp Illimité, comme un achat Lifetime (à vie), appartient à votre compte App Store ou Google Play, pas à votre compte WakeSharp, et survit à la suppression.`,
       `**Les statistiques d’usage anonymes**, qui n’ont de toute façon jamais été liées à votre compte — voir la [politique de confidentialité](privacy).`,
     ],
   },

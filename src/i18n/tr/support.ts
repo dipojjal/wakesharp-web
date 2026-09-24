@@ -3,18 +3,21 @@ import { support as en } from '../en/support';
 /**
  * /support in Turkish. Link keys are kept as in English:
  * email, terms-safety, privacy, account-delete, apple-subs, google-subs.
- * In-app labels stay in English (the app ships in English) with a Turkish gloss;
- * iOS and Android settings use Apple's and Google's Turkish names.
+ * `{ios}` and `{android}` are the requirement strings, and `{annual}`,
+ * `{monthly}` and `{trialDays}` the prices, all from src/config/site.ts.
+ * The app ships in Turkish, so in-app labels, features, missions and the plan
+ * use the app's own Turkish strings; iOS and Android settings use Apple's and
+ * Google's Turkish names.
  */
 export const support = {
-  title: `Destek — WakeSharp`,
-  description: `WakeSharp için yardım alın: bir alarm neden çalmayabilir, görevler ve Sharpness Score nasıl çalışır, aboneliğinizi nasıl yönetirsiniz.`,
+  title: `WakeSharp Desteği: Çalmayan Alarm, Görevler ve Ödemeler`,
+  description: `WakeSharp için yardım alın: bir alarm neden çalmayabilir, görevler ve Zindelik puanı nasıl çalışır, aboneliğinizi nasıl yönetirsiniz.`,
   heading: `Destek`,
   intro: `WakeSharp küçük bir ekiptir ve e-postaları bir insan yanıtlar.`,
 
   getInTouch: {
     heading: `İletişime geçin`,
-    body: `[{email}](email) adresine yazın. Genellikle **2–3 iş günü** içinde yanıtlarım. Telefon modelinizi, işletim sistemi sürümünüzü ve uygulamanın Settings (Ayarlar) bölümündeki WakeSharp sürümünü eklemeniz neredeyse her zaman daha hızlı bir yanıt almanızı sağlar.`,
+    body: `[{email}](email) adresine yazın. Genellikle **2–3 iş günü** içinde yanıtlarım. Telefon modelinizi, işletim sistemi sürümünüzü ve uygulamanın Ayarlar bölümündeki WakeSharp sürümünü eklemeniz neredeyse her zaman daha hızlı bir yanıt almanızı sağlar.`,
   },
 
   requirements: {
@@ -24,7 +27,7 @@ export const support = {
 
   didntRing: {
     heading: `Alarmım çalmadı`,
-    callout: `**Buradan değil, uygulamadan başlayın.** WakeSharp → Settings → _Alarm reliability_ (Ayarlar → alarm güvenilirliği) bölümünü açın. Telefonunuzun anlık durumunu okur — izinler, alarm ses düzeyi, Rahatsız Etmeyin, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları — ve önce net bir hüküm verir: çalacak, çalmayabilir ya da çalamaz. Çözüm tek dokunuş uzaktaysa o dokunuşu sunar; telefon bize bir şeyi söylemiyorsa yeşil onay işareti göstermek yerine bunu açıkça belirtir. Ayrıca yatmadan önce de çalışır ve bulduğu en kötü şeyi işaretler.`,
+    callout: `**Buradan değil, uygulamadan başlayın.** WakeSharp → Ayarlar → _Alarm güvenilirliği_ bölümünü açın. Telefonunuzun anlık durumunu okur — izinler, alarm ses düzeyi, Rahatsız Etmeyin, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları — ve önce net bir hüküm verir: çalacak, çalmayabilir ya da çalamaz. Çözüm tek dokunuş uzaktaysa o dokunuşu sunar; telefon bize bir şeyi söylemiyorsa yeşil onay işareti göstermek yerine bunu açıkça belirtir. Ayrıca yatmadan önce de çalışır ve bulduğu en kötü şeyi işaretler.`,
     report: `Bir alarm zaten kaçırıldıysa WakeSharp o sabah bir rapor gösterir; kanıtlayabildiği yerde nedeni adlandırır — izin geri alınmış, alarm ses düzeyi sıfırda, Tamamen sessiz modu, telefon kapalıydı — kanıtlayamadığı yerde ise “Nedenini bilemedik” der. Aşağıdaki kontrol listeleri, bilemediği durumlar içindir.`,
     iphone: {
       heading: `iPhone’da`,
@@ -55,33 +58,31 @@ export const support = {
     body: `Normal koşullarda evet — uygulamanın bütün amacı bu ve her platformda yerleşik saat uygulamasının kullandığı mekanizmanın aynısıdır.`,
     items: [
       `**iPhone’da** WakeSharp, **alarm izni verdikten sonra** Sessiz mod ve Odak açıkken çalmayı destekleyen Apple’ın AlarmKit’ini kullanır. İzni reddeder ya da geri alırsanız WakeSharp hiçbir alarm zamanlayamaz.`,
-      `**Android’de** alarm, Rahatsız Etmeyin’in susturmadığı özel alarm ses kanalında çalar ve kilit ekranının üzerinde tam ekran bir uyarı gösterir — **tam zamanlı alarm, bildirim ve kilit ekranı izinleri yerindeyse**. Alarm ses kanalının kendisi için ek bir izin istemi yoktur; ama engellenmiş bir bildirim ya da bir pil kısıtlaması uyarıyı yine de durdurabilir.`,
+      `**Android’de** alarm özel alarm ses kanalında çalar; bu kanal sessiz modda da, Rahatsız Etmeyin alarmlara izin veriyorsa o açıkken de çalar (Tamamen sessiz modu, alarmlar dahil her sesi kapatır). Ayrıca kilit ekranının üzerinde tam ekran bir uyarı gösterir — **tam zamanlı alarm, bildirim ve kilit ekranı izinleri yerindeyse**. Alarm ses kanalının kendisi için ek bir izin istemi yoktur; ama engellenmiş bir bildirim ya da bir pil kısıtlaması uyarıyı yine de durdurabilir.`,
     ],
     limit: `İki platformun da yapamadığı şey, kapalı, pili bitmiş ya da uygulamanın izinleri geri alınmış bir telefonda çalmaktır.`,
   },
 
   missions: {
-    heading: `Görevler, erteleme ve Strict Mode`,
+    heading: `Görevler ve erteleme`,
     items: [
-      `**Görev**, sabah için size tam puanı kazandıran şeydir. İkisi ücretsizdir: kolay, standart veya zor düzeyde üç hızlı aritmetik problemi olan _Mind Games_ (zihin oyunları) ve tek bir fotoğraf isteyen _Photo Proof_ (fotoğrafla kanıt) — günün dönüşümlü isteği ya da o alarm için kaydettiğiniz bir hedef. WakeSharp Plus; _Memory Match_ (hafıza eşleştirme), _Sequence Recall_ (dizi hatırlama), _Scan an Object_ (bir nesne tara), _Walk It Off_ (yürüyerek uyanma) ve sizin yerinize birini seçip o gün o alarm için sabitleyen, böylece bir gece önceden sahneleyemediğiniz _Surprise Me_ (beni şaşırt) görevlerini ekler. **Seçim, bir alarm oluştururken ya da düzenlerken kilitlenir, alarm çaldığında asla** — zaten bir Plus görevine ayarlanmış bir alarm onu çalıştırmaya devam eder.`,
-      `**My spots & codes** (yerlerim ve kodlarım), _Scan an Object_ görevinin kişiselleştiği yerdir. Yürüyerek gideceğiniz bir yeri fotoğraflayın — çaydanlık ya da ön kapı gibi — ya da sabahın sizi göndermesi gereken yere, örneğin banyo aynasına veya kahve kutusuna yapıştırdığınız bir QR ya da barkodu kaydedin. Ardından bir alarm o belirli hedefi isteyebilir. Kendi başına bir görev değil, tarama görevinin _içindeki_ bir özelliktir; ne fotoğraf ne de kod saklanır — yalnızca her birinin bir parmak izi.`,
-      `**Her görevin bir çıkış yolu vardır** ve bu yol Mind Games’te tam puanla biter; böylece bitmiş bir kamera ya da adım sayarı olmayan bir telefon, sizi susturamadığınız bir alarmla asla baş başa bırakamaz.`,
-      `**Erteleme**, sabit bir kural değil, alarm başına bir ayardır. _Off_ (kapalı) düğmeyi tamamen kaldırır. _Standard_ (standart) beşer dakikalık iki ertelemeye izin verir; her biri 5 Sharpness puanına mal olur ve gün için −10’dan kötüsü olmaz. _Tighten_ (sıkılaştır) üç ertelemeye izin verir — 10, sonra 5, sonra 2 dakika — her seferinde görevin zorluğunu artırır ve −15’te durur. Üç ön ayar da ücretsizdir; tamamen özel bir politika WakeSharp Plus’ın parçasıdır.`,
-      `**Strict Mode** (katı mod), desteklenen cihazlarda dört koruma alarmını önceden zamanlar — 45 saniye sonra, ardından 4, 8 ve 12. dakikalarda. Bunlar önceden ayırtılmış gerçek alarmlardır; yani uygulama çalışıyor olsun ya da olmasın çalarlar ve görevi tamamlamak henüz çalmamış olanları iptal eder. Sonsuz bir döngü değil, dört yeniden çalmadır; sistemin kendi durdurma düğmesi her birini yine sonlandırır. Alarm başına açılır.`,
-      `**Görev yapmadan kapatmak** mümkündür — sistemin kendi durdurma düğmesi her zaman çalışır. WakeSharp bir sonraki açışınızda borçlu olduğunuz görevi hatırlatan bir ekran gösterir; böylece seriniz yine de onarılabilir.`,
+      `**Görev**, size sabahı kazandıran şeydir ve bir düzineden fazla görev var: _Zihin Oyunları_ ve _Renk Çatışması_ gibi aritmetik ve hafıza bulmacaları, bir önceki akşam seçtiğiniz noktanın fotoğrafı (_Fotoğraf Kanıtı_), odanın öbür ucundaki gerçek bir nesne (_Bir Nesne Tara_, _Getir_), adımlar (_Yürüyerek Uyan_), pencere önünde gün ışığı (_İlk Işık_), bir cümle yazmak (_Yazarak Uyan_) ya da sesli yanıt vermek (_Yediyle Sayma_, _Beş Tane Say_). _Beni Şaşırt_ her sabah farklı bir görev seçer. Bir alarm, sizin belirlediğiniz sırayla art arda birkaç görev isteyebilir.`,
+      `**Noktalarım ve kodlarım**, _Bir Nesne Tara_ görevinin kişiselleştiği yerdir. Yürüyerek gideceğiniz bir yeri fotoğraflayın — çaydanlık ya da ön kapı gibi — ya da sabahın sizi göndermesi gereken yere, örneğin banyo aynasına veya kahve kutusuna yapıştırdığınız bir QR ya da barkodu kaydedin. Ardından bir alarm o belirli hedefi isteyebilir. Kendi başına bir görev değil, tarama görevinin _içindeki_ bir özelliktir; ne fotoğraf ne de kod saklanır — yalnızca her birinin bir parmak izi.`,
+      `**Bir görev o sabah çalışamazsa** — bitmiş bir kamera, adım sayarı olmayan bir telefon — WakeSharp çalışabilecek bir göreve geçer; böylece bitiremeyeceğiniz bir alarmla baş başa kalmazsınız.`,
+      `**Ertelemek ve durdurmak sabahı bitirmez.** Alarmı nasıl susturursanız susturun, sabah ancak görev tamamlandığında sayılır. Telefonunuzun kendi denetimleri her zaman çalışır: örneğin telefonu kapatmak asla engellenmez.`,
     ],
   },
 
   smartAlarms: {
     heading: `Akıllı takvim alarmları`,
     body: `Bir akıllı kural, ilk toplantınızdan belirlediğiniz sayıda dakika önce çalar; sizin seçtiğiniz en erken ve en geç uyanma saatleri arasında sınırlanır. WakeSharp takviminizi gece boyunca yeniden kontrol eder; toplantı kayarsa alarm da kayar. Takvim erişimini reddederseniz diğer her şey yine çalışır — saatleri kendiniz ayarlarsınız, o kadar. Etkinlikleriniz cihazınızdan asla çıkmaz; bkz. [Gizlilik Politikası](privacy).`,
-    limits: `Ücretsiz sürüm bir akıllı kural, bir vardiya rotasyonu ve bir alarm profili içerir; Plus üç sınırı da kaldırır. Vardiya rotasyonu, haftalık olmayan düzenler içindir — bir başlangıç tarihinden itibaren 4 gün çalışma / 4 gün izin, her aşamanın kendi saati ve gece yatmadan önce kontrol edebilmeniz için bir önizleme takvimi.`,
+    limits: `Vardiya rotasyonu, haftalık olmayan düzenler içindir — bir başlangıç tarihinden itibaren 4 gün çalışma / 4 gün izin, her aşamanın kendi saati ve gece yatmadan önce kontrol edebilmeniz için bir önizleme takvimi.`,
   },
 
   sharpness: {
-    heading: `Sharpness Score (zindelik puanı)`,
-    body: `Bir görevden sonra isteğe bağlı bir ısınma çalıştırabilirsiniz. Ücretsiz sürüm, Mind Games ve Reaction Tap oyunlarından oluşan iki oyunluk bir havuzdan bir oyun çeker; Plus her sabah beş oyundan üçünü dönüşümlü olarak oynatır, toplamda yaklaşık iki dakika. Her iki durumda da ısınma, görevin az önce size oynattığı oyunu atlar; yani alarmı susturmak için aritmetik çözmek, size ısınma olarak asla daha fazla aritmetik vermez. Puanınız başkalarına göre değil, kendi hareketli taban değerinize göre ölçülür; bu yüzden uygulama sizin normalinizi öğrendikçe 100 civarında oturur. Kötü bir sabah, dünkü hâlinize göre bir düşüştür, o kadar. Bu klinik ya da bilişsel bir test değildir.`,
-    physical: `**Fiziksel görevler puanı beslemez.** Scan an Object, Walk It Off ve Photo Proof eksiksiz kaydedilir; ama yalnızca kendileriyle karşılaştırılırlar. Banyoya yürümek otuz saniye, zihinden bir toplama iki saniye sürer; birini doğruluk ve hızdan kurulu bir puana katmak, kusursuz bir sabahı tabana yakın bir yere çivilerdi. Kalkmak sayılır — sadece zindelik olarak değil.`,
+    heading: `Zindelik puanı`,
+    body: `Bir görevden sonra isteğe bağlı bir ısınma çalıştırabilirsiniz: her sabah beş zihin oyunundan üçü, dönüşümlü olarak, toplamda yaklaşık iki dakika; görevin az önce size oynattığı oyun atlanır. Puanınız başkalarına göre değil, kendi hareketli taban değerinize göre ölçülür; bu yüzden uygulama sizin normalinizi öğrendikçe 100 civarında oturur. Kötü bir sabah, dünkü hâlinize göre bir düşüştür, o kadar. Bu uygulama içi bir puandır; klinik ya da bilişsel bir test değildir.`,
+    physical: `**Puan ısınmadan gelir.** Sizi yataktan kaldıran görevdir; Zindelik puanınızı ise ardından gelen isteğe bağlı zihin ısınması üretir. Böylece mutfağa uzun bir yürüyüş asla aleyhinize sayılmaz.`,
   },
 
   backup: {
@@ -91,18 +92,18 @@ export const support = {
       `**Varsayılan olarak kapalıdır** ve her özellik oturum açmadan çalışır. Yedekleme, verileriniz değiştikten sonra sessizce çalışır ve bir alarm çalmak için asla ağı beklemez.`,
       `**Yeni bir telefona geçmek için** WakeSharp’ı yükleyin, aynı Apple veya Google hesabıyla giriş yapın ve geri yükleyin. Yeni cihazda zaten bulunan daha yeni değişiklikler korunur.`,
       `**Oturumu kapatmak** her şeyi telefonunuzda tutar ve yalnızca yedeklemeyi durdurur.`,
-      `**Hesabı silmek** — uygulamada _Settings → Account → Delete account_ (Ayarlar → Hesap → Hesabı sil) yolundan ya da [wakesharp.app/account/delete](account-delete) adresinde anlatıldığı gibi — yedeği ve girişi kalıcı olarak kaldırır; telefonunuzdaki veriler ise korunur.`,
+      `**Hesabı silmek** — uygulamada _Ayarlar → Hesap → Hesabı sil_ yolundan ya da [wakesharp.app/account/delete](account-delete) adresinde anlatıldığı gibi — yedeği ve girişi kalıcı olarak kaldırır; telefonunuzdaki veriler ise korunur.`,
     ],
-    subscription: `Abonelik bunların hepsinden ayrıdır: App Store veya Google Play hesabınıza bağlıdır; bu yüzden Restore Purchases (Satın Alınanları Geri Yükle), WakeSharp’a hiç giriş yapmasanız bile Plus’ı geri getirir.`,
+    subscription: `Abonelik bunların hepsinden ayrıdır: App Store veya Google Play hesabınıza bağlıdır; bu yüzden “Satın alımları geri yükle”, WakeSharp’a hiç giriş yapmasanız bile WakeSharp Sınırsız’ı geri getirir.`,
   },
 
   purchases: {
-    heading: `Satın almalar ve WakeSharp Plus`,
+    heading: `Satın almalar ve WakeSharp Sınırsız`,
     items: [
-      `**Plus’ın eklediği:** Mind Games ve Photo Proof dışındaki tüm uyanma görevleri, her sabah dönüşümlü üç ısınma oyunu, tüm Sharpness geçmişiniz, sınırsız akıllı takvim alarmı ve Lark (maskot kuşumuz) sahneleri, alarm duvar kâğıtları ve kutlamalar. Ayrıca alarm profilleri ve vardiya rotasyonlarındaki birer tane sınırını kaldırır, iki Plus duvar kâğıdını ve dört Plus Lark sahnesini açar ve özel bir erteleme politikası yazmanıza izin verir. **Alarmınız sonsuza dek ücretsiz çalar.** Plus ayrıca reklamsızdır: ücretsiz sürümde bir banner reklam görünür, abonelik veya deneme süresi onu kaldırır. Kurduğunuz her alarm, iki ücretsiz görev, desteklenen cihazlarda Strict Mode, erteleme ön ayarları, 13 alarm sesinin tamamı, seriler ve dondurmalar ve güvenilirlik kontrolü hiçbir ücrete tabi değildir.`,
-      `**Plus Lifetime** (ömür boyu) bir abonelik değil, tek seferlik bir satın almadır: hiç yenilenmez ve iptal edilecek bir şey yoktur.`,
-      `**Bir satın almayı geri yüklemek:** Plus satın alma ekranını açın ve _Restore_ (Geri Yükle) düğmesine dokunun. Satın aldığınız Apple veya Google hesabıyla giriş yapmış olduğunuzdan emin olun.`,
-      `**İptal etmek:** [App Store abonelikleri](apple-subs) veya [Google Play abonelikleri](google-subs). Uygulamayı silmek aboneliği iptal etmez.`,
+      `**WakeSharp Sınırsız** uygulamanın tamamıdır: tüm uyanma görevleri, günlük ısınma rotasyonu, Zindelik geçmişinizin tamamı, akıllı takvim alarmları, vardiya rotasyonları ve profiller, tüm Lark sahneleri ve duvar kâğıtları. Yeni aboneler yıllık planı **{trialDays} gün ücretsiz deneyerek** başlayabilir, ardından yılda {annual} öder; ya da deneme süresi olmayan aylık planı ayda {monthly} karşılığında seçebilir. WakeSharp reklam göstermez.`,
+      `**Lifetime** (ömür boyu) tek seferlik bir satın almaydı ve satın alan herkes için geçerliliğini korur: hiç yenilenmez ve iptal edilecek bir şey yoktur.`,
+      `**Bir satın almayı geri yüklemek:** Abonelik ekranını açın ve _Geri yükle_ düğmesine dokunun. Satın aldığınız Apple veya Google hesabıyla giriş yapmış olduğunuzdan emin olun.`,
+      `**İptal etmek:** [App Store abonelikleri](apple-subs) veya [Google Play abonelikleri](google-subs) üzerinden, istediğiniz zaman; ücretsiz deneme süresi içinde de. Uygulamayı silmek aboneliği iptal etmez.`,
       `**İade işlemleri** biz değil, Apple veya Google tarafından yürütülür — ama bir şeyler ters gittiyse bana yazın, elimden geldiğince yardımcı olurum.`,
     ],
   },

@@ -7,13 +7,16 @@ import { blog as en } from '../en/blog';
  */
 export const blog = {
   index: {
-    title: `Blog — WakeSharp`,
-    description: `Sains tidur, rutinitas pagi, dan kabar produk dari pembuat WakeSharp, alarm yang membuat Anda siap rapat.`,
+    title: `Sains Tidur & Tips Bangun Pagi — Blog WakeSharp`,
+    description: `Panduan berbasis riset untuk bangun tepat waktu dengan kepala jernih: inersia tidur, menunda alarm, alarm gagal, kafein, melatonin, dan pagi lebih baik.`,
     heading: `Blog WakeSharp`,
     intro: `Sains tidur, rutinitas pagi, dan sesekali pembaruan produk, dari pembuat alarm yang memastikan Anda benar-benar sigap.`,
     empty: `Artikel pertama sedang dalam perjalanan; cek lagi sebentar lagi.`,
   },
-  titleSuffix: ` — Blog WakeSharp`,
+  /** Ditambahkan ke judul artikel di tab browser, jika seluruh judulnya masih muat dalam 60 karakter. */
+  titleSuffix: ` — WakeSharp`,
+  /** Baris di bawah judul artikel jika pendiri sudah meninjaunya. `{name}` adalah tautan ke /about. */
+  reviewedBy: `Ditinjau oleh {name}`,
   allArticles: `← Semua artikel`,
   updated: `Diperbarui {date}`,
   minRead: `{minutes} menit baca`,
@@ -22,7 +25,8 @@ export const blog = {
   cta: {
     aria: `Unduh WakeSharp`,
     heading: `Bangun sigap besok pagi`,
-    body: `Alarm Anda berbunyi gratis, selamanya. Mind Games, Photo Proof, dan pemeriksaan keandalan sudah termasuk. Menyetel alarm pertama Anda hanya butuh sekitar sepuluh detik.`,
+    /** `{trialDays}` dan `{annual}` berasal dari src/config/site.ts; uji coba tidak pernah tampil tanpa harganya. */
+    body: `Mulai dengan uji coba gratis {trialDays} hari untuk WakeSharp Unlimited, lalu {annual} per tahun. Menyetel alarm pertama Anda hanya butuh sekitar sepuluh detik.`,
   },
   /** Satu label per kategori di src/lib/blog-categories.ts; kategori baru butuh label di setiap lokal. */
   categories: {

@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * qui, en anglais, viennent de site.ts sont écrites ici en toutes lettres.
  */
 export const shell = {
-  siteDescription: `L’alarme qui vous rend opérationnel pour votre réunion. Une mission mérite la matinée : la résoudre, la photographier, scanner un objet ou faire les pas. Un échauffement mental mesure à quel point vous vous êtes réveillé affûté, et les alarmes intelligentes lisent votre agenda pour vous réveiller avant votre première réunion.`,
+  siteDescription: `Un réveil pour gros dormeurs : faites-le taire en résolvant un calcul, en photographiant un endroit ou en marchant, puis obtenez votre score de Vivacité.`,
   tagline: `Réveillez-vous affûté. Pas seulement réveillé.`,
   requirements: { ios: `iOS 26 ou version ultérieure`, android: `Android 8.0 ou version ultérieure` },
   ogImageAlt: `WakeSharp — réveillez-vous affûté, pas seulement réveillé.`,
@@ -34,7 +34,7 @@ export const shell = {
     legal: `Mentions légales`,
     contact: `Contact`,
     features: `Fonctions`,
-    sharpnessScore: `Sharpness Score`,
+    sharpnessScore: `Score de Vivacité`,
     pricing: `Tarifs`,
     blog: `Blog`,
     faq: `Questions fréquentes`,
@@ -42,6 +42,7 @@ export const shell = {
     terms: `Conditions d’utilisation`,
     support: `Assistance`,
     deleteAccount: `Supprimer votre compte`,
+    about: `À propos`,
     contactForm: `Formulaire de contact`,
     builtBy: `Conçu par {publisher}, un petit studio indépendant.`,
     pleaseNote: `À noter.`,
@@ -50,7 +51,12 @@ export const shell = {
     rights: `© {year} {publisher}. Tous droits réservés.`,
   },
 
-  appLanguageNote: `L’application WakeSharp elle-même est actuellement en anglais.`,
+  /**
+   * Affiché près des boutons des boutiques uniquement sur les pages dont
+   * l’application ne parle pas la langue (StoreButtons lit SITE.appLanguages) ;
+   * invisible en français, mais chaque catalogue porte la clé.
+   */
+  appLanguageNote: `L’application WakeSharp est disponible en anglais, espagnol, russe, turc, allemand, français et arabe.`,
 
   legalLayout: {
     lastUpdated: `Dernière mise à jour : {date}`,

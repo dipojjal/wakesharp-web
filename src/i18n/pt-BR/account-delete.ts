@@ -19,7 +19,7 @@ export const accountDelete = {
     heading: `O que não é excluído`,
     items: [
       `**Os dados no seu celular.** Seus alarmes, notas e ajustes continuam no aparelho — excluir a conta não é excluir seus alarmes. Remova o próprio app se quiser que os dados do aparelho também sumam.`,
-      `**As compras.** O WakeSharp Plus pertence à sua conta da App Store ou do Google Play, não à sua conta do WakeSharp, e sobrevive à exclusão.`,
+      `**As compras.** Uma assinatura do WakeSharp Unlimited, assim como uma compra Lifetime (vitalícia), pertence à sua conta da App Store ou do Google Play, não à sua conta do WakeSharp, e sobrevive à exclusão.`,
       `**As estatísticas de uso anônimas**, que nunca estiveram ligadas à sua conta, para começo de conversa — veja a [política de privacidade](privacy).`,
     ],
   },

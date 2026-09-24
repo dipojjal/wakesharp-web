@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * Englischen aus site.ts kommen, stehen hier als übersetzter Text.
  */
 export const shell = {
-  siteDescription: `Der Wecker, der dich meetingfit macht. Eine Mission verdient dir den Morgen — rechnen, fotografieren, scannen oder laufen —, ein Denk-Warm-up bewertet, wie hellwach du aufgewacht bist, und smarte Alarme lesen deinen Kalender, damit du vor deinem ersten Meeting wach bist.`,
+  siteDescription: `Ein Wecker für Tiefschläfer: Bring ihn mit Kopfrechnen, einem Foto oder ein paar Schritten zum Schweigen und sieh, wie hellwach du aufgewacht bist.`,
   tagline: `Hellwach aufwachen. Nicht nur wach.`,
   requirements: { ios: `iOS 26 oder neuer`, android: `Android 8.0 oder neuer` },
   ogImageAlt: `WakeSharp — hellwach aufwachen, nicht nur wach.`,
@@ -34,7 +34,7 @@ export const shell = {
     legal: `Rechtliches`,
     contact: `Kontakt`,
     features: `Funktionen`,
-    sharpnessScore: `Sharpness Score`,
+    sharpnessScore: `Wachheitswert`,
     pricing: `Preise`,
     blog: `Blog`,
     faq: `Häufige Fragen`,
@@ -42,6 +42,7 @@ export const shell = {
     terms: `Nutzungsbedingungen`,
     support: `Support`,
     deleteAccount: `Konto löschen`,
+    about: `Über uns`,
     contactForm: `Kontaktformular`,
     builtBy: `Gebaut von {publisher}, einem kleinen unabhängigen Studio.`,
     pleaseNote: `Bitte beachte.`,
@@ -52,11 +53,12 @@ export const shell = {
   },
 
   /**
-   * Steht auf jeder lokalisierten Seite neben den Store-Buttons (nie auf der
-   * englischen). Die Apps gibt es nur auf Englisch; die Website darf nichts
-   * anderes suggerieren.
+   * Steht neben den Store-Buttons auf einer lokalisierten Seite in einer
+   * Sprache, in der es die App selbst nicht gibt (StoreButtons liest
+   * SITE.appLanguages), damit die Website nie eine App etwa auf Japanisch
+   * suggeriert. Die Sprachen werden in der Sprache dieses Katalogs genannt.
    */
-  appLanguageNote: `Die WakeSharp-App selbst ist derzeit auf Englisch.`,
+  appLanguageNote: `Die WakeSharp-App gibt es auf Englisch, Spanisch, Russisch, Türkisch, Deutsch, Französisch und Arabisch.`,
 
   legalLayout: {
     lastUpdated: `Zuletzt aktualisiert am {date}`,

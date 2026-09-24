@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * cadenas que en inglés se importan de site.ts van aquí como texto literal.
  */
 export const shell = {
-  siteDescription: `La alarma que te deja a punto para la reunión. La mañana se gana con una misión —resolver, fotografiar, escanear o caminar—, un calentamiento mental puntúa lo lúcido que despertaste, y las alarmas inteligentes leen tu calendario para que despiertes antes de tu primera reunión.`,
+  siteDescription: `Un despertador para quienes tienen el sueño pesado: lo silencias con cuentas rápidas, una foto de un lugar o unos pasos, y ves lo lúcido que despertaste.`,
   tagline: `Despierta lúcido. No solo despierto.`,
   requirements: { ios: `iOS 26 o posterior`, android: `Android 8.0 o posterior` },
   ogImageAlt: `WakeSharp — despierta lúcido, no solo despierto.`,
@@ -34,7 +34,7 @@ export const shell = {
     legal: `Legal`,
     contact: `Contacto`,
     features: `Funciones`,
-    sharpnessScore: `Sharpness Score`,
+    sharpnessScore: `Puntuación de Agudeza`,
     pricing: `Precios`,
     blog: `Blog`,
     faq: `Preguntas frecuentes`,
@@ -42,6 +42,7 @@ export const shell = {
     terms: `Términos del servicio`,
     support: `Soporte`,
     deleteAccount: `Eliminar tu cuenta`,
+    about: `Acerca de`,
     contactForm: `Formulario de contacto`,
     builtBy: `Creado por {publisher}, un pequeño estudio independiente.`,
     pleaseNote: `Importante.`,
@@ -50,7 +51,12 @@ export const shell = {
     rights: `© {year} {publisher}. Todos los derechos reservados.`,
   },
 
-  appLanguageNote: `La propia app de WakeSharp está actualmente en inglés.`,
+  /**
+   * Se muestra junto a los botones de las tiendas solo en las páginas cuyo idioma
+   * la app no incluye (StoreButtons lee SITE.appLanguages); en español no se ve,
+   * pero cada catálogo lleva la clave.
+   */
+  appLanguageNote: `La app de WakeSharp está disponible en inglés, español, ruso, turco, alemán, francés y árabe.`,
 
   legalLayout: {
     lastUpdated: `Última actualización: {date}`,
