@@ -2,6 +2,7 @@
 title: "iPhone Alarm Didn't Go Off? The 7 Real Causes"
 description: "Your iPhone alarm never rang. Here are the seven causes that actually explain it, how to check each one tonight, and which ones are Apple's to fix."
 pubDate: 2026-08-31T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
 heroImageAlt: "Flat illustration of a silent iPhone lying face up on a nightstand at dawn, lit by coral and amber light against a deep indigo bedroom."
 category: tips-and-tricks
@@ -111,11 +112,11 @@ And sometimes it genuinely is a bug, and none of this is your fault. The 2024 re
 
 Every cause above shares one shape. The phone knew, hours in advance, that the conditions were wrong. It just had no reason to mention it.
 
-That is the job of WakeSharp's reliability check, which is free and lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out.
+That is the job of WakeSharp's reliability check, which lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out.
 
 On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted alarm permission the alarm sounds through Silent mode and Focus the way the Clock app does. That permission is the whole foundation: decline or revoke it and WakeSharp cannot schedule an alarm at all, which is exactly what the reliability check will tell you first.
 
-For cause number seven, missions are the point. The alarm rings and full credit needs Mind Games (three arithmetic problems) or Photo Proof (photograph the day's rotating prompt), with Memory Match, Sequence Recall, Scan an Object, Walk It Off and Surprise Me on Plus. The Stop button always works, on both platforms. What changes is that dismissing an alarm now requires enough of you to be awake to notice you are doing it. Your alarm rings free, forever, and Plus is ad-free.
+For cause number seven, missions are the point. The alarm rings and the morning asks for a mission: arithmetic and puzzles, such as Mind Games; the camera, such as Photo Proof, which has you retake the photo of the spot you chose the night before; movement, such as Walk It Off; voice, such as Serial Sevens; or Surprise Me, a different mission every morning. However you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off. What changes is that the mission requires enough of you to be awake to notice you are doing it.
 
 The limit is the honest one, and it is the same limit every alarm app has: WakeSharp is not a medical device, your phone's settings, battery restrictions or power state can prevent any alarm from sounding, and you should use a second, independent alarm for anything you cannot afford to be late for.
 

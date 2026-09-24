@@ -2,6 +2,7 @@
 title: "The All-Nighter Math: Why 6 Hours of Sleep Beats 2 More Hours of Cramming"
 description: "It is 1 a.m. and the exam is at nine. What the research says about trading sleep for cramming, and the least bad plan if you are already behind."
 pubDate: 2026-09-09T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/all-nighter-vs-sleep-exam/hero.jpg
 heroImageAlt: "Flat editorial illustration split in two: on the left, a coral desk lamp casting an amber glow over a stack of books at a night desk; on the right, an empty bed under a deep indigo sky with a crescent moon and scattered stars, on a cream background."
 category: sleep-science
@@ -86,11 +87,9 @@ All of the above assumes something not guaranteed: that you actually get up at 7
 
 That is the specific failure mode of the six-hour exam night. You made a defensible trade at 1 a.m., protected your consolidation window, and then a version of you with no stake in the outcome silenced the alarm at 7:16 and slept until 8:40. The harder the night, the deeper the inertia and the more automatic that dismissal.
 
-That gap is what WakeSharp is built for. Dismissing an alarm requires completing a mission that needs real cognition: Mind Games, a short arithmetic sprint, or Photo Proof, which sends you to photograph what the morning names and gets you out of the bedroom. Both are on the free tier. The point is not discipline theatre. It is to make getting up and stopping the noise the same decision, so a barely conscious brain cannot quietly separate them. Snoozing is a policy you set the night before rather than a reflex you negotiate at 7:16: off, two five-minute snoozes, or a tightening 10, then 5, then 2. For an exam morning, off or Tighten. Strict Mode, where supported, books four re-rings ahead at 45 seconds and then 4, 8 and 12 minutes, and finishing the mission cancels the ones still queued.
+That gap is what WakeSharp is built for. The alarm asks for a mission that needs real cognition: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before and, if you chose the kitchen, gets you out of the bedroom. The point is not discipline theatre. It is to make the start of the morning a task a barely conscious brain cannot finish on autopilot: however you quiet the alarm, the morning only counts once the mission is done. The mission is a decision you make the night before rather than a reflex you negotiate at 7:16, and an alarm can ask for several in a row, so for an exam morning, ask for two.
 
-Now the limits, because an exam morning is not the place for marketing. No alarm app can guarantee you wake up, and this one does not claim to. The system Stop button works on both platforms by design, because an alarm you cannot silence is a safety problem. Nothing here manufactures sleep you never scheduled. And for a morning that genuinely matters, set a second, independent alarm on a different device: a dead battery does not care how good your app is. The rest of that list is in [tonight's alarm checklist](/blog/alarm-reliability-checklist-tonight).
-
-Your alarm rings free, forever. No ads.
+Now the limits, because an exam morning is not the place for marketing. No alarm app can guarantee you wake up, and this one does not claim to. Your phone's own controls always work: nothing stops you switching the phone off, and that is as it should be, because an alarm you cannot silence is a safety problem. Nothing here manufactures sleep you never scheduled. And for a morning that genuinely matters, set a second, independent alarm on a different device: a dead battery does not care how good your app is. The rest of that list is in [tonight's alarm checklist](/blog/alarm-reliability-checklist-tonight).
 
 ## FAQ
 

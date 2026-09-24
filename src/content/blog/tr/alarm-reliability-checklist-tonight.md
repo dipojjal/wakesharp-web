@@ -2,6 +2,7 @@
 title: "Gerçekten Çalan Bir Alarm İçin Bu Gecenin 6 Maddelik Kontrol Listesi"
 description: "Alarmınızın gerçekten çalması için yatmadan önce altı kontrol: ses düzeyi, izinler, Rahatsız Etmeyin, pil kısıtlamaları, şarj ve bir yedek alarm."
 pubDate: 2026-08-31T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../../assets/blog/alarm-reliability-checklist-tonight/hero.jpg
 heroImageAlt: "Gece komodinde şarj olan bir telefonun düz çizimi; yanında küçük bir kontrol listesi süzülüyor, koyu çivit mavisi üzerine mercan ve kehribar tonlarında."
 category: tips-and-tricks
@@ -110,9 +111,9 @@ Ve hiçbir platformda hiçbir yapılandırma uyanacağınıza söz veremez. Aksi
 
 O listedeki her maddenin ortak bir biçimi var: telefon, koşulların yanlış olduğunu saatler öncesinden biliyordu ve bundan söz etmek için hiçbir nedeni yoktu.
 
-WakeSharp'ın alarm güvenilirliği kontrolünün (Alarm reliability) yaptığı şey budur ve ücretsizdir. Aynı sınıftan kontrolü cihazınızda çalıştırır ve sizi susturacak olan şeyi adıyla söyler: eksik bir izin, fazla düşük ayarlanmış bir alarm ses düzeyi, bildirim ayarları, pil kısıtlamaları. Mesele, adını koymaktır. Rahatlatıcı bir yeşil onay işareti yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde tahmin etmek yerine bunu belirtir. iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verildikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur.
+WakeSharp'ın alarm güvenilirliği kontrolünün yaptığı şey budur; kontrolü Ayarlar &gt; Alarm güvenilirliği bölümünde bulursunuz. Aynı sınıftan kontrolü cihazınızda çalıştırır ve sizi susturacak olan şeyi adıyla söyler: eksik bir izin, fazla düşük ayarlanmış bir alarm ses düzeyi, bildirim ayarları, pil kısıtlamaları. Mesele, adını koymaktır. Rahatlatıcı bir yeşil onay işareti yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde tahmin etmek yerine bunu belirtir. iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verildikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur.
 
-Dürüst sınırlar: bir kontrol aracı yalnızca işletim sisteminin göstermeyi seçtiği şeyi görebilir; bu yüzden her nedeni eleyemez ve uyanacağınıza söz veremez. WakeSharp bir tıbbi cihaz değildir. Kaçırmayı göze alamayacağınız bir sabah için o ikinci, bağımsız alarmı yine de kurun. Alarmınız sonsuza dek ücretsiz çalar. Reklam yok.
+Dürüst sınırlar: bir kontrol aracı yalnızca işletim sisteminin göstermeyi seçtiği şeyi görebilir; bu yüzden her nedeni eleyemez ve uyanacağınıza söz veremez. WakeSharp bir tıbbi cihaz değildir. Kaçırmayı göze alamayacağınız bir sabah için o ikinci, bağımsız alarmı yine de kurun.
 
 ## SSS
 

@@ -2,6 +2,7 @@
 title: "Caffeine's 10-Hour Tail: When Your Last Coffee Should Really Be"
 description: "Caffeine's half-life means a 3 PM coffee is still working at bedtime. The pharmacology, a personal cutoff calculation, and a one-week sensitivity test."
 pubDate: 2026-09-03T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/caffeine-cutoff-time-sleep/hero.jpg
 heroImageAlt: "Flat illustration of a cream coffee cup whose steam curls into a coral and amber arc sweeping across a starry indigo night sky toward a glowing clock face above a bed."
 category: sleep-science
@@ -83,7 +84,7 @@ For one week, write down two things each day: the clock time of your last caffei
 
 This is where WakeSharp's warm-up games happen to be useful. They run after you have dismissed the alarm and produce a Sharpness Score measured against your own baseline rather than against strangers on a leaderboard. Line up seven last-caffeine times against seven morning scores and you have something closer to a personal dose-timing curve than any general rule can give you.
 
-Be honest about what that is worth. WakeSharp does not track your sleep and does not try to. A Sharpness Score reflects how you did on a short game a minute after waking, which is also shaped by your bedtime, your stress, a noisy street, and plain randomness. Seven data points is a hint, not a result. But if your two latest-caffeine days are also your two flattest mornings, that is a pattern worth acting on, and if the line is flat you may simply be a fast metaboliser. Either answer is more useful than guessing.
+Be honest about what that is worth. WakeSharp does not track your sleep and does not try to. A Sharpness Score reflects how you did on a short warm-up a minute after waking, which is also shaped by your bedtime, your stress, a noisy street, and plain randomness. Seven data points is a hint, not a result. But if your two latest-caffeine days are also your two flattest mornings, that is a pattern worth acting on, and if the line is flat you may simply be a fast metaboliser. Either answer is more useful than guessing.
 
 One thing the experiment will not fix on its own: if you are staying up late because the evening is the only time that belongs to you, moving your coffee earlier just means lying awake with better pharmacology. That is a different problem, and we wrote about it in [revenge bedtime procrastination](/blog/revenge-bedtime-procrastination).
 

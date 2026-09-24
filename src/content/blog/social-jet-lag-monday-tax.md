@@ -2,6 +2,7 @@
 title: "Social Jet Lag: The Monday Tax on Your Weekend Sleep-In"
 description: "Sleeping in on Saturday shifts your body clock later, then Monday's alarm fires at your biological 4 AM. The midsleep math, and the one hour rule."
 pubDate: 2026-08-30T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/social-jet-lag-monday-tax/hero.jpg
 heroImageAlt: "Flat editorial illustration of two large rounded clock faces overlapping but offset from each other, one in warm coral and amber, one in deep indigo night blue, with two horizontal sleep blocks beneath them sitting out of alignment on a cream background."
 category: sleep-science
@@ -83,11 +84,11 @@ A necessary exception. Shift workers, people on call, and parents of infants can
 
 Every fix above depends on getting up at the time you decided on, on a morning when nothing is forcing you to. That decision is made by rested Sunday-evening you and executed by 7:30-on-Saturday you, who has no meeting and the full weight of a warm bed on their side. An ordinary alarm loses that argument, because dismissing it is a thumb swipe, an action available to someone barely conscious who will not remember doing it.
 
-This is the specific problem WakeSharp is built for. To earn the morning you complete a mission first: Mind Games, a short arithmetic sprint, or Photo Proof, which sends you to photograph what the morning asks for. On Plus, Scan an Object can point at a code you stuck on the coffee tin the night before, or Walk It Off can ask for a set number of steps. That takes real cognition, which is exactly what 7:30-on-Saturday you does not have available. Snoozing is capped. And the streak counts consistency rather than earliness, so an anchored 7:30 on both weekend days is worth as much as a heroic 5:45, with freeze tokens for the weekend you genuinely need to sleep through.
+This is the specific problem WakeSharp is built for. To earn the morning you complete a mission first: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose last night. Scan an Object can point at a code you stuck on the coffee tin the night before, or Walk It Off can ask for a set number of steps. That takes real cognition, which is exactly what 7:30-on-Saturday you does not have available. However you quiet the alarm, the morning only counts once the mission is done. And the streak counts consistency rather than earliness, so an anchored 7:30 on both weekend days is worth as much as a heroic 5:45, with freeze tokens for the weekend you genuinely need to sleep through.
 
 The honest limits, because this is a biology article and not a sales page. Holding a wake time is the only part of this an alarm can help with. It cannot make you go to bed at eleven on Friday, which is the larger half of the problem, and it cannot manufacture morning light or walk you outside. And no alarm app, this one included, can promise you will wake up: a phone can be off, silenced, out of battery, or simply out of earshot, and for anything you truly cannot miss you should set a second alarm on a second device.
 
-What it can do is make the wake time non-negotiable at the exact moment you are least equipped to negotiate.
+What it can do is make the wake time much harder to negotiate away at the exact moment you are least equipped to negotiate.
 
 ## FAQ
 

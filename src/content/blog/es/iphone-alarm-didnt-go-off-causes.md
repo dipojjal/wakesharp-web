@@ -2,6 +2,7 @@
 title: "¿La alarma del iPhone no sonó? Las 7 causas reales"
 description: "La alarma de tu iPhone nunca sonó. Las siete causas que de verdad lo explican, cómo comprobar cada una esta noche y cuáles le toca arreglar a Apple."
 pubDate: 2026-08-31T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
 heroImageAlt: "Ilustración plana de un iPhone en silencio, boca arriba sobre una mesita de noche al amanecer, iluminado por una luz coral y ámbar en un dormitorio de índigo profundo."
 category: tips-and-tricks
@@ -112,11 +113,11 @@ Y a veces es de verdad un error de software, y nada de esto es culpa tuya. Los i
 
 Todas las causas anteriores comparten una forma. El teléfono sabía, con horas de antelación, que las condiciones estaban mal. Simplemente no tenía ningún motivo para mencionarlo.
 
-Ese es el trabajo de la comprobación de fiabilidad de WakeSharp, que es gratis y vive en Ajustes &gt; Alarm reliability (fiabilidad de la alarma). Lee las condiciones de tu teléfono que pueden detener una alarma: permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería. Empieza por un veredicto claro en lugar de una promesa, y cuando la plataforma no le dice algo, lo reconoce en vez de mostrarte una tranquilizadora marca verde. Si una alarma falla, a menudo puede nombrar después la causa demostrable, o admitir que no pudo averiguarla.
+Ese es el trabajo de la comprobación de fiabilidad de WakeSharp, que vive en Ajustes &gt; Fiabilidad de la alarma. Lee las condiciones de tu teléfono que pueden detener una alarma: permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería. Empieza por un veredicto claro en lugar de una promesa, y cuando la plataforma no le dice algo, lo reconoce en vez de mostrarte una tranquilizadora marca verde. Si una alarma falla, a menudo puede nombrar después la causa demostrable, o admitir que no pudo averiguarla.
 
 En iPhone, WakeSharp suena a través de AlarmKit de Apple, así que una vez que has concedido el permiso de alarmas, la alarma suena en modo Silencio y Concentración igual que lo hace la app Reloj. Ese permiso es todo el cimiento: recházalo o revócalo y WakeSharp no puede programar ninguna alarma, que es exactamente lo primero que te dirá la comprobación de fiabilidad.
 
-Para la causa número siete, las misiones son la clave. La alarma suena y el crédito completo exige Mind Games (tres problemas de aritmética) o Photo Proof (fotografiar la consigna del día, que va rotando), con Memory Match (emparejar de memoria), Sequence Recall (recordar secuencias), Scan an Object (escanear un objeto), Walk It Off (caminar para despejarte) y Surprise Me (sorpréndeme) en Plus. El botón Detener siempre funciona, en las dos plataformas. Lo que cambia es que descartar una alarma ahora exige que una parte suficiente de ti esté despierta como para darse cuenta de que lo está haciendo. Tu alarma suena gratis, para siempre. Y Plus es sin anuncios.
+Para la causa número siete, las misiones son la clave. La alarma suena y la mañana te pide una misión: de aritmética y rompecabezas, como Juegos Mentales; de cámara, como Prueba con Foto, que te hace repetir la foto del lugar que elegiste la noche anterior; de movimiento, como Camínalo; de voz, como Restar de Siete; o Sorpréndeme, una misión distinta cada mañana. Da igual cómo silencies la alarma: la mañana solo cuenta cuando la misión está hecha. Los controles de tu propio teléfono siempre funcionan: nada te impide apagarlo. Lo que cambia es que la misión exige que una parte suficiente de ti esté despierta como para darse cuenta de que la está haciendo.
 
 El límite es el honesto, y es el mismo límite que tiene cualquier app de alarma: WakeSharp no es un dispositivo médico, los ajustes de tu teléfono, las restricciones de batería o su estado de energía pueden impedir que suene cualquier alarma, y deberías usar una segunda alarma independiente para todo aquello a lo que no puedas permitirte llegar tarde.
 

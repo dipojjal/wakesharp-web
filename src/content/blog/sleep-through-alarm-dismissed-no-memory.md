@@ -2,6 +2,7 @@
 title: "Why You Sleep Through Alarms You Don't Remember Dismissing"
 description: "Dismissing an alarm is a practised motion your brain can run while barely awake, and never record. The real mechanism, and what actually raises the bar."
 pubDate: 2026-08-30T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-through-alarm-dismissed-no-memory/hero.jpg
 heroImageAlt: "Illustration of a dark bedroom before dawn: a sleeper lies with eyes closed on a cream pillow while their hand reaches out from under the duvet toward a glowing phone on the nightstand, a sliver of coral sunrise light at the window behind."
 category: sleep-science
@@ -86,11 +87,11 @@ The useful axis is cognitive cost. Raise what dismissal requires and you require
 
 This is the specific problem WakeSharp exists for, so let me be precise about the claim and the limit.
 
-WakeSharp alarms are not dismissed by a tap. They are dismissed by completing a **mission**: Mind Games, a short arithmetic sprint, or Photo Proof, which sends you to photograph what the morning asks for. WakeSharp Plus adds scanning a specific object across the room, and getting up to walk a set number of steps. The design argument is the mechanism above. A swipe sits inside the motor repertoire of a barely aroused brain. Solving for x, or crossing the room to find the right object, does not, because it needs the associative machinery a partial arousal leaves offline. Every mission has a fallback ending in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.
+A WakeSharp alarm asks for more than a tap. It asks for a **mission**: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before. Other missions have you scan a specific object across the room, or get up and walk a set number of steps. However you quiet the alarm, the morning only counts once the mission is done. The design argument is the mechanism above. A swipe sits inside the motor repertoire of a barely aroused brain. Solving for x, or crossing the room to find the right object, does not, because it needs the associative machinery a partial arousal leaves offline. Every mission has a fallback ending in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.
 
 Now the limits, said plainly rather than left for you to find.
 
-The phone's own stop button always works. Deliberately. Locking a person behind a puzzle at 6 AM would be unsafe design, and anyone advertising an inescapable alarm is describing a liability. WakeSharp remembers instead: next time you open the app it shows an owed-mission screen, so a streak survives an honest emergency and a shortcut does not pass unnoticed. Snoozing is a setting: off, or two five-minute snoozes at 5 Sharpness each, or a tightening 10, then 5, then 2 that also raises the difficulty. Strict Mode, where supported, books four re-rings in advance, at 45 seconds and then at 4, 8 and 12 minutes.
+Your phone's own controls always work: nothing stops you switching the phone off. Deliberately. Locking a person behind a puzzle at 6 AM would be unsafe design, and anyone advertising an inescapable alarm is describing a liability. What WakeSharp does instead is keep the record straight. Stopping or snoozing the alarm does not finish the morning, so a shortcut does not pass unnoticed, and freeze tokens exist so a streak can survive an honest emergency.
 
 And none of this guarantees you will wake up. Missions raise the cost of dismissal; they cannot manufacture consciousness in someone badly sleep deprived, and they cannot ring on a phone that is off, out of battery, or stripped of its alarm permissions. If missing a morning carries real consequences, set a second alarm on another device. We would rather say that than sell a certainty we do not have.
 

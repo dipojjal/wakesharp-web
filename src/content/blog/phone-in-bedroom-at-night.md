@@ -2,6 +2,7 @@
 title: "Your Phone Sleeps in Your Bedroom. Should It?"
 description: "Your phone is your alarm, so it stays. What the research says about light, notifications and charging distance, and what to change tonight."
 pubDate: 2026-09-02T19:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/phone-in-bedroom-at-night/hero.jpg
 heroImageAlt: "Flat editorial illustration of a dark indigo bedroom at night. A person sleeps in bed while their phone charges on a dresser across the room, giving off a small warm amber halo, and a cream crescent moon sits in the window."
 category: sleep-science
@@ -73,11 +74,11 @@ It is a good study and it has not aged into certainty. A meta-analysis by [Bött
 
 WakeSharp exists because of exactly this tension. The phone has to stay in the bedroom, because it is the alarm, but nothing about a phone naturally behaves like an alarm clock.
 
-The relevant part is the mission. WakeSharp alarms are dismissed by completing a task that requires actual cognition: Mind Games (arithmetic) and Photo Proof (photograph the day's prompt) are free, with Memory Match, Sequence Recall, Scan an Object, Walk It Off and Surprise Me in the Plus set. That Plus gate applies when you create an alarm, never when one is ringing.
+The relevant part is the mission. WakeSharp alarms are dismissed by completing a task that requires actual cognition: Mind Games (arithmetic), a puzzle such as Memory Match or Sequence Recall, Photo Proof (retake the photo of a spot you chose the night before), Scan an Object, Walk It Off, or Surprise Me, a different mission every morning.
 
 What that changes about tonight is small but specific. Once dismissing the alarm involves standing up anyway, putting the charger across the room stops being a sacrifice and becomes the setup. Walk It Off is the most literal version of this, but any mission has the same effect: the phone you must walk to is also the phone you did not scroll at 12:50 AM.
 
-The honest limits. WakeSharp does no sleep tracking of any kind, so it will not tell you what your night looked like, and it processes what it does need on-device. The system Stop button always works, on both iOS and Android, which means no alarm app can promise you will wake up; a mission raises the effort of a half-asleep dismissal, it does not remove the exit. If you are dismissing alarms without remembering it, that is worth reading about separately in [why you sleep through alarms you don't remember dismissing](/blog/sleep-through-alarm-dismissed-no-memory). And none of this fixes grogginess by itself, which is a [sleep inertia](/blog/sleep-inertia-why-you-wake-up-groggy) problem with its own rules. Your alarm rings free, forever, and Plus is ad-free.
+The honest limits. WakeSharp does no sleep tracking of any kind, so it will not tell you what your night looked like, and it processes what it does need on-device. Your phone's own controls always work, on both iOS and Android: nothing stops you switching the phone off. That means no alarm app can promise you will wake up; a mission raises the effort of a half-asleep dismissal, it does not remove the exit. If you are dismissing alarms without remembering it, that is worth reading about separately in [why you sleep through alarms you don't remember dismissing](/blog/sleep-through-alarm-dismissed-no-memory). And none of this fixes grogginess by itself, which is a [sleep inertia](/blog/sleep-inertia-why-you-wake-up-groggy) problem with its own rules.
 
 ## FAQ
 

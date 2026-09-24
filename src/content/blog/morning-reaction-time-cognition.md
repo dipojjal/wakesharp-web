@@ -2,6 +2,7 @@
 title: "Your Reaction Time at 7 AM Is Worse Than You Think"
 description: "Sleep inertia shows up in milliseconds. What the psychomotor vigilance task reveals about your reaction time at 7 AM, and how to measure your own."
 pubDate: 2026-09-09T08:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/morning-reaction-time-cognition/hero.jpg
 heroImageAlt: "Flat editorial illustration of a coral fingertip pressing a glowing amber target, with concentric ripple rings spreading across a cream foreground and a deep indigo dawn horizon behind it."
 category: sleep-science
@@ -67,7 +68,7 @@ For scale on the effects themselves: Dawson and Reid put sustained wakefulness a
 
 That last point is the one the app is built around, so here is the specific claim and its limits.
 
-**Reaction Tap** is one of WakeSharp's warm-up games. It runs *after* you have already dismissed the alarm, and it is not a mission. Missions are the tasks that dismiss an alarm (on the free tier, Mind Games and Photo Proof). Reaction Tap cannot dismiss anything, and a slow tap has no effect on whether your alarm is over. The warm-up suite is a short set of games you play once the morning has actually started, and it produces a **Sharpness Score**.
+**Reaction Tap** is one of WakeSharp's warm-up games. It runs *after* you have already dismissed the alarm, and it is not a mission. Missions are the tasks that dismiss an alarm, from the arithmetic in Mind Games to Photo Proof, where you retake the photo of a spot you chose the night before. Reaction Tap cannot dismiss anything, and a slow tap has no effect on whether your alarm is over. The warm-up suite is a short set of games you play once the morning has actually started, and it produces a **Sharpness Score**.
 
 The score is deliberately scored against **your own rolling baseline**, not against other users and not against some ideal. That design choice is not modesty, it is the only defensible reading of the data.
 
@@ -77,11 +78,9 @@ Because a phone tap test is not a lab psychomotor vigilance task, and it would b
 - **The trial count is small.** A lab session is ten minutes of stimuli. A warm-up game is a handful. Fewer trials means noisier estimates, full stop.
 - **Games have practice effects.** The original task was engineered to avoid them. A game you enjoy is not.
 
-What survives all of that is the trend. When Arsintescu and colleagues compared a touchscreen task against the standard device across extended wakefulness, both tracked the same direction: reaction times slower and lapses higher as sleep loss accumulated ([*Accident Analysis and Prevention*, 2019](https://pubmed.ncbi.nlm.nih.gov/29198969/)). Absolute values shift with the hardware. The shape of the curve holds. That is precisely why your score is compared with your own last two weeks and nothing else.
+What survives all of that is the trend. When Arsintescu and colleagues compared a touchscreen task against the standard device across extended wakefulness, both tracked the same direction: reaction times slower and lapses higher as sleep loss accumulated ([*Accident Analysis and Prevention*, 2019](https://pubmed.ncbi.nlm.nih.gov/29198969/)). Absolute values shift with the hardware. The shape of the curve holds. That is precisely why your score is compared with your own recent mornings and nobody else's.
 
 Two more honest notes. WakeSharp does not track your sleep, so it knows nothing about what stage you were pulled from or how long you slept. And a Sharpness Score is not a fitness-to-drive test, a diagnostic, or medical advice. It is a number that is worth glancing at on a morning when you were about to tell yourself you felt fine.
-
-Your alarm rings free, forever. No ads.
 
 ## FAQ
 

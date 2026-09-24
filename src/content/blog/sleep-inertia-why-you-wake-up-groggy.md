@@ -2,6 +2,7 @@
 title: "Sleep Inertia: Why You Wake Up Groggy (and How to Wake Up Sharp)"
 description: "Your brain takes 15 to 60 minutes to fully boot after waking. Here's the science of sleep inertia, and what actually shortens the groggy window."
 pubDate: 2026-08-27T12:00:00-04:00
+updatedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-inertia-why-you-wake-up-groggy/hero.jpg
 heroImageAlt: "Illustration of a groggy person sitting on the edge of a bed at dawn, reaching for a glowing phone while sunrise light spills through the window."
 category: sleep-science
@@ -46,9 +47,9 @@ Sleep inertia is physiology, so the honest framing is *shorten and manage*, not 
 
 ## Where WakeSharp fits in (and where it can't)
 
-WakeSharp was built around lever four. The alarm doesn't stop for a swipe, because a swipe is exactly what groggy-you does on autopilot. It stops for a **mission**: Mind Games, a short arithmetic sprint, or Photo Proof, which sends you to photograph what the morning asks for. On Plus you can also scan an object across the room, or get up and walk a set number of steps. Each one requires the kind of working-memory engagement that a half-booted prefrontal cortex can't fake, which is the point. By the time you've solved your way out, the boot sequence is genuinely further along. (On iPhone, WakeSharp uses Apple's AlarmKit, which supports Silent mode and Focus once you have granted alarm access. On Android it plays on the dedicated alarm stream with a lock-screen alert when the exact-alarm and notification permissions are in place. Grogginess shouldn't get a technicality to hide behind.)
+WakeSharp was built around lever four. A swipe is exactly what groggy-you does on autopilot, so the alarm asks for a **mission** instead: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before. You can also scan an object across the room, or get up and walk a set number of steps. Each one requires the kind of working-memory engagement that a half-booted prefrontal cortex can't fake, which is the point. By the time you've solved your way out, the boot sequence is genuinely further along. However you quiet the alarm, the morning only counts once the mission is done. (On iPhone, WakeSharp uses Apple's AlarmKit, which rings through Silent mode and Focus once you have granted alarm access. On Android it plays on the dedicated alarm stream with a lock-screen alert when the exact-alarm, notification and lock-screen permissions are in place. Grogginess shouldn't get a technicality to hide behind.)
 
-Then comes the part we think matters most: **measurement**. A one-minute warm-up scores how sharp you actually woke against your own rolling baseline, because yesterday's you is the only benchmark that means anything at 6 AM. Sleep inertia is invisible from the inside; you can't feel how foggy you are, which is precisely the trap. A number can.
+Then comes the part we think matters most: **measurement**. An optional two-minute warm-up after the mission scores how sharp you actually woke against your own rolling baseline, because yesterday's you is the only benchmark that means anything at 6 AM. Sleep inertia is invisible from the inside; you can't feel how foggy you are, which is precisely the trap. A number can.
 
 And the honest limits, because we'd rather say them than have you discover them: no app deletes sleep inertia, since it's your biology doing its job. Short sleep will still buy you a longer fog, missions or not. And no alarm on any phone is beyond your phone's own settings and battery, which is why WakeSharp checks alarm reliability the night before and tells you plainly (it will ring, it may not, or it cannot) instead of showing a comforting green tick it can't back up.
 
