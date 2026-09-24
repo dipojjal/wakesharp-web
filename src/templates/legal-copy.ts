@@ -5,7 +5,7 @@
 export const PRIVACY = {
   title: 'Privacy Policy — WakeSharp',
   description:
-    'How WakeSharp handles optional accounts, purchases, product analytics, campaign measurement and creator codes, and how to control your privacy choices. WakeSharp shows no adverts.',
+    'How WakeSharp handles optional accounts, purchases, product analytics and campaign measurement, and how to control your privacy choices. WakeSharp shows no adverts.',
   heading: 'Privacy Policy',
   intro:
     'WakeSharp is an alarm clock that runs on your phone and requires no account. This policy explains local data, optional backups, purchases, and product and marketing measurement. WakeSharp shows no adverts. Measurement records use pseudonymous identifiers that can link to your account when you sign in.',

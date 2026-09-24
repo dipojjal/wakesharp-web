@@ -226,7 +226,7 @@ import { SITE } from '../config/site';
       <tr><td>The store receipt / purchase token from Apple or Google</td><td>To validate the purchase and decide whether Plus is unlocked.</td></tr>
       <tr><td>IP address, and the country derived from it or from your store account</td><td>Sent with every network request; used for fraud checks and to price and report by region.</td></tr>
       <tr><td>Device model, operating-system version and app version</td><td>Sent by the SDK with each request, and used to diagnose purchase problems.</td></tr>
-      <tr><td>AppsFlyer ID, permitted advertising/vendor identifiers, paywall assignment and optional creator credit</td><td>To match verified subscription outcomes to acquisition and paywall measurement while honoring measurement choices.</td></tr>
+      <tr><td>AppsFlyer ID, permitted advertising/vendor identifiers, paywall assignment and your optional source answer</td><td>To match verified subscription outcomes to acquisition and paywall measurement while honoring measurement choices.</td></tr>
     </tbody>
   </table>
   <p>
@@ -254,7 +254,7 @@ import { SITE } from '../config/site';
     </thead>
     <tbody>
       <tr><td>A per-install analytics ID and your current RevenueCat customer ID</td><td>To count activity and join it to verified purchase and ad-revenue outcomes. The subscription ID may be your random account ID after sign-in.</td></tr>
-      <tr><td>Campaign context, original paywall assignment, current monetization policy, and optional source or validated creator-code answers</td><td>To compare acquisition channels and paywalls. Self-reported creator assistance is kept distinct from attributed acquisition.</td></tr>
+      <tr><td>Campaign context, original paywall assignment, current monetization policy, and your optional source answer</td><td>To compare acquisition channels and paywalls. Self-reported sources are kept distinct from attributed acquisition.</td></tr>
       <tr><td>Usage events — screens viewed, features used (an alarm was created, a mission was completed, the paywall was shown), your onboarding survey answers, and whether Plus is active</td><td>To measure what works and improve the app. Events describe <em>that</em> something happened, never its content: not your alarm times or labels, not your calendar events, not your signature.</td></tr>
       <tr><td>Session recordings — a replay of the app's own screens, with the things listed below blanked out on your device before anything is sent</td><td>To see where people get stuck, and to diagnose faults we cannot reproduce — a paywall that never loaded its prices, a purchase that failed silently.</td></tr>
       <tr><td>Crash reports — when WakeSharp stops unexpectedly, the error's type and message and the stack trace showing which of our code was running, sent the next time you open the app</td><td>To find and fix crashes. A stack trace describes our code, not your data: no alarm, calendar, photo or account content is included.</td></tr>
@@ -296,7 +296,7 @@ import { SITE } from '../config/site';
     Session recordings are for diagnosing product problems. We do not send the recordings to advertising partners.
   </p>
 
-  <h2 id="marketing-measurement">Marketing measurement and creator codes (AppsFlyer)</h2>
+  <h2 id="marketing-measurement">Marketing measurement (AppsFlyer)</h2>
   <p>
     AppsFlyer helps us understand which campaigns lead to a first app open, trial or payment. It receives
     app and SDK identifiers, permitted advertising identifiers, device and network information including
@@ -312,11 +312,13 @@ import { SITE } from '../config/site';
     We do not send alarm content, calendar events, camera frames, contact lists or payment card details to AppsFlyer.
   </p>
   <p>
-    The optional source question and creator-code field record who you say introduced WakeSharp.
-    TikTok handles are validated against a public, read-only creator catalog hosted by Supabase. Confirmed
-    credit is stored locally and attached to PostHog and RevenueCat measurement. Codes do not change your
-    price or grant rewards, and they do not replace AppsFlyer's attributed campaign. Skipping or a failed
-    lookup never prevents setup.
+    The optional source question records where you say you heard about WakeSharp: TikTok, Instagram,
+    YouTube, the App Store, a friend or family member, Google search, or somewhere else. Your answer is
+    stored on your device and attached to PostHog and RevenueCat measurement. It does not change your
+    price or grant rewards, and it does not replace AppsFlyer's attributed campaign. Skipping it never
+    prevents setup. Earlier versions of the app also offered an optional creator-code field; a code
+    entered there was checked against a public, read-only creator catalog hosted by Supabase and stored
+    the same way.
   </p>
   <p>
     Turn off <em>Settings → Product analytics</em> to stop new PostHog and AppsFlyer collection from the app
