@@ -1,8 +1,8 @@
 /**
  * The locale registry: THE one place a language is declared.
  *
- * Everything else derives from this list — astro.config.mjs (the i18n block and
- * the sitemap's hreflang map), BaseLayout (`lang`/`dir`), BaseHead (hreflang and
+ * Everything else derives from this list — astro.config.mjs (the i18n block),
+ * BaseLayout (`lang`/`dir`), BaseHead (hreflang and
  * og:locale), the language selector, the date formatter, api/contact.ts (which
  * result page to redirect to) and scripts/check-copy.mjs (which pages must exist).
  *

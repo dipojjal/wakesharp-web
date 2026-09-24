@@ -575,6 +575,24 @@ if (existsSync(join(DIST, 'sitemap.xml'))) {
     console.error('  ✗ dist/sitemap.xml must be a <urlset> listing every page, not a sitemap index');
     problems++;
   }
+  // hreflang belongs in BaseHead. An xhtml:link here duplicates it and makes
+  // Chrome show the sitemap as one run-on line of URLs (see astro.config.mjs).
+  if (body.includes('xhtml:')) {
+    console.error('  ✗ dist/sitemap.xml must not carry xhtml:link alternates — hreflang lives in BaseHead');
+    problems++;
+  }
+  // src/lib/sitemap.ts: every URL gets a <priority>; every blog URL a <lastmod>.
+  for (const [, entry] of body.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+    const loc = /<loc>(.*?)<\/loc>/.exec(entry)?.[1] ?? '(no loc)';
+    if (!entry.includes('<priority>')) {
+      console.error(`  ✗ dist/sitemap.xml: ${loc} has no <priority>`);
+      problems++;
+    }
+    if (/\/blog(\/|$)/.test(loc) && !entry.includes('<lastmod>')) {
+      console.error(`  ✗ dist/sitemap.xml: ${loc} has no <lastmod> — is article:modified_time still rendered?`);
+      problems++;
+    }
+  }
   for (const loc of [
     'https://wakesharp.app',
     'https://wakesharp.app/privacy',

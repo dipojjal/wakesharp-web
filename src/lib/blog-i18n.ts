@@ -4,8 +4,8 @@
  *
  * English posts are flat files at src/content/blog/<slug>.md. A translation
  * lives at src/content/blog/<locale path>/<slug>.md with `lang` set, keeps the
- * English filename by default (that is what lets the sitemap pair them), and
- * may name a different English source through `translationOf`. The glob
+ * English filename by default, and may name a different English source through
+ * `translationOf`; sourceSlugOf() pairs them for BaseHead's hreflang. The glob
  * loader's id is the path without the extension, so the folder IS the locale.
  */
 import { DEFAULT_LOCALE, localeByCode, localeByPath } from '../i18n/config';

@@ -1,14 +1,39 @@
 // @ts-check
-import { readdir, rename, rm } from 'node:fs/promises';
+import { readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { DEFAULT_LOCALE, enabledLocales } from './src/i18n/config';
-import { includeInSitemap } from './src/lib/sitemap';
+import { includeInSitemap, sitemapLastmod, sitemapPriority } from './src/lib/sitemap';
 
 const locales = enabledLocales();
+
+/** The build's output directory, recorded at astro:config:done for the sitemap's lastmod. */
+let outDir = '';
+
+/**
+ * One element per line, two-space indent. @astrojs/sitemap writes the whole
+ * file on a single line. Safe only because a sitemap has no mixed content: the
+ * sole text nodes are <loc> values, which never contain `<` or `>`.
+ * @param {string} xml
+ */
+function indentXml(xml) {
+  let depth = 0;
+  const lines = xml.replace(/>\s*</g, '>\n<').trim().split('\n');
+  return (
+    lines
+      .map((line) => {
+        if (line.startsWith('</')) depth--;
+        const out = '  '.repeat(Math.max(depth, 0)) + line;
+        // An opening tag alone on its line: not <?…?>, </…>, <!…> or <…/>.
+        if (/^<[^?/!][^>]*>$/.test(line) && !line.endsWith('/>')) depth++;
+        return out;
+      })
+      .join('\n') + '\n'
+  );
+}
 
 // Static output, no adapter. Vercel auto-detects the Astro preset and serves `dist/`.
 //
@@ -40,13 +65,18 @@ const config = {
   integrations: [
     sitemap({
       filter: includeInSitemap,
-      // Keys are URL segments, values hreflang tags. The integration groups URLs
-      // by the path after the segment and emits xhtml:link alternates for each
-      // group with more than one member. x-default is emitted by BaseHead only.
-      i18n: {
-        defaultLocale: DEFAULT_LOCALE,
-        locales: Object.fromEntries(locales.map((l) => [l.path, l.hreflang])),
-      },
+      // Runs in astro:build:done, after every page is written to outDir.
+      serialize: (item) => ({
+        ...item,
+        lastmod: sitemapLastmod(item.url, outDir)?.toISOString(),
+        priority: sitemapPriority(item.url),
+      }),
+      // No `i18n` option, on purpose: hreflang lives in each page's <head>
+      // (BaseHead), which Google treats as equivalent. Sitemap xhtml:link
+      // alternates only repeated it, and any XHTML-namespace element makes
+      // Chrome render the file as a page — one run-on line of URLs — instead
+      // of its XML tree view. Plain <urlset>, no extension namespaces.
+      namespaces: { news: false, xhtml: false, image: false, video: false },
     }),
     // Search consoles look for /sitemap.xml. @astrojs/sitemap always writes an
     // index (sitemap-index.xml) pointing at numbered chunks (sitemap-0.xml, …),
@@ -56,6 +86,9 @@ const config = {
     {
       name: 'single-sitemap-xml',
       hooks: {
+        'astro:config:done': ({ config }) => {
+          outDir = fileURLToPath(config.outDir);
+        },
         'astro:build:done': async ({ dir, logger }) => {
           const destDir = fileURLToPath(dir);
           const chunks = (await readdir(destDir)).filter((f) => /^sitemap-\d+\.xml$/.test(f));
@@ -65,7 +98,9 @@ const config = {
                 'Past 45,000 URLs /sitemap.xml has to become a sitemap index again.',
             );
           }
-          await rename(path.join(destDir, chunks[0]), path.join(destDir, 'sitemap.xml'));
+          const chunk = path.join(destDir, chunks[0]);
+          await writeFile(path.join(destDir, 'sitemap.xml'), indentXml(await readFile(chunk, 'utf8')));
+          await rm(chunk);
           await rm(path.join(destDir, 'sitemap-index.xml'));
           logger.info(`\`sitemap.xml\` created at \`${path.relative(process.cwd(), destDir)}\``);
         },
