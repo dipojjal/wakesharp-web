@@ -21,12 +21,22 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { CATEGORIES } from './lib/blog-categories';
 import { LOCALE_CODES } from './i18n/config';
+import { REVIEWERS } from './config/people';
+import { TITLE_MAX } from './lib/seo';
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: ({ image }) =>
-    z.object({
+    z
+    .object({
       title: z.string().min(1),
+      /**
+       * The <title> search results show, when the headline (the <h1>, and the
+       * social card's title) runs past what fits. At most 60 characters; the
+       * layout appends " — WakeSharp" only when the total still fits. Colons,
+       * never dashes (the style law), and the post's target phrase up front.
+       */
+      seoTitle: z.string().min(1).max(TITLE_MAX).optional(),
       /** Meta description, OG description, RSS description and card excerpt. */
       description: z.string().min(1).max(160),
       /**
@@ -51,6 +61,19 @@ const blog = defineCollection({
         .string()
         .regex(/^[a-z0-9-]+$/)
         .optional(),
+      /**
+       * Who reviewed the post, from src/config/people.ts, and when. Set only by
+       * the person named, after reading the post; the drafting routine never
+       * writes it. Shown under the headline and as WebPage.reviewedBy.
+       */
+      reviewedBy: z.enum(REVIEWERS).optional(),
+      reviewedDate: z.coerce.date().optional(),
+    })
+    .refine((d) => !d.reviewedBy === !d.reviewedDate, {
+      message: 'reviewedBy and reviewedDate go together: name the reviewer and the date they read it',
+    })
+    .refine((d) => !d.reviewedDate || (d.reviewedDate >= d.pubDate && d.reviewedDate.getTime() <= Date.now()), {
+      message: 'reviewedDate must fall between pubDate and now',
     }),
 });
 

@@ -123,14 +123,18 @@ El límite es el honesto, y es el mismo límite que tiene cualquier app de alarm
 
 ## Preguntas frecuentes
 
-**¿Por qué no sonó la alarma de mi iPhone?**
+### ¿Por qué no sonó la alarma de mi iPhone?
+
 Por orden de probabilidad: el volumen de tono de llamada y avisos estaba bajo, el sonido de la alarma estaba en Ninguno, las Funciones con detección de atención la atenuaron, la alarma no estaba armada para hoy, el teléfono estaba apagado o sin batería, el despertador de tu horario de sueño tenía su propio volumen más bajo, o la descartaste apenas despierto. Comprueba primero el control Tono de llamada y avisos y el ajuste Sonido de la alarma, porque esos dos explican la mayoría de los casos.
 
-**¿La alarma del iPhone suena en silencio?**
+### ¿La alarma del iPhone suena en silencio?
+
 Sí. Apple es explícita en que el modo Silencio, el interruptor de timbre/silencio y No molestar no afectan al sonido de una alarma de Reloj, y un modo de Concentración tampoco la silencia. Si tu alarma no sonó, mira el control de volumen y el ajuste de sonido de la propia alarma.
 
-**¿Por qué la alarma de mi iPhone suena tan baja?**
+### ¿Por qué la alarma de mi iPhone suena tan baja?
+
 Normalmente por una de tres cosas: el control Tono de llamada y avisos está bajo, Ajustar con botones dejó que una pulsación de volumen lo vaciara, o las Funciones con detección de atención bajaron el volumen porque la cámara frontal te vio mirando la pantalla. El despertador de un horario de sueño también tiene su propio control de volumen en Salud, separado de todo lo demás.
 
-**¿Las Funciones con detección de atención pueden bajar el volumen de mi alarma?**
+### ¿Las Funciones con detección de atención pueden bajar el volumen de mi alarma?
+
 Sí, y Apple lo documenta: cuando la cámara TrueDepth detecta que estás mirando el dispositivo, baja el volumen de algunos avisos. Dormir boca arriba con el teléfono inclinado hacia ti basta para activarlo. Desactívalas en Ajustes &gt; Face ID y código si una alarma fuerte te importa más que una pantalla que espera a tus ojos.

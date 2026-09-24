@@ -1,8 +1,11 @@
 ---
 title: "Why the Snooze Button Feels So Good (and What It Costs)"
+seoTitle: "Why Is Snoozing Bad? What the Snooze Button Really Costs"
 description: "Snoozing is not a character flaw, and the research is kinder to it than the headlines. What those eleven minutes actually cost, and what they do not."
 pubDate: 2026-09-04T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/snooze-button-psychology-cost/hero.jpg
 heroImageAlt: "Flat editorial illustration of a hand pressing a large glowing coral snooze button beside a bed, with a row of five sunrises fading from bright amber to grey in the window behind it."
 category: morning-routines

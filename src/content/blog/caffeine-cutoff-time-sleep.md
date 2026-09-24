@@ -1,8 +1,11 @@
 ---
 title: "Caffeine's 10-Hour Tail: When Your Last Coffee Should Really Be"
+seoTitle: "Caffeine Cutoff Time: When to Have Your Last Coffee"
 description: "Caffeine's half-life means a 3 PM coffee is still working at bedtime. The pharmacology, a personal cutoff calculation, and a one-week sensitivity test."
 pubDate: 2026-09-03T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/caffeine-cutoff-time-sleep/hero.jpg
 heroImageAlt: "Flat illustration of a cream coffee cup whose steam curls into a coral and amber arc sweeping across a starry indigo night sky toward a glowing clock face above a bed."
 category: sleep-science

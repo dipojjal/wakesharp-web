@@ -1,8 +1,11 @@
 ---
 title: "The First 30 Minutes: What Happens in Your Brain Between Alarm and Coffee"
+seoTitle: "Morning Brain Fog: What Happens in the First 30 Minutes"
 description: "A minute-by-minute account of the first half hour after your alarm: the cortisol surge, leftover adenosine, and why your prefrontal cortex arrives last."
 pubDate: 2026-09-05T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/first-30-minutes-brain-after-waking/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedside scene at dawn: a phone and a coffee mug on a nightstand beneath a window of rising coral and amber light, with a chain of dots growing from small and dark to large and bright across the frame."
 category: sleep-science

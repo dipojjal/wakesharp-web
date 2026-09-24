@@ -1,8 +1,11 @@
 ---
 title: "Hot Nights, Sharp Mornings: Sleeping Through Late-Summer Heat"
+seoTitle: "How to Sleep in the Heat (and Still Wake Up Sharp)"
 description: "Heat blocks the core-temperature drop that starts sleep. Six fixes to run tonight, and an honest way to see what a hot night cost you tomorrow."
 pubDate: 2026-09-01T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-in-heat-late-summer/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedroom on a hot late-summer night, with an open window, a small fan on the sill and curtains lifting in coral and amber against a deep indigo sky."
 category: sleep-science
@@ -90,14 +93,18 @@ Early September is also when hot nights collide with restarting schedules, so if
 
 ## FAQ
 
-**What is the best temperature for sleeping?**
+### What is the best temperature for sleeping?
+
 Most sleep research lands around 16 to 20 degrees Celsius, roughly 60 to 68 Fahrenheit, under a normal amount of bedding. The number matters less than the principle: the room has to be cooler than your skin for your body to shed heat into it. Bedding, humidity and nightwear shift the ideal figure by several degrees, which is why two people in one bed can genuinely disagree.
 
-**How do you sleep in the heat without air conditioning?**
+### How do you sleep in the heat without air conditioning?
+
 Stack the small effects, because none wins alone. Shade the windows by day and ventilate once outside air is cooler, warm shower one to two hours before bed, a single cotton or linen sheet with hands and feet uncovered, a cross-breeze rather than a fan aimed at your face, and humidity attacked separately from temperature.
 
-**Does a fan actually help you sleep when it is hot?**
+### Does a fan actually help you sleep when it is hot?
+
 Yes, up to a point. A fan speeds evaporation from your skin, which is real cooling, and its noise covers the street sounds that come with open windows. Above roughly 35 degrees Celsius it stops helping and can make things worse, because the air it moves is hotter than you are. Below that, aim it across the room rather than at your head.
 
-**Why do I keep waking up at 3am when it is hot?**
+### Why do I keep waking up at 3am when it is hot?
+
 Two reasons that reinforce each other. The back half of the night is REM-heavy, and thermoregulation is largely switched off during REM, so a hot room hits hardest exactly then. Meanwhile the room has spent hours equilibrating with heat stored in walls and mattress, so it is often at its most oppressive long after you fell asleep. If the waking comes with a racing heart, breathlessness or confusion, that is a doctor question, not a bedding one.

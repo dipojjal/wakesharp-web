@@ -1,8 +1,11 @@
 ---
 title: "Tonight's 6-Point Checklist for an Alarm That Actually Rings"
+seoTitle: "How to Make Sure Your Alarm Goes Off: A 6-Point Checklist"
 description: "Six checks to run before bed so your alarm actually rings: volume, permissions, Do Not Disturb, battery limits, the charger, and one backup."
 pubDate: 2026-08-31T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/alarm-reliability-checklist-tonight/hero.jpg
 heroImageAlt: "Flat illustration of a phone charging on a bedside table at night, a small checklist floating beside it, in coral and amber against deep indigo."
 category: tips-and-tricks
@@ -116,14 +119,18 @@ The honest limits: a checker can only see what the operating system chooses to e
 
 ## FAQ
 
-**How do I make sure my alarm goes off in the morning?**
+### How do I make sure my alarm goes off in the morning?
+
 Check six things before bed. The alarm is switched on and armed for tomorrow with a sound that is not None; the alarm volume is set on the right slider (Ringtone and Alerts on iPhone, the Clock app's Alarm volume on Android); your alarm app has permission to ring; Do Not Disturb allows alarms if you are on Android; the app is not restricted by battery saving; and the phone is charging on a hard surface. Then set a second alarm on another device for anything critical.
 
-**Will my alarm go off if my phone is on silent?**
+### Will my alarm go off if my phone is on silent?
+
 On iPhone, yes. Apple states that Do Not Disturb, the Ring/Silent switch and Silent mode do not affect the alarm sound, and an Apple Focus mode does not mute it either. On Android it depends: Do Not Disturb can silence alarms unless alarms are allowed in the Alarms and other interruptions section of your Do Not Disturb or Modes settings.
 
-**Does Do Not Disturb turn off alarms on Android?**
+### Does Do Not Disturb turn off alarms on Android?
+
 It can. Google's Clock app shows a message afterwards saying Do Not Disturb silenced your alarm and telling you to allow alarms in Do Not Disturb settings. Turn alarms on as an allowed interruption tonight and it stops being a question.
 
-**Will my alarm go off if my phone is turned off or dies overnight?**
+### Will my alarm go off if my phone is turned off or dies overnight?
+
 No. A powered-off or flat phone runs nothing, alarms included. This is why the charger check matters more than it sounds, and why a phone that keeps hitting single digits by bedtime deserves a second alarm somewhere else in the room.

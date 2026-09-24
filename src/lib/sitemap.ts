@@ -58,6 +58,7 @@ const PRIORITY: Record<string, number> = {
   '/privacy': 0.3,
   '/terms': 0.3,
   '/account/delete': 0.3,
+  '/about': 0.5,
 };
 
 /**

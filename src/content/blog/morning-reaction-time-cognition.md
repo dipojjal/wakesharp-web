@@ -1,8 +1,11 @@
 ---
 title: "Your Reaction Time at 7 AM Is Worse Than You Think"
+seoTitle: "Reaction Time After Waking Is Worse Than You Think"
 description: "Sleep inertia shows up in milliseconds. What the psychomotor vigilance task reveals about your reaction time at 7 AM, and how to measure your own."
 pubDate: 2026-09-09T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/morning-reaction-time-cognition/hero.jpg
 heroImageAlt: "Flat editorial illustration of a coral fingertip pressing a glowing amber target, with concentric ripple rings spreading across a cream foreground and a deep indigo dawn horizon behind it."
 category: sleep-science

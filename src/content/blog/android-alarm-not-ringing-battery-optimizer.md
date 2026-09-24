@@ -1,8 +1,11 @@
 ---
 title: "Android Alarm Not Ringing? Blame the Battery Optimizer"
+seoTitle: "Android Alarm Not Going Off? Blame the Battery Optimizer"
 description: "Your Android alarm didn't go off? Doze, exact alarm permissions and your phone maker's battery manager are the usual culprits. Per brand fixes for tonight."
 pubDate: 2026-09-01T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/android-alarm-not-ringing-battery-optimizer/hero.jpg
 heroImageAlt: "Flat editorial illustration of a sleeping figure beside an Android phone whose coral alarm bell is dimmed by the shadow of an amber battery with a padlock, against a deep indigo night sky."
 category: tips-and-tricks

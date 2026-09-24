@@ -3,6 +3,8 @@ title: "How to Become a Morning Person Without Hating Your Life"
 description: "A chronotype-respecting plan for waking earlier: 15-minute shifts, light at both ends of the day, and why 5 AM club maximalism collapses by Thursday."
 pubDate: 2026-09-06T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/become-morning-person-realistic/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedroom at dawn with an alarm clock on the windowsill and a row of small sunrise arcs stepping gradually higher and brighter across the wall, in coral, amber and cream against deep indigo night tones."
 category: morning-routines

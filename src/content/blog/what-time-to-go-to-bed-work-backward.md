@@ -2,6 +2,8 @@
 title: "What Time Should You Go to Bed? Work Backward From Sharp"
 description: "Stop counting eight hours back from your alarm. Count back from tomorrow's first real commitment, then budget grogginess, latency and time in bed."
 pubDate: 2026-09-06T19:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/what-time-to-go-to-bed-work-backward/hero.jpg
 heroImageAlt: "Flat editorial illustration split between a cream morning side with a rising sun and a desk, and a deep indigo night side with a bed and a glowing bedside clock, four rounded amber and coral blocks stepping backward from morning to bedtime."
 category: sleep-science

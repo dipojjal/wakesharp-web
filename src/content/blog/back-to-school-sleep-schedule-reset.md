@@ -1,8 +1,11 @@
 ---
 title: "Back-to-School Mornings: Reset a Summer Sleep Schedule in One Week"
+seoTitle: "Back-to-School Sleep Schedule: Reset It in One Week"
 description: "A seven-day plan to shift a summer sleep schedule earlier by 15 minutes a day, anchored with morning light, and how to keep the new wake time honest."
 pubDate: 2026-08-29T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/back-to-school-sleep-schedule-reset/hero.jpg
 heroImageAlt: "Flat illustration of a bedroom at dawn: a school backpack and a small alarm clock in warm morning light, with the night sky receding on the left and a row of rising bars on the right suggesting a wake time shifting earlier day by day."
 category: morning-routines

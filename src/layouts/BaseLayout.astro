@@ -10,6 +10,7 @@ import { blogIndexPath } from '../lib/blog';
 
 interface Props {
   title: string;
+  ogTitle?: string;
   description?: string;
   /** Root-relative path of THIS page, locale prefix included, e.g. "/es/support". */
   path: string;
@@ -31,6 +32,7 @@ interface Props {
 }
 const {
   title,
+  ogTitle,
   description,
   path,
   noindex,
@@ -55,6 +57,7 @@ const blogHref = await blogIndexPath(locale);
   <head>
     <BaseHead
       title={title}
+      ogTitle={ogTitle}
       description={description}
       path={path}
       noindex={noindex}

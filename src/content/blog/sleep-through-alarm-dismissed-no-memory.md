@@ -3,6 +3,8 @@ title: "Why You Sleep Through Alarms You Don't Remember Dismissing"
 description: "Dismissing an alarm is a practised motion your brain can run while barely awake, and never record. The real mechanism, and what actually raises the bar."
 pubDate: 2026-08-30T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-through-alarm-dismissed-no-memory/hero.jpg
 heroImageAlt: "Illustration of a dark bedroom before dawn: a sleeper lies with eyes closed on a cream pillow while their hand reaches out from under the duvet toward a glowing phone on the nightstand, a sliver of coral sunrise light at the window behind."
 category: sleep-science

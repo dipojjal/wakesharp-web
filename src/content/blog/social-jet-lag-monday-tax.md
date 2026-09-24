@@ -3,6 +3,8 @@ title: "Social Jet Lag: The Monday Tax on Your Weekend Sleep-In"
 description: "Sleeping in on Saturday shifts your body clock later, then Monday's alarm fires at your biological 4 AM. The midsleep math, and the one hour rule."
 pubDate: 2026-08-30T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/social-jet-lag-monday-tax/hero.jpg
 heroImageAlt: "Flat editorial illustration of two large rounded clock faces overlapping but offset from each other, one in warm coral and amber, one in deep indigo night blue, with two horizontal sleep blocks beneath them sitting out of alignment on a cream background."
 category: sleep-science

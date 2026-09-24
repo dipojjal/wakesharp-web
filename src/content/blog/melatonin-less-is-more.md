@@ -1,8 +1,11 @@
 ---
 title: "Melatonin: Why Less Is More (and When It Does Nothing)"
+seoTitle: "Melatonin Dosage: Why Less Is More, and When It Fails"
 description: "Melatonin is a timing signal, not a sedative. What the evidence says about 0.5 mg versus 10 mg gummies, when to take it, and when it does nothing."
 pubDate: 2026-09-07T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/melatonin-less-is-more/hero.jpg
 heroImageAlt: "Flat editorial illustration of one small melatonin tablet beside an oversized gummy, set against a deep indigo night sky with coral and amber rounded shapes."
 category: sleep-science

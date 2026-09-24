@@ -1,8 +1,11 @@
 ---
 title: "Sleep Debt Is Real. Weekend Lie-Ins Aren't the Fix"
+seoTitle: "Can You Catch Up on Sleep Debt on Weekends? Not Really"
 description: "Recovery sleep repays some of what you lost. It does not repay your body clock. What a weekend lie-in buys back, and what it charges on Monday."
 pubDate: 2026-09-04T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-debt-weekend-lie-ins/hero.jpg
 heroImageAlt: "Flat editorial illustration of a week drawn as seven rounded bars, five short indigo weekdays and two taller coral and amber weekend ones, under a starry night sky with a sunrise rising behind a small bed."
 category: sleep-science

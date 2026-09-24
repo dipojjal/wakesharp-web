@@ -12,6 +12,8 @@ import BaseLayout from './BaseLayout.astro';
 import { Picture, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config/site';
+import { PEOPLE } from '../config/people';
+import { pageTitle } from '../lib/seo';
 import BlogCTA from '../components/BlogCTA.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import BlogPostJsonLd from '../components/BlogPostJsonLd.astro';
@@ -19,7 +21,7 @@ import { getCatalog } from '../i18n/catalog';
 import { formatDate } from '../i18n/dates';
 import { interpolate } from '../i18n/rich';
 import { localePath, resolveLocale } from '../i18n/routes';
-import { postAlternates, postPath, postSwitchTargets } from '../lib/blog';
+import { blogIndexPath, postAlternates, postPath, postSwitchTargets } from '../lib/blog';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -27,13 +29,14 @@ interface Props {
   minutes: number;
 }
 const { post, related, minutes } = Astro.props;
-const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, category, tags } =
+const { title, seoTitle, description, pubDate, updatedDate, heroImage, heroImageAlt, category, tags, reviewedBy } =
   post.data;
 const locale = resolveLocale(post.data.lang);
 const t = getCatalog(locale.code).blog;
 const path = postPath(post);
 const alternates = await postAlternates(post);
 const switchTo = await postSwitchTargets(post);
+const blogHref = await blogIndexPath(locale);
 
 // One 1200×630 JPG derivative reused for og:image and the JSON-LD image — JPG
 // specifically because OG crawlers (notably Facebook's) handle AVIF/WebP
@@ -47,10 +50,15 @@ const ogImage = await getImage({
 });
 const ogImageUrl = new URL(ogImage.src, SITE.url).href;
 const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
+
+// "Reviewed by {name}", split so the name can be a link to who that is.
+const reviewer = reviewedBy ? PEOPLE[reviewedBy] : undefined;
+const [reviewedPre = '', reviewedPost = ''] = t.reviewedBy.split('{name}');
 ---
 
 <BaseLayout
-  title={`${title}${t.titleSuffix}`}
+  title={pageTitle(seoTitle ?? title, t.titleSuffix)}
+  ogTitle={title}
   description={description}
   path={path}
   locale={locale}
@@ -62,7 +70,7 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
   publishedTime={pubDate.toISOString()}
   modifiedTime={(updatedDate ?? pubDate).toISOString()}
 >
-  <BlogPostJsonLd post={post} imageUrl={ogImageUrl} path={path} />
+  <BlogPostJsonLd post={post} imageUrl={ogImageUrl} path={path} blogIndexPath={blogHref} />
 
   <article
     data-tone="morning"
@@ -79,10 +87,24 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
       </p>
       <h1 class="mt-2 text-4xl sm:text-5xl">{title}</h1>
       <p class="mt-4 text-sm dim">
-        {formatDate(pubDate, locale)} &middot; {interpolate(t.minRead, { minutes })}{
-          updatedDate && <> &middot; {interpolate(t.updated, { date: formatDate(updatedDate, locale) })}</>
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate, locale)}</time> &middot; {interpolate(t.minRead, { minutes })}{
+          updatedDate && (
+            <>
+              {' '}&middot;{' '}
+              <time datetime={updatedDate.toISOString()}>{interpolate(t.updated, { date: formatDate(updatedDate, locale) })}</time>
+            </>
+          )
         }
       </p>
+      {
+        reviewer && (
+          <p class="mt-1 text-sm dim">
+            {reviewedPre}
+            <a href={`${reviewer.path}#${reviewer.anchor}`} class="underline underline-offset-2">{reviewer.name}</a>
+            {reviewedPost}
+          </p>
+        )
+      }
 
       <Picture
         src={heroImage}
@@ -94,6 +116,7 @@ const fallback = heroImage.format === 'png' ? 'png' : 'jpg';
         class="mt-8 aspect-video w-full rounded-[var(--radius-card)] object-cover shadow-[var(--shadow-card)]"
         loading="eager"
         decoding="async"
+        fetchpriority="high"
       />
 
       <div class="prose mt-10"><slot /></div>

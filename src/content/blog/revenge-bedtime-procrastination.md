@@ -1,8 +1,11 @@
 ---
 title: "Revenge Bedtime Procrastination: Why You Sabotage Tomorrow Every Night"
+seoTitle: "Revenge Bedtime Procrastination: Why You Stay Up Too Late"
 description: "You're not lazy at midnight. You're reclaiming the autonomy your day took. Here's the science of revenge bedtime procrastination, and how to get the hour back."
 pubDate: 2026-08-28T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/revenge-bedtime-procrastination/hero.jpg
 heroImageAlt: "Illustration of a person sitting up late in a dark room lit only by a phone screen, the day's work and chores stacked behind them and a waiting alarm clock ahead."
 category: sleep-science

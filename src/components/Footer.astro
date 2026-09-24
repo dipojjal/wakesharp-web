@@ -38,6 +38,8 @@ const year = new Date().getFullYear();
           <li><a class="hover:text-[var(--color-amber)]" href={href('/#pricing')}>{t.footer.pricing}</a></li>
           <li><a class="hover:text-[var(--color-amber)]" href={blogHref}>{t.footer.blog}</a></li>
           <li><a class="hover:text-[var(--color-amber)]" href={href('/#faq')}>{t.footer.faq}</a></li>
+          {/* English only, like the legal bodies: there is no /<locale>/about. */}
+          <li><a class="hover:text-[var(--color-amber)]" href="/about">{t.footer.about}</a></li>
         </ul>
       </nav>
 

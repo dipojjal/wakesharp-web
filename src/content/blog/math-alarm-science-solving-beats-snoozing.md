@@ -1,8 +1,11 @@
 ---
 title: "Math Problems at 6 AM: The Science of Why Solving Beats Snoozing"
+seoTitle: "Math Alarm Clock: Why Solving Beats Snoozing at 6 AM"
 description: "Why your brain fails arithmetic worse right after waking than after a sleepless night, and what a math alarm clock actually does about it."
 pubDate: 2026-09-03T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/math-alarm-science-solving-beats-snoozing/hero.jpg
 heroImageAlt: "A hand holding up a glowing phone in a dark bedroom at dawn, its screen filled with plus, minus and equals signs."
 category: sleep-science

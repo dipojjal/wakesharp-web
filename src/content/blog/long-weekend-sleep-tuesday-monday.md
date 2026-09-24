@@ -1,8 +1,11 @@
 ---
 title: "The Long-Weekend Effect: Why Tuesday Feels Like Double Monday"
+seoTitle: "Long Weekend Sleep Schedule: Why Tuesday Feels Like Monday"
 description: "Three days of drift is a small self-inflicted time zone shift. A recovery plan for today, tonight and tomorrow, before the short week starts."
 pubDate: 2026-09-07T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/long-weekend-sleep-tuesday-monday/hero.jpg
 heroImageAlt: "Flat editorial illustration of four rounded panels: three warm coral and amber days with low sunsets and a reclining figure, then a deep indigo night panel holding a small coral alarm clock, with a curving line that rises across the weekend and drops sharply into the dark panel."
 category: sleep-science

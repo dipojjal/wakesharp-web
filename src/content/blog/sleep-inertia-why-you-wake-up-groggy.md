@@ -1,8 +1,11 @@
 ---
 title: "Sleep Inertia: Why You Wake Up Groggy (and How to Wake Up Sharp)"
+seoTitle: "Sleep Inertia: Why You Wake Up Groggy (and How to Fix It)"
 description: "Your brain takes 15 to 60 minutes to fully boot after waking. Here's the science of sleep inertia, and what actually shortens the groggy window."
 pubDate: 2026-08-27T12:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-inertia-why-you-wake-up-groggy/hero.jpg
 heroImageAlt: "Illustration of a groggy person sitting on the edge of a bed at dawn, reaching for a glowing phone while sunrise light spills through the window."
 category: sleep-science
@@ -55,14 +58,18 @@ And the honest limits, because we'd rather say them than have you discover them:
 
 ## FAQ
 
-**How long does sleep inertia last?**
+### How long does sleep inertia last?
+
 Typically 15 to 60 minutes for the worst of it, with measurable effects up to a few hours after waking from deep sleep or on a sleep debt. The first few minutes are reliably the most impaired, which is exactly when your alarm asks you to make a decision.
 
-**Is sleep inertia a disorder?**
+### Is sleep inertia a disorder?
+
 Everyday sleep inertia is normal physiology, not a condition. An extreme form (sometimes called sleep drunkenness, with prolonged confusion on waking) can accompany disorders like idiopathic hypersomnia. If waking up feels disabling most days despite adequate sleep, that's worth raising with a clinician; a blog post is not the tool for that job.
 
-**Doesn't coffee fix it instantly?**
+### Doesn't coffee fix it instantly?
+
 No. Caffeine is genuinely effective against inertia but takes around 20 minutes to act. The smart play is light and movement first, coffee as the second wave, not the rescue.
 
-**Why is my grogginess so much worse some mornings?**
+### Why is my grogginess so much worse some mornings?
+
 The two biggest levers are *which sleep stage you woke from* (deep sleep is the roughest exit) and *how much sleep you've been getting lately*. An erratic schedule also forces more deep-stage wake-ups. Consistency is boring and undefeated.

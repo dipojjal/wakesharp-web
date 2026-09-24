@@ -1,5 +1,6 @@
 ---
 title: "Gerçekten Çalan Bir Alarm İçin Bu Gecenin 6 Maddelik Kontrol Listesi"
+seoTitle: "Alarmın Çaldığından Emin Olun: 6 Maddelik Kontrol Listesi"
 description: "Alarmınızın gerçekten çalması için yatmadan önce altı kontrol: ses düzeyi, izinler, Rahatsız Etmeyin, pil kısıtlamaları, şarj ve bir yedek alarm."
 pubDate: 2026-08-31T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
@@ -117,14 +118,18 @@ Dürüst sınırlar: bir kontrol aracı yalnızca işletim sisteminin göstermey
 
 ## SSS
 
-**Alarmımın sabah çalacağından nasıl emin olurum?**
+### Alarmımın sabah çalacağından nasıl emin olurum?
+
 Yatmadan önce altı şeyi kontrol edin. Alarm açık, yarın için kurulu ve sesi Hiçbiri değil; alarm ses düzeyi doğru kaydırıcıda ayarlı (iPhone'da Zil Sesi ve Uyarılar, Android'de Saat uygulamasının Alarm ses düzeyi); alarm uygulamanızın çalma izni var; Android'deyseniz Rahatsız Etmeyin alarmlara izin veriyor; uygulama pil tasarrufuyla kısıtlanmamış; telefon sert bir yüzeyde şarj oluyor. Sonra kritik olan her şey için başka bir cihazda ikinci bir alarm kurun.
 
-**Telefonum sessizdeyken alarmım çalar mı?**
+### Telefonum sessizdeyken alarmım çalar mı?
+
 iPhone'da evet. Apple, Rahatsız Etmeyin'in, Zil/Sessiz anahtarının ve Sessiz modun alarm sesini etkilemediğini belirtir; bir Apple Odak modu da onu susturmaz. Android'de duruma bağlıdır: Rahatsız Etmeyin ya da Modlar ayarlarınızın Alarmlar ve diğer kesintiler bölümünde alarmlara izin verilmedikçe Rahatsız Etmeyin alarmları susturabilir.
 
-**Rahatsız Etmeyin, Android'de alarmları kapatır mı?**
+### Rahatsız Etmeyin, Android'de alarmları kapatır mı?
+
 Kapatabilir. Google'ın Saat uygulaması sonrasında Rahatsız Etmeyin'in alarmınızı sessize aldığını söyleyen ve Rahatsız Etmeyin ayarlarında alarmlara izin vermenizi isteyen bir mesaj gösterir. Bu gece alarmları izin verilen bir kesinti olarak açın; soru olmaktan çıksın.
 
-**Telefonum kapalıysa ya da gece pili biterse alarmım çalar mı?**
+### Telefonum kapalıysa ya da gece pili biterse alarmım çalar mı?
+
 Hayır. Kapalı ya da pili bitmiş bir telefon hiçbir şey çalıştırmaz; alarmlar dahil. Şarj kontrolünün kulağa geldiğinden daha önemli olmasının ve yatma saatine kadar sürekli tek haneli yüzdelere düşen bir telefonun odanın başka bir yerinde ikinci bir alarmı hak etmesinin nedeni budur.
