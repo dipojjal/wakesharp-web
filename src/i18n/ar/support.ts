@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**إن كان الاستيقاظ يهمّ حقًا، فاضبط منبهًا ثانيًا على جهاز آخر.** يجدول WakeSharp المنبهات عبر نظام التشغيل، والنظام هو من يقرر ما إذا كانت ستصدر صوتًا. راجع [إشعار السلامة](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `أدلة مفصّلة`,
   },
 
   ringsThrough: {

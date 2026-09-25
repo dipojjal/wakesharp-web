@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**अगर जागना सचमुच मायने रखता है, तो किसी दूसरे डिवाइस पर एक और अलार्म लगाएँ।** WakeSharp अलार्म ऑपरेटिंग सिस्टम के ज़रिए शेड्यूल करता है, और वे बजेंगे या नहीं, यह OS तय करता है। [सुरक्षा सूचना](terms-safety) देखें।`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `विस्तृत गाइड`,
   },
 
   ringsThrough: {

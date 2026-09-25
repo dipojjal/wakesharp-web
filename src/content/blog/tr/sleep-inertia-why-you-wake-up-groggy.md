@@ -1,5 +1,6 @@
 ---
 title: "Uyku Ataleti: Neden Sersem Uyanırsınız (ve Nasıl Zinde Uyanırsınız)"
+seoTitle: "Uyku Ataleti: Neden Sersem Uyanırsınız ve Ne Yapmalı"
 description: "Beyniniz uyandıktan sonra tam açılmak için 15 ila 60 dakika ister. İşte uyku ataletinin bilimi ve sersemlik penceresini gerçekten kısaltan şeyler."
 pubDate: 2026-08-27T12:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
@@ -56,14 +57,18 @@ Bir de dürüst sınırlar; çünkü bunları sizin keşfetmenizdense kendimiz s
 
 ## SSS
 
-**Uyku ataleti ne kadar sürer?**
+### Uyku ataleti ne kadar sürer?
+
 En kötü kısmı genellikle 15 ila 60 dakika sürer; derin uykudan uyandıktan sonra ya da uyku borcu varken ölçülebilir etkiler birkaç saate kadar uzayabilir. İlk birkaç dakika her seferinde en bozuk dönemdir; alarmınızın sizden karar vermenizi istediği an da tam olarak budur.
 
-**Uyku ataleti bir hastalık mı?**
+### Uyku ataleti bir hastalık mı?
+
 Gündelik uyku ataleti bir rahatsızlık değil, normal fizyolojidir. Aşırı bir biçimi (bazen uyku sarhoşluğu denir; uyanınca uzun süren bir zihin bulanıklığıyla seyreder) idiyopatik hipersomni gibi bozukluklara eşlik edebilir. Yeterli uykuya rağmen çoğu gün uyanmak sizi işlevsiz bırakıyorsa, bunu bir hekime anlatmaya değer; bir blog yazısı bu işin aracı değildir.
 
-**Kahve bunu anında çözmüyor mu?**
+### Kahve bunu anında çözmüyor mu?
+
 Hayır. Kafein atalete karşı gerçekten etkilidir ama etki etmesi yaklaşık 20 dakika alır. Akıllıca olan, önce ışık ve hareket; kahve ise kurtarıcı değil, ikinci dalga.
 
-**Sersemliğim neden bazı sabahlar çok daha kötü?**
+### Sersemliğim neden bazı sabahlar çok daha kötü?
+
 En büyük iki etken, *hangi uyku evresinden uyandığınız* (en sert çıkış derin uykudandır) ve *son zamanlarda ne kadar uyuduğunuz*. Düzensiz bir program da daha fazla derin evre uyanışını zorlar. Düzenlilik sıkıcıdır ve yenilgisiz.

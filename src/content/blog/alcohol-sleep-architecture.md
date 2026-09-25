@@ -1,8 +1,11 @@
 ---
 title: "How Alcohol Rewrites Your Sleep Architecture (and Your Morning)"
+seoTitle: "Alcohol and Sleep Quality: How a Drink Rewrites Your Night"
 description: "Alcohol knocks you out fast, then wrecks the second half of the night. What sedation does to REM, your heart rate and the morning after."
 pubDate: 2026-09-08T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/alcohol-sleep-architecture/hero.jpg
 heroImageAlt: "Flat editorial illustration of a coral wine glass beside a sleep wave that starts smooth and breaks into jagged peaks under an amber glow, on a deep indigo night sky."
 category: sleep-science
@@ -83,7 +86,7 @@ Averages are a starting point, not a verdict. Your body is not the median body i
 
 WakeSharp's warm-up games produce a Sharpness Score scored against your own rolling baseline, which makes it a reasonable, if rough, instrument for exactly this question. Run it for two or three weeks. Note which nights included a drink and roughly how many. Then compare the mornings after drinking nights to your alcohol-free ones and see whether there is a gap, and how big it is.
 
-The honest limits: WakeSharp does not track your sleep, so it cannot tell you what happened to your REM. It measures how you perform on a short cognitive task minutes after waking, which is a downstream proxy at best. It is noisy, it is a sample size of one, and a single drinking night compared against a single dry night proves nothing. Stress, illness, late meetings and a hot bedroom all move the same number. What a run of ten or fifteen mornings can show you is a direction, and a direction is often enough to change behavior that a review paper never will. (What is happening in those first minutes is covered in more depth in [the first 30 minutes after waking](/blog/first-30-minutes-brain-after-waking).) No alarm app, ours included, can promise you will wake up; that depends on your device, your settings and your night.
+The honest limits: WakeSharp does not track your sleep, so it cannot tell you what happened to your REM. It measures how you perform on a short cognitive task minutes after waking, which is a downstream proxy at best. It is noisy, it is a sample size of one, and a single drinking night compared against a single dry night proves nothing. Stress, illness, late meetings and [a hot bedroom](/blog/sleep-in-heat-late-summer) all move the same number. What a run of ten or fifteen mornings can show you is a direction, and a direction is often enough to change behavior that a review paper never will. (What is happening in those first minutes is covered in more depth in [the first 30 minutes after waking](/blog/first-30-minutes-brain-after-waking).) No alarm app, ours included, can promise you will wake up; that depends on your device, your settings and your night.
 
 ## A necessary safety note
 
@@ -95,14 +98,18 @@ And if your sleep is persistently unrefreshing, if you snore heavily, gasp, or h
 
 ## FAQ
 
-**Does alcohol help you sleep?**
+### Does alcohol help you sleep?
+
 It helps you fall asleep and hurts you at staying asleep. Every dose studied in the Ebrahim review shortened sleep onset and consolidated the first half of the night, while increasing disruption in the second half. So the effect you can feel is real, and the cost arrives while you are unconscious. On balance, it is a poor sleep aid.
 
-**How long before bed should I stop drinking?**
+### How long before bed should I stop drinking?
+
 There is no single validated cutoff, but the wearable evidence points in a clear direction: drinking earlier in the evening produced smaller cardiovascular and sleep effects. Three to four hours before bed is a reasonable target, and finishing earlier is better than finishing later at the same total.
 
-**Why do I wake up at 3 AM after drinking?**
+### Why do I wake up at 3 AM after drinking?
+
 Several things converge. Blood alcohol is falling toward zero, so the sedation lifts and produces a rebound into lighter, more fragmented sleep. Sympathetic nervous system activity rises, heart rate stays elevated, and alcohol's suppression of vasopressin means a fuller bladder. That combination lands in the second half of the night, which is where the disruption is concentrated.
 
-**Does one glass of wine affect sleep?**
+### Does one glass of wine affect sleep?
+
 Measurably, yes, though modestly. In the Finnish employee study, a low dose averaging 1.1 drinks reduced overnight autonomic recovery by 9.3 percentage units and raised heart rate by about 1.4 bpm. Whether that translates into a morning you can actually feel is individual, which is precisely the sort of thing worth checking against your own data rather than arguing about in the abstract.

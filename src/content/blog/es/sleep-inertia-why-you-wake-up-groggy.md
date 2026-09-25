@@ -1,5 +1,6 @@
 ---
 title: "Inercia del sueño: por qué despiertas atontado (y cómo despertar lúcido)"
+seoTitle: "Inercia del sueño: por qué despiertas atontado y qué hacer"
 description: "Tu cerebro tarda de 15 a 60 minutos en arrancar del todo después de despertar. La ciencia de la inercia del sueño y lo que de verdad acorta esa niebla."
 pubDate: 2026-08-27T12:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
@@ -56,14 +57,18 @@ Y los límites honestos, porque preferimos decirlos a que los descubras tú: nin
 
 ## Preguntas frecuentes
 
-**¿Cuánto dura la inercia del sueño?**
+### ¿Cuánto dura la inercia del sueño?
+
 Normalmente de 15 a 60 minutos en su peor tramo, con efectos medibles hasta unas horas después de despertar desde el sueño profundo o con deuda de sueño. Los primeros minutos son, de forma consistente, los más deteriorados, que es justo cuando tu alarma te pide tomar una decisión.
 
-**¿La inercia del sueño es un trastorno?**
+### ¿La inercia del sueño es un trastorno?
+
 La inercia del sueño de cada día es fisiología normal, no una enfermedad. Una forma extrema (a veces llamada embriaguez del sueño, con confusión prolongada al despertar) puede acompañar a trastornos como la hipersomnia idiopática. Si despertar te resulta incapacitante la mayoría de los días a pesar de dormir lo suficiente, vale la pena comentarlo con un profesional sanitario; una entrada de blog no es la herramienta para ese trabajo.
 
-**¿El café no lo arregla al instante?**
+### ¿El café no lo arregla al instante?
+
 No. La cafeína es realmente eficaz contra la inercia, pero tarda unos 20 minutos en actuar. La jugada inteligente es luz y movimiento primero, y el café como segunda oleada, no como rescate.
 
-**¿Por qué algunas mañanas mi atontamiento es mucho peor?**
+### ¿Por qué algunas mañanas mi atontamiento es mucho peor?
+
 Las dos palancas más grandes son *desde qué fase del sueño despertaste* (el sueño profundo es la salida más áspera) y *cuánto has estado durmiendo últimamente*. Un horario errático también fuerza más despertares desde fases profundas. La regularidad es aburrida e invicta.

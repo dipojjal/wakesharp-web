@@ -124,14 +124,18 @@ Sınır dürüst olanıdır ve her alarm uygulamasının sahip olduğu sınırla
 
 ## SSS
 
-**iPhone alarmım neden çalmadı?**
+### iPhone alarmım neden çalmadı?
+
 Olasılık sırasıyla: zil sesi ve uyarılar ses düzeyi düşüktü, alarmın sesi Hiçbiri'ye ayarlıydı, Dikkat Farkındalıklı Özellikler onu kıstı, alarm bugün için kurulu değildi, telefon kapalıydı ya da pili bitmişti, uyku programınızdan gelen uyanma alarmının kendi daha kısık ses düzeyi vardı ya da onu zar zor uyanıkken kapattınız. Önce Zil Sesi ve Uyarılar kaydırıcısına ve alarmın Ses ayarına bakın; çünkü bu ikisi çoğunu açıklar.
 
-**iPhone alarmı sessizdeyken çalar mı?**
+### iPhone alarmı sessizdeyken çalar mı?
+
 Evet. Apple açıkça belirtiyor: Sessiz mod, Zil/Sessiz anahtarı ve Rahatsız Etmeyin bir Saat alarmının sesini etkilemez; bir Odak modu da onu susturmaz. Alarmınız sessiz kaldıysa, bunun yerine ses düzeyi kaydırıcısına ve alarmın kendi ses ayarına bakın.
 
-**iPhone alarmım neden bu kadar kısık?**
+### iPhone alarmım neden bu kadar kısık?
+
 Genellikle üç şeyden biri: Zil Sesi ve Uyarılar kaydırıcısı düşüktür, Düğmelerle Değiştir bir ses düğmesine basışın onu boşaltmasına izin vermiştir ya da ön kamera ekrana baktığınızı gördüğü için Dikkat Farkındalıklı Özellikler sesi kısmıştır. Bir uyku programı uyanma alarmının da Sağlık uygulamasında, diğer her şeyden ayrı kendi ses düzeyi kaydırıcısı vardır.
 
-**Dikkat Farkındalıklı Özellikler alarmımı kısabilir mi?**
+### Dikkat Farkındalıklı Özellikler alarmımı kısabilir mi?
+
 Evet ve Apple bunu belgeliyor: TrueDepth kamera cihazınıza baktığınızı algıladığında bazı uyarıların ses düzeyini düşürür. Telefon size doğru eğikken sırtüstü uyumanız bunu tetiklemeye yeter. Yüksek sesli bir alarm sizin için gözlerinizi bekleyen bir ekrandan daha önemliyse, Ayarlar &gt; Face ID ve Parola bölümünden kapatın.

@@ -51,6 +51,8 @@ export const support = {
       ],
     },
     warning: `**Uyanmak gerçekten önemliyse başka bir cihazda ikinci bir alarm kurun.** WakeSharp alarmları işletim sistemi aracılığıyla zamanlar ve çalıp çalmayacaklarına işletim sistemi karar verir. Bkz. [güvenlik bildirimi](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Ayrıntılı rehberler`,
   },
 
   ringsThrough: {

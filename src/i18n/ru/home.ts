@@ -251,6 +251,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: `Из `, accent: `блога`, post: `` },
+    more: `Все статьи`,
+  },
+
   cta: {
     heading: { pre: `Завтрашнее утро начинается `, accent: `сегодня вечером`, post: `` },
     lede: `Поставьте один будильник. Узнайте, каким на самом деле бывает ясное утро.`,

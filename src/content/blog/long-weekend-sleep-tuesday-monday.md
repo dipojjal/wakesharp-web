@@ -1,8 +1,11 @@
 ---
 title: "The Long-Weekend Effect: Why Tuesday Feels Like Double Monday"
+seoTitle: "Long Weekend Sleep Schedule: Why Tuesday Feels Like Monday"
 description: "Three days of drift is a small self-inflicted time zone shift. A recovery plan for today, tonight and tomorrow, before the short week starts."
 pubDate: 2026-09-07T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/long-weekend-sleep-tuesday-monday/hero.jpg
 heroImageAlt: "Flat editorial illustration of four rounded panels: three warm coral and amber days with low sunsets and a reclining figure, then a deep indigo night panel holding a small coral alarm clock, with a curving line that rises across the weekend and drops sharply into the dark panel."
 category: sleep-science
@@ -70,7 +73,7 @@ Aim 45 to 60 minutes earlier than last night. Take the same again on Tuesday nig
 
 **6. Set tomorrow's alarm now and pre-decide the first hour.** Clothes out. Coffee loaded. First task named on paper, and make it a small one. This is not tidiness, it is offloading. [Hilditch and McHill's review](https://doi.org/10.2147/NSS.S188911) of sleep inertia in *Nature and Science of Sleep* describes cognitive impairment in the first fifteen to thirty minutes after waking that can rival the effect of real sleep loss, and that gets worse when you are already short of sleep and waking at the wrong circadian phase, which is exactly tomorrow's situation. The version of you who wakes up at 6:30 tomorrow is a poor decision-maker. Do not hand them decisions. Hand them a list.
 
-**7. Load Tuesday back to front.** Put the shallow work in the first ninety minutes: email, admin, the meeting where you mostly listen. Put anything requiring real thought after 10am. If you get to choose when the hard conversation happens, do not choose 8:45.
+**7. Load Tuesday back to front.** Put the shallow work in the first ninety minutes: email, admin, [the meeting where you mostly listen](/blog/meeting-ready-morning-calendar-alarm). Put anything requiring real thought after 10am. If you get to choose when the hard conversation happens, do not choose 8:45.
 
 And then Wednesday, which nobody plans for. Wednesday often feels worse than Tuesday, because the adrenaline of a first day back is gone and the clock has only advanced by an hour or so. Hold the wake time anyway. Do not repay Tuesday's shortfall with a Wednesday lie-in, because that reopens the gap you spent two days closing. Wednesday is the day the plan is actually being tested.
 

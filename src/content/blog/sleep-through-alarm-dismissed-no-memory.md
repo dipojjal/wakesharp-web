@@ -3,6 +3,8 @@ title: "Why You Sleep Through Alarms You Don't Remember Dismissing"
 description: "Dismissing an alarm is a practised motion your brain can run while barely awake, and never record. The real mechanism, and what actually raises the bar."
 pubDate: 2026-08-30T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-through-alarm-dismissed-no-memory/hero.jpg
 heroImageAlt: "Illustration of a dark bedroom before dawn: a sleeper lies with eyes closed on a cream pillow while their hand reaches out from under the duvet toward a glowing phone on the nightstand, a sliver of coral sunrise light at the window behind."
 category: sleep-science
@@ -62,7 +64,7 @@ Usually some combination of these, and they stack:
 - **The alarm landed in deep sleep.** Early alarms and late bedtimes both make that likelier.
 - **The sound stopped meaning anything.** Same tone, same time, never once consequential.
 - **Dismissal is within arm's reach.** A nightstand turns getting up into a one-motion problem your body solves without you.
-- **It may not have rung at all.** The least romantic explanation, and often the right one: volume down, silenced, a permission revoked in an update, a battery optimiser that suspended the app, a phone that died at 4 AM. Check the boring causes before concluding anything about your brain. WakeSharp's alarm reliability check reads those phone conditions before bed and gives a plain verdict, admitting what it cannot determine rather than showing a green tick it cannot back up.
+- **It may not have rung at all.** The least romantic explanation, and often the right one: volume down, silenced, a permission revoked in an update, [a battery optimiser that suspended the app](/blog/android-alarm-not-ringing-battery-optimizer), a phone that died at 4 AM. Check the boring causes before concluding anything about your brain. WakeSharp's alarm reliability check reads those phone conditions before bed and gives a plain verdict, admitting what it cannot determine rather than showing a green tick it cannot back up.
 
 One more, kept brief. If you consistently cannot wake despite a genuinely adequate sleep opportunity, that is worth a clinician rather than another app. Disrupted breathing during sleep is a common and treatable cause of exactly that pattern, with excessive daytime sleepiness as a hallmark feature ([Lal, Weaver, Bae & Strohl, *Annals of the American Thoracic Society*, 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8086534/)). Snoring, gasping, unrefreshing sleep, or dozing off in the afternoon are all reasons to ask. An article cannot tell you what is happening in your airway.
 
@@ -87,7 +89,7 @@ The useful axis is cognitive cost. Raise what dismissal requires and you require
 
 This is the specific problem WakeSharp exists for, so let me be precise about the claim and the limit.
 
-A WakeSharp alarm asks for more than a tap. It asks for a **mission**: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before. Other missions have you scan a specific object across the room, or get up and walk a set number of steps. However you quiet the alarm, the morning only counts once the mission is done. The design argument is the mechanism above. A swipe sits inside the motor repertoire of a barely aroused brain. Solving for x, or crossing the room to find the right object, does not, because it needs the associative machinery a partial arousal leaves offline. Every mission has a fallback ending in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.
+A WakeSharp alarm asks for more than a tap. It asks for a **mission**: [Mind Games](/features/math-alarm-clock), a short arithmetic sprint, or [Photo Proof](/features/photo-alarm-clock), which has you retake the photo of a spot you chose the night before. Other missions have you scan a specific object across the room, or get up and walk a set number of steps. However you quiet the alarm, the morning only counts once the mission is done. The design argument is the mechanism above. A swipe sits inside the motor repertoire of a barely aroused brain. Solving for x, or crossing the room to find the right object, does not, because it needs the associative machinery a partial arousal leaves offline. Every mission has a fallback ending in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.
 
 Now the limits, said plainly rather than left for you to find.
 

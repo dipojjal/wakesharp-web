@@ -1,8 +1,11 @@
 ---
 title: "Caffeine's 10-Hour Tail: When Your Last Coffee Should Really Be"
+seoTitle: "Caffeine Cutoff Time: When to Have Your Last Coffee"
 description: "Caffeine's half-life means a 3 PM coffee is still working at bedtime. The pharmacology, a personal cutoff calculation, and a one-week sensitivity test."
 pubDate: 2026-09-03T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/caffeine-cutoff-time-sleep/hero.jpg
 heroImageAlt: "Flat illustration of a cream coffee cup whose steam curls into a coral and amber arc sweeping across a starry indigo night sky toward a glowing clock face above a bed."
 category: sleep-science
@@ -108,6 +111,6 @@ Tolerance to the subjective jolt develops faster than protection for your sleep.
 
 ## The evening version of this
 
-If it is already late and you had that 3:20 coffee, tonight is mostly a write-off in terms of prevention. There is no way to speed elimination up, whatever the internet says about water and cold showers. What you can do is not compound it: keep the lights low, accept that sleep may take a while, and resist the urge to fix a caffeine problem with an alcohol solution, which trades sleep onset for a worse second half of the night.
+If it is already late and you had that 3:20 coffee, tonight is mostly a write-off in terms of prevention. There is no way to speed elimination up, whatever the internet says about water and cold showers. What you can do is not compound it: keep the lights low, accept that sleep may take a while, and resist the urge to fix a caffeine problem with an alcohol solution, which [trades sleep onset for a worse second half of the night](/blog/alcohol-sleep-architecture).
 
 Then make one decision for tomorrow, while it is still fresh and slightly annoying. Pick your cutoff time, write it somewhere you will see it at 3 PM, and start counting. The tail is long, but it is at least predictable, which makes it one of the few things about your sleep you can move on purpose.

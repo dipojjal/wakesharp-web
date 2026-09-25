@@ -18,6 +18,8 @@ import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
 import { alternatesFor, localePath } from '../i18n/routes';
 import { isDefaultLocale, type EnabledLocale } from '../i18n/config';
+import { blogIndexPath, getPublishedPosts, postPath, sourceSlugOf } from '../lib/blog';
+import { missionPages } from '../lib/features';
 
 import iosHome from '../assets/screens/ios/home.png';
 import iosRing from '../assets/screens/ios/ring.png';
@@ -44,6 +46,24 @@ const vars = {
   trialDays: SITE.unlimited.trialDays,
 };
 const links = { terms: localePath(locale, '/terms') };
+
+// "From the blog": the evergreen posts that answer what people search before
+// they need an alarm like this, in this page's language only. A locale with
+// none of them translated shows nothing rather than English titles.
+const FEATURED = [
+  'sleep-inertia-why-you-wake-up-groggy',
+  'math-alarm-science-solving-beats-snoozing',
+  'iphone-alarm-didnt-go-off-causes',
+  'alarm-reliability-checklist-tonight',
+];
+const localPosts = await getPublishedPosts(locale.code);
+const featured = FEATURED.map((slug) => localPosts.find((p) => sourceSlugOf(p) === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p))
+  .slice(0, 3);
+const blogHref = await blogIndexPath(locale);
+
+// The landing pages are English, so only the English cards link to them.
+const missionHref = english ? await missionPages() : new Map<string, string>();
 ---
 
 <BaseLayout
@@ -59,8 +79,10 @@ const links = { terms: localePath(locale, '/terms') };
   <SunriseSection id="hero" class="!pt-16 sm:!pt-20">
     <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
       <div>
+        {/* Both hero Larks share width 165, so they resolve to the same image
+            URLs and the browser downloads one file; this one is drawn at 150. */}
         <div class="mb-6 lg:hidden">
-          <Lark pose="asleep" width={150} breathe glow priority />
+          <Lark pose="asleep" width={165} breathe glow priority class="w-[150px]" />
         </div>
         {/* The kicker is part of the <h1> on purpose: it carries the query the
             page targets, while the tagline below it stays the brand line. */}
@@ -134,6 +156,7 @@ const links = { terms: localePath(locale, '/terms') };
       <p class="lede mt-5">{t.smart.lede}</p>
       <p class="mt-4 dim">{t.smart.shifts}</p>
       <p class="mt-3 dim text-sm">{t.smart.labels}</p>
+      {english && <p class="mt-4 text-sm"><a href="/features/calendar-alarm-clock" class="font-semibold underline underline-offset-2">How the calendar alarm works</a></p>}
     </FeatureRow>
   </SunriseSection>
 
@@ -149,7 +172,11 @@ const links = { terms: localePath(locale, '/terms') };
         t.mission.missions.map((m) => (
           <li class="rounded-xl border border-white/12 bg-white/[0.06] p-4">
             <div class="flex items-baseline justify-between gap-3">
-              <strong>{m.name}</strong>
+              {missionHref.has(m.name) ? (
+                <a href={missionHref.get(m.name)} class="font-bold underline underline-offset-2">{m.name}</a>
+              ) : (
+                <strong>{m.name}</strong>
+              )}
               <span class="dim text-xs font-semibold uppercase tracking-wide">{m.kind}</span>
             </div>
             <span class="dim mt-1 block text-[0.95rem]">{m.body}</span>
@@ -159,6 +186,7 @@ const links = { terms: localePath(locale, '/terms') };
     </ul>
 
     <p class="dim mt-6 max-w-3xl text-sm">{t.mission.note}</p>
+    {english && <p class="mt-3 text-sm"><a href="/features" class="font-semibold underline underline-offset-2">Every mission, and how each one works</a></p>}
   </SunriseSection>
 
   {/* ── 7. Warm-up ──────────────────────────────────────────────────────── */}
@@ -295,7 +323,25 @@ const links = { terms: localePath(locale, '/terms') };
     </div>
   </SunriseSection>
 
-  {/* ── 15. Final CTA ───────────────────────────────────────────────────── */}
+  {/* ── 15. From the blog ───────────────────────────────────────────────── */}
+  {
+    featured.length > 0 && (
+      <SunriseSection id="from-blog">
+        <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.fromBlog.heading.pre}<span class="accent">{t.fromBlog.heading.accent}</span>{t.fromBlog.heading.post}</h2>
+        <ul class="mt-8 grid gap-6 md:grid-cols-3">
+          {featured.map((p) => (
+            <li class="card p-6">
+              <a href={postPath(p)} class="text-lg font-bold leading-snug underline-offset-2 hover:underline">{p.data.title}</a>
+              <p class="mt-2 text-[0.95rem] dim">{p.data.description}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6"><a href={blogHref} class="font-semibold underline underline-offset-2">{t.fromBlog.more}</a></p>
+      </SunriseSection>
+    )
+  }
+
+  {/* ── 16. Final CTA ───────────────────────────────────────────────────── */}
   <SunriseSection id="cta" anchor="get">
     <div class="flex flex-col items-center text-center">
       <Lark pose="encouraging" width={170} />

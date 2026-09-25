@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**Якщо прокинутися справді важливо, поставте другий будильник на іншому пристрої.** WakeSharp планує будильники через операційну систему, а ОС вирішує, чи вони задзвонять. Див. [попередження про безпеку](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Докладні посібники`,
   },
 
   ringsThrough: {

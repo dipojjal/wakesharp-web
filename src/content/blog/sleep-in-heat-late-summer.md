@@ -1,8 +1,11 @@
 ---
 title: "Hot Nights, Sharp Mornings: Sleeping Through Late-Summer Heat"
+seoTitle: "How to Sleep in the Heat (and Still Wake Up Sharp)"
 description: "Heat blocks the core-temperature drop that starts sleep. Six fixes to run tonight, and an honest way to see what a hot night cost you tomorrow."
 pubDate: 2026-09-01T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-in-heat-late-summer/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedroom on a hot late-summer night, with an open window, a small fan on the sill and curtains lifting in coral and amber against a deep indigo sky."
 category: sleep-science
@@ -78,7 +81,7 @@ Start with the part most apps leave out. **WakeSharp does not track your sleep.*
 
 What WakeSharp measures is the other end: how sharp you are in the minutes after waking. Once you clear your alarm's mission, an optional warm-up of brain games such as Mind Games or Reaction Tap (three of the five, on a rotation) produces a **Sharpness Score**, graded against your own rolling baseline rather than against strangers. That is a proxy for morning cognitive state, and a proxy is the right tool in a heat wave, because what you want to know is whether the heat is costing you anything that matters by daylight.
 
-There is decent reason to think it will show. When researchers followed university students through a Boston heat wave, those in buildings without air conditioning were measurably slower on reaction-time tests and worse on working memory than students in cooled dorms ([Cedeno Laurent et al., *PLOS Medicine*, 2018](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002605)). Wrecked deep sleep and ambient heat push in the same direction, on the exact functions a morning warm-up measures.
+There is decent reason to think it will show. When researchers followed university students through a Boston heat wave, those in buildings without air conditioning were measurably slower on reaction-time tests and worse on working memory than students in cooled dorms ([Cedeno Laurent et al., *PLOS Medicine*, 2018](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002605)). Wrecked deep sleep and ambient heat push in the same direction, on [the exact functions a morning warm-up measures](/blog/morning-reaction-time-cognition).
 
 So the practical use is simple: run the warm-up every morning across a hot week and the week after the weather breaks, then compare the shape of the line. A sag that recovers is a better reason to buy a dehumidifier than a vague feeling is. No sag is also useful information.
 
@@ -90,14 +93,18 @@ Early September is also when hot nights collide with restarting schedules, so if
 
 ## FAQ
 
-**What is the best temperature for sleeping?**
+### What is the best temperature for sleeping?
+
 Most sleep research lands around 16 to 20 degrees Celsius, roughly 60 to 68 Fahrenheit, under a normal amount of bedding. The number matters less than the principle: the room has to be cooler than your skin for your body to shed heat into it. Bedding, humidity and nightwear shift the ideal figure by several degrees, which is why two people in one bed can genuinely disagree.
 
-**How do you sleep in the heat without air conditioning?**
+### How do you sleep in the heat without air conditioning?
+
 Stack the small effects, because none wins alone. Shade the windows by day and ventilate once outside air is cooler, warm shower one to two hours before bed, a single cotton or linen sheet with hands and feet uncovered, a cross-breeze rather than a fan aimed at your face, and humidity attacked separately from temperature.
 
-**Does a fan actually help you sleep when it is hot?**
-Yes, up to a point. A fan speeds evaporation from your skin, which is real cooling, and its noise covers the street sounds that come with open windows. Above roughly 35 degrees Celsius it stops helping and can make things worse, because the air it moves is hotter than you are. Below that, aim it across the room rather than at your head.
+### Does a fan actually help you sleep when it is hot?
 
-**Why do I keep waking up at 3am when it is hot?**
+Yes, up to a point. A fan speeds evaporation from your skin, which is real cooling, and [its noise covers the street sounds](/blog/white-pink-brown-noise-sleep) that come with open windows. Above roughly 35 degrees Celsius it stops helping and can make things worse, because the air it moves is hotter than you are. Below that, aim it across the room rather than at your head.
+
+### Why do I keep waking up at 3am when it is hot?
+
 Two reasons that reinforce each other. The back half of the night is REM-heavy, and thermoregulation is largely switched off during REM, so a hot room hits hardest exactly then. Meanwhile the room has spent hours equilibrating with heat stored in walls and mattress, so it is often at its most oppressive long after you fell asleep. If the waking comes with a racing heart, breathlessness or confusion, that is a doctor question, not a bedding one.

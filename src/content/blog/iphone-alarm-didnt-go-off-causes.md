@@ -3,6 +3,8 @@ title: "iPhone Alarm Didn't Go Off? The 7 Real Causes"
 description: "Your iPhone alarm never rang. Here are the seven causes that actually explain it, how to check each one tonight, and which ones are Apple's to fix."
 pubDate: 2026-08-31T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
 heroImageAlt: "Flat illustration of a silent iPhone lying face up on a nightstand at dawn, lit by coral and amber light against a deep indigo bedroom."
 category: tips-and-tricks
@@ -112,7 +114,7 @@ And sometimes it genuinely is a bug, and none of this is your fault. The 2024 re
 
 Every cause above shares one shape. The phone knew, hours in advance, that the conditions were wrong. It just had no reason to mention it.
 
-That is the job of WakeSharp's reliability check, which lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out.
+That is the job of WakeSharp's reliability check, which lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out. The same checks for both iPhone and Android, step by step, are on [WakeSharp's support page](/support).
 
 On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted alarm permission the alarm sounds through Silent mode and Focus the way the Clock app does. That permission is the whole foundation: decline or revoke it and WakeSharp cannot schedule an alarm at all, which is exactly what the reliability check will tell you first.
 
@@ -122,14 +124,18 @@ The limit is the honest one, and it is the same limit every alarm app has: WakeS
 
 ## FAQ
 
-**Why did my iPhone alarm not go off?**
+### Why did my iPhone alarm not go off?
+
 In order of likelihood: the ringtone and alerts volume was low, the alarm's sound was set to None, Attention Aware Features quieted it, the alarm was not armed for today, the phone was off or flat, the wake-up alarm from your sleep schedule had its own quieter volume, or you dismissed it while barely awake. Check the Ringtone and Alerts slider and the alarm's Sound setting first, because those two account for most of it.
 
-**Does the iPhone alarm ring on silent?**
+### Does the iPhone alarm ring on silent?
+
 Yes. Apple is explicit that Silent mode, the Ring/Silent switch and Do Not Disturb do not affect a Clock alarm's sound, and a Focus mode does not mute it either. If your alarm was silent, look at the volume slider and the alarm's own sound setting instead.
 
-**Why is my iPhone alarm so quiet?**
+### Why is my iPhone alarm so quiet?
+
 Usually one of three things: the Ringtone and Alerts slider is low, Change with Buttons let a volume press drain it, or Attention Aware Features lowered the volume because the front camera saw you looking at the screen. A sleep schedule wake-up alarm also has its own volume slider in Health, separate from everything else.
 
-**Can Attention Aware Features make my alarm quieter?**
+### Can Attention Aware Features make my alarm quieter?
+
 Yes, and Apple documents it: when the TrueDepth camera detects that you are looking at your device, it lowers the volume of some alerts. Sleeping face up with the phone angled toward you is enough to trigger it. Turn it off in Settings &gt; Face ID &amp; Passcode if a loud alarm matters more to you than a display that waits for your eyes.

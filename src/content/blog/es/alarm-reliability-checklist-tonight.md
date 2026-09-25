@@ -1,5 +1,6 @@
 ---
 title: "La lista de 6 puntos de esta noche para una alarma que de verdad suene"
+seoTitle: "Cómo asegurarte de que tu alarma suene: lista de 6 puntos"
 description: "Seis comprobaciones antes de dormir para que tu alarma suene de verdad: volumen, permisos, No molestar, límites de batería, el cargador y un respaldo."
 pubDate: 2026-08-31T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
@@ -117,14 +118,18 @@ Los límites honestos: un comprobador solo puede ver lo que el sistema operativo
 
 ## Preguntas frecuentes
 
-**¿Cómo me aseguro de que mi alarma suene por la mañana?**
+### ¿Cómo me aseguro de que mi alarma suene por la mañana?
+
 Comprueba seis cosas antes de acostarte. La alarma está activada y armada para mañana con un sonido que no sea Ninguno; el volumen de alarma está ajustado en el control correcto (Tono de llamada y avisos en iPhone, el Volumen de alarma de la app Reloj en Android); tu app de alarma tiene permiso para sonar; No molestar permite las alarmas si estás en Android; la app no está restringida por el ahorro de batería; y el teléfono se está cargando sobre una superficie dura. Después, pon una segunda alarma en otro dispositivo para cualquier cosa crítica.
 
-**¿Sonará mi alarma si el teléfono está en silencio?**
+### ¿Sonará mi alarma si el teléfono está en silencio?
+
 En iPhone, sí. Apple afirma que No molestar, el interruptor de timbre/silencio y el modo Silencio no afectan al sonido de la alarma, y un modo de Concentración de Apple tampoco la silencia. En Android depende: No molestar puede silenciar las alarmas a menos que estén permitidas en la sección Alarmas y otras interrupciones de los ajustes de No molestar o de Modos.
 
-**¿No molestar apaga las alarmas en Android?**
+### ¿No molestar apaga las alarmas en Android?
+
 Puede hacerlo. La app Reloj de Google muestra después un mensaje diciendo que No molestar ha silenciado tu alarma y pidiéndote que permitas las alarmas en los ajustes de No molestar. Activa esta noche las alarmas como interrupción permitida y dejará de ser una pregunta.
 
-**¿Sonará mi alarma si el teléfono está apagado o se queda sin batería durante la noche?**
+### ¿Sonará mi alarma si el teléfono está apagado o se queda sin batería durante la noche?
+
 No. Un teléfono apagado o sin batería no ejecuta nada, alarmas incluidas. Por eso la comprobación del cargador importa más de lo que parece, y por eso un teléfono que llega una y otra vez a un solo dígito de batería a la hora de dormir merece una segunda alarma en otro punto de la habitación.

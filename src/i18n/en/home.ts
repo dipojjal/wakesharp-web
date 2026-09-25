@@ -241,6 +241,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: `From the `, accent: `blog`, post: `` },
+    more: `Read every article`,
+  },
+
   cta: {
     heading: { pre: `Tomorrow morning starts `, accent: `tonight`, post: `` },
     lede: `Set one alarm. See what a sharp morning actually feels like.`,

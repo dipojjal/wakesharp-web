@@ -1,8 +1,11 @@
 ---
 title: "The Meeting-Ready Morning: Work Backward From Your Calendar"
+seoTitle: "Wake Up Before a Meeting: Work Backward From Your Calendar"
 description: "The 8:57 panic join is a scheduling error, not a character flaw. Set the alarm from your first meeting instead of a round number you picked months ago."
 pubDate: 2026-09-08T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/meeting-ready-morning-calendar-alarm/hero.jpg
 heroImageAlt: "Flat editorial illustration of a phone ringing in the dark, a grid of calendar blocks beside it, and a curved arrow sweeping backward from one glowing coral and amber block to the phone."
 category: productivity
@@ -86,7 +89,7 @@ In studies of self-awakening, the ability to wake near a predetermined time with
 
 The reason almost nobody runs this arithmetic nightly is that it is tedious and the inputs change after you have gone to bed.
 
-That is the whole job of WakeSharp's smart calendar alarms. You set a rule, something like "ring 90 minutes before my first meeting." The app reads your upcoming events read-only and entirely on your device, re-checks them overnight, and moves the alarm when the meeting moves. Nothing about your calendar is transmitted anywhere, because the events never leave the phone. If the 9:00 quietly becomes an 8:15 at 11 PM, the alarm has already followed it before you find out.
+That is the whole job of WakeSharp's [smart calendar alarms](/features/calendar-alarm-clock). You set a rule, something like "ring 90 minutes before my first meeting." The app reads your upcoming events read-only and entirely on your device, re-checks them overnight, and moves the alarm when the meeting moves. Nothing about your calendar is transmitted anywhere, because the events never leave the phone. If the 9:00 quietly becomes an 8:15 at 11 PM, the alarm has already followed it before you find out.
 
 It is optional, and every other part of the app works if you decline calendar access. Now the limits, which matter more than the feature.
 

@@ -50,6 +50,8 @@ export const support = {
       ],
     },
     warning: `**Если проснуться по-настоящему важно, поставьте второй будильник на другом устройстве.** WakeSharp планирует будильники через операционную систему, и именно ОС решает, прозвучат ли они. См. [предупреждение о безопасности](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Подробные руководства`,
   },
 
   ringsThrough: {

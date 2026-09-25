@@ -1,8 +1,11 @@
 ---
 title: "Melatonin: Why Less Is More (and When It Does Nothing)"
+seoTitle: "Melatonin Dosage: Why Less Is More, and When It Fails"
 description: "Melatonin is a timing signal, not a sedative. What the evidence says about 0.5 mg versus 10 mg gummies, when to take it, and when it does nothing."
 pubDate: 2026-09-07T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/melatonin-less-is-more/hero.jpg
 heroImageAlt: "Flat editorial illustration of one small melatonin tablet beside an oversized gummy, set against a deep indigo night sky with coral and amber rounded shapes."
 category: sleep-science
@@ -53,10 +56,10 @@ So the person taking 10 mg to be safe may be taking 3 mg or 34 mg, and will not 
 ## What to do instead
 
 1. **Start absurdly low.** In the range of 0.3 to 1 mg. If your bottle only sells 5 mg or 10 mg tablets, buy a smaller size rather than trying to quarter a gummy. Going up is a decision to make with a clinician, not a reflex after one bad night.
-2. **Move it earlier before you move it higher.** If you are trying to shift a late body clock, evening timing several hours before your target bedtime does more than adding milligrams at 11 PM. If you are simply hoping to feel drowsy, see point 5.
+2. **Move it earlier before you move it higher.** If you are trying to [shift a late body clock](/blog/become-morning-person-realistic), evening timing several hours before your target bedtime does more than adding milligrams at 11 PM. If you are simply hoping to feel drowsy, see point 5.
 3. **Treat it as a several-night nudge, not a nightly pill.** Clock shifts accumulate across days. One dose is a memo; a week of consistently timed doses is a policy change.
 4. **Keep the dark part of the deal.** Taking a darkness hormone while a bright screen argues the opposite case is a coin flip. Dim the room for the last hour.
-5. **Audit the obvious saboteurs first.** [Caffeine has a long tail](/blog/caffeine-cutoff-time-sleep), alcohol fragments the second half of the night, and a bedtime that drifts by two hours makes any timing signal meaningless. It is also worth [working backward from your wake time to a realistic bedtime](/blog/what-time-to-go-to-bed-work-backward) before you conclude that a supplement is the missing piece.
+5. **Audit the obvious saboteurs first.** [Caffeine has a long tail](/blog/caffeine-cutoff-time-sleep), [alcohol fragments the second half of the night](/blog/alcohol-sleep-architecture), and a bedtime that drifts by two hours makes any timing signal meaningless. It is also worth [working backward from your wake time to a realistic bedtime](/blog/what-time-to-go-to-bed-work-backward) before you conclude that a supplement is the missing piece.
 
 ## Where melatonin genuinely earns its keep
 

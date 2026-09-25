@@ -1,8 +1,11 @@
 ---
 title: "Math Problems at 6 AM: The Science of Why Solving Beats Snoozing"
+seoTitle: "Do Math Alarms Work? Why Solving Beats Snoozing at 6 AM"
 description: "Why your brain fails arithmetic worse right after waking than after a sleepless night, and what a math alarm clock actually does about it."
 pubDate: 2026-09-03T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/math-alarm-science-solving-beats-snoozing/hero.jpg
 heroImageAlt: "A hand holding up a glowing phone in a dark bedroom at dawn, its screen filled with plus, minus and equals signs."
 category: sleep-science
@@ -61,7 +64,7 @@ For the underlying grogginess itself, we go deeper in [Sleep Inertia: Why You Wa
 
 ## Where WakeSharp fits, and where it does not
 
-WakeSharp's arithmetic mission is called **Mind Games**: when the alarm rings, it asks you to solve a few problems. That is the whole idea, and the reasoning is the one above: a task you can fail at cannot be completed by a hand that is still asleep. Pressing a button can. That is the entire mechanism, and it is a mechanism about the interface, not about neurochemistry.
+WakeSharp's arithmetic mission is called **Mind Games**: when the alarm rings, it asks you to solve a few problems. That is the whole idea, and the reasoning is the one above: a task you can fail at cannot be completed by a hand that is still asleep. Pressing a button can. That is the entire mechanism, and it is a mechanism about the interface, not about neurochemistry. The [math alarm clock](/features/math-alarm-clock) page walks through how it is set up, alongside Serial Sevens, its spoken sibling.
 
 Two things follow, and I would rather state them than let them be inferred.
 

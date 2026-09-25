@@ -1,8 +1,11 @@
 ---
 title: "The First 30 Minutes: What Happens in Your Brain Between Alarm and Coffee"
+seoTitle: "Morning Brain Fog: What Happens in the First 30 Minutes"
 description: "A minute-by-minute account of the first half hour after your alarm: the cortisol surge, leftover adenosine, and why your prefrontal cortex arrives last."
 pubDate: 2026-09-05T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/first-30-minutes-brain-after-waking/hero.jpg
 heroImageAlt: "Flat editorial illustration of a bedside scene at dawn: a phone and a coffee mug on a nightstand beneath a window of rising coral and amber light, with a chain of dots growing from small and dark to large and bright across the frame."
 category: sleep-science
@@ -26,7 +29,7 @@ So being awake and being alert are separate events with about a twenty minute ga
 
 The moment the alarm sounds is the low point, and it is lower than most people would guess. Wertz and colleagues tested cognitive performance immediately after waking from a full night of sleep and compared it against performance after extended sleep deprivation. Performance on a simple addition test straight out of sleep was significantly more impaired than after a night without sleep ([Wertz et al., *JAMA*, 2006](https://pubmed.ncbi.nlm.nih.gov/16403927/), summarised in [Hilditch and McHill's review](https://pmc.ncbi.nlm.nih.gov/articles/PMC6710480/)).
 
-Read that twice. On arithmetic, straight-out-of-bed you tests worse than all-nighter you. And straight-out-of-bed you is the one being handed a decision: dismiss, or snooze. We went into that particular negotiation in [why the snooze button feels so good](/blog/snooze-button-psychology-cost).
+Read that twice. On arithmetic, straight-out-of-bed you tests worse than [all-nighter you](/blog/all-nighter-vs-sleep-exam). And straight-out-of-bed you is the one being handed a decision: dismiss, or snooze. We went into that particular negotiation in [why the snooze button feels so good](/blog/snooze-button-psychology-cost).
 
 How deep the low point goes depends on what you were pulled out of. Tassi and Muzet's review is still the clearest summary: an abrupt awakening from slow wave sleep produces substantially more inertia than one from lighter stages, and prior sleep deprivation makes it worse precisely because it increases how much slow wave sleep there is to be dragged out of ([Tassi and Muzet, *Sleep Medicine Reviews*, 2000](https://pubmed.ncbi.nlm.nih.gov/12531174/)).
 

@@ -249,6 +249,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: `Aus dem `, accent: `Blog`, post: `` },
+    more: `Alle Artikel lesen`,
+  },
+
   cta: {
     heading: { pre: `Morgen früh beginnt `, accent: `heute Abend`, post: `` },
     lede: `Stell einen Alarm. Und sieh, wie sich ein hellwacher Morgen wirklich anfühlt.`,

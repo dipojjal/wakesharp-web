@@ -1,40 +1,100 @@
 ---
 /**
- * BlogPosting structured data for a single post. Mirrors JsonLd.astro's
- * is:inline + set:html pattern. Author is the studio, not a person — the site
- * speaks with one voice and there are no per-author pages to point at.
+ * Structured data for a single post, as one @graph:
+ *
+ * - WebPage: the page itself, and the place `reviewedBy` belongs. A person
+ *   appears only here, and only on a post that person actually reviewed.
+ * - BlogPosting: the article. The author and publisher stay the company, which
+ *   is who publishes every post; nodes are linked by @id rather than repeated.
+ * - Organization: the publisher, with its logo, so the references resolve.
+ * - BreadcrumbList: Home › Blog › this post, in the post's language.
+ *
+ * Mirrors JsonLd.astro's is:inline + set:html pattern.
  */
 import { SITE } from '../config/site';
+import { PEOPLE, personId } from '../config/people';
 import type { CollectionEntry } from 'astro:content';
 import { localeByCode } from '../i18n/config';
+import { getCatalog } from '../i18n/catalog';
+import { localePath, resolveLocale } from '../i18n/routes';
 
 interface Props {
   post: CollectionEntry<'blog'>;
   /** Absolute URL of the 1200×630 social-card derivative. */
   imageUrl: string;
   path: string;
+  /** Where the post's language keeps its blog index (its own, or the English one). */
+  blogIndexPath: string;
 }
-const { post, imageUrl, path } = Astro.props;
+const { post, imageUrl, path, blogIndexPath } = Astro.props;
+const locale = resolveLocale(post.data.lang);
+const { shell, blog } = getCatalog(locale.code);
 const canonical = new URL(path, SITE.url).href;
-const { title, description, pubDate, updatedDate } = post.data;
+const { title, description, pubDate, updatedDate, category, tags, reviewedBy, reviewedDate } = post.data;
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: title,
-  description,
-  inLanguage: localeByCode(post.data.lang)?.hreflang ?? 'en',
-  image: [imageUrl],
-  datePublished: pubDate.toISOString(),
-  dateModified: (updatedDate ?? pubDate).toISOString(),
-  author: { '@type': 'Organization', name: SITE.publisher, url: SITE.url },
-  publisher: {
+const orgId = `${SITE.url}/#org`;
+const reviewer = reviewedBy ? PEOPLE[reviewedBy] : undefined;
+const absolute = (p: string): string => new URL(p, SITE.url).href.replace(/\/$/, '') || SITE.url;
+
+const graph = [
+  {
     '@type': 'Organization',
+    '@id': orgId,
     name: SITE.publisher,
-    logo: { '@type': 'ImageObject', url: new URL('/icon-512.png', SITE.url).href },
+    url: SITE.url,
+    logo: { '@type': 'ImageObject', url: new URL('/icon-512.png', SITE.url).href, width: 512, height: 512 },
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-};
+  ...(reviewer && reviewedBy
+    ? [
+        {
+          '@type': 'Person',
+          '@id': personId(reviewedBy, SITE.url),
+          name: reviewer.name,
+          jobTitle: reviewer.jobTitle,
+          url: new URL(reviewer.path, SITE.url).href,
+          worksFor: { '@id': orgId },
+        },
+      ]
+    : []),
+  {
+    '@type': 'WebPage',
+    '@id': canonical,
+    url: canonical,
+    name: title,
+    inLanguage: localeByCode(post.data.lang)?.hreflang ?? 'en',
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    breadcrumb: { '@id': `${canonical}#breadcrumb` },
+    ...(reviewedBy && reviewedDate
+      ? { reviewedBy: { '@id': personId(reviewedBy, SITE.url) }, lastReviewed: reviewedDate.toISOString() }
+      : {}),
+  },
+  {
+    '@type': 'BlogPosting',
+    '@id': `${canonical}#article`,
+    headline: title,
+    description,
+    inLanguage: localeByCode(post.data.lang)?.hreflang ?? 'en',
+    image: [imageUrl],
+    datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    author: { '@id': orgId },
+    publisher: { '@id': orgId },
+    mainEntityOfPage: { '@id': canonical },
+    articleSection: blog.categories[category],
+    ...(tags.length ? { keywords: tags.join(', ') } : {}),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${canonical}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: SITE.name, item: absolute(localePath(locale, '/')) },
+      { '@type': 'ListItem', position: 2, name: shell.nav.blog, item: absolute(blogIndexPath) },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
+
+const schema = { '@context': 'https://schema.org', '@graph': graph };
 ---
 
 <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

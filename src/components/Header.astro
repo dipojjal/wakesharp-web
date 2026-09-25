@@ -13,10 +13,12 @@
  * get to at all. The language menu sits beside the CTA and shrinks to a bare
  * globe below `sm` for the same reason.
  */
+import { Image } from 'astro:assets';
 import LanguageMenu from './LanguageMenu.astro';
 import { getCatalog } from '../i18n/catalog';
 import { localePath, type Alternate } from '../i18n/routes';
 import type { EnabledLocale } from '../i18n/config';
+import icon from '../assets/brand/icon.png';
 
 interface Props {
   locale: EnabledLocale;
@@ -33,7 +35,7 @@ const href = (p: string): string => localePath(locale, p);
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[color-mix(in_srgb,var(--color-night-surface)_82%,transparent)] backdrop-blur-md">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
     <a href={href('/')} class="flex items-center gap-2.5 text-[var(--color-night-text)]">
-      <img src="/icon-192.png" alt="" width="28" height="28" class="rounded-[8px]" />
+      <Image src={icon} alt="" width={28} height={28} densities={[1, 2, 3]} format="webp" loading="eager" class="rounded-[8px]" />
       {/* Below `sm` the wordmark would collide with the always-visible Blog and
           Contact links, so the app icon carries the brand alone there. */}
       <span class="hidden text-lg font-extrabold tracking-[-0.02em] sm:inline" aria-hidden="true">WakeSharp</span>

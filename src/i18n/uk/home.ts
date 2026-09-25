@@ -247,6 +247,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: `З `, accent: `блогу`, post: `` },
+    more: `Усі статті`,
+  },
+
   cta: {
     heading: { pre: `Завтрашній ранок починається `, accent: `сьогодні ввечері`, post: `` },
     lede: `Поставте один будильник. Дізнайтеся, як насправді відчувається ранок з ясною головою.`,

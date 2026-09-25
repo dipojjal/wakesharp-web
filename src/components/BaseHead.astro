@@ -7,6 +7,8 @@ import type { EnabledLocale } from '../i18n/config';
 
 interface Props {
   title: string;
+  /** The social card's title when it should differ from <title> (posts keep their full headline). */
+  ogTitle?: string;
   description?: string;
   /** Path only, e.g. "/privacy" or "/es/privacy". Canonical is built from SITE.url. */
   path: string;
@@ -28,6 +30,7 @@ interface Props {
 
 const {
   title,
+  ogTitle = title,
   description,
   path,
   noindex = false,
@@ -74,13 +77,14 @@ const otherLocales = hreflangs.filter((a) => a.locale.code !== locale.code);
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="sitemap" href="/sitemap.xml" />
-<link rel="alternate" type="application/rss+xml" title={shell.rssTitle} href="/rss.xml" />
+{/* The feed carries English posts only, so only English pages point at it. */}
+{locale.code === 'en' && <link rel="alternate" type="application/rss+xml" title={shell.rssTitle} href="/rss.xml" />}
 
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={SITE.name} />
 <meta property="og:locale" content={locale.og} />
 {otherLocales.map((a) => <meta property="og:locale:alternate" content={a.locale.og} />)}
-<meta property="og:title" content={title} />
+<meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={metaDescription} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />
@@ -94,7 +98,7 @@ const otherLocales = hreflangs.filter((a) => a.locale.code !== locale.code);
   <meta property="article:modified_time" content={modifiedTime} />
 )}
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={metaDescription} />
 <meta name="twitter:image" content={ogImage} />
 

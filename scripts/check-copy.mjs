@@ -296,6 +296,19 @@ const CANONICAL_LINKS = [
   'https://apps.apple.com/app/id6801198703',
   'https://play.google.com/store/apps/details?id=com.wakesharp.app',
 ];
+/**
+ * Other apps' listings, linked only as cited sources on the comparison pages
+ * (src/pages/compare/ and the post best-alarm-apps-for-heavy-sleepers), each
+ * read on 2026-09-24. Exact URLs, so a typo in WakeSharp's own link still fails:
+ * it cannot match one of these. Add a listing here only when a page cites it.
+ */
+const CITED_LISTINGS = [
+  'https://apps.apple.com/us/app/alarmy-loud-alarm-clock/id1163786766',
+  'https://apps.apple.com/us/app/wayk-alarm-clock-to-wake-up/id6758021281',
+  'https://apps.apple.com/us/app/superalarm-loud-alarm-clock/id6480463426',
+  'https://apps.apple.com/us/app/sleep-cycle-tracker-sounds/id320606217',
+  'https://apps.apple.com/us/app/loud-alarm-clock-the-loudest/id1146308678',
+];
 const LISTING_LINK = /https:\/\/(?:apps\.apple\.com\/\S*?app\/[^"'\s]+|play\.google\.com\/store\/apps\/details\?[^"'\s]+)/gi;
 
 /**
@@ -603,6 +616,7 @@ for (const file of html) {
       sawCanonical = true;
       continue;
     }
+    if (CITED_LISTINGS.includes(link)) continue;
     console.error(`  ✗ ${name}: non-canonical store link ${link}`);
     console.error(`      Store links belong in src/config/site.ts. Canonical: ${CANONICAL_LINKS.join('  ')}`);
     problems++;

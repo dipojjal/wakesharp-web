@@ -247,6 +247,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: ``, accent: `Blog`, post: `’dan` },
+    more: `Tüm yazılar`,
+  },
+
   cta: {
     heading: { pre: `Yarın sabah `, accent: `bu gece`, post: ` başlar` },
     lede: `Bir alarm kurun. Zinde bir sabahın gerçekte nasıl hissettirdiğini görün.`,

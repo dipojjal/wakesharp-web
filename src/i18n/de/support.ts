@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**Wenn es wirklich darauf ankommt, geweckt zu werden, stell einen zweiten Alarm auf einem anderen Gerät.** WakeSharp plant Alarme über das Betriebssystem, und das Betriebssystem entscheidet, ob sie klingeln. Siehe den [Sicherheitshinweis](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Ausführliche Anleitungen`,
   },
 
   ringsThrough: {

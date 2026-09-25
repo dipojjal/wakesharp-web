@@ -1,8 +1,11 @@
 ---
 title: "White Noise, Pink Noise, Brown Noise: What Helps You Fall Asleep?"
+seoTitle: "Brown Noise vs White Noise vs Pink Noise: What Helps Sleep?"
 description: "White, pink and brown noise all work the same way: masking. Here is what the research actually shows, and how to set it up without losing your alarm."
 pubDate: 2026-09-05T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/white-pink-brown-noise-sleep/hero.jpg
 heroImageAlt: "Concentric sound waves drawn as soft rounded coral and amber arcs spreading across a deep indigo bedroom, with a bed and a small bedside speaker as simple shapes."
 category: sleep-science

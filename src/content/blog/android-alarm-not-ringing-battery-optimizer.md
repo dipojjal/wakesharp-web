@@ -1,8 +1,11 @@
 ---
 title: "Android Alarm Not Ringing? Blame the Battery Optimizer"
+seoTitle: "Android Alarm Not Going Off? Blame the Battery Optimizer"
 description: "Your Android alarm didn't go off? Doze, exact alarm permissions and your phone maker's battery manager are the usual culprits. Per brand fixes for tonight."
 pubDate: 2026-09-01T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/android-alarm-not-ringing-battery-optimizer/hero.jpg
 heroImageAlt: "Flat editorial illustration of a sleeping figure beside an Android phone whose coral alarm bell is dimmed by the shadow of an amber battery with a padlock, against a deep indigo night sky."
 category: tips-and-tricks
@@ -74,7 +77,7 @@ For your exact model, dontkillmyapp.com keeps a per-brand page with screenshots.
 
 ### 4. Check Do Not Disturb, Bedtime mode and Modes
 
-Android's alarm stream is separate from ringer and media volume, so a phone on silent normally still rings its alarm. What changes that is a mode you configured months ago and forgot. On Pixel, Modes, then your mode, then Notification filters includes "Alarms and other interruptions," which lets you ["block or allow alarms"](https://support.google.com/pixelphone/answer/6111295). Bedtime mode and the sleep modes on other brands have equivalents, sometimes buried two levels down, and they are a common reason a perfectly configured phone stayed quiet.
+Android's alarm stream is separate from ringer and media volume, so [a phone on silent normally still rings its alarm](/blog/will-alarm-ring-on-silent-dnd). What changes that is a mode you configured months ago and forgot. On Pixel, Modes, then your mode, then Notification filters includes "Alarms and other interruptions," which lets you ["block or allow alarms"](https://support.google.com/pixelphone/answer/6111295). Bedtime mode and the sleep modes on other brands have equivalents, sometimes buried two levels down, and they are a common reason a perfectly configured phone stayed quiet.
 
 ### 5. Raise the alarm volume, in the right place
 
@@ -103,7 +106,7 @@ One structural truth is worth saying out loud: your phone's built-in clock app g
 
 The maddening part of all this is that none of it is visible from the alarm screen. You set a time, you see a time, and the dozen conditions that decide whether a sound happens live somewhere else entirely.
 
-WakeSharp's alarm reliability check exists for that gap. It reads the conditions on your device that can genuinely silence an alarm, including exact-alarm permission, notification settings, alarm volume and Android battery restrictions, and reports what it finds in plain language. Where it detects a restriction it can deep-link you to the right settings screen, which on a Samsung device saves you a real expedition.
+WakeSharp's alarm reliability check exists for that gap. It reads the conditions on your device that can genuinely silence an alarm, including exact-alarm permission, notification settings, alarm volume and Android battery restrictions, and reports what it finds in plain language. Where it detects a restriction it can deep-link you to the right settings screen, which on a Samsung device saves you a real expedition. The manual version of these steps, including Samsung's sleeping-apps lists, is on [WakeSharp's support page](/support).
 
 Its limits are the ones listed above, and they apply to WakeSharp exactly as they apply to everything else. It can detect and warn. It cannot grant itself a permission, and it cannot override a manufacturer's battery manager. Where the platform refuses to tell it something, it says so rather than showing a green tick it has not earned. No alarm app is a guarantee. For a flight or an exam, still set a second alarm on a separate device.
 

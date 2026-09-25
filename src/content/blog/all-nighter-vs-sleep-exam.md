@@ -1,8 +1,11 @@
 ---
 title: "The All-Nighter Math: Why 6 Hours of Sleep Beats 2 More Hours of Cramming"
+seoTitle: "All-Nighter Before an Exam? Why 6 Hours of Sleep Wins"
 description: "It is 1 a.m. and the exam is at nine. What the research says about trading sleep for cramming, and the least bad plan if you are already behind."
 pubDate: 2026-09-09T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/all-nighter-vs-sleep-exam/hero.jpg
 heroImageAlt: "Flat editorial illustration split in two: on the left, a coral desk lamp casting an amber glow over a stack of books at a night desk; on the right, an empty bed under a deep indigo sky with a crescent moon and scattered stars, on a cream background."
 category: sleep-science

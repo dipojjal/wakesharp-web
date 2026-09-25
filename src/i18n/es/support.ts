@@ -48,6 +48,8 @@ export const support = {
       ],
     },
     warning: `**Si de verdad importa que te despiertes, pon una segunda alarma en otro dispositivo.** WakeSharp programa las alarmas a través del sistema operativo, y el sistema decide si suenan. Consulta el [aviso de seguridad](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Guías más detalladas`,
   },
 
   ringsThrough: {

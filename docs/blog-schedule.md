@@ -94,9 +94,11 @@ Content mix: sleep science (16) · troubleshooting & reliability SEO (7) · morn
 ```yaml
 ---
 title: "Sleep Inertia: Why You Wake Up Groggy (and How to Wake Up Sharp)"
+seoTitle: "Sleep Inertia: Why You Wake Up Groggy (and How to Fix It)"   # required when title is over 60 chars; see below
 description: "Max 160 chars. Doubles as meta description, OG text, RSS summary and card excerpt."
 pubDate: 2026-08-28T08:00:00-04:00   # FULL ISO datetime WITH offset. NEVER a bare YYYY-MM-DD.
 # updatedDate: 2026-09-01T10:00:00-04:00   # optional, same format
+# reviewedBy / reviewedDate: NEVER written by the routine; only the reviewer adds them, after reading the post
 heroImage: ../../assets/blog/<slug>/hero.jpg
 heroImageAlt: "Real description of the image, not a filename."
 category: sleep-science   # exactly one of: sleep-science | morning-routines | productivity | product-updates | tips-and-tricks | company
@@ -104,6 +106,17 @@ tags: [sleep-inertia, grogginess]   # optional, lowercase-kebab
 draft: false   # optional kill-switch, independent of pubDate
 ---
 ```
+
+- **`title` is the headline** (the `<h1>` and the social card). **`seoTitle` is what search results show**: at
+  most 60 characters (the build fails past that), the post's target phrase first, colons and never dashes.
+  Write one whenever the headline is over 60 characters. The layout adds " — WakeSharp" only when the total
+  still fits in 60, so a 48-character title needs no seoTitle at all.
+- **`reviewedBy` and `reviewedDate` are the reviewer's, never the routine's.** They put a "Reviewed by" line
+  under the headline and `reviewedBy` in the structured data; setting them on a post nobody read would be a
+  false statement. The build fails if one is set without the other, or if the date is before `pubDate` or
+  in the future.
+- **FAQ questions are `###` headings** under the `## FAQ` heading, never bold paragraphs, so they read as
+  structure to search engines and screen readers alike.
 
 ET offsets for this schedule: **-04:00** (EDT) through the whole Aug 28 – Sep 21 window.
 

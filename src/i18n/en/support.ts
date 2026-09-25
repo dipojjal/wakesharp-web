@@ -46,6 +46,8 @@ export const support = {
       ],
     },
     warning: `**If being woken really matters, set a second alarm on another device.** WakeSharp schedules alarms through the operating system, and the OS decides whether they sound. See the [safety notice](terms-safety).`,
+    /** Heading over the same-language troubleshooting posts, when there are any. */
+    guidesHeading: `Longer guides`,
   },
 
   ringsThrough: {

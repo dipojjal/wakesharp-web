@@ -1,8 +1,11 @@
 ---
 title: "Sleep Debt Is Real. Weekend Lie-Ins Aren't the Fix"
+seoTitle: "Can You Catch Up on Sleep Debt on Weekends? Not Really"
 description: "Recovery sleep repays some of what you lost. It does not repay your body clock. What a weekend lie-in buys back, and what it charges on Monday."
 pubDate: 2026-09-04T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-debt-weekend-lie-ins/hero.jpg
 heroImageAlt: "Flat editorial illustration of a week drawn as seven rounded bars, five short indigo weekdays and two taller coral and amber weekend ones, under a starry night sky with a sunrise rising behind a small bed."
 category: sleep-science
@@ -59,7 +62,7 @@ Regularity beat quantity. That is the practical headline, and it points away fro
 ## Six things that work better than sleeping until eleven
 
 1. **Hold the wake time, move the bedtime.** This is the entire trick. Extra sleep taken at the front of the night costs your body clock nothing. Extra sleep taken at the back of the morning is what moves it.
-2. **Cap the lie-in at about an hour.** Sleeping in by 45 to 60 minutes on a free day is a rounding error to your circadian system. Three hours is a westward flight you did not book.
+2. **Cap the lie-in at about an hour.** Sleeping in by 45 to 60 minutes on a free day is a rounding error to your circadian system. Three hours is [a westward flight you did not book](/blog/long-weekend-sleep-tuesday-monday).
 3. **Get light early anyway.** Even after a longer night, going outside within half an hour of waking anchors the clock against the drift the weekend is trying to introduce. Coffee outdoors counts.
 4. **Take extra sleep as an early afternoon nap, not a late morning.** A short nap adds sleep without touching the timing of your night, which is the specific thing a lie-in gets wrong.
 5. **Repay across weeks, not weekends.** Thirty extra minutes a night, seven nights a week, is more sleep than a three-hour Saturday and costs nothing in rhythm. It is boring. It is also the only version the evidence supports.

@@ -58,15 +58,18 @@ const PRIORITY: Record<string, number> = {
   '/privacy': 0.3,
   '/terms': 0.3,
   '/account/delete': 0.3,
+  '/about': 0.5,
+  '/features': 0.6,
 };
 
 /**
- * <priority> by page type, the same in every language; posts are 0.7 and
+ * <priority> by page type, the same in every language; posts, landing pages and
+ * comparisons are 0.7 and
  * anything unlisted gets the protocol default, 0.5. Google ignores the tag.
  */
 export function sitemapPriority(page: string): number {
   const [, path] = splitLocale(page);
-  return PRIORITY[path] ?? (path.startsWith('/blog/') ? 0.7 : 0.5);
+  return PRIORITY[path] ?? (/^\/(blog|features|compare)\//.test(path) ? 0.7 : 0.5);
 }
 
 const MODIFIED_TIME = /<meta property="article:modified_time" content="([^"]+)"/;

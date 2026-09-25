@@ -244,6 +244,12 @@ export const home = {
     ],
   },
 
+  /** The "From the blog" block; shown only where this language has the featured posts. */
+  fromBlog: {
+    heading: { pre: ``, accent: `ब्लॉग`, post: ` से` },
+    more: `सभी लेख पढ़ें`,
+  },
+
   cta: {
     heading: { pre: `कल की सुबह शुरू होती है `, accent: `आज रात`, post: `` },
     lede: `एक अलार्म लगाएँ। देखें कि चुस्त सुबह असल में कैसी लगती है।`,

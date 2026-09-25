@@ -1,8 +1,11 @@
 ---
 title: "Back-to-School Mornings: Reset a Summer Sleep Schedule in One Week"
+seoTitle: "Back-to-School Sleep Schedule: Reset It in One Week"
 description: "A seven-day plan to shift a summer sleep schedule earlier by 15 minutes a day, anchored with morning light, and how to keep the new wake time honest."
 pubDate: 2026-08-29T08:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/back-to-school-sleep-schedule-reset/hero.jpg
 heroImageAlt: "Flat illustration of a bedroom at dawn: a school backpack and a small alarm clock in warm morning light, with the night sky receding on the left and a row of rising bars on the right suggesting a wake time shifting earlier day by day."
 category: morning-routines
@@ -20,7 +23,7 @@ Clocks do not work that way. But they do move, reliably and predictably, if you 
 
 Two things drifted over the summer, and they drifted together.
 
-The first is the circadian clock itself: the internal timer that decides when melatonin rises, when core temperature bottoms out, and when your brain is willing to be unconscious. In adolescence, that timer runs genuinely late. This is not a story teenagers invented to justify staying up. Mary Carskadon's group documented the shift toward later sleep timing across puberty as a developmental change in the timing system, [not just a change in social opportunity](https://pubmed.ncbi.nlm.nih.gov/17383934/). Later work from the same lineage found that the circadian system in early-to-mid puberty is [more sensitive to evening light](https://academic.oup.com/jcem/article/100/11/4067/2836092), which pushes the clock later still. The 2018 review by [Crowley, Wolfson, Tarokh and Carskadon](https://pubmed.ncbi.nlm.nih.gov/29908393/) calls the combination of slower sleep-pressure buildup, a delayed clock, and early school bells a "perfect storm," which is a polite way of saying the schedule and the biology are pointed in opposite directions.
+The first is the circadian clock itself: the internal timer that decides [when melatonin rises](/blog/melatonin-less-is-more), when core temperature bottoms out, and when your brain is willing to be unconscious. In adolescence, that timer runs genuinely late. This is not a story teenagers invented to justify staying up. Mary Carskadon's group documented the shift toward later sleep timing across puberty as a developmental change in the timing system, [not just a change in social opportunity](https://pubmed.ncbi.nlm.nih.gov/17383934/). Later work from the same lineage found that the circadian system in early-to-mid puberty is [more sensitive to evening light](https://academic.oup.com/jcem/article/100/11/4067/2836092), which pushes the clock later still. The 2018 review by [Crowley, Wolfson, Tarokh and Carskadon](https://pubmed.ncbi.nlm.nih.gov/29908393/) calls the combination of slower sleep-pressure buildup, a delayed clock, and early school bells a "perfect storm," which is a polite way of saying the schedule and the biology are pointed in opposite directions.
 
 The second thing that drifted is habit, and habit is much easier to move than biology. The two are entangled, but only one of them responds to a firmer tone of voice.
 

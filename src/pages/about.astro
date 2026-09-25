@@ -1,0 +1,89 @@
+---
+/**
+ * /about — who makes WakeSharp and how its articles are held to account.
+ *
+ * English only, like the legal bodies: the "Reviewed by" line under each
+ * reviewed post links here from every language. It names only what the owner
+ * chose to publish (name, role, company) and invents no credentials; the
+ * editorial standards describe the checks the site actually runs.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { SITE } from '../config/site';
+import { PEOPLE, personId } from '../config/people';
+
+const founder = PEOPLE.founder;
+const orgId = `${SITE.url}/#org`;
+const pageUrl = new URL('/about', SITE.url).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': pageUrl,
+      url: pageUrl,
+      name: 'About WakeSharp',
+      isPartOf: { '@id': `${SITE.url}/#website` },
+      about: { '@id': orgId },
+      mainEntity: { '@id': orgId },
+    },
+    {
+      '@type': 'Organization',
+      '@id': orgId,
+      name: SITE.publisher,
+      url: SITE.url,
+      email: SITE.email,
+      logo: { '@type': 'ImageObject', url: new URL('/icon-512.png', SITE.url).href, width: 512, height: 512 },
+      address: { '@type': 'PostalAddress', addressLocality: 'Manotick', addressRegion: 'ON', addressCountry: 'CA' },
+      founder: { '@id': personId('founder', SITE.url) },
+    },
+    {
+      '@type': 'Person',
+      '@id': personId('founder', SITE.url),
+      name: founder.name,
+      jobTitle: founder.jobTitle,
+      url: pageUrl,
+      worksFor: { '@id': orgId },
+    },
+  ],
+};
+---
+
+<LegalLayout
+  title="About WakeSharp — Who Makes It and How We Write"
+  description="WakeSharp is made by KineticBit Inc., a small independent studio in Ontario, Canada. Who reviews the articles, how they cite research, and how to reach us."
+  path="/about"
+  heading="About WakeSharp"
+  intro="WakeSharp is an alarm clock for heavy sleepers that asks for a mission instead of a swipe, and then scores how sharp you actually woke up. This page says who makes it and how its articles are held to account."
+  showUpdated={false}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <h2>Who makes WakeSharp</h2>
+  <p>
+    WakeSharp is made by {SITE.publisher}, a small independent studio in Manotick, Ontario, Canada, which
+    publishes both the iPhone and the Android app. The company is the publisher of every article on this
+    site.
+  </p>
+
+  <h2 id={founder.anchor}>{founder.name}</h2>
+  <p>
+    {founder.name} is the founder of WakeSharp at {SITE.publisher}, and reviews the articles on this site
+    that carry the line “Reviewed by {founder.name}”.
+  </p>
+
+  <h2>How the articles are written</h2>
+  <ul>
+    <li><strong>Every claim about sleep cites its source.</strong> Articles link to the studies, reviews and official guidance they rely on, so you can read the evidence yourself rather than take our word for it.</li>
+    <li><strong>“Reviewed by” means a named person read it.</strong> A post shows a reviewer only when that person has read it, and the structured data records the date they did.</li>
+    <li><strong>Claims about the app are checked against the app.</strong> Anything an article says WakeSharp does has to match what the app itself ships, and the site’s own checks reject the claims the app has retired.</li>
+    <li><strong>Corrections are dated.</strong> When an article changes in substance, it shows an “Updated” date. If you find a mistake, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we will fix it.</li>
+    <li><strong>It is not medical advice.</strong> The articles are general information about sleep and waking up. For a sleep problem that persists, talk to a clinician.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>
+    Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, use the <a href="/contact">contact form</a>, or see
+    <a href="/support">Support</a> for the questions that come up most.
+  </p>
+</LegalLayout>

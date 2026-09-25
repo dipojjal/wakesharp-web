@@ -1,8 +1,11 @@
 ---
 title: "The 90-Minute Myth: What Sleep Cycles Actually Mean for Your Bedtime"
+seoTitle: "Sleep Cycle Calculator Myth: What 90 Minutes Really Means"
 description: "Sleep cycles are not a fixed 90 minutes. They run roughly 70 to 120. Here is what that means for the bedtime you pick tonight, and what actually helps."
 pubDate: 2026-08-29T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-cycles-90-minute-myth/hero.jpg
 heroImageAlt: "Illustration of a person sitting on the edge of a bed at night holding a glowing phone, while a ribbon of uneven wave shapes drifts across the dark room instead of a neat repeating pattern."
 category: sleep-science

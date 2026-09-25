@@ -1,8 +1,11 @@
 ---
 title: "Tonight's 6-Point Checklist for an Alarm That Actually Rings"
+seoTitle: "How to Make Sure Your Alarm Goes Off: A 6-Point Checklist"
 description: "Six checks to run before bed so your alarm actually rings: volume, permissions, Do Not Disturb, battery limits, the charger, and one backup."
 pubDate: 2026-08-31T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/alarm-reliability-checklist-tonight/hero.jpg
 heroImageAlt: "Flat illustration of a phone charging on a bedside table at night, a small checklist floating beside it, in coral and amber against deep indigo."
 category: tips-and-tricks
@@ -84,7 +87,7 @@ The least interesting failure on this list is also one of the most common, and i
 
 So do not plug in and walk away. Plug in and wait for the screen to acknowledge it. Two seconds of looking is the whole check.
 
-While the phone is in your hand, put it somewhere the sound can leave it: a hard surface, speaker grille clear, not face down on a duvet and not under a pillow. Soft furnishings absorb a startling amount of a small speaker.
+While the phone is in your hand, put it somewhere the sound can leave it: a hard surface, speaker grille clear, not face down on a duvet and not under a pillow. Soft furnishings absorb a startling amount of a small speaker. If you run [white, pink or brown noise](/blog/white-pink-brown-noise-sleep) all night, test the alarm over it once.
 
 ### 6. Set the backup, on something that is not this phone
 
@@ -110,20 +113,24 @@ And no configuration, on any platform, can promise you will wake up. Anyone clai
 
 Every item on that list shares a shape: the phone knew, hours ahead of time, that the conditions were wrong, and had no reason to mention it.
 
-That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does.
+That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does. The same checklist, split by platform, is on [WakeSharp's support page](/support).
 
 The honest limits: a checker can only see what the operating system chooses to expose, so it cannot rule out every cause, and it cannot promise you will wake up. WakeSharp is not a medical device. For a morning you cannot afford to miss, still set that second, independent alarm.
 
 ## FAQ
 
-**How do I make sure my alarm goes off in the morning?**
+### How do I make sure my alarm goes off in the morning?
+
 Check six things before bed. The alarm is switched on and armed for tomorrow with a sound that is not None; the alarm volume is set on the right slider (Ringtone and Alerts on iPhone, the Clock app's Alarm volume on Android); your alarm app has permission to ring; Do Not Disturb allows alarms if you are on Android; the app is not restricted by battery saving; and the phone is charging on a hard surface. Then set a second alarm on another device for anything critical.
 
-**Will my alarm go off if my phone is on silent?**
+### Will my alarm go off if my phone is on silent?
+
 On iPhone, yes. Apple states that Do Not Disturb, the Ring/Silent switch and Silent mode do not affect the alarm sound, and an Apple Focus mode does not mute it either. On Android it depends: Do Not Disturb can silence alarms unless alarms are allowed in the Alarms and other interruptions section of your Do Not Disturb or Modes settings.
 
-**Does Do Not Disturb turn off alarms on Android?**
+### Does Do Not Disturb turn off alarms on Android?
+
 It can. Google's Clock app shows a message afterwards saying Do Not Disturb silenced your alarm and telling you to allow alarms in Do Not Disturb settings. Turn alarms on as an allowed interruption tonight and it stops being a question.
 
-**Will my alarm go off if my phone is turned off or dies overnight?**
+### Will my alarm go off if my phone is turned off or dies overnight?
+
 No. A powered-off or flat phone runs nothing, alarms included. This is why the charger check matters more than it sounds, and why a phone that keeps hitting single digits by bedtime deserves a second alarm somewhere else in the room.

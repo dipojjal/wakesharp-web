@@ -3,6 +3,8 @@ title: "Your Phone Sleeps in Your Bedroom. Should It?"
 description: "Your phone is your alarm, so it stays. What the research says about light, notifications and charging distance, and what to change tonight."
 pubDate: 2026-09-02T19:00:00-04:00
 updatedDate: 2026-09-24T12:00:00-04:00
+reviewedBy: founder
+reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/phone-in-bedroom-at-night/hero.jpg
 heroImageAlt: "Flat editorial illustration of a dark indigo bedroom at night. A person sleeps in bed while their phone charges on a dresser across the room, giving off a small warm amber halo, and a cream crescent moon sits in the window."
 category: sleep-science
@@ -76,20 +78,24 @@ WakeSharp exists because of exactly this tension. The phone has to stay in the b
 
 The relevant part is the mission. WakeSharp alarms are dismissed by completing a task that requires actual cognition: Mind Games (arithmetic), a puzzle such as Memory Match or Sequence Recall, Photo Proof (retake the photo of a spot you chose the night before), Scan an Object, Walk It Off, or Surprise Me, a different mission every morning.
 
-What that changes about tonight is small but specific. Once dismissing the alarm involves standing up anyway, putting the charger across the room stops being a sacrifice and becomes the setup. Walk It Off is the most literal version of this, but any mission has the same effect: the phone you must walk to is also the phone you did not scroll at 12:50 AM.
+What that changes about tonight is small but specific. Once dismissing the alarm involves standing up anyway, putting the charger across the room stops being a sacrifice and becomes the setup. [Walk It Off](/features/walking-alarm-clock) is the most literal version of this, but any mission has the same effect: the phone you must walk to is also the phone you did not scroll at 12:50 AM.
 
 The honest limits. WakeSharp does no sleep tracking of any kind, so it will not tell you what your night looked like, and it processes what it does need on-device. Your phone's own controls always work, on both iOS and Android: nothing stops you switching the phone off. That means no alarm app can promise you will wake up; a mission raises the effort of a half-asleep dismissal, it does not remove the exit. If you are dismissing alarms without remembering it, that is worth reading about separately in [why you sleep through alarms you don't remember dismissing](/blog/sleep-through-alarm-dismissed-no-memory). And none of this fixes grogginess by itself, which is a [sleep inertia](/blog/sleep-inertia-why-you-wake-up-groggy) problem with its own rules.
 
 ## FAQ
 
-**Should I keep my phone out of my bedroom?**
+### Should I keep my phone out of my bedroom?
+
 Only if you have a separate alarm clock you actually trust. For most people the phone is the alarm, and removing it creates a bigger reliability problem than it solves. The evidence points at two specific harms, late-night time displacement and overnight interruptions, and both can be addressed by changing the phone's job rather than its address: cull the notifications, put the charger out of arm's reach, and decide the phone is an alarm clock tonight.
 
-**How far away should I charge my phone at night?**
+### How far away should I charge my phone at night?
+
 There is no studied optimal distance, so ignore anyone who quotes one. Use a behavioural test instead: far enough that you have to get out of bed to reach it, close enough that you can hear the alarm clearly. A dresser or desk across the room usually satisfies both. The point is the standing up, not the metres.
 
-**Does airplane mode help you sleep?**
+### Does airplane mode help you sleep?
+
 Indirectly, and mostly for one reason: it stops overnight notifications, which is where the measurable fragmentation comes from. It is not doing anything to your body via radio waves. Be careful with it, though, since airplane mode can interfere with time syncing and with calls you might genuinely need to receive. Do Not Disturb with a short allow-list is usually the better tool.
 
-**Does night mode or a blue light filter actually work?**
+### Does night mode or a blue light filter actually work?
+
 Less than the marketing implies. When Apple's Night Shift was tested on an iPad, warm settings did not significantly reduce melatonin suppression compared with no filtering, because brightness and duration were unchanged. Lowering screen brightness and spending less time on the screen before bed are the levers that do real work. Treat colour tinting as a mild comfort feature, not a countermeasure.
