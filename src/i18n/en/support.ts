@@ -1,5 +1,5 @@
 /**
- * /support — the App Store Connect support URL. Link keys used below:
+ * /support - the App Store Connect support URL. Link keys used below:
  * email, terms-safety, privacy, account-delete, apple-subs, google-subs.
  * `{ios}` and `{android}` are the requirement strings, and `{annual}`,
  * `{monthly}` and `{trialDays}` the prices, all from src/config/site.ts.
@@ -22,8 +22,8 @@ export const support = {
 
   didntRing: {
     heading: `My alarm didn't ring`,
-    callout: `**Start in the app, not here.** Open WakeSharp → Settings → _Alarm reliability_. It reads the live state of your phone — permissions, alarm volume, Do Not Disturb, notification settings, lock-screen takeover, battery restrictions — and leads with a plain verdict: it will ring, it may not, or it cannot. Where a fix is one tap away it offers the tap; where the phone will not tell us something, it says so rather than showing a green tick. It also runs before bed and flags the worst thing it found.`,
-    report: `If an alarm has already been missed, WakeSharp shows a report that morning naming the cause where it can prove one — permission revoked, alarm volume at zero, Total Silence, the phone was off — and saying “We couldn't tell why” where it cannot. The checklists below are for when it cannot.`,
+    callout: `**Start in the app, not here.** Open WakeSharp → Settings → _Alarm reliability_. It reads the live state of your phone (permissions, alarm volume, Do Not Disturb, notification settings, lock-screen takeover, battery restrictions) and leads with a plain verdict: it will ring, it may not, or it cannot. Where a fix is one tap away it offers the tap; where the phone will not tell us something, it says so rather than showing a green tick. It also runs before bed and flags the worst thing it found.`,
+    report: `If an alarm has already been missed, WakeSharp shows a report that morning naming the cause where it can prove one (permission revoked, alarm volume at zero, Total Silence, the phone was off) and saying “We couldn't tell why” where it cannot. The checklists below are for when it cannot.`,
     iphone: {
       heading: `On iPhone`,
       steps: [
@@ -52,10 +52,10 @@ export const support = {
 
   ringsThrough: {
     heading: `Does WakeSharp really ring through Silent, Focus and Do Not Disturb?`,
-    body: `In normal circumstances, yes — that is the whole point of the app, and it is the same mechanism the built-in clock uses on each platform.`,
+    body: `In normal circumstances, yes. That is the whole point of the app, and it is the same mechanism the built-in clock uses on each platform.`,
     items: [
       `**On iPhone**, WakeSharp uses Apple's AlarmKit, which supports sounding through Silent mode and Focus **once you have granted alarm permission**. Decline or revoke it and WakeSharp cannot schedule an alarm at all.`,
-      `**On Android**, the alarm plays on the dedicated alarm audio stream, which rings through silent mode, and through Do Not Disturb when it allows alarms (Total Silence mutes every sound, alarms included), and shows a full-screen alert over the lock screen — **when the exact-alarm, notification and lock-screen permissions are in place**. There is no extra prompt for the alarm stream itself, but a blocked notification or a battery restriction can still stop the alert.`,
+      `**On Android**, the alarm plays on the dedicated alarm audio stream, which rings through silent mode, and through Do Not Disturb when it allows alarms (Total Silence mutes every sound, alarms included), and shows a full-screen alert over the lock screen, **when the exact-alarm, notification and lock-screen permissions are in place**. There is no extra prompt for the alarm stream itself, but a blocked notification or a battery restriction can still stop the alert.`,
     ],
     limit: `What neither platform can do is ring on a phone that is powered off, out of battery, or has had the app's permissions revoked.`,
   },
@@ -64,16 +64,16 @@ export const support = {
     heading: `Missions and snoozing`,
     items: [
       `**The mission** is what earns you the morning, and there are more than a dozen: arithmetic and memory puzzles such as _Mind Games_ and _Colour Clash_, a photo of a spot you chose the night before (_Photo Proof_), a real object across the room (_Scan an Object_, _Fetch_), steps (_Walk It Off_), daylight at a window (_First Light_), typing a line (_Type It Out_), or answering out loud (_Serial Sevens_, _Name Five_). _Surprise Me_ picks a different one every morning. An alarm can ask for several missions in a row, in the order you choose.`,
-      `**My spots & codes** is where _Scan an Object_ gets personal. Photograph a place you will walk to, like the kettle or the front door, or register a QR or barcode you stick where the morning should send you, like the bathroom mirror or the coffee tin. An alarm can then ask for that specific target. It is a feature _inside_ the scan mission rather than a mission of its own, and neither the photograph nor the code is stored — only a fingerprint of each.`,
-      `**If a mission can't run** that morning — a dead camera, a phone with no step counter — WakeSharp falls back to one that can, so you are not left with an alarm you cannot finish.`,
+      `**My spots & codes** is where _Scan an Object_ gets personal. Photograph a place you will walk to, like the kettle or the front door, or register a QR or barcode you stick where the morning should send you, like the bathroom mirror or the coffee tin. An alarm can then ask for that specific target. It is a feature _inside_ the scan mission rather than a mission of its own, and neither the photograph nor the code is stored. Only a fingerprint of each.`,
+      `**If a mission can't run** that morning (a dead camera, a phone with no step counter), WakeSharp falls back to one that can, so you are not left with an alarm you cannot finish.`,
       `**Snoozing and stopping don't finish the morning.** However you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: switching the phone off, for one, is never blocked.`,
     ],
   },
 
   smartAlarms: {
     heading: `Smart calendar alarms`,
-    body: `A smart rule rings a set number of minutes before your first meeting, clamped between an earliest and a latest wake time you choose. WakeSharp re-checks your calendar overnight, so if the meeting moves, the alarm moves. If you decline calendar access, everything else still works — you just set times yourself. Your events never leave your device; see the [Privacy Policy](privacy).`,
-    limits: `A shift rotation is for patterns that aren't weekly — 4-on / 4-off from an anchor date, each phase with its own time, and a preview calendar so you can check it before you sleep on it.`,
+    body: `A smart rule rings a set number of minutes before your first meeting, clamped between an earliest and a latest wake time you choose. WakeSharp re-checks your calendar overnight, so if the meeting moves, the alarm moves. If you decline calendar access, everything else still works. You just set times yourself. Your events never leave your device; see the [Privacy Policy](privacy).`,
+    limits: `A shift rotation is for patterns that aren't weekly: 4-on / 4-off from an anchor date, each phase with its own time, and a preview calendar so you can check it before you sleep on it.`,
   },
 
   sharpness: {
@@ -84,12 +84,12 @@ export const support = {
 
   backup: {
     heading: `Backup, and moving to a new phone`,
-    body: `There is no account to make, and nothing is gated behind one. You can optionally sign in with **Apple** or **Google** — those are the only options, and there is no email-and-password login — for a single purpose: to back up your alarms, settings, scores and streak so they come back on a new phone.`,
+    body: `There is no account to make, and nothing is gated behind one. You can optionally sign in with **Apple** or **Google** (those are the only options, and there is no email-and-password login) for a single purpose: to back up your alarms, settings, scores and streak so they come back on a new phone.`,
     items: [
       `**It is off by default**, and every feature works signed out. Backup runs quietly after your data changes, and an alarm never waits on the network to ring.`,
       `**To move to a new phone**, install WakeSharp, sign in with the same Apple or Google account, and restore. Newer changes already on the new device are kept.`,
       `**Signing out** keeps everything on your phone and simply stops backing it up.`,
-      `**Deleting the account** — in the app at _Settings → Account → Delete account_, or as described at [wakesharp.app/account/delete](account-delete) — permanently removes the backup and the login, while the data on your phone is kept.`,
+      `**Deleting the account** (in the app at _Settings → Account → Delete account_, or as described at [wakesharp.app/account/delete](account-delete)) permanently removes the backup and the login, while the data on your phone is kept.`,
     ],
     subscription: `A subscription is separate from all of this: it lives with your App Store or Google Play account, so Restore Purchases brings WakeSharp Unlimited back whether or not you ever sign in to WakeSharp.`,
   },
@@ -101,7 +101,7 @@ export const support = {
       `**Lifetime** was a one-time purchase, and it stays valid for everyone who bought it: it never renews, and there is nothing to cancel.`,
       `**Restoring a purchase:** open the paywall and tap _Restore_. Make sure you are signed in with the same Apple or Google account you bought with.`,
       `**Cancelling:** [App Store subscriptions](apple-subs) or [Google Play subscriptions](google-subs), any time, including during the free trial. Deleting the app does not cancel a subscription.`,
-      `**Refunds** are handled by Apple or Google, not by us — but email me if something went wrong and I will help where I can.`,
+      `**Refunds** are handled by Apple or Google, not by us, but email me if something went wrong and I will help where I can.`,
     ],
   },
 

@@ -67,7 +67,7 @@ function checkPost(file) {
   else if (!existsSync(resolve(dirname(file), heroImage))) problems.push(`heroImage "${heroImage}" does not exist relative to the post`);
   if (!heroImageAlt) problems.push('heroImageAlt is missing');
   if (!category || !CATEGORIES.includes(category)) problems.push(`category must be one of ${CATEGORIES.join(' | ')} (got "${category ?? ''}")`);
-  if (fm.split('\n').some((l) => l.startsWith('slug:'))) problems.push('never set slug: — it silently replaces the id');
+  if (fm.split('\n').some((l) => l.startsWith('slug:'))) problems.push('never set slug: - it silently replaces the id');
 
   const slug = basename(file).replace(/\.md$/, '');
   if (localeByPath(slug)) problems.push(`the slug "${slug}" is a locale path`);
@@ -88,7 +88,7 @@ function checkPost(file) {
   }
 
   raw.split('\n').forEach((line, i) => {
-    if (/[–—]/.test(line)) problems.push(`line ${i + 1}: em or en dash (restructure the sentence)`);
+    if (/[\u2013\u2014]/.test(line)) problems.push(`line ${i + 1}: em or en dash (restructure the sentence)`);
     if (/[​-‍﻿⁠]/.test(line)) problems.push(`line ${i + 1}: zero-width character`);
   });
   if (!body.trim()) problems.push('the body is empty');
