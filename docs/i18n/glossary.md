@@ -160,8 +160,8 @@ different feature, which is worse than leaving the term in English.
 | English | iOS (Apple) | Android (Google) |
 |---|---|---|
 | Silent mode | 消音モード / Sessiz mod / وضع الصامت / mode Silence | マナーモード |
-| Focus | 集中モード / Odak / التركيز / Concentration |: |
-| Do Not Disturb |: | サイレントモード / Rahatsız Etmeyin / عدم الإزعاج / Ne pas déranger |
+| Focus | 集中モード / Odak / التركيز / Concentration | - |
+| Do Not Disturb | - | サイレントモード / Rahatsız Etmeyin / عدم الإزعاج / Ne pas déranger |
 
 Japanese is the trap: **Do Not Disturb is サイレントモード**, not おやすみ時間モード, which is
 Bedtime mode: a Digital Wellbeing feature that does not gate alarms. Because サイレントモード
