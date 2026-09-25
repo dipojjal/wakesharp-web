@@ -10,10 +10,10 @@ export const shell = {
   siteDescription: `Alarm untuk orang yang susah bangun: bungkam dengan soal hitung cepat, foto satu tempat, atau berjalan kaki, lalu lihat seberapa sigap Anda saat bangun.`,
   tagline: `Bangun sigap. Bukan sekadar terjaga.`,
   requirements: { ios: `iOS 26 atau lebih baru`, android: `Android 8.0 atau lebih baru` },
-  ogImageAlt: `WakeSharp — bangun sigap, bukan sekadar terjaga.`,
+  ogImageAlt: `WakeSharp - bangun sigap, bukan sekadar terjaga.`,
   rssTitle: `Blog WakeSharp`,
   skipLink: `Langsung ke konten`,
-  brandHome: `WakeSharp — beranda`,
+  brandHome: `WakeSharp - beranda`,
 
   nav: {
     aria: `Utama`,

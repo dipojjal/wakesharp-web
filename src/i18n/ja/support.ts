@@ -1,7 +1,7 @@
 import { support as en } from '../en/support';
 
 /**
- * /support — App Store Connect に登録するサポート URL。使用するリンクキーは
+ * /support - App Store Connect に登録するサポート URL。使用するリンクキーは
  * email、terms-safety、privacy、account-delete、apple-subs、google-subs。
  * `{ios}` と `{android}` は動作環境の文字列、`{annual}`、`{monthly}`、
  * `{trialDays}` は価格で、いずれも src/config/site.ts から渡されます。

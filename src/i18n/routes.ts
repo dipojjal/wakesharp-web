@@ -22,7 +22,7 @@ export interface Alternate {
 
 /**
  * `getStaticPaths` for every route under src/pages/[lang]/: enabled locales
- * other than the default. NEVER emits `en` — Astro would write the 404 body of
+ * other than the default. NEVER emits `en` - Astro would write the 404 body of
  * `/en/…` to disk and Vercel would then serve it as a 200.
  */
 export function localeStaticPaths(): { params: { lang: string } }[] {

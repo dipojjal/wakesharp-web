@@ -8,7 +8,7 @@ import { share as en } from '../en/share';
  */
 export const share = {
   challenge: {
-    title: `जागने की एक चुनौती — WakeSharp`,
+    title: `जागने की एक चुनौती - WakeSharp`,
     description: `किसी ने आपको WakeSharp वाली सुबह की चुनौती दी है।`,
     heading: `Beat my wake (मेरी सुबह को हराएँ)`,
     intro: `किसी को लगता है कि वे आपसे ज़्यादा चुस्त उठे हैं।`,
@@ -22,7 +22,7 @@ export const share = {
     },
   },
   pact: {
-    title: `जागने का न्योता — WakeSharp`,
+    title: `जागने का न्योता - WakeSharp`,
     description: `किसी ने आपके साथ एक WakeSharp अलार्म साझा किया है।`,
     heading: `जागने का न्योता`,
     intro: `कोई आपके साथ उठना चाहता है।`,

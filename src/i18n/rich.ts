@@ -3,13 +3,13 @@
  *
  *   **strong**           <strong>
  *   _em_                 <em>  (underscores at word boundaries only)
- *   [label](key)         <a href={links[key]}> — the href is supplied by the
+ *   [label](key)         <a href={links[key]}> - the href is supplied by the
  *                        template, never written in a catalog
  *   {name}               a variable supplied by the template (prices, email…)
  *
  * No nesting, no raw HTML. Unbalanced markup throws at build time so a broken
  * translation can never ship as literal asterisks. Rendering is in Rich.astro,
- * which emits JSX text nodes — there is no set:html anywhere in this path.
+ * which emits JSX text nodes - there is no set:html anywhere in this path.
  */
 
 export type RichNode =
@@ -59,7 +59,7 @@ export function richNodes(text: string, vars: Vars = {}): RichNode[] {
   return parseRich(text).map((n) => ({ ...n, value: interpolate(n.value, vars) }));
 }
 
-/** Markup stripped, variables substituted — for `<title>`, meta descriptions and alt text. */
+/** Markup stripped, variables substituted - for `<title>`, meta descriptions and alt text. */
 export function plainText(text: string, vars: Vars = {}): string {
   return richNodes(text, vars).map((n) => n.value).join('');
 }

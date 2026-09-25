@@ -13,7 +13,7 @@ import { home as en } from '../en/home';
  * ジトリの Docs/marketing-execution/claims-matrix.md と App Store の説明文です。
  */
 export const home = {
-  title: `WakeSharp — 起きられない人のための目覚まし、ミッション付き`,
+  title: `WakeSharp - 起きられない人のための目覚まし、ミッション付き`,
 
   hero: {
     /** <h1> の中、タグラインの上に表示されます。このページが狙う検索語です。 */

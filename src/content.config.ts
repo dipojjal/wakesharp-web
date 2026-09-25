@@ -2,7 +2,7 @@
  * Content collections. One collection: the blog.
  *
  * English posts are flat files at src/content/blog/<slug>.md, where the
- * filename IS the slug IS the URL segment (/blog/<slug>) — pre-slugified names
+ * filename IS the slug IS the URL segment (/blog/<slug>) - pre-slugified names
  * (lowercase, digits, hyphens) pass through the glob loader's id algorithm
  * unchanged, so there is exactly one name to keep straight and it can never be
  * changed without breaking the URL.
@@ -12,7 +12,7 @@
  * /<locale path>/blog/<slug>. src/lib/blog-i18n.ts enforces the placement.
  *
  * The full authoring contract (field formats, pubDate rules, copy-linter
- * gotchas) is documented in docs/blog-schedule.md — the scheduled routine that
+ * gotchas) is documented in docs/blog-schedule.md - the scheduled routine that
  * writes posts must follow it exactly: a single file that fails this schema
  * fails `astro build`, which blocks every deploy until it is fixed.
  */
@@ -33,7 +33,7 @@ const blog = defineCollection({
       /**
        * The <title> search results show, when the headline (the <h1>, and the
        * social card's title) runs past what fits. At most 60 characters; the
-       * layout appends " — WakeSharp" only when the total still fits. Colons,
+       * layout appends " - WakeSharp" only when the total still fits. Colons,
        * never dashes (the style law), and the post's target phrase up front.
        */
       seoTitle: z.string().min(1).max(TITLE_MAX).optional(),
@@ -42,7 +42,7 @@ const blog = defineCollection({
       /**
        * Full ISO 8601 datetime WITH an explicit offset or Z, never a bare
        * YYYY-MM-DD (that parses as UTC midnight and renders as the previous
-       * day west of UTC — the same bug LegalLayout works around). A post is
+       * day west of UTC - the same bug LegalLayout works around). A post is
        * built only once pubDate has passed at build time; see src/lib/blog.ts.
        */
       pubDate: z.coerce.date(),

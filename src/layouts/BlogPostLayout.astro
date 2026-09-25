@@ -1,7 +1,7 @@
 ---
 /**
  * Shell for a single blog post: 68ch reading column on the flat morning
- * surface (same reasoning as LegalLayout — readable, not atmospheric), with
+ * surface (same reasoning as LegalLayout - readable, not atmospheric), with
  * the article's own OG card, BlogPosting JSON-LD, an end-of-article store CTA
  * and same-category related links.
  *
@@ -38,7 +38,7 @@ const alternates = await postAlternates(post);
 const switchTo = await postSwitchTargets(post);
 const blogHref = await blogIndexPath(locale);
 
-// One 1200×630 JPG derivative reused for og:image and the JSON-LD image — JPG
+// One 1200×630 JPG derivative reused for og:image and the JSON-LD image - JPG
 // specifically because OG crawlers (notably Facebook's) handle AVIF/WebP
 // unreliably. Real visitors get the modern formats via <Picture> below.
 const ogImage = await getImage({
@@ -141,7 +141,7 @@ const [reviewedPre = '', reviewedPost = ''] = t.reviewedBy.split('{name}');
 </BaseLayout>
 
 <style is:global>
-  /* Forked from LegalLayout's .legal block — same reading rhythm, plus the
+  /* Forked from LegalLayout's .legal block - same reading rhythm, plus the
      img/blockquote/code/table rules a long-form article body needs. Global
      because the markdown body arrives via <slot /> from another file.
      Logical properties throughout, so the Arabic pages mirror for free. */

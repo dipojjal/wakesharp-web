@@ -9,10 +9,10 @@ export const shell = {
   siteDescription: `Un réveil pour gros dormeurs : faites-le taire en résolvant un calcul, en photographiant un endroit ou en marchant, puis obtenez votre score de Vivacité.`,
   tagline: `Réveillez-vous affûté. Pas seulement réveillé.`,
   requirements: { ios: `iOS 26 ou version ultérieure`, android: `Android 8.0 ou version ultérieure` },
-  ogImageAlt: `WakeSharp — réveillez-vous affûté, pas seulement réveillé.`,
+  ogImageAlt: `WakeSharp - réveillez-vous affûté, pas seulement réveillé.`,
   rssTitle: `Blog WakeSharp`,
   skipLink: `Aller au contenu`,
-  brandHome: `WakeSharp — accueil`,
+  brandHome: `WakeSharp - accueil`,
 
   nav: {
     aria: `Principal`,

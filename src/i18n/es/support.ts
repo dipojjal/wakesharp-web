@@ -1,7 +1,7 @@
 import { support as en } from '../en/support';
 
 /**
- * /support — la URL de soporte de App Store Connect. Claves de enlace usadas:
+ * /support - la URL de soporte de App Store Connect. Claves de enlace usadas:
  * email, terms-safety, privacy, account-delete, apple-subs, google-subs.
  * `{ios}` y `{android}` son las cadenas de requisitos, y `{annual}`,
  * `{monthly}` y `{trialDays}` los precios, todos de src/config/site.ts.
@@ -24,8 +24,8 @@ export const support = {
 
   didntRing: {
     heading: `Mi alarma no sonó`,
-    callout: `**Empieza en la app, no aquí.** Abre WakeSharp → Ajustes → _Fiabilidad de la alarma_. Lee el estado real de tu teléfono —permisos, volumen de alarma, No molestar, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería— y empieza por un veredicto claro: sonará, puede que no suene o no puede sonar. Cuando el arreglo está a un toque, te ofrece el toque; cuando el teléfono no nos dice algo, lo reconoce en lugar de mostrar una marca verde. También se ejecuta antes de dormir y señala lo peor que encontró.`,
-    report: `Si ya se perdió una alarma, WakeSharp muestra esa mañana un informe que nombra la causa cuando puede demostrarla —permiso revocado, volumen de alarma a cero, Silencio total, el teléfono estaba apagado— y dice «No pudimos saber por qué» cuando no puede. Las listas de abajo son para cuando no puede.`,
+    callout: `**Empieza en la app, no aquí.** Abre WakeSharp → Ajustes → _Fiabilidad de la alarma_. Lee el estado real de tu teléfono -permisos, volumen de alarma, No molestar, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería- y empieza por un veredicto claro: sonará, puede que no suene o no puede sonar. Cuando el arreglo está a un toque, te ofrece el toque; cuando el teléfono no nos dice algo, lo reconoce en lugar de mostrar una marca verde. También se ejecuta antes de dormir y señala lo peor que encontró.`,
+    report: `Si ya se perdió una alarma, WakeSharp muestra esa mañana un informe que nombra la causa cuando puede demostrarla -permiso revocado, volumen de alarma a cero, Silencio total, el teléfono estaba apagado- y dice «No pudimos saber por qué» cuando no puede. Las listas de abajo son para cuando no puede.`,
     iphone: {
       heading: `En iPhone`,
       steps: [
@@ -67,7 +67,7 @@ export const support = {
     items: [
       `**La misión** es lo que te gana la mañana, y hay más de una docena: rompecabezas de aritmética y memoria como _Juegos Mentales_ y _Choque de Colores_, una foto de un lugar que elegiste la noche anterior (_Prueba con Foto_), un objeto real al otro lado de la habitación (_Escanear un Objeto_, _Tráelo_), pasos (_Camínalo_), la luz del día en una ventana (_Primera Luz_), escribir una frase (_Escríbelo_) o responder en voz alta (_Restar de Siete_, _Nombra Cinco_). _Sorpréndeme_ elige una distinta cada mañana. Una alarma puede pedir varias misiones seguidas, en el orden que elijas.`,
       `**Mis lugares y códigos** es donde _Escanear un Objeto_ se vuelve personal. Fotografía un lugar hasta el que vas a caminar, como la cafetera o la puerta de entrada, o registra un código QR o de barras que pegues donde la mañana deba mandarte, como el espejo del baño o el bote del café. Una alarma puede entonces pedir ese objetivo concreto. Es una función _dentro_ de la misión de escaneo, no una misión propia, y no se guardan ni la fotografía ni el código: solo una huella de cada uno.`,
-      `**Si una misión no puede funcionar** esa mañana —una cámara estropeada, un teléfono sin podómetro—, WakeSharp recurre a otra que sí pueda, para que no te quedes con una alarma que no puedes terminar.`,
+      `**Si una misión no puede funcionar** esa mañana -una cámara estropeada, un teléfono sin podómetro-, WakeSharp recurre a otra que sí pueda, para que no te quedes con una alarma que no puedes terminar.`,
       `**Posponer o detener la alarma no completa la mañana.** Da igual cómo silencies la alarma: la mañana solo cuenta cuando la misión está hecha. Los controles de tu propio teléfono siempre funcionan: apagar el teléfono, por ejemplo, nunca se bloquea.`,
     ],
   },
@@ -75,7 +75,7 @@ export const support = {
   smartAlarms: {
     heading: `Alarmas inteligentes de calendario`,
     body: `Una regla inteligente suena un número fijado de minutos antes de tu primera reunión, acotado entre una hora más temprana y una más tardía que eliges tú. WakeSharp vuelve a comprobar tu calendario durante la noche, así que si la reunión se mueve, la alarma se mueve. Si rechazas el acceso al calendario, todo lo demás sigue funcionando; simplemente fijas las horas tú. Tus eventos nunca salen de tu dispositivo; consulta la [Política de privacidad](privacy).`,
-    limits: `Una rotación de turnos es para patrones que no son semanales —4 de trabajo / 4 libres desde una fecha de anclaje, cada fase con su propia hora— y con un calendario de vista previa para que lo compruebes antes de confiarle tu sueño.`,
+    limits: `Una rotación de turnos es para patrones que no son semanales -4 de trabajo / 4 libres desde una fecha de anclaje, cada fase con su propia hora- y con un calendario de vista previa para que lo compruebes antes de confiarle tu sueño.`,
   },
 
   sharpness: {
@@ -86,12 +86,12 @@ export const support = {
 
   backup: {
     heading: `Copia de seguridad y cambio a un teléfono nuevo`,
-    body: `No hay ninguna cuenta que crear, y nada está bloqueado detrás de una. Opcionalmente puedes iniciar sesión con **Apple** o **Google** —son las únicas opciones, y no hay inicio de sesión con correo y contraseña— con un único propósito: hacer una copia de seguridad de tus alarmas, ajustes, puntuaciones y racha para que vuelvan en un teléfono nuevo.`,
+    body: `No hay ninguna cuenta que crear, y nada está bloqueado detrás de una. Opcionalmente puedes iniciar sesión con **Apple** o **Google** -son las únicas opciones, y no hay inicio de sesión con correo y contraseña- con un único propósito: hacer una copia de seguridad de tus alarmas, ajustes, puntuaciones y racha para que vuelvan en un teléfono nuevo.`,
     items: [
       `**Está desactivada por defecto**, y todas las funciones funcionan sin iniciar sesión. La copia de seguridad se ejecuta silenciosamente después de que cambien tus datos, y una alarma nunca espera a la red para sonar.`,
       `**Para pasar a un teléfono nuevo**, instala WakeSharp, inicia sesión con la misma cuenta de Apple o Google y restaura. Los cambios más recientes que ya estén en el dispositivo nuevo se conservan.`,
       `**Cerrar sesión** conserva todo en tu teléfono y simplemente deja de hacer la copia de seguridad.`,
-      `**Eliminar la cuenta** —en la app, en _Ajustes → Cuenta → Eliminar cuenta_, o como se describe en [wakesharp.app/account/delete](account-delete)— elimina permanentemente la copia de seguridad y el inicio de sesión, mientras que los datos de tu teléfono se conservan.`,
+      `**Eliminar la cuenta** -en la app, en _Ajustes → Cuenta → Eliminar cuenta_, o como se describe en [wakesharp.app/account/delete](account-delete)- elimina permanentemente la copia de seguridad y el inicio de sesión, mientras que los datos de tu teléfono se conservan.`,
     ],
     subscription: `La suscripción es independiente de todo esto: vive con tu cuenta de App Store o Google Play, así que Restaurar compras recupera WakeSharp Ilimitado inicies o no sesión alguna vez en WakeSharp.`,
   },

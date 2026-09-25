@@ -50,7 +50,7 @@ const links = { email: `mailto:${SITE.email}`, privacy: `${localePath(locale, '/
   <!--
     Zero JS by design: a plain POST to the Vercel function at /api/contact, which
     answers with a 303 to a static result page. No fetch, no JSON, no success-state
-    script. The action must have no trailing slash — vercel.json sets
+    script. The action must have no trailing slash. vercel.json sets
     trailingSlash:false, so /api/contact/ would cost a 308 hop before the POST lands.
     The hidden `lang` field is how the function knows which locale's result page
     to redirect to; it is validated against the registry, never echoed.

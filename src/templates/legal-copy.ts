@@ -3,7 +3,7 @@
  * the localized wrappers so the intro and description exist exactly once.
  */
 export const PRIVACY = {
-  title: 'Privacy Policy — WakeSharp',
+  title: 'Privacy Policy - WakeSharp',
   description:
     'How WakeSharp handles optional accounts, purchases, product analytics and campaign measurement, and how you control your privacy. WakeSharp shows no ads.',
   heading: 'Privacy Policy',
@@ -13,10 +13,10 @@ export const PRIVACY = {
 };
 
 export const TERMS = {
-  title: 'Terms of Service — WakeSharp',
+  title: 'Terms of Service - WakeSharp',
   description:
     'The agreement covering your use of WakeSharp, including subscription terms and an important safety notice about relying on any alarm.',
   heading: 'Terms of Service',
   intro:
-    'These terms cover your use of the WakeSharp app. They also serve as the end-user licence agreement for WakeSharp. Please read section 8 in particular — it is about relying on an alarm.',
+    'These terms cover your use of the WakeSharp app. They also serve as the end-user licence agreement for WakeSharp. Please read section 8 in particular. It is about relying on an alarm.',
 };

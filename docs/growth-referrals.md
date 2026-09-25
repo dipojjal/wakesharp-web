@@ -64,7 +64,7 @@ Three mornings on their own would stop nothing: backdating a phone's clock mints
 three distinct local days in under a minute. What makes the bar real is that both
 ends of the range are pinned to a clock the device does not own.
 
-- **Floor** — `a.occurred_at >= v_install.created_at`, the registration instant
+- **Floor**: `a.occurred_at >= v_install.created_at`, the registration instant
   the database wrote. This is what defeats backdating.
 
   ⚠️ **Not `first_open_at`.** That column looks like a server value and is not:
@@ -74,18 +74,18 @@ ends of the range are pinned to a clock the device does not own.
   once, and confirm about twelve real hours later. `created_at` is absent from
   that INSERT's column list and untouched by its `ON CONFLICT` update, so it is
   `now()` as the database saw it.
-- **Ceiling** — `p_occurred_at > p_now + interval '10 minutes'` is rejected,
+- **Ceiling**: `p_occurred_at > p_now + interval '10 minutes'` is rejected,
   where `p_now` is the database's own `now()`. This is what defeats
   fast-forwarding. The route must therefore call `growth_record_success` with
   **six** arguments and let `p_now` default; passing a client timestamp into it
   would make the ceiling compare a value against itself. `contract.test.ts`
   pins that.
-- **Spacing** — 18 hours between consecutive mornings, so three of them need
+- **Spacing**: 18 hours between consecutive mornings, so three of them need
   36 hours of room between the floor and the ceiling.
 
 Together: a confirmed referral requires an installation that has genuinely
 existed for about a day and a half, whatever its clock claims. Verified against
-Postgres 17 — a one-minute-old installation could bank only one of three
+Postgres 17: a one-minute-old installation could bank only one of three
 backdated mornings.
 
 Spacing is judged on `occurred_at` rather than on arrival time, deliberately: a
@@ -117,7 +117,7 @@ skips any installation holding a `growth_squad_unlocks` row, or someone who
 reached twenty and then stopped opening the app for 180 days would be silently
 un-unlocked.
 
-`pendingSignups` counts only claims that could still confirm — a detached
+`pendingSignups` counts only claims that could still confirm: a detached
 (pruned) or revoked (deleted) referee is excluded, or "still warming up" would
 drift upward for years and quietly become a lie.
 
@@ -127,7 +127,7 @@ broken: an inviter who sent eleven links and sees "4 of 20" needs to know the
 other seven are still warming up.
 
 `rewardsEnabled`, `qualified` and `ownRewardStatus` remain on the wire only so
-already-shipped clients keep decoding the payload — their structs are
+already-shipped clients keep decoding the payload: their structs are
 non-optional and a missing field is a hard decode failure, not a degraded
 screen. There is no reward state left behind them.
 
@@ -188,7 +188,7 @@ In rough order of how much work each is:
   private app repo at `supabase/functions/attestation-verifier` (Supabase edge
   function, `verify_jwt = false`, authenticated by the shared
   `ATTESTATION_VERIFIER_SECRET` which is set here as a Vercel production secret).
-  It verifies App Attest attestations and assertions in full — certificate chain
+  It verifies App Attest attestations and assertions in full: certificate chain
   to Apple's embedded root, nonce binding, app id, key identifier, and a
   strictly increasing signature counter held in `app_attest_keys`.
 

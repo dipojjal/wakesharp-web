@@ -5,7 +5,7 @@
  * include/exclude decision.
  *
  * Pages that are never generated (drafts, future-dated posts) are already
- * absent — see src/lib/blog.ts. This list is only the pages that ARE built
+ * absent - see src/lib/blog.ts. This list is only the pages that ARE built
  * and still must not be offered to crawlers.
  */
 import { readFileSync, readdirSync } from 'node:fs';
@@ -84,7 +84,7 @@ function postModified(file: string): Date {
 /**
  * <lastmod>, only where the site records when a page changed: a post's
  * modified time, a blog index's newest post, the legal pages' stamped dates.
- * Every other page gets none rather than a guess — Google stops trusting
+ * Every other page gets none rather than a guess - Google stops trusting
  * lastmod on a site whose dates turn out to be wrong. Reads the built pages,
  * so `distDir` must already hold them (true when @astrojs/sitemap runs).
  */

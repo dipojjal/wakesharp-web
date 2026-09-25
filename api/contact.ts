@@ -6,7 +6,7 @@
  * keeps `output: 'static'` with no adapter, and `npm run verify` keeps checking
  * dist/*.html exactly as before. Astro never sees this file.
  *
- * It does get typechecked, though — tsconfig.json includes `**\/*` and excludes only
+ * It does get typechecked, though - tsconfig.json includes `**\/*` and excludes only
  * `dist`, so a type error here fails `astro check`, and therefore `npm run build`.
  *
  * The response is a 303 to a static result page rather than JSON. That is what lets
@@ -18,7 +18,7 @@ import { DEFAULT_LOCALE, enabledLocales } from '../src/i18n/config.js';
 
 const TO = 'support@wakesharp.app';
 const FROM = 'WakeSharp Contact <support@wakesharp.app>';
-/** User-facing mail drops the "Contact" qualifier — this is the product speaking. */
+/** User-facing mail drops the "Contact" qualifier - this is the product speaking. */
 const AUTO_FROM = 'WakeSharp <support@wakesharp.app>';
 
 /**
@@ -26,7 +26,7 @@ const AUTO_FROM = 'WakeSharp <support@wakesharp.app>';
  * back out would let the form push attacker-written text to arbitrary addresses.
  */
 const AUTO_REPLY_TEXT = [
-  'Thanks for contacting WakeSharp — your message has reached the developer.',
+  'Thanks for contacting WakeSharp. Your message has reached the developer.',
   'Replies usually take 2–3 business days.',
   '',
   "If you didn't submit the contact form at wakesharp.app, you can ignore this email.",
@@ -97,7 +97,7 @@ export async function POST(request: Request): Promise<Response> {
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error('[contact] RESEND_API_KEY is not set — nothing was sent.');
+    console.error('[contact] RESEND_API_KEY is not set. Nothing was sent.');
     return seeOther(failed);
   }
 
@@ -121,12 +121,12 @@ export async function POST(request: Request): Promise<Response> {
       body: JSON.stringify({
         // From has to stay on the verified sending domain. Putting the submitter's
         // address here instead would fail DMARC alignment and get the mail
-        // quarantined — Reply-To carries no alignment requirement, which is why
+        // quarantined - Reply-To carries no alignment requirement, which is why
         // untrusted input belongs there and only there.
         from: FROM,
         to: [TO],
         reply_to: [email],
-        subject: `[WakeSharp] ${oneLine(topic) || 'Contact'} — ${oneLine(name)}`,
+        subject: `[WakeSharp] ${oneLine(topic) || 'Contact'}: ${oneLine(name)}`,
         text,
       }),
     });
@@ -152,7 +152,7 @@ export async function POST(request: Request): Promise<Response> {
       body: JSON.stringify({
         from: AUTO_FROM,
         to: [email],
-        subject: 'We received your message — WakeSharp',
+        subject: 'We received your message - WakeSharp',
         text: AUTO_REPLY_TEXT,
         // RFC 3834, so out-of-office autoresponders don't answer back in a loop.
         headers: { 'Auto-Submitted': 'auto-replied' },

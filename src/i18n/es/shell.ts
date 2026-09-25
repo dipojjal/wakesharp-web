@@ -9,10 +9,10 @@ export const shell = {
   siteDescription: `Un despertador para quienes tienen el sueño pesado: lo silencias con cuentas rápidas, una foto de un lugar o unos pasos, y ves lo lúcido que despertaste.`,
   tagline: `Despierta lúcido. No solo despierto.`,
   requirements: { ios: `iOS 26 o posterior`, android: `Android 8.0 o posterior` },
-  ogImageAlt: `WakeSharp — despierta lúcido, no solo despierto.`,
+  ogImageAlt: `WakeSharp - despierta lúcido, no solo despierto.`,
   rssTitle: `Blog de WakeSharp`,
   skipLink: `Saltar al contenido`,
-  brandHome: `WakeSharp — inicio`,
+  brandHome: `WakeSharp - inicio`,
 
   nav: {
     aria: `Principal`,

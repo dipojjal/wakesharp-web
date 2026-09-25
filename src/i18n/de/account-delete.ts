@@ -1,11 +1,11 @@
 import { accountDelete as en } from '../en/account-delete';
 
-/** /account/delete — die Löschseite, auf die das Data-safety-Formular von Google Play verweist. */
+/** /account/delete - die Löschseite, auf die das Data-safety-Formular von Google Play verweist. */
 export const accountDelete = {
-  title: `Konto löschen — WakeSharp`,
+  title: `Konto löschen - WakeSharp`,
   description: `Wie du dein optionales WakeSharp-Konto und sein Cloud-Backup löschst: in der App oder per E-Mail.`,
   heading: `Dein WakeSharp-Konto löschen`,
-  intro: `WakeSharp-Konten sind optional — es gibt sie nur, um deine Alarme, Einstellungen, Werte und Serie zu sichern, damit du sie auf einem neuen Telefon wiederherstellen kannst. Deins zu löschen entfernt dieses Backup und den Login selbst, dauerhaft.`,
+  intro: `WakeSharp-Konten sind optional: es gibt sie nur, um deine Alarme, Einstellungen, Werte und Serie zu sichern, damit du sie auf einem neuen Telefon wiederherstellen kannst. Deins zu löschen entfernt dieses Backup und den Login selbst, dauerhaft.`,
   inApp: {
     heading: `In der App löschen`,
     steps: [
@@ -13,14 +13,14 @@ export const accountDelete = {
       `Tippe auf **Konto**.`,
       `Tippe auf **Konto löschen** und bestätige.`,
     ],
-    body: `Das ist der ganze Ablauf. Er löscht dauerhaft deinen Login („Mit Apple anmelden“ oder Google), dein Cloud-Backup — Alarme, Einstellungen, Weckverlauf, Werte, Serie und alle hinterlegten Miniaturbilder von Foto- oder Scan-Referenzen — und widerruft bei „Mit Apple anmelden“ das Anmelde-Token bei Apple. Es gibt keine Wartezeit und keine teilweise Aufbewahrung: Der Kontoeintrag und alles, was daran hängt, verschwinden zusammen.`,
+    body: `Das ist der ganze Ablauf. Er löscht dauerhaft deinen Login („Mit Apple anmelden“ oder Google), dein Cloud-Backup (Alarme, Einstellungen, Weckverlauf, Werte, Serie und alle hinterlegten Miniaturbilder von Foto- oder Scan-Referenzen) und widerruft bei „Mit Apple anmelden“ das Anmelde-Token bei Apple. Es gibt keine Wartezeit und keine teilweise Aufbewahrung: Der Kontoeintrag und alles, was daran hängt, verschwinden zusammen.`,
   },
   kept: {
     heading: `Was nicht gelöscht wird`,
     items: [
-      `**Die Daten auf deinem Telefon.** Deine Alarme, Werte und Einstellungen bleiben auf deinem Gerät — das Konto zu löschen löscht nicht deine Alarme. Entferne die App selbst, wenn auch die Daten auf dem Gerät weg sollen.`,
+      `**Die Daten auf deinem Telefon.** Deine Alarme, Werte und Einstellungen bleiben auf deinem Gerät: das Konto zu löschen löscht nicht deine Alarme. Entferne die App selbst, wenn auch die Daten auf dem Gerät weg sollen.`,
       `**Käufe.** Ein Abo von WakeSharp Unbegrenzt gehört, genau wie ein gekaufter lebenslanger Zugang, zu deinem App-Store- oder Google-Play-Konto, nicht zu deinem WakeSharp-Konto, und übersteht die Löschung.`,
-      `**Anonyme Nutzungsstatistiken**, die ohnehin nie mit deinem Konto verknüpft waren — siehe die [Datenschutzerklärung](privacy).`,
+      `**Anonyme Nutzungsstatistiken**, die ohnehin nie mit deinem Konto verknüpft waren: siehe die [Datenschutzerklärung](privacy).`,
     ],
   },
   byEmail: {

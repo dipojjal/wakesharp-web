@@ -1,7 +1,7 @@
 import { support as en } from '../en/support';
 
 /**
- * /support — l’URL d’assistance déclarée dans App Store Connect. Clés de lien
+ * /support - l’URL d’assistance déclarée dans App Store Connect. Clés de lien
  * utilisées ci-dessous : email, terms-safety, privacy, account-delete,
  * apple-subs, google-subs. `{ios}` et `{android}` sont les configurations
  * requises, et `{annual}`, `{monthly}` et `{trialDays}` les prix, tous issus
@@ -25,8 +25,8 @@ export const support = {
 
   didntRing: {
     heading: `Mon alarme n’a pas sonné`,
-    callout: `**Commencez dans l’application, pas ici.** Ouvrez WakeSharp → Réglages → _Fiabilité du réveil_. Elle lit l’état réel de votre téléphone — autorisations, volume de l’alarme, Ne pas déranger, réglages de notification, affichage sur l’écran verrouillé, restrictions de batterie — et commence par un verdict clair : elle sonnera, elle risque de ne pas sonner, ou elle ne peut pas sonner. Là où un correctif tient en un geste, elle vous le propose ; là où le téléphone refuse de nous dire quelque chose, elle le dit au lieu d’afficher une coche verte. Elle s’exécute aussi avant le coucher et signale le pire point relevé.`,
-    report: `Si une alarme a déjà été manquée, WakeSharp affiche ce matin-là un rapport qui nomme la cause quand il peut la prouver — autorisation révoquée, volume de l’alarme à zéro, Silence total, téléphone éteint — et qui dit « Nous n’avons pas pu déterminer pourquoi » quand il ne le peut pas. Les listes ci-dessous servent dans ce dernier cas.`,
+    callout: `**Commencez dans l’application, pas ici.** Ouvrez WakeSharp → Réglages → _Fiabilité du réveil_. Elle lit l’état réel de votre téléphone (autorisations, volume de l’alarme, Ne pas déranger, réglages de notification, affichage sur l’écran verrouillé, restrictions de batterie) et commence par un verdict clair : elle sonnera, elle risque de ne pas sonner, ou elle ne peut pas sonner. Là où un correctif tient en un geste, elle vous le propose ; là où le téléphone refuse de nous dire quelque chose, elle le dit au lieu d’afficher une coche verte. Elle s’exécute aussi avant le coucher et signale le pire point relevé.`,
+    report: `Si une alarme a déjà été manquée, WakeSharp affiche ce matin-là un rapport qui nomme la cause quand il peut la prouver (autorisation révoquée, volume de l’alarme à zéro, Silence total, téléphone éteint) et qui dit « Nous n’avons pas pu déterminer pourquoi » quand il ne le peut pas. Les listes ci-dessous servent dans ce dernier cas.`,
     iphone: {
       heading: `Sur iPhone`,
       steps: [
@@ -55,10 +55,10 @@ export const support = {
 
   ringsThrough: {
     heading: `WakeSharp sonne-t-il vraiment à travers le mode Silence, Concentration et Ne pas déranger ?`,
-    body: `Dans des circonstances normales, oui — c’est tout l’intérêt de l’application, et c’est le mécanisme qu’utilise l’horloge intégrée de chaque plateforme.`,
+    body: `Dans des circonstances normales, oui: c’est tout l’intérêt de l’application, et c’est le mécanisme qu’utilise l’horloge intégrée de chaque plateforme.`,
     items: [
       `**Sur iPhone**, WakeSharp utilise AlarmKit d’Apple, qui permet de sonner à travers le mode Silence et Concentration **une fois que vous avez accordé l’autorisation d’alarme**. Refusez-la ou révoquez-la et WakeSharp ne peut plus programmer d’alarme du tout.`,
-      `**Sur Android**, l’alarme joue sur le canal audio dédié aux alarmes, qui sonne à travers le mode silencieux, et à travers Ne pas déranger quand ce mode autorise les alarmes (Silence total coupe tous les sons, alarmes comprises), et affiche une alerte plein écran par-dessus l’écran verrouillé — **à condition que les autorisations d’alarme exacte, de notification et d’écran verrouillé soient en place**. Il n’y a pas d’invite supplémentaire pour le canal des alarmes lui-même, mais une notification bloquée ou une restriction de batterie peut malgré tout empêcher l’alerte.`,
+      `**Sur Android**, l’alarme joue sur le canal audio dédié aux alarmes, qui sonne à travers le mode silencieux, et à travers Ne pas déranger quand ce mode autorise les alarmes (Silence total coupe tous les sons, alarmes comprises), et affiche une alerte plein écran par-dessus l’écran verrouillé: **à condition que les autorisations d’alarme exacte, de notification et d’écran verrouillé soient en place**. Il n’y a pas d’invite supplémentaire pour le canal des alarmes lui-même, mais une notification bloquée ou une restriction de batterie peut malgré tout empêcher l’alerte.`,
     ],
     limit: `Ce qu’aucune des deux plateformes ne peut faire, c’est sonner sur un téléphone éteint, déchargé, ou dont les autorisations de l’application ont été révoquées.`,
   },
@@ -67,16 +67,16 @@ export const support = {
     heading: `Missions et rappel d’alarme`,
     items: [
       `**La mission** est ce qui vous vaut la matinée, et il y en a plus d’une douzaine : des énigmes de calcul et de mémoire comme _Jeux d’esprit_ et _Choc des couleurs_, une photo d’un endroit choisi la veille (_Preuve photo_), un objet réel à l’autre bout de la pièce (_Scanner un objet_, _Va chercher_), des pas (_Marchez un peu_), la lumière du jour à une fenêtre (_Première lumière_), recopier une phrase (_Recopier_) ou répondre à voix haute (_Sept en sept_, _Nommez cinq_). _Surprenez-moi_ en choisit une différente chaque matin. Une alarme peut demander plusieurs missions à la suite, dans l’ordre de votre choix.`,
-      `**Mes endroits et mes codes**, c’est là que _Scanner un objet_ devient personnel. Photographiez un endroit vers lequel vous marcherez, comme la bouilloire ou la porte d’entrée, ou enregistrez un QR code ou un code-barres que vous collez là où la matinée doit vous envoyer, comme le miroir de la salle de bains ou la boîte à café. Une alarme peut alors demander cette cible précise. C’est une fonction _à l’intérieur_ de la mission de scan plutôt qu’une mission à part entière, et ni la photographie ni le code ne sont stockés — seulement une empreinte de chacun.`,
-      `**Si une mission ne peut pas fonctionner** ce matin-là — un appareil photo en panne, un téléphone sans podomètre —, WakeSharp se rabat sur une autre qui le peut, pour que vous ne restiez pas coincé avec une alarme que vous ne pouvez pas terminer.`,
+      `**Mes endroits et mes codes**, c’est là que _Scanner un objet_ devient personnel. Photographiez un endroit vers lequel vous marcherez, comme la bouilloire ou la porte d’entrée, ou enregistrez un QR code ou un code-barres que vous collez là où la matinée doit vous envoyer, comme le miroir de la salle de bains ou la boîte à café. Une alarme peut alors demander cette cible précise. C’est une fonction _à l’intérieur_ de la mission de scan plutôt qu’une mission à part entière, et ni la photographie ni le code ne sont stockés: seulement une empreinte de chacun.`,
+      `**Si une mission ne peut pas fonctionner** ce matin-là (un appareil photo en panne, un téléphone sans podomètre), WakeSharp se rabat sur une autre qui le peut, pour que vous ne restiez pas coincé avec une alarme que vous ne pouvez pas terminer.`,
       `**Reporter ou arrêter l’alarme ne termine pas la matinée.** Quelle que soit la façon dont vous faites taire l’alarme, la matinée ne compte qu’une fois la mission accomplie. Les commandes de votre téléphone fonctionnent toujours : l’éteindre, par exemple, n’est jamais bloqué.`,
     ],
   },
 
   smartAlarms: {
     heading: `Alarmes d’agenda intelligentes`,
-    body: `Une règle intelligente sonne un nombre de minutes défini avant votre première réunion, dans les limites d’une heure de réveil au plus tôt et au plus tard que vous choisissez. WakeSharp revérifie votre agenda pendant la nuit : si la réunion se déplace, l’alarme se déplace. Si vous refusez l’accès à l’agenda, tout le reste fonctionne — vous réglez simplement les heures vous-même. Vos événements ne quittent jamais votre appareil ; voir la [Politique de confidentialité](privacy).`,
-    limits: `Une rotation d’équipe sert aux rythmes qui ne sont pas hebdomadaires — 4 jours travaillés / 4 de repos à partir d’une date d’ancrage, chaque phase avec sa propre heure, et un calendrier d’aperçu pour vérifier avant d’aller dormir.`,
+    body: `Une règle intelligente sonne un nombre de minutes défini avant votre première réunion, dans les limites d’une heure de réveil au plus tôt et au plus tard que vous choisissez. WakeSharp revérifie votre agenda pendant la nuit : si la réunion se déplace, l’alarme se déplace. Si vous refusez l’accès à l’agenda, tout le reste fonctionne: vous réglez simplement les heures vous-même. Vos événements ne quittent jamais votre appareil ; voir la [Politique de confidentialité](privacy).`,
+    limits: `Une rotation d’équipe sert aux rythmes qui ne sont pas hebdomadaires: 4 jours travaillés / 4 de repos à partir d’une date d’ancrage, chaque phase avec sa propre heure, et un calendrier d’aperçu pour vérifier avant d’aller dormir.`,
   },
 
   sharpness: {
@@ -87,12 +87,12 @@ export const support = {
 
   backup: {
     heading: `Sauvegarde et passage à un nouveau téléphone`,
-    body: `Il n’y a aucun compte à créer, et rien n’y est réservé. Vous pouvez, si vous le souhaitez, vous connecter avec **Apple** ou **Google** — ce sont les seules options, et il n’existe pas de connexion par e-mail et mot de passe — dans un seul but : sauvegarder vos alarmes, réglages, scores et série pour qu’ils reviennent sur un nouveau téléphone.`,
+    body: `Il n’y a aucun compte à créer, et rien n’y est réservé. Vous pouvez, si vous le souhaitez, vous connecter avec **Apple** ou **Google** (ce sont les seules options, et il n’existe pas de connexion par e-mail et mot de passe) dans un seul but : sauvegarder vos alarmes, réglages, scores et série pour qu’ils reviennent sur un nouveau téléphone.`,
     items: [
       `**C’est désactivé par défaut**, et toutes les fonctions marchent sans connexion. La sauvegarde s’exécute discrètement après une modification de vos données, et une alarme n’attend jamais le réseau pour sonner.`,
       `**Pour passer à un nouveau téléphone**, installez WakeSharp, connectez-vous avec le même compte Apple ou Google, puis restaurez. Les modifications plus récentes déjà présentes sur le nouvel appareil sont conservées.`,
       `**Se déconnecter** garde tout sur votre téléphone et cesse simplement de le sauvegarder.`,
-      `**Supprimer le compte** — dans l’application, à _Réglages → Compte → Supprimer le compte_, ou comme décrit sur [wakesharp.app/account/delete](account-delete) — retire définitivement la sauvegarde et l’identifiant, tandis que les données présentes sur votre téléphone sont conservées.`,
+      `**Supprimer le compte** (dans l’application, à _Réglages → Compte → Supprimer le compte_, ou comme décrit sur [wakesharp.app/account/delete](account-delete)) retire définitivement la sauvegarde et l’identifiant, tandis que les données présentes sur votre téléphone sont conservées.`,
     ],
     subscription: `Un abonnement est indépendant de tout cela : il vit avec votre compte App Store ou Google Play, si bien que Restaurer les achats ramène WakeSharp Illimité, que vous vous connectiez un jour à WakeSharp ou non.`,
   },
@@ -104,7 +104,7 @@ export const support = {
       `**Lifetime** (à vie) était un achat unique, et il reste valable pour tous ceux qui l’ont acheté : il ne se renouvelle jamais, et il n’y a rien à résilier.`,
       `**Restaurer un achat :** ouvrez la page d’abonnement et touchez _Restaurer_. Assurez-vous d’être connecté avec le compte Apple ou Google qui a servi à l’achat.`,
       `**Résilier :** [abonnements App Store](apple-subs) ou [abonnements Google Play](google-subs), quand vous voulez, y compris pendant l’essai gratuit. Supprimer l’application ne résilie pas un abonnement.`,
-      `**Les remboursements** sont gérés par Apple ou Google, pas par nous — mais écrivez-moi si quelque chose s’est mal passé et je vous aiderai autant que je le peux.`,
+      `**Les remboursements** sont gérés par Apple ou Google, pas par nous, mais écrivez-moi si quelque chose s’est mal passé et je vous aiderai autant que je le peux.`,
     ],
   },
 

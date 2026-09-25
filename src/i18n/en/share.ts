@@ -6,7 +6,7 @@
  */
 export const share = {
   challenge: {
-    title: `A wake-up challenge — WakeSharp`,
+    title: `A wake-up challenge - WakeSharp`,
     description: `Someone challenged you to a WakeSharp morning.`,
     heading: `Beat my wake`,
     intro: `Someone thinks they woke up sharper than you will.`,
@@ -20,7 +20,7 @@ export const share = {
     },
   },
   pact: {
-    title: `A wake-up invite — WakeSharp`,
+    title: `A wake-up invite - WakeSharp`,
     description: `Someone shared a WakeSharp alarm with you.`,
     heading: `A wake-up invite`,
     intro: `Someone wants to wake up with you.`,

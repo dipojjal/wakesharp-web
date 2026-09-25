@@ -30,7 +30,7 @@ export async function POST(request: Request): Promise<Response> {
 
     return json({
       // `rewardsEnabled`, `qualified` and `ownRewardStatus` are retained purely
-      // so already-shipped clients keep decoding this payload — their structs
+      // so already-shipped clients keep decoding this payload - their structs
       // are non-optional and a missing field is a hard decode failure, not a
       // degraded screen. Referrals grant no entitlement any more, so there is
       // no reward state left to report: `rewardsEnabled` is simply "the

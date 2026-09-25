@@ -74,7 +74,7 @@ const config = {
       // No `i18n` option, on purpose: hreflang lives in each page's <head>
       // (BaseHead), which Google treats as equivalent. Sitemap xhtml:link
       // alternates only repeated it, and any XHTML-namespace element makes
-      // Chrome render the file as a page — one run-on line of URLs — instead
+      // Chrome render the file as a page - one run-on line of URLs - instead
       // of its XML tree view. Plain <urlset>, no extension namespaces.
       namespaces: { news: false, xhtml: false, image: false, video: false },
     }),

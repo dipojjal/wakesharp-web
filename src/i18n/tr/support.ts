@@ -27,8 +27,8 @@ export const support = {
 
   didntRing: {
     heading: `Alarmım çalmadı`,
-    callout: `**Buradan değil, uygulamadan başlayın.** WakeSharp → Ayarlar → _Alarm güvenilirliği_ bölümünü açın. Telefonunuzun anlık durumunu okur — izinler, alarm ses düzeyi, Rahatsız Etmeyin, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları — ve önce net bir hüküm verir: çalacak, çalmayabilir ya da çalamaz. Çözüm tek dokunuş uzaktaysa o dokunuşu sunar; telefon bize bir şeyi söylemiyorsa yeşil onay işareti göstermek yerine bunu açıkça belirtir. Ayrıca yatmadan önce de çalışır ve bulduğu en kötü şeyi işaretler.`,
-    report: `Bir alarm zaten kaçırıldıysa WakeSharp o sabah bir rapor gösterir; kanıtlayabildiği yerde nedeni adlandırır — izin geri alınmış, alarm ses düzeyi sıfırda, Tamamen sessiz modu, telefon kapalıydı — kanıtlayamadığı yerde ise “Nedenini bilemedik” der. Aşağıdaki kontrol listeleri, bilemediği durumlar içindir.`,
+    callout: `**Buradan değil, uygulamadan başlayın.** WakeSharp → Ayarlar → _Alarm güvenilirliği_ bölümünü açın. Telefonunuzun anlık durumunu okur (izinler, alarm ses düzeyi, Rahatsız Etmeyin, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları) ve önce net bir hüküm verir: çalacak, çalmayabilir ya da çalamaz. Çözüm tek dokunuş uzaktaysa o dokunuşu sunar; telefon bize bir şeyi söylemiyorsa yeşil onay işareti göstermek yerine bunu açıkça belirtir. Ayrıca yatmadan önce de çalışır ve bulduğu en kötü şeyi işaretler.`,
+    report: `Bir alarm zaten kaçırıldıysa WakeSharp o sabah bir rapor gösterir; kanıtlayabildiği yerde nedeni adlandırır (izin geri alınmış, alarm ses düzeyi sıfırda, Tamamen sessiz modu, telefon kapalıydı) kanıtlayamadığı yerde ise “Nedenini bilemedik” der. Aşağıdaki kontrol listeleri, bilemediği durumlar içindir.`,
     iphone: {
       heading: `iPhone’da`,
       steps: [
@@ -57,10 +57,10 @@ export const support = {
 
   ringsThrough: {
     heading: `WakeSharp Sessiz mod, Odak ve Rahatsız Etmeyin açıkken gerçekten çalıyor mu?`,
-    body: `Normal koşullarda evet — uygulamanın bütün amacı bu ve her platformda yerleşik saat uygulamasının kullandığı mekanizmanın aynısıdır.`,
+    body: `Normal koşullarda evet: uygulamanın bütün amacı bu ve her platformda yerleşik saat uygulamasının kullandığı mekanizmanın aynısıdır.`,
     items: [
       `**iPhone’da** WakeSharp, **alarm izni verdikten sonra** Sessiz mod ve Odak açıkken çalmayı destekleyen Apple’ın AlarmKit’ini kullanır. İzni reddeder ya da geri alırsanız WakeSharp hiçbir alarm zamanlayamaz.`,
-      `**Android’de** alarm özel alarm ses kanalında çalar; bu kanal sessiz modda da, Rahatsız Etmeyin alarmlara izin veriyorsa o açıkken de çalar (Tamamen sessiz modu, alarmlar dahil her sesi kapatır). Ayrıca kilit ekranının üzerinde tam ekran bir uyarı gösterir — **tam zamanlı alarm, bildirim ve kilit ekranı izinleri yerindeyse**. Alarm ses kanalının kendisi için ek bir izin istemi yoktur; ama engellenmiş bir bildirim ya da bir pil kısıtlaması uyarıyı yine de durdurabilir.`,
+      `**Android’de** alarm özel alarm ses kanalında çalar; bu kanal sessiz modda da, Rahatsız Etmeyin alarmlara izin veriyorsa o açıkken de çalar (Tamamen sessiz modu, alarmlar dahil her sesi kapatır). Ayrıca kilit ekranının üzerinde tam ekran bir uyarı gösterir: **tam zamanlı alarm, bildirim ve kilit ekranı izinleri yerindeyse**. Alarm ses kanalının kendisi için ek bir izin istemi yoktur; ama engellenmiş bir bildirim ya da bir pil kısıtlaması uyarıyı yine de durdurabilir.`,
     ],
     limit: `İki platformun da yapamadığı şey, kapalı, pili bitmiş ya da uygulamanın izinleri geri alınmış bir telefonda çalmaktır.`,
   },
@@ -69,16 +69,16 @@ export const support = {
     heading: `Görevler ve erteleme`,
     items: [
       `**Görev**, size sabahı kazandıran şeydir ve bir düzineden fazla görev var: _Zihin Oyunları_ ve _Renk Çatışması_ gibi aritmetik ve hafıza bulmacaları, bir önceki akşam seçtiğiniz noktanın fotoğrafı (_Fotoğraf Kanıtı_), odanın öbür ucundaki gerçek bir nesne (_Bir Nesne Tara_, _Getir_), adımlar (_Yürüyerek Uyan_), pencere önünde gün ışığı (_İlk Işık_), bir cümle yazmak (_Yazarak Uyan_) ya da sesli yanıt vermek (_Yediyle Sayma_, _Beş Tane Say_). _Beni Şaşırt_ her sabah farklı bir görev seçer. Bir alarm, sizin belirlediğiniz sırayla art arda birkaç görev isteyebilir.`,
-      `**Noktalarım ve kodlarım**, _Bir Nesne Tara_ görevinin kişiselleştiği yerdir. Yürüyerek gideceğiniz bir yeri fotoğraflayın — çaydanlık ya da ön kapı gibi — ya da sabahın sizi göndermesi gereken yere, örneğin banyo aynasına veya kahve kutusuna yapıştırdığınız bir QR ya da barkodu kaydedin. Ardından bir alarm o belirli hedefi isteyebilir. Kendi başına bir görev değil, tarama görevinin _içindeki_ bir özelliktir; ne fotoğraf ne de kod saklanır — yalnızca her birinin bir parmak izi.`,
-      `**Bir görev o sabah çalışamazsa** — bitmiş bir kamera, adım sayarı olmayan bir telefon — WakeSharp çalışabilecek bir göreve geçer; böylece bitiremeyeceğiniz bir alarmla baş başa kalmazsınız.`,
+      `**Noktalarım ve kodlarım**, _Bir Nesne Tara_ görevinin kişiselleştiği yerdir. Yürüyerek gideceğiniz bir yeri fotoğraflayın (çaydanlık ya da ön kapı gibi) ya da sabahın sizi göndermesi gereken yere, örneğin banyo aynasına veya kahve kutusuna yapıştırdığınız bir QR ya da barkodu kaydedin. Ardından bir alarm o belirli hedefi isteyebilir. Kendi başına bir görev değil, tarama görevinin _içindeki_ bir özelliktir; ne fotoğraf ne de kod saklanır: yalnızca her birinin bir parmak izi.`,
+      `**Bir görev o sabah çalışamazsa** (bitmiş bir kamera, adım sayarı olmayan bir telefon), WakeSharp çalışabilecek bir göreve geçer; böylece bitiremeyeceğiniz bir alarmla baş başa kalmazsınız.`,
       `**Ertelemek ve durdurmak sabahı bitirmez.** Alarmı nasıl susturursanız susturun, sabah ancak görev tamamlandığında sayılır. Telefonunuzun kendi denetimleri her zaman çalışır: örneğin telefonu kapatmak asla engellenmez.`,
     ],
   },
 
   smartAlarms: {
     heading: `Akıllı takvim alarmları`,
-    body: `Bir akıllı kural, ilk toplantınızdan belirlediğiniz sayıda dakika önce çalar; sizin seçtiğiniz en erken ve en geç uyanma saatleri arasında sınırlanır. WakeSharp takviminizi gece boyunca yeniden kontrol eder; toplantı kayarsa alarm da kayar. Takvim erişimini reddederseniz diğer her şey yine çalışır — saatleri kendiniz ayarlarsınız, o kadar. Etkinlikleriniz cihazınızdan asla çıkmaz; bkz. [Gizlilik Politikası](privacy).`,
-    limits: `Vardiya rotasyonu, haftalık olmayan düzenler içindir — bir başlangıç tarihinden itibaren 4 gün çalışma / 4 gün izin, her aşamanın kendi saati ve gece yatmadan önce kontrol edebilmeniz için bir önizleme takvimi.`,
+    body: `Bir akıllı kural, ilk toplantınızdan belirlediğiniz sayıda dakika önce çalar; sizin seçtiğiniz en erken ve en geç uyanma saatleri arasında sınırlanır. WakeSharp takviminizi gece boyunca yeniden kontrol eder; toplantı kayarsa alarm da kayar. Takvim erişimini reddederseniz diğer her şey yine çalışır: saatleri kendiniz ayarlarsınız, o kadar. Etkinlikleriniz cihazınızdan asla çıkmaz; bkz. [Gizlilik Politikası](privacy).`,
+    limits: `Vardiya rotasyonu, haftalık olmayan düzenler içindir: bir başlangıç tarihinden itibaren 4 gün çalışma / 4 gün izin, her aşamanın kendi saati ve gece yatmadan önce kontrol edebilmeniz için bir önizleme takvimi.`,
   },
 
   sharpness: {
@@ -89,12 +89,12 @@ export const support = {
 
   backup: {
     heading: `Yedekleme ve yeni bir telefona geçiş`,
-    body: `Açmanız gereken bir hesap yok ve hiçbir şey bir hesabın arkasına kilitlenmiş değil. İsterseniz **Apple** veya **Google** ile giriş yapabilirsiniz — seçenekler yalnızca bunlardır, e-posta ve parolayla giriş yoktur — tek bir amaçla: alarmlarınızı, ayarlarınızı, puanlarınızı ve serinizi yedeklemek, yeni bir telefonda geri gelsinler diye.`,
+    body: `Açmanız gereken bir hesap yok ve hiçbir şey bir hesabın arkasına kilitlenmiş değil. İsterseniz **Apple** veya **Google** ile giriş yapabilirsiniz (seçenekler yalnızca bunlardır, e-posta ve parolayla giriş yoktur) tek bir amaçla: alarmlarınızı, ayarlarınızı, puanlarınızı ve serinizi yedeklemek, yeni bir telefonda geri gelsinler diye.`,
     items: [
       `**Varsayılan olarak kapalıdır** ve her özellik oturum açmadan çalışır. Yedekleme, verileriniz değiştikten sonra sessizce çalışır ve bir alarm çalmak için asla ağı beklemez.`,
       `**Yeni bir telefona geçmek için** WakeSharp’ı yükleyin, aynı Apple veya Google hesabıyla giriş yapın ve geri yükleyin. Yeni cihazda zaten bulunan daha yeni değişiklikler korunur.`,
       `**Oturumu kapatmak** her şeyi telefonunuzda tutar ve yalnızca yedeklemeyi durdurur.`,
-      `**Hesabı silmek** — uygulamada _Ayarlar → Hesap → Hesabı sil_ yolundan ya da [wakesharp.app/account/delete](account-delete) adresinde anlatıldığı gibi — yedeği ve girişi kalıcı olarak kaldırır; telefonunuzdaki veriler ise korunur.`,
+      `**Hesabı silmek** (uygulamada _Ayarlar → Hesap → Hesabı sil_ yolundan ya da [wakesharp.app/account/delete](account-delete) adresinde anlatıldığı gibi) yedeği ve girişi kalıcı olarak kaldırır; telefonunuzdaki veriler ise korunur.`,
     ],
     subscription: `Abonelik bunların hepsinden ayrıdır: App Store veya Google Play hesabınıza bağlıdır; bu yüzden “Satın alımları geri yükle”, WakeSharp’a hiç giriş yapmasanız bile WakeSharp Sınırsız’ı geri getirir.`,
   },
@@ -106,7 +106,7 @@ export const support = {
       `**Lifetime** (ömür boyu) tek seferlik bir satın almaydı ve satın alan herkes için geçerliliğini korur: hiç yenilenmez ve iptal edilecek bir şey yoktur.`,
       `**Bir satın almayı geri yüklemek:** Abonelik ekranını açın ve _Geri yükle_ düğmesine dokunun. Satın aldığınız Apple veya Google hesabıyla giriş yapmış olduğunuzdan emin olun.`,
       `**İptal etmek:** [App Store abonelikleri](apple-subs) veya [Google Play abonelikleri](google-subs) üzerinden, istediğiniz zaman; ücretsiz deneme süresi içinde de. Uygulamayı silmek aboneliği iptal etmez.`,
-      `**İade işlemleri** biz değil, Apple veya Google tarafından yürütülür — ama bir şeyler ters gittiyse bana yazın, elimden geldiğince yardımcı olurum.`,
+      `**İade işlemleri** biz değil, Apple veya Google tarafından yürütülür, ama bir şeyler ters gittiyse bana yazın, elimden geldiğince yardımcı olurum.`,
     ],
   },
 

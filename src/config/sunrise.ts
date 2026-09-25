@@ -47,7 +47,7 @@ export const SUNRISE = [
   { id: 'smart', from: '#2E2246', to: '#3D2654', tone: 'night' },
   // Ends at #452A57 rather than #4C2E59 because this band now carries the
   // mission card grid. Inside a `bg-white/[0.06]` card, #4C2E59 puts `dim` at
-  // 4.35:1 — below AA, and invisible to a raw-band-only walk. #452A57 reads
+  // 4.35:1 - below AA, and invisible to a raw-band-only walk. #452A57 reads
   // 4.67:1, which leaves room for a copy edit without re-crossing the line.
   { id: 'mission', from: '#3D2654', to: '#452A57', tone: 'night', cards: true },
   // Absorbs the travel `mission` gave up. No cards here, so the raw-band floor
@@ -74,7 +74,7 @@ export const SUNRISE = [
 ] as const satisfies readonly SunriseStop[];
 
 /**
- * Per-tone ink. `accent` is the single emphasised run in a headline — amber on dark,
+ * Per-tone ink. `accent` is the single emphasised run in a headline - amber on dark,
  * burnt coral on light. `dim` is secondary body copy and is held to the same 4.5:1
  * as body text, because "secondary" is not "decorative".
  *

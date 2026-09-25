@@ -9,12 +9,12 @@
  * pulled, flip `state` back to 'coming-soon' in src/config/site.ts and the pill
  * branch below takes over again.
  *
- * The artwork ships byte-identical from public/badges/ — plain <img>, no Astro
+ * The artwork ships byte-identical from public/badges/ - plain <img>, no Astro
  * image pipeline, no re-encoding, no recolouring. Both vendors forbid modifying
  * it, and the surest way not to modify it is not to process it.
  *
  * Sizing. Apple's SVG is 119.66×40 with no clear space; Google's PNG is 646×250
- * whose visible badge is 564×168 inset by 41px — exactly the quarter-height
+ * whose visible badge is 564×168 inset by 41px - exactly the quarter-height
  * clear space both vendors require, baked in. So the two files are scaled to a
  * shared *visible* badge height (--badge-h) rather than a shared box height,
  * which is why Google's box ends up ~49% taller and the row centres them.
@@ -24,7 +24,7 @@
  * Accessibility: the alt text is the wording each vendor bakes into its own
  * artwork, so the link's accessible name matches what is on screen and voice
  * control users can say what they see (WCAG 2.5.3). That is why the previous
- * sr-only spans are gone — with real badges they would have duplicated it.
+ * sr-only spans are gone - with real badges they would have duplicated it.
  *
  * On every localized page a one-line note follows the badges: the apps ship in
  * English only, and the site must not imply otherwise. English pages carry
@@ -82,7 +82,7 @@ const languageNote = appSpeaksIt ? null : getCatalog(locale.code).shell.appLangu
                 <span class="text-xs font-semibold opacity-75">{s.note}</span>
               </span>
               <span class="sr-only">
-                {` — WakeSharp for ${s.platform} is not released yet. Jump to the features section.`}
+                {`WakeSharp for ${s.platform} is not released yet. Jump to the features section.`}
               </span>
             </a>
           ))

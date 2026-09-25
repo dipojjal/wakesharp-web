@@ -8,11 +8,11 @@ import { legal as en } from '../en/legal';
  */
 export const legal = {
   privacy: {
-    title: `Política de Privacidade — WakeSharp`,
+    title: `Política de Privacidade - WakeSharp`,
     heading: `Política de Privacidade`,
   },
   terms: {
-    title: `Termos de Serviço — WakeSharp`,
+    title: `Termos de Serviço - WakeSharp`,
     heading: `Termos de Serviço`,
   },
   englishOnly: `Este documento está disponível apenas em inglês, e o texto em inglês abaixo é a versão que se aplica. Se algo nele não estiver claro, escreva para [{email}](email) e uma pessoa de verdade explica.`,

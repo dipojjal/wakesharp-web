@@ -8,14 +8,14 @@ import { blog as en } from '../en/blog';
  */
 export const blog = {
   index: {
-    title: `Science du sommeil et conseils de réveil — Blog WakeSharp`,
+    title: `Science du sommeil et conseils de réveil: Blog WakeSharp`,
     description: `Guides fondés sur la recherche pour se réveiller à l’heure, l’esprit clair : inertie du sommeil, snooze, alarmes ratées, caféine, mélatonine, meilleurs matins.`,
     heading: `Le blog WakeSharp`,
-    intro: `Science du sommeil, routines matinales et, de temps en temps, une actualité produit — par le créateur de l’alarme qui vérifie que vous êtes vraiment affûté.`,
-    empty: `Le premier article arrive — repassez bientôt.`,
+    intro: `Science du sommeil, routines matinales et, de temps en temps, une actualité produit: par le créateur de l’alarme qui vérifie que vous êtes vraiment affûté.`,
+    empty: `Le premier article arrive: repassez bientôt.`,
   },
   /** Ajouté au titre d’un article dans l’onglet du navigateur, quand le titre complet tient encore en 60 caractères. */
-  titleSuffix: ` — WakeSharp`,
+  titleSuffix: ` - WakeSharp`,
   /** La ligne sous le titre d’un article quand le fondateur l’a relu. `{name}` est un lien vers /about. */
   reviewedBy: `Relu par {name}`,
   /** Porte sa propre flèche, pour qu’une langue de droite à gauche puisse l’inverser. */

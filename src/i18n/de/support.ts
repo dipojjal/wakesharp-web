@@ -1,7 +1,7 @@
 import { support as en } from '../en/support';
 
 /**
- * /support — die Support-URL für App Store Connect. Verwendete Link-Keys:
+ * /support - die Support-URL für App Store Connect. Verwendete Link-Keys:
  * email, terms-safety, privacy, account-delete, apple-subs, google-subs.
  * `{ios}` und `{android}` sind die Anforderungs-Strings, `{annual}`, `{monthly}`
  * und `{trialDays}` die Preise, alle aus src/config/site.ts.
@@ -24,8 +24,8 @@ export const support = {
 
   didntRing: {
     heading: `Mein Alarm hat nicht geklingelt`,
-    callout: `**Fang in der App an, nicht hier.** Öffne WakeSharp → Einstellungen → _Weckzuverlässigkeit_. Die Prüfung liest den aktuellen Zustand deines Telefons — Berechtigungen, Alarmlautstärke, „Nicht stören“, Benachrichtigungseinstellungen, Anzeige über dem Sperrbildschirm, Akku-Beschränkungen — und beginnt mit einem klaren Urteil: Er wird klingeln, er könnte es nicht, oder er kann es nicht. Wo eine Lösung einen Tipp entfernt ist, bietet sie den Tipp an; wo das Telefon uns etwas nicht verrät, sagt sie es, statt einen grünen Haken zu zeigen. Sie läuft außerdem vor dem Schlafengehen und meldet den schlimmsten Fund.`,
-    report: `Wurde ein Alarm bereits verpasst, zeigt WakeSharp an diesem Morgen einen Bericht, der die Ursache nennt, wo er sie belegen kann — Berechtigung entzogen, Alarmlautstärke auf null, Totenstille, das Telefon war aus — und „Wir konnten nicht feststellen, warum“ sagt, wo er es nicht kann. Die Checklisten unten sind für den Fall, dass er es nicht kann.`,
+    callout: `**Fang in der App an, nicht hier.** Öffne WakeSharp → Einstellungen → _Weckzuverlässigkeit_. Die Prüfung liest den aktuellen Zustand deines Telefons (Berechtigungen, Alarmlautstärke, „Nicht stören“, Benachrichtigungseinstellungen, Anzeige über dem Sperrbildschirm, Akku-Beschränkungen) und beginnt mit einem klaren Urteil: Er wird klingeln, er könnte es nicht, oder er kann es nicht. Wo eine Lösung einen Tipp entfernt ist, bietet sie den Tipp an; wo das Telefon uns etwas nicht verrät, sagt sie es, statt einen grünen Haken zu zeigen. Sie läuft außerdem vor dem Schlafengehen und meldet den schlimmsten Fund.`,
+    report: `Wurde ein Alarm bereits verpasst, zeigt WakeSharp an diesem Morgen einen Bericht, der die Ursache nennt, wo er sie belegen kann (Berechtigung entzogen, Alarmlautstärke auf null, Totenstille, das Telefon war aus) und „Wir konnten nicht feststellen, warum“ sagt, wo er es nicht kann. Die Checklisten unten sind für den Fall, dass er es nicht kann.`,
     iphone: {
       heading: `Auf dem iPhone`,
       steps: [
@@ -54,10 +54,10 @@ export const support = {
 
   ringsThrough: {
     heading: `Klingelt WakeSharp wirklich durch Lautlos-Modus, Fokus und „Nicht stören“?`,
-    body: `Unter normalen Umständen ja — das ist der ganze Sinn der App, und es ist derselbe Mechanismus, den auch die eingebaute Uhr auf der jeweiligen Plattform nutzt.`,
+    body: `Unter normalen Umständen ja: das ist der ganze Sinn der App, und es ist derselbe Mechanismus, den auch die eingebaute Uhr auf der jeweiligen Plattform nutzt.`,
     items: [
       `**Auf dem iPhone** nutzt WakeSharp Apples AlarmKit, das durch Lautlos-Modus und Fokus hindurch klingeln kann, **sobald du die Alarmberechtigung erteilt hast**. Lehnst du sie ab oder entziehst sie, kann WakeSharp überhaupt keinen Alarm planen.`,
-      `**Auf Android** läuft der Alarm über den eigenen Alarm-Audiokanal, der auch im Lautlos-Modus klingelt und bei „Nicht stören“, sofern dort Alarme erlaubt sind (Totenstille schaltet jeden Ton stumm, Alarme eingeschlossen), und zeigt eine Vollbildmeldung über dem Sperrbildschirm — **wenn die Berechtigungen für exakte Alarme, Benachrichtigungen und den Sperrbildschirm vorliegen**. Für den Alarmkanal selbst gibt es keine zusätzliche Abfrage, aber eine blockierte Benachrichtigung oder eine Akku-Beschränkung kann die Meldung trotzdem verhindern.`,
+      `**Auf Android** läuft der Alarm über den eigenen Alarm-Audiokanal, der auch im Lautlos-Modus klingelt und bei „Nicht stören“, sofern dort Alarme erlaubt sind (Totenstille schaltet jeden Ton stumm, Alarme eingeschlossen), und zeigt eine Vollbildmeldung über dem Sperrbildschirm: **wenn die Berechtigungen für exakte Alarme, Benachrichtigungen und den Sperrbildschirm vorliegen**. Für den Alarmkanal selbst gibt es keine zusätzliche Abfrage, aber eine blockierte Benachrichtigung oder eine Akku-Beschränkung kann die Meldung trotzdem verhindern.`,
     ],
     limit: `Was keine der beiden Plattformen kann: auf einem Telefon klingeln, das ausgeschaltet oder leer ist oder dem die Berechtigungen der App entzogen wurden.`,
   },
@@ -66,32 +66,32 @@ export const support = {
     heading: `Missionen und Schlummern`,
     items: [
       `**Die Mission** ist das, was dir den Morgen einbringt, und es gibt mehr als ein Dutzend: Rechen- und Gedächtnisrätsel wie _Kopfrechnen_ und _Farbkonflikt_, ein Foto einer Stelle, die du am Abend vorher gewählt hast (_Fotobeweis_), ein echter Gegenstand auf der anderen Seite des Zimmers (_Objekt scannen_, _Hol was_), Schritte (_Lauf dich wach_), Tageslicht am Fenster (_Erstes Licht_), eine Zeile Wort für Wort (_Abtippen_) oder eine laut gesprochene Antwort (_Siebener-Reihe_, _Nenne fünf_). _Überrasch mich_ wählt jeden Morgen eine andere. Ein Alarm kann mehrere Missionen hintereinander verlangen, in der Reihenfolge, die du festlegst.`,
-      `Mit **Meine Stellen und Codes** wird _Objekt scannen_ persönlich. Fotografiere einen Ort, zu dem du hinlaufen wirst, etwa den Wasserkocher oder die Wohnungstür, oder registriere einen QR- oder Barcode, den du dorthin klebst, wohin der Morgen dich schicken soll, etwa an den Badezimmerspiegel oder die Kaffeedose. Ein Alarm kann dann genau nach diesem Ziel fragen. Es ist eine Funktion _innerhalb_ der Scan-Mission und keine eigene Mission, und weder das Foto noch der Code wird gespeichert — nur je ein Fingerabdruck davon.`,
-      `**Wenn eine Mission an diesem Morgen nicht laufen kann** — eine kaputte Kamera, ein Telefon ohne Schrittzähler —, weicht WakeSharp auf eine aus, die funktioniert, damit du nicht mit einem Alarm dastehst, den du nicht abschließen kannst.`,
+      `Mit **Meine Stellen und Codes** wird _Objekt scannen_ persönlich. Fotografiere einen Ort, zu dem du hinlaufen wirst, etwa den Wasserkocher oder die Wohnungstür, oder registriere einen QR- oder Barcode, den du dorthin klebst, wohin der Morgen dich schicken soll, etwa an den Badezimmerspiegel oder die Kaffeedose. Ein Alarm kann dann genau nach diesem Ziel fragen. Es ist eine Funktion _innerhalb_ der Scan-Mission und keine eigene Mission, und weder das Foto noch der Code wird gespeichert: nur je ein Fingerabdruck davon.`,
+      `**Wenn eine Mission an diesem Morgen nicht laufen kann** (eine kaputte Kamera, ein Telefon ohne Schrittzähler), weicht WakeSharp auf eine aus, die funktioniert, damit du nicht mit einem Alarm dastehst, den du nicht abschließen kannst.`,
       `**Schlummern und Stoppen schließen den Morgen nicht ab.** Wie auch immer du den Alarm verstummen lässt, der Morgen zählt erst, wenn die Mission erledigt ist. Die Bedienelemente deines Telefons funktionieren immer: Das Telefon auszuschalten etwa wird nie blockiert.`,
     ],
   },
 
   smartAlarms: {
     heading: `Smarte Kalenderalarme`,
-    body: `Eine smarte Regel klingelt eine festgelegte Zahl Minuten vor deinem ersten Meeting, begrenzt durch eine früheste und eine späteste Weckzeit, die du wählst. WakeSharp prüft deinen Kalender über Nacht erneut; verschiebt sich das Meeting, verschiebt sich der Alarm. Lehnst du den Kalenderzugriff ab, funktioniert alles andere weiter — du stellst die Zeiten dann selbst. Deine Termine verlassen dein Gerät nie; siehe die [Datenschutzerklärung](privacy).`,
-    limits: `Ein Schichtrhythmus ist für Muster, die nicht wöchentlich sind — 4 Tage an, 4 Tage frei ab einem Startdatum, jede Phase mit eigener Zeit, und ein Vorschaukalender, damit du es prüfen kannst, bevor du eine Nacht darüber schläfst.`,
+    body: `Eine smarte Regel klingelt eine festgelegte Zahl Minuten vor deinem ersten Meeting, begrenzt durch eine früheste und eine späteste Weckzeit, die du wählst. WakeSharp prüft deinen Kalender über Nacht erneut; verschiebt sich das Meeting, verschiebt sich der Alarm. Lehnst du den Kalenderzugriff ab, funktioniert alles andere weiter: du stellst die Zeiten dann selbst. Deine Termine verlassen dein Gerät nie; siehe die [Datenschutzerklärung](privacy).`,
+    limits: `Ein Schichtrhythmus ist für Muster, die nicht wöchentlich sind: 4 Tage an, 4 Tage frei ab einem Startdatum, jede Phase mit eigener Zeit, und ein Vorschaukalender, damit du es prüfen kannst, bevor du eine Nacht darüber schläfst.`,
   },
 
   sharpness: {
     heading: `Der Wachheitswert`,
     body: `Nach einer Mission kannst du ein optionales Aufwärmen starten: jeden Morgen drei der fünf Aufwärmspiele im Wechsel, insgesamt etwa zwei Minuten, ohne das Spiel, das die Mission dir gerade abverlangt hat. Dein Wert wird an deiner eigenen gleitenden Basislinie gemessen, nicht an anderen Menschen, und pendelt sich um 100 ein, sobald die App dein Normal kennt. Ein schlechter Morgen ist ein Ausschlag nach unten gegenüber deinem Ich von gestern, mehr nicht. Es ist ein App-interner Wert, kein klinischer oder kognitiver Test.`,
-    physical: `**Der Wert kommt aus dem Aufwärmen.** Die Mission bringt dich aus dem Bett; das optionale Aufwärmen für den Kopf danach ergibt deinen Wachheitswert — ein langer Weg in die Küche zählt also nie gegen dich.`,
+    physical: `**Der Wert kommt aus dem Aufwärmen.** Die Mission bringt dich aus dem Bett; das optionale Aufwärmen für den Kopf danach ergibt deinen Wachheitswert: ein langer Weg in die Küche zählt also nie gegen dich.`,
   },
 
   backup: {
     heading: `Backup und der Umzug auf ein neues Telefon`,
-    body: `Es gibt kein Konto anzulegen, und nichts hängt hinter einem. Du kannst dich optional mit **Apple** oder **Google** anmelden — das sind die einzigen Optionen, ein Login mit E-Mail und Passwort gibt es nicht — zu genau einem Zweck: um deine Alarme, Einstellungen, Werte und Serie zu sichern, damit sie auf einem neuen Telefon zurückkommen.`,
+    body: `Es gibt kein Konto anzulegen, und nichts hängt hinter einem. Du kannst dich optional mit **Apple** oder **Google** anmelden (das sind die einzigen Optionen, ein Login mit E-Mail und Passwort gibt es nicht) zu genau einem Zweck: um deine Alarme, Einstellungen, Werte und Serie zu sichern, damit sie auf einem neuen Telefon zurückkommen.`,
     items: [
       `**Standardmäßig ist es aus**, und jede Funktion arbeitet auch abgemeldet. Das Backup läuft still, nachdem sich deine Daten geändert haben, und ein Alarm wartet zum Klingeln nie auf das Netz.`,
       `**Für den Umzug auf ein neues Telefon** installierst du WakeSharp, meldest dich mit demselben Apple- oder Google-Konto an und stellst wieder her. Neuere Änderungen, die schon auf dem neuen Gerät liegen, bleiben erhalten.`,
       `**Abmelden** behält alles auf deinem Telefon und hört einfach auf, es zu sichern.`,
-      `**Das Konto zu löschen** — in der App unter _Einstellungen → Konto → Konto löschen_ oder wie auf [wakesharp.app/account/delete](account-delete) beschrieben — entfernt Backup und Login dauerhaft, während die Daten auf deinem Telefon bleiben.`,
+      `**Das Konto zu löschen** (in der App unter _Einstellungen → Konto → Konto löschen_ oder wie auf [wakesharp.app/account/delete](account-delete) beschrieben) entfernt Backup und Login dauerhaft, während die Daten auf deinem Telefon bleiben.`,
     ],
     subscription: `Ein Abo ist davon völlig getrennt: Es hängt an deinem App-Store- oder Google-Play-Konto, „Käufe wiederherstellen“ holt WakeSharp Unbegrenzt also zurück, ganz gleich ob du dich je bei WakeSharp anmeldest.`,
   },
@@ -103,7 +103,7 @@ export const support = {
       `**Der lebenslange Zugang** war ein einmaliger Kauf und bleibt für alle gültig, die ihn gekauft haben: Er verlängert sich nie, und es gibt nichts zu kündigen.`,
       `**Einen Kauf wiederherstellen:** Öffne die Kaufseite und tippe auf _Wiederherstellen_. Achte darauf, dass du mit demselben Apple- oder Google-Konto angemeldet bist, mit dem du gekauft hast.`,
       `**Kündigen:** [Abos im App Store](apple-subs) oder [Abos bei Google Play](google-subs), jederzeit, auch während der kostenlosen Testphase. Die App zu löschen kündigt kein Abo.`,
-      `**Erstattungen** wickeln Apple oder Google ab, nicht wir — aber schreib mir, wenn etwas schiefgegangen ist, und ich helfe, wo ich kann.`,
+      `**Erstattungen** wickeln Apple oder Google ab, nicht wir, aber schreib mir, wenn etwas schiefgegangen ist, und ich helfe, wo ich kann.`,
     ],
   },
 

@@ -9,10 +9,10 @@ export const shell = {
   siteDescription: `Ein Wecker für Tiefschläfer: Bring ihn mit Kopfrechnen, einem Foto oder ein paar Schritten zum Schweigen und sieh, wie hellwach du aufgewacht bist.`,
   tagline: `Hellwach aufwachen. Nicht nur wach.`,
   requirements: { ios: `iOS 26 oder neuer`, android: `Android 8.0 oder neuer` },
-  ogImageAlt: `WakeSharp — hellwach aufwachen, nicht nur wach.`,
+  ogImageAlt: `WakeSharp - hellwach aufwachen, nicht nur wach.`,
   rssTitle: `WakeSharp Blog`,
   skipLink: `Zum Inhalt springen`,
-  brandHome: `WakeSharp — Startseite`,
+  brandHome: `WakeSharp - Startseite`,
 
   nav: {
     aria: `Hauptmenü`,

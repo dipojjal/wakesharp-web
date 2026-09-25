@@ -10,10 +10,10 @@ export const shell = {
   siteDescription: `منبه لمن ينامون نومًا عميقًا: أسكِته بحل مسائل حساب سريعة، أو بتصوير مكان اخترته، أو بالمشي، ثم اعرف مدى صفاء ذهنك حين استيقظت.`,
   tagline: `استيقظ صافي الذهن. لا مجرد مستيقظ.`,
   requirements: { ios: `iOS 26 أو أحدث`, android: `Android 8.0 أو أحدث` },
-  ogImageAlt: `WakeSharp — استيقظ صافي الذهن، لا مجرد مستيقظ.`,
+  ogImageAlt: `WakeSharp - استيقظ صافي الذهن، لا مجرد مستيقظ.`,
   rssTitle: `مدونة WakeSharp`,
   skipLink: `تخطَّ إلى المحتوى`,
-  brandHome: `WakeSharp — الصفحة الرئيسية`,
+  brandHome: `WakeSharp - الصفحة الرئيسية`,
 
   nav: {
     aria: `رئيسي`,

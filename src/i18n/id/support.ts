@@ -1,7 +1,7 @@
 import { support as en } from '../en/support';
 
 /**
- * /support — URL dukungan di App Store Connect. Kunci tautan yang dipakai di
+ * /support - URL dukungan di App Store Connect. Kunci tautan yang dipakai di
  * bawah: email, terms-safety, privacy, account-delete, apple-subs, google-subs.
  * `{ios}` dan `{android}` adalah string persyaratan, sedangkan `{annual}`,
  * `{monthly}` dan `{trialDays}` adalah harganya, semuanya dari src/config/site.ts.

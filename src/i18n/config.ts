@@ -1,7 +1,7 @@
 /**
  * The locale registry: THE one place a language is declared.
  *
- * Everything else derives from this list — astro.config.mjs (the i18n block),
+ * Everything else derives from this list - astro.config.mjs (the i18n block),
  * BaseLayout (`lang`/`dir`), BaseHead (hreflang and
  * og:locale), the language selector, the date formatter, api/contact.ts (which
  * result page to redirect to) and scripts/check-copy.mjs (which pages must exist).
@@ -11,7 +11,7 @@
  *
  * A locale ships in two steps: translate every file under src/i18n/<code>/ and
  * register it in src/i18n/catalog.ts, then flip `enabled` here. Flipping first
- * fails `astro check` on the catalog map, which is the point — a locale can never
+ * fails `astro check` on the catalog map, which is the point - a locale can never
  * be routed without a complete catalog behind it.
  *
  * English stays at the root with no prefix (prefixDefaultLocale: false): both
@@ -51,7 +51,7 @@ export const LOCALES = [
   { code: 'id', path: 'id', hreflang: 'id', og: 'id_ID', name: 'Bahasa Indonesia', dir: 'ltr', dateLocale: 'id', enabled: true },
   { code: 'uk', path: 'uk', hreflang: 'uk', og: 'uk_UA', name: 'Українська', dir: 'ltr', dateLocale: 'uk', enabled: true },
   { code: 'de', path: 'de', hreflang: 'de', og: 'de_DE', name: 'Deutsch', dir: 'ltr', dateLocale: 'de', enabled: true },
-  // Phase 3 — `ar` is the first right-to-left locale; see docs/i18n/glossary.md
+  // Phase 3 - `ar` is the first right-to-left locale; see docs/i18n/glossary.md
   { code: 'ar', path: 'ar', hreflang: 'ar', og: 'ar_AR', name: 'العربية', dir: 'rtl', dateLocale: 'ar', enabled: true },
   { code: 'fr', path: 'fr', hreflang: 'fr', og: 'fr_FR', name: 'Français', dir: 'ltr', dateLocale: 'fr', enabled: true },
   { code: 'hi', path: 'hi', hreflang: 'hi', og: 'hi_IN', name: 'हिन्दी', dir: 'ltr', dateLocale: 'hi', enabled: true },

@@ -1,6 +1,6 @@
 import { accountDelete as en } from '../en/account-delete';
 
-/** /account/delete — Google Play のデータセーフティで参照するアカウント削除の案内。 */
+/** /account/delete - Google Play のデータセーフティで参照するアカウント削除の案内。 */
 export const accountDelete = {
   title: `アカウントの削除｜WakeSharp`,
   description: `任意で作成したWakeSharpアカウントとそのクラウドバックアップを、アプリ内またはメールで削除する方法。`,

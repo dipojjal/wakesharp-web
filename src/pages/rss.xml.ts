@@ -3,7 +3,7 @@ import { getPublishedPosts } from '../lib/blog';
 import { SITE } from '../config/site';
 
 /**
- * /rss.xml — the English blog feed. Endpoint routes keep their literal basename
+ * /rss.xml - the English blog feed. Endpoint routes keep their literal basename
  * under build.format 'file', so this prerenders to dist/rss.xml. The channel
  * link is the blog index, not the homepage, and the feed names its own URL
  * (atom:link rel="self"), which feed validators expect. Only English pages
@@ -19,7 +19,7 @@ export async function GET(): Promise<Response> {
     site: `${SITE.url}/blog`,
     xmlns: { atom: 'http://www.w3.org/2005/Atom' },
     // @astrojs/rss defaults trailingSlash to TRUE, the opposite of this site's
-    // trailingSlash:'never' — without this, every item link gains a slash and
+    // trailingSlash:'never' - without this, every item link gains a slash and
     // a redirect hop.
     trailingSlash: false,
     items: posts.map((post) => ({

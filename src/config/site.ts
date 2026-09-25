@@ -1,7 +1,7 @@
 /**
  * THE one file to edit when the stores change.
  *
- * Both apps are live — iOS on the App Store since 2026-08-22 (2.1 since
+ * Both apps are live - iOS on the App Store since 2026-08-22 (2.1 since
  * 2026-08-26), Android on Google Play since 2026-08-18, both from KineticBit Inc.
  * StoreButtons, the JSON-LD, the Smart App Banner and the footer all read from
  * here, so a store change is a one-file change.
@@ -9,7 +9,7 @@
  * The two listing NAMES differ and neither is ours to guess. Verified
  * 2026-09-24: the App Store reads "Loud Alarm Clock - WakeSharp" and Play reads
  * "WakeSharp: Loud Alarm Clock". Re-read both before quoting either name
- * anywhere on this site — itunes.apple.com/lookup?id=6801198703&country=us needs
+ * anywhere on this site - itunes.apple.com/lookup?id=6801198703&country=us needs
  * no credential and settles the Apple half in one request.
  *
  * `state` stays in the type because it is load-bearing in the other direction:
@@ -27,7 +27,7 @@ export interface StoreConfig {
   platform: string;
   /**
    * The badge's own words. Apple and Google both require their artwork to carry
-   * this exact wording, so it doubles as the image's alt text — which is what
+   * this exact wording, so it doubles as the image's alt text - which is what
    * keeps the link's accessible name matching what a voice-control user can see.
    */
   note: string;
@@ -53,7 +53,7 @@ export const SITE = {
 
   /**
    * Governing law for the Terms. KineticBit Inc. is at 1044 Acoustic Way,
-   * Manotick ON — the address declared as its DSA trader identity in App Store
+   * Manotick ON - the address declared as its DSA trader identity in App Store
    * Connect. The dual formulation is the standard Canadian one and is correct
    * whether the company is incorporated provincially or federally.
    */

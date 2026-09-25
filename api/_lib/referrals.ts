@@ -8,7 +8,7 @@ export function assertReferralApiEnabled(): void {
 /**
  * What an inviter has actually earned.
  *
- * `confirmed` counts claims that cleared the whole bar — onboarding plus three
+ * `confirmed` counts claims that cleared the whole bar - onboarding plus three
  * qualifying mornings. `pending` counts the ones that joined, can still get
  * there, and have not yet, and it exists so the client's counter never reads as broken: an
  * inviter who sent eleven links and sees "4 of 20" needs to know the other

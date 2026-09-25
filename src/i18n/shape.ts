@@ -3,7 +3,7 @@
  *
  * `satisfies typeof en` already fails typecheck on a missing or extra key, but
  * it cannot see array lengths, `{placeholders}`, `[link](keys)` or unbalanced
- * markup — a translator can drop the fifth mission or rename `{email}` and the
+ * markup - a translator can drop the fifth mission or rename `{email}` and the
  * types stay happy. This walks both trees and reports every such difference.
  * Used by tests/i18n/catalogs.test.ts for registered locales and by
  * scripts/check-i18n.mjs for a locale that is still being translated.
@@ -36,7 +36,7 @@ export function compareShape(reference: unknown, candidate: unknown, path = ''):
     // A heading is split into {pre, accent, post} around the highlighted phrase.
     // Word order differs by language: Portuguese and Turkish put the accent last,
     // so an empty `pre` or `post` is correct there, not a missing translation.
-    // `accent` itself is never allowed to be empty — the highlight would vanish.
+    // `accent` itself is never allowed to be empty - the highlight would vanish.
     const isOptionalHeadingPart = /(^|\.)heading\.(pre|post)$/.test(path);
     if (reference.trim() !== '' && candidate.trim() === '' && !isOptionalHeadingPart) {
       out.push({ path, problem: 'empty translation' });

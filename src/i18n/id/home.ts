@@ -15,7 +15,7 @@ import { home as en } from '../en/home';
  * bahasa Indonesia, jadi nama fitur tetap dalam bahasa Inggris.
  */
 export const home = {
-  title: `WakeSharp — Alarm untuk Orang yang Susah Bangun, dengan Misi`,
+  title: `WakeSharp - Alarm untuk Orang yang Susah Bangun, dengan Misi`,
 
   hero: {
     /** Ditampilkan di dalam <h1>, di atas slogan: kueri yang dibidik halaman ini. */
@@ -132,7 +132,7 @@ export const home = {
       ios: { label: `iPhone`, store: `App Store` },
       android: { label: `Android`, store: `Google Play` },
     },
-    railHeading: `{label} — seperti yang tampil di {store}`,
+    railHeading: `{label}: seperti yang tampil di {store}`,
     altTemplate: `WakeSharp di {label}: {caption}`,
     fallbackCaption: `tangkapan layar aplikasi`,
     /**

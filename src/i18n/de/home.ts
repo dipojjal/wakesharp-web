@@ -17,13 +17,13 @@ import { home as en } from '../en/home';
  * englischen Screenshots und behalten deren Namen.
  */
 export const home = {
-  title: `WakeSharp — Wecker für Tiefschläfer, mit Missionen`,
+  title: `WakeSharp - Wecker für Tiefschläfer, mit Missionen`,
 
   hero: {
     /** Steht im <h1> über dem Slogan: die Suchanfrage, auf die die Seite zielt. */
     kicker: `Der Wecker für Tiefschläfer`,
     heading: { pre: `Wach auf. Und zwar `, accent: `hellwach.`, post: `Nicht nur wach.` },
-    lede: `Für Tiefschläfer, denen eine Schlummertaste nicht reicht. Wischen kann auch jemand, der kaum bei Bewusstsein ist, deshalb verlangt WakeSharp stattdessen eine Mission — lösen, fotografieren, laufen oder laut aussprechen — und bewertet danach, wie hellwach du wirklich aufgewacht bist.`,
+    lede: `Für Tiefschläfer, denen eine Schlummertaste nicht reicht. Wischen kann auch jemand, der kaum bei Bewusstsein ist, deshalb verlangt WakeSharp stattdessen eine Mission (lösen, fotografieren, laufen oder laut aussprechen) und bewertet danach, wie hellwach du wirklich aufgewacht bist.`,
     phoneAlt: `WakeSharp-Startbildschirm bei Nacht, mit einem Alarm um 6:40 Uhr und einer smarten Kalenderregel`,
   },
 
@@ -38,17 +38,17 @@ export const home = {
   ring: {
     alt: `Der WakeSharp-Alarm klingelt, mit „Mission starten“ und „Schlummern“`,
     heading: { pre: `Erledige die Mission für die `, accent: `volle Wertung`, post: `` },
-    lede: `Auf dem iPhone zeigt Apples AlarmKit einen Systemalarm über dem Sperrbildschirm — durch Lautlos-Modus und Fokus hindurch, sobald du den Alarmzugriff erlaubt hast, und selbst dann, wenn die App zwangsbeendet wurde. Auf Android klingelt ein exakter Alarm auf dem Alarm-Audiokanal auch im Lautlos-Modus und bei „Nicht stören“, sofern dort Alarme erlaubt sind — mit Extra Loud (besonders laut) und einer Rampe, die ansteigt, statt sofort loszubrüllen. Wie auch immer du ihn verstummen lässt: Der Morgen zählt erst, wenn die Mission erledigt ist.`,
+    lede: `Auf dem iPhone zeigt Apples AlarmKit einen Systemalarm über dem Sperrbildschirm: durch Lautlos-Modus und Fokus hindurch, sobald du den Alarmzugriff erlaubt hast, und selbst dann, wenn die App zwangsbeendet wurde. Auf Android klingelt ein exakter Alarm auf dem Alarm-Audiokanal auch im Lautlos-Modus und bei „Nicht stören“, sofern dort Alarme erlaubt sind: mit Extra Loud (besonders laut) und einer Rampe, die ansteigt, statt sofort loszubrüllen. Wie auch immer du ihn verstummen lässt: Der Morgen zählt erst, wenn die Mission erledigt ist.`,
   },
 
   reliable: {
     heading: { pre: `Schon `, accent: `am Abend vorher`, post: ` wissen, dass er klingelt` },
-    lede: `Die meisten Wecker-Apps merken im selben Moment wie du, dass sie versagt haben. WakeSharp prüft, was Alarme tatsächlich stoppt — Berechtigungen, Alarmlautstärke, Benachrichtigungseinstellungen, Anzeige über dem Sperrbildschirm, Akku-Beschränkungen — und beginnt mit einem Urteil, nicht mit einem Versprechen.`,
+    lede: `Die meisten Wecker-Apps merken im selben Moment wie du, dass sie versagt haben. WakeSharp prüft, was Alarme tatsächlich stoppt (Berechtigungen, Alarmlautstärke, Benachrichtigungseinstellungen, Anzeige über dem Sperrbildschirm, Akku-Beschränkungen) und beginnt mit einem Urteil, nicht mit einem Versprechen.`,
     items: [
       { title: `Ein Urteil, keine Checkliste`, body: `Eine Zeile ganz oben: Er klingelt, er klingelt vielleicht nicht, oder er kann es nicht.` },
-      { title: `Ehrlich über blinde Flecken`, body: `Wo das Telefon nichts verrät, sagt die App es — nie ein grüner Haken.` },
+      { title: `Ehrlich über blinde Flecken`, body: `Wo das Telefon nichts verrät, sagt die App es: nie ein grüner Haken.` },
       { title: `Lösungen mit einem Tipp, wo es sie gibt`, body: `Und klare Anleitungen, wo nicht.` },
-      { title: `„Hat nicht geklingelt“ bekommt eine Antwort`, body: `Die belegbare Ursache — oder das Eingeständnis, dass wir es nicht sagen konnten.` },
+      { title: `„Hat nicht geklingelt“ bekommt eine Antwort`, body: `Die belegbare Ursache, oder das Eingeständnis, dass wir es nicht sagen konnten.` },
     ],
     note: `Die Prüfung steckt in den Einstellungen, und die Erinnerung vor dem Schlafengehen nimmt den schlimmsten Fund mit auf, damit du ihn siehst, solange noch Zeit bleibt, ihn zu beheben.`,
   },
@@ -57,20 +57,20 @@ export const home = {
     alt: `Der Editor für smarte Alarmregeln, eingestellt auf 90 Minuten vor dem ersten Meeting`,
     heading: { pre: `Weckt dich vor deinem `, accent: `ersten Meeting`, post: `` },
     lede: `„Klingle 90 Minuten vor meinem ersten Meeting.“ WakeSharp liest deinen Kalender auf deinem Gerät, prüft ihn über Nacht erneut und verschiebt den Alarm, wenn sich das Meeting verschiebt. Nur lesend, optional, nie übertragen.`,
-    shifts: `Und nicht jede Woche ist eine Woche. Schichtrhythmen kümmern sich um die Muster, die nicht wöchentlich sind — zwei Tage, zwei Nächte, vier frei — mit Vorschaukalender und der Möglichkeit, ein einzelnes Datum zu überspringen, ohne etwas zu löschen. Profile tauschen einen ganzen Satz Alarme auf einmal: Arbeit, Urlaub oder Bereitschaft. Suche, Sortierung und eine Heute-Ansicht halten die Liste übersichtlich, wenn es viele werden.`,
-    labels: `Sag, wofür du aufstehst — Sport, Arbeitsweg, Frühstück — und die Bezeichnung schreibt sich von selbst.`,
+    shifts: `Und nicht jede Woche ist eine Woche. Schichtrhythmen kümmern sich um die Muster, die nicht wöchentlich sind (zwei Tage, zwei Nächte, vier frei) mit Vorschaukalender und der Möglichkeit, ein einzelnes Datum zu überspringen, ohne etwas zu löschen. Profile tauschen einen ganzen Satz Alarme auf einmal: Arbeit, Urlaub oder Bereitschaft. Suche, Sortierung und eine Heute-Ansicht halten die Liste übersichtlich, wenn es viele werden.`,
+    labels: `Sag, wofür du aufstehst (Sport, Arbeitsweg, Frühstück) und die Bezeichnung schreibt sich von selbst.`,
   },
 
   mission: {
     alt: `Die Mission Mind Games: Löse 9 minus 4, um den Alarm zu beenden`,
     heading: { pre: `Missionen, die dich `, accent: `aus dem Bett holen`, post: `` },
-    lede: `Bevor der Morgen zählt, muss etwas passieren, und du wählst, was: Rechenaufgaben, ein Rätsel, ein Foto der Stelle, die du am Abend gewählt hast, echte Schritte oder eine laut gesprochene Antwort. Ein Alarm kann mehrere Missionen hintereinander verlangen, in der Reihenfolge, die du festlegst, und wenn eine davon an diesem Morgen nicht laufen kann — eine kaputte Kamera, ein Telefon ohne Schrittzähler —, weicht WakeSharp auf eine aus, die funktioniert.`,
+    lede: `Bevor der Morgen zählt, muss etwas passieren, und du wählst, was: Rechenaufgaben, ein Rätsel, ein Foto der Stelle, die du am Abend gewählt hast, echte Schritte oder eine laut gesprochene Antwort. Ein Alarm kann mehrere Missionen hintereinander verlangen, in der Reihenfolge, die du festlegst, und wenn eine davon an diesem Morgen nicht laufen kann (eine kaputte Kamera, ein Telefon ohne Schrittzähler), weicht WakeSharp auf eine aus, die funktioniert.`,
     /**
      * Jede Mission, die der Alarm-Editor anbietet (Einträge in GameCatalog.json
      * mit `supportsMission`), gruppiert nach dem, was sie von dir verlangt.
      * `kind` ist das kleine Label in der Ecke jeder Karte. Namen und Arten sind
      * die der deutschen App; die Einzeiler sind die Kurzbeschreibungen aus dem
-     * Katalog — wörtlich aus der App, wo sie eine deutsche Fassung hat, sonst
+     * Katalog - wörtlich aus der App, wo sie eine deutsche Fassung hat, sonst
      * treu übersetzt.
      */
     missions: [
@@ -96,13 +96,13 @@ export const home = {
   games: {
     alt: `Das Aufwärmspiel Memory Match`,
     heading: { pre: `Zwei Minuten `, accent: `Aufwärmen`, post: `, während das Wasser kocht` },
-    lede: `„Kopfrechnen“, „Memory“, „Reihenfolge“, „Wortsprint“ und „Reaktion“. Drei davon laufen jeden Morgen im Wechsel, sodass der ganze Satz innerhalb einer Woche durch ist — und das Aufwärmen wiederholt nie, was die Mission dir gerade abverlangt hat. Pflicht ist nichts davon; der Alarm ist zu dem Zeitpunkt längst aus.`,
+    lede: `„Kopfrechnen“, „Memory“, „Reihenfolge“, „Wortsprint“ und „Reaktion“. Drei davon laufen jeden Morgen im Wechsel, sodass der ganze Satz innerhalb einer Woche durch ist, und das Aufwärmen wiederholt nie, was die Mission dir gerade abverlangt hat. Pflicht ist nichts davon; der Alarm ist zu dem Zeitpunkt längst aus.`,
   },
 
   sharp: {
     alt: `Die tägliche Enthüllung des Sharpness Score`,
     heading: { pre: `Sieh, wie `, accent: `hellwach`, post: ` du aufgewacht bist` },
-    lede: `Eine einzige Zahl bis 100 aus dem Aufwärmen — dein Wachheitswert —, gemessen an deiner eigenen gleitenden Basislinie, nicht an Fremden. Es ist ein App-interner Wert, kein klinischer Test, und dein Ich von gestern ist um 6 Uhr morgens der einzige Maßstab, der etwas taugt.`,
+    lede: `Eine einzige Zahl bis 100 aus dem Aufwärmen (dein Wachheitswert), gemessen an deiner eigenen gleitenden Basislinie, nicht an Fremden. Es ist ein App-interner Wert, kein klinischer Test, und dein Ich von gestern ist um 6 Uhr morgens der einzige Maßstab, der etwas taugt.`,
   },
 
   stats: {
@@ -116,15 +116,15 @@ export const home = {
     lede: `Teile einen Link, und das Telefon, das ihn öffnet, stellt denselben Alarm ein und klingelt ihn dann von allein. Nichts, dem man beitreten muss, nichts, wofür man sich anmeldet, und kein Server dazwischen.`,
     cards: [
       { title: `Mit einem Freund aufwachen`, body: `Du schickst einen Link; das Telefon der anderen Person baut den Alarm lokal. Jede Seite behält ihre eigene Kopie, deine Änderungen greifen also nicht in ihre ein.` },
-      { title: `Beat my wake`, body: `Schlag meinen Morgen: Beende eine Mission und du kannst jemanden zum identischen Aufgabensatz herausfordern — gleicher Seed, gleiche Runden, gleiche Schwierigkeit. Danach weißt du, wer von euch wirklich wach war.` },
+      { title: `Beat my wake`, body: `Schlag meinen Morgen: Beende eine Mission und du kannst jemanden zum identischen Aufgabensatz herausfordern: gleicher Seed, gleiche Runden, gleiche Schwierigkeit. Danach weißt du, wer von euch wirklich wach war.` },
     ],
     note: `Beides sind einfach Links: Das Telefon, das einen empfängt, erledigt die ganze Arbeit selbst.`,
   },
 
   platforms: {
     heading: { pre: `Dieselbe App. `, accent: `Beide Telefone.`, post: `` },
-    lede: `Zweimal nativ gebaut — SwiftUI auf iOS, Kotlin und Compose auf Android. Kein Wrapper, und nur deshalb kann jede Seite das, was nur sie kann. Erfordert {ios} oder {android}.`,
-    watch: `Für beide Handgelenke gibt es außerdem eine Uhren-App — watchOS 26 oder Wear OS 3. Sie tippt dich wach, bevor der Raum etwas hört, und der Telefonalarm rückt als Absicherung ein paar Minuten nach hinten. Nur ein Beenden auf der Uhr sagt ihn ab: eine leere Uhr, eine außer Reichweite oder eine, die du seit 36 Stunden nicht geöffnet hast, lassen den Telefonalarm genau dort, wo er war. Fürs Zifferblatt gibt es ebenfalls eine Komplikation.`,
+    lede: `Zweimal nativ gebaut: SwiftUI auf iOS, Kotlin und Compose auf Android. Kein Wrapper, und nur deshalb kann jede Seite das, was nur sie kann. Erfordert {ios} oder {android}.`,
+    watch: `Für beide Handgelenke gibt es außerdem eine Uhren-App: watchOS 26 oder Wear OS 3. Sie tippt dich wach, bevor der Raum etwas hört, und der Telefonalarm rückt als Absicherung ein paar Minuten nach hinten. Nur ein Beenden auf der Uhr sagt ihn ab: eine leere Uhr, eine außer Reichweite oder eine, die du seit 36 Stunden nicht geöffnet hast, lassen den Telefonalarm genau dort, wo er war. Fürs Zifferblatt gibt es ebenfalls eine Komplikation.`,
     account: `Es gibt kein Konto anzulegen, aber du kannst dich mit Apple oder Google anmelden, wenn du eine einzige Sache davon willst: ein Backup, damit Alarme, Einstellungen, Werte und Serie auf einem neuen Telefon zurückkommen. Standardmäßig ist es aus, alles funktioniert auch abgemeldet, und um 6 Uhr morgens wartet nie etwas auf das Netz.`,
   },
 
@@ -135,7 +135,7 @@ export const home = {
       ios: { label: `iPhone`, store: `App Store` },
       android: { label: `Android`, store: `Google Play` },
     },
-    railHeading: `{label} — so zu sehen im {store}`,
+    railHeading: `{label}: so zu sehen im {store}`,
     altTemplate: `WakeSharp auf {label}: {caption}`,
     fallbackCaption: `App-Screenshot`,
     /**
@@ -185,7 +185,7 @@ export const home = {
         `Keine Werbung`,
       ],
     },
-    billing: `Jahres- und Monatsabo rechnen Apple oder Google ab und verlängern sich bis zur Kündigung — kündige jederzeit in deinem Store-Konto, und denk daran: Die App zu löschen kündigt kein Abo. Die kostenlose Testphase gilt für berechtigte Neuabonnenten. Siehe die [Nutzungsbedingungen](terms).`,
+    billing: `Jahres- und Monatsabo rechnen Apple oder Google ab und verlängern sich bis zur Kündigung: kündige jederzeit in deinem Store-Konto, und denk daran: Die App zu löschen kündigt kein Abo. Die kostenlose Testphase gilt für berechtigte Neuabonnenten. Siehe die [Nutzungsbedingungen](terms).`,
     /** Nur auf lokalisierten Seiten: Die Stores lokalisieren die Preise zur Laufzeit. */
     usdNote: `Die Preise stehen in US-Dollar; App Store und Google Play zeigen den Preis für dein Land.`,
   },
@@ -196,11 +196,11 @@ export const home = {
     items: [
       {
         q: `Klingelt er wirklich im Lautlos-Modus, in Fokus oder bei „Nicht stören“?`,
-        a: `Das Verhalten hängt von der Plattform ab, und es hängt von einer Berechtigung ab. Auf dem iPhone nutzt WakeSharp Apples AlarmKit, das durch Lautlos-Modus und Fokus hindurch klingeln kann, sobald du den Alarmzugriff erlaubt hast — lehnst du ihn ab oder entziehst ihn, kann WakeSharp überhaupt nichts planen. Auf Android läuft er über den eigenen Alarm-Audiokanal, der auch im Lautlos-Modus klingelt und bei „Nicht stören“, sofern dort Alarme erlaubt sind — Totenstille schaltet jeden Ton stumm, Alarme eingeschlossen —, und er zeigt eine Vollbildmeldung über dem Sperrbildschirm, sofern die Berechtigungen für exakte Alarme, Benachrichtigungen und den Sperrbildschirm vorliegen. Was keine App kann: auf einem Telefon klingeln, das ausgeschaltet oder leer ist. Für alles, was du wirklich nicht verpassen darfst, stell also einen zweiten Alarm auf einem anderen Gerät.`,
+        a: `Das Verhalten hängt von der Plattform ab, und es hängt von einer Berechtigung ab. Auf dem iPhone nutzt WakeSharp Apples AlarmKit, das durch Lautlos-Modus und Fokus hindurch klingeln kann, sobald du den Alarmzugriff erlaubt hast: lehnst du ihn ab oder entziehst ihn, kann WakeSharp überhaupt nichts planen. Auf Android läuft er über den eigenen Alarm-Audiokanal, der auch im Lautlos-Modus klingelt und bei „Nicht stören“, sofern dort Alarme erlaubt sind (Totenstille schaltet jeden Ton stumm, Alarme eingeschlossen), und er zeigt eine Vollbildmeldung über dem Sperrbildschirm, sofern die Berechtigungen für exakte Alarme, Benachrichtigungen und den Sperrbildschirm vorliegen. Was keine App kann: auf einem Telefon klingeln, das ausgeschaltet oder leer ist. Für alles, was du wirklich nicht verpassen darfst, stell also einen zweiten Alarm auf einem anderen Gerät.`,
       },
       {
         q: `Wie prüfe ich, ob mein Alarm wirklich klingelt?`,
-        a: `Öffne Einstellungen → Weckzuverlässigkeit. WakeSharp liest die Bedingungen auf deinem Telefon, die einen Alarm stoppen können — Berechtigungen, Alarmlautstärke, Benachrichtigungseinstellungen, Anzeige über dem Sperrbildschirm, Akku-Beschränkungen — und beginnt mit einem klaren Urteil statt mit einem Versprechen. Wo die Plattform uns etwas nicht verrät, sagt die App das, statt einen grünen Haken zu zeigen, denn eine Checkliste, die Unbekanntes stillschweigend zu Bestandenem macht, ist schlimmer als gar keine. Fällt ein Alarm doch einmal aus, kann die App dir hinterher die belegbare Ursache nennen — oder zugeben, dass sie es nicht herausfinden konnte.`,
+        a: `Öffne Einstellungen → Weckzuverlässigkeit. WakeSharp liest die Bedingungen auf deinem Telefon, die einen Alarm stoppen können (Berechtigungen, Alarmlautstärke, Benachrichtigungseinstellungen, Anzeige über dem Sperrbildschirm, Akku-Beschränkungen) und beginnt mit einem klaren Urteil statt mit einem Versprechen. Wo die Plattform uns etwas nicht verrät, sagt die App das, statt einen grünen Haken zu zeigen, denn eine Checkliste, die Unbekanntes stillschweigend zu Bestandenem macht, ist schlimmer als gar keine. Fällt ein Alarm doch einmal aus, kann die App dir hinterher die belegbare Ursache nennen, oder zugeben, dass sie es nicht herausfinden konnte.`,
       },
       {
         q: `Muss ich um 6 Uhr morgens rechnen?`,
@@ -208,15 +208,15 @@ export const home = {
       },
       {
         q: `Kann ich die Mission umgehen?`,
-        a: `Die Bedienelemente deines Telefons funktionieren immer — du kannst es ausschalten, und keine App sollte das verhindern können. In WakeSharp ist der Morgen aber nicht geschafft, wenn du den Alarm stoppst oder schlummern lässt: Er zählt erst, wenn die Mission erledigt ist.`,
+        a: `Die Bedienelemente deines Telefons funktionieren immer: du kannst es ausschalten, und keine App sollte das verhindern können. In WakeSharp ist der Morgen aber nicht geschafft, wenn du den Alarm stoppst oder schlummern lässt: Er zählt erst, wenn die Mission erledigt ist.`,
       },
       {
         q: `Was macht die Kamera?`,
-        a: `Nur die Missionen, die sie brauchen — darunter „Fotobeweis“, „Objekt scannen“, „Hol was“, „Gesichtscheck“ und „Obst schnippeln“ —, und nur, solange eine davon läuft oder du sie einrichtest. Objekterkennung und Fotoabgleich geschehen auf deinem Gerät. Lehne die Berechtigung ab, und jede Mission, die keine Kamera braucht, funktioniert weiter. Die Datenschutzerklärung sagt genau, was dein Telefon verlässt, falls überhaupt etwas, und wann.`,
+        a: `Nur die Missionen, die sie brauchen (darunter „Fotobeweis“, „Objekt scannen“, „Hol was“, „Gesichtscheck“ und „Obst schnippeln“), und nur, solange eine davon läuft oder du sie einrichtest. Objekterkennung und Fotoabgleich geschehen auf deinem Gerät. Lehne die Berechtigung ab, und jede Mission, die keine Kamera braucht, funktioniert weiter. Die Datenschutzerklärung sagt genau, was dein Telefon verlässt, falls überhaupt etwas, und wann.`,
       },
       {
         q: `Erfasst WakeSharp meinen Schlaf?`,
-        a: `Nein. Es gibt keinerlei Schlaftracking — kein Mikrofon, das nachts mithört, keine Schlafphasen, keine Note für deine Nacht und keine Meinung dazu, wann du eingeschlafen bist. Der Schrittzähler wird während der Lauf-Mission gelesen und zu keinem anderen Zeitpunkt. WakeSharp misst, wie hellwach du bist, sobald du auf bist, und nichts davor. Das Einzige mit Schlaf darin sind eine Schlafenszeit, die du selbst planst, und optionale Klänge zum Runterkommen.`,
+        a: `Nein. Es gibt keinerlei Schlaftracking: kein Mikrofon, das nachts mithört, keine Schlafphasen, keine Note für deine Nacht und keine Meinung dazu, wann du eingeschlafen bist. Der Schrittzähler wird während der Lauf-Mission gelesen und zu keinem anderen Zeitpunkt. WakeSharp misst, wie hellwach du bist, sobald du auf bist, und nichts davor. Das Einzige mit Schlaf darin sind eine Schlafenszeit, die du selbst planst, und optionale Klänge zum Runterkommen.`,
       },
       {
         q: `Was genau liest die App aus meinem Kalender?`,
@@ -224,7 +224,7 @@ export const home = {
       },
       {
         q: `Brauche ich ein Konto?`,
-        a: `Ein WakeSharp-Konto brauchst du nicht — es gibt weder E-Mail noch Passwort irgendwo in der App. Du kannst dich optional mit Apple oder Google anmelden, zu genau einem Zweck: um deine Alarme, Einstellungen, Werte und Serie zu sichern, damit sie auf einem neuen Telefon zurückkommen. Standardmäßig ist das aus, jede Funktion arbeitet auch abgemeldet, und ein Alarm wartet zum Klingeln nie auf das Netz. Löschen kannst du es unter Einstellungen → Konto oder auf wakesharp.app/account/delete.`,
+        a: `Ein WakeSharp-Konto brauchst du nicht: es gibt weder E-Mail noch Passwort irgendwo in der App. Du kannst dich optional mit Apple oder Google anmelden, zu genau einem Zweck: um deine Alarme, Einstellungen, Werte und Serie zu sichern, damit sie auf einem neuen Telefon zurückkommen. Standardmäßig ist das aus, jede Funktion arbeitet auch abgemeldet, und ein Alarm wartet zum Klingeln nie auf das Netz. Löschen kannst du es unter Einstellungen → Konto oder auf wakesharp.app/account/delete.`,
       },
       {
         q: `Was passiert, wenn meine Uhr leer ist?`,

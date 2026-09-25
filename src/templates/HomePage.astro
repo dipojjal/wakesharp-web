@@ -2,7 +2,7 @@
 /**
  * The homepage, rendered once per locale. src/pages/index.astro mounts it for
  * English; src/pages/[lang]/index.astro for every other enabled locale. Every
- * word comes from src/i18n/<locale>/home.ts — nothing here is English-specific.
+ * word comes from src/i18n/<locale>/home.ts - nothing here is English-specific.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SunriseSection from '../components/SunriseSection.astro';
@@ -197,7 +197,7 @@ const missionHref = english ? await missionPages() : new Map<string, string>();
     </FeatureRow>
   </SunriseSection>
 
-  {/* ── 8. Sharpness — scrim mandatory, see src/config/sunrise.ts ───────── */}
+  {/* ── 8. Sharpness - scrim mandatory, see src/config/sunrise.ts ───────── */}
   <SunriseSection id="sharp" class="min-h-[100svh] flex items-center">
     <FeatureRow screenshot={iosReveal} alt={t.sharp.alt} side="left" scrim>
       <h2 class="text-[clamp(1.9rem,5vw,3rem)]">{t.sharp.heading.pre}<span class="accent">{t.sharp.heading.accent}</span>{t.sharp.heading.post}</h2>

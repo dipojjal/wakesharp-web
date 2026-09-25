@@ -2,7 +2,7 @@
 
 ## Nunito (SIL Open Font License 1.1)
 
-Copyright 2014 The Nunito Project Authors — <https://github.com/googlefonts/nunito>
+Copyright 2014 The Nunito Project Authors: <https://github.com/googlefonts/nunito>
 
 Nunito is the marketing typeface for WakeSharp on both platforms. It is used here
 in two places:

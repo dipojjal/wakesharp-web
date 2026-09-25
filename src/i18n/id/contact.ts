@@ -8,7 +8,7 @@ import { contact as en } from '../en/contact';
  */
 export const contact = {
   form: {
-    title: `Kontak — WakeSharp`,
+    title: `Kontak - WakeSharp`,
     description: `Kirim pesan langsung ke pengembang WakeSharp: laporan bug, masalah alarm, pertanyaan langganan, dan permintaan fitur.`,
     heading: `Kontak`,
     intro: `WakeSharp adalah tim kecil, dan semua yang masuk ke sini dibaca oleh manusia.`,
@@ -26,7 +26,7 @@ export const contact = {
       other: `Hal lain`,
     },
     deviceLabel: `Ponsel dan versi OS`,
-    deviceHint: `— opsional, tetapi menjawab separuh pertanyaan lanjutan saya`,
+    deviceHint: `opsional, tetapi menjawab separuh pertanyaan lanjutan saya`,
     devicePlaceholder: `mis. Pixel 9, Android 16`,
     messageLabel: `Pesan`,
     messageHint: `Untuk bug, apa yang Anda harapkan dan apa yang justru terjadi adalah hal paling berguna yang bisa Anda sampaikan. Jika alarm gagal, jam alarm disetel dan jam Anda menemukan ponsel sangat membantu.`,
@@ -35,7 +35,7 @@ export const contact = {
     privacyNote: `Pesan dan alamat email Anda dikirim ke saya lewat email dan tidak disimpan di tempat lain. Lihat [Kebijakan Privasi](privacy).`,
   },
   sent: {
-    title: `Pesan terkirim — WakeSharp`,
+    title: `Pesan terkirim - WakeSharp`,
     description: `Pesan Anda untuk WakeSharp telah terkirim.`,
     heading: `Pesan terkirim`,
     intro: `Terima kasih; pesannya sedang menuju kotak masuk saya.`,
@@ -44,7 +44,7 @@ export const contact = {
     backHome: `Kembali ke beranda`,
   },
   error: {
-    title: `Pesan tidak terkirim — WakeSharp`,
+    title: `Pesan tidak terkirim - WakeSharp`,
     description: `Formulir kontak WakeSharp tidak dapat mengirimkan pesan Anda.`,
     heading: `Yang ini tidak sampai`,
     intro: `Pesan Anda tidak terkirim, dan saya lebih memilih memberi tahu daripada berpura-pura sebaliknya.`,

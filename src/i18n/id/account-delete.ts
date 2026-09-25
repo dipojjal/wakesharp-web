@@ -1,8 +1,8 @@
 import { accountDelete as en } from '../en/account-delete';
 
-/** /account/delete — sumber penghapusan akun yang ditautkan formulir Keamanan data Google Play. */
+/** /account/delete - sumber penghapusan akun yang ditautkan formulir Keamanan data Google Play. */
 export const accountDelete = {
-  title: `Hapus akun Anda — WakeSharp`,
+  title: `Hapus akun Anda - WakeSharp`,
   description: `Cara menghapus akun WakeSharp opsional Anda beserta cadangan cloud-nya, dari dalam aplikasi atau lewat email.`,
   heading: `Hapus akun WakeSharp Anda`,
   intro: `Akun WakeSharp bersifat opsional; akun hanya ada untuk mencadangkan alarm, pengaturan, skor, dan runtunan Anda supaya bisa dipulihkan di ponsel baru. Menghapus akun Anda menghapus cadangan itu beserta loginnya, secara permanen.`,

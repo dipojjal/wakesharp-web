@@ -8,7 +8,7 @@ import { share as en } from '../en/share';
  */
 export const share = {
   challenge: {
-    title: `Un défi du réveil — WakeSharp`,
+    title: `Un défi du réveil - WakeSharp`,
     description: `Quelqu’un vous a lancé un défi pour une matinée WakeSharp.`,
     heading: `Beat my wake (battez mon réveil)`,
     intro: `Quelqu’un pense s’être réveillé plus affûté que vous ne le ferez.`,
@@ -22,7 +22,7 @@ export const share = {
     },
   },
   pact: {
-    title: `Une invitation au réveil — WakeSharp`,
+    title: `Une invitation au réveil - WakeSharp`,
     description: `Quelqu’un a partagé une alarme WakeSharp avec vous.`,
     heading: `Une invitation au réveil`,
     intro: `Quelqu’un veut se réveiller avec vous.`,

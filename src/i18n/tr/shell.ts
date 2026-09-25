@@ -11,10 +11,10 @@ export const shell = {
   siteDescription: `Ağır uyuyanlar için alarm saati: susturmak için hızlı işlem çözün, bir noktayı fotoğraflayın ya da yürüyün, sonra ne kadar zinde uyandığınızı görün.`,
   tagline: `Uyanın, hem de zinde. Sadece uyanık değil.`,
   requirements: { ios: `iOS 26 veya üzeri`, android: `Android 8.0 veya üzeri` },
-  ogImageAlt: `WakeSharp — uyanın, hem de zinde; sadece uyanık değil.`,
+  ogImageAlt: `WakeSharp - uyanın, hem de zinde; sadece uyanık değil.`,
   rssTitle: `WakeSharp Blog`,
   skipLink: `İçeriğe atla`,
-  brandHome: `WakeSharp — ana sayfa`,
+  brandHome: `WakeSharp - ana sayfa`,
 
   nav: {
     aria: `Ana menü`,

@@ -4,7 +4,7 @@ import { query } from '../../_lib/db.js';
 import { ApiError, endpoint, json, methodNotAllowed, readJson } from '../../_lib/http.js';
 
 /**
- * Operator surface. `retry` is gone with the reward grants — there is no
+ * Operator surface. `retry` is gone with the reward grants - there is no
  * fulfilment queue any more, so the only action left is retention pruning.
  */
 const actionSchema = z.discriminatedUnion('action', [

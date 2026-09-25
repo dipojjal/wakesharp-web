@@ -15,13 +15,13 @@ import { home as en } from '../en/home';
  * en español.
  */
 export const home = {
-  title: `WakeSharp — Despertador para quienes tienen el sueño pesado`,
+  title: `WakeSharp - Despertador para quienes tienen el sueño pesado`,
 
   hero: {
     /** Va dentro del <h1>, encima del eslogan: la búsqueda a la que apunta la página. */
     kicker: `El despertador para quienes tienen el sueño pesado`,
     heading: { pre: `Despierta `, accent: `lúcido.`, post: `No solo despierto.` },
-    lede: `Para quienes tienen el sueño pesado y necesitan algo más que un botón de posponer. Deslizar el dedo lo hace cualquiera, hasta medio dormido, así que WakeSharp te pide una misión —resolver, fotografiar, caminar o responder en voz alta— y después puntúa lo lúcido que despertaste en realidad.`,
+    lede: `Para quienes tienen el sueño pesado y necesitan algo más que un botón de posponer. Deslizar el dedo lo hace cualquiera, hasta medio dormido, así que WakeSharp te pide una misión -resolver, fotografiar, caminar o responder en voz alta- y después puntúa lo lúcido que despertaste en realidad.`,
     phoneAlt: `Pantalla de inicio de WakeSharp de noche, con una alarma a las 6:40 de la mañana y una regla de calendario inteligente`,
   },
 
@@ -41,7 +41,7 @@ export const home = {
 
   reliable: {
     heading: { pre: `Sabrás que va a sonar, `, accent: `la noche anterior`, post: `` },
-    lede: `La mayoría de las apps de alarma descubren que fallaron en el mismo momento que tú. WakeSharp comprueba lo que de verdad detiene una alarma —permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería— y empieza por un veredicto, no por una promesa.`,
+    lede: `La mayoría de las apps de alarma descubren que fallaron en el mismo momento que tú. WakeSharp comprueba lo que de verdad detiene una alarma -permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería- y empieza por un veredicto, no por una promesa.`,
     items: [
       { title: `Un veredicto, no una lista de comprobación`, body: `Una sola línea arriba del todo: sonará, puede que no suene o no puede sonar.` },
       { title: `Honesta sobre lo que no puede ver`, body: `Cuando el teléfono no nos lo dice, lo reconoce; nunca una marca verde.` },
@@ -55,14 +55,14 @@ export const home = {
     alt: `El editor de reglas de alarma inteligente, configurado para sonar 90 minutos antes de la primera reunión`,
     heading: { pre: `Te despierta antes de tu `, accent: `primera reunión`, post: `` },
     lede: `«Suena 90 minutos antes de mi primera reunión». WakeSharp lee tu calendario en tu propio dispositivo, lo vuelve a comprobar durante la noche y mueve la alarma cuando la reunión se mueve. Solo lectura, opcional y nunca se transmite.`,
-    shifts: `Tampoco todas las semanas son semanas. Las rotaciones de turnos se ocupan de los patrones que no son semanales —dos días, dos noches, cuatro libres— con un calendario de vista previa y una forma de saltarte una fecha concreta sin borrar nada. Los perfiles cambian un conjunto entero de alarmas de golpe: trabajo, vacaciones o guardia. Búsqueda, orden y una vista Hoy mantienen la lista a raya cuando hay muchas.`,
-    labels: `Ponle nombre a aquello para lo que te levantas —entrenar, el trayecto al trabajo, el desayuno— y la etiqueta se escribe sola.`,
+    shifts: `Tampoco todas las semanas son semanas. Las rotaciones de turnos se ocupan de los patrones que no son semanales -dos días, dos noches, cuatro libres- con un calendario de vista previa y una forma de saltarte una fecha concreta sin borrar nada. Los perfiles cambian un conjunto entero de alarmas de golpe: trabajo, vacaciones o guardia. Búsqueda, orden y una vista Hoy mantienen la lista a raya cuando hay muchas.`,
+    labels: `Ponle nombre a aquello para lo que te levantas -entrenar, el trayecto al trabajo, el desayuno- y la etiqueta se escribe sola.`,
   },
 
   mission: {
     alt: `La misión Mind Games: resuelve 9 menos 4 para silenciar la alarma`,
     heading: { pre: `Misiones que `, accent: `te sacan de la cama`, post: `` },
-    lede: `Algo tiene que pasar antes de que la mañana cuente, y tú eliges qué: aritmética, un rompecabezas, una foto del lugar que elegiste anoche, pasos de verdad o una respuesta dicha en voz alta. Una alarma puede pedir varias seguidas, en el orden que elijas, y si una no puede funcionar esa mañana —una cámara estropeada, un teléfono sin podómetro—, WakeSharp recurre a otra que sí pueda.`,
+    lede: `Algo tiene que pasar antes de que la mañana cuente, y tú eliges qué: aritmética, un rompecabezas, una foto del lugar que elegiste anoche, pasos de verdad o una respuesta dicha en voz alta. Una alarma puede pedir varias seguidas, en el orden que elijas, y si una no puede funcionar esa mañana -una cámara estropeada, un teléfono sin podómetro-, WakeSharp recurre a otra que sí pueda.`,
     /**
      * Todas las misiones que ofrece el editor de alarmas (las entradas de
      * GameCatalog.json con `supportsMission`), agrupadas por lo que te piden.
@@ -98,7 +98,7 @@ export const home = {
   sharp: {
     alt: `La revelación diaria del Sharpness Score`,
     heading: { pre: `Sabrás lo `, accent: `lúcido`, post: ` que despertaste` },
-    lede: `Un número sobre 100 que sale del calentamiento —tu puntuación de Agudeza—, medido contra tu propia referencia móvil, no contra desconocidos. Es una puntuación dentro de la app, no una prueba clínica, y tu yo de ayer es la única referencia que significa algo a las 6 de la mañana.`,
+    lede: `Un número sobre 100 que sale del calentamiento -tu puntuación de Agudeza-, medido contra tu propia referencia móvil, no contra desconocidos. Es una puntuación dentro de la app, no una prueba clínica, y tu yo de ayer es la única referencia que significa algo a las 6 de la mañana.`,
   },
 
   stats: {
@@ -112,7 +112,7 @@ export const home = {
     lede: `Comparte un enlace y el teléfono que lo abre configura la misma alarma y luego la hace sonar por su cuenta. Nada a lo que unirse, nada en lo que registrarse y ningún servidor de por medio.`,
     cards: [
       { title: `Despertar con un amigo`, body: `Tú envías un enlace; su teléfono crea la alarma en local. Cada uno conserva su propia copia, así que cambiar la tuya no toca la suya.` },
-      { title: `Beat my wake`, body: `Supera mi despertar: termina una misión y podrás retar a alguien al mismo conjunto de problemas —misma semilla, mismas rondas, misma dificultad. Así se sabe cuál de los dos estaba despierto de verdad.` },
+      { title: `Beat my wake`, body: `Supera mi despertar: termina una misión y podrás retar a alguien al mismo conjunto de problemas -misma semilla, mismas rondas, misma dificultad. Así se sabe cuál de los dos estaba despierto de verdad.` },
     ],
     note: `Las dos cosas son solo enlaces: el teléfono que recibe uno hace todo el trabajo por sí mismo.`,
   },
@@ -131,7 +131,7 @@ export const home = {
       ios: { label: `iPhone`, store: `App Store` },
       android: { label: `Android`, store: `Google Play` },
     },
-    railHeading: `{label} — tal como aparece en {store}`,
+    railHeading: `{label}: tal como aparece en {store}`,
     altTemplate: `WakeSharp en {label}: {caption}`,
     fallbackCaption: `captura de pantalla de la app`,
     /**
@@ -192,11 +192,11 @@ export const home = {
     items: [
       {
         q: `¿De verdad suena en Silencio, Concentración o No molestar?`,
-        a: `El comportamiento depende de la plataforma, y depende de los permisos. En iPhone, WakeSharp usa AlarmKit de Apple, que permite sonar a través del modo Silencio y de Concentración una vez que has concedido el acceso a alarmas; si lo rechazas o lo revocas, WakeSharp no puede programar absolutamente nada. En Android usa el canal dedicado a las alarmas, que suena a través del modo silencio, y a través de No molestar cuando este permite las alarmas —Silencio total bloquea todos los sonidos, incluidas las alarmas—, y muestra una alerta a pantalla completa sobre la pantalla de bloqueo, siempre que estén concedidos los permisos de alarmas exactas, notificaciones y pantalla de bloqueo. Lo que ninguna app puede hacer es sonar en un teléfono apagado o sin batería, así que para cualquier cosa que de verdad no puedas perderte, pon una segunda alarma en otro dispositivo.`,
+        a: `El comportamiento depende de la plataforma, y depende de los permisos. En iPhone, WakeSharp usa AlarmKit de Apple, que permite sonar a través del modo Silencio y de Concentración una vez que has concedido el acceso a alarmas; si lo rechazas o lo revocas, WakeSharp no puede programar absolutamente nada. En Android usa el canal dedicado a las alarmas, que suena a través del modo silencio, y a través de No molestar cuando este permite las alarmas -Silencio total bloquea todos los sonidos, incluidas las alarmas-, y muestra una alerta a pantalla completa sobre la pantalla de bloqueo, siempre que estén concedidos los permisos de alarmas exactas, notificaciones y pantalla de bloqueo. Lo que ninguna app puede hacer es sonar en un teléfono apagado o sin batería, así que para cualquier cosa que de verdad no puedas perderte, pon una segunda alarma en otro dispositivo.`,
       },
       {
         q: `¿Cómo compruebo que mi alarma va a sonar de verdad?`,
-        a: `Abre Ajustes → Fiabilidad de la alarma. WakeSharp lee las condiciones de tu teléfono que pueden detener una alarma —permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería— y empieza por un veredicto claro en lugar de una promesa. Cuando la plataforma no nos dice algo, lo reconoce en vez de mostrar una marca verde, porque una lista que convierte en silencio las incógnitas en aprobados es peor que ninguna lista. Si alguna vez una alarma falla, la app puede decirte después la causa demostrable, o admitir que no pudo averiguarla.`,
+        a: `Abre Ajustes → Fiabilidad de la alarma. WakeSharp lee las condiciones de tu teléfono que pueden detener una alarma -permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería- y empieza por un veredicto claro en lugar de una promesa. Cuando la plataforma no nos dice algo, lo reconoce en vez de mostrar una marca verde, porque una lista que convierte en silencio las incógnitas en aprobados es peor que ninguna lista. Si alguna vez una alarma falla, la app puede decirte después la causa demostrable, o admitir que no pudo averiguarla.`,
       },
       {
         q: `¿Tengo que hacer cuentas a las 6 de la mañana?`,
@@ -208,7 +208,7 @@ export const home = {
       },
       {
         q: `¿Qué hace la cámara?`,
-        a: `Solo la usan las misiones que la necesitan —entre ellas Prueba con Foto, Escanear un Objeto, Tráelo, Control facial y Corta la fruta—, y solo mientras una de ellas está en marcha o mientras la configuras. El reconocimiento de objetos y la comparación de fotos ocurren en tu dispositivo. Si rechazas el permiso, todas las misiones que no necesitan la cámara siguen funcionando. La política de privacidad explica exactamente qué sale de tu teléfono, si es que sale algo, y cuándo.`,
+        a: `Solo la usan las misiones que la necesitan -entre ellas Prueba con Foto, Escanear un Objeto, Tráelo, Control facial y Corta la fruta-, y solo mientras una de ellas está en marcha o mientras la configuras. El reconocimiento de objetos y la comparación de fotos ocurren en tu dispositivo. Si rechazas el permiso, todas las misiones que no necesitan la cámara siguen funcionando. La política de privacidad explica exactamente qué sale de tu teléfono, si es que sale algo, y cuándo.`,
       },
       {
         q: `¿WakeSharp registra mi sueño?`,

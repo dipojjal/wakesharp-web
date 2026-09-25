@@ -7,14 +7,14 @@ import { blog as en } from '../en/blog';
  */
 export const blog = {
   index: {
-    title: `Sains Tidur & Tips Bangun Pagi — Blog WakeSharp`,
+    title: `Sains Tidur & Tips Bangun Pagi: Blog WakeSharp`,
     description: `Panduan berbasis riset untuk bangun tepat waktu dengan kepala jernih: inersia tidur, menunda alarm, alarm gagal, kafein, melatonin, dan pagi lebih baik.`,
     heading: `Blog WakeSharp`,
     intro: `Sains tidur, rutinitas pagi, dan sesekali pembaruan produk, dari pembuat alarm yang memastikan Anda benar-benar sigap.`,
     empty: `Artikel pertama sedang dalam perjalanan; cek lagi sebentar lagi.`,
   },
   /** Ditambahkan ke judul artikel di tab browser, jika seluruh judulnya masih muat dalam 60 karakter. */
-  titleSuffix: ` — WakeSharp`,
+  titleSuffix: ` - WakeSharp`,
   /** Baris di bawah judul artikel jika pendiri sudah meninjaunya. `{name}` adalah tautan ke /about. */
   reviewedBy: `Ditinjau oleh {name}`,
   allArticles: `← Semua artikel`,

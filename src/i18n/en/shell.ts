@@ -12,10 +12,10 @@ export const shell = {
   tagline: SITE.tagline as string,
   /** Minimum OS versions, mirrored from SITE.requirements so the sentence around them translates. */
   requirements: { ios: SITE.requirements.ios as string, android: SITE.requirements.android as string },
-  ogImageAlt: `WakeSharp — wake up sharp, not just awake.`,
+  ogImageAlt: `WakeSharp - wake up sharp, not just awake.`,
   rssTitle: `WakeSharp Blog`,
   skipLink: `Skip to content`,
-  brandHome: `WakeSharp — home`,
+  brandHome: `WakeSharp - home`,
 
   nav: {
     aria: `Main`,

@@ -3,10 +3,10 @@
  * Walk every sunrise band and assert WCAG AA at 21 interpolated steps.
  *
  * This exists because Lighthouse's contrast audit silently SKIPS any node whose
- * background it cannot resolve to a flat colour — which is every section on this
+ * background it cannot resolve to a flat colour - which is every section on this
  * page. A green a11y score would be measuring nothing here.
  *
- * Thresholds: body and dim text 4.5:1 (AA normal), accent 3.0:1 (AA large — the
+ * Thresholds: body and dim text 4.5:1 (AA normal), accent 3.0:1 (AA large - the
  * accent only ever appears inside a headline).
  */
 import { readFileSync } from 'node:fs';
@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = dirname(fileURLToPath(import.meta.url)) + '/..';
 const src = readFileSync(join(ROOT, 'src/config/sunrise.ts'), 'utf8');
 
-// Parse the config without a TS toolchain — the shapes are fixed and literal.
+// Parse the config without a TS toolchain - the shapes are fixed and literal.
 const SUNRISE = [...src.matchAll(
   /\{\s*id:\s*'([^']+)',\s*from:\s*'(#[0-9A-Fa-f]{6})',\s*to:\s*'(#[0-9A-Fa-f]{6})',\s*tone:\s*'(\w+)'((?:,\s*\w+:\s*true)*)\s*\}/g
 )].map((m) => ({
@@ -36,13 +36,13 @@ const scrimMatch = src.match(/SCRIM = \{\s*color:\s*'(#[0-9A-Fa-f]{6})',\s*alpha
 const SCRIM = { color: scrimMatch[1], alpha: Number(scrimMatch[2]) };
 
 /**
- * The translucent card fill the dark bands use for feature grids —
+ * The translucent card fill the dark bands use for feature grids -
  * Tailwind's `bg-white/[0.06]`, as in the `reliable` and `mission` sections.
  *
  * This exists because walking the raw band is not enough: a 6% white wash
  * LIGHTENS the background, and `dim` (#ADADCC) is the token with the least
  * headroom on the night ramp. At #4C2E59 the raw band measures 5.22:1 and the
- * card interior measures 4.35:1 — a real AA failure that a raw-band-only walk
+ * card interior measures 4.35:1 - a real AA failure that a raw-band-only walk
  * reports as passing with margin. A card grid was very nearly shipped onto
  * exactly that stop.
  *
@@ -53,7 +53,7 @@ const SCRIM = { color: scrimMatch[1], alpha: Number(scrimMatch[2]) };
 const CARD = { color: '#FFFFFF', alpha: 0.06 };
 
 if (!SUNRISE.length || !Object.keys(TONES).length) {
-  console.error('Could not parse src/config/sunrise.ts — did its shape change?');
+  console.error('Could not parse src/config/sunrise.ts - did its shape change?');
   process.exit(1);
 }
 
@@ -100,7 +100,7 @@ for (const band of SUNRISE) {
 }
 
 const pad = (s, n) => String(s).padEnd(n);
-console.log(`\n  Sunrise contrast — ${STEPS} steps per band, AA thresholds text/dim 4.5:1, accent 3.0:1\n`);
+console.log(`\n  Sunrise contrast - ${STEPS} steps per band, AA thresholds text/dim 4.5:1, accent 3.0:1\n`);
 console.log(`  ${pad('section', 11)}${pad('tone', 10)}${pad('text', 9)}${pad('dim', 9)}${pad('accent', 9)}worst bg`);
 for (const { band, worst, worstAt, bad } of rows) {
   const f = (k) => `${worst[k].toFixed(2)}${bad.includes(k) ? '✗' : ' '}`;

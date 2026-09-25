@@ -2,14 +2,14 @@ import { blog as en } from '../en/blog';
 
 export const blog = {
   index: {
-    title: `Ciencia del sueño y despertar — Blog de WakeSharp`,
+    title: `Ciencia del sueño y despertar: Blog de WakeSharp`,
     description: `Guías respaldadas por estudios para despertar a tiempo y despejado: inercia del sueño, posponer, alarmas que fallan, cafeína, melatonina y mañanas mejores.`,
     heading: `El blog de WakeSharp`,
     intro: `Ciencia del sueño, rutinas matutinas y alguna que otra novedad del producto, del creador de la alarma que comprueba si de verdad estás lúcido.`,
     empty: `El primer artículo está en camino: vuelve dentro de poco.`,
   },
   /** Se añade al título de un artículo en la pestaña del navegador, cuando el título completo cabe en 60 caracteres. */
-  titleSuffix: ` — WakeSharp`,
+  titleSuffix: ` - WakeSharp`,
   /** La línea bajo el titular de un artículo cuando el fundador lo ha revisado. `{name}` es un enlace a /about. */
   reviewedBy: `Revisado por {name}`,
   allArticles: `← Todos los artículos`,

@@ -35,7 +35,7 @@ const isLive = (p: BlogPost): boolean => !p.data.draft && p.data.pubDate.getTime
 
 /**
  * The single source of truth for "is this post live" in one language. The
- * listing pages, the [slug] routes and rss.xml.ts all go through here — nothing
+ * listing pages, the [slug] routes and rss.xml.ts all go through here - nothing
  * else calls getCollection('blog'). A page that is never generated is also
  * automatically absent from the sitemap, so there is no separate filter to
  * keep in sync in astro.config.mjs.
@@ -44,7 +44,7 @@ const isLive = (p: BlogPost): boolean => !p.data.draft && p.data.pubDate.getTime
  * because publishing IS pushing: every scheduled post lands as a fresh commit,
  * and that push triggers the build that first evaluates it. A staged
  * future-dated post therefore appears on the first build at-or-after its
- * pubDate — and if the routine ever skips a run, the failure direction is
+ * pubDate - and if the routine ever skips a run, the failure direction is
  * "appears late," never "appears early."
  */
 export async function getPublishedPosts(locale: LocaleCode = DEFAULT_LOCALE): Promise<BlogPost[]> {

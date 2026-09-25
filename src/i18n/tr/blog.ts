@@ -2,14 +2,14 @@ import { blog as en } from '../en/blog';
 
 export const blog = {
   index: {
-    title: `Uyku Bilimi ve Uyanma İpuçları — WakeSharp Blogu`,
+    title: `Uyku Bilimi ve Uyanma İpuçları - WakeSharp Blogu`,
     description: `Zamanında ve zinde uyanmak için araştırmalara dayalı rehberler: uyku ataleti, erteleme, çalmayan alarmlar, kafein, melatonin ve daha iyi sabahlar.`,
     heading: `WakeSharp Blogu`,
     intro: `Uyku bilimi, sabah rutinleri ve ara sıra ürün haberleri; gerçekten zinde olup olmadığınızı kontrol eden alarmın yapımcısından.`,
     empty: `İlk yazı yolda; kısa süre sonra tekrar bakın.`,
   },
   /** Appended to a post's title in the browser tab, when the whole title still fits in 60 characters. */
-  titleSuffix: ` — WakeSharp`,
+  titleSuffix: ` - WakeSharp`,
   /** The line under a post's headline when the founder has reviewed it. `{name}` is a link to /about. */
   reviewedBy: `{name} tarafından incelendi`,
   allArticles: `← Tüm yazılar`,

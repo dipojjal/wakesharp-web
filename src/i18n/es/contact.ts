@@ -7,7 +7,7 @@ import { contact as en } from '../en/contact';
  */
 export const contact = {
   form: {
-    title: `Contacto — WakeSharp`,
+    title: `Contacto - WakeSharp`,
     description: `Escribe directamente al desarrollador de WakeSharp: informes de errores, problemas con alarmas, dudas sobre suscripciones y peticiones de funciones.`,
     heading: `Contacto`,
     intro: `WakeSharp es un equipo pequeño, y una persona lee todo lo que llega aquí.`,
@@ -25,7 +25,7 @@ export const contact = {
       other: `Otra cosa`,
     },
     deviceLabel: `Teléfono y versión del sistema`,
-    deviceHint: `— opcional, pero responde a la mitad de mis preguntas de seguimiento`,
+    deviceHint: `opcional, pero responde a la mitad de mis preguntas de seguimiento`,
     devicePlaceholder: `p. ej. Pixel 9, Android 16`,
     messageLabel: `Mensaje`,
     messageHint: `Para un error, lo más útil que puedes contarme es qué esperabas y qué pasó en su lugar. Si una alarma falló, la hora a la que estaba puesta y la hora a la que encontraste el teléfono ayudan muchísimo.`,
@@ -34,7 +34,7 @@ export const contact = {
     privacyNote: `Tu mensaje y tu dirección de correo me llegan por correo electrónico y no se almacenan en ningún otro sitio. Consulta la [Política de privacidad](privacy).`,
   },
   sent: {
-    title: `Mensaje enviado — WakeSharp`,
+    title: `Mensaje enviado - WakeSharp`,
     description: `Tu mensaje a WakeSharp se ha enviado.`,
     heading: `Mensaje enviado`,
     intro: `Gracias; va de camino a mi bandeja de entrada.`,
@@ -43,7 +43,7 @@ export const contact = {
     backHome: `Volver a la página de inicio`,
   },
   error: {
-    title: `Mensaje no enviado — WakeSharp`,
+    title: `Mensaje no enviado - WakeSharp`,
     description: `El formulario de contacto de WakeSharp no pudo entregar tu mensaje.`,
     heading: `Eso no llegó`,
     intro: `Tu mensaje no se entregó, y prefiero decírtelo antes que fingir lo contrario.`,

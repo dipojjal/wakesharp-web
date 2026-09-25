@@ -7,14 +7,14 @@ import { CATEGORY_LABELS } from '../../lib/blog-categories';
  */
 export const blog = {
   index: {
-    title: `Sleep Science & Wake-Up Tips — WakeSharp Blog`,
+    title: `Sleep Science & Wake-Up Tips - WakeSharp Blog`,
     description: `Research-backed guides to waking up on time and clear-headed: sleep inertia, snoozing, alarms that fail, caffeine, melatonin and better mornings.`,
     heading: `The WakeSharp Blog`,
-    intro: `Sleep science, morning routines and the occasional product update — from the maker of the alarm that checks you're actually sharp.`,
-    empty: `The first article is on its way — check back shortly.`,
+    intro: `Sleep science, morning routines and the occasional product update, from the maker of the alarm that checks you're actually sharp.`,
+    empty: `The first article is on its way. Check back shortly.`,
   },
   /** Appended to a post's title in the browser tab, when the whole title still fits in 60 characters. */
-  titleSuffix: ` — WakeSharp`,
+  titleSuffix: ` - WakeSharp`,
   /** The line under a post's headline when the founder has reviewed it. `{name}` is a link to /about. */
   reviewedBy: `Reviewed by {name}`,
   /** Carries its own arrow, so a right-to-left language can point it the other way. */

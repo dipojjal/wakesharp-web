@@ -8,7 +8,7 @@ import { assertReferralApiEnabled } from '../_lib/referrals.js';
  * The second of the three confirmation conditions: this installation finished
  * onboarding.
  *
- * Idempotent by construction — the first call stamps `onboarding_completed_at`
+ * Idempotent by construction - the first call stamps `onboarding_completed_at`
  * and every later one is a no-op that still re-evaluates the claim. That matters
  * because the third morning and the end of onboarding can arrive in either
  * order, and a client retrying after a dropped response must not be able to

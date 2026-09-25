@@ -2,7 +2,7 @@
  * The people the site names. Articles are published by the company (the
  * BlogPosting author stays KineticBit Inc.); a person appears only as the one
  * who reviewed a post, and only on posts they actually read. The routine that
- * drafts posts never sets `reviewedBy` — docs/blog-schedule.md says so.
+ * drafts posts never sets `reviewedBy` - docs/blog-schedule.md says so.
  */
 export const PEOPLE = {
   founder: {

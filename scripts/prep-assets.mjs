@@ -94,7 +94,7 @@ async function main() {
   // ── 3. Mascot cutouts → trimmed to their alpha bbox, then 768w. Trimming matters:
   //       the source PNGs are 1024×1024 with the bird floating in transparency, so
   //       untrimmed they carry huge dead margins that break every layout calculation.
-  //       Aspect ratio is preserved and never forced square — components pass width only.
+  //       Aspect ratio is preserved and never forced square - components pass width only.
   for (const [from, to] of MASCOTS) {
     const input = join(SRC, 'Mascot', 'cutouts', `${from}.png`);
     if (!existsSync(input)) { console.warn(`  skip (missing): ${input}`); continue; }

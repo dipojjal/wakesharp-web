@@ -7,11 +7,11 @@ import { legal as en } from '../en/legal';
  */
 export const legal = {
   privacy: {
-    title: `سياسة الخصوصية — WakeSharp`,
+    title: `سياسة الخصوصية - WakeSharp`,
     heading: `سياسة الخصوصية`,
   },
   terms: {
-    title: `شروط الخدمة — WakeSharp`,
+    title: `شروط الخدمة - WakeSharp`,
     heading: `شروط الخدمة`,
   },
   englishOnly: `هذا المستند متوفر بالإنجليزية فقط، والنص الإنجليزي أدناه هو النسخة السارية. وإن كان أي شيء فيه غير واضح، فراسلنا على [{email}](email) وسيشرحه لك إنسان.`,

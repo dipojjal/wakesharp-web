@@ -15,19 +15,19 @@ import { home as en } from '../en/home';
  * l’application en français.
  */
 export const home = {
-  title: `WakeSharp — Réveil pour gros dormeurs, avec des missions`,
+  title: `WakeSharp - Réveil pour gros dormeurs, avec des missions`,
 
   hero: {
     /** Affiché dans le <h1>, au-dessus du slogan : la requête que vise la page. */
     kicker: `Le réveil pour gros dormeurs`,
     heading: { pre: `Réveillez-vous `, accent: `affûté.`, post: `Pas seulement réveillé.` },
-    lede: `Pour les gros dormeurs, à qui un bouton snooze ne suffit pas. Balayer l’écran, une personne à peine consciente en est capable : WakeSharp demande donc plutôt une mission — résoudre, photographier, marcher ou répondre à voix haute — puis évalue à quel point vous vous êtes vraiment réveillé affûté.`,
+    lede: `Pour les gros dormeurs, à qui un bouton snooze ne suffit pas. Balayer l’écran, une personne à peine consciente en est capable : WakeSharp demande donc plutôt une mission (résoudre, photographier, marcher ou répondre à voix haute) puis évalue à quel point vous vous êtes vraiment réveillé affûté.`,
     phoneAlt: `Écran d’accueil de WakeSharp la nuit, avec une alarme à 6 h 40 et une règle d’agenda intelligente`,
   },
 
   trust: [
     `Sonne en mode Silence et en Concentration sur iPhone`,
-    `Vous dit ce qui pourrait l’empêcher de sonner — dès la veille au soir`,
+    `Vous dit ce qui pourrait l’empêcher de sonner: dès la veille au soir`,
     `Aucun compte WakeSharp requis`,
     `Les images de l’appareil photo et votre agenda sont traités sur votre téléphone`,
     `WakeSharp n’affiche aucune publicité`,
@@ -36,17 +36,17 @@ export const home = {
   ring: {
     alt: `L’alarme WakeSharp qui sonne, avec le bouton pour lancer la mission et celui pour répéter`,
     heading: { pre: `Terminez la mission pour obtenir `, accent: `tout le crédit`, post: `` },
-    lede: `Sur iPhone, AlarmKit d’Apple affiche une alarme système par-dessus l’écran verrouillé — à travers le mode Silence et Concentration une fois l’accès aux alarmes accordé, même si l’application a été forcée à quitter. Sur Android, une alarme exacte sur le canal audio des alarmes sonne à travers le mode silencieux, et à travers Ne pas déranger quand ce mode autorise les alarmes, avec Extra Loud (volume renforcé) et une montée progressive du volume plutôt qu’un démarrage brutal. Quelle que soit la façon dont vous la faites taire, la matinée ne compte qu’une fois la mission accomplie.`,
+    lede: `Sur iPhone, AlarmKit d’Apple affiche une alarme système par-dessus l’écran verrouillé: à travers le mode Silence et Concentration une fois l’accès aux alarmes accordé, même si l’application a été forcée à quitter. Sur Android, une alarme exacte sur le canal audio des alarmes sonne à travers le mode silencieux, et à travers Ne pas déranger quand ce mode autorise les alarmes, avec Extra Loud (volume renforcé) et une montée progressive du volume plutôt qu’un démarrage brutal. Quelle que soit la façon dont vous la faites taire, la matinée ne compte qu’une fois la mission accomplie.`,
   },
 
   reliable: {
     heading: { pre: `Sachez qu’elle sonnera, `, accent: `dès la veille au soir`, post: `` },
-    lede: `La plupart des applications d’alarme découvrent leur échec en même temps que vous. WakeSharp vérifie ce qui empêche réellement une alarme de sonner — autorisations, volume de l’alarme, réglages de notification, affichage sur l’écran verrouillé, restrictions de batterie — et commence par un verdict, pas par une promesse.`,
+    lede: `La plupart des applications d’alarme découvrent leur échec en même temps que vous. WakeSharp vérifie ce qui empêche réellement une alarme de sonner (autorisations, volume de l’alarme, réglages de notification, affichage sur l’écran verrouillé, restrictions de batterie) et commence par un verdict, pas par une promesse.`,
     items: [
       { title: `Un verdict, pas une liste à cocher`, body: `Une seule ligne, tout en haut : elle sonnera, elle risque de ne pas sonner, ou elle ne peut pas sonner.` },
-      { title: `Honnête sur ce qu’il ne voit pas`, body: `Là où le téléphone ne nous dit rien, il le dit — jamais de coche verte.` },
+      { title: `Honnête sur ce qu’il ne voit pas`, body: `Là où le téléphone ne nous dit rien, il le dit: jamais de coche verte.` },
       { title: `Des correctifs en un geste, quand ils existent`, body: `Et des instructions claires quand ils n’existent pas.` },
-      { title: `« Elle n’a pas sonné » a une réponse`, body: `La cause prouvable — ou l’aveu que nous n’avons pas pu la déterminer.` },
+      { title: `« Elle n’a pas sonné » a une réponse`, body: `La cause prouvable, ou l’aveu que nous n’avons pas pu la déterminer.` },
     ],
     note: `C’est dans les Réglages, et le rappel d’avant le coucher y intègre le pire constat pour que vous le voyiez pendant qu’il est encore temps d’y remédier.`,
   },
@@ -55,14 +55,14 @@ export const home = {
     alt: `L’éditeur de règle d’alarme intelligente, réglé pour sonner 90 minutes avant la première réunion`,
     heading: { pre: `Vous réveille avant votre `, accent: `première réunion`, post: `` },
     lede: `« Sonner 90 minutes avant ma première réunion. » WakeSharp lit votre agenda sur votre appareil, le revérifie pendant la nuit et déplace l’alarme quand la réunion change d’heure. En lecture seule, facultatif, jamais transmis.`,
-    shifts: `Et toutes les semaines ne se ressemblent pas. Les rotations d’équipe gèrent les rythmes qui ne sont pas hebdomadaires — deux jours, deux nuits, quatre de repos — avec un calendrier d’aperçu et un moyen de sauter une seule date sans rien supprimer. Les profils changent tout un jeu d’alarmes d’un coup : travail, vacances ou astreinte. La recherche, le tri et la vue Aujourd’hui gardent la liste lisible quand elles sont nombreuses.`,
-    labels: `Dites pour quoi vous vous réveillez — une séance de sport, un trajet, le petit-déjeuner — et l’étiquette s’écrit toute seule.`,
+    shifts: `Et toutes les semaines ne se ressemblent pas. Les rotations d’équipe gèrent les rythmes qui ne sont pas hebdomadaires (deux jours, deux nuits, quatre de repos) avec un calendrier d’aperçu et un moyen de sauter une seule date sans rien supprimer. Les profils changent tout un jeu d’alarmes d’un coup : travail, vacances ou astreinte. La recherche, le tri et la vue Aujourd’hui gardent la liste lisible quand elles sont nombreuses.`,
+    labels: `Dites pour quoi vous vous réveillez (une séance de sport, un trajet, le petit-déjeuner) et l’étiquette s’écrit toute seule.`,
   },
 
   mission: {
     alt: `La mission Mind Games : résolvez 9 moins 4 pour faire taire l’alarme`,
     heading: { pre: `Des missions pour `, accent: `vous faire lever`, post: `` },
-    lede: `Il faut que quelque chose se passe avant que la matinée compte, et c’est vous qui choisissez quoi : du calcul, une énigme, une photo de l’endroit choisi la veille, de vrais pas ou une réponse à voix haute. Une alarme peut en demander plusieurs à la suite, dans l’ordre de votre choix, et si l’une d’elles ne peut pas fonctionner ce matin-là — un appareil photo en panne, un téléphone sans podomètre —, WakeSharp se rabat sur une autre qui le peut.`,
+    lede: `Il faut que quelque chose se passe avant que la matinée compte, et c’est vous qui choisissez quoi : du calcul, une énigme, une photo de l’endroit choisi la veille, de vrais pas ou une réponse à voix haute. Une alarme peut en demander plusieurs à la suite, dans l’ordre de votre choix, et si l’une d’elles ne peut pas fonctionner ce matin-là (un appareil photo en panne, un téléphone sans podomètre), WakeSharp se rabat sur une autre qui le peut.`,
     /**
      * Toutes les missions que propose l’éditeur d’alarme (les entrées de
      * GameCatalog.json marquées `supportsMission`), regroupées selon ce qu’elles
@@ -93,13 +93,13 @@ export const home = {
   games: {
     alt: `Le jeu d’échauffement Memory Match`,
     heading: { pre: `Un `, accent: `échauffement`, post: ` de deux minutes, le temps que la bouilloire chauffe` },
-    lede: `Jeux d’esprit, Paires de mémoire, Rappel de séquence, Sprint de mots et Réaction. Trois se jouent chaque matin, en rotation, si bien que l’ensemble passe en moins d’une semaine — et l’échauffement ne répète jamais ce que la mission vient de vous faire faire. Rien de tout cela n’est obligatoire ; à ce stade, l’alarme est déjà éteinte.`,
+    lede: `Jeux d’esprit, Paires de mémoire, Rappel de séquence, Sprint de mots et Réaction. Trois se jouent chaque matin, en rotation, si bien que l’ensemble passe en moins d’une semaine, et l’échauffement ne répète jamais ce que la mission vient de vous faire faire. Rien de tout cela n’est obligatoire ; à ce stade, l’alarme est déjà éteinte.`,
   },
 
   sharp: {
     alt: `La révélation quotidienne du Sharpness Score`,
     heading: { pre: `Sachez à quel point vous vous êtes réveillé `, accent: `affûté`, post: `` },
-    lede: `Un seul nombre sur 100, issu de l’échauffement — votre score de Vivacité —, calculé par rapport à votre propre référence glissante, pas par rapport à des inconnus. C’est un score propre à l’application, pas un test clinique, et votre vous d’hier est la seule référence qui veuille dire quelque chose à 6 h du matin.`,
+    lede: `Un seul nombre sur 100, issu de l’échauffement (votre score de Vivacité), calculé par rapport à votre propre référence glissante, pas par rapport à des inconnus. C’est un score propre à l’application, pas un test clinique, et votre vous d’hier est la seule référence qui veuille dire quelque chose à 6 h du matin.`,
   },
 
   stats: {
@@ -113,15 +113,15 @@ export const home = {
     lede: `Partagez un lien : le téléphone qui l’ouvre programme la même alarme, puis la fait sonner tout seul. Rien à rejoindre, aucun compte à créer, et aucun serveur au milieu.`,
     cards: [
       { title: `Se réveiller avec un ami`, body: `Vous envoyez un lien ; le téléphone d’en face construit l’alarme en local. Chacun garde sa propre copie, donc modifier la vôtre ne touche pas la sienne.` },
-      { title: `Beat my wake`, body: `Battez mon réveil : terminez une mission et vous pouvez défier quelqu’un sur le même jeu de problèmes — même graine, mêmes manches, même difficulté. Vous saurez ensuite lequel de vous deux était vraiment réveillé.` },
+      { title: `Beat my wake`, body: `Battez mon réveil : terminez une mission et vous pouvez défier quelqu’un sur le même jeu de problèmes: même graine, mêmes manches, même difficulté. Vous saurez ensuite lequel de vous deux était vraiment réveillé.` },
     ],
     note: `Les deux ne sont que des liens : le téléphone qui en reçoit un fait tout le travail lui-même.`,
   },
 
   platforms: {
     heading: { pre: `La même application. `, accent: `Sur les deux téléphones.`, post: `` },
-    lede: `Développée nativement deux fois — SwiftUI sur iOS, Kotlin et Compose sur Android. Pas une coquille web, et c’est la seule raison pour laquelle chaque plateforme peut faire ce qu’elle seule sait faire. Nécessite {ios} ou {android}.`,
-    watch: `Il y a aussi une application de montre aux deux poignets — watchOS 26 ou Wear OS 3. Elle vous réveille par vibrations avant que la pièce n’entende quoi que ce soit, et l’alarme du téléphone se décale de quelques minutes en secours. Seul un arrêt depuis la montre l’annule : une montre déchargée, hors de portée ou que vous n’avez pas ouverte depuis 36 heures laisse l’alarme du téléphone exactement où elle était. Il existe aussi une complication pour le cadran de la montre.`,
+    lede: `Développée nativement deux fois: SwiftUI sur iOS, Kotlin et Compose sur Android. Pas une coquille web, et c’est la seule raison pour laquelle chaque plateforme peut faire ce qu’elle seule sait faire. Nécessite {ios} ou {android}.`,
+    watch: `Il y a aussi une application de montre aux deux poignets: watchOS 26 ou Wear OS 3. Elle vous réveille par vibrations avant que la pièce n’entende quoi que ce soit, et l’alarme du téléphone se décale de quelques minutes en secours. Seul un arrêt depuis la montre l’annule : une montre déchargée, hors de portée ou que vous n’avez pas ouverte depuis 36 heures laisse l’alarme du téléphone exactement où elle était. Il existe aussi une complication pour le cadran de la montre.`,
     account: `Il n’y a aucun compte à créer, mais vous pouvez vous connecter avec Apple ou Google si vous en attendez une seule chose : une sauvegarde, pour que vos alarmes, réglages, scores et série reviennent sur un nouveau téléphone. C’est désactivé par défaut, tout fonctionne sans connexion, et rien à 6 h du matin n’attend le réseau.`,
   },
 
@@ -132,7 +132,7 @@ export const home = {
       ios: { label: `iPhone`, store: `App Store` },
       android: { label: `Android`, store: `Google Play` },
     },
-    railHeading: `{label} — tel qu’affiché sur {store}`,
+    railHeading: `{label}: tel qu’affiché sur {store}`,
     altTemplate: `WakeSharp sur {label} : {caption}`,
     fallbackCaption: `capture d’écran de l’application`,
     /**
@@ -182,7 +182,7 @@ export const home = {
         `Sans publicité`,
       ],
     },
-    billing: `Les formules annuelle et mensuelle sont facturées par Apple ou Google et se renouvellent jusqu’à résiliation — résiliez quand vous voulez depuis le compte de votre boutique, et notez que supprimer l’application ne résilie pas un abonnement. L’essai gratuit est réservé aux nouveaux abonnés éligibles. Voir les [Conditions](terms).`,
+    billing: `Les formules annuelle et mensuelle sont facturées par Apple ou Google et se renouvellent jusqu’à résiliation: résiliez quand vous voulez depuis le compte de votre boutique, et notez que supprimer l’application ne résilie pas un abonnement. L’essai gratuit est réservé aux nouveaux abonnés éligibles. Voir les [Conditions](terms).`,
     /** Pages localisées uniquement : les boutiques localisent les prix à l’exécution. */
     usdNote: `Les prix sont affichés en dollars américains ; l’App Store et Google Play affichent le prix pour votre pays.`,
   },
@@ -193,11 +193,11 @@ export const home = {
     items: [
       {
         q: `Sonne-t-elle vraiment en mode Silence, en Concentration ou en Ne pas déranger ?`,
-        a: `Le comportement dépend de la plateforme, et il dépend d’une autorisation. Sur iPhone, WakeSharp utilise AlarmKit d’Apple, qui permet de sonner à travers le mode Silence et Concentration une fois que vous avez accordé l’accès aux alarmes — refusez-le ou révoquez-le et WakeSharp ne peut plus rien programmer du tout. Sur Android, elle joue sur le canal dédié aux alarmes, qui sonne à travers le mode silencieux, et à travers Ne pas déranger quand ce mode autorise les alarmes — Silence total coupe tous les sons, alarmes comprises —, et elle affiche une alerte plein écran par-dessus l’écran verrouillé, à condition que les autorisations d’alarme exacte, de notification et d’écran verrouillé soient en place. Ce qu’aucune application ne peut faire, c’est sonner sur un téléphone éteint ou déchargé : pour tout ce que vous ne pouvez vraiment pas manquer, programmez une seconde alarme sur un autre appareil.`,
+        a: `Le comportement dépend de la plateforme, et il dépend d’une autorisation. Sur iPhone, WakeSharp utilise AlarmKit d’Apple, qui permet de sonner à travers le mode Silence et Concentration une fois que vous avez accordé l’accès aux alarmes: refusez-le ou révoquez-le et WakeSharp ne peut plus rien programmer du tout. Sur Android, elle joue sur le canal dédié aux alarmes, qui sonne à travers le mode silencieux, et à travers Ne pas déranger quand ce mode autorise les alarmes (Silence total coupe tous les sons, alarmes comprises), et elle affiche une alerte plein écran par-dessus l’écran verrouillé, à condition que les autorisations d’alarme exacte, de notification et d’écran verrouillé soient en place. Ce qu’aucune application ne peut faire, c’est sonner sur un téléphone éteint ou déchargé : pour tout ce que vous ne pouvez vraiment pas manquer, programmez une seconde alarme sur un autre appareil.`,
       },
       {
         q: `Comment vérifier que mon alarme va bien sonner ?`,
-        a: `Ouvrez Réglages → Fiabilité du réveil. WakeSharp lit les conditions de votre téléphone qui peuvent empêcher une alarme de sonner — autorisations, volume de l’alarme, réglages de notification, affichage sur l’écran verrouillé, restrictions de batterie — et commence par un verdict clair plutôt que par une promesse. Là où la plateforme refuse de nous dire quelque chose, il le dit au lieu d’afficher une coche verte, parce qu’une liste qui transforme discrètement les inconnues en réussites est pire que pas de liste du tout. Si une alarme échoue un jour, l’application peut vous en donner ensuite la cause prouvable — ou admettre qu’elle n’a pas pu la déterminer.`,
+        a: `Ouvrez Réglages → Fiabilité du réveil. WakeSharp lit les conditions de votre téléphone qui peuvent empêcher une alarme de sonner (autorisations, volume de l’alarme, réglages de notification, affichage sur l’écran verrouillé, restrictions de batterie) et commence par un verdict clair plutôt que par une promesse. Là où la plateforme refuse de nous dire quelque chose, il le dit au lieu d’afficher une coche verte, parce qu’une liste qui transforme discrètement les inconnues en réussites est pire que pas de liste du tout. Si une alarme échoue un jour, l’application peut vous en donner ensuite la cause prouvable, ou admettre qu’elle n’a pas pu la déterminer.`,
       },
       {
         q: `Dois-je faire des calculs à 6 h du matin ?`,
@@ -205,15 +205,15 @@ export const home = {
       },
       {
         q: `Puis-je tricher et sauter la mission ?`,
-        a: `Les commandes de votre téléphone fonctionnent toujours — vous pouvez l’éteindre, et aucune application ne devrait pouvoir l’empêcher. Dans WakeSharp, en revanche, arrêter l’alarme ou la reporter ne suffit pas à valider la matinée : elle ne compte qu’une fois la mission accomplie.`,
+        a: `Les commandes de votre téléphone fonctionnent toujours: vous pouvez l’éteindre, et aucune application ne devrait pouvoir l’empêcher. Dans WakeSharp, en revanche, arrêter l’alarme ou la reporter ne suffit pas à valider la matinée : elle ne compte qu’une fois la mission accomplie.`,
       },
       {
         q: `Que fait l’appareil photo ?`,
-        a: `Seules les missions qui en ont besoin l’utilisent — dont Preuve photo, Scanner un objet, Va chercher, Contrôle du visage et Tranche-fruits —, et uniquement pendant que l’une d’elles est en cours ou que vous la configurez. La reconnaissance d’objets et la comparaison de photos se font sur votre appareil. Refusez l’autorisation et toutes les missions qui n’ont pas besoin de l’appareil photo fonctionnent encore. La politique de confidentialité indique exactement ce qui quitte votre téléphone, s’il y a quoi que ce soit, et quand.`,
+        a: `Seules les missions qui en ont besoin l’utilisent (dont Preuve photo, Scanner un objet, Va chercher, Contrôle du visage et Tranche-fruits), et uniquement pendant que l’une d’elles est en cours ou que vous la configurez. La reconnaissance d’objets et la comparaison de photos se font sur votre appareil. Refusez l’autorisation et toutes les missions qui n’ont pas besoin de l’appareil photo fonctionnent encore. La politique de confidentialité indique exactement ce qui quitte votre téléphone, s’il y a quoi que ce soit, et quand.`,
       },
       {
         q: `WakeSharp suit-il mon sommeil ?`,
-        a: `Non. Il n’y a aucun suivi du sommeil, d’aucune sorte — aucun micro à l’écoute pendant la nuit, aucune phase de sommeil, aucune note pour votre nuit et aucun avis sur l’heure à laquelle vous vous êtes endormi. Le podomètre est lu pendant la mission de marche et à aucun autre moment. WakeSharp mesure à quel point vous êtes affûté une fois levé, et rien avant cela. Les seules choses qui ressemblent au sommeil, ici, sont une heure de coucher que vous prévoyez vous-même et des sons facultatifs pour vous détendre avant de dormir.`,
+        a: `Non. Il n’y a aucun suivi du sommeil, d’aucune sorte: aucun micro à l’écoute pendant la nuit, aucune phase de sommeil, aucune note pour votre nuit et aucun avis sur l’heure à laquelle vous vous êtes endormi. Le podomètre est lu pendant la mission de marche et à aucun autre moment. WakeSharp mesure à quel point vous êtes affûté une fois levé, et rien avant cela. Les seules choses qui ressemblent au sommeil, ici, sont une heure de coucher que vous prévoyez vous-même et des sons facultatifs pour vous détendre avant de dormir.`,
       },
       {
         q: `Que lit-il exactement dans mon agenda ?`,
@@ -221,7 +221,7 @@ export const home = {
       },
       {
         q: `Ai-je besoin d’un compte ?`,
-        a: `Aucun compte WakeSharp n’est requis — il n’y a ni e-mail ni mot de passe nulle part dans l’application. Vous pouvez, si vous le souhaitez, vous connecter avec Apple ou Google dans un seul but : sauvegarder vos alarmes, réglages, scores et série pour qu’ils reviennent sur un nouveau téléphone. C’est désactivé par défaut, toutes les fonctions marchent sans connexion, et une alarme n’attend jamais le réseau pour sonner. Supprimez-le depuis Réglages → Compte, ou sur wakesharp.app/account/delete.`,
+        a: `Aucun compte WakeSharp n’est requis: il n’y a ni e-mail ni mot de passe nulle part dans l’application. Vous pouvez, si vous le souhaitez, vous connecter avec Apple ou Google dans un seul but : sauvegarder vos alarmes, réglages, scores et série pour qu’ils reviennent sur un nouveau téléphone. C’est désactivé par défaut, toutes les fonctions marchent sans connexion, et une alarme n’attend jamais le réseau pour sonner. Supprimez-le depuis Réglages → Compte, ou sur wakesharp.app/account/delete.`,
       },
       {
         q: `Que se passe-t-il si ma montre est déchargée ?`,

@@ -9,10 +9,10 @@ export const shell = {
   siteDescription: `Um despertador para quem tem sono pesado: para silenciar, resolva contas rápidas, fotografe um lugar ou caminhe, e veja o quanto você acordou afiado.`,
   tagline: `Acorde afiado. Não só acordado.`,
   requirements: { ios: `iOS 26 ou posterior`, android: `Android 8.0 ou posterior` },
-  ogImageAlt: `WakeSharp — acorde afiado, não só acordado.`,
+  ogImageAlt: `WakeSharp - acorde afiado, não só acordado.`,
   rssTitle: `Blog do WakeSharp`,
   skipLink: `Pular para o conteúdo`,
-  brandHome: `WakeSharp — início`,
+  brandHome: `WakeSharp - início`,
 
   nav: {
     aria: `Principal`,

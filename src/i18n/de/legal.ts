@@ -9,11 +9,11 @@ import { legal as en } from '../en/legal';
  */
 export const legal = {
   privacy: {
-    title: `Datenschutzerklärung — WakeSharp`,
+    title: `Datenschutzerklärung - WakeSharp`,
     heading: `Datenschutzerklärung`,
   },
   terms: {
-    title: `Nutzungsbedingungen — WakeSharp`,
+    title: `Nutzungsbedingungen - WakeSharp`,
     heading: `Nutzungsbedingungen`,
   },
   englishOnly: `Dieses Dokument gibt es nur auf Englisch, und der englische Text unten ist die Fassung, die gilt. Wenn etwas darin unklar ist, schreib an [{email}](email) und ein Mensch erklärt es dir.`,

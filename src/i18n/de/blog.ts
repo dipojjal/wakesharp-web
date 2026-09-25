@@ -8,14 +8,14 @@ import { blog as en } from '../en/blog';
  */
 export const blog = {
   index: {
-    title: `Schlafforschung & Tipps zum Aufwachen — WakeSharp Blog`,
+    title: `Schlafforschung & Tipps zum Aufwachen - WakeSharp Blog`,
     description: `Fundierte Ratgeber, um pünktlich und mit klarem Kopf aufzuwachen: Schlafträgheit, Schlummern, Alarme, die versagen, Koffein, Melatonin und bessere Morgen.`,
     heading: `Der WakeSharp Blog`,
-    intro: `Schlafforschung, Morgenroutinen und ab und zu ein Produkt-Update — vom Macher des Weckers, der prüft, ob du wirklich hellwach bist.`,
-    empty: `Der erste Artikel ist unterwegs — schau bald wieder vorbei.`,
+    intro: `Schlafforschung, Morgenroutinen und ab und zu ein Produkt-Update: vom Macher des Weckers, der prüft, ob du wirklich hellwach bist.`,
+    empty: `Der erste Artikel ist unterwegs: schau bald wieder vorbei.`,
   },
   /** Wird im Browser-Tab an den Titel eines Artikels angehängt, wenn der ganze Titel dann noch in 60 Zeichen passt. */
-  titleSuffix: ` — WakeSharp`,
+  titleSuffix: ` - WakeSharp`,
   /** Die Zeile unter der Überschrift eines Artikels, wenn der Gründer ihn geprüft hat. `{name}` ist ein Link auf /about. */
   reviewedBy: `Geprüft von {name}`,
   /** Trägt den eigenen Pfeil, damit eine Sprache von rechts nach links ihn andersherum zeigen kann. */

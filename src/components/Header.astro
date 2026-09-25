@@ -2,7 +2,7 @@
 /**
  * Always-translucent sticky nav.
  *
- * A `position: sticky` element cannot switch background on scroll in CSS alone —
+ * A `position: sticky` element cannot switch background on scroll in CSS alone -
  * that needs either `animation-timeline: scroll()` (not Baseline) or an
  * IntersectionObserver. Holding one translucent night bar the whole way down keeps
  * the page at zero JS and reads correctly over both the dark and the light bands.
@@ -43,7 +43,7 @@ const href = (p: string): string => localePath(locale, p);
     </a>
 
     {/* nowrap: a nav label of two words wraps inside its flex item and makes the
-        whole header taller — Arabic "تواصل معنا", French "Fonctions". Inherited
+        whole header taller. Arabic "تواصل معنا", French "Fonctions". Inherited
         by the links, so it is one rule rather than five. */}
     <nav
       aria-label={t.nav.aria}

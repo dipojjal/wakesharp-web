@@ -11,7 +11,7 @@
  * All 15 colours round-trip exactly between the two.
  */
 @theme {
-  /* Brand — derived from the Lark's own coral-and-amber plumage. */
+  /* Brand - derived from the Lark's own coral-and-amber plumage. */
   --color-coral: #f58c6b;
   --color-amber: #fabf59;
   --color-sunrise-pink: #f0828c;
@@ -22,14 +22,14 @@
      instead; it holds the hue and clears AA. See scripts/check-contrast.mjs. */
   --color-coral-ink: #935440;
 
-  /* Night — the app's alarm-set and ringing palette. */
+  /* Night - the app's alarm-set and ringing palette. */
   --color-night-deep: #121229;
   --color-night-surface: #1f1f3d;
   --color-night-elevated: #2b2b4f;
   --color-night-text: #f5f2fa;
   --color-night-dim: #adadcc;
 
-  /* Morning — the app's post-wake palette. */
+  /* Morning - the app's post-wake palette. */
   --color-morning-cream: #fff7eb;
   --color-morning-surface: #ffffff;
   --color-morning-text: #332921;
@@ -46,14 +46,14 @@
 
   --shadow-card: 0 2px 5px rgb(0 0 0 / 0.05);
   --shadow-raised: 0 4px 8px rgb(0 0 0 / 0.06);
-  /* The only tinted shadow in the whole system — the mascot's coral glow. */
+  /* The only tinted shadow in the whole system - the mascot's coral glow. */
   --shadow-lark: 0 10px 36px rgb(245 140 107 / 0.35);
 }
 
 /* ── Tone system ────────────────────────────────────────────────────────────
  * Each sunrise band declares a tone; the tone sets the three ink tokens every
  * component reads. Values are verified by `npm run contrast`, which walks each
- * band at 21 interpolated steps — Lighthouse cannot check this, because its
+ * band at 21 interpolated steps - Lighthouse cannot check this, because its
  * contrast audit skips any node whose background is a gradient.
  */
 [data-tone='night'],
@@ -144,7 +144,7 @@
 
   /* The `sharp` band flips night to day; its midpoint fails AA for light AND
      dark text, so there is no ink that works on it. Content sits on this
-     instead — headline included, not just body copy. */
+     instead. Headline included, not just body copy. */
   .scrim {
     background: color-mix(in srgb, var(--color-night-surface) 92%, transparent);
     border: 1px solid rgb(255 255 255 / 0.08);
@@ -176,7 +176,7 @@
     box-shadow: var(--shadow-card);
   }
 
-  /* Mascot breathing — the app's own 1.0<->1.03 over 2.4s, ease-in-out,
+  /* Mascot breathing - the app's own 1.0<->1.03 over 2.4s, ease-in-out,
      autoreversing (MascotView.swift / Mascot.kt). Opt-in per instance. */
   @media (prefers-reduced-motion: no-preference) {
     .breathe { animation: breathe 2.4s ease-in-out infinite alternate; }
@@ -206,7 +206,7 @@
    * The only inputs on the site. They live on the /contact morning surface, so
    * they are specified against cream, not night. Focus rings are inherited from
    * the global :focus-visible rule, which already swaps to coral-ink under
-   * [data-tone='morning'] — do not re-declare an outline here.
+   * [data-tone='morning'] - do not re-declare an outline here.
    */
   .field-label {
     display: block;
@@ -236,7 +236,7 @@
     resize: vertical;
   }
 
-  /* Bot bait. Positioned off-screen rather than display:none — plenty of bots
+  /* Bot bait. Positioned off-screen rather than display:none - plenty of bots
      skip genuinely hidden inputs but will fill anything still in the layout. */
   .honeypot {
     position: absolute;

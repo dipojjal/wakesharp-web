@@ -100,7 +100,7 @@ These are enforced on the English pages by `scripts/check-copy.mjs` and seeded p
   version-proof line: however you quiet the alarm, the morning only counts once the mission is done.
 - **Do Not Disturb:** on Android the alarm rings through Do Not Disturb *when it allows alarms*;
   never the unqualified promise.
-- Say "as many alarms as you need", never "unlimited alarms" — which is why the plan name must not
+- Say "as many alarms as you need", never "unlimited alarms"which is why the plan name must not
   be followed by "alarms" in a sentence that reads like that claim.
 - There is no barcode or QR mission. Codes are targets registered inside Scan an Object.
 - The app has no sleep tracking. Never imply it does.
@@ -160,10 +160,10 @@ different feature, which is worse than leaving the term in English.
 | English | iOS (Apple) | Android (Google) |
 |---|---|---|
 | Silent mode | 消音モード / Sessiz mod / وضع الصامت / mode Silence | マナーモード |
-| Focus | 集中モード / Odak / التركيز / Concentration | — |
-| Do Not Disturb | — | サイレントモード / Rahatsız Etmeyin / عدم الإزعاج / Ne pas déranger |
+| Focus | 集中モード / Odak / التركيز / Concentration |: |
+| Do Not Disturb |: | サイレントモード / Rahatsız Etmeyin / عدم الإزعاج / Ne pas déranger |
 
 Japanese is the trap: **Do Not Disturb is サイレントモード**, not おやすみ時間モード, which is
-Bedtime mode — a Digital Wellbeing feature that does not gate alarms. Because サイレントモード
+Bedtime mode: a Digital Wellbeing feature that does not gate alarms. Because サイレントモード
 sits awkwardly beside Apple's 消音モード, name the platform when a sentence lists both
 (「消音モードや集中モード、Androidのサイレントモードでも…」).

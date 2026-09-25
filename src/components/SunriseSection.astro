@@ -10,7 +10,7 @@ interface Props {
 const { id, class: cls = '', anchor } = Astro.props;
 
 const stop = SUNRISE.find((s) => s.id === id);
-if (!stop) throw new Error(`Unknown sunrise section "${id}" — add it to src/config/sunrise.ts`);
+if (!stop) throw new Error(`Unknown sunrise section "${id}". Add it to src/config/sunrise.ts`);
 ---
 
 <section

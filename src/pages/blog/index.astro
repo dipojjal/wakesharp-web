@@ -1,11 +1,11 @@
 ---
 /**
- * /blog — the English article index. Newest post gets the wide featured card;
+ * /blog - the English article index. Newest post gets the wide featured card;
  * the rest flow into a three-up grid. Deliberately a single list, not
  * pagination: a paginated /blog/[...page] route would share the /blog/:x route
  * shape with [slug].astro and a purely numeric slug would collide. If the
  * archive ever outgrows one page (~150+ posts), add /blog/page/[page].astro
- * and reserve the literal slug "page" — documented in docs/blog-schedule.md.
+ * and reserve the literal slug "page" - documented in docs/blog-schedule.md.
  *
  * The same page for every other language with posts is src/pages/[lang]/blog/index.astro.
  */
