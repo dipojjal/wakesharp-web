@@ -30,7 +30,7 @@ import { SITE } from '../config/site';
   <h2>What WakeSharp does not do</h2>
   <ul>
     <li>It does not require an account. Sign-in supports backup, restoration and purchase continuity.</li>
-    <li>It does not collect your name, phone number or contacts. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
+    <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the name your sign-in provider shares, and the name you give the Lark to call you by, if you choose to. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
     <li>It does not request GPS or precise location. Approximate location inferred from IP addresses is described below.</li>
     <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, from version 2.10, the advertising identifier is read only after you allow tracking through Apple's prompt; before that version, and after a refusal, it is not read at all.</li>
     <li>We do not sell customer lists. Advertising and measurement may involve sharing with the providers and enabled advertising partners described below; regional privacy choices apply to that processing.</li>
@@ -64,8 +64,10 @@ import { SITE } from '../config/site';
   <p>If you create an account, this is stored in your private backup:</p>
   <ul>
     <li>Your <strong>sign-in identity</strong>: a random account ID and the email your provider discloses (with Sign in with Apple you can hide your real address behind Apple's relay).</li>
-    <li>Your <strong>alarms and settings</strong> — times, repeat days, labels, missions, snooze rules, smart-alarm rules and shift rotations, and your app preferences.</li>
-    <li>Your <strong>progress</strong> — daily Sharpness scores, streak and freeze tokens, game results and personal baselines, and the journal of past alarms (only completed history; never diagnostics about your device).</li>
+    <li>Your <strong>alarms and settings</strong> — times, repeat days, labels, missions, snooze rules, smart-alarm rules and shift rotations, and your app preferences, including badge reminders and your answers to the onboarding questions that pick your missions.</li>
+    <li>Your <strong>progress</strong> — daily Sharpness scores, streak and freeze tokens, badges, game results and personal baselines, a record of each morning your alarms rang and how it ended, your recent missions and wake-up times, and the journal of past alarms (only completed history; never diagnostics about your device, and never the calendar event a smart alarm woke you for).</li>
+    <li>Your <strong>Lark</strong> — its stage, the items it has found, its outfit and decorations, and the name you asked it to call you by. That name is personal information: it is stored in your backup, linked to your account, and deleted with it.</li>
+    <li>Your <strong>profile photo</strong>, if you add one: a small copy, 256 pixels on its longest side.</li>
     <li>Your <strong>mission references</strong> — the small thumbnail and on-device fingerprint of a spot or photo target you enrolled. The full photographs are never stored, on your device or in the cloud.</li>
   </ul>
   <p>
@@ -410,7 +412,7 @@ import { SITE } from '../config/site';
   <h2>How long data is kept, and how to delete it</h2>
   <ul>
     <li><strong>On-device data</strong> — kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. Unless you created the optional account, we hold no copy, so there is nothing for us to delete.</li>
-    <li><strong>The optional account backup</strong> — kept until you delete the account, then removed immediately and permanently: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>
+    <li><strong>The optional account backup</strong> — kept until you delete the account, then removed immediately and permanently. Past history (the journal of past alarms, game results and the record of each morning your alarms rang) is deleted from the backup sooner, once it is 400 days old. To delete the account: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>
     <li><strong>Purchase records at RevenueCat</strong> — kept while the record exists, under RevenueCat's own retention policy.</li>
     <li><strong>Your setup answers in our own table</strong> — deleted 180 days after the last answer, or at once when you delete the optional account. Turning off product analytics in the app stops new answers being sent.</li>
     <li><strong>Analytics data at PostHog</strong> — usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us — if you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
