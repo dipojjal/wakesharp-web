@@ -1,0 +1,310 @@
+{
+  "projectId": 559689,
+  "dashboardId": 2137569,
+  "insights": [
+    {
+      "name": "Website tools: views, starts and completions",
+      "description": "Consented production website events by tool. Counts actions, not users. Inputs/results are excluded. Prospective until website deployment.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "properties": [
+          {
+            "key": "surface",
+            "type": "event",
+            "operator": "exact",
+            "value": "website"
+          },
+          {
+            "key": "environment",
+            "type": "event",
+            "operator": "exact",
+            "value": "production"
+          }
+        ],
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "website_tool_viewed",
+            "math": "total"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "website_tool_started",
+            "math": "total"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "website_tool_completed",
+            "math": "total"
+          }
+        ],
+        "breakdownFilter": {
+          "breakdowns": [
+            {
+              "property": "tool",
+              "type": "event"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Website download clicks by page and placement",
+      "description": "Consented production website download clicks; these are not installs. Website identity remains separate from app identity.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "properties": [
+          {
+            "key": "surface",
+            "type": "event",
+            "operator": "exact",
+            "value": "website"
+          },
+          {
+            "key": "environment",
+            "type": "event",
+            "operator": "exact",
+            "value": "production"
+          }
+        ],
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "website_download_clicked",
+            "math": "total"
+          }
+        ],
+        "breakdownFilter": {
+          "breakdowns": [
+            {
+              "property": "page",
+              "type": "event"
+            },
+            {
+              "property": "placement",
+              "type": "event"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Website desktop QR views",
+      "description": "Consented QR page views, not scans or installs. Production traffic only.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "properties": [
+          {
+            "key": "surface",
+            "type": "event",
+            "operator": "exact",
+            "value": "website"
+          },
+          {
+            "key": "environment",
+            "type": "event",
+            "operator": "exact",
+            "value": "production"
+          }
+        ],
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "website_qr_viewed",
+            "math": "total"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Website attributed app users: first observed app open",
+      "description": "First matching Application Opened for website-attributed users. Delayed attribution may miss an earlier open; AppsFlyer is the install authority. Event-date view, no website identity join.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "properties": [
+          {
+            "key": "af_media_source",
+            "type": "person",
+            "operator": "exact",
+            "value": "wakesharp_website"
+          },
+          {
+            "key": "af_campaign",
+            "type": "person",
+            "operator": "exact",
+            "value": "WakeSharp Website"
+          }
+        ],
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "Application Opened",
+            "math": "first_matching_event_for_user"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Website subscription outcomes: RevenueCat event date",
+      "description": "Distinct daily recipients of server-verified RC outcomes. Not an install-cohort conversion rate. Uses event-time person attribution. Production test-account filters applied.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "properties": [
+          {
+            "key": "af_media_source",
+            "type": "person",
+            "operator": "exact",
+            "value": "wakesharp_website"
+          },
+          {
+            "key": "af_campaign",
+            "type": "person",
+            "operator": "exact",
+            "value": "WakeSharp Website"
+          }
+        ],
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "rc_trial_started_event",
+            "math": "dau"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_trial_cancelled_event",
+            "math": "dau"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_initial_purchase_event",
+            "math": "dau"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_trial_converted_event",
+            "math": "dau"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_renewal_event",
+            "math": "dau"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_cancellation_event",
+            "math": "dau"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_expiration_event",
+            "math": "dau"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Website subscription revenue: RC event date",
+      "description": "USD amounts from RC initial purchases, conversions, renewals and cancellations (including negative refund adjustments). Gross before fees/taxes, not install-cohort LTV. Delivery/deduplication validation pending.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "properties": [
+          {
+            "key": "af_media_source",
+            "type": "person",
+            "operator": "exact",
+            "value": "wakesharp_website"
+          },
+          {
+            "key": "af_campaign",
+            "type": "person",
+            "operator": "exact",
+            "value": "WakeSharp Website"
+          }
+        ],
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "rc_initial_purchase_event",
+            "math": "sum",
+            "math_property": "revenue"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_trial_converted_event",
+            "math": "sum",
+            "math_property": "revenue"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_renewal_event",
+            "math": "sum",
+            "math_property": "revenue"
+          },
+          {
+            "kind": "EventsNode",
+            "event": "rc_cancellation_event",
+            "math": "sum",
+            "math_property": "revenue"
+          }
+        ]
+      }
+    },
+    {
+      "name": "App attribution coverage including unknown",
+      "description": "All observed app opens broken down by event-time acquisition source. Empty/unknown stays visible. Not website engagement and not store-download counts.",
+      "query": {
+        "kind": "TrendsQuery",
+        "dateRange": {
+          "date_from": "-30d"
+        },
+        "interval": "day",
+        "filterTestAccounts": true,
+        "series": [
+          {
+            "kind": "EventsNode",
+            "event": "Application Opened",
+            "math": "dau"
+          }
+        ],
+        "breakdownFilter": {
+          "breakdowns": [
+            {
+              "property": "af_media_source",
+              "type": "person"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

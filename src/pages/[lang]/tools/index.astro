@@ -1,0 +1,6 @@
+---
+import ToolsPage from '../../../templates/ToolsPage.astro';
+import { localeStaticPaths, localeFromParams } from '../../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+<ToolsPage locale={localeFromParams(Astro.params)} />

@@ -14,11 +14,12 @@
     "assets:prep": "node scripts/prep-assets.mjs",
     "contrast": "node scripts/check-contrast.mjs",
     "copy": "tsx scripts/check-copy.mjs",
-    "verify": "npm run contrast && npm run posts && npm run build && npm run copy && npm run seo && npm run growth:test && npm run i18n:test",
+    "verify": "npm run contrast && npm run posts && npm run build && npm run copy && npm run seo && npm run growth:test && npm run i18n:test && npm run tools:test",
     "growth:test": "tsx --test tests/growth/*.test.ts",
     "i18n:test": "tsx --test tests/i18n/*.test.ts",
     "posts": "tsx scripts/check-blog-post.mjs --all",
-    "seo": "tsx scripts/check-seo.mjs"
+    "seo": "tsx scripts/check-seo.mjs",
+    "tools:test": "tsx --test tests/tools/*.test.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -26,8 +27,11 @@
     "@fontsource-variable/noto-sans-arabic": "^5.3.0",
     "@fontsource-variable/nunito": "^5.2.5",
     "@neondatabase/serverless": "^1.1.0",
+    "@types/qrcode": "^1.5.6",
     "@vercel/analytics": "^2.0.1",
     "astro": "^7.2.8",
+    "posthog-js": "^1.434.14",
+    "qrcode": "^1.5.4",
     "sharp": "^0.35.3",
     "zod": "^4.4.3"
   },

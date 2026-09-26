@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { TOOL_SLUGS, SOURCES, toolCopy, type ToolSlug } from '../i18n/tools';
+import type { EnabledLocale } from '../i18n/config';
+import { localePath, alternatesFor } from '../i18n/routes';
+import { SITE } from '../config/site';
+import '../styles/tools.css';
+interface Props { locale: EnabledLocale; slug?: ToolSlug }
+const { locale, slug } = Astro.props;
+const t = toolCopy(locale.code);
+const index = slug ? TOOL_SLUGS.indexOf(slug) : -1;
+const page = index >= 0 ? t.pages[index] : undefined;
+const path = '/tools' + (slug ? '/' + slug : '');
+const href = (p: string) => localePath(locale, p);
+const title = page?.title ?? t.tools;
+const description = page?.description ?? t.intro;
+const number = (name: string, value: number, min: number, max: number, step = 'any') => ({ name, id: name, type: 'number' as const, value, min, max, step, required: true });
+const timer = slug === 'online-alarm-clock' || slug === 'nap-timer';
+const application = page ? { '@context':'https://schema.org', '@type':'WebApplication', name:page.title, description:page.description, url:SITE.url + href(path), inLanguage:locale.code, applicationCategory:'UtilitiesApplication', operatingSystem:'Web browser', offers:{'@type':'Offer',price:'0',priceCurrency:'USD'} } : null;
+const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type':'ListItem', position:1, name:'WakeSharp', item:SITE.url + href('/') }, { '@type':'ListItem', position:2, name:t.tools, item:SITE.url + href('/tools') }, ...(page ? [{ '@type':'ListItem', position:3, name:page.title, item:SITE.url + href(path) }] : []) ] };
+---
+<BaseLayout title={`${title} | WakeSharp`} description={description} path={href(path)} locale={locale} alternates={alternatesFor(path)} fallbackPath="/tools">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(application ?? schema).replace(/</g, '\\u003c')} />
+  <section class="tool-page" data-tone="morning">
+    <div class="tool-wrap">
+      <nav class="tool-breadcrumb" aria-label={t.tools}><a href={href('/')}>WakeSharp</a><span aria-hidden="true"> / </span><a href={href('/tools')}>{t.tools}</a></nav>
+      <p class="tool-eyebrow">WakeSharp · {t.tools}</p>
+      <h1>{title}</h1>
+      <p class="tool-intro">{description}</p>
+      {!page ? <div class="tool-grid">{TOOL_SLUGS.map((s, i) => <a class="tool-card" href={href('/tools/' + s)}><span class="tool-number">0{i + 1}</span><h2>{t.pages[i].title}</h2><p>{t.pages[i].description}</p><span aria-hidden="true">↗</span></a>)}</div> : <>
+        <div class="tool-workspace">
+          <section class="tool-panel" data-tool={slug} data-locale={locale.code} data-copy={JSON.stringify(t)}>
+            <noscript><p class="tool-notice">{t.nojs}</p></noscript>
+            {timer && <p class="tool-notice">{t.warning}</p>}
+            <form data-tool-form>
+              <fieldset disabled data-controls>
+              {slug === 'sleep-calculator' && <>
+                <label for="mode">{t.mode}<select id="mode" name="mode"><option value="bedtime">{t.bedtime}</option><option value="wake">{t.wake}</option><option value="now">{t.now}</option></select></label>
+                <label for="time">{t.time}<input id="time" name="time" type="time" value="07:00" required /></label>
+                <div class="tool-fields"><label for="target">{t.target}<input {...number('target', 8, 1, 16)} /></label><label for="latency">{t.latency}<input {...number('latency', 15, 0, 120)} /></label></div>
+              </>}
+              {slug === 'online-alarm-clock' && <label for="time">{t.wake}<input id="time" name="time" type="time" value="07:00" required /></label>}
+              {slug === 'nap-timer' && <><div class="tool-presets">{[10,20,30].map(n => <button type="button" data-preset={n}>{n} {t.minutes}</button>)}</div><label for="duration">{t.duration}<input {...number('duration', 20, 1, 1440)} /></label></>}
+              {slug === 'sleep-debt-calculator' && <><label for="target">{t.target}<input {...number('target', 8, 1, 16)} /></label><div class="tool-fields">{Array.from({length:7}, (_, i) => <label for={`night${i}`}>{t.night} {i + 1} ({t.hours})<input {...number(`night${i}`, 7, 0, 24)} /></label>)}</div></>}
+              {slug === 'caffeine-calculator' && <><div class="tool-fields"><label for="dose">{t.dose}<input {...number('dose', 100, 0, 2000)} /></label><label for="halfLife">{t.halfLife}<input {...number('halfLife', 5, 1, 24)} /></label><label for="consumed">{t.consumed}<input id="consumed" name="consumed" type="time" value="14:00" required /></label><label for="bedtime">{t.bedtime}<input id="bedtime" name="bedtime" type="time" value="23:00" required /></label></div></>}
+              {timer && <><label for="sound">{t.sound}<select id="sound" name="sound"><option value="bell">♪ 1</option><option value="pulse">♫ 2</option><option value="chime">♬ 3</option></select></label><button type="button" data-action="test">{t.test}</button></>}
+              <button class="tool-primary" type="submit">{timer ? t.start : t.calculate}</button>
+              {timer && <div class="tool-actions"><button type="button" data-action="pause" disabled>{t.pause}</button><button type="button" data-action="resume" disabled>{t.resume}</button><button type="button" data-action="stop" disabled>{t.stop}</button>{slug === 'online-alarm-clock' && <button type="button" data-action="snooze" disabled>{t.snooze}</button>}</div>}
+              </fieldset>
+            </form>
+            <p data-error role="alert" class="tool-error"></p>
+            {timer && <><p data-status role="status">{t.ready}</p><output data-countdown class="tool-countdown" role="timer" aria-live="off" aria-label={t.duration}>00:00:00</output></>}
+            <section data-result class="tool-result" aria-live="polite" aria-atomic="true" hidden><h2>{t.result}</h2><dl></dl></section>
+          </section>
+          <aside class="tool-promo"><span class="tool-number">↗</span><h2>{page.cta}</h2><StoreButtons placement="tool-result" localeCode={locale.code} /><a href={href('/#pricing')} class="tool-small">{t.freeNote}</a></aside>
+        </div>
+        <div class="tool-reading"><h2>{t.method}</h2><p>{page.method}</p><h2>{t.faq}</h2><details><summary>{t.question}</summary><p>{t.answer}</p></details><h2>{t.sources}</h2><a href={SOURCES[index]} rel="noreferrer">{new URL(SOURCES[index]).hostname}</a></div>
+        <h2 class="tool-related-title">{t.related}</h2><div class="tool-grid tool-related">{TOOL_SLUGS.filter(s => s !== slug).map(s => <a class="tool-card" href={href('/tools/' + s)}>{t.pages[TOOL_SLUGS.indexOf(s)].title} <span aria-hidden="true">↗</span></a>)}</div>
+      </>}
+      <div class="tool-bottom"><h2>{page?.cta ?? t.download}</h2><StoreButtons placement="tools-bottom" align="center" localeCode={locale.code}/><a href={href('/#pricing')}>{t.freeNote}</a></div>
+    </div>
+  </section>
+</BaseLayout>
+<script>import '../scripts/tools';</script>

@@ -1,122 +1,16 @@
 ---
-/**
- * Official Apple and Google badges, now that both apps are actually on the stores.
- *
- * Until 2026-08-22 this component rendered custom pills instead, because the
- * badge artwork is licensed only for apps that are downloadable and a button
- * reading "Download on the App Store" that scrolls the page is deceptive UI.
- * That reasoning is recorded here rather than deleted: if a listing is ever
- * pulled, flip `state` back to 'coming-soon' in src/config/site.ts and the pill
- * branch below takes over again.
- *
- * The artwork ships byte-identical from public/badges/ - plain <img>, no Astro
- * image pipeline, no re-encoding, no recolouring. Both vendors forbid modifying
- * it, and the surest way not to modify it is not to process it.
- *
- * Sizing. Apple's SVG is 119.66×40 with no clear space; Google's PNG is 646×250
- * whose visible badge is 564×168 inset by 41px - exactly the quarter-height
- * clear space both vendors require, baked in. So the two files are scaled to a
- * shared *visible* badge height (--badge-h) rather than a shared box height,
- * which is why Google's box ends up ~49% taller and the row centres them.
- * Apple's own clear space comes from the row gap and the surrounding margins,
- * both of which exceed --badge-h / 4.
- *
- * Accessibility: the alt text is the wording each vendor bakes into its own
- * artwork, so the link's accessible name matches what is on screen and voice
- * control users can say what they see (WCAG 2.5.3). That is why the previous
- * sr-only spans are gone - with real badges they would have duplicated it.
- *
- * On every localized page a one-line note follows the badges: the apps ship in
- * English only, and the site must not imply otherwise. English pages carry
- * nothing extra.
- */
-import { SITE, anyStoreLive, type StoreConfig } from '../config/site';
+import DownloadButton from './DownloadButton.astro';
+import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
-import { isDefaultLocale } from '../i18n/config';
 import { resolveLocale } from '../i18n/routes';
-
-interface Props {
-  /** Dark bands get elevated-night secondary; light bands get white. */
-  tone?: 'dark' | 'light';
-  align?: 'start' | 'center';
-}
-const { tone = 'dark', align = 'start' } = Astro.props;
-
-const stores: StoreConfig[] = [SITE.stores.ios, SITE.stores.android];
-const live = anyStoreLive();
-const secondary =
-  tone === 'dark'
-    ? 'bg-[var(--color-night-elevated)] text-[var(--color-night-text)]'
-    : 'bg-white text-[var(--color-morning-text)] border border-[color-mix(in_srgb,var(--color-morning-text)_12%,transparent)]';
-
-const locale = resolveLocale(Astro.currentLocale);
-// Only where the app itself does not ship in the page's language.
-const appSpeaksIt = isDefaultLocale(locale) || (SITE.appLanguages as readonly string[]).includes(locale.code);
-const languageNote = appSpeaksIt ? null : getCatalog(locale.code).shell.appLanguageNote;
+import { toolCopy } from '../i18n/tools';
+interface Props { tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string }
+const { align = 'start', placement = 'download', localeCode = Astro.currentLocale } = Astro.props;
+const locale = resolveLocale(localeCode);
+const t = toolCopy(locale.code);
 ---
-
-<div class:list={['flex flex-col gap-3', align === 'center' && 'items-center']}>
-  <div class:list={['store-badges flex flex-wrap items-center gap-4', align === 'center' && 'justify-center']}>
-    {
-      live
-        ? (
-            <>
-              <a href={SITE.stores.ios.url} class="badge-link">
-                <img src="/badges/app-store.svg" alt={SITE.stores.ios.note} class="badge badge--apple" width="120" height="40" />
-              </a>
-              <a href={SITE.stores.android.url} class="badge-link">
-                <img src="/badges/google-play.png" alt={SITE.stores.android.note} class="badge badge--google" width="646" height="250" />
-              </a>
-            </>
-          )
-        : stores.map((s, i) => (
-            <a
-              href={s.url}
-              class:list={[
-                'pill min-w-[9.25rem] flex-1 px-5 py-3 text-start sm:flex-none',
-                i === 0 ? 'bg-[var(--color-coral)] text-[var(--color-night-deep)]' : secondary,
-              ]}
-            >
-              <span class="flex flex-col leading-tight">
-                <span class="text-base font-extrabold">{s.platform}</span>
-                <span class="text-xs font-semibold opacity-75">{s.note}</span>
-              </span>
-              <span class="sr-only">
-                {` - WakeSharp for ${s.platform} is not released yet. Jump to the features section.`}
-              </span>
-            </a>
-          ))
-    }
-  </div>
-  {languageNote && <p class:list={['text-sm opacity-80', align === 'center' && 'text-center']}>{languageNote}</p>}
+<div class:list={['flex flex-col gap-3', align === 'center' ? 'items-center text-center' : 'items-start']}>
+  <DownloadButton placement={placement} localeCode={locale.code} />
+  <p class="text-sm">{t.available}</p>
+  {!(SITE.appLanguages as readonly string[]).includes(locale.code) && <p class="text-sm">{getCatalog(locale.code).shell.appLanguageNote}</p>}
 </div>
-
-<style>
-  .store-badges {
-    /* Visible badge height, shared by both vendors' artwork. Apple's stated
-       minimum is 40px; anything below that is out of spec, not just small. */
-    --badge-h: 2.5rem;
-  }
-  @media (min-width: 640px) {
-    .store-badges { --badge-h: 2.875rem; }
-  }
-
-  .badge-link {
-    display: inline-flex;
-    border-radius: 0.5rem;
-  }
-  .badge-link:focus-visible {
-    outline: 2px solid var(--color-coral);
-    outline-offset: 3px;
-  }
-
-  .badge {
-    display: block;
-    width: auto;
-  }
-  /* 119.66 × 40, no built-in clear space. */
-  .badge--apple { height: var(--badge-h); }
-  /* 646 × 250 around a 564 × 168 badge: scale by 250/168 so the visible badge
-     matches Apple's height, and the 41px inset scales with it. */
-  .badge--google { height: calc(var(--badge-h) * 250 / 168); }
-</style>

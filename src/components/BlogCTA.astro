@@ -29,7 +29,7 @@ const vars = { annual: SITE.unlimited.annual, monthly: SITE.unlimited.monthly, t
 <aside class="cta-card" aria-label={t.aria}>
   <h2>{heading}</h2>
   <p>{interpolate(body, vars)}</p>
-  <StoreButtons tone="light" />
+  <StoreButtons tone="light" placement="article-bottom" localeCode={locale.code} />
 </aside>
 
 <style>

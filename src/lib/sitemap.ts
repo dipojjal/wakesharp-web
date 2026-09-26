@@ -19,7 +19,7 @@ const EXCLUDED_PATHS = new Set<string>();
 
 for (const locale of enabledLocales()) {
   // 303 destinations after the contact form; they carry noindex in the head.
-  for (const path of ['/contact-sent', '/contact-error'] as const) {
+  for (const path of ['/contact-sent', '/contact-error', '/download'] as const) {
     EXCLUDED_PATHS.add(localePath(locale, path));
   }
   // Share-link decoder shells, noindex in every language: vercel.json rewrites

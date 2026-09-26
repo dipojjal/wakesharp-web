@@ -105,11 +105,7 @@ all read from it. If a listing is ever pulled, set that store's `state` back to
 `'coming-soon'`: the badges revert to custom pills and every store link disappears in the
 same build. `npm run copy` enforces the pairing in both directions.
 
-The buttons are the official Apple and Google badge artwork, served byte-identical from
-`public/badges/` with no image pipeline: both vendors forbid modifying it, and not
-processing it is the surest way not to. `src/components/StoreButtons.astro` records the
-sizing maths (the two files bake in different clear space) and why the pills existed
-before launch.
+Downloads now use a single custom button and AppsFlyer OneLink. Canonical store URLs stay in metadata; official badge assets remain unmodified. `src/lib/download.ts` fixes the website source/campaign and adds locale, page and placement. See [website attribution runbook](docs/website-attribution.md) for configuration, reporting and launch gates.
 
 ## Where the copy comes from
 

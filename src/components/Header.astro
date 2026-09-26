@@ -1,69 +1,38 @@
 ---
-/**
- * Always-translucent sticky nav.
- *
- * A `position: sticky` element cannot switch background on scroll in CSS alone -
- * that needs either `animation-timeline: scroll()` (not Baseline) or an
- * IntersectionObserver. Holding one translucent night bar the whole way down keeps
- * the page at zero JS and reads correctly over both the dark and the light bands.
- *
- * There is no mobile drawer, so below `md` the nav collapses to Blog and Contact:
- * the section links all point at homepage anchors a phone visitor can reach
- * by scrolling, while /blog and /contact are real pages they otherwise could not
- * get to at all. The language menu sits beside the CTA and shrinks to a bare
- * globe below `sm` for the same reason.
- */
 import { Image } from 'astro:assets';
 import LanguageMenu from './LanguageMenu.astro';
+import DownloadButton from './DownloadButton.astro';
 import { getCatalog } from '../i18n/catalog';
+import { TOOL_SLUGS, toolCopy } from '../i18n/tools';
 import { localePath, type Alternate } from '../i18n/routes';
 import type { EnabledLocale } from '../i18n/config';
 import icon from '../assets/brand/icon.png';
-
-interface Props {
-  locale: EnabledLocale;
-  switchTo: Alternate[];
-  fallbackPath: string;
-  /** The Blog link target: the locale's own index when it has posts, else /blog. */
-  blogHref: string;
-}
+interface Props { locale: EnabledLocale; switchTo: Alternate[]; fallbackPath: string; blogHref: string }
 const { locale, switchTo, fallbackPath, blogHref } = Astro.props;
 const t = getCatalog(locale.code).shell;
-const href = (p: string): string => localePath(locale, p);
+const tools = toolCopy(locale.code);
+const href = (p: string) => localePath(locale,p);
+const links = [[t.nav.features,href('/#features')],[t.nav.pricing,href('/#pricing')],[t.nav.blog,blogHref],[t.nav.contact,href('/contact')]];
 ---
-
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[color-mix(in_srgb,var(--color-night-surface)_82%,transparent)] backdrop-blur-md">
-  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
-    <a href={href('/')} class="flex items-center gap-2.5 text-[var(--color-night-text)]">
-      <Image src={icon} alt="" width={28} height={28} densities={[1, 2, 3]} format="webp" loading="eager" class="rounded-[8px]" />
-      {/* Below `sm` the wordmark would collide with the always-visible Blog and
-          Contact links, so the app icon carries the brand alone there. */}
-      <span class="hidden text-lg font-extrabold tracking-[-0.02em] sm:inline" aria-hidden="true">WakeSharp</span>
-      <span class="sr-only">{t.brandHome}</span>
-    </a>
-
-    {/* nowrap: a nav label of two words wraps inside its flex item and makes the
-        whole header taller. Arabic "تواصل معنا", French "Fonctions". Inherited
-        by the links, so it is one rule rather than five. */}
-    <nav
-      aria-label={t.nav.aria}
-      class="flex items-center gap-4 whitespace-nowrap text-sm font-semibold text-[var(--color-night-dim)] sm:gap-5 md:gap-7"
-    >
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#features')}>{t.nav.features}</a>
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#pricing')}>{t.nav.pricing}</a>
-      <a class="hover:text-[var(--color-night-text)]" href={blogHref}>{t.nav.blog}</a>
-      <a class="hover:text-[var(--color-night-text)]" href={href('/contact')}>{t.nav.contact}</a>
-      <a class="hidden hover:text-[var(--color-night-text)] md:inline" href={href('/#faq')}>{t.nav.faq}</a>
-    </nav>
-
-    <div class="flex items-center gap-2 sm:gap-3">
-      <LanguageMenu locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
-      {/* whitespace-nowrap: a two-word CTA wraps inside the pill in the longer
-          languages (German "WakeSharp laden") and doubles the header height. */}
-      <a
-        href={href('/#get')}
-        class="pill whitespace-nowrap bg-[var(--color-coral)] px-4 py-2 text-sm text-[var(--color-night-deep)]"
-      >{t.nav.cta}</a>
-    </div>
-  </div>
+<header class="site-header">
+ <div class="header-row">
+  <a href={href('/')} class="brand"><Image src={icon} alt="" width={28} height={28} format="webp" loading="eager"/><span aria-hidden="true">WakeSharp</span><span class="sr-only">{t.brandHome}</span></a>
+  <nav class="desktop-nav" aria-label={t.nav.aria}>
+    {links.slice(0,2).map(([label,url]) => <a href={url}>{label}</a>)}
+    <details class="tools-menu"><summary>{tools.tools}</summary><div class="tools-dropdown"><a href={href('/tools')}>{tools.all}</a>{TOOL_SLUGS.map((slug,i) => <a href={href('/tools/'+slug)}>{tools.pages[i].title}</a>)}</div></details>
+    {links.slice(2).map(([label,url]) => <a href={url}>{label}</a>)}
+  </nav>
+  <div class="header-actions"><LanguageMenu locale={locale} switchTo={switchTo} fallbackPath={fallbackPath}/><DownloadButton placement="header" label={t.nav.cta} compact localeCode={locale.code}/></div>
+  <details class="mobile-nav"><summary aria-label={tools.menu}>☰</summary><nav aria-label={t.nav.aria}>{links.map(([label,url])=><a href={url}>{label}</a>)}<a href={href('/#faq')}>{t.nav.faq}</a><a href={href('/tools')}><strong>{tools.tools}</strong></a>{TOOL_SLUGS.map((slug,i)=><a href={href('/tools/'+slug)}>{tools.pages[i].title}</a>)}</nav></details>
+ </div>
 </header>
+<style>
+.site-header{position:sticky;top:0;z-index:50;color:var(--color-night-text);background:color-mix(in srgb,var(--color-night-surface) 94%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff1a}.header-row{max-width:76rem;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem;padding:.5rem 1rem}.brand{display:flex;align-items:center;gap:.6rem;font-size:1.1rem;font-weight:800}.brand img{border-radius:8px}.desktop-nav{display:flex;align-items:center;gap:1.3rem;font-size:.875rem;font-weight:700}.header-actions{display:flex;align-items:center;gap:.5rem}.tools-menu{position:relative}.tools-menu summary,.mobile-nav summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.tools-menu summary:after{content:'⌄';margin-inline-start:.4rem}.tools-dropdown{position:absolute;top:100%;inset-inline-start:0;width:19rem;background:var(--color-night-surface);border:1px solid #ffffff30;box-shadow:0 10px 30px #0004;border-radius:1rem;padding:.5rem}.tools-dropdown a,.mobile-nav nav a{display:block;padding:.75rem 1rem;border-radius:.5rem}.tools-dropdown a:hover,.mobile-nav nav a:hover{background:#ffffff10}.mobile-nav{display:none}.site-header :focus-visible{outline:2px solid var(--color-coral);outline-offset:4px}@media(max-width:1150px){.desktop-nav{display:none}.mobile-nav{display:block}.mobile-nav summary{font-size:1.4rem;padding:.4rem}.mobile-nav nav{position:absolute;inset-inline:0;top:100%;max-height:calc(100dvh - 5rem);overflow:auto;background:var(--color-night-surface);padding:1rem;border-top:1px solid #ffffff20;box-shadow:0 15px 25px #0003}.header-actions{margin-inline-start:auto}.header-row{gap:.5rem}}@media(max-width:600px){.brand>span:not(.sr-only){display:none}.header-actions :global(.pill){max-width:13rem;white-space:normal;text-align:center}.header-row{padding-inline:.65rem}}
+</style>
+<script>
+for(const menu of document.querySelectorAll<HTMLDetailsElement>('.tools-menu,.mobile-nav')) {
+ document.addEventListener('click',e=>{if(!menu.contains(e.target as Node)) menu.open=false;});
+ menu.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.open=false;menu.querySelector('summary')?.focus();}});
+ menu.addEventListener('click',e=>{if((e.target as Element).closest('a')) menu.open=false;});
+}
+</script>

@@ -1,0 +1,6 @@
+---
+import DownloadPage from '../../templates/DownloadPage.astro';
+import { localeStaticPaths, localeFromParams } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+<DownloadPage locale={localeFromParams(Astro.params)} />

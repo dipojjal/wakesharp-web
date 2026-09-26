@@ -1,0 +1,9 @@
+---
+import { toolCopy } from '../i18n/tools';
+import type { EnabledLocale } from '../i18n/config';
+interface Props { locale: EnabledLocale }
+const t = toolCopy(Astro.props.locale.code);
+---
+{import.meta.env.PUBLIC_POSTHOG_KEY && <aside data-consent-panel hidden aria-label={t.settings} class="website-consent"><p>{t.consent}</p><div><button type="button" data-consent="yes">{t.accept}</button><button type="button" data-consent="no">{t.decline}</button></div></aside>}
+<script>import { initWebsiteAnalytics } from '../scripts/website-analytics'; initWebsiteAnalytics();</script>
+<style>.website-consent{position:fixed;bottom:1rem;inset-inline:1rem;max-width:34rem;margin-inline:auto;background:var(--color-night-deep);color:var(--color-night-text);border:1px solid #ffffff40;border-radius:1rem;padding:1.2rem;z-index:70;box-shadow:0 5px 40px #0003;font-size:.9rem;line-height:1.6}.website-consent[hidden]{display:none}.website-consent div{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem}.website-consent button{border:1px solid currentColor;border-radius:2rem;padding:.5rem 1rem;cursor:pointer;min-height:44px}.website-consent button:focus-visible{outline:3px solid var(--color-coral);outline-offset:3px}</style>

@@ -1,5 +1,5 @@
 ---
-import { SITE, isLive } from '../config/site';
+import { SITE } from '../config/site';
 import '../styles/global.css';
 import { getCatalog } from '../i18n/catalog';
 import type { Alternate } from '../i18n/routes';
@@ -102,6 +102,4 @@ const otherLocales = hreflangs.filter((a) => a.locale.code !== locale.code);
 <meta name="twitter:description" content={metaDescription} />
 <meta name="twitter:image" content={ogImage} />
 
-{/* Smart App Banner. Safari shows an install/open strip on iPhone; the id is
-    the bare App Store id, not a URL, so it cannot reuse SITE.stores.ios.url. */}
-{isLive(SITE.stores.ios) && <meta name="apple-itunes-app" content={`app-id=${SITE.appStoreId}`} />}
+{/* Install CTAs use AppsFlyer; canonical store URLs remain in app structured data. */}

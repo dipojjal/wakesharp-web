@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { toolCopy } from '../i18n/tools';
+import type { EnabledLocale } from '../i18n/config';
+import { localePath } from '../i18n/routes';
+import { buildDownloadUrl } from '../lib/download';
+import QRCode from 'qrcode';
+import '../styles/tools.css';
+interface Props { locale: EnabledLocale }
+const {locale}=Astro.props; const t=toolCopy(locale.code);
+const context={pageId:'home',placement:'download',locale:locale.code};
+const qr = await QRCode.toString(buildDownloadUrl(context),{type:'svg',width:320,margin:4,errorCorrectionLevel:'M'});
+---
+<BaseLayout title={`${t.download} | WakeSharp`} description={t.qrHelp} path={localePath(locale,'/download')} noindex locale={locale} alternates={[]}>
+<section class="tool-page" data-tone="morning"><div class="tool-wrap" style="max-width:42rem;text-align:center" data-download-page data-locale={locale.code}>
+<h1>{t.download}</h1><p class="tool-intro">{t.qrHelp}</p><h2>{t.qr}</h2><div data-qr class="tool-qr" role="img" aria-label={t.qr} set:html={qr}/>
+<div class="tool-actions" id="download-options">{(['ios','android'] as const).map(platform=><a class="pill bg-[var(--color-night-deep)] text-[var(--color-night-text)] px-5 py-3 m-2" href={buildDownloadUrl(context,platform)} data-platform={platform} data-download data-page="home" data-placement="download" data-locale={locale.code}>{platform==='ios'?'App Store':'Google Play'}</a>)}</div>
+<p class="tool-intro">{t.available}</p><a href={localePath(locale,'/#pricing')}>{t.freeNote}</a>
+</div></section>
+</BaseLayout>
+<script>
+import { buildDownloadUrl, safeContext } from '../lib/download';
+import QRCode from 'qrcode';
+const root=document.querySelector<HTMLElement>('[data-download-page]');
+if(root){
+ const params=new URLSearchParams(location.search);
+ const context=safeContext({pageId:params.get('page')??'home',placement:params.get('placement')??'download',locale:root.dataset.locale??'en'});
+ // Only controlled dimensions survive the desktop bridge; arbitrary redirects do not.
+ QRCode.toString(buildDownloadUrl(context),{type:'svg',width:320,margin:4,errorCorrectionLevel:'M'}).then(svg=>{root.querySelector('[data-qr]')!.innerHTML=svg;}).catch(()=>{});
+ for(const a of root.querySelectorAll<HTMLAnchorElement>('[data-platform]')){a.href=buildDownloadUrl(context,a.dataset.platform as 'ios'|'android');a.dataset.page=context.pageId;a.dataset.placement=context.placement;}
+}
+</script>

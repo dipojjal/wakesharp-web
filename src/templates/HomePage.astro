@@ -91,7 +91,7 @@ const missionHref = english ? await missionPages() : new Map<string, string>();
           {t.hero.heading.pre}<span class="accent">{t.hero.heading.accent}</span> <br />{t.hero.heading.post}
         </h1>
         <p class="lede mt-6">{t.hero.lede}</p>
-        <div class="mt-8"><StoreButtons /></div>
+        <div class="mt-8"><StoreButtons placement="hero" localeCode={locale.code} /></div>
       </div>
 
       <div class="relative flex justify-center lg:block">
@@ -347,7 +347,7 @@ const missionHref = english ? await missionPages() : new Map<string, string>();
       <Lark pose="encouraging" width={170} />
       <h2 class="mt-6 text-[clamp(1.9rem,5vw,3rem)]">{t.cta.heading.pre}<span class="accent">{t.cta.heading.accent}</span>{t.cta.heading.post}</h2>
       <p class="lede mx-auto mt-5 text-center">{t.cta.lede}</p>
-      <div class="mt-8"><StoreButtons tone="light" align="center" /></div>
+      <div class="mt-8"><StoreButtons tone="light" align="center" placement="home-bottom" localeCode={locale.code} /></div>
     </div>
   </SunriseSection>
 </BaseLayout>

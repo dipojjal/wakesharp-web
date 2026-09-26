@@ -1,0 +1,12 @@
+---
+import { buildDownloadUrl, pageIdFor } from '../lib/download';
+import { resolveLocale } from '../i18n/routes';
+import { toolCopy } from '../i18n/tools';
+import { anyStoreLive } from '../config/site';
+interface Props { placement?: string; pageId?: string; label?: string; localeCode?: string; compact?: boolean }
+const { placement = 'download', pageId = pageIdFor(Astro.url.pathname), localeCode = Astro.currentLocale, compact = false, label } = Astro.props;
+const locale = resolveLocale(localeCode);
+const t = toolCopy(locale.code);
+---
+{anyStoreLive() && <a href={buildDownloadUrl({ pageId, placement, locale: locale.code })} data-download data-page={pageId} data-placement={placement} data-locale={locale.code} class:list={['pill inline-flex justify-center bg-[var(--color-coral)] text-[var(--color-night-deep)]', compact ? 'px-3 py-2 text-sm' : 'px-6 py-3 text-base']}>{label ?? t.download}</a>}
+<script>import '../scripts/download-routing';</script>

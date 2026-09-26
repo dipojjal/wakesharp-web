@@ -27,6 +27,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE, enabledLocales } from '../src/i18n/config';
+import { buildDownloadUrl } from '../src/lib/download';
 import { SITE } from '../src/config/site';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -608,6 +609,16 @@ for (const file of html) {
     if (m) {
       console.error(`  ✗ ${name}: ${why}`);
       console.error(`      …${raw.slice(Math.max(0, m.index - 60), m.index + 80).replace(/\s+/g, ' ').trim()}…`);
+      problems++;
+    }
+  }
+
+  for (const tag of raw.match(/<a\b[^>]*\bdata-download(?:\s|=)[^>]*>/g) ?? []) {
+    const attr = key => tag.match(new RegExp(`(?:^|\\s)${key}="([^"]*)"`))?.[1]?.replace(/&amp;/g, '&');
+    const platform = attr('data-platform');
+    const expected = buildDownloadUrl({pageId:attr('data-page') ?? 'home', placement:attr('data-placement') ?? 'download', locale:attr('data-locale') ?? 'en'}, platform);
+    if (attr('href') !== expected) {
+      console.error(`  ✗ ${name}: download CTA must use approved AppsFlyer URL and fixed website attribution`);
       problems++;
     }
   }

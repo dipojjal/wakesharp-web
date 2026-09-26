@@ -1,0 +1,7 @@
+---
+import ToolsPage from '../../templates/ToolsPage.astro';
+import { defaultLocale } from '../../i18n/config';
+import { TOOL_SLUGS } from '../../i18n/tools';
+export const getStaticPaths = () => TOOL_SLUGS.map(slug => ({ params: { slug }, props: { slug } }));
+---
+<ToolsPage locale={defaultLocale()} slug={Astro.props.slug} />
