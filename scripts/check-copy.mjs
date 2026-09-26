@@ -313,9 +313,10 @@ const LISTING_LINK = /https:\/\/(?:apps\.apple\.com\/\S*?app\/[^"'\s]+|play\.goo
 
 /**
  * Checked against raw HTML rather than the stripped text, because strip() removes
- * attributes and <script> bodies - where all three of these can hide.
+ * attributes and <script> bodies - where these can hide.
  */
 const BANNED_RAW = [
+  { re: /\u2014|&mdash;|&#0*8212;|&#x0*2014;|\\u2014/i, why: 'em dash in website copy - use a hyphen, comma, colon, parentheses or a separate sentence as appropriate' },
   { re: /\[\[/, why: 'unfilled "[[…]]" placeholder - one shipped live on /terms, a page both apps link to' },
   { re: /com\.dipojjal\.wakesharp/i, why: 'dead package id - renamed to com.wakesharp.app on 2026-08-14' },
   // The two live listings no longer share a name: verified 2026-09-24, the App
