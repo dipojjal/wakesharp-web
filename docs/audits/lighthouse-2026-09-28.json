@@ -118,5 +118,20 @@
     "LCP_ms": 1666.1655,
     "CLS": 0.0003916583423979458,
     "TBT_ms": 0
+  },
+  {
+    "page": "production-home-mobile",
+    "url": "https://wakesharp.app/",
+    "tested": "2026-09-29T01:00:16.197Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "LCP_ms": 1789.917,
+    "CLS": 0.0054196532992306,
+    "TBT_ms": 0
   }
 ]

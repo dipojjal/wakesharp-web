@@ -71,7 +71,7 @@ Lighthouse 13.5.0 against the production build served locally, default mobile si
 | iPhone troubleshooting article | 100 | 1.1 s | 0.001 | 100 | 0.4 s | 0.007 |
 | Sleep calculator | 99 | 1.7 s | 0 | 100 | 0.4 s | 0.001 |
 
-All eight scored 100 for accessibility and SEO. Best practices scored 96 because the local server does not serve Vercel's analytics script. Verify that endpoint after deployment. Machine-readable results: [Lighthouse summary](./lighthouse-2026-09-28.json).
+All eight scored 100 for accessibility and SEO. Best practices scored 96 because the local server does not serve Vercel's analytics script. The production endpoint was subsequently verified as HTTP 200. The live homepage scored 100 for performance, accessibility, best practices and SEO, with mobile LCP 1.8 seconds, CLS 0.005 and TBT 0 ms. Machine-readable results: [Lighthouse summary](./lighthouse-2026-09-28.json).
 
 Validation includes Astro type checking, all blog checks, copy checks, strict SEO checks, gradient contrast sampling, catalog parity, growth/referral checks, tool calculations/routing and product checks. Arabic was inspected at 390 px: RTL, 14 mission entries, 11 screenshot links and no document overflow. The Turkish article was inspected at the same width. Gallery arrows, Enter, Escape and focus restoration were exercised in the browser.
 
@@ -94,13 +94,22 @@ Validation includes Astro type checking, all blog checks, copy checks, strict SE
 | Silent / Do Not Disturb | Existing Silent / DND article |
 | Alarmy alternative | `/compare/wakesharp-vs-alarmy` |
 
-## Post-release work
+## Deployment and production verification
 
-1. Confirm deployment serves the new content, assets, direct legal routes and attribution paths.
-2. Submit the changed sitemap in Search Console. Request indexing for the homepage, feature hub, new priority features and Turkish article. Record any quota or account limitation; do not claim indexing is guaranteed.
-3. Review indexing, nonbrand impressions, organic landing pages and download conversions at two and four weeks. Account for sparse baseline data.
-4. Remove preview labels only after confirming public 2.14 availability. Keep the gated mission excluded until its production gate is deliberately removed.
-5. Refresh external placements with the separately prepared copy. Publish no outreach automatically.
+The refresh is live at [wakesharp.app](https://wakesharp.app). Vercel marked [deployment 86C85DDdtwXHePehWgjFcVAzrQw5](https://vercel.com/kineticbit/wakesharp-web/86C85DDdtwXHePehWgjFcVAzrQw5) ready for production from content commit `4286fcc`. The full verification command passed, including 74 tests and strict SEO across 368 built pages.
+
+The post-deployment crawl checked all 285 sitemap URLs plus utility and app-link routes, 292 distinct URLs in total. Every expected page returned HTTP 200, the deliberate unknown route returned 404, all 114 distinct homepage image URLs returned 200, and no canonical, indexing, mission, screenshot or retired-copy failure was found. All 12 homepages contain 14 directory entries and 11 screenshot links with preview notices. `/privacy`, `/terms`, `/support` and `/account/delete` return 200 directly. Details: [production checks](./production-2026-09-28.json) and [live homepage screenshot](./homepage-live-2026-09-28.png).
+
+Search Console resubmission and individual indexing requests are still pending. The Mac locked during the deployment, preventing access to the signed-in Search Console tab. The user was asked to unlock it. No indexing request or new sitemap submission is claimed as completed.
+
+Two follow-up reviews were scheduled in this chat for October 12 and October 26 at 9 a.m. local time. They cover indexing, nonbrand impressions, organic landing pages, download conversions and release availability.
+
+## Remaining follow-up
+
+1. Once Search Console access resumes, submit the changed sitemap and request indexing for the homepage, feature hub, four new features and Turkish article. Record any quota or account limitation; do not claim indexing is guaranteed.
+2. Complete the scheduled two-week and four-week reviews. Account for sparse baseline data.
+3. Remove preview labels only after confirming public 2.14 availability. Keep the gated mission excluded until its production gate is deliberately removed.
+4. Refresh external placements with the separately prepared copy. Publish no outreach automatically.
 
 ## Primary references
 
