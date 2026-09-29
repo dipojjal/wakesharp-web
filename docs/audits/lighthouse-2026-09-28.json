@@ -1,0 +1,122 @@
+[
+  {
+    "page": "article-desktop",
+    "url": "http://127.0.0.1:4321/blog/iphone-alarm-didnt-go-off-causes",
+    "tested": "2026-09-29T00:35:42.420Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 390.33245,
+    "CLS": 0.006886187122406094,
+    "TBT_ms": 0
+  },
+  {
+    "page": "article-mobile",
+    "url": "http://127.0.0.1:4321/blog/iphone-alarm-didnt-go-off-causes",
+    "tested": "2026-09-29T00:35:02.473Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 1134.0566,
+    "CLS": 0.0006318202893921407,
+    "TBT_ms": 0
+  },
+  {
+    "page": "feature-desktop",
+    "url": "http://127.0.0.1:4321/features/object-scan-alarm",
+    "tested": "2026-09-29T00:35:32.554Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 396.66485,
+    "CLS": 0.005449533753611768,
+    "TBT_ms": 0
+  },
+  {
+    "page": "feature-mobile",
+    "url": "http://127.0.0.1:4321/features/object-scan-alarm",
+    "tested": "2026-09-29T00:34:52.616Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 1813.644,
+    "CLS": 0.001256452260862975,
+    "TBT_ms": 0
+  },
+  {
+    "page": "home-desktop",
+    "url": "http://127.0.0.1:4321/",
+    "tested": "2026-09-29T00:35:22.553Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 477.14425000000006,
+    "CLS": 0.008979239412777631,
+    "TBT_ms": 0
+  },
+  {
+    "page": "home-mobile",
+    "url": "http://127.0.0.1:4321/",
+    "tested": "2026-09-29T00:34:42.594Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 2117.3262,
+    "CLS": 7.343593919961484e-05,
+    "TBT_ms": 0
+  },
+  {
+    "page": "tool-desktop",
+    "url": "http://127.0.0.1:4321/tools/sleep-calculator",
+    "tested": "2026-09-29T00:35:52.315Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 414.20410000000004,
+    "CLS": 0.0006093799251379038,
+    "TBT_ms": 0
+  },
+  {
+    "page": "tool-mobile",
+    "url": "http://127.0.0.1:4321/tools/sleep-calculator",
+    "tested": "2026-09-29T00:35:12.671Z",
+    "lighthouseVersion": "13.5.0",
+    "categories": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 1
+    },
+    "LCP_ms": 1666.1655,
+    "CLS": 0.0003916583423979458,
+    "TBT_ms": 0
+  }
+]

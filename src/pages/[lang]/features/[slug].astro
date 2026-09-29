@@ -1,0 +1,8 @@
+---
+import FeaturePage from '../../../templates/FeaturePage.astro';
+import { getFeaturePages } from '../../../lib/features';
+import { resolveLocale } from '../../../i18n/routes';
+export async function getStaticPaths() { return (await getFeaturePages()).filter(p=>p.data.lang!=='en').map(page=>({params:{lang:resolveLocale(page.data.lang).path,slug:page.data.translationOf},props:{page}})); }
+const { page } = Astro.props;
+---
+<FeaturePage page={page}/>

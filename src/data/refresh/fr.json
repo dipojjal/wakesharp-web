@@ -1,0 +1,126 @@
+{
+  "preview": "Aperçu de la version 2.14 sur iPhone. Ces captures et explications présentent la mise à jour soumise à validation. L’App Store propose actuellement la version 2.10. Les fonctions Android peuvent différer.",
+  "hero": "Choisissez un son dans la catégorie Forte, puis votre mission au réveil. Résolvez quelques calculs, scannez une bouteille ou faites quelques pas.",
+  "loudTitle": "Un son que vous remarquerez",
+  "loud": "Forte est une catégorie du sélecteur de sons. Écoutez les tonalités et choisissez celle de cette alarme. Vous pouvez l’associer à toute mission disponible.",
+  "volume": "Sur iPhone, iOS règle le volume de l’alarme système. Un son de la catégorie Forte ne modifie pas ce réglage. Sur Android, vérifiez le volume des alarmes et leur autorisation dans Ne pas déranger. Faites un essai sur votre téléphone.",
+  "scanTitle": "Levez-vous, trouvez l’objet, scannez-le",
+  "scan": "Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirigez la caméra vers cet objet. La confirmation verte indique que WakeSharp l’a reconnu. La reconnaissance se fait sur votre téléphone.",
+  "missionsIntro": "Choisissez une mission ci-dessous ou combinez-en plusieurs. Voici la sélection publique sur iPhone 2.14. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
+  "hubTitle": "Des missions de réveil pour vous mettre en mouvement",
+  "hubDescription": "Découvrez les missions, sons forts, alarmes de calendrier et rotations de WakeSharp. Choisissez une tâche adaptée à votre matinée.",
+  "galleryTitle": "Découvrez les écrans de WakeSharp",
+  "englishArtwork": "Les captures sont en anglais. Les légendes décrivent les écrans en français.",
+  "open": "Agrandir la capture",
+  "close": "Fermer la capture",
+  "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée. Voici les trois captures Apple Watch soumises.",
+  "android": "WakeSharp existe aussi sur Android. Le canal audio, les autorisations et les réglages de batterie diffèrent. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes de votre application installée.",
+  "backup": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.",
+  "deleting": "Désinstaller efface les données locales, mais pas la sauvegarde cloud ni l’abonnement. Supprimez la sauvegarde dans Réglages → Compte → Supprimer le compte ou sur la page dédiée. Gérez l’abonnement séparément dans la boutique.",
+  "scoreTitle": "Regardez comment votre matinée s’est passée",
+  "score": "Le score d’acuité est un résultat quotidien dans l’application. Retrouvez l’historique, les séries et les badges, puis votre progression avec Lark dans Nest. Ce n’est ni un score de sommeil ni une évaluation médicale. Il ne détermine pas votre aptitude à conduire ou travailler.",
+  "warmup": "L’échauffement mental est facultatif. Les calculs, les paires et les séquences peuvent aussi servir de missions. Word Dash et Reaction Tap sont des jeux d’échauffement, pas des missions de réveil.",
+  "developer": "Je suis Dipojjal, le développeur de WakeSharp chez KineticBit. Je veux expliquer clairement ce que fait l’application et ce qui dépend du téléphone. Si une explication manque ou si une alarme pose problème, le formulaire de contact me parvient.",
+  "repeat": "Sur iPhone 2.14, arrêter ou reporter l’alarme la repousse d’une minute. Elle peut se répéter pendant une heure au maximum si la mission reste inachevée. Les commandes du téléphone restent utilisables.",
+  "how": "Comment l’utiliser",
+  "limits": "À vérifier",
+  "related": "Découvrez les autres fonctions",
+  "captions": [
+    "La prochaine alarme et votre matinée",
+    "La catégorie Forte et ses sons",
+    "Un objet reconnu avec confirmation verte",
+    "Les missions de réveil disponibles",
+    "Une alarme partagée avec un ami",
+    "Le score d’acuité quotidien",
+    "Une rotation et son calendrier",
+    "Historique et progression"
+  ],
+  "watchCaptions": [
+    "Vue des alarmes sur Apple Watch",
+    "Invitation à se lever sur Apple Watch",
+    "Confirmation Apple Watch avec la prochaine alarme iPhone"
+  ],
+  "features": [
+    [
+      "Sons de réveil forts",
+      "Choisissez un son dans la catégorie Forte et vérifiez le volume et les autorisations avant votre réveil.",
+      [
+        "Ouvrez les sons de votre alarme, puis la catégorie Forte.",
+        "Écoutez un son, enregistrez-le et choisissez une mission.",
+        "Programmez un essai et vérifiez le volume du téléphone."
+      ]
+    ],
+    [
+      "Réveil par scan d’objet",
+      "Scannez une bouteille, une tasse ou un lavabo et attendez la confirmation verte pour terminer la mission.",
+      [
+        "Choisissez Scanner un objet et sa cible.",
+        "Placez-la à un endroit accessible sans danger.",
+        "Visez avec un éclairage suffisant et gardez la caméra stable jusqu’à la confirmation verte."
+      ]
+    ],
+    [
+      "Réveil avec calculs",
+      "Résolvez des opérations quand l’alarme sonne. Choisissez une difficulté raisonnable pour le matin.",
+      [
+        "Choisissez la mission de calcul.",
+        "Essayez la difficulté avant d’enregistrer.",
+        "Saisissez les bonnes réponses pour terminer les manches."
+      ]
+    ],
+    [
+      "Réveil avec casse-tête",
+      "Choisissez des paires, des séquences ou des couleurs. Utilisez une mission ou combinez plusieurs tâches.",
+      [
+        "Choisissez Paires, Séquence ou Conflit de couleurs.",
+        "Essayez un niveau adapté à votre réveil.",
+        "Trouvez les paires, répétez le motif ou touchez la couleur de l’encre."
+      ]
+    ],
+    [
+      "Réveil avec preuve photo",
+      "Rephotographiez un lieu avec Photo Proof. Comparez cette mission avec la reconnaissance d’un objet.",
+      [
+        "Choisissez Photo Proof et prenez une référence nette.",
+        "Utilisez un lieu aux détails et à la lumière assez stables.",
+        "Recadrez ce lieu au réveil. Scanner un objet reconnaît une catégorie d’objet, sans reproduire cette photo."
+      ]
+    ],
+    [
+      "Réveil qui fait marcher",
+      "Walk It Off compte vos pas pendant la mission. First Light vous invite à vous rapprocher de la lumière.",
+      [
+        "Choisissez Walk It Off et autorisez le mouvement.",
+        "Testez un trajet court avec le téléphone sur vous.",
+        "Marchez prudemment. First Light demande plutôt de tenir le téléphone à la lumière du jour."
+      ]
+    ],
+    [
+      "Réveil lié au calendrier",
+      "Réglez un réveil avant le premier événement avec des limites horaires. Le calendrier reste sur l’appareil.",
+      [
+        "Autorisez le calendrier et créez une règle.",
+        "Choisissez l’avance et les heures minimale et maximale.",
+        "Vérifiez l’alarme après un changement. Prévoyez un réveil de secours pour un rendez-vous essentiel."
+      ]
+    ],
+    [
+      "Réveil pour horaires décalés",
+      "Créez un cycle de travail et de repos, vérifiez les dates et sautez une journée sans supprimer la rotation.",
+      [
+        "Créez une rotation avec une date de départ.",
+        "Ajoutez les phases de travail et de repos et leurs horaires.",
+        "Comparez le calendrier à votre planning et sautez les dates modifiées."
+      ]
+    ],
+    [
+      "Score d’acuité WakeSharp",
+      "Consultez votre score quotidien, l’échauffement facultatif et l’historique sans en faire un test médical.",
+      [
+        "Ouvrez la vue du score après votre matinée.",
+        "Faites un échauffement si vous le souhaitez et consultez le détail.",
+        "Comparez plusieurs jours. Les badges et Nest encouragent la progression, sans fournir de diagnostic."
+      ]
+    ]
+  ]
+}

@@ -1,4 +1,5 @@
 ---
+import { pageIdFor } from '../lib/download';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StoreButtons from '../components/StoreButtons.astro';
 import { TOOL_SLUGS, SOURCES, toolCopy, type ToolSlug } from '../i18n/tools';
@@ -54,12 +55,12 @@ const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
             {timer && <><p data-status role="status">{t.ready}</p><output data-countdown class="tool-countdown" role="timer" aria-live="off" aria-label={t.duration}>00:00:00</output></>}
             <section data-result class="tool-result" aria-live="polite" aria-atomic="true" hidden><h2>{t.result}</h2><dl></dl></section>
           </section>
-          <aside class="tool-promo"><span class="tool-number">↗</span><h2>{page.cta}</h2><StoreButtons placement="tool-result" localeCode={locale.code} /><a href={href('/#pricing')} class="tool-small">{t.freeNote}</a></aside>
+          <aside class="tool-promo"><span class="tool-number">↗</span><h2>{page.cta}</h2><StoreButtons pageId={pageIdFor(path)} placement="tool-result" localeCode={locale.code} /><a href={href('/#pricing')} class="tool-small">{t.freeNote}</a></aside>
         </div>
         <div class="tool-reading"><h2>{t.method}</h2><p>{page.method}</p><h2>{t.faq}</h2><details><summary>{t.question}</summary><p>{t.answer}</p></details><h2>{t.sources}</h2><a href={SOURCES[index]} rel="noreferrer">{new URL(SOURCES[index]).hostname}</a></div>
         <h2 class="tool-related-title">{t.related}</h2><div class="tool-grid tool-related">{TOOL_SLUGS.filter(s => s !== slug).map(s => <a class="tool-card" href={href('/tools/' + s)}>{t.pages[TOOL_SLUGS.indexOf(s)].title} <span aria-hidden="true">↗</span></a>)}</div>
       </>}
-      <div class="tool-bottom"><h2>{page?.cta ?? t.download}</h2><StoreButtons placement="tools-bottom" align="center" localeCode={locale.code}/><a href={href('/#pricing')}>{t.freeNote}</a></div>
+      <div class="tool-bottom"><h2>{page?.cta ?? t.download}</h2><StoreButtons pageId={pageIdFor(path)} placement="tools-bottom" align="center" localeCode={locale.code}/><a href={href('/#pricing')}>{t.freeNote}</a></div>
     </div>
   </section>
 </BaseLayout>

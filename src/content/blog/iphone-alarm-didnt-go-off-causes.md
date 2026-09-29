@@ -2,7 +2,7 @@
 title: "iPhone Alarm Didn't Go Off? The 7 Real Causes"
 description: "Your iPhone alarm never rang. Here are the seven causes that actually explain it, how to check each one tonight, and which ones are Apple's to fix."
 pubDate: 2026-08-31T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
@@ -118,7 +118,7 @@ That is the job of WakeSharp's reliability check, which lives at Settings &gt; A
 
 On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted alarm permission the alarm sounds through Silent mode and Focus the way the Clock app does. That permission is the whole foundation: decline or revoke it and WakeSharp cannot schedule an alarm at all, which is exactly what the reliability check will tell you first.
 
-For cause number seven, missions are the point. The alarm rings and the morning asks for a mission: arithmetic and puzzles, such as Mind Games; the camera, such as Photo Proof, which has you retake the photo of the spot you chose the night before; movement, such as Walk It Off; voice, such as Serial Sevens; or Surprise Me, a different mission every morning. However you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off. What changes is that the mission requires enough of you to be awake to notice you are doing it.
+For cause number seven, missions are the point. The alarm rings and the morning asks for a mission: arithmetic and puzzles, such as Math Problems; the camera, such as Photo Proof, which has you retake the photo of the spot you chose the night before; movement, such as Walk It Off; voice, such as Name Five; or Surprise Me, a different mission every morning. However you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off. What changes is that the mission requires enough of you to be awake to notice you are doing it.
 
 The limit is the honest one, and it is the same limit every alarm app has: WakeSharp is not a medical device, your phone's settings, battery restrictions or power state can prevent any alarm from sounding, and you should use a second, independent alarm for anything you cannot afford to be late for.
 

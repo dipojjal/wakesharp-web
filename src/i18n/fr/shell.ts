@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * qui, en anglais, viennent de site.ts sont écrites ici en toutes lettres.
  */
 export const shell = {
-  siteDescription: `Un réveil pour gros dormeurs : faites-le taire en résolvant un calcul, en photographiant un endroit ou en marchant, puis obtenez votre score de Vivacité.`,
+  siteDescription: "WakeSharp associe sons forts et missions de calcul, caméra ou marche. Découvrez l’aperçu iPhone 2.14, le calendrier et votre progression.",
   tagline: `Réveillez-vous affûté. Pas seulement réveillé.`,
   requirements: { ios: `iOS 26 ou version ultérieure`, android: `Android 8.0 ou version ultérieure` },
   ogImageAlt: `WakeSharp - réveillez-vous affûté, pas seulement réveillé.`,

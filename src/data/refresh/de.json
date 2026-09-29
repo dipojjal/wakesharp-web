@@ -1,0 +1,126 @@
+{
+  "preview": "Vorschau auf iPhone 2.14. Diese Bilder und Erklärungen zeigen das zur Prüfung eingereichte Update. Im App Store ist derzeit Version 2.10 verfügbar. Android kann andere Funktionen anbieten.",
+  "hero": "Wähle einen Ton aus der Kategorie Laut und eine Aufgabe für den Wecker. Löse ein paar Rechnungen, scanne eine Flasche oder komm mit einer Gehmission in Bewegung.",
+  "loudTitle": "Beginne mit einem auffälligen Ton",
+  "loud": "Laut ist eine Kategorie in der Tonauswahl. Höre dir die Töne an und speichere einen für diesen Wecker. Du kannst ihn mit jeder verfügbaren Mission kombinieren.",
+  "volume": "Auf dem iPhone regelt iOS die Lautstärke des Systemweckers. Ein lauter Ton ändert diese Einstellung nicht. Prüfe auf Android die Weckerlautstärke und erlaube Wecker in Nicht stören. Teste den Ton auf deinem Telefon.",
+  "scanTitle": "Aufstehen, finden, scannen",
+  "scan": "Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingeln die Kamera darauf. Die grüne Bestätigung zeigt, dass WakeSharp das Objekt erkannt hat. Die Erkennung läuft auf deinem Telefon.",
+  "missionsIntro": "Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffentliche Auswahl für iPhone 2.14. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
+  "hubTitle": "Weckmissionen, die dich in Bewegung bringen",
+  "hubDescription": "Entdecke WakeSharp-Missionen, laute Töne, Kalenderwecker und Schichtrotationen. Wähle eine Aufgabe, die zu deinem Morgen passt.",
+  "galleryTitle": "Ein Blick in WakeSharp",
+  "englishArtwork": "Die Bilder sind auf Englisch. Die Bildunterschriften erklären die Ansichten auf Deutsch.",
+  "open": "Bild vergrößern",
+  "close": "Bild schließen",
+  "watch": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein. Hier sind die drei eingereichten Watch-Bilder.",
+  "android": "WakeSharp gibt es auch für Android. Audiokanal, Berechtigungen und Akkueinstellungen unterscheiden sich. Diese Bilder zeigen iPhone und Apple Watch, nicht Android oder Wear OS. Prüfe die verfügbaren Missionen und Einstellungen in deiner installierten App.",
+  "backup": "Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.",
+  "deleting": "Deinstallieren entfernt lokale Daten, aber weder die optionale Cloud-Sicherung noch dein Abonnement. Lösche die Sicherung unter Einstellungen → Konto → Konto löschen oder auf der Kontolöschseite. Verwalte das Abo separat im Store.",
+  "scoreTitle": "Sieh dir deinen Morgen an",
+  "score": "Sharpness ist ein täglicher Wert in der App. Sieh dir Verlauf, Serien und Abzeichen an und besuche Lark in Nest. Der Wert ist keine Schlafmessung und keine medizinische Beurteilung. Er sagt nicht, ob du sicher fahren oder arbeiten kannst.",
+  "warmup": "Das mentale Aufwärmen ist freiwillig. Rechenaufgaben, Paare und Sequenzen können auch Weckmissionen sein. Word Dash und Reaction Tap sind Aufwärmspiele und stehen nicht als Weckmission zur Auswahl.",
+  "developer": "Ich bin Dipojjal und entwickle WakeSharp bei KineticBit. Mir ist wichtig, klar zu sagen, was die App kann und was vom Telefon abhängt. Wenn etwas unklar ist oder ein Wecker Probleme macht, erreicht mich das Kontaktformular.",
+  "repeat": "Unter iPhone 2.14 verschiebt Stoppen oder Schlummern den Wecker um eine Minute. Ohne abgeschlossene Mission kann er sich bis zu einer Stunde wiederholen. Die eigenen Bedienelemente des Telefons funktionieren weiter.",
+  "how": "So funktioniert es",
+  "limits": "Darauf solltest du achten",
+  "related": "Weitere Funktionen entdecken",
+  "captions": [
+    "Nächster Wecker und Morgenübersicht",
+    "Die Kategorie Laut und ihre Töne",
+    "Objekterkennung mit grüner Bestätigung",
+    "Verfügbare Weckmissionen",
+    "Ein geteilter Wecker mit einem Freund",
+    "Der tägliche Sharpness-Wert",
+    "Schichtrotation mit Kalender",
+    "Verlauf und Fortschritt"
+  ],
+  "watchCaptions": [
+    "Weckerübersicht auf der Apple Watch",
+    "Aufwachhinweis auf der Apple Watch",
+    "Apple-Watch-Bestätigung mit der nächsten iPhone-Weckzeit"
+  ],
+  "features": [
+    [
+      "Laute Wecktöne",
+      "Wähle einen Ton aus der Kategorie Laut. Prüfe Lautstärke und Berechtigungen, bevor du dich darauf verlässt.",
+      [
+        "Öffne die Tonauswahl und die Kategorie Laut.",
+        "Höre einen Ton an, speichere ihn und wähle eine Mission.",
+        "Stelle einen Testwecker und prüfe die Lautstärke."
+      ]
+    ],
+    [
+      "Wecker mit Objektscan",
+      "Scanne eine Flasche, einen Becher oder ein Waschbecken und warte auf die grüne Bestätigung der Mission.",
+      [
+        "Wähle Objekt scannen und ein Ziel.",
+        "Platziere es an einem sicher erreichbaren Ort.",
+        "Halte die Kamera bei gutem Licht ruhig, bis die Bestätigung grün wird."
+      ]
+    ],
+    [
+      "Wecker mit Rechenaufgaben",
+      "Löse beim Klingeln Rechenaufgaben. Wähle einen Schwierigkeitsgrad, den du morgens bewältigen kannst.",
+      [
+        "Wähle die Rechenmission im Wecker.",
+        "Probiere die Schwierigkeit vor dem Speichern aus.",
+        "Gib die richtigen Antworten ein, um die Runden abzuschließen."
+      ]
+    ],
+    [
+      "Wecker mit Rätseln",
+      "Wähle Gedächtnis-, Sequenz- oder Farbaufgaben. Kombiniere mehrere Missionen, wenn das zu dir passt.",
+      [
+        "Wähle Paare, Sequenz oder Farbdurcheinander.",
+        "Teste einen für den Morgen passenden Schwierigkeitsgrad.",
+        "Finde Paare, wiederhole das Muster oder tippe auf die Schriftfarbe."
+      ]
+    ],
+    [
+      "Wecker mit Fotobeweis",
+      "Fotografiere deinen gespeicherten Ort erneut. Erfahre, wie sich Photo Proof von einem Objektscan unterscheidet.",
+      [
+        "Wähle Photo Proof und fotografiere den Referenzort.",
+        "Nutze erkennbare Details und möglichst gleichmäßiges Licht.",
+        "Fotografiere beim Klingeln denselben Ort. Objekt scannen erkennt stattdessen eine Objektkategorie."
+      ]
+    ],
+    [
+      "Wecker zum Aufstehen und Gehen",
+      "Walk It Off zählt echte Schritte während deiner Mission. First Light führt dich zum Tageslicht.",
+      [
+        "Wähle Walk It Off und erlaube den Bewegungszugriff.",
+        "Teste einen kurzen Weg mit dem Telefon bei dir.",
+        "Gehe vorsichtig. Bei First Light hältst du das Telefon ins Tageslicht."
+      ]
+    ],
+    [
+      "Kalenderwecker",
+      "Stelle einen Wecker vor dem ersten Termin mit frühester und spätester Zeit. Die Daten bleiben auf dem Gerät.",
+      [
+        "Erlaube Kalenderzugriff und erstelle eine Regel.",
+        "Wähle den zeitlichen Vorlauf sowie früheste und späteste Weckzeit.",
+        "Prüfe den nächsten Wecker nach Terminänderungen. Nutze für wichtige Termine einen Ersatzwecker."
+      ]
+    ],
+    [
+      "Wecker für Schichtarbeit",
+      "Plane Arbeits- und Ruhetage in einer Rotation. Prüfe den Kalender und überspringe einzelne Termine.",
+      [
+        "Erstelle eine Rotation mit Startdatum.",
+        "Füge Arbeits- und Ruhephasen mit passenden Zeiten hinzu.",
+        "Vergleiche die Vorschau mit deinem Dienstplan und überspringe Ausnahmen."
+      ]
+    ],
+    [
+      "WakeSharp Sharpness Score",
+      "Betrachte deinen täglichen Wert, freiwillige Aufwärmspiele und den Verlauf ohne medizinische Schlussfolgerungen.",
+      [
+        "Öffne nach deinem Morgen die Sharpness-Ansicht.",
+        "Spiele bei Bedarf ein Aufwärmspiel und lies die Aufschlüsselung.",
+        "Vergleiche mehrere Tage. Abzeichen und Nest motivieren, stellen aber keine Diagnose."
+      ]
+    ]
+  ]
+}

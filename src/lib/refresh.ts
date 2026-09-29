@@ -1,0 +1,15 @@
+import en from '../data/refresh/en.json';
+import es from '../data/refresh/es.json';
+import fr from '../data/refresh/fr.json';
+import de from '../data/refresh/de.json';
+import ru from '../data/refresh/ru.json';
+import tr from '../data/refresh/tr.json';
+import ar from '../data/refresh/ar.json';
+import pt from '../data/refresh/pt-BR.json';
+import id from '../data/refresh/id.json';
+import uk from '../data/refresh/uk.json';
+import hi from '../data/refresh/hi.json';
+import ja from '../data/refresh/ja.json';
+import type { EnabledLocaleCode } from '../i18n/config';
+export const REFRESH = { en, es, fr, de, ru, tr, ar, 'pt-BR': pt, id, uk, hi, ja } satisfies Record<EnabledLocaleCode, typeof en>;
+export const refreshCopy = (locale: EnabledLocaleCode) => REFRESH[locale];

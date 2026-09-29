@@ -1,21 +1,16 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-
+import { localePath } from '../i18n/routes';
+import type { EnabledLocaleCode } from '../i18n/config';
 export type FeaturePage = CollectionEntry<'features'>;
-
-/** Every landing page, in hub order. */
-export async function getFeaturePages(): Promise<FeaturePage[]> {
+export async function getFeaturePages(locale?: EnabledLocaleCode): Promise<FeaturePage[]> {
   const pages = await getCollection('features');
-  return pages.sort((a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id));
+  return pages.filter(p => !locale || p.data.lang === locale).sort((a,b) => a.data.order - b.data.order || a.id.localeCompare(b.id));
 }
-
-export const featurePath = (page: FeaturePage): string => `/features/${page.id}`;
-
-/** English mission name → the landing page that covers it, for the homepage cards. */
-export async function missionPages(): Promise<Map<string, string>> {
-  const map = new Map<string, string>();
-  for (const page of await getFeaturePages()) {
-    for (const mission of page.data.missions) map.set(mission, featurePath(page));
-  }
+export const featurePath = (page: FeaturePage): string => localePath(page.data.lang, `/features/${page.data.translationOf}`);
+/** Stable mission ID, never an English display name. */
+export async function missionPages(locale: EnabledLocaleCode = 'en'): Promise<Map<string,string>> {
+  const map = new Map<string,string>();
+  for (const page of await getFeaturePages(locale)) for (const id of page.data.missions) map.set(id,featurePath(page));
   return map;
 }

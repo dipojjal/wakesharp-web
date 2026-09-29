@@ -90,6 +90,7 @@ function postModified(file: string): Date {
  */
 export function sitemapLastmod(page: string, distDir: string): Date | undefined {
   const [prefix, path] = splitLocale(page);
+  if (path === '/' || path === '/features' || path.startsWith('/features/') || path === '/support' || path === '/about' || path === '/press' || path === '/compare/wakesharp-vs-alarmy') return new Date('2026-09-28T16:00:00Z');
   if (path === '/privacy') return new Date(PRIVACY.lastUpdated);
   if (path === '/terms') return new Date(SITE.lastUpdated);
   if (path.startsWith('/blog/')) return postModified(join(distDir, `${prefix}${path}.html`));

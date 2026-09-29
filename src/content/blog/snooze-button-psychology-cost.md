@@ -3,7 +3,7 @@ title: "Why the Snooze Button Feels So Good (and What It Costs)"
 seoTitle: "Why Is Snoozing Bad? What the Snooze Button Really Costs"
 description: "Snoozing is not a character flaw, and the research is kinder to it than the headlines. What those eleven minutes actually cost, and what they do not."
 pubDate: 2026-09-04T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/snooze-button-psychology-cost/hero.jpg
@@ -80,7 +80,7 @@ Three things, none of which are the ones you have been sold.
 
 The problem this article describes is specific: snoozing is a fast, automatic, zero-effort response to a cue, and its cost is repetition rather than the sleep itself. So the useful intervention is not to abolish snoozing. It is to make the number finite and to make each press cost something you can feel.
 
-In WakeSharp, the cost is the mission. You choose it when you build the alarm, so the deal is made the night before rather than negotiated at 6:00: arithmetic in Mind Games, a [puzzle](/features/puzzle-alarm-clock), a photo of the spot you chose last night, a real object across the room, a short walk. However you quiet the alarm, the morning only counts once the mission is done, so each press buys you minutes, not a finished morning. The finite number is still yours to decide, as in point 2.
+In WakeSharp, the cost is the mission. You choose it when you build the alarm, so the deal is made the night before rather than negotiated at 6:00: arithmetic in Math Problems, a [puzzle](/features/puzzle-alarm-clock), a photo of the spot you chose last night, a real object across the room, a short walk. However you quiet the alarm, the morning only counts once the mission is done, so each press buys you minutes, not a finished morning. The finite number is still yours to decide, as in point 2.
 
 The mission is not punishment, it is a price tag. A press that costs nothing is invisible. A press that leaves the whole task still waiting for you is not.
 

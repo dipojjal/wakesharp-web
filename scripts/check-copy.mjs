@@ -317,6 +317,7 @@ const LISTING_LINK = /https:\/\/(?:apps\.apple\.com\/\S*?app\/[^"'\s]+|play\.goo
  * attributes and <script> bodies - where these can hide.
  */
 const BANNED_RAW = [
+  { re: /\b(?:Squats|Serial Sevens|Mind Games|Gentle Start)\b/i, why: 'gated or retired product claim; use the public 2.14 facts' },
   { re: /\u2014|&mdash;|&#0*8212;|&#x0*2014;|\\u2014/i, why: 'em dash in website copy - use a hyphen, comma, colon, parentheses or a separate sentence as appropriate' },
   { re: /\[\[/, why: 'unfilled "[[…]]" placeholder - one shipped live on /terms, a page both apps link to' },
   { re: /com\.dipojjal\.wakesharp/i, why: 'dead package id - renamed to com.wakesharp.app on 2026-08-14' },
@@ -377,7 +378,7 @@ const SHARE_SHELLS = ['c.html', 'p.html'];
 const MUST_STAY_ENGLISH = [
   'WakeSharp',
   'Sharpness Score',
-  'Mind Games',
+  'Math Problems',
   'Photo Proof',
   'Memory Match',
   'Sequence Recall',
@@ -391,11 +392,9 @@ const MUST_STAY_ENGLISH = [
   'Face Check',
   'Fruit Slash',
   'First Light',
-  'Serial Sevens',
   'Name Five',
   'Surprise Me',
   'My spots & codes',
-  'Gentle start',
   'Extra Loud',
   'Alarm reliability',
   'Beat my wake',

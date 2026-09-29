@@ -2,7 +2,7 @@
 title: "Why You Sleep Through Alarms You Don't Remember Dismissing"
 description: "Dismissing an alarm is a practised motion your brain can run while barely awake, and never record. The real mechanism, and what actually raises the bar."
 pubDate: 2026-08-30T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-through-alarm-dismissed-no-memory/hero.jpg
@@ -89,7 +89,7 @@ The useful axis is cognitive cost. Raise what dismissal requires and you require
 
 This is the specific problem WakeSharp exists for, so let me be precise about the claim and the limit.
 
-A WakeSharp alarm asks for more than a tap. It asks for a **mission**: [Mind Games](/features/math-alarm-clock), a short arithmetic sprint, or [Photo Proof](/features/photo-alarm-clock), which has you retake the photo of a spot you chose the night before. Other missions have you scan a specific object across the room, or get up and walk a set number of steps. However you quiet the alarm, the morning only counts once the mission is done. The design argument is the mechanism above. A swipe sits inside the motor repertoire of a barely aroused brain. Solving for x, or crossing the room to find the right object, does not, because it needs the associative machinery a partial arousal leaves offline. Every mission has a fallback ending in Mind Games at full credit, so a dead camera or a phone left on the nightstand never traps you.
+A WakeSharp alarm asks for more than a tap. It asks for a **mission**: [Math Problems](/features/math-alarm-clock), a short arithmetic sprint, or [Photo Proof](/features/photo-alarm-clock), which has you retake the photo of a spot you chose the night before. Other missions have you scan a specific object across the room, or get up and walk a set number of steps. However you quiet the alarm, the morning only counts once the mission is done. The design argument is the mechanism above. A swipe sits inside the motor repertoire of a barely aroused brain. Solving for x, or crossing the room to find the right object, does not, because it needs the associative machinery a partial arousal leaves offline. Every mission has a fallback ending in Math Problems at full credit, so a dead camera or a phone left on the nightstand never traps you.
 
 Now the limits, said plainly rather than left for you to find.
 

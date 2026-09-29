@@ -3,7 +3,7 @@ title: "Back-to-School Mornings: Reset a Summer Sleep Schedule in One Week"
 seoTitle: "Back-to-School Sleep Schedule: Reset It in One Week"
 description: "A seven-day plan to shift a summer sleep schedule earlier by 15 minutes a day, anchored with morning light, and how to keep the new wake time honest."
 pubDate: 2026-08-29T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/back-to-school-sleep-schedule-reset/hero.jpg
@@ -79,7 +79,7 @@ For older students running their own schedule, the other weekend hazard is the 1
 
 The hard part of this plan is not the plan. It is Day 4, at the new wake time, when swatting the alarm and reclaiming forty minutes is both available and extremely attractive. A schedule that only exists on paper collapses at exactly that moment, and each collapse costs you a day of progress.
 
-That specific failure is what WakeSharp is built around. Earning full credit for the morning requires completing a mission that needs actual cognition: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before, so choose one outside the bedroom. Other missions ask for memory, a sequence, scanning a real object across the room, real steps or an answer said out loud. The mission is not there to punish anyone. It is there because a half-asleep brain will happily swat an alarm and call it a morning, and however you quiet the alarm, the morning only counts once the mission is done. That matters most on the days when the plan is working but does not yet feel like it. Streaks, with freeze tokens for the mornings that legitimately go wrong, give the whole seven days something to point at.
+That specific failure is what WakeSharp is built around. Earning full credit for the morning requires completing a mission that needs actual cognition: Math Problems, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before, so choose one outside the bedroom. Other missions ask for memory, a sequence, scanning a real object across the room, real steps or an answer said out loud. The mission is not there to punish anyone. It is there because a half-asleep brain will happily swat an alarm and call it a morning, and however you quiet the alarm, the morning only counts once the mission is done. That matters most on the days when the plan is working but does not yet feel like it. Streaks, with freeze tokens for the mornings that legitimately go wrong, give the whole seven days something to point at.
 
 And if the reset is a household project rather than a solo one, a wake-up pact puts two people on the same alarm from one shared link, which for a lot of teenagers is a more persuasive accountability structure than a parent on the stairs.
 

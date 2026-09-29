@@ -1,0 +1,126 @@
+{
+  "preview": "Pratinjau iPhone 2.14. Gambar dan penjelasan ini menunjukkan pembaruan yang diajukan untuk ditinjau. App Store saat ini menyediakan versi 2.10. Fitur Android dapat berbeda.",
+  "hero": "Pilih suara dari kategori Loud, lalu tentukan tugas saat alarm berbunyi. Kerjakan soal matematika, pindai botol, atau mulai bergerak dengan misi berjalan.",
+  "loudTitle": "Mulai dengan suara yang menarik perhatian",
+  "loud": "Loud adalah kategori di pemilih suara alarm. Dengarkan nadanya dan simpan pilihan untuk alarm tersebut. Suara ini bisa dipasangkan dengan misi apa pun yang tersedia.",
+  "volume": "Di iPhone, iOS mengatur volume alarm sistem. Nada Loud tidak mengubah pengaturan itu. Di Android, periksa volume alarm dan izinkan alarm dalam Jangan Ganggu. Uji pada ponselmu sendiri.",
+  "scanTitle": "Bangun, temukan, lalu pindai",
+  "scan": "Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan kamera ke objek itu. Konfirmasi hijau menandakan WakeSharp mengenalinya. Pengenalan berjalan di ponselmu.",
+  "missionsIntro": "Pilih satu misi di bawah atau susun beberapa misi. Ini adalah pilihan publik untuk iPhone 2.14. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
+  "hubTitle": "Misi alarm untuk mulai bangun dan bergerak",
+  "hubDescription": "Jelajahi misi WakeSharp, nada keras, alarm kalender, dan rotasi sif. Pilih tugas yang sesuai dengan pagimu dan pelajari cara kerjanya.",
+  "galleryTitle": "Lihat WakeSharp lebih dekat",
+  "englishArtwork": "Gambar menggunakan bahasa Inggris. Keterangan menjelaskan setiap layar dalam bahasa Indonesia.",
+  "open": "Perbesar gambar",
+  "close": "Tutup gambar",
+  "watch": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan. Ini adalah tiga gambar Apple Watch yang diajukan.",
+  "android": "WakeSharp juga tersedia di Android. Saluran audio, izin, dan pengaturan baterainya berbeda. Gambar ini menampilkan iPhone dan Apple Watch, bukan Android atau Wear OS. Periksa pilihan yang tersedia di aplikasi terpasang.",
+  "backup": "Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya.",
+  "deleting": "Menghapus aplikasi menghapus data lokal, tetapi tidak menghapus cadangan cloud atau langganan. Hapus cadangan melalui Pengaturan → Akun → Hapus akun atau halaman penghapusan akun. Kelola langganan secara terpisah di toko.",
+  "scoreTitle": "Lihat bagaimana pagimu berjalan",
+  "score": "Sharpness Score adalah skor harian di aplikasi. Lihat bersama riwayat, rentetan, dan lencana, lalu ikuti kemajuan Lark di Nest. Ini bukan skor tidur atau penilaian medis. Skor tidak menentukan apakah kamu aman mengemudi atau bekerja.",
+  "warmup": "Pemanasan otak bersifat opsional. Math Problems, Memory Match, dan Sequence Recall juga dapat menjadi misi. Word Dash dan Reaction Tap adalah permainan pemanasan, bukan misi alarm.",
+  "developer": "Saya Dipojjal, pengembang WakeSharp di KineticBit. Saya ingin menjelaskan kemampuan aplikasi dan hal yang bergantung pada ponsel. Jika ada yang membingungkan atau alarm bermasalah, formulir kontak akan sampai kepada saya.",
+  "repeat": "Di iPhone 2.14, menghentikan atau menunda alarm mengundurnya satu menit. Alarm dapat berulang hingga satu jam bila misi belum selesai. Kontrol ponsel tetap berfungsi.",
+  "how": "Cara menggunakan",
+  "limits": "Yang perlu diperiksa",
+  "related": "Jelajahi fitur lain",
+  "captions": [
+    "Alarm berikutnya dan ringkasan pagi",
+    "Kategori Loud dan nada alarm",
+    "Objek dengan konfirmasi hijau",
+    "Misi alarm yang tersedia",
+    "Alarm bersama teman",
+    "Sharpness Score harian",
+    "Rotasi sif dan kalender",
+    "Riwayat dan kemajuan"
+  ],
+  "watchCaptions": [
+    "Ringkasan alarm Apple Watch",
+    "Pengingat bangun Apple Watch",
+    "Konfirmasi Apple Watch dengan waktu alarm iPhone berikutnya"
+  ],
+  "features": [
+    [
+      "Nada alarm keras",
+      "Pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm.",
+      [
+        "Buka pemilih suara alarm dan kategori Loud.",
+        "Dengarkan nada, simpan, lalu pilih misi.",
+        "Pasang alarm uji dan periksa volume."
+      ]
+    ],
+    [
+      "Alarm pemindai objek",
+      "Pindai botol, cangkir, atau wastafel dan tunggu konfirmasi hijau untuk menyelesaikan misi alarm.",
+      [
+        "Pilih Scan an Object dan targetnya.",
+        "Letakkan target di tempat yang aman dijangkau.",
+        "Arahkan kamera dengan cahaya cukup dan tahan hingga konfirmasi hijau."
+      ]
+    ],
+    [
+      "Alarm soal matematika",
+      "Kerjakan hitungan saat alarm berbunyi. Pilih tingkat kesulitan yang dapat diselesaikan setelah bangun.",
+      [
+        "Pilih Math Problems pada misi alarm.",
+        "Coba kesulitan sebelum menyimpan.",
+        "Masukkan jawaban benar untuk menyelesaikan putaran."
+      ]
+    ],
+    [
+      "Alarm teka-teki",
+      "Pilih tugas ingatan, urutan, atau warna. Gunakan satu misi atau gabungkan beberapa sesuai kebutuhanmu.",
+      [
+        "Pilih Memory Match, Sequence Recall, atau Colour Clash.",
+        "Coba tingkat yang cocok untuk pagi hari.",
+        "Temukan pasangan, ulangi pola, atau ketuk warna tinta."
+      ]
+    ],
+    [
+      "Alarm bukti foto",
+      "Foto kembali tempat yang dipilih dengan Photo Proof. Pelajari bedanya dengan mengenali jenis objek.",
+      [
+        "Pilih Photo Proof dan ambil foto referensi yang jelas.",
+        "Gunakan tempat dengan detail dan cahaya stabil.",
+        "Bingkai tempat yang sama saat alarm berbunyi. Scan an Object mengenali kategori objek."
+      ]
+    ],
+    [
+      "Alarm untuk berjalan",
+      "Walk It Off menghitung langkah nyata selama misi. First Light mengajakmu menuju cahaya matahari.",
+      [
+        "Pilih Walk It Off dan izinkan akses gerak.",
+        "Uji rute pendek dengan membawa ponsel.",
+        "Berjalan hati-hati. First Light meminta ponsel dipegang di cahaya siang."
+      ]
+    ],
+    [
+      "Alarm kalender",
+      "Bangun sebelum acara pertama dengan batas waktu pilihanmu. Pemrosesan kalender tetap di perangkat.",
+      [
+        "Izinkan kalender dan buat aturan alarm.",
+        "Pilih jarak menit serta waktu paling awal dan akhir.",
+        "Periksa alarm setelah perubahan acara dan gunakan cadangan untuk janji penting."
+      ]
+    ],
+    [
+      "Alarm pekerja sif",
+      "Buat rotasi hari kerja dan istirahat, periksa tanggal, dan lewati satu hari tanpa menghapus pola.",
+      [
+        "Buat rotasi dengan tanggal awal.",
+        "Tambahkan fase kerja dan istirahat beserta jamnya.",
+        "Cocokkan pratinjau dengan jadwal sif dan lewati tanggal pengecualian."
+      ]
+    ],
+    [
+      "WakeSharp Sharpness Score",
+      "Tinjau skor harian, pemanasan opsional, dan riwayat tanpa menganggapnya sebagai tes medis.",
+      [
+        "Buka tampilan Sharpness setelah menyelesaikan pagi.",
+        "Coba pemanasan jika ingin dan lihat rincian skor.",
+        "Bandingkan beberapa pagi. Lencana dan Nest memberi dorongan, bukan diagnosis."
+      ]
+    ]
+  ]
+}

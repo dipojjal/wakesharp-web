@@ -2,7 +2,7 @@
 title: "Your Phone Sleeps in Your Bedroom. Should It?"
 description: "Your phone is your alarm, so it stays. What the research says about light, notifications and charging distance, and what to change tonight."
 pubDate: 2026-09-02T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/phone-in-bedroom-at-night/hero.jpg
@@ -76,7 +76,7 @@ It is a good study and it has not aged into certainty. A meta-analysis by [Bött
 
 WakeSharp exists because of exactly this tension. The phone has to stay in the bedroom, because it is the alarm, but nothing about a phone naturally behaves like an alarm clock.
 
-The relevant part is the mission. WakeSharp alarms are dismissed by completing a task that requires actual cognition: Mind Games (arithmetic), a puzzle such as Memory Match or Sequence Recall, Photo Proof (retake the photo of a spot you chose the night before), Scan an Object, Walk It Off, or Surprise Me, a different mission every morning.
+The relevant part is the mission. WakeSharp alarms are dismissed by completing a task that requires actual cognition: Math Problems (arithmetic), a puzzle such as Memory Match or Sequence Recall, Photo Proof (retake the photo of a spot you chose the night before), Scan an Object, Walk It Off, or Surprise Me, a different mission every morning.
 
 What that changes about tonight is small but specific. Once dismissing the alarm involves standing up anyway, putting the charger across the room stops being a sacrifice and becomes the setup. [Walk It Off](/features/walking-alarm-clock) is the most literal version of this, but any mission has the same effect: the phone you must walk to is also the phone you did not scroll at 12:50 AM.
 

@@ -57,7 +57,7 @@ async function emit(label, out, pipeline) {
 
 async function main() {
   await rm(join(ASSETS, 'screens'), { recursive: true, force: true });
-  await rm(join(ASSETS, 'store'), { recursive: true, force: true });
+  // Versioned store artwork is owned by import-store.mjs and is never removed here.
   await rm(join(ASSETS, 'mascot'), { recursive: true, force: true });
 
   // ── 1. Clean captures → 1000w. These carry the feature rows; the site draws its
@@ -76,20 +76,7 @@ async function main() {
     }
   }
 
-  // ── 2. Shipped store frames → 800w. These already contain device frame, background
-  //       plate and baked-in headline. Carousel only; never rendered above ~400px CSS.
-  for (const [platform, dir] of [['ios', 'ios-6.9'], ['android', 'play-phone']]) {
-    for (let i = 1; i <= 7; i++) {
-      const n = String(i).padStart(2, '0');
-      const input = join(SRC, 'Screenshots', dir, `${n}.png`);
-      if (!existsSync(input)) { console.warn(`  skip (missing): ${input}`); continue; }
-      await emit(
-        `store ${platform}/${n}`,
-        join(ASSETS, 'store', platform, `${n}.png`),
-        sharp(input).resize({ width: 800, withoutEnlargement: true }).flatten().png({ quality: 90, compressionLevel: 9 })
-      );
-    }
-  }
+  await import('./import-store.mjs');
 
   // ── 3. Mascot cutouts → trimmed to their alpha bbox, then 768w. Trimming matters:
   //       the source PNGs are 1024×1024 with the bird floating in transparency, so

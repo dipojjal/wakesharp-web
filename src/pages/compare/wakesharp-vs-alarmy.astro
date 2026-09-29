@@ -12,26 +12,25 @@
  * Wording note for the copy linter: never "scan a barcode" or "barcode
  * mission", even about Alarmy; "QR and barcode scanning" describes it.
  */
+import ReleaseNotice from '../../components/ReleaseNotice.astro';
 import LegalLayout from '../../layouts/LegalLayout.astro';
 import BlogCTA from '../../components/BlogCTA.astro';
 import { SITE } from '../../config/site';
 import { resolveLocale } from '../../i18n/routes';
 
-const CHECKED = 'September 24, 2026';
+const CHECKED = 'September 28, 2026';
 const ALARMY_APP_STORE = 'https://apps.apple.com/us/app/alarmy-loud-alarm-clock/id1163786766';
-const ALARMY_SITE = 'https://alar.my/';
+const ALARMY_SITE = 'https://alar.my/en';
 const url = new URL('/compare/wakesharp-vs-alarmy', SITE.url).href;
 
 const rows: [string, string, string][] = [
-  ['How it is sold', `WakeSharp Unlimited: a ${SITE.unlimited.trialDays}-day free trial of the yearly plan, then ${SITE.unlimited.annual} a year, or ${SITE.unlimited.monthly} a month with no trial`, 'Free to download; in-app purchases listed from $4.99 to $69.99'],
-  ['Ads', 'None', 'The App Store listing says “Contains Advertising”'],
-  ['Wake-up missions', 'Arithmetic, memory, sequence, colour and typing puzzles; a photo of a spot you chose; a real object across the room; finding something; a face check; steps; daylight at a window; counting down by sevens or naming five things out loud; or a surprise', 'Math, memory game, shake, typing, squats, QR and barcode scanning, walking and photo'],
+  ['How it is sold', `WakeSharp Unlimited: a ${SITE.unlimited.trialDays}-day free trial of the yearly plan, then ${SITE.unlimited.annual} a year, or ${SITE.unlimited.monthly} a month with no trial`, 'Free to download, with optional paid features; check the store for current local prices'],
+  ['Wake-up missions', 'Arithmetic, memory, sequence, colour and typing puzzles; a photo of a spot you chose; a real object across the room; finding something; a face check; steps; daylight at a window; naming five things out loud; or a surprise', 'Math, memory game, shake, typing, QR and barcode scanning, walking and photo'],
   ['Sleep and snore tracking', 'None: WakeSharp does no sleep tracking', 'A sleep tracker with snore recording'],
   ['Sleep sounds', 'Optional wind-down audio', 'Calm sleep sounds, ASMR and rain'],
   ['A check that the alarm will ring', 'Settings > Alarm reliability reads permissions, volume, notifications, lock-screen takeover and battery restrictions', 'Not mentioned in its listing'],
   ['Alarms that follow your calendar', 'Smart alarms can move when your first meeting moves; calendar content stays on the phone', 'Not mentioned in its listing'],
-  ['A score for how you woke up', 'The Sharpness Score, from an optional two-minute brain warm-up after the mission', 'Not mentioned in its listing'],
-  ['App Store rating', 'New in 2026, with few ratings so far', '4.8 from 247,236 ratings'],
+  ['A score for how you woke up', 'A daily Sharpness Score, optional brain warm-ups, history and badges', 'Not mentioned in its listing'],
 ];
 
 const schema = {
@@ -74,8 +73,9 @@ const schema = {
     <a href="/">Home</a> › <span aria-current="page">WakeSharp vs Alarmy</span>
   </nav>
 
+  <ReleaseNotice localeCode="en"/>
   <h2>At a glance</h2>
-  <p>US prices and features, read from both apps’ own listings on {CHECKED}.</p>
+  <p>Alarmy facts were checked against its US iPhone listing and official website on {CHECKED}. WakeSharp’s feature column previews iPhone 2.14. Android availability can differ for both apps. Prices vary by country.</p>
   <div class="overflow-x-auto">
     <table>
       <thead>
@@ -91,10 +91,9 @@ const schema = {
 
   <h2>Choose Alarmy if…</h2>
   <ul>
-    <li><strong>You want to start without paying.</strong> Alarmy is free to download and its own site says most features work without premium; the trade is advertising in the app.</li>
+    <li><strong>You want to start without paying.</strong> Alarmy’s website says its essential features are available without payment, with additional paid features.</li>
     <li><strong>You want sleep and snore tracking.</strong> Alarmy includes a sleep tracker that records snoring. WakeSharp does no sleep tracking at all, on purpose.</li>
-    <li><strong>You want a physical mission.</strong> Alarmy’s squats and shaking are the kind of movement WakeSharp does not ask for.</li>
-    <li><strong>You want what millions already use.</strong> Its App Store rating comes from a quarter of a million people. WakeSharp is new.</li>
+    <li><strong>You want a physical mission.</strong> Alarmy lists shaking and other movement tasks. Compare the exact missions available on your phone.</li>
   </ul>
 
   <h2>Choose WakeSharp if…</h2>
@@ -103,7 +102,7 @@ const schema = {
     <li><strong>You want to know tonight whether it will ring.</strong> The <a href="/support">alarm reliability check</a> reads the settings that actually stop alarms and leads with a verdict: it will ring, it may not, or it cannot.</li>
     <li><strong>Your wake time depends on your calendar.</strong> <a href="/features/calendar-alarm-clock">Smart alarms</a> can move when your first meeting moves, with the calendar read on the phone.</li>
     <li><strong>You want a mission that needs your brain, not just your legs.</strong> <a href="/features/math-alarm-clock">Arithmetic</a>, <a href="/features/puzzle-alarm-clock">memory and word puzzles</a>, <a href="/features/photo-alarm-clock">a photo of a spot you chose</a>, <a href="/features/walking-alarm-clock">steps or daylight at a window</a>, or an answer said out loud, several in a row if you like.</li>
-    <li><strong>You want to see how sharp you actually woke up.</strong> An optional two-minute warm-up scores you against your own baseline, not against strangers.</li>
+    <li><strong>You want to see how sharp you actually woke up.</strong> Review the daily <a href="/features/sharpness-score">Sharpness Score</a>, with optional warm-ups and a history of your mornings. It is not a medical assessment.</li>
   </ul>
 
   <h2>What neither of them can do</h2>
@@ -120,7 +119,7 @@ const schema = {
 
   <h2>Sources</h2>
   <ul>
-    <li><a href={ALARMY_APP_STORE}>Alarmy on the App Store (US)</a>, read {CHECKED}: price, advertising, in-app purchases, rating and the tracker.</li>
+    <li><a href={ALARMY_APP_STORE}>Alarmy on the App Store (US)</a>, read {CHECKED}: iPhone availability, purchases and sleep tracking.</li>
     <li><a href={ALARMY_SITE}>Alarmy’s website</a>, read {CHECKED}: mission types and what premium adds.</li>
     <li>WakeSharp: this site’s <a href="/#pricing">pricing</a> and <a href="/features">features</a>.</li>
   </ul>
@@ -130,5 +129,5 @@ const schema = {
     correct it.
   </p>
 
-  <BlogCTA locale={resolveLocale('en')} />
+  <BlogCTA pageId="compare-wakesharp-vs-alarmy" locale={resolveLocale('en')} />
 </LegalLayout>

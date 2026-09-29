@@ -99,8 +99,11 @@ test('lastmod comes from the built post, the newest post per index, and the lega
 
     assert.equal(sitemapLastmod(url('/privacy'), dist)?.toISOString().slice(0, 10), PRIVACY.lastUpdated);
     assert.equal(sitemapLastmod(url('/terms'), dist)?.toISOString().slice(0, 10), SITE.lastUpdated);
+    for (const path of ['/', '/es', '/support', '/features', '/es/features/object-scan-alarm']) {
+      assert.equal(sitemapLastmod(url(path), dist)?.toISOString(), '2026-09-28T16:00:00.000Z');
+    }
     // No recorded date means no lastmod, never a guessed one.
-    for (const path of ['/', '/es', '/support', '/contact', '/account/delete']) {
+    for (const path of ['/contact', '/account/delete']) {
       assert.equal(sitemapLastmod(url(path), dist), undefined, path);
     }
   } finally {

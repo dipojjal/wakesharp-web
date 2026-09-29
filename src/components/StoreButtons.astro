@@ -4,13 +4,13 @@ import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
 import { resolveLocale } from '../i18n/routes';
 import { toolCopy } from '../i18n/tools';
-interface Props { tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string }
-const { align = 'start', placement = 'download', localeCode = Astro.currentLocale } = Astro.props;
+interface Props { pageId?: string; tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string }
+const { pageId, align = 'start', placement = 'download', localeCode = Astro.currentLocale } = Astro.props;
 const locale = resolveLocale(localeCode);
 const t = toolCopy(locale.code);
 ---
 <div class:list={['flex flex-col gap-3', align === 'center' ? 'items-center text-center' : 'items-start']}>
-  <DownloadButton placement={placement} localeCode={locale.code} />
+  <DownloadButton pageId={pageId} placement={placement} localeCode={locale.code} />
   <p class="text-sm">{t.available}</p>
   {!(SITE.appLanguages as readonly string[]).includes(locale.code) && <p class="text-sm">{getCatalog(locale.code).shell.appLanguageNote}</p>}
 </div>

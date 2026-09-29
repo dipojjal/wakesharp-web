@@ -3,7 +3,7 @@ title: "White Noise, Pink Noise, Brown Noise: What Helps You Fall Asleep?"
 seoTitle: "Brown Noise vs White Noise vs Pink Noise: What Helps Sleep?"
 description: "White, pink and brown noise all work the same way: masking. Here is what the research actually shows, and how to set it up without losing your alarm."
 pubDate: 2026-09-05T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/white-pink-brown-noise-sleep/hero.jpg
@@ -71,7 +71,7 @@ Here is the trade you are making, stated plainly. A sound machine works by raisi
 
 That is usually fine, and it is worth two checks. First, make sure your alarm is genuinely audible over your masking sound, ideally by testing it once while the machine is running rather than discovering the answer on a Monday. Second, be aware that a threshold-raised, half-asleep brain is very good at silencing a sound it barely registered. That is the failure mode behind [alarms you swear never rang](/blog/sleep-through-alarm-dismissed-no-memory).
 
-This is the narrow, honest place WakeSharp fits. It does not play sleep sounds and it does not track your sleep; there are better-designed tools for both. What it does is put a small task between the alarm and a finished morning, one that takes a bit of deliberate attention rather than a reflex swipe: arithmetic in Mind Games, or retaking the photo of a spot you chose the night before with Photo Proof. No app can promise you will wake up, and your phone's own controls always work on both platforms: nothing stops you switching the phone off. But asking for a conscious act before the morning counts is a reasonable counterweight to a night spent deliberately harder to wake.
+This is the narrow, honest place WakeSharp fits. It offers optional wind-down audio and does not track your sleep. What it does is put a small task between the alarm and a finished morning, one that takes a bit of deliberate attention rather than a reflex swipe: arithmetic in Math Problems, or retaking the photo of a spot you chose the night before with Photo Proof. No app can promise you will wake up, and your phone's own controls always work on both platforms: nothing stops you switching the phone off. But asking for a conscious act before the morning counts is a reasonable counterweight to a night spent deliberately harder to wake.
 
 ## FAQ
 

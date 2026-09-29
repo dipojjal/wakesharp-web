@@ -85,7 +85,7 @@ const blog = defineCollection({
  * rules as the rest of the site (docs/blog-schedule.md, "The claim rules").
  */
 const features = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/features' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/features' }),
   schema: ({ image }) =>
     z
       .object({
@@ -93,7 +93,11 @@ const features = defineCollection({
         title: z.string().min(1),
         seoTitle: z.string().min(1).max(TITLE_MAX).optional(),
         /** Meta description, 70 to 160 characters. The copy check reads it with the rest of the page. */
-        description: z.string().min(70).max(160),
+        description: z.string().min(1).max(160),
+        lang: z.enum(LOCALE_CODES).default('en'),
+        translationOf: z.string().regex(/^[a-z0-9-]+$/),
+        updatedDate: z.string(),
+        release: z.literal('2.14-preview'),
         /** The paragraph under the <h1>. */
         lede: z.string().min(1),
         /** Position on the /features hub. */

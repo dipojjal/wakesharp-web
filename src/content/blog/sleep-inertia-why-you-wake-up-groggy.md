@@ -3,7 +3,7 @@ title: "Sleep Inertia: Why You Wake Up Groggy (and How to Wake Up Sharp)"
 seoTitle: "Sleep Inertia: Why You Wake Up Groggy (and How to Fix It)"
 description: "Your brain takes 15 to 60 minutes to fully boot after waking. Here's the science of sleep inertia, and what actually shortens the groggy window."
 pubDate: 2026-08-27T12:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-inertia-why-you-wake-up-groggy/hero.jpg
@@ -50,7 +50,7 @@ Sleep inertia is physiology, so the honest framing is *shorten and manage*, not 
 
 ## Where WakeSharp fits in (and where it can't)
 
-WakeSharp was built around lever four. A swipe is exactly what groggy-you does on autopilot, so the alarm asks for a **mission** instead: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before. You can also scan an object across the room, or get up and walk a set number of steps. Each one requires the kind of working-memory engagement that a half-booted prefrontal cortex can't fake, which is the point. By the time you've solved your way out, the boot sequence is genuinely further along. However you quiet the alarm, the morning only counts once the mission is done. (On iPhone, WakeSharp uses Apple's AlarmKit, which rings through Silent mode and Focus once you have granted alarm access. On Android it plays on the dedicated alarm stream with a lock-screen alert when the exact-alarm, notification and lock-screen permissions are in place. Grogginess shouldn't get a technicality to hide behind.)
+WakeSharp asks for a task when the alarm rings. Choose [Math Problems](/features/math-alarm-clock), [Photo Proof](/features/photo-alarm-clock), [Scan an Object](/features/object-scan-alarm), or a [walking mission](/features/walking-alarm-clock). These tasks ask for an action beyond tapping a button. They do not establish that your alertness has recovered. Your phone’s own controls still work, and a completed mission is not a test of fitness to drive.
 
 Then comes the part we think matters most: **measurement**. An optional two-minute warm-up after the mission scores how sharp you actually woke against your own rolling baseline, because yesterday's you is the only benchmark that means anything at 6 AM. Sleep inertia is invisible from the inside; [you can't feel how foggy you are](/blog/morning-reaction-time-cognition), which is precisely the trap. A number can.
 

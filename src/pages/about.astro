@@ -7,6 +7,7 @@
  * chose to publish (name, role, company) and invents no credentials; the
  * editorial standards describe the checks the site actually runs.
  */
+import { refreshCopy } from '../lib/refresh';
 import LegalLayout from '../layouts/LegalLayout.astro';
 import { SITE } from '../config/site';
 import { PEOPLE, personId } from '../config/people';
@@ -54,11 +55,12 @@ const schema = {
   description="WakeSharp is made by KineticBit Inc., a small independent studio in Ontario, Canada. Who reviews the articles, how they cite research, and how to reach us."
   path="/about"
   heading="About WakeSharp"
-  intro="WakeSharp is an alarm clock for heavy sleepers that asks for a mission instead of a swipe, and then scores how sharp you actually woke up. This page says who makes it and how its articles are held to account."
+  intro="I’m Dipojjal, the developer behind WakeSharp. I build an alarm clock with missions, loud tones and tools for planning your mornings at KineticBit in Ontario, Canada."
   showUpdated={false}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
+  <p>{refreshCopy('en').developer}</p>
   <h2>Who makes WakeSharp</h2>
   <p>
     WakeSharp is made by {SITE.publisher}, a small independent studio in Manotick, Ontario, Canada, which
@@ -76,11 +78,12 @@ const schema = {
   <ul>
     <li><strong>Every claim about sleep cites its source.</strong> Articles link to the studies, reviews and official guidance they rely on, so you can read the evidence yourself rather than take our word for it.</li>
     <li><strong>“Reviewed by” means a named person read it.</strong> A post shows a reviewer only when that person has read it, and the structured data records the date they did.</li>
-    <li><strong>Claims about the app are checked against the app.</strong> Anything an article says WakeSharp does has to match what the app itself ships, and the site’s own checks reject the claims the app has retired.</li>
-    <li><strong>Corrections are dated.</strong> When an article changes in substance, it shows an “Updated” date. If you find a mistake, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we will fix it.</li>
+    <li><strong>Claims about the app are checked against the app.</strong> Anything an article says WakeSharp does has to match the stated release, with previews labeled, and the site’s own checks reject the claims the app has retired.</li>
+    <li><strong>Corrections are dated.</strong> When an article changes in substance, it shows an “Updated” date. If you find a mistake, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and I will check it.</li>
     <li><strong>It is not medical advice.</strong> The articles are general information about sleep and waking up. For a sleep problem that persists, talk to a clinician.</li>
   </ul>
 
+  <h2>For writers</h2><p>The <a href="/press">press kit</a> has product facts, submitted screenshots and release notes for independent coverage.</p>
   <h2>Contact</h2>
   <p>
     Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, use the <a href="/contact">contact form</a>, or see

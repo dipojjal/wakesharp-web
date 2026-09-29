@@ -1,0 +1,126 @@
+{
+  "preview": "Vista previa de iPhone 2.14. Las capturas y explicaciones muestran la actualización enviada a revisión. El App Store ofrece actualmente la versión 2.10. La disponibilidad en Android puede variar.",
+  "hero": "Elige un sonido de la categoría Fuerte y decide qué harás cuando suene la alarma. Resuelve unas operaciones, escanea una botella o empieza a moverte con una misión de pasos.",
+  "loudTitle": "Empieza con un sonido que se haga notar",
+  "loud": "Fuerte es una categoría del selector de sonidos. Escucha los tonos y guarda el que quieras para esa alarma. Puedes combinarlo con cualquier misión disponible.",
+  "volume": "En iPhone, iOS controla el volumen de la alarma del sistema. Un tono Fuerte no cambia ese ajuste. En Android, comprueba el volumen de las alarmas y permite alarmas en No molestar. Prueba el sonido en tu teléfono.",
+  "scanTitle": "Levántate, encuéntralo y escanéalo",
+  "scan": "Elige un objeto, como una botella, una taza o un lavabo. Cuando suene la alarma, apunta la cámara hacia él. La confirmación verde indica que WakeSharp lo ha reconocido. El reconocimiento se realiza en tu teléfono.",
+  "missionsIntro": "Elige una de estas misiones o combina varias. Esta es la selección pública de iPhone 2.14. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
+  "hubTitle": "Misiones de alarma para empezar a moverte",
+  "hubDescription": "Descubre las misiones, los tonos fuertes, las alarmas de calendario y los turnos de WakeSharp. Elige una tarea que encaje con tu mañana.",
+  "galleryTitle": "WakeSharp por dentro",
+  "englishArtwork": "Las capturas están en inglés. Los pies de imagen explican cada pantalla en español.",
+  "open": "Ampliar captura",
+  "close": "Cerrar captura",
+  "watch": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado. Estas son las tres capturas enviadas del Apple Watch.",
+  "android": "WakeSharp también está disponible en Android. El canal de audio, los permisos y los ajustes de batería son diferentes. Estas imágenes muestran iPhone y Apple Watch, no Android ni Wear OS. Consulta las opciones disponibles en tu aplicación instalada.",
+  "backup": "No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad.",
+  "deleting": "Desinstalar elimina los datos locales, pero no la copia en la nube ni la suscripción. Elimina la copia desde Ajustes → Cuenta → Eliminar cuenta o desde la página de eliminación de cuenta. Gestiona la suscripción en la tienda.",
+  "scoreTitle": "Revisa cómo ha ido tu mañana",
+  "score": "La puntuación de agudeza es un resultado diario dentro de la aplicación. Revísala junto al historial, las rachas y las insignias, y sigue tu progreso con Lark en Nest. No mide el sueño ni es una evaluación médica. No determina si puedes conducir o trabajar con seguridad.",
+  "warmup": "El calentamiento mental es opcional. Problemas de matemáticas, Parejas y Secuencia también pueden ser misiones. Word Dash y Reaction Tap son juegos de calentamiento, no misiones de alarma.",
+  "developer": "Soy Dipojjal, el desarrollador de WakeSharp en KineticBit. Quiero que quede claro qué hace la aplicación y qué depende del teléfono. Si algo no se entiende o una alarma falla, el formulario de contacto llega a mí.",
+  "repeat": "En iPhone 2.14, detener o posponer retrasa la alarma un minuto. Puede repetirse durante una hora como máximo si no completas la misión. Los controles del teléfono siguen funcionando.",
+  "how": "Cómo usarlo",
+  "limits": "Qué comprobar",
+  "related": "Explora otras funciones",
+  "captions": [
+    "Tu próxima alarma y el resumen de la mañana",
+    "La categoría Fuerte y sus tonos",
+    "Objeto reconocido con confirmación verde",
+    "Las misiones disponibles",
+    "Una alarma compartida con un amigo",
+    "La puntuación diaria de agudeza",
+    "Un ciclo de turnos y su calendario",
+    "Historial y progreso"
+  ],
+  "watchCaptions": [
+    "Resumen de alarmas en Apple Watch",
+    "Aviso para despertar en Apple Watch",
+    "Confirmación del Apple Watch con la próxima hora del iPhone"
+  ],
+  "features": [
+    [
+      "Tonos de alarma fuertes",
+      "Elige un tono de la categoría Fuerte y comprueba el volumen y los permisos antes de usar la alarma.",
+      [
+        "Abre el selector de sonidos de una alarma y elige Fuerte.",
+        "Escucha un tono, guárdalo y elige una misión.",
+        "Programa una prueba y comprueba el volumen del teléfono."
+      ]
+    ],
+    [
+      "Alarma para escanear un objeto",
+      "Apunta a una botella, taza o lavabo y espera la confirmación verde al completar tu misión de alarma.",
+      [
+        "Elige Escanear un objeto y selecciona un objetivo.",
+        "Colócalo en un lugar al que puedas llegar sin peligro.",
+        "Apunta con buena luz y mantén la cámara estable hasta ver la confirmación verde."
+      ]
+    ],
+    [
+      "Alarma con problemas de matemáticas",
+      "Resuelve operaciones cuando suene la alarma. Elige una dificultad que puedas completar al despertar.",
+      [
+        "Elige la misión de problemas de matemáticas.",
+        "Prueba la dificultad antes de guardar la alarma.",
+        "Introduce las respuestas correctas para completar las rondas."
+      ]
+    ],
+    [
+      "Alarma con puzles",
+      "Elige memoria, secuencias o colores. Puedes usar una misión o combinar varias tareas en tu alarma.",
+      [
+        "Elige Parejas, Secuencia o Choque de colores.",
+        "Prueba un nivel que no te resulte excesivo al despertar.",
+        "Encuentra parejas, repite el patrón o toca el color de la tinta."
+      ]
+    ],
+    [
+      "Alarma con prueba fotográfica",
+      "Vuelve a fotografiar un lugar con Photo Proof. Descubre en qué se diferencia de reconocer un objeto.",
+      [
+        "Elige Photo Proof y guarda una foto clara de un lugar.",
+        "Busca detalles estables y buena iluminación.",
+        "Vuelve a encuadrar ese lugar al sonar la alarma. Escanear un objeto reconoce una categoría de objeto."
+      ]
+    ],
+    [
+      "Alarma para caminar",
+      "Cuenta pasos reales con Walk It Off. First Light ofrece otra misión para acercarte a la luz del día.",
+      [
+        "Elige Walk It Off y concede el permiso de movimiento.",
+        "Prueba un recorrido corto con el teléfono encima.",
+        "Camina con cuidado. First Light pide sostener el teléfono junto a la luz del día."
+      ]
+    ],
+    [
+      "Alarma de calendario",
+      "Despierta antes del primer evento con límites de hora. El calendario se procesa en tu dispositivo.",
+      [
+        "Concede acceso al calendario y crea una regla.",
+        "Elige los minutos de antelación y las horas mínima y máxima.",
+        "Revisa la siguiente alarma después de cambiar un evento. Usa un respaldo para citas importantes."
+      ]
+    ],
+    [
+      "Alarma para trabajo por turnos",
+      "Organiza alarmas en ciclos de trabajo y descanso, revisa las fechas y omite un día sin borrar el patrón.",
+      [
+        "Crea una rotación y elige la fecha de inicio.",
+        "Añade fases de trabajo y descanso con sus horas.",
+        "Compara la vista previa con tu cuadrante y omite las fechas que cambien."
+      ]
+    ],
+    [
+      "Puntuación de agudeza de WakeSharp",
+      "Revisa tu puntuación diaria, el calentamiento opcional y el historial sin tratarlos como una prueba médica.",
+      [
+        "Abre la vista de agudeza tras completar la mañana.",
+        "Haz el calentamiento si quieres y consulta el desglose.",
+        "Compara varias mañanas. Las insignias y Nest sirven de motivación, no de diagnóstico."
+      ]
+    ]
+  ]
+}

@@ -8,7 +8,7 @@ import { shell as en } from '../en/shell';
  * homepage targets ("ağır uyuyanlar için alarm saati").
  */
 export const shell = {
-  siteDescription: `Ağır uyuyanlar için alarm saati: susturmak için hızlı işlem çözün, bir noktayı fotoğraflayın ya da yürüyün, sonra ne kadar zinde uyandığınızı görün.`,
+  siteDescription: "WakeSharp yüksek sesleri matematik, kamera ve yürüyüş görevleriyle birleştirir. iPhone 2.14 ön izlemesini, takvim alarmlarını ve geçmişini keşfet.",
   tagline: `Uyanın, hem de zinde. Sadece uyanık değil.`,
   requirements: { ios: `iOS 26 veya üzeri`, android: `Android 8.0 veya üzeri` },
   ogImageAlt: `WakeSharp - uyanın, hem de zinde; sadece uyanık değil.`,

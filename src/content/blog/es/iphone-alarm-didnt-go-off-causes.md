@@ -2,7 +2,7 @@
 title: "¿La alarma del iPhone no sonó? Las 7 causas reales"
 description: "La alarma de tu iPhone nunca sonó. Las siete causas que de verdad lo explican, cómo comprobar cada una esta noche y cuáles le toca arreglar a Apple."
 pubDate: 2026-08-31T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 heroImage: ../../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
 heroImageAlt: "Ilustración plana de un iPhone en silencio, boca arriba sobre una mesita de noche al amanecer, iluminado por una luz coral y ámbar en un dormitorio de índigo profundo."
 category: tips-and-tricks
@@ -117,7 +117,7 @@ Ese es el trabajo de la comprobación de fiabilidad de WakeSharp, que vive en Aj
 
 En iPhone, WakeSharp suena a través de AlarmKit de Apple, así que una vez que has concedido el permiso de alarmas, la alarma suena en modo Silencio y Concentración igual que lo hace la app Reloj. Ese permiso es todo el cimiento: recházalo o revócalo y WakeSharp no puede programar ninguna alarma, que es exactamente lo primero que te dirá la comprobación de fiabilidad.
 
-Para la causa número siete, las misiones son la clave. La alarma suena y la mañana te pide una misión: de aritmética y rompecabezas, como Juegos Mentales; de cámara, como Prueba con Foto, que te hace repetir la foto del lugar que elegiste la noche anterior; de movimiento, como Camínalo; de voz, como Restar de Siete; o Sorpréndeme, una misión distinta cada mañana. Da igual cómo silencies la alarma: la mañana solo cuenta cuando la misión está hecha. Los controles de tu propio teléfono siempre funcionan: nada te impide apagarlo. Lo que cambia es que la misión exige que una parte suficiente de ti esté despierta como para darse cuenta de que la está haciendo.
+Elige una de estas misiones o combina varias. Esta es la selección pública de iPhone 2.14. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes. En iPhone 2.14, detener o posponer retrasa la alarma un minuto. Puede repetirse durante una hora como máximo si no completas la misión. Los controles del teléfono siguen funcionando. [Misiones de alarma para empezar a moverte](/es/features).
 
 El límite es el honesto, y es el mismo límite que tiene cualquier app de alarma: WakeSharp no es un dispositivo médico, los ajustes de tu teléfono, las restricciones de batería o su estado de energía pueden impedir que suene cualquier alarma, y deberías usar una segunda alarma independiente para todo aquello a lo que no puedas permitirte llegar tarde.
 

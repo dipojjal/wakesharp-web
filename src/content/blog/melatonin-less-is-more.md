@@ -3,7 +3,7 @@ title: "Melatonin: Why Less Is More (and When It Does Nothing)"
 seoTitle: "Melatonin Dosage: Why Less Is More, and When It Fails"
 description: "Melatonin is a timing signal, not a sedative. What the evidence says about 0.5 mg versus 10 mg gummies, when to take it, and when it does nothing."
 pubDate: 2026-09-07T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/melatonin-less-is-more/hero.jpg
@@ -75,7 +75,7 @@ And melatonin does approximately nothing for a racing mind at midnight, for untr
 
 Every melatonin protocol above assumes a fixed reference point: a wake time that does not move. Shift the morning around and the evening signal has nothing to anchor to.
 
-That is the honest place WakeSharp fits. A mission alarm asks for something that needs a working brain, arithmetic in Mind Games or retaking the photo of the spot you chose the night before with Photo Proof, so the wake time you chose is the wake time you actually keep. However you quiet the alarm, the morning only counts once the mission is done. The limit matters too: your phone's own controls always work (nothing stops you switching the phone off), no app can guarantee that anyone wakes up, and none of this shifts your circadian phase by itself. It only holds the anchor steady enough for the rest to mean something.
+That is the honest place WakeSharp fits. A mission alarm asks for something that needs a working brain, arithmetic in Math Problems or retaking the photo of the spot you chose the night before with Photo Proof, so the wake time you chose is the wake time you actually keep. However you quiet the alarm, the morning only counts once the mission is done. The limit matters too: your phone's own controls always work (nothing stops you switching the phone off), no app can guarantee that anyone wakes up, and none of this shifts your circadian phase by itself. It only holds the anchor steady enough for the rest to mean something.
 
 ## Talk to a clinician, genuinely
 

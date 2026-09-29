@@ -36,7 +36,7 @@ const blocks = enabledLocales().map((l) => ({ locale: l, t: getCatalog(l.code).n
           <a href={localePath(locale, '/')} class="pill bg-[var(--color-coral)] px-5 py-3 text-[var(--color-night-deep)]">{t.backHome}</a>
           <a href={localePath(locale, '/support')} class="pill bg-[var(--color-night-elevated)] px-5 py-3">{t.support}</a>
         </div>
-        <div class="mt-2"><StoreButtons align="center" /></div>
+        <div class="mt-2"><StoreButtons pageId="404" align="center" /></div>
         {locale.code !== DEFAULT_LOCALE && <p class="text-sm opacity-80">{shell.appLanguageNote}</p>}
       </div>
     ))

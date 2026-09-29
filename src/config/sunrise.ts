@@ -41,35 +41,18 @@ export interface SunriseStop {
 
 export const SUNRISE = [
   { id: 'hero', from: '#10111F', to: '#16172E', tone: 'night' },
-  { id: 'trust', from: '#16172E', to: '#1B1A34', tone: 'night' },
-  { id: 'ring', from: '#1B1A34', to: '#241D3E', tone: 'night' },
-  { id: 'reliable', from: '#241D3E', to: '#2E2246', tone: 'night', cards: true },
-  { id: 'smart', from: '#2E2246', to: '#3D2654', tone: 'night' },
-  // Ends at #452A57 rather than #4C2E59 because this band now carries the
-  // mission card grid. Inside a `bg-white/[0.06]` card, #4C2E59 puts `dim` at
-  // 4.35:1 - below AA, and invisible to a raw-band-only walk. #452A57 reads
-  // 4.67:1, which leaves room for a copy edit without re-crossing the line.
-  { id: 'mission', from: '#3D2654', to: '#452A57', tone: 'night', cards: true },
-  // Absorbs the travel `mission` gave up. No cards here, so the raw-band floor
-  // of 4.55:1 at the #5B355E flip point is the only constraint, unchanged.
-  { id: 'games', from: '#452A57', to: '#5B355E', tone: 'night' },
-  // The night -> day flip. Its midpoint (~#A86D6B) measures ~3.4:1 against light text
-  // and ~3.9:1 against dark text: it fails AA for both, so there is no text colour
-  // that works on it. Everything in this section lives inside the scrim card.
+  { id: 'loud', from: '#16172E', to: '#241D3E', tone: 'night' },
+  { id: 'scan', from: '#241D3E', to: '#2E2246', tone: 'night' },
+  { id: 'mission', from: '#2E2246', to: '#452A57', tone: 'night', cards: true },
+  { id: 'gallery', from: '#452A57', to: '#452A57', tone: 'night' },
+  { id: 'smart', from: '#452A57', to: '#5B355E', tone: 'night' },
   { id: 'sharp', from: '#5B355E', to: '#F5A578', tone: 'twilight', scrim: true },
-  // `stats`/`together` and `platforms`/`yours` are midpoint splits of what used
-  // to be one band each. A stop placed exactly on the existing A->C segment is
-  // contrast-neutral by construction: every colour the walk samples across A->B
-  // and B->C already lay inside A->C, which passed. It is also seamless, since
-  // the midpoint is where the ramp already ran through.
-  { id: 'stats', from: '#F5A578', to: '#F8AD6D', tone: 'amber' },
-  { id: 'together', from: '#F8AD6D', to: '#FAB462', tone: 'amber' },
-  { id: 'platforms', from: '#FAB462', to: '#FCC88E', tone: 'dawn' },
-  { id: 'yours', from: '#FCC88E', to: '#FDDCBA', tone: 'dawn' },
+  { id: 'platforms', from: '#F5A578', to: '#FCC88E', tone: 'amber' },
+  { id: 'reliable', from: '#FCC88E', to: '#FDDCBA', tone: 'dawn' },
   { id: 'pricing', from: '#FDDCBA', to: '#FFF3E2', tone: 'morning' },
   { id: 'faq', from: '#FFF3E2', to: '#FFF7EB', tone: 'morning' },
-  // Only rendered where the page's language has posts to show (HomePage).
   { id: 'from-blog', from: '#FFF7EB', to: '#FFF7EB', tone: 'morning' },
+  { id: 'developer', from: '#FFF7EB', to: '#FFF7EB', tone: 'morning' },
   { id: 'cta', from: '#FFF7EB', to: '#FFF7EB', tone: 'morning' },
 ] as const satisfies readonly SunriseStop[];
 

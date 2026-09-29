@@ -3,7 +3,7 @@ title: "Revenge Bedtime Procrastination: Why You Sabotage Tomorrow Every Night"
 seoTitle: "Revenge Bedtime Procrastination: Why You Stay Up Too Late"
 description: "You're not lazy at midnight. You're reclaiming the autonomy your day took. Here's the science of revenge bedtime procrastination, and how to get the hour back."
 pubDate: 2026-08-28T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/revenge-bedtime-procrastination/hero.jpg
@@ -89,7 +89,7 @@ We built one thing that is genuinely aimed at this problem, and it is not the al
 
 The engine of revenge bedtime procrastination is an invisible bill. You spend at midnight and the charge lands on a stranger at 7 AM, and as Van Dongen's data shows, that stranger cannot reliably feel how impaired they are. So the trade never gets properly priced, and you make it again tonight.
 
-WakeSharp's **Sharpness Score** exists to put a number on that. A short warm-up after your alarm measures how quickly you are actually thinking, and scores it against your own rolling baseline rather than against anyone else. Not a sleep score, not a guess about your night. A same-morning reading of the thing you were spending last night. After a couple of weeks you stop arguing from feelings about whether the late night was worth it, because you can see what a 12:40 AM finish does to your own numbers versus an 11:15 PM one. The bill stops being abstract. Consistent alarm times, calendar-aware and processed on your device, give that baseline something stable to measure against.
+WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with optional brain warm-ups and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
 
 The honest limits. WakeSharp has no visibility into your evening and no opinion about it. It cannot make you put the phone down, it does not track your sleep, it has no idea when you actually fell asleep, and the calendar details it reads to time your alarms stay on your device. It will not fix a job that leaves you with no autonomy until midnight; that is a life problem, not an app problem. And no alarm app on any phone can guarantee it wakes you, which is why WakeSharp checks volume, permissions, and battery the night before and tells you plainly what it found instead of a reassuring tick it cannot stand behind.
 

@@ -1,0 +1,126 @@
+{
+  "preview": "iPhone 2.14 ön izlemesi. Bu görüntüler ve açıklamalar incelemeye gönderilen güncellemeyi gösterir. App Store şu anda 2.10 sürümünü sunuyor. Android’deki özellikler farklı olabilir.",
+  "hero": "Yüksek Ses kategorisinden bir ses seç, ardından alarm çalınca ne yapacağına karar ver. Birkaç matematik sorusu çöz, bir şişeyi tara veya yürüyüş göreviyle hareket et.",
+  "loudTitle": "Dikkatini çekecek bir sesle başla",
+  "loud": "Yüksek Ses, alarmın ses seçicisindeki bir kategoridir. Sesleri dinle ve bu alarm için istediğini kaydet. Seçtiğin sesi kullanılabilir herhangi bir görevle eşleştirebilirsin.",
+  "volume": "iPhone’da sistem alarmının sesini iOS yönetir. Yüksek sesli bir ton bu ayarı değiştirmez. Android’de alarm sesini kontrol et ve Rahatsız Etmeyin ayarında alarmlara izin ver. Kendi telefonunda bir deneme yap.",
+  "scanTitle": "Kalk, bul ve tara",
+  "scan": "Şişe, kupa veya lavabo gibi bir hedef seç. Alarm çaldığında kamerayı o nesneye yönelt. Yeşil eşleşme onayı, WakeSharp’ın nesneyi tanıdığını gösterir. Nesne tanıma telefonunda çalışır.",
+  "missionsIntro": "Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iPhone 2.14’ün herkese açık seçimidir. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
+  "hubTitle": "Yataktan kalkmak için alarm görevleri",
+  "hubDescription": "WakeSharp görevlerini, yüksek alarm seslerini, takvim alarmlarını ve vardiya döngülerini keşfet. Sabahına uygun görevi seç.",
+  "galleryTitle": "WakeSharp’a yakından bak",
+  "englishArtwork": "Görüntüler İngilizcedir. Altyazılar her ekranı Türkçe açıklar.",
+  "open": "Görüntüyü büyüt",
+  "close": "Görüntüyü kapat",
+  "watch": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır. Bunlar gönderilen üç Apple Watch görüntüsüdür.",
+  "android": "WakeSharp Android’de de kullanılabilir. Alarm ses kanalı, izinler ve pil ayarları farklıdır. Bu görüntüler iPhone ve Apple Watch’a aittir, Android veya Wear OS’a değil. Platformundaki görevleri ve ayarları yüklü uygulamadan kontrol et.",
+  "backup": "WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır.",
+  "deleting": "Uygulamayı kaldırmak yerel verileri siler, ancak bulut yedeğini veya aboneliği silmez. Yedeği Ayarlar → Hesap → Hesabı sil yolundan ya da hesap silme sayfasından kaldır. Aboneliği mağazada ayrıca yönet.",
+  "scoreTitle": "Sabahının nasıl geçtiğine bak",
+  "score": "Sharpness, uygulama içindeki günlük bir puandır. Geçmişin, serilerin ve rozetlerinle birlikte incele; Nest’te Lark ile ilerlemeni gör. Bu bir uyku puanı veya tıbbi değerlendirme değildir. Güvenle araç kullanıp çalışabileceğini belirlemez.",
+  "warmup": "Zihin ısınması isteğe bağlıdır. Matematik Problemleri, Hafıza Eşleştirme ve Sıra Hatırlama alarm görevi de olabilir. Word Dash ve Reaction Tap ısınma oyunlarıdır, alarm görevi değildir.",
+  "developer": "Ben Dipojjal, KineticBit’te WakeSharp’ı geliştiriyorum. Uygulamanın ne yaptığını ve nelerin telefona bağlı olduğunu açıkça anlatmak istiyorum. Bir şey anlaşılmıyorsa veya alarm sorun çıkarıyorsa iletişim formu bana ulaşır.",
+  "repeat": "iPhone 2.14’te durdurmak veya ertelemek alarmı bir dakika geciktirir. Görev tamamlanmazsa en fazla bir saat tekrarlanabilir. Telefonun kendi kontrolleri çalışmaya devam eder.",
+  "how": "Nasıl kullanılır",
+  "limits": "Kontrol etmen gerekenler",
+  "related": "Diğer özellikleri keşfet",
+  "captions": [
+    "Sıradaki alarm ve sabah özeti",
+    "Yüksek Ses kategorisi ve alarm sesleri",
+    "Yeşil onayla tanınan nesne",
+    "Kullanılabilir alarm görevleri",
+    "Bir arkadaşla paylaşılan alarm",
+    "Günlük Sharpness puanı",
+    "Vardiya döngüsü ve takvimi",
+    "Sabah geçmişi ve ilerleme"
+  ],
+  "watchCaptions": [
+    "Apple Watch alarm özeti",
+    "Apple Watch uyanma bildirimi",
+    "Sonraki iPhone alarm saatini gösteren Apple Watch onayı"
+  ],
+  "features": [
+    [
+      "Yüksek alarm sesleri",
+      "Yüksek Ses kategorisinden bir ton seç. Alarmına güvenmeden önce telefonunun sesini ve izinlerini kontrol et.",
+      [
+        "Alarmın ses seçicisinde Yüksek Ses kategorisini aç.",
+        "Bir tonu dinle, kaydet ve görev seç.",
+        "Deneme alarmı kur ve telefon sesini kontrol et."
+      ]
+    ],
+    [
+      "Nesne tarama alarmı",
+      "Şişe, kupa veya lavabo tara. Alarm görevini bitirmek için kameradaki yeşil eşleşme onayını bekle.",
+      [
+        "Nesne Tara görevini ve hedefini seç.",
+        "Hedefi güvenle ulaşabileceğin bir yere koy.",
+        "İyi ışıkta kamerayı sabit tut ve yeşil onayı bekle."
+      ]
+    ],
+    [
+      "Matematik sorulu alarm",
+      "Alarm çalınca işlemleri çöz. Sabah tamamlayabileceğin bir zorluk seçerek matematik görevini ayarla.",
+      [
+        "Matematik Problemleri görevini seç.",
+        "Kaydetmeden önce zorluk seviyesini dene.",
+        "Turları bitirmek için doğru cevapları gir."
+      ]
+    ],
+    [
+      "Bulmacalı alarm",
+      "Hafıza, sıra veya renk görevleri seç. Sabahına uygunsa birkaç görevi aynı alarmda birleştir.",
+      [
+        "Hafıza Eşleştirme, Sıra Hatırlama veya Renk Çatışması seç.",
+        "Uyanınca yapabileceğin bir seviyeyi dene.",
+        "Çiftleri bul, deseni tekrarla veya yazının mürekkep rengine dokun."
+      ]
+    ],
+    [
+      "Fotoğraf kanıtlı alarm",
+      "Photo Proof ile seçtiğin yerin fotoğrafını yeniden çek. Nesne tanıma görevinden farkını öğren.",
+      [
+        "Photo Proof seç ve net bir referans fotoğrafı çek.",
+        "Sabit ayrıntıları ve yeterli ışığı olan bir yer seç.",
+        "Alarm çalınca aynı yeri kadraja al. Nesne Tara ise bir nesne türünü tanır."
+      ]
+    ],
+    [
+      "Yürüten alarm",
+      "Walk It Off görev sırasında gerçek adımlarını sayar. First Light gün ışığına gitmek için başka bir seçenektir.",
+      [
+        "Walk It Off seç ve hareket iznini ver.",
+        "Telefon yanında kısa bir rotayı dene.",
+        "Dikkatle yürü. First Light görevinde telefonu gün ışığında tutarsın."
+      ]
+    ],
+    [
+      "Takvim alarmı",
+      "İlk etkinlikten önce, seçtiğin saat sınırları içinde uyan. Takvim işlemleri telefonunda yapılır.",
+      [
+        "Takvim izni ver ve akıllı alarm kuralı oluştur.",
+        "Kaç dakika önce çalacağını, en erken ve en geç saati seç.",
+        "Etkinlik değişince alarmı kontrol et. Önemli randevular için yedek alarm kullan."
+      ]
+    ],
+    [
+      "Vardiyalı çalışanlar için alarm",
+      "Çalışma ve izin günleri için bir döngü kur. Takvimi kontrol et ve düzeni silmeden tek bir günü atla.",
+      [
+        "Başlangıç tarihiyle bir vardiya döngüsü oluştur.",
+        "Çalışma ve dinlenme aşamalarını saatleriyle ekle.",
+        "Ön izlemeyi vardiya çizelgenle karşılaştır, değişen günleri atla."
+      ]
+    ],
+    [
+      "WakeSharp Sharpness puanı",
+      "Günlük puanını, isteğe bağlı ısınmayı ve geçmişini incele. Sonucu tıbbi bir test olarak değerlendirme.",
+      [
+        "Sabahını tamamladıktan sonra Sharpness görünümünü aç.",
+        "İstersen ısınma yap ve puan ayrıntılarını incele.",
+        "Birkaç sabahı karşılaştır. Rozetler ve Nest motivasyon içindir, tanı koymaz."
+      ]
+    ]
+  ]
+}

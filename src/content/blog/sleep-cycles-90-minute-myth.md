@@ -3,7 +3,7 @@ title: "The 90-Minute Myth: What Sleep Cycles Actually Mean for Your Bedtime"
 seoTitle: "Sleep Cycle Calculator Myth: What 90 Minutes Really Means"
 description: "Sleep cycles are not a fixed 90 minutes. They run roughly 70 to 120. Here is what that means for the bedtime you pick tonight, and what actually helps."
 pubDate: 2026-08-29T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-cycles-90-minute-myth/hero.jpg
@@ -79,9 +79,9 @@ Let us be straightforward about the product angle, since this is a post about pe
 
 WakeSharp does not have a sleep cycle calculator, and we are not planning to add one. It does not track your sleep, does not know when you fell asleep, and cannot tell what stage you are in, because a phone on a nightstand genuinely cannot know that and we would rather say so than draw you a graph.
 
-What it is built to protect is the thing this article says matters: **a wake time you actually hold.** A swipe is a reflex available to a barely conscious person, so the alarm asks for a mission instead: Mind Games, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before, with object scanning and step counting among the others. However you quiet the alarm, the morning only counts once the mission is done. The point is not to be harsh. The point is that "regular wake time" is a plan made by evening-you and executed by the least reliable version of you that exists, and one of those two needs help.
+What it is built to protect is the thing this article says matters: **a wake time you actually hold.** A swipe is a reflex available to a barely conscious person, so the alarm asks for a mission instead: Math Problems, a short arithmetic sprint, or Photo Proof, which has you retake the photo of a spot you chose the night before, with object scanning and step counting among the others. However you quiet the alarm, the morning only counts once the mission is done. The point is not to be harsh. The point is that "regular wake time" is a plan made by evening-you and executed by the least reliable version of you that exists, and one of those two needs help.
 
-Then the measurement, which is where you can settle the cycle question for yourself empirically. The optional two-minute warm-up after your mission scores you against **your own rolling baseline**, not against a population average. So if you want to know whether an 11:15 PM bedtime beats a 12:30 AM one for you personally, you do not need to model your cycles. You need a fixed wake time, two weeks, and your own numbers.
+Keep a simple record of bedtime, wake time and how you feel. WakeSharp’s [Sharpness view](/features/sharpness-score) can sit alongside that record, but it does not identify sleep stages or prove which bedtime is best for you.
 
 The honest limits, as always. No app can ring on a phone that is switched off, out of battery, or has had its permissions revoked, which is why WakeSharp runs a reliability check the night before and gives you a plain verdict including the unknowns instead of a reassuring tick it cannot stand behind. For anything you truly cannot miss, set a second alarm on another device. And nothing here shortens sleep inertia to zero, because that is your biology doing its job, not a bug we can patch.
 

@@ -11,13 +11,14 @@ import type { EnabledLocale } from '../i18n/config';
 import icon from '../assets/brand/icon.png';
 
 interface Props {
+  pageId: string;
   locale: EnabledLocale;
   switchTo: Alternate[];
   fallbackPath: string;
   /** The Blog link target: the locale's own index when it has posts, else /blog. */
   blogHref: string;
 }
-const { locale, switchTo, fallbackPath, blogHref } = Astro.props;
+const { pageId, locale, switchTo, fallbackPath, blogHref } = Astro.props;
 const t = getCatalog(locale.code).shell;
 const href = (p: string): string => localePath(locale, p);
 const year = new Date().getFullYear();
@@ -38,8 +39,8 @@ const year = new Date().getFullYear();
         <h2 class="text-sm font-bold uppercase tracking-wider text-[var(--color-night-dim)]">{t.footer.product}</h2>
         <ul class="mt-3 space-y-2 text-sm">
           <li><a href={href('/tools')}>{toolCopy(locale.code).tools}</a></li>
-          <li><a class="hover:text-[var(--color-amber)]" href={href('/#features')}>{t.footer.features}</a></li>
-          <li><a class="hover:text-[var(--color-amber)]" href={href('/#sharp')}>{t.footer.sharpnessScore}</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href={href('/features')}>{t.footer.features}</a></li>
+          <li><a class="hover:text-[var(--color-amber)]" href={href('/features/sharpness-score')}>{t.footer.sharpnessScore}</a></li>
           <li><a class="hover:text-[var(--color-amber)]" href={href('/#pricing')}>{t.footer.pricing}</a></li>
           <li><a class="hover:text-[var(--color-amber)]" href={blogHref}>{t.footer.blog}</a></li>
           <li><a class="hover:text-[var(--color-amber)]" href={href('/#faq')}>{t.footer.faq}</a></li>
@@ -72,7 +73,7 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-8"><StoreButtons placement="footer" localeCode={locale.code}/></div>
+    <div class="mt-8"><StoreButtons pageId={pageId} placement="footer" localeCode={locale.code}/></div>
     {import.meta.env.PUBLIC_POSTHOG_KEY && <button type="button" data-analytics-settings class="mt-6 underline text-sm">{toolCopy(locale.code).settings}</button>}
     <LanguageList locale={locale} switchTo={switchTo} fallbackPath={fallbackPath} />
 

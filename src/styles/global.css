@@ -268,3 +268,7 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']),
 html[lang='ja'] :is(h1, h2, h3, [class*='tracking-']) {
   letter-spacing: 0;
 }
+
+/* Language names use system glyphs so an English page does not download the
+   Arabic and Cyrillic font subsets merely for the footer language selector. */
+[data-lang-alt] { font-family: system-ui, sans-serif; }

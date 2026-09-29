@@ -14,9 +14,9 @@ import { SITE } from '../config/site';
       <li>No account is required. You can optionally sign in with Apple or Google to back up your alarms and progress and link your WakeSharp Unlimited purchases across your devices.</li>
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
-      <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. No image or step data ever leaves your phone.</li>
+      <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
       <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong> and an optional <strong>account backup</strong>. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
-      <li>WakeSharp does not request precise location. Network services receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
+      <li>On iPhone, weather is optional: choose a city or allow location access. Weather coordinates are rounded before being sent to our weather service and Apple Weather, as described below. Network services also receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
 
@@ -31,15 +31,15 @@ import { SITE } from '../config/site';
   <ul>
     <li>It does not require an account. Sign-in supports backup, restoration and purchase continuity.</li>
     <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the name your sign-in provider shares, and the name you give the Lark to call you by, if you choose to. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
-    <li>It does not request GPS or precise location. Approximate location inferred from IP addresses is described below.</li>
+    <li>It does not collect a location route. On iPhone, optional weather uses a chosen city or a location fix rounded to two decimal places before transmission. Approximate location inferred from IP addresses is described below.</li>
     <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, from version 2.10, the advertising identifier is read only after you allow tracking through Apple's prompt; before that version, and after a refusal, it is not read at all.</li>
     <li>We do not sell customer lists. Advertising and measurement may involve sharing with the providers and enabled advertising partners described below; regional privacy choices apply to that processing.</li>
   </ul>
 
   <h2>What stays on your device</h2>
   <p>
-    Everything WakeSharp knows about your mornings is written to a local database on your phone
-    (SwiftData on iOS, Room on Android) and never uploaded:
+    Your morning data is written to a local database on your phone (SwiftData on iOS, Room on Android).
+    The following data stays local unless you create the optional account and cloud backup described next:
   </p>
   <ul>
     <li>Your alarms, their times, repeat days and settings.</li>
@@ -104,13 +104,32 @@ import { SITE } from '../config/site';
     <li>You can revoke calendar access at any time in your phone's system settings. The smart alarm stops adjusting; nothing else changes.</li>
   </ul>
 
+  <h2>Optional weather on iPhone</h2>
+  <p>
+    From version 2.14, you can choose a city manually or allow location access to show local weather.
+    Location permission is optional; declining it does not affect alarms, and you can use a chosen city
+    instead. When using your location, WakeSharp requests an approximate fix and rounds latitude and
+    longitude to two decimal places on your device before making the weather request. A chosen city
+    uses that city's coordinates instead.
+  </p>
+  <p>
+    These rounded coordinates are sent to WakeSharp's weather service, hosted through Supabase, which
+    requests the forecast from <strong>Apple Weather</strong>. Network providers also receive the IP
+    address associated with the request. Weather location is not included in product analytics,
+    advertising measurement, or your account backup. City and weather preferences are stored locally.
+    You can turn weather off in the app and revoke location permission in iOS Settings.
+    Apple's privacy policy is at <a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a>.
+  </p>
+
   <h2>Permissions, and why each one exists</h2>
   <p>On iPhone, WakeSharp asks for:</p>
   <ul>
     <li><strong>Alarms</strong>: so the alarm can ring loudly and reliably through Silent mode and Focus, using Apple's system alarm framework.</li>
     <li><strong>Calendar</strong>: optional, read-only, for smart alarms only.</li>
+    <li><strong>Location</strong>: optional on iPhone for local weather. A manually selected city works without location permission. Coordinates are rounded before transmission, as described above.</li>
     <li><strong>Camera</strong>: optional, only for an alarm you have set to Scan an Object, Fetch, Photo Proof, First Light, Face Check or Fruit Slash, when you enrol a target and while that mission runs. Face Check and Fruit Slash use the front camera. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong>: optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
+    <li><strong>Microphone and Speech Recognition</strong>: optional on iPhone for spoken missions such as Name Five. Recognition is restricted to on-device processing. Audio buffers and transcripts are used only to check your answer, then discarded; they are not recorded to a file, logged, backed up or uploaded. If on-device recognition is unavailable or permission is declined, the mission offers a fallback.</li>
     <li><strong>Notifications</strong>: for the optional pre-bed wind-down reminder, the reliability warning that rides with it, and the report shown when an alarm did not ring.</li>
     <li><strong>Tracking</strong>: optional, from version 2.10, to measure which advert or link brought you to WakeSharp and whether it led to a trial or a subscription. It is never used to show you adverts inside WakeSharp, because there are none. Declining does not prevent alarm use or purchasing a plan.</li>
   </ul>
@@ -138,7 +157,9 @@ import { SITE } from '../config/site';
   <h2>The camera and your physical activity</h2>
   <p>
     Seven of the missions read a sensor. All of them are optional, all of them ask for permission when you
-    set the alarm rather than at 6am, and none of them sends anything anywhere. Two of them, Face
+    set the alarm rather than at 6am, and sensor processing happens on your device. Live camera frames and
+    step counts are not uploaded; enrolled reference thumbnails may be backed up with an optional account.
+    Two of them, Face
     Check and Fruit Slash, use the <strong>front</strong> camera, which is a different thing to
     agree to, so they are described on their own below.
   </p>
@@ -159,10 +180,10 @@ import { SITE } from '../config/site';
       keeps a feature print, a few kilobytes of numbers that can be compared but never looked at, plus a
       small thumbnail for the picker row, and discards the frame itself. The morning's retake is judged
       against that print <strong>on your device</strong>: Apple's Vision framework on iPhone, a small
-      bundled model on Android, held in memory for the comparison and then discarded. Nothing is written to
-      your photo library or transmitted to us or to anyone else. The print and the thumbnail are what the
-      backup section above calls your <em>mission references</em>; the photographs themselves never exist to
-      be backed up.
+      bundled model on Android, held in memory for the comparison and then discarded. The morning retake is not written to
+      your photo library or transmitted. The enrolled print and thumbnail are the <em>mission references</em>
+      included in your private cloud backup if you create an optional account. Full camera frames are not
+      backed up.
     </li>
     <li>
       <strong>The Fetch mission</strong> works the same way as Scan an Object, from a different pool: it
@@ -197,7 +218,7 @@ import { SITE } from '../config/site';
       this mission never requests your location.
     </li>
     <li>
-      Decline any of these permissions and nothing breaks. The mission falls back to Mind Games at full
+      Decline any of these permissions and nothing breaks. The mission falls back to Math Problems at full
       credit, rather than leaving you with an alarm you cannot silence.
     </li>
   </ul>

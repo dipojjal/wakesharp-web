@@ -7,22 +7,22 @@ import { TOOL_SLUGS, toolCopy } from '../i18n/tools';
 import { localePath, type Alternate } from '../i18n/routes';
 import type { EnabledLocale } from '../i18n/config';
 import icon from '../assets/brand/icon.png';
-interface Props { locale: EnabledLocale; switchTo: Alternate[]; fallbackPath: string; blogHref: string }
-const { locale, switchTo, fallbackPath, blogHref } = Astro.props;
+interface Props { pageId: string; locale: EnabledLocale; switchTo: Alternate[]; fallbackPath: string; blogHref: string }
+const { pageId, locale, switchTo, fallbackPath, blogHref } = Astro.props;
 const t = getCatalog(locale.code).shell;
 const tools = toolCopy(locale.code);
 const href = (p: string) => localePath(locale,p);
-const links = [[t.nav.features,href('/#features')],[t.nav.pricing,href('/#pricing')],[t.nav.blog,blogHref],[t.nav.contact,href('/contact')]];
+const links = [[t.nav.features,href('/features')],[t.nav.pricing,href('/#pricing')],[t.nav.blog,blogHref],[t.nav.contact,href('/contact')]];
 ---
 <header class="site-header">
  <div class="header-row">
-  <a href={href('/')} class="brand"><Image src={icon} alt="" width={28} height={28} format="webp" loading="eager"/><span aria-hidden="true">WakeSharp</span><span class="sr-only">{t.brandHome}</span></a>
+  <a href={href('/')} class="brand"><Image src={icon} alt="" width={28} height={28} densities={[1,2,3]} format="webp" loading="eager"/><span aria-hidden="true">WakeSharp</span><span class="sr-only">{t.brandHome}</span></a>
   <nav class="desktop-nav" aria-label={t.nav.aria}>
     {links.slice(0,2).map(([label,url]) => <a href={url}>{label}</a>)}
     <details class="tools-menu"><summary>{tools.tools}</summary><div class="tools-dropdown"><a href={href('/tools')}>{tools.all}</a>{TOOL_SLUGS.map((slug,i) => <a href={href('/tools/'+slug)}>{tools.pages[i].title}</a>)}</div></details>
     {links.slice(2).map(([label,url]) => <a href={url}>{label}</a>)}
   </nav>
-  <div class="header-actions"><LanguageMenu locale={locale} switchTo={switchTo} fallbackPath={fallbackPath}/><DownloadButton placement="header" label={t.nav.cta} compact localeCode={locale.code}/></div>
+  <div class="header-actions"><LanguageMenu locale={locale} switchTo={switchTo} fallbackPath={fallbackPath}/><DownloadButton pageId={pageId} placement="header" label={t.nav.cta} compact localeCode={locale.code}/></div>
   <details class="mobile-nav"><summary aria-label={tools.menu}>☰</summary><nav aria-label={t.nav.aria}>{links.map(([label,url])=><a href={url}>{label}</a>)}<a href={href('/#faq')}>{t.nav.faq}</a><a href={href('/tools')}><strong>{tools.tools}</strong></a>{TOOL_SLUGS.map((slug,i)=><a href={href('/tools/'+slug)}>{tools.pages[i].title}</a>)}</nav></details>
  </div>
 </header>

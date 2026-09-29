@@ -8,6 +8,8 @@
  * The chrome reads the post's language from its frontmatter, so one layout
  * serves every locale; hreflang pairs a post with its other language versions.
  */
+import ReleaseNotice from '../components/ReleaseNotice.astro';
+import { pageIdFor } from '../lib/download';
 import BaseLayout from './BaseLayout.astro';
 import { Picture, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
@@ -123,10 +125,11 @@ const [reviewedPre = '', reviewedPost = ''] = t.reviewedBy.split('{name}');
         fetchpriority="high"
       />
 
+      <ReleaseNotice localeCode={locale.code}/>
       <div class="prose mt-10"><slot /></div>
 
       {toolIndex >= 0 && <aside class="mt-10 rounded-2xl bg-white/70 p-6"><h2 class="text-xl">{tools.tools}</h2><a class="mt-3 inline-block font-bold underline" href={localePath(locale, '/tools/' + TOOL_SLUGS[toolIndex])}>{tools.pages[toolIndex].title}</a><p class="mt-2">{tools.pages[toolIndex].description}</p></aside>}
-      <BlogCTA locale={locale} />
+      <BlogCTA pageId={pageIdFor(path)} locale={locale} />
 
       {
         tags.length > 0 && (

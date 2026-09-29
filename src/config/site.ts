@@ -43,7 +43,7 @@ export const SITE = {
    * controls always work, so no mission is the only way to stop an alarm.
    */
   description:
-    'An alarm clock for heavy sleepers: quiet it by solving quick math, photographing a spot or walking it off, then see how sharp you woke up.',
+    'WakeSharp is a loud alarm clock with math, camera and walking missions. Explore the iPhone 2.14 preview, calendar alarms and daily Sharpness Score.',
   url: 'https://wakesharp.app',
   email: 'support@wakesharp.app',
   /** The entity that publishes both apps, and the one named in the legal pages. */

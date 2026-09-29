@@ -1,0 +1,7 @@
+---
+import FeatureIndex from '../../../templates/FeatureIndex.astro';
+import { localeStaticPaths, localeFromParams } from '../../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+const locale = localeFromParams(Astro.params);
+---
+<FeatureIndex locale={locale}/>

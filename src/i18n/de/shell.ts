@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * Englischen aus site.ts kommen, stehen hier als übersetzter Text.
  */
 export const shell = {
-  siteDescription: `Ein Wecker für Tiefschläfer: Bring ihn mit Kopfrechnen, einem Foto oder ein paar Schritten zum Schweigen und sieh, wie hellwach du aufgewacht bist.`,
+  siteDescription: "WakeSharp verbindet laute Töne mit Rechen-, Kamera- und Gehmissionen. Entdecke die Vorschau auf iPhone 2.14, Kalenderwecker und deinen Verlauf.",
   tagline: `Hellwach aufwachen. Nicht nur wach.`,
   requirements: { ios: `iOS 26 oder neuer`, android: `Android 8.0 oder neuer` },
   ogImageAlt: `WakeSharp - hellwach aufwachen, nicht nur wach.`,

@@ -2,7 +2,7 @@
 title: "How to Become a Morning Person Without Hating Your Life"
 description: "A chronotype-respecting plan for waking earlier: 15-minute shifts, light at both ends of the day, and why 5 AM club maximalism collapses by Thursday."
 pubDate: 2026-09-06T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/become-morning-person-realistic/hero.jpg
@@ -76,11 +76,11 @@ It also means accepting a ceiling. Some people will land at 6:30 and feel good. 
 
 WakeSharp cannot change your chronotype, and it does not pretend to. What it can support is the boring part, which is consistency held across weeks.
 
-You set your own alarm time, and you move it yourself in small increments. There is no automatic scheduler that advances your alarm by 15 minutes a week, so the 15-minute step is a decision you make on a Sunday, not something the app does behind your back. What the app does is make each individual morning less negotiable, because the alarm asks for a mission rather than a thumb reflex, and however you quiet it, the morning only counts once the mission is done. Missions come in several kinds: Mind Games (arithmetic) and other puzzles, Photo Proof (retake the photo of the spot you chose the night before), scanning a real object, Walk It Off and other movement, and answers said out loud, with Surprise Me picking a different one every morning.
+You set your own alarm time, and you move it yourself in small increments. There is no automatic scheduler that advances your alarm by 15 minutes a week, so the 15-minute step is a decision you make on a Sunday, not something the app does behind your back. What the app does is make each individual morning less negotiable, because the alarm asks for a mission rather than a thumb reflex, and however you quiet it, the morning only counts once the mission is done. Missions come in several kinds: Math Problems (arithmetic) and other puzzles, Photo Proof (retake the photo of the spot you chose the night before), scanning a real object, Walk It Off and other movement, and answers said out loud, with Surprise Me picking a different one every morning.
 
 Streaks are the part that matters for a gradual shift. They count consecutive days of completing your wake-up mission, which rewards showing up at a modest time repeatedly rather than heroics at an unsustainable one. Streak freezes exist so that illness, travel or a genuinely broken night does not wipe out six weeks of progress, because a streak system that punishes honest exceptions just teaches people to lie to it.
 
-The morning warm-up games produce a Sharpness Score compared against your own rolling baseline, not against other users. During a shift that matters, because it tells you whether the new wake time is settling or whether you are just accumulating debt. The app has no sleep tracking and does not measure your circadian phase, so treat the score as a rough signal about your own mornings, nothing more.
+WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with optional brain warm-ups and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
 
 The honest limits: your phone's own controls always work (nothing stops you switching the phone off), no app can guarantee you wake up, and for a flight or an exam you should set a second independent alarm on a separate device. If early mornings leave you groggy for the first half hour regardless of timing, that is [sleep inertia](/blog/sleep-inertia-why-you-wake-up-groggy) and it is a different problem with different fixes.
 

@@ -1,156 +1,63 @@
 ---
-/**
- * The shipped store screenshots, exactly as the App Store and Google Play show them.
- *
- * These are the composed frames (device frame + background plate + baked-in
- * headline) from Design/Screenshots/ios-6.9 and play-phone - not the clean captures
- * the feature rows use. Seeing the real listing artwork is the point.
- *
- * CSS scroll-snap, no carousel library. The toggle is ~8 lines of vanilla JS
- * flipping one attribute; with JS off both rails render, each with its own heading.
- *
- * Captions and labels come from the home catalog (`home.gallery`), keyed on the
- * frame number. The screenshots themselves stay the English store artwork.
- */
-import { Picture } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-import { getCatalog } from '../i18n/catalog';
-import { interpolate } from '../i18n/rich';
-import { resolveLocale } from '../i18n/routes';
-
-/**
- * Returns [frame number, image] pairs. The NUMBER keys the caption, not the
- * array position: a frame withheld for a claim problem must not shift every
- * caption after it onto the wrong picture.
- */
-const load = (mods: Record<string, { default: ImageMetadata }>): [string, ImageMetadata][] =>
-  Object.keys(mods)
-    .sort()
-    .map((k) => [k.slice(-6, -4), mods[k]!.default]);
-
-const ios = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/ios/*.png', { eager: true }));
-const android = load(import.meta.glob<{ default: ImageMetadata }>('../assets/store/android/*.png', { eager: true }));
-
-const t = getCatalog(resolveLocale(Astro.currentLocale).code).home.gallery;
-/**
- * Frame number → what that frame shows, its baked-in headline included. These
- * images are mostly TEXT, so the headline is the part a screen-reader user is
- * otherwise missing. If tools/screenshots/shotlist.py changes a headline in the
- * app repo, the catalogs change with it in the same commit.
- */
-const CAPTIONS: Record<string, string> = t.captions;
-
-/**
- * Frames whose shipped artwork still carries a claim the app cannot keep.
- *
- * play-phone/02 reads “It won't stop until you're sharp” over “Rings loud
- * through Silent and Do Not Disturb” - the absolute dismissal claim that
- * claims-matrix.md rules Prohibited, plus an unqualified Do Not Disturb promise.
- * tools/screenshots/shotlist.py in the app repo has already been corrected and
- * ios-6.9 was re-rendered against it; play-phone has not been regenerated yet,
- * so there is no honest Android render to show.
- *
- * 04 and 07 on both rails print the pricing the app retired with 2.10: 04 says
- * the warm-up rotation comes "With WakeSharp Plus", and 07 reads "Streaks and
- * freezes, free. Your full history with WakeSharp Plus." There is no free tier
- * and no Plus any more (claims-matrix.md), so both wait for a re-render too.
- *
- * A shorter rail is a far smaller cost than one wrong sentence in 96pt type, and
- * check-copy.mjs cannot see this text because it is pixels. Delete an entry as
- * soon as the app repo regenerates the frame it names.
- */
-const WITHHELD: Record<string, ReadonlySet<string>> = {
-  ios: new Set(['04', '07']),
-  android: new Set(['02', '04', '07']),
-};
-
-const rails = [
-  { key: 'ios', label: t.rails.ios.label, store: t.rails.ios.store, shots: ios },
-  { key: 'android', label: t.rails.android.label, store: t.rails.android.store, shots: android },
-];
+import { Picture, getImage } from 'astro:assets';
+import { storeAssets, artworkLocale } from '../lib/store-assets';
+import { refreshCopy } from '../lib/refresh';
+import type { EnabledLocaleCode } from '../i18n/config';
+interface Props { localeCode: EnabledLocaleCode; platform?: 'iphone' | 'watch' }
+const { localeCode, platform = 'iphone' } = Astro.props;
+const t = refreshCopy(localeCode);
+const captions = platform === 'watch' ? t.watchCaptions : t.captions;
+const shots = await Promise.all(storeAssets(localeCode, platform).map(async (asset, i) => ({
+  ...asset, caption: captions[i]!, enlarged: await getImage({ src: asset.image, width: platform === 'watch' ? 422 : 1000, format: 'webp', quality: 88 }),
+})));
 ---
-
-<div id="store-gallery" data-platform="ios" class="mt-10">
-  <div role="tablist" aria-label={t.tablistAria} class="js-only mb-6 inline-flex rounded-full border border-black/10 bg-white/60 p-1">
-    {
-      rails.map((r, i) => (
-        <button
-          type="button"
-          role="tab"
-          id={`tab-${r.key}`}
-          aria-controls={`rail-${r.key}`}
-          aria-selected={i === 0 ? 'true' : 'false'}
-          data-platform-btn={r.key}
-          class="pill px-5 py-2 text-sm"
-        >
-          {r.label}
-        </button>
-      ))
-    }
-  </div>
-
-  {
-    rails.map((r) => (
-      <div id={`rail-${r.key}`} role="tabpanel" aria-labelledby={`tab-${r.key}`} data-rail={r.key}>
-        <h3 class="no-js-only mb-4 text-lg font-bold">{interpolate(t.railHeading, { label: r.label, store: r.store })}</h3>
-        <ul class="store-rail flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5">
-          {r.shots.filter(([n]) => !WITHHELD[r.key]!.has(n)).map(([n, shot]) => (
-            <li class="shrink-0 snap-start">
-              <Picture
-                src={shot}
-                alt={interpolate(t.altTemplate, { label: r.label, caption: CAPTIONS[n] ?? t.fallbackCaption })}
-                widths={[220, 440]}
-                sizes="220px"
-                formats={['avif', 'webp']}
-                fallbackFormat="png"
-                quality={68}
-                loading="lazy"
-                decoding="async"
-                class="w-[220px] rounded-[18px] shadow-[0_10px_28px_rgb(0_0_0/0.18)]"
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))
-  }
+<div class="store-gallery" data-gallery>
+  {(platform === 'watch' ? localeCode !== 'en' : artworkLocale(localeCode) !== localeCode) && <p class="mb-5 text-sm dim">{t.englishArtwork}</p>}
+  <ul class="store-rail" aria-label={platform === 'watch' ? 'Apple Watch' : 'iPhone'}>
+    {shots.map((shot) => <li>
+      <figure>
+        <a href={shot.enlarged.src} data-enlarge aria-label={`${t.open}: ${shot.caption}`}>
+          <Picture src={shot.image} alt={`${platform === 'watch' ? 'Apple Watch' : 'iPhone'}: ${shot.caption}`} widths={platform === 'watch' ? [211,422] : [220,440,660]} sizes="(max-width: 480px) 64vw, 260px" formats={['avif','webp']} fallbackFormat="webp" quality={76} loading="lazy" decoding="async" />
+        </a>
+        <figcaption><span class="dim">{String(shot.order).padStart(2,'0')}.</span> {shot.caption}</figcaption>
+      </figure>
+    </li>)}
+  </ul>
+  <dialog aria-label={t.open}>
+    <button type="button" data-close>{t.close} <span aria-hidden="true">×</span></button>
+    <img src={shots[0]!.enlarged.src} width={shots[0]!.enlarged.attributes.width} height={shots[0]!.enlarged.attributes.height} alt="" loading="lazy" />
+    <p data-caption></p>
+  </dialog>
 </div>
-
-<script is:inline>
-  (() => {
-    const root = document.getElementById('store-gallery');
-    if (!root) return;
-    document.documentElement.setAttribute('data-js', 'on');
-    root.querySelectorAll('[data-platform-btn]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const next = btn.getAttribute('data-platform-btn');
-        root.setAttribute('data-platform', next);
-        root.querySelectorAll('[data-platform-btn]').forEach((b) =>
-          b.setAttribute('aria-selected', String(b === btn))
-        );
-      });
+<script>
+for (const gallery of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
+  const dialog = gallery.querySelector<HTMLDialogElement>('dialog')!;
+  const enlarged = dialog.querySelector('img')!;
+  const close = dialog.querySelector<HTMLButtonElement>('[data-close]')!;
+  let trigger: HTMLAnchorElement | null = null;
+  const links = [...gallery.querySelectorAll<HTMLAnchorElement>('[data-enlarge]')];
+  links.forEach((link,index) => {
+    link.addEventListener('click',event => {
+      if (!dialog.showModal || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); trigger = link;
+      const source = link.querySelector('img')!;
+      enlarged.src = link.href; enlarged.alt = source.alt;
+      enlarged.width = source.naturalWidth; enlarged.height = source.naturalHeight;
+      dialog.querySelector('[data-caption]')!.textContent = link.closest('figure')!.querySelector('figcaption')!.textContent;
+      dialog.showModal(); close.focus();
     });
-  })();
+    link.addEventListener('keydown',event => {
+      const rtl = document.documentElement.dir === 'rtl';
+      const delta = event.key === 'ArrowRight' ? (rtl ? -1 : 1) : event.key === 'ArrowLeft' ? (rtl ? 1 : -1) : 0;
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? links.length - 1 : delta ? (index + delta + links.length) % links.length : -1;
+      if (next >= 0) { event.preventDefault(); links[next]!.focus(); }
+    });
+  });
+  close.addEventListener('click',() => dialog.close());
+  dialog.addEventListener('click',event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close',() => trigger?.focus());
+}
 </script>
-
 <style>
-  /* Without JS the toggle is meaningless, so it never appears and both rails show. */
-  .js-only { display: none; }
-  :global(html[data-js]) .js-only { display: inline-flex; }
-  :global(html[data-js]) .no-js-only { display: none; }
-  :global(html[data-js]) #store-gallery[data-platform='ios'] [data-rail='android'],
-  :global(html[data-js]) #store-gallery[data-platform='android'] [data-rail='ios'] {
-    display: none;
-  }
-
-  [role='tab'] { color: var(--tone-dim); font-weight: 700; }
-  [role='tab'][aria-selected='true'] {
-    background: var(--color-night-deep);
-    color: var(--color-morning-cream);
-  }
-
-  .store-rail { scrollbar-width: thin; }
-  @media (prefers-reduced-motion: no-preference) {
-    .store-rail { scroll-behavior: smooth; }
-  }
+.store-rail{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding:1rem .25rem 1.5rem}.store-rail li{flex:0 0 min(64vw,260px);scroll-snap-align:start}.store-rail :global(img){width:100%;height:auto;border-radius:1rem;box-shadow:0 8px 20px #0003}.store-rail a{display:block;border-radius:1rem}.store-rail a:focus-visible{outline:3px solid currentColor;outline-offset:5px}figcaption{font-size:.9rem;line-height:1.5;margin-top:1rem}dialog{border:0;border-radius:1rem;background:#fff7eb;color:#332921;padding:1.25rem;max-width:min(95vw,700px);max-height:95dvh;overflow:auto}dialog::backdrop{background:#10111feb}dialog img{display:block;max-height:75dvh;width:auto;max-width:100%;object-fit:contain;margin:1rem auto}dialog button{display:block;margin-inline-start:auto;padding:.75rem 1rem;border:1px solid;border-radius:2rem;cursor:pointer;font-weight:700}dialog p{text-align:center}dialog:not([open]){display:none}@media(prefers-reduced-motion:no-preference){.store-rail{scroll-behavior:smooth}}
 </style>

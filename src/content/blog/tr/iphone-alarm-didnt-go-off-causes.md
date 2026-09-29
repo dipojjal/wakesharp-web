@@ -2,7 +2,7 @@
 title: "iPhone Alarmı Çalmadı mı? 7 Gerçek Neden"
 description: "iPhone alarmınız hiç çalmadı. Bunu gerçekten açıklayan yedi neden, her birini bu gece nasıl kontrol edeceğiniz ve hangilerinin Apple'a kaldığı."
 pubDate: 2026-08-31T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 heroImage: ../../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
 heroImageAlt: "Şafakta komodinin üstünde yüzü yukarı bakacak şekilde duran sessiz bir iPhone'un düz çizimi; koyu çivit mavisi bir yatak odasında mercan ve kehribar ışığıyla aydınlatılmış."
 category: tips-and-tricks
@@ -118,7 +118,7 @@ WakeSharp'ın güvenilirlik kontrolünün işi budur; Ayarlar &gt; Alarm güveni
 
 iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verdikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur. Bütün temel o izindir: reddeder ya da geri alırsanız WakeSharp hiçbir alarm zamanlayamaz ve güvenilirlik kontrolünün size ilk söyleyeceği şey tam olarak budur.
 
-Yedi numaralı neden için asıl mesele görevlerdir. Alarm çalar ve sabah sizden bir görev ister. Görevlerin birkaç türü var: Zihin Oyunları gibi aritmetik ve bulmaca görevleri; Fotoğraf Kanıtı gibi kamera görevleri (bir önceki akşam seçtiğiniz noktanın fotoğrafını yeniden çekersiniz); Yürüyerek Uyan gibi hareket görevleri; Yediyle Sayma gibi sesli görevler. Beni Şaşırt ise her sabah farklı bir görev verir. Alarmı nasıl susturursanız susturun, sabah ancak görev tamamlandığında sayılır. Telefonunuzun kendi kontrolleri her zaman çalışır: telefonu kapatmanıza hiçbir şey engel olmaz. Değişen şey şu: görevi tamamlamak, bunu yaptığınızı fark edecek kadarınızın uyanık olmasını gerektirir.
+Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iPhone 2.14’ün herkese açık seçimidir. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir. iPhone 2.14’te durdurmak veya ertelemek alarmı bir dakika geciktirir. Görev tamamlanmazsa en fazla bir saat tekrarlanabilir. Telefonun kendi kontrolleri çalışmaya devam eder. [Yataktan kalkmak için alarm görevleri](/tr/features).
 
 Sınır dürüst olanıdır ve her alarm uygulamasının sahip olduğu sınırla aynıdır: WakeSharp bir tıbbi cihaz değildir, telefonunuzun ayarları, pil kısıtlamaları ya da güç durumu herhangi bir alarmın çalmasını engelleyebilir ve geç kalmayı göze alamayacağınız her şey için ikinci, bağımsız bir alarm kullanmalısınız.
 

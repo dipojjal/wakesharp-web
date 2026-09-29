@@ -7,7 +7,7 @@ import { SAFETY_NOTICE, SITE } from '../../config/site';
  */
 export const shell = {
   /** The sitewide meta + OG description; the JSON-LD one reads it too. */
-  siteDescription: SITE.description as string,
+  siteDescription: "WakeSharp is a loud alarm clock with math, camera and walking missions. Explore the iPhone 2.14 preview, calendar alarms and daily Sharpness Score.",
   /** The footer strapline; the hero heading carries the same words split for emphasis. */
   tagline: SITE.tagline as string,
   /** Minimum OS versions, mirrored from SITE.requirements so the sentence around them translates. */

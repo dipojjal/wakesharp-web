@@ -54,7 +54,7 @@ const base = localePath(locale, '/p');
 
   <h2>{get.heading}</h2>
   <p>{interpolate(get.body, { annual: SITE.unlimited.annual, trialDays: SITE.unlimited.trialDays })}</p>
-  <StoreButtons tone="light" />
+  <StoreButtons pageId="p" tone="light" />
 </LegalLayout>
 
 <script is:inline define:vars={{ S: t.script, BASE: base }}>

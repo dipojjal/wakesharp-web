@@ -1,5 +1,6 @@
 ---
 /** /support in every locale. Copy: src/i18n/<locale>/support.ts. */
+import ReleaseNotice from '../components/ReleaseNotice.astro';
 import LegalLayout from '../layouts/LegalLayout.astro';
 import Rich from '../i18n/Rich.astro';
 import { SITE } from '../config/site';
@@ -54,6 +55,7 @@ const links = {
   showUpdated={false}
   alternates={alternatesFor('/support')}
 >
+  <ReleaseNotice localeCode={locale.code}/>
   <div class="callout">
     <h2 class="!mt-0">{t.getInTouch.heading}</h2>
     <p class="!mb-0"><Rich text={t.getInTouch.body} vars={vars} links={links} /></p>

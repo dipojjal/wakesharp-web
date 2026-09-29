@@ -3,7 +3,7 @@ title: "Uyku Ataleti: Neden Sersem Uyanırsınız (ve Nasıl Zinde Uyanırsını
 seoTitle: "Uyku Ataleti: Neden Sersem Uyanırsınız ve Ne Yapmalı"
 description: "Beyniniz uyandıktan sonra tam açılmak için 15 ila 60 dakika ister. İşte uyku ataletinin bilimi ve sersemlik penceresini gerçekten kısaltan şeyler."
 pubDate: 2026-08-27T12:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 heroImage: ../../../assets/blog/sleep-inertia-why-you-wake-up-groggy/hero.jpg
 heroImageAlt: "Şafakta yatağın kenarında oturan sersem bir kişinin, pencereden sızan gün doğumu ışığında parlayan telefonuna uzanışını gösteren çizim."
 category: sleep-science
@@ -49,7 +49,7 @@ Uyku ataleti fizyolojidir; bu yüzden dürüst çerçeve *ortadan kaldırmak* de
 
 ## WakeSharp'ın yeri (ve yapamadıkları)
 
-WakeSharp dördüncü kaldıracın etrafında kuruldu. Kaydırmak, sersem hâlinizin otomatik pilotta yaptığı şeyin ta kendisidir; bu yüzden sabah sizden bir **görev** ister: kısa bir aritmetik koşusunu bitirmek (Zihin Oyunları), bir önceki akşam seçtiğiniz noktanın fotoğrafını yeniden çekmek (Fotoğraf Kanıtı), odanın öbür ucundaki gerçek bir nesneyi taramak ya da kalkıp belirli sayıda adım atmak. Her biri, yarı açılmış bir prefrontal korteksin taklit edemeyeceği türden bir çalışma belleği katılımı gerektirir; mesele de tam olarak bu. Çözerek çıktığınızda açılış dizisi gerçekten daha ileri bir noktadadır. Alarmı nasıl susturursanız susturun, sabah ancak görev tamamlandığında sayılır. (iPhone'da WakeSharp, alarm erişimi verdikten sonra Sessiz mod ve Odak açıkken de çalmayı destekleyen Apple'ın AlarmKit'ini kullanır. Android'de ise tam zamanlı alarm ve bildirim izinleri yerindeyse özel alarm ses kanalında çalar ve kilit ekranında bir uyarı gösterir. Sersemliğin arkasına saklanacağı bir teknik ayrıntı olmamalı.)
+WakeSharp dördüncü kaldıracın etrafında kuruldu. Kaydırmak, sersem hâlinizin otomatik pilotta yaptığı şeyin ta kendisidir; bu yüzden sabah sizden bir **görev** ister: kısa bir aritmetik koşusunu bitirmek (Matematik Problemleri), bir önceki akşam seçtiğiniz noktanın fotoğrafını yeniden çekmek (Fotoğraf Kanıtı), odanın öbür ucundaki gerçek bir nesneyi taramak ya da kalkıp belirli sayıda adım atmak. Her biri, yarı açılmış bir prefrontal korteksin taklit edemeyeceği türden bir çalışma belleği katılımı gerektirir; mesele de tam olarak bu. Çözerek çıktığınızda açılış dizisi gerçekten daha ileri bir noktadadır. Alarmı nasıl susturursanız susturun, sabah ancak görev tamamlandığında sayılır. (iPhone'da WakeSharp, alarm erişimi verdikten sonra Sessiz mod ve Odak açıkken de çalmayı destekleyen Apple'ın AlarmKit'ini kullanır. Android'de ise tam zamanlı alarm ve bildirim izinleri yerindeyse özel alarm ses kanalında çalar ve kilit ekranında bir uyarı gösterir. Sersemliğin arkasına saklanacağı bir teknik ayrıntı olmamalı.)
 
 Sonra bizce en önemli kısım geliyor: **ölçüm**. Görevden sonraki kısa ve isteğe bağlı ısınma, gerçekte ne kadar zinde uyandığınızı kendi hareketli taban değerinize göre puanlar (klinik bir test değil, uygulama içi bir puan); çünkü sabah 6'da anlamı olan tek kıyas ölçütü dünkü hâlinizdir. Uyku ataleti içeriden görünmez; ne kadar sisli olduğunuzu hissedemezsiniz, tuzak da tam olarak budur. Bir sayı ise bunu gösterebilir.
 

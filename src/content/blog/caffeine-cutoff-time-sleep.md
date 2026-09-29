@@ -3,7 +3,7 @@ title: "Caffeine's 10-Hour Tail: When Your Last Coffee Should Really Be"
 seoTitle: "Caffeine Cutoff Time: When to Have Your Last Coffee"
 description: "Caffeine's half-life means a 3 PM coffee is still working at bedtime. The pharmacology, a personal cutoff calculation, and a one-week sensitivity test."
 pubDate: 2026-09-03T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-09-28T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/caffeine-cutoff-time-sleep/hero.jpg
@@ -85,9 +85,7 @@ Here is the experiment, and it is deliberately small.
 
 For one week, write down two things each day: the clock time of your last caffeine, and a rough milligram estimate. Then record one number the next morning, the same way every day, before the day contaminates it.
 
-This is where WakeSharp's warm-up games happen to be useful. They run after you have dismissed the alarm and produce a Sharpness Score measured against your own baseline rather than against strangers on a leaderboard. Line up seven last-caffeine times against seven morning scores and you have something closer to a personal dose-timing curve than any general rule can give you.
-
-Be honest about what that is worth. WakeSharp does not track your sleep and does not try to. A Sharpness Score reflects how you did on a short warm-up a minute after waking, which is also shaped by your bedtime, your stress, a noisy street, and plain randomness. Seven data points is a hint, not a result. But if your two latest-caffeine days are also your two flattest mornings, that is a pattern worth acting on, and if the line is flat you may simply be a fast metaboliser. Either answer is more useful than guessing.
+WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with optional brain warm-ups and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
 
 One thing the experiment will not fix on its own: if you are staying up late because the evening is the only time that belongs to you, moving your coffee earlier just means lying awake with better pharmacology. That is a different problem, and we wrote about it in [revenge bedtime procrastination](/blog/revenge-bedtime-procrastination).
 

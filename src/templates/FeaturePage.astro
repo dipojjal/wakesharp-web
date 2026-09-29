@@ -1,0 +1,42 @@
+---
+import { render } from 'astro:content';
+import { pageIdFor } from '../lib/download';
+import LegalLayout from '../layouts/LegalLayout.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import ReleaseNotice from '../components/ReleaseNotice.astro';
+import { SITE } from '../config/site';
+import { featurePath, getFeaturePages, type FeaturePage } from '../lib/features';
+import { refreshCopy } from '../lib/refresh';
+import { getCatalog } from '../i18n/catalog';
+import { alternatesFor, localePath, resolveLocale } from '../i18n/routes';
+import { pageTitle } from '../lib/seo';
+interface Props { page: FeaturePage }
+const { page } = Astro.props;
+const { Content } = await render(page);
+const { title, seoTitle, description, lede, screenshot, screenshotAlt } = page.data;
+const locale = resolveLocale(page.data.lang);
+const t = refreshCopy(locale.code);
+const shell = getCatalog(locale.code).shell;
+const path = featurePath(page);
+const url = new URL(path,SITE.url).href;
+const hub = localePath(locale,'/features');
+const peers = (await getFeaturePages(locale.code)).filter(p => p.id !== page.id);
+const schema = { '@context':'https://schema.org','@graph':[
+ { '@type':'WebPage','@id':url,url,name:title,description,inLanguage:locale.code,dateModified:page.data.updatedDate,isPartOf:{'@id':`${SITE.url}/#website`},about:{'@id':`${SITE.url}/#app`},breadcrumb:{'@id':`${url}#breadcrumb`} },
+ { '@type':'BreadcrumbList','@id':`${url}#breadcrumb`,itemListElement:[
+ { '@type':'ListItem',position:1,name:SITE.name,item:new URL(localePath(locale,'/'),SITE.url).href },
+ { '@type':'ListItem',position:2,name:shell.nav.features,item:new URL(hub,SITE.url).href },
+ { '@type':'ListItem',position:3,name:title,item:url }
+ ]}
+]};
+---
+<LegalLayout title={pageTitle(seoTitle ?? title,' - WakeSharp')} description={description} path={path} heading={title} intro={lede} lastUpdated={page.data.updatedDate} locale={locale} alternates={alternatesFor(`/features/${page.data.translationOf}`)}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)}/>
+  <div slot="notice"><nav aria-label={shell.nav.features}><a href={localePath(locale,'/')}>WakeSharp</a> › <a href={hub}>{shell.nav.features}</a> › <span aria-current="page">{title}</span></nav><ReleaseNotice localeCode={locale.code}/></div>
+  <div class="my-8 flex justify-center">{screenshot && <PhoneFrame src={screenshot} alt={screenshotAlt!} width={240} priority/>}</div>
+  <Content/>
+  <p><a href={localePath(locale,'/support')}>{shell.footer.support}</a> · <a href={localePath(locale,'/privacy')}>{shell.footer.privacy}</a></p>
+  <h2>{t.related}</h2><ul>{peers.map(p => <li><a href={featurePath(p)}>{p.data.title}</a>{p.data.translationOf === 'object-scan-alarm' && !SITE.appLanguages.some(code => code === locale.code) && <span> (Scan an Object)</span>}</li>)}</ul>
+  <StoreButtons pageId={pageIdFor(path)} tone="light" placement="feature-bottom" localeCode={locale.code}/>
+</LegalLayout>
