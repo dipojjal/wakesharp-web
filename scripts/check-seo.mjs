@@ -9,8 +9,8 @@
  * written by an unattended routine, and before this ran nothing stopped a
  * 90-character title or a page that was noindexed and listed at once.
  *
- *   npm run seo              # warnings only
- *   npm run seo -- --strict  # any problem fails (what `npm run verify` runs)
+ *   npm run seo              # any problem fails (also run by `npm run verify`)
+ *   tsx scripts/check-seo.mjs # advisory mode for manual investigation
  *
  * Length limits are in characters as a results page shows them (Unicode code
  * points). Japanese, Hindi and Arabic are exempt from the length limits: their
@@ -18,7 +18,7 @@
  * would be wrong for all three.
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE, enabledLocales } from '../src/i18n/config';
 
@@ -143,7 +143,7 @@ for (const url of indexable) {
 
 // No page links to a sibling page that does not exist.
 const built = new Set(html.map((f) => urlPath(f.slice(DIST.length + 1))));
-const extras = new Set(['/rss.xml', '/sitemap.xml', '/robots.txt', '/site.webmanifest', '/og.png', '/favicon.ico']);
+const assetRoot = resolve(DIST) + sep;
 for (const file of html) {
   const name = file.slice(DIST.length + 1);
   const raw = readFileSync(file, 'utf8');
@@ -151,8 +151,10 @@ for (const file of html) {
     const href = attr(m[0], 'href');
     if (!href || !href.startsWith('/') || href.startsWith('//')) continue;
     const path = href.split(/[?#]/)[0].replace(/\/$/, '') || '/';
-    if (built.has(path) || extras.has(path) || path.startsWith('/_astro/') || path.startsWith('/badges/')) continue;
-    report(name, `links to ${href}, which is not a built page`);
+    if (built.has(path)) continue;
+    const asset = resolve(DIST, '.' + path);
+    if (asset.startsWith(assetRoot) && existsSync(asset) && statSync(asset).isFile()) continue;
+    report(name, `links to ${href}, which is not a built page or file`);
   }
 }
 
