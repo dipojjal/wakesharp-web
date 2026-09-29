@@ -144,7 +144,7 @@ export const home = {
       "post": ""
     },
     "lede": "WakeSharp Android’de de kullanılabilir. Alarm ses kanalı, izinler ve pil ayarları farklıdır. Bu görüntüler iPhone ve Apple Watch’a aittir, Android veya Wear OS’a değil. Platformundaki görevleri ve ayarları yüklü uygulamadan kontrol et. WakeSharp, iPhone’da {ios}, Android’de {android} gerektirir. Saat uygulamaları watchOS 26 veya Wear OS 3 gerektirir.",
-    "watch": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır. Bunlar gönderilen üç Apple Watch görüntüsüdür.",
+    "watch": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır.",
     "account": "WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
   },
   "reliable": {
@@ -242,7 +242,7 @@ export const home = {
       },
       {
         "q": "Saatimin şarjı biterse ne olur?",
-        "a": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır. Bunlar gönderilen üç Apple Watch görüntüsüdür."
+        "a": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır."
       },
       {
         "q": "WakeSharp’ın fiyatı nedir?",

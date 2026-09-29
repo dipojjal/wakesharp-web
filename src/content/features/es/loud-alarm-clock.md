@@ -7,8 +7,8 @@ lang: "es"
 translationOf: "loud-alarm-clock"
 order: 0
 missions: []
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/es/04-tones.png"
 screenshotAlt: "La categoría Fuerte y sus tonos"
 ---

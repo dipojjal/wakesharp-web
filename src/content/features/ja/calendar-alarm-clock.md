@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/en/01-home.png"
 screenshotAlt: "次のアラームと朝の概要"
 ---

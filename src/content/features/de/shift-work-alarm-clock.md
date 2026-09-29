@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "shift-work-alarm-clock"
 order: 7
 missions: []
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/de/07-rotation.png"
 screenshotAlt: "Schichtrotation mit Kalender"
 ---

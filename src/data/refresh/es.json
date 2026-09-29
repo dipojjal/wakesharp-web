@@ -1,5 +1,5 @@
 {
-  "preview": "Vista previa de iPhone 2.14. Las capturas y explicaciones muestran la actualización enviada a revisión. El App Store ofrece actualmente la versión 2.10. La disponibilidad en Android puede variar.",
+  "releaseNotice": "WakeSharp 2.14 ya está disponible en iOS y Android. Descarga la última actualización en el App Store o Google Play.",
   "hero": "Elige un sonido de la categoría Fuerte y decide qué harás cuando suene la alarma. Resuelve unas operaciones, escanea una botella o empieza a moverte con una misión de pasos.",
   "loudTitle": "Empieza con un sonido que se haga notar",
   "loud": "Fuerte es una categoría del selector de sonidos. Escucha los tonos y guarda el que quieras para esa alarma. Puedes combinarlo con cualquier misión disponible.",
@@ -13,7 +13,7 @@
   "englishArtwork": "Las capturas están en inglés. Los pies de imagen explican cada pantalla en español.",
   "open": "Ampliar captura",
   "close": "Cerrar captura",
-  "watch": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado. Estas son las tres capturas enviadas del Apple Watch.",
+  "watch": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado.",
   "android": "WakeSharp también está disponible en Android. El canal de audio, los permisos y los ajustes de batería son diferentes. Estas imágenes muestran iPhone y Apple Watch, no Android ni Wear OS. Consulta las opciones disponibles en tu aplicación instalada.",
   "backup": "No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad.",
   "deleting": "Desinstalar elimina los datos locales, pero no la copia en la nube ni la suscripción. Elimina la copia desde Ajustes → Cuenta → Eliminar cuenta o desde la página de eliminación de cuenta. Gestiona la suscripción en la tienda.",

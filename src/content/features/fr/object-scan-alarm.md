@@ -7,8 +7,8 @@ lang: "fr"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/fr/02-scan.png"
 screenshotAlt: "Un objet reconnu avec confirmation verte"
 ---

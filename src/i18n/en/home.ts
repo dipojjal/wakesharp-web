@@ -143,7 +143,7 @@ export const home = {
       "post": ""
     },
     "lede": "WakeSharp is also available on Android. Its alarm stream, permissions and battery settings differ from iPhone. These images show iPhone and Apple Watch, not Android or Wear OS. Check the installed app for the missions and controls available on your platform. WakeSharp needs {ios} on iPhone, or {android} on Android. The watch apps need watchOS 26 or Wear OS 3.",
-    "watch": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up. These are the three submitted Apple Watch screenshots.",
+    "watch": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up.",
     "account": "No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
   },
   "reliable": {
@@ -241,7 +241,7 @@ export const home = {
       },
       {
         "q": "What happens if my watch is dead?",
-        "a": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up. These are the three submitted Apple Watch screenshots."
+        "a": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up."
       },
       {
         "q": "What does WakeSharp cost?",

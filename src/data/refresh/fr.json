@@ -1,5 +1,5 @@
 {
-  "preview": "Aperçu de la version 2.14 sur iPhone. Ces captures et explications présentent la mise à jour soumise à validation. L’App Store propose actuellement la version 2.10. Les fonctions Android peuvent différer.",
+  "releaseNotice": "WakeSharp 2.14 est désormais disponible sur iOS et Android. Téléchargez la dernière mise à jour sur l’App Store ou Google Play.",
   "hero": "Choisissez un son dans la catégorie Forte, puis votre mission au réveil. Résolvez quelques calculs, scannez une bouteille ou faites quelques pas.",
   "loudTitle": "Un son que vous remarquerez",
   "loud": "Forte est une catégorie du sélecteur de sons. Écoutez les tonalités et choisissez celle de cette alarme. Vous pouvez l’associer à toute mission disponible.",
@@ -13,7 +13,7 @@
   "englishArtwork": "Les captures sont en anglais. Les légendes décrivent les écrans en français.",
   "open": "Agrandir la capture",
   "close": "Fermer la capture",
-  "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée. Voici les trois captures Apple Watch soumises.",
+  "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée.",
   "android": "WakeSharp existe aussi sur Android. Le canal audio, les autorisations et les réglages de batterie diffèrent. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes de votre application installée.",
   "backup": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.",
   "deleting": "Désinstaller efface les données locales, mais pas la sauvegarde cloud ni l’abonnement. Supprimez la sauvegarde dans Réglages → Compte → Supprimer le compte ou sur la page dédiée. Gérez l’abonnement séparément dans la boutique.",

@@ -144,7 +144,7 @@ export const home = {
       "post": ""
     },
     "lede": "WakeSharp existe aussi sur Android. Le canal audio, les autorisations et les réglages de batterie diffèrent. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes de votre application installée. WakeSharp nécessite {ios} sur iPhone, ou {android} sur Android. Les applications de montre nécessitent watchOS 26 ou Wear OS 3.",
-    "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée. Voici les trois captures Apple Watch soumises.",
+    "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée.",
     "account": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
   },
   "reliable": {
@@ -242,7 +242,7 @@ export const home = {
       },
       {
         "q": "Que se passe-t-il si ma montre est déchargée ?",
-        "a": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée. Voici les trois captures Apple Watch soumises."
+        "a": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée."
       },
       {
         "q": "Combien coûte WakeSharp ?",

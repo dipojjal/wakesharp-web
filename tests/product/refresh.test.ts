@@ -36,19 +36,23 @@ test('every locale has complete copy, a visible directory, all screenshots and l
   const home=read(localePath(locale,'/'));
   assert.equal((home.match(/data-mission-id=/g)||[]).length,14,locale.code);
   assert.equal((home.match(/<a[^>]*data-enlarge/g)||[]).length,11,locale.code);
-  assert.ok(home.includes('data-release-preview="2.14"'));
+  assert.ok(home.includes('data-release-version="2.14" data-release-status="live"'));
+  assert.ok(!home.includes('data-release-preview'));
   assert.ok(!/\b(?:Squats|Serial Sevens|Mind Games|Gentle Start)\b|\u2014/i.test(home));
   assert.ok(home.indexOf('id="loud"')<home.indexOf('id="scan"'));
   assert.ok(home.indexOf('id="scan"')<home.indexOf('id="mission"'));
   assert.ok(home.indexOf('id="mission"')<home.indexOf('id="gallery"'));
   for(const slug of FEATURE_SLUGS){
    const html=read(localePath(locale,`/features/${slug}`));
-   assert.ok(html.includes('data-release-preview="2.14"'));
+   assert.ok(html.includes('data-release-version="2.14" data-release-status="live"'));
+   assert.ok(!html.includes('data-release-preview'));
    assert.ok(html.includes(`href="https://wakesharp.app${localePath(locale,`/features/${slug}`)}"`));
    assert.equal((html.match(/rel="alternate" hreflang=/g)||[]).length,13);
   }
  }
- assert.equal(RELEASE.status,'preview');
+ assert.equal(RELEASE.status,'live');
+ assert.equal(RELEASE.publicIOS,RELEASE.version);
+ assert.equal(RELEASE.publicAndroid,RELEASE.version);
  assert.ok(read('/ar').includes('dir="rtl"'));
 });
 

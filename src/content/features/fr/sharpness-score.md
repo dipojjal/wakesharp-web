@@ -7,8 +7,8 @@ lang: "fr"
 translationOf: "sharpness-score"
 order: 8
 missions: []
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/fr/06-sharpness.png"
 screenshotAlt: "Le score d’acuité quotidien"
 ---

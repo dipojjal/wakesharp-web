@@ -1,7 +1,8 @@
 /** Public product facts verified against iPhone 2.14 build 262, 2026-09-28.
  * DeviceValidation.squatsReleased is false. Catalog supportsMission is NOT a
  * visibility rule. Retired serial_sevens resolves to math_sprint in the app. */
-export const RELEASE = { version: '2.14', build: 262, status: 'preview', publicIOS: '2.10', checked: '2026-09-28' } as const;
+/** Release availability confirmed by the developer on 2026-09-29 for both stores. */
+export const RELEASE = { version: '2.14', build: 262, status: 'live', publicIOS: '2.14', publicAndroid: '2.14', checked: '2026-09-29' } as const;
 const definitions = [
   ['math_sprint', 'mind', 'math-alarm-clock'],
   ['memory_match', 'mind', 'puzzle-alarm-clock'],

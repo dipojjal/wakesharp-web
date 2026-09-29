@@ -1,5 +1,5 @@
 {
-  "preview": "Preview of iPhone 2.14. These screenshots and feature explanations show the update submitted for review. The App Store currently serves 2.10. Availability on Android can differ.",
+  "releaseNotice": "WakeSharp 2.14 is now live on iOS and Android. Get the latest update from the App Store or Google Play.",
   "hero": "Pick a sound from the Loud category, then choose what you want to do when the alarm rings. Solve a few math problems, scan a bottle, or get moving with a walking mission.",
   "loudTitle": "Start with a sound you will notice",
   "loud": "Loud is a sound category in the alarm editor. Open the sound picker, listen to the tones, and choose the one you want for that alarm. You can pair the same tone with any available mission.",
@@ -13,7 +13,7 @@
   "englishArtwork": "The screenshots are in English. The captions describe each screen in your language.",
   "open": "Enlarge screenshot",
   "close": "Close screenshot",
-  "watch": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up. These are the three submitted Apple Watch screenshots.",
+  "watch": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up.",
   "android": "WakeSharp is also available on Android. Its alarm stream, permissions and battery settings differ from iPhone. These images show iPhone and Apple Watch, not Android or Wear OS. Check the installed app for the missions and controls available on your platform.",
   "backup": "No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.",
   "deleting": "Uninstalling removes local app data, but does not delete an optional cloud backup or cancel a store subscription. Delete the backup through Settings → Account → Delete account, or use the account deletion page. Manage your subscription separately in the store.",

@@ -144,7 +144,7 @@ export const home = {
       "post": ""
     },
     "lede": "O WakeSharp também está disponível no Android. O canal de áudio, as permissões e os ajustes de bateria são diferentes. Estas imagens mostram iPhone e Apple Watch, não Android ou Wear OS. Confira as opções no aplicativo instalado. O WakeSharp precisa de {ios} no iPhone, ou {android} no Android. Os apps de relógio precisam de watchOS 26 ou Wear OS 3.",
-    "watch": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado. Estas são as três imagens enviadas do Apple Watch.",
+    "watch": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado.",
     "account": "Não é preciso ter conta no WakeSharp. Entrar com Apple ou Google é opcional e permite salvar alarmes, histórico, preferências e pequenas miniaturas de fotos de referência. A comparação de fotos e o calendário são processados no aparelho. O conteúdo dos eventos fica nele. Consulte a política de privacidade."
   },
   "reliable": {
@@ -242,7 +242,7 @@ export const home = {
       },
       {
         "q": "O que acontece se meu relógio estiver sem bateria?",
-        "a": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado. Estas são as três imagens enviadas do Apple Watch."
+        "a": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado."
       },
       {
         "q": "Quanto custa o WakeSharp?",

@@ -90,6 +90,9 @@ separate archive. Don't treat this repo as the system of record for screenshots.
 Both apps are live: Google Play since 2026-08-18, the App Store since 2026-08-22, both
 as *WakeSharp: Math Alarm Clock* from KineticBit Inc.
 
+Version **2.14 is live on both iOS and Android**, confirmed by the developer on
+2026-09-29. Release notices and feature pages describe this live release.
+
 The two listing **names have since changed**: verified 2026-09-24, the App Store reads
 *Loud Alarm Clock - WakeSharp* and Play reads *WakeSharp: Loud Alarm Clock*.
 `itunes.apple.com/lookup?id=6801198703&country=us` settles the Apple half with no credential.

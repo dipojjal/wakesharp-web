@@ -7,8 +7,8 @@ lang: "ru"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/ru/03-missions.png"
 screenshotAlt: "Доступные задания будильника"
 ---

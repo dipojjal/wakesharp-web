@@ -22,7 +22,7 @@ On supported iPhones, WakeSharp uses AlarmKit and needs alarm permission. On And
 
 ## 2.14 artwork
 
-Use the submitted revision 2 artwork. Label it as a preview while 2.14 is pending. Do not describe gated or retired missions. Use Math Problems for the arithmetic mission. Link to the feature hub for the public directory instead of maintaining another list in an ad.
+Use the revision 2 artwork for the live 2.14 release, now available on iOS and Android as confirmed by the developer on September 29, 2026. Label the screenshots as iPhone artwork. Do not describe gated or retired missions. Use Math Problems for the arithmetic mission. Link to the feature hub for the public directory instead of maintaining another list in an ad.
 
 ## Coverage resources
 

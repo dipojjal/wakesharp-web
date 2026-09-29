@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * site.ts से आते हैं, वे यहाँ अनुवाद के रूप में लिखे गए हैं।
  */
 export const shell = {
-  siteDescription: "WakeSharp में तेज़ ध्वनि के साथ गणित, कैमरा और चलने के मिशन हैं। iPhone 2.14 की झलक, कैलेंडर अलार्म और सुबह का इतिहास देखें।",
+  siteDescription: "WakeSharp में तेज़ ध्वनि के साथ गणित, कैमरा और चलने के मिशन हैं। संस्करण 2.14 अब iOS और Android पर कैलेंडर अलार्म और सुबह के इतिहास के साथ उपलब्ध है।",
   tagline: `चुस्त उठें। सिर्फ़ जागे हुए नहीं।`,
   requirements: { ios: `iOS 26 या नया`, android: `Android 8.0 या नया` },
   ogImageAlt: `WakeSharp - चुस्त उठें, सिर्फ़ जागे हुए नहीं।`,

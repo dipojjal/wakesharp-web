@@ -144,7 +144,7 @@ export const home = {
       "post": ""
     },
     "lede": "WakeSharp también está disponible en Android. El canal de audio, los permisos y los ajustes de batería son diferentes. Estas imágenes muestran iPhone y Apple Watch, no Android ni Wear OS. Consulta las opciones disponibles en tu aplicación instalada. WakeSharp necesita {ios} en iPhone, o {android} en Android. Las apps de reloj necesitan watchOS 26 o Wear OS 3.",
-    "watch": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado. Estas son las tres capturas enviadas del Apple Watch.",
+    "watch": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado.",
     "account": "No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
   },
   "reliable": {
@@ -242,7 +242,7 @@ export const home = {
       },
       {
         "q": "¿Qué pasa si mi reloj está sin batería?",
-        "a": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado. Estas son las tres capturas enviadas del Apple Watch."
+        "a": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado."
       },
       {
         "q": "¿Cuánto cuesta WakeSharp?",

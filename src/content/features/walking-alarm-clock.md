@@ -7,8 +7,8 @@ lang: "en"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light"]
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "The available alarm missions"
 ---

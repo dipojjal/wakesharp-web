@@ -7,21 +7,21 @@ import { getImage } from 'astro:assets';
 const screenshots = await Promise.all(storeAssets('en','iphone').map(async s => ({ ...s, download: await getImage({src:s.image,width:1000,format:'webp',quality:88}) })));
 const captions = ['Home and next alarm','Loud alarm tones','Scan an Object','Wake-up missions','Shared alarm','Sharpness Score','Shift rotations','Morning progress'];
 ---
-<LegalLayout title="WakeSharp Press Kit: Facts, Screenshots and Contact" description="Official WakeSharp facts, developer contact and submitted iPhone 2.14 screenshots. Clear platform requirements, pricing and release availability." path="/press" heading="WakeSharp press kit" intro="I’m Dipojjal, the developer behind WakeSharp at KineticBit. Here are the facts and images you can use when writing about the app." lastUpdated="2026-09-28">
+<LegalLayout title="WakeSharp Press Kit: Facts, Screenshots and Contact" description="Official WakeSharp facts, developer contact and iPhone 2.14 screenshots. Version 2.14 is live on iOS and Android. See platform requirements and pricing." path="/press" heading="WakeSharp press kit" intro="I’m Dipojjal, the developer behind WakeSharp at KineticBit. Here are the facts and images you can use when writing about the app." lastUpdated="2026-09-29">
   <ReleaseNotice localeCode="en"/>
   <h2>A short description</h2>
   <p>WakeSharp is an alarm clock for heavy sleepers with loud tones, wake-up missions, calendar alarms and shift rotations. It also offers a daily Sharpness Score, optional brain warm-ups and morning history. It does not track sleep.</p>
   <h2>Product facts</h2>
   <ul>
     <li>Developer: Dipojjal Chakrabarti. Publisher: {SITE.publisher}, Ontario, Canada.</li>
-    <li>Platforms: {SITE.requirements.ios}; {SITE.requirements.android}. Platform availability and controls differ.</li>
+    <li>Platforms: {SITE.requirements.ios}; {SITE.requirements.android}. Version 2.14 is live on both platforms. System controls and permissions differ.</li>
     <li>App languages: English, Spanish, Russian, Turkish, German, French and Arabic. The website has 12 languages.</li>
     <li>WakeSharp Unlimited: {SITE.unlimited.annual} per year after a {SITE.unlimited.trialDays}-day free trial for eligible new subscribers, or {SITE.unlimited.monthly} per month without a trial. US prices. Local prices appear in each store.</li>
     <li>No ads in the app. An account is optional. See the <a href="/privacy">privacy policy</a> for backup and analytics details.</li>
     <li>Mission completion is an app action, not a medical assessment. Phone controls, permissions, volume and battery still matter.</li>
   </ul>
-  <h2>Submitted iPhone 2.14 screenshots</h2>
-  <p>Revision 2, submitted September 28, 2026. Keep the artwork intact and label it as a preview while 2.14 is pending. The images below are WebP copies of the submitted artwork in store order.</p>
+  <h2>iPhone 2.14 screenshots</h2>
+  <p>These screenshots show the live 2.14 release on iPhone. Keep the artwork intact. The images below are WebP copies of the revision 2 store artwork, submitted September 28, 2026, in store order.</p>
   <ol>{screenshots.map((s,i)=><li><a href={s.download.src}>{captions[i]}</a></li>)}</ol>
   <p><a href="/icon-512.png">WakeSharp app icon</a></p>
   <h2>Sources and contact</h2>

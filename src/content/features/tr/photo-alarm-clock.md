@@ -7,8 +7,8 @@ lang: "tr"
 translationOf: "photo-alarm-clock"
 order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/tr/03-missions.png"
 screenshotAlt: "Kullanılabilir alarm görevleri"
 ---

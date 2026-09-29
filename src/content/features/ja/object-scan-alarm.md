@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/en/02-scan.png"
 screenshotAlt: "緑色で一致を確認した対象"
 ---

@@ -5,5 +5,5 @@ import type { EnabledLocaleCode } from '../i18n/config';
 interface Props { localeCode: EnabledLocaleCode }
 const { localeCode } = Astro.props;
 ---
-{RELEASE.status === 'preview' && <aside class="release-notice" data-release-preview="2.14"><p>{refreshCopy(localeCode).preview}</p></aside>}
+<aside class="release-notice" data-release-version={RELEASE.version} data-release-status={RELEASE.status}><p>{refreshCopy(localeCode).releaseNotice}</p></aside>
 <style>.release-notice{border:1px solid currentColor;border-radius:1rem;padding:1rem;margin-block:1.25rem;font-size:.875rem;line-height:1.6;max-width:65ch}.release-notice p{margin:0}</style>

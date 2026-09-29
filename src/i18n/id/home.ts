@@ -144,7 +144,7 @@ export const home = {
       "post": ""
     },
     "lede": "WakeSharp juga tersedia di Android. Saluran audio, izin, dan pengaturan baterainya berbeda. Gambar ini menampilkan iPhone dan Apple Watch, bukan Android atau Wear OS. Periksa pilihan yang tersedia di aplikasi terpasang. WakeSharp memerlukan {ios} di iPhone, atau {android} di Android. Aplikasi jam tangannya memerlukan watchOS 26 atau Wear OS 3.",
-    "watch": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan. Ini adalah tiga gambar Apple Watch yang diajukan.",
+    "watch": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan.",
     "account": "Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
   },
   "reliable": {
@@ -242,7 +242,7 @@ export const home = {
       },
       {
         "q": "Bagaimana jika jam tangan saya mati?",
-        "a": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan. Ini adalah tiga gambar Apple Watch yang diajukan."
+        "a": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan."
       },
       {
         "q": "Berapa biaya WakeSharp?",

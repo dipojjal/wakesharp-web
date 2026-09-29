@@ -1,5 +1,5 @@
 {
-  "preview": "Prévia do iPhone 2.14. As imagens e explicações mostram a atualização enviada para análise. A App Store oferece atualmente a versão 2.10. Os recursos do Android podem variar.",
+  "releaseNotice": "O WakeSharp 2.14 já está disponível para iOS e Android. Baixe a atualização mais recente na App Store ou no Google Play.",
   "hero": "Escolha um som na categoria Loud e decida o que fazer quando o alarme tocar. Resolva contas, escaneie uma garrafa ou comece a se mover com uma missão de caminhada.",
   "loudTitle": "Comece com um som que chame atenção",
   "loud": "Loud é uma categoria no seletor de sons do alarme. Ouça os toques e salve o que quiser para esse alarme. Você pode combiná-lo com qualquer missão disponível.",
@@ -13,7 +13,7 @@
   "englishArtwork": "As imagens estão em inglês. As legendas explicam cada tela em português.",
   "open": "Ampliar imagem",
   "close": "Fechar imagem",
-  "watch": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado. Estas são as três imagens enviadas do Apple Watch.",
+  "watch": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado.",
   "android": "O WakeSharp também está disponível no Android. O canal de áudio, as permissões e os ajustes de bateria são diferentes. Estas imagens mostram iPhone e Apple Watch, não Android ou Wear OS. Confira as opções no aplicativo instalado.",
   "backup": "Não é preciso ter conta no WakeSharp. Entrar com Apple ou Google é opcional e permite salvar alarmes, histórico, preferências e pequenas miniaturas de fotos de referência. A comparação de fotos e o calendário são processados no aparelho. O conteúdo dos eventos fica nele. Consulte a política de privacidade.",
   "deleting": "Desinstalar apaga os dados locais, mas não o backup na nuvem nem a assinatura. Apague o backup em Ajustes → Conta → Excluir conta ou na página de exclusão. Gerencie a assinatura separadamente na loja.",

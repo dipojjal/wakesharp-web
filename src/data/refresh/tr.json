@@ -1,5 +1,5 @@
 {
-  "preview": "iPhone 2.14 ön izlemesi. Bu görüntüler ve açıklamalar incelemeye gönderilen güncellemeyi gösterir. App Store şu anda 2.10 sürümünü sunuyor. Android’deki özellikler farklı olabilir.",
+  "releaseNotice": "WakeSharp 2.14 artık iOS ve Android’de yayında. Son güncellemeyi App Store veya Google Play’den indirin.",
   "hero": "Yüksek Ses kategorisinden bir ses seç, ardından alarm çalınca ne yapacağına karar ver. Birkaç matematik sorusu çöz, bir şişeyi tara veya yürüyüş göreviyle hareket et.",
   "loudTitle": "Dikkatini çekecek bir sesle başla",
   "loud": "Yüksek Ses, alarmın ses seçicisindeki bir kategoridir. Sesleri dinle ve bu alarm için istediğini kaydet. Seçtiğin sesi kullanılabilir herhangi bir görevle eşleştirebilirsin.",
@@ -13,7 +13,7 @@
   "englishArtwork": "Görüntüler İngilizcedir. Altyazılar her ekranı Türkçe açıklar.",
   "open": "Görüntüyü büyüt",
   "close": "Görüntüyü kapat",
-  "watch": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır. Bunlar gönderilen üç Apple Watch görüntüsüdür.",
+  "watch": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır.",
   "android": "WakeSharp Android’de de kullanılabilir. Alarm ses kanalı, izinler ve pil ayarları farklıdır. Bu görüntüler iPhone ve Apple Watch’a aittir, Android veya Wear OS’a değil. Platformundaki görevleri ve ayarları yüklü uygulamadan kontrol et.",
   "backup": "WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır.",
   "deleting": "Uygulamayı kaldırmak yerel verileri siler, ancak bulut yedeğini veya aboneliği silmez. Yedeği Ayarlar → Hesap → Hesabı sil yolundan ya da hesap silme sayfasından kaldır. Aboneliği mağazada ayrıca yönet.",

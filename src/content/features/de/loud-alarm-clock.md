@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "loud-alarm-clock"
 order: 0
 missions: []
-updatedDate: "2026-09-28"
-release: "2.14-preview"
+updatedDate: "2026-09-29"
+release: "2.14"
 screenshot: "../../../assets/store/2.14/sources/ios/de/04-tones.png"
 screenshotAlt: "Die Kategorie Laut und ihre Töne"
 ---

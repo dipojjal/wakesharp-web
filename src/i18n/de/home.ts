@@ -144,7 +144,7 @@ export const home = {
       "post": ""
     },
     "lede": "WakeSharp gibt es auch für Android. Audiokanal, Berechtigungen und Akkueinstellungen unterscheiden sich. Diese Bilder zeigen iPhone und Apple Watch, nicht Android oder Wear OS. Prüfe die verfügbaren Missionen und Einstellungen in deiner installierten App. WakeSharp braucht {ios} auf dem iPhone oder {android} auf Android. Die Uhren-Apps brauchen watchOS 26 oder Wear OS 3.",
-    "watch": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein. Hier sind die drei eingereichten Watch-Bilder.",
+    "watch": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein.",
     "account": "Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
   },
   "reliable": {
@@ -242,7 +242,7 @@ export const home = {
       },
       {
         "q": "Was passiert, wenn meine Uhr leer ist?",
-        "a": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein. Hier sind die drei eingereichten Watch-Bilder."
+        "a": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein."
       },
       {
         "q": "Was kostet WakeSharp?",
