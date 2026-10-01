@@ -31,6 +31,7 @@
   ],
   "functions": {
     "api/contact.ts": { "maxDuration": 10 },
+    "api/support.ts": { "maxDuration": 30 },
     "api/referrals/*.ts": { "maxDuration": 10 },
     "api/internal/referrals/*.ts": { "maxDuration": 15 }
   },

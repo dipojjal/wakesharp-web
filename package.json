@@ -14,14 +14,15 @@
     "assets:prep": "node scripts/prep-assets.mjs",
     "contrast": "node scripts/check-contrast.mjs",
     "copy": "tsx scripts/check-copy.mjs",
-    "verify": "npm run contrast && npm run posts && npm run build && npm run copy && npm run seo && npm run growth:test && npm run i18n:test && npm run tools:test && npm run product:test",
+    "verify": "npm run contrast && npm run posts && npm run build && npm run copy && npm run seo && npm run growth:test && npm run i18n:test && npm run tools:test && npm run product:test && npm run support:test",
     "growth:test": "tsx --test tests/growth/*.test.ts",
     "i18n:test": "tsx --test tests/i18n/*.test.ts",
     "posts": "tsx scripts/check-blog-post.mjs --all",
     "seo": "tsx scripts/check-seo.mjs --strict",
     "product:test": "tsx --test tests/product/*.test.ts",
     "assets:store": "node scripts/import-store.mjs",
-    "tools:test": "tsx --test tests/tools/*.test.ts"
+    "tools:test": "tsx --test tests/tools/*.test.ts",
+    "support:test": "tsx --test tests/support/*.test.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

@@ -30,7 +30,7 @@ import { SITE } from '../config/site';
   <h2>What WakeSharp does not do</h2>
   <ul>
     <li>It does not require an account. Sign-in supports backup, restoration and purchase continuity.</li>
-    <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the name your sign-in provider shares, and the name you give the Lark to call you by, if you choose to. Your email address is held only if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address).</li>
+    <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the name your sign-in provider shares, and the name you give the Lark to call you by, if you choose to. Your email address is held if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address), or if you enter it in a support form.</li>
     <li>It does not collect a location route. On iPhone, optional weather uses a chosen city or a location fix rounded to two decimal places before transmission. Approximate location inferred from IP addresses is described below.</li>
     <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, from version 2.10, the advertising identifier is read only after you allow tracking through Apple's prompt; before that version, and after a refusal, it is not read at all.</li>
     <li>We do not sell customer lists. Advertising and measurement may involve sharing with the providers and enabled advertising partners described below; regional privacy choices apply to that processing.</li>
@@ -311,7 +311,7 @@ import { SITE } from '../config/site';
     and happens on their screens rather than ours. Recordings are deleted after 30 days.
   </p>
   <p>
-    If you would rather send none of this, turn it off in <em>Settings → Product analytics</em> in the
+    If you would rather send none of this, turn it off in <em>Settings → Privacy → Product analytics</em> in the
     app. Everything else works exactly the same with it off.
   </p>
   <p>
@@ -350,7 +350,7 @@ import { SITE } from '../config/site';
     the same way.
   </p>
   <p>
-    Turn off <em>Settings → Product analytics</em> to stop new PostHog and AppsFlyer collection from the app
+    Turn off <em>Settings → Privacy → Product analytics</em> to stop new PostHog and AppsFlyer collection from the app
     and clear the RevenueCat attribution identifiers used for future AppsFlyer delivery. This does not
     erase already delivered events or cancel billing; essential purchase validation continues. Updates
     made offline take effect on connected services after synchronization. You can also change Apple's
@@ -392,7 +392,7 @@ import { SITE } from '../config/site';
     <li>
       <strong>In the EEA, the UK and Switzerland</strong>, and in the US states with their own privacy
       laws, a consent form appears before that measurement begins and records your choice. You can reopen
-      it at any time from <em>Settings, Privacy options</em> inside the app. If you refuse there, iPhone
+      it at any time from <em>Settings → Privacy → Privacy options</em> inside the app. If you refuse there, iPhone
       does not additionally ask you about tracking.
     </li>
   </ul>
@@ -411,23 +411,36 @@ import { SITE } from '../config/site';
     <li>Each row is keyed by a random ID created on your device for this purpose alone: not the analytics ID, not the subscription ID, and not anything derived from your name, email or device.</li>
     <li>It holds only answers from that fixed list of setup questions, sent through a write-only channel that accepts nothing else. Never the content of your alarms, your calendar, or anything you typed.</li>
     <li>Why we keep our own copy: so that if you later create the optional account, your first-day answers can be connected to it, and we can learn how the way people start relates to what they go on to do. Until you sign in (and most people never do) the row is anonymous, and nothing can read it back.</li>
-    <li>Rows are deleted 180 days after the last answer. Deleting the optional account deletes them at once. Turning off <em>Settings → Product analytics</em> in the app stops them being sent at all.</li>
+    <li>Rows are deleted 180 days after the last answer. Deleting the optional account deletes them at once. Turning off <em>Settings → Privacy → Product analytics</em> in the app stops them being sent at all.</li>
   </ul>
 
-  <h2 id="contact-form">The contact form on this website</h2>
+  <h2 id="contact-form">Support and feedback messages</h2>
   <p>
-    This section is about <a href="/contact">wakesharp.app/contact</a> only. The app itself never sends a
-    message anywhere, and everything above still holds.
+    The app offers Contact Support, Request Feature, Send Feedback and Report Bug forms.
+    They send your selected category and written message to
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a> through
+    <a href="https://resend.com/legal/privacy-policy" rel="noopener">Resend</a>.
+    A reply email is required for Contact Support and optional for the other app forms.
+    No account or name is required. The app also sends its platform, language and the screen
+    the form was opened from. If you opt in, it includes app version, OS version and device model.
+    It never attaches your alarms, photos, recordings or raw logs. The cancellation questionnaire
+    sends the reason you select and any optional detail through the same service; delivery failure
+    does not prevent you from continuing to the store's subscription settings.
   </p>
   <p>
-    If you use that form, the name, email address, topic, optional device details and message you type are
-    delivered to <a href={`mailto:${SITE.email}`}>{SITE.email}</a> as an ordinary email by{' '}
-    <a href="https://resend.com/legal/privacy-policy" rel="noopener">Resend</a>, the service that carries
-    it. Submitting also triggers a single automatic confirmation email to the address you entered; its
-    text is fixed and contains nothing from your submission. There is no database behind the form. Nothing is written to disk on our side, and your submission
-    exists only as the resulting email in our inbox. It is kept while the correspondence is useful and then
-    deleted; Resend holds a short-lived delivery log under its own retention policy. Because it is ordinary
-    email and not a secure channel, please do not send anything sensitive through it.
+    App drafts stay on your device until successful submission or explicit discard. Written
+    messages and email fields are masked from session replay and are never sent in analytics events.
+    The website's <a href="/contact">contact form</a> additionally asks for your name and sends
+    a fixed confirmation email. Native app forms do not send that automatic email.
+  </p>
+  <p>
+    Message content is retained in our support mailbox while the correspondence is useful and
+    then deleted; Resend retains delivery data under its own retention policy. We do not create
+    a database of ticket content. To prevent abuse and duplicate delivery, Supabase stores native
+    submission IDs, keyed payload hashes, timestamps and delivery receipt IDs. Receipt metadata
+    is retained to recognize future retries. Rate limits use keyed hashes of network addresses,
+    never raw addresses, and these counters expire after two days. Neither table contains your
+    message or email address. Please avoid sending sensitive information in ordinary support email.
   </p>
 
   <h2>How long data is kept, and how to delete it</h2>
