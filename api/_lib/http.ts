@@ -41,10 +41,22 @@ export async function endpoint(work: () => Promise<Response>): Promise<Response>
   } catch (error) {
     if (error instanceof ApiError) return json({ error: error.code }, error.status);
     // Bodies, credentials, signatures, attestation payloads, and provider
-    // responses must never be logged. The error class is enough for operations.
-    console.error('[growth-api] unhandled error class:', error instanceof Error ? error.name : 'unknown');
+    // responses must never be logged, and neither are messages. The class and
+    // a machine code (SELF_SIGNED_CERT_IN_CHAIN, ENETUNREACH, a SQLSTATE such
+    // as 28P01) are enough for operations.
+    console.error(
+      '[growth-api] unhandled error class:',
+      error instanceof Error ? error.name : 'unknown',
+      `code: ${safeErrorCode(error)}`,
+    );
     return json({ error: 'internal_error' }, 500);
   }
+}
+
+/** A Node or Postgres error code, which never carries request data; `-` otherwise. */
+export function safeErrorCode(error: unknown): string {
+  const code = (error as { code?: unknown } | null)?.code;
+  return typeof code === 'string' && /^[A-Z0-9_]{2,48}$/.test(code) ? code : '-';
 }
 
 export const methodNotAllowed = (allowed: string): Response =>

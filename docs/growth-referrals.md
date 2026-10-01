@@ -231,10 +231,16 @@ describes.
   `search_path = growth`, usage on the schema, DML on its tables, and execute
   on its functions, plus one permissive policy per table. Nothing else. The
   owner gives it a password at activation, so no credential is in a migration.
-- **TLS.** `api/_lib/db.ts` always verifies the server certificate. Supabase's
-  root (Dashboard > Project Settings > Database > SSL) goes in
-  `DATABASE_CA_CERT` and is trusted alongside the public roots; an `sslmode`
-  in the URL is stripped so it can never downgrade that.
+- **TLS.** `api/_lib/db.ts` always verifies the server certificate. The
+  pooler's certificate chains to Supabase Root 2021 CA, not a public root, so
+  that root is bundled in `api/_lib/supabase-root-ca.ts` (SHA-256
+  `80:70:25:AD…E6:CA:FA`, valid until 2031-04-26) and trusted alongside the
+  public roots. `DATABASE_CA_CERT` is optional and only adds roots, such as a
+  successor before it is bundled; a PEM whose line breaks a paste mangled is
+  rebuilt, and one that does not parse is dropped with a warning. It was an
+  environment variable until 2026-10-01, when a mangled paste was silently
+  ignored by Node and every query failed `SELF_SIGNED_CERT_IN_CHAIN`. An
+  `sslmode` in the URL is stripped so it can never downgrade any of this.
 - **Tests.** The SQL's text contracts are
   `tools/supabase/test_growth_referrals_contract.py` and its behaviour is the
   pgTAP suite `supabase/tests/growth_referrals_test.sql`, both in the app
@@ -287,6 +293,22 @@ GROWTH_TEST_DATABASE_URL='postgres://…supabase branch…' npm run growth:test
 It refuses to run when that URL equals `DATABASE_URL`, creates its own rows
 only, and deletes them afterwards.
 
+### When a database route answers `internal_error`
+
+The function log line `[growth-api] unhandled error class: <class> code: <code>`
+names the cause without any request data:
+
+| Code | Cause |
+|---|---|
+| `SELF_SIGNED_CERT_IN_CHAIN` | The pooler's root is not trusted: a build from before the bundled root, or Supabase rotated its root (set `DATABASE_CA_CERT`). |
+| `28P01` | Wrong password for `referrals_api` in `DATABASE_URL`. |
+| `XX000` | The pooler found no such tenant or user: the wrong pooler host (`aws-1` instead of `aws-0`), or a user without the `.ltwchaijzcvncxzexdnk` suffix. |
+| `ENETUNREACH`, `ENOTFOUND`, `ETIMEDOUT` | Not the pooler: usually the IPv6-only direct `db.<ref>.supabase.co` host. |
+| `42P01`, `42501` | Connected, but the role is wrong: no `search_path = growth`, or missing grants. Re-check the migration's placement section. |
+
+The authenticated operations GET (`/api/internal/referrals/operations`)
+touches every table, so it is the end-to-end check after any change here.
+
 ## Retention and deletion
 
 - Installations: deleted 180 days after the last authenticated request
@@ -316,8 +338,8 @@ owner reviews and publishes it.
 | `REFERRALS_SQUATS_LOCK` | `false` / anything else (default locked) | `false` lifts the Squats lock on every client with no app release (App Review fallback). |
 | `REFERRALS_ACCEPT_SANDBOX` | `true` / anything else | Accept sandbox conversions. QA only; set `false` before the store release. |
 | `REFERRAL_CREDENTIAL_PEPPER` | 32+ random bytes | HMAC key for install credentials, rate-limit buckets and purchase references. **Never rotate after launch**: rotation invalidates every credential and lets an already-counted purchase count again. |
-| `DATABASE_URL` | Supabase transaction-pooler URI as `referrals_api` | `postgresql://referrals_api.ltwchaijzcvncxzexdnk:<password>@<pooler host>:6543/postgres`, from Dashboard > Connect > Transaction pooler with the user swapped. Without it, database routes answer 503 `referrals_not_configured`. |
-| `DATABASE_CA_CERT` | PEM | Supabase's root certificate (Dashboard > Project Settings > Database > SSL). Trusted alongside the public roots; TLS is verified either way. |
+| `DATABASE_URL` | Supabase transaction-pooler URI as `referrals_api` | `postgresql://referrals_api.ltwchaijzcvncxzexdnk:<password>@aws-0-us-east-1.pooler.supabase.com:6543/postgres`, from Dashboard > Connect > Transaction pooler with the user swapped. The project is on the `aws-0` pooler (`aws-1` answers "tenant/user not found"), and the direct `db.<ref>.supabase.co` host is IPv6 only, which Vercel cannot reach. Without it, database routes answer 503 `referrals_not_configured`. |
+| `DATABASE_CA_CERT` | PEM, optional | Extra roots to trust. Supabase's current root is bundled, so leave it unset unless Supabase rotates its root before an update bundles the new one. TLS is verified either way. |
 | `ATTESTATION_VERIFIER_URL`, `ATTESTATION_VERIFIER_SECRET` | | The private App Attest / Play Integrity verifier. Without them registration is 503. |
 | `WAKESHARP_IOS_APP_ID`, `WAKESHARP_ANDROID_PACKAGE` | | Expected app identities for attestation. |
 | `CRON_SECRET` | random | Authenticates the daily prune cron. Without it the route refuses. |
@@ -338,8 +360,8 @@ owner reviews and publishes it.
    `20261001153843_growth_referrals.sql` and its follow-up). Give the API's
    role a password in the SQL editor,
    `alter role referrals_api with login password '<new random password>';`,
-   build `DATABASE_URL` from the transaction pooler string with that user
-   and password, and download the SSL certificate for `DATABASE_CA_CERT`.
+   and build `DATABASE_URL` from the transaction pooler string with that user
+   and password. No certificate is needed: Supabase's root is bundled.
    Optionally run `GROWTH_TEST_DATABASE_URL=… npm run growth:test` against a
    Supabase branch first.
 5. **Vercel Production environment.** Set `REFERRAL_CREDENTIAL_PEPPER`,
@@ -367,9 +389,9 @@ owner reviews and publishes it.
 
 ## Current blockers
 
-- The `growth` schema is applied to the Supabase project, but
-  `referrals_api` has no password yet, and `DATABASE_URL` /
-  `DATABASE_CA_CERT` are unset in production (step 4).
+- The database (step 4) is configured as of 2026-10-01: `referrals_api` has
+  a password and `DATABASE_URL` is set in production. The operations GET
+  answering JSON counts confirms it end to end.
 - The attestation verifier exists (built 2026-08-30, private app repo,
   `supabase/functions/attestation-verifier`) but no real device has attested
   yet, and Android needs the Play Integrity service account (step 3).
