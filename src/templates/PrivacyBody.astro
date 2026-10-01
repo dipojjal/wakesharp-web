@@ -419,8 +419,9 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     DRAFT (2.16), OWNER REVIEW REQUIRED BEFORE PUBLISHING. Not rendered while
     REFERRAL_DISCLOSURE.published is false in src/templates/legal-copy.ts; see
     the checklist there. Points to confirm:
-      - the Neon region chosen at provisioning (the text says United States);
-      - the processor links for Vercel and Neon;
+      - the database is the WakeSharp Supabase project (us-east-1), the same
+        processor and region as the backup and the onboarding answers;
+      - the processor links for Vercel and Supabase;
       - deletion: the 2.16 apps do not call POST /api/referrals/delete, so
         "email us" is the only route today. Add an in-app control or keep it;
       - "has started WakeSharp Unlimited" matches the app's referral list
@@ -495,11 +496,11 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
         rely on our legitimate interest in running a feature you chose to use and in preventing its abuse.
       </p>
       <p>
-        The service runs on <strong>Vercel, Inc.</strong> and its database is hosted by <strong>Neon</strong>,
+        The service runs on <strong>Vercel, Inc.</strong> and its database is hosted by <strong>Supabase, Inc.</strong>,
         in the <strong>United States</strong>, as our processors, including standard contractual clauses
         where required for transfers from the UK or the EEA. Their privacy policies are at{' '}
         <a href="https://vercel.com/legal/privacy-policy" rel="noopener">vercel.com/legal/privacy-policy</a>{' '}
-        and <a href="https://neon.com/privacy-policy" rel="noopener">neon.com/privacy-policy</a>.
+        and <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>.
       </p>
       <p>
         <strong>How long it is kept.</strong> An installation's record is deleted 180 days after the app last

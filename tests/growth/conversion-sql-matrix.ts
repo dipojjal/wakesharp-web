@@ -1,8 +1,9 @@
 /**
- * The 2.16 conversion matrix, written against any Postgres session that has
- * 001, 002 and 003 applied. Not a test file on its own (the growth suite runs
- * `*.test.ts` only): `conversion-sql.test.ts` drives it against a Neon branch
- * when GROWTH_TEST_DATABASE_URL is set.
+ * The 2.16 conversion matrix, written against any Postgres session whose
+ * search_path reaches the referral schema (WakeSharp's
+ * supabase/migrations/*_growth_referrals.sql). Not a test file on its own (the
+ * growth suite runs `*.test.ts` only): `conversion-sql.test.ts` drives it
+ * against a test database when GROWTH_TEST_DATABASE_URL is set.
  *
  * Every case builds its own installations, codes and claims and records their
  * ids so the runner can remove them afterwards. Nothing here prunes or reads

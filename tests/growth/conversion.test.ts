@@ -15,14 +15,14 @@ import * as convertedRoute from '../../api/referrals/converted';
 
 /**
  * 2.16: one converted referral unlocks Squats for the inviter. Static checks
- * over the migration and the routes in the style of contract.test.ts, plus
- * unit tests of the request schema, the purchase-reference digest and the
- * routes' database-free paths. The SQL itself runs in conversion-sql.test.ts
- * when a test database is configured.
+ * over the routes in the style of contract.test.ts, plus unit tests of the
+ * request schema, the purchase-reference digest, the database connection and
+ * the routes' database-free paths. The SQL is a migration in the WakeSharp
+ * Supabase project, pinned there (tools/supabase/test_growth_referrals_contract.py
+ * and supabase/tests/growth_referrals_test.sql); conversion-sql.test.ts runs
+ * conversion-sql-matrix.ts against it when a test database is configured.
  */
 const read = (path: string): string => readFileSync(new URL(path, import.meta.url), 'utf8');
-const base = read('../../db/migrations/001_growth_referrals.sql');
-const conversions = read('../../db/migrations/003_referral_conversions.sql');
 const convertedSource = read('../../api/referrals/converted.ts');
 const configSource = read('../../api/referrals/config.ts');
 const statusSource = read('../../api/referrals/status.ts');
@@ -31,29 +31,8 @@ const operationsSource = read('../../api/internal/referrals/operations.ts');
 const landingSource = read('../../api/referrals/landing.ts');
 const vercel = JSON.parse(read('../../vercel.json'));
 
-/** One `CREATE OR REPLACE FUNCTION name(...) ... $$;` statement. */
-function fn(source: string, name: string): string {
-  const start = source.indexOf(`CREATE OR REPLACE FUNCTION ${name}(`);
-  assert.ok(start >= 0, `${name} is missing`);
-  const end = source.indexOf('$$;', start);
-  assert.ok(end > start, `${name} is unterminated`);
-  return source.slice(start, end + 3);
-}
-
-/** SQL without comments and with whitespace collapsed, for body comparisons. */
-const normalize = (sql: string): string => sql.replace(/--[^\n]*/g, '').replace(/\s+/g, ' ').trim();
-
-const record = fn(conversions, 'growth_record_conversion');
-const statementAt = (source: string, marker: string): string => {
-  const start = source.indexOf(marker);
-  assert.ok(start >= 0, `${marker} is missing`);
-  return source.slice(start, source.indexOf(');', start) + 2);
-};
-const columnDefinitions = [
-  conversions.slice(conversions.indexOf('ALTER TABLE growth_referral_claims'), conversions.indexOf('CREATE UNIQUE INDEX')),
-  statementAt(conversions, 'CREATE TABLE growth_mission_unlocks'),
-];
-
+// Every refusal growth_record_conversion raises, in the contract's order; the
+// migration's own test pins the SQL to this same list.
 const ERROR_CODES = [
   'installation_unavailable', 'conversion_store_mismatch', 'conversion_sandbox_rejected',
   'conversion_time_invalid', 'no_referral_claim', 'purchase_already_counted',
@@ -84,128 +63,6 @@ async function withEnv(values: Record<string, string | undefined>, work: () => P
   }
 }
 
-// ---------- migration 003 ----------
-
-test('003 adds the five conversion columns, all or nothing, in one transaction', () => {
-  assert.match(conversions, /^BEGIN;$/m);
-  assert.match(conversions, /^COMMIT;\s*$/m);
-  assert.match(conversions, /ADD COLUMN converted_at timestamptz,/);
-  assert.match(conversions, /ADD COLUMN conversion_kind text CHECK \(conversion_kind IN \('trial', 'paid'\)\)/);
-  assert.match(conversions, /ADD COLUMN conversion_store text CHECK \(conversion_store IN \('app_store', 'play_store'\)\)/);
-  assert.match(conversions, /ADD COLUMN conversion_environment text CHECK \(conversion_environment IN \('production', 'sandbox'\)\)/);
-  assert.match(conversions, /ADD COLUMN conversion_ref_hash bytea CHECK \(conversion_ref_hash IS NULL OR octet_length\(conversion_ref_hash\) = 32\)/);
-  const whole = conversions.slice(conversions.indexOf('ADD CONSTRAINT growth_claims_conversion_whole'));
-  assert.ok(whole.length > 0);
-  // Unconverted: every field NULL. Converted: all but the optional reference set.
-  assert.equal(
-    normalize(whole.slice(0, whole.indexOf(');') + 2)),
-    'ADD CONSTRAINT growth_claims_conversion_whole CHECK ( '
-      + '(converted_at IS NULL AND conversion_kind IS NULL AND conversion_store IS NULL '
-      + 'AND conversion_environment IS NULL AND conversion_ref_hash IS NULL) '
-      + 'OR (converted_at IS NOT NULL AND conversion_kind IS NOT NULL '
-      + 'AND conversion_store IS NOT NULL AND conversion_environment IS NOT NULL) );',
-  );
-});
-
-test('one purchase reference converts one claim, and the inviter paths are indexed', () => {
-  assert.match(conversions, /CREATE UNIQUE INDEX growth_claims_conversion_ref_idx\s+ON growth_referral_claims \(conversion_ref_hash\)\s+WHERE conversion_ref_hash IS NOT NULL;/);
-  assert.match(conversions, /CREATE INDEX growth_claims_inviter_time_idx\s+ON growth_referral_claims \(inviter_installation_id, claimed_at DESC\);/);
-  assert.match(conversions, /CREATE INDEX growth_claims_inviter_converted_idx\s+ON growth_referral_claims \(inviter_installation_id\)\s+WHERE converted_at IS NOT NULL;/);
-});
-
-test('Squats is the only mission a referral can unlock, written once', () => {
-  assert.match(conversions, /CREATE TABLE growth_mission_unlocks \(/);
-  assert.match(conversions, /installation_id uuid NOT NULL REFERENCES growth_anonymous_installations\(id\) ON DELETE CASCADE/);
-  assert.match(conversions, /mission_id text NOT NULL CHECK \(mission_id IN \('squats'\)\)/);
-  assert.match(conversions, /source_claim_id uuid REFERENCES growth_referral_claims\(id\) ON DELETE SET NULL/);
-  assert.match(conversions, /PRIMARY KEY \(installation_id, mission_id\)/);
-  assert.match(record, /ON CONFLICT \(installation_id, mission_id\) DO NOTHING/);
-  assert.equal(REWARD_MISSION_ID, 'squats');
-});
-
-test('no purchase identifier has a column', () => {
-  for (const block of columnDefinitions) {
-    assert.ok(block.length > 0);
-    assert.doesNotMatch(block, /transaction_id|revenuecat|product_id|purchased_at|price/i);
-  }
-  assert.doesNotMatch(conversions, /raw_referrer|attestation_token|apple_token/i);
-});
-
-test('growth_record_conversion is a pinned SECURITY DEFINER whose p_now defaults to now()', () => {
-  assert.match(record, /RETURNS TABLE \(claim_id uuid, recorded boolean\)/);
-  assert.match(record, /SECURITY DEFINER\s*\n\s*SET search_path = public, pg_temp/);
-  assert.match(record, /p_accept_sandbox boolean,\s*\n\s*p_now timestamptz DEFAULT now\(\)\s*\n\)/);
-  // Exactly eight parameters, so the route's seven leave p_now to the database.
-  const signature = record.slice(record.indexOf('(') + 1, record.indexOf('\n)'));
-  assert.equal(signature.split(',').length, 8);
-});
-
-test('the checks raise in the contract order, before anything is written', () => {
-  const positions = ERROR_CODES.map((code) => record.indexOf(`RAISE EXCEPTION '${code}'`));
-  for (const [index, position] of positions.entries()) assert.ok(position > 0, `${ERROR_CODES[index]} is not raised`);
-  assert.deepEqual([...positions].sort((left, right) => left - right), positions);
-  const firstWrite = record.indexOf('UPDATE growth_referral_claims');
-  assert.ok(record.indexOf("RAISE EXCEPTION 'no_referral_claim'") < firstWrite);
-  assert.ok(record.indexOf("RAISE EXCEPTION 'conversion_time_invalid'") < firstWrite);
-  // The installation and the claim are both locked before they are judged.
-  assert.match(record, /WHERE id = p_installation_id AND revoked_at IS NULL\s*\n\s*FOR UPDATE;/);
-  assert.match(record, /WHERE referred_installation_id = p_installation_id\s*\n\s*FOR UPDATE;/);
-});
-
-test('the store matches the platform, sandbox fails closed, and the purchase is dated', () => {
-  assert.match(record, /WHEN 'ios' THEN 'app_store'/);
-  assert.match(record, /WHEN 'android' THEN 'play_store'/);
-  // IS NOT TRUE: a NULL flag must refuse sandbox, never admit it.
-  assert.match(record, /p_environment = 'sandbox' AND p_accept_sandbox IS NOT TRUE/);
-  assert.match(record, /p_purchased_at < v_install\.first_open_at - interval '10 minutes'/);
-  assert.match(record, /p_purchased_at > p_now \+ interval '10 minutes'/);
-});
-
-test('a replay returns before any write or audit row', () => {
-  const replay = record.indexOf('IF v_claim.converted_at IS NOT NULL THEN');
-  assert.ok(replay > 0);
-  const replayReturn = record.indexOf('RETURN;', replay);
-  assert.ok(replayReturn > replay);
-  assert.ok(record.indexOf("RETURN QUERY SELECT v_claim.id, false;", replay) < replayReturn);
-  for (const write of ['UPDATE growth_referral_claims', 'INSERT INTO growth_mission_unlocks', 'INSERT INTO growth_referral_audit', 'UPDATE growth_anonymous_installations']) {
-    assert.ok(replayReturn < record.indexOf(write), `${write} precedes the replay return`);
-  }
-});
-
-test('a reused purchase is purchase_already_counted, and a revoked inviter earns nothing', () => {
-  assert.match(record, /EXCEPTION WHEN unique_violation THEN\s*\n\s*RAISE EXCEPTION 'purchase_already_counted';/);
-  const inviterLock = record.search(/WHERE id = v_claim\.inviter_installation_id AND revoked_at IS NULL\s*\n\s*FOR UPDATE;/);
-  assert.ok(inviterLock > 0);
-  assert.ok(inviterLock < record.indexOf('INSERT INTO growth_mission_unlocks'));
-  assert.match(record, /'conversion', 'recorded'/);
-  assert.match(record, /'mission_unlock', 'unlocked'/);
-  assert.match(record, /IF v_unlocked THEN/);
-  assert.match(record, /jsonb_build_object\('kind', p_kind, 'store', p_store, 'environment', p_environment\)/);
-});
-
-test('retention keeps an installation holding either unlock, and is otherwise 001\'s', () => {
-  const prune = fn(conversions, 'growth_prune_expired');
-  assert.match(prune, /NOT EXISTS \(\s*\n\s*SELECT 1 FROM growth_squad_unlocks u/);
-  assert.match(prune, /NOT EXISTS \(\s*\n\s*SELECT 1 FROM growth_mission_unlocks m/);
-  const guard = ' AND NOT EXISTS ( SELECT 1 FROM growth_mission_unlocks m WHERE m.installation_id = growth_anonymous_installations.id )';
-  assert.ok(normalize(prune).includes(guard));
-  assert.equal(normalize(prune).replace(guard, ''), normalize(fn(base, 'growth_prune_expired')));
-});
-
-test('deletion clears the referee\'s purchase reference, and is otherwise 001\'s', () => {
-  const remove = fn(conversions, 'growth_delete_installation');
-  const clearRef = 'UPDATE growth_referral_claims SET conversion_ref_hash = NULL WHERE referred_installation_id = p_installation_id;';
-  const dropOwnUnlock = 'DELETE FROM growth_mission_unlocks WHERE installation_id = p_installation_id;';
-  assert.ok(remove.includes(clearRef));
-  assert.ok(remove.includes(dropOwnUnlock));
-  // The inviter's unlock and the claim's conversion stay: nothing else touches them.
-  assert.doesNotMatch(remove, /converted_at|DELETE FROM growth_referral_claims/);
-  assert.equal(
-    normalize(remove).replace(` ${clearRef}`, '').replace(` ${dropOwnUnlock}`, ''),
-    normalize(fn(base, 'growth_delete_installation')),
-  );
-});
-
 // ---------- routes ----------
 
 test('converted.ts passes seven arguments and maps every database refusal', () => {
@@ -221,8 +78,7 @@ test('converted.ts passes seven arguments and maps every database refusal', () =
   assert.match(convertedSource, /converted: true/);
   // Every code the function raises is mapped, and nothing else is: the 409s
   // are exactly the CONFLICTS set, and installation_unavailable is the 401.
-  const raised = [...record.matchAll(/RAISE EXCEPTION '([a-z_]+)'/g)].map((match) => match[1]).sort();
-  assert.deepEqual(raised, [...ERROR_CODES].sort());
+  const raised = [...ERROR_CODES].sort();
   const start = convertedSource.indexOf('const CONFLICTS = new Set([');
   assert.ok(start > 0);
   const conflicts = convertedSource.slice(start, convertedSource.indexOf(']);', start));

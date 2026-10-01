@@ -3,9 +3,11 @@ import { CLEANUP_STATEMENTS, MATRIX, type SqlSession } from './conversion-sql-ma
 
 /**
  * The 2.16 conversion SQL matrix against a real database, skipped unless
- * GROWTH_TEST_DATABASE_URL names one: a Neon branch with 001, 002 and 003
- * applied, never production. It refuses to run when that URL is the same as
- * DATABASE_URL. Every row it creates is deleted afterwards.
+ * GROWTH_TEST_DATABASE_URL names one: a Supabase branch or a local
+ * `supabase start` with the WakeSharp migrations applied (the referral schema
+ * is supabase/migrations/*_growth_referrals.sql), never production. It refuses
+ * to run when that URL is the same as DATABASE_URL. It works in the `growth`
+ * schema whichever role it connects as, and deletes every row it creates.
  *
  *   GROWTH_TEST_DATABASE_URL=postgres://... npm run growth:test
  */
@@ -16,11 +18,12 @@ const skip = !url
     ? 'GROWTH_TEST_DATABASE_URL must not be DATABASE_URL'
     : false;
 
-test('conversion SQL matrix (Neon branch)', { skip }, async (t) => {
-  const { Pool } = await import('@neondatabase/serverless');
-  const pool = new Pool({ connectionString: url });
+test('conversion SQL matrix (test database)', { skip }, async (t) => {
+  const { default: pg } = await import('pg');
+  const pool = new pg.Pool({ connectionString: url });
   const primary = await pool.connect();
   const secondary = await pool.connect();
+  for (const client of [primary, secondary]) await client.query('SET search_path = growth');
   const session = (client: typeof primary): SqlSession => ({
     async query<T extends object>(text: string, params: unknown[] = []) {
       return (await client.query(text, params)).rows as T[];
@@ -30,9 +33,9 @@ test('conversion SQL matrix (Neon branch)', { skip }, async (t) => {
   const context = { sql: session(primary), other: session(secondary), created };
   try {
     const applied = await context.sql.query<{ table: string | null }>(
-      "SELECT to_regclass('public.growth_mission_unlocks')::text AS table",
+      "SELECT to_regclass('growth.growth_mission_unlocks')::text AS table",
     );
-    if (!applied[0]?.table) throw new Error('apply db/migrations 001, 002 and 003 to this branch first');
+    if (!applied[0]?.table) throw new Error('apply the WakeSharp Supabase migrations to this database first');
     for (const item of MATRIX) await t.test(item.name, () => item.run(context));
   } finally {
     if (created.length) {

@@ -211,13 +211,37 @@ missing field means "unknown", never "relock"):
 The inviter never learns whether a referee chose a trial or a paid plan: only
 `converted`.
 
-## Database (`db/migrations/003_referral_conversions.sql`)
+## Database (WakeSharp Supabase project, `growth` schema)
 
-Apply `003` after `001` and `002`. It is one transaction and nothing in it
-enables the API. It is not re-runnable: a second application fails on its
-first `ALTER` and rolls back, changing nothing. Privileges follow 001 and 002:
-no `GRANT` or `REVOKE`, the API connects as the owning role, and every function
-is `SECURITY DEFINER` with `search_path` pinned.
+The referral database is the WakeSharp Supabase project (`wakesharp`,
+`ltwchaijzcvncxzexdnk`), not a database of its own. The schema is one migration
+in the app repository, `supabase/migrations/20261001150000_growth_referrals.sql`:
+this repository's former `db/migrations/001`, `002` and `003`, in order and
+unchanged in substance, placed in a private `growth` schema. It is applied with
+the rest of the project's migrations (`supabase db push`), never from here, so
+the project's migration history stays the one `Docs/SUPABASE-MIGRATIONS.md`
+describes.
+
+- **Placement.** `growth` is not a PostgREST schema, so nothing in it is
+  reachable through the project's REST API. Schema, tables, sequences and
+  functions are revoked from `public`, `anon` and `authenticated`; row-level
+  security is on for every table as a second wall.
+- **The API's role.** The routes connect as `referrals_api` through the
+  transaction pooler (port 6543). The migration creates it `NOLOGIN` with
+  `search_path = growth`, usage on the schema, DML on its tables, and execute
+  on its functions, plus one permissive policy per table. Nothing else. The
+  owner gives it a password at activation, so no credential is in a migration.
+- **TLS.** `api/_lib/db.ts` always verifies the server certificate. Supabase's
+  root (Dashboard > Project Settings > Database > SSL) goes in
+  `DATABASE_CA_CERT` and is trusted alongside the public roots; an `sslmode`
+  in the URL is stripped so it can never downgrade that.
+- **Tests.** The SQL's text contracts are
+  `tools/supabase/test_growth_referrals_contract.py` and its behaviour is the
+  pgTAP suite `supabase/tests/growth_referrals_test.sql`, both in the app
+  repository's CI. This repository keeps the routes' side and the matrix
+  below.
+
+The conversion SQL itself (formerly `003`):
 
 - **Conversion columns on `growth_referral_claims`:** `converted_at`,
   `conversion_kind`, `conversion_store`, `conversion_environment`,
@@ -248,15 +272,16 @@ is `SECURITY DEFINER` with `search_path` pinned.
   to read it, and keeping it would exempt the anonymized row from retention
   forever.
 
-`conversion.test.ts` pins all of this statically, including that the prune and
-delete bodies are 001's apart from the additions. `conversion-sql.test.ts` runs
-the full SQL matrix (claim then convert, convert without a claim, replay,
-ordered checks, sandbox gate, time window, reference reuse, revoked inviter,
-two concurrent referees, both deletions, retention, the CHECKs) when
-`GROWTH_TEST_DATABASE_URL` names a branch with 001 to 003 applied:
+The app repository's contract test pins all of this statically, including
+that the prune and delete bodies are 001's apart from the additions.
+`conversion-sql.test.ts` here runs the full SQL matrix (claim then convert,
+convert without a claim, replay, ordered checks, sandbox gate, time window,
+reference reuse, revoked inviter, two concurrent referees, both deletions,
+retention, the CHECKs) when `GROWTH_TEST_DATABASE_URL` names a Supabase branch
+or a local `supabase start` with the app's migrations applied:
 
 ```sh
-GROWTH_TEST_DATABASE_URL='postgres://…staging branch…' npm run growth:test
+GROWTH_TEST_DATABASE_URL='postgres://…supabase branch…' npm run growth:test
 ```
 
 It refuses to run when that URL equals `DATABASE_URL`, creates its own rows
@@ -291,12 +316,13 @@ owner reviews and publishes it.
 | `REFERRALS_SQUATS_LOCK` | `false` / anything else (default locked) | `false` lifts the Squats lock on every client with no app release (App Review fallback). |
 | `REFERRALS_ACCEPT_SANDBOX` | `true` / anything else | Accept sandbox conversions. QA only; set `false` before the store release. |
 | `REFERRAL_CREDENTIAL_PEPPER` | 32+ random bytes | HMAC key for install credentials, rate-limit buckets and purchase references. **Never rotate after launch**: rotation invalidates every credential and lets an already-counted purchase count again. |
-| `DATABASE_URL` | Neon connection string | Set by the Vercel Neon integration. Without it, database routes answer 503 `referrals_not_configured`. |
+| `DATABASE_URL` | Supabase transaction-pooler URI as `referrals_api` | `postgresql://referrals_api.ltwchaijzcvncxzexdnk:<password>@<pooler host>:6543/postgres`, from Dashboard > Connect > Transaction pooler with the user swapped. Without it, database routes answer 503 `referrals_not_configured`. |
+| `DATABASE_CA_CERT` | PEM | Supabase's root certificate (Dashboard > Project Settings > Database > SSL). Trusted alongside the public roots; TLS is verified either way. |
 | `ATTESTATION_VERIFIER_URL`, `ATTESTATION_VERIFIER_SECRET` | | The private App Attest / Play Integrity verifier. Without them registration is 503. |
 | `WAKESHARP_IOS_APP_ID`, `WAKESHARP_ANDROID_PACKAGE` | | Expected app identities for attestation. |
 | `CRON_SECRET` | random | Authenticates the daily prune cron. Without it the route refuses. |
 | `REFERRAL_OPERATIONS_SECRET` | random | Bearer secret for `/api/internal/referrals/operations`. |
-| `GROWTH_TEST_DATABASE_URL` | staging branch URL | Local only: enables `conversion-sql.test.ts`. Never production. |
+| `GROWTH_TEST_DATABASE_URL` | Supabase branch or local URL | Local only: enables `conversion-sql.test.ts`. Never production. |
 
 ## Activation checklist (in order)
 
@@ -308,11 +334,16 @@ owner reviews and publishes it.
    `346044402255`, set `PLAY_INTEGRITY_SERVICE_ACCOUNT` on the Supabase
    `attestation-verifier`, confirm the Play Console link, and verify that
    `assetlinks.json` carries the Play app-signing certificate.
-4. **Neon.** Provision a dedicated database through the Vercel project (sets
-   `DATABASE_URL`) and record region, owner and recovery policy. Create a
-   `staging` branch, apply `001`, `002` and `003` in order, run
-   `GROWTH_TEST_DATABASE_URL=… npm run growth:test`, then apply the same three
-   to the main branch.
+4. **Supabase.** From a checkout of the app repository's `main`, apply the
+   migration with the rest of the history: `supabase link --project-ref
+   ltwchaijzcvncxzexdnk`, `supabase migration list --linked` (Local and Remote
+   must agree first; see `Docs/SUPABASE-MIGRATIONS.md`), then
+   `supabase db push --linked`. Optionally run
+   `GROWTH_TEST_DATABASE_URL=… npm run growth:test` against a Supabase branch
+   first. Then give the API's role a password in the SQL editor,
+   `alter role referrals_api with login password '<new random password>';`,
+   and build `DATABASE_URL` from the transaction pooler string with that user
+   and password. Download the SSL certificate for `DATABASE_CA_CERT`.
 5. **Vercel Production environment.** Set `REFERRAL_CREDENTIAL_PEPPER`,
    confirm `ATTESTATION_VERIFIER_URL` and `_SECRET`, set `CRON_SECRET`,
    `REFERRAL_OPERATIONS_SECRET`, `REFERRALS_SQUATS_LOCK=true`,
@@ -338,8 +369,9 @@ owner reviews and publishes it.
 
 ## Current blockers
 
-- No Neon database is provisioned and no migration has been applied.
-  `DATABASE_URL` is unset in production.
+- The `growth` migration is in the app repository but not yet applied to the
+  Supabase project, `referrals_api` has no password, and `DATABASE_URL` /
+  `DATABASE_CA_CERT` are unset in production (step 4).
 - The attestation verifier exists (built 2026-08-30, private app repo,
   `supabase/functions/attestation-verifier`) but no real device has attested
   yet, and Android needs the Play Integrity service account (step 3).
@@ -373,10 +405,10 @@ The two anchors that made the three mornings unforgeable stay pinned by
 computed, called from both the success and onboarding paths, because either can
 land last.
 
-## 2.13 fixes (`db/migrations/002_referrals_2_13.sql`)
+## 2.13 fixes (formerly `db/migrations/002_referrals_2_13.sql`)
 
-Apply `002` after `001`. It re-creates two functions and adds one table and
-one index; nothing in it enables the API.
+Part of the `growth` migration, after `001`'s statements. It re-creates two
+functions and adds one table and one index; nothing in it enables the API.
 
 - **An existing claim answers first (G1-01).** The same code is idempotent at
   any age; another code is `different_referral_already_claimed`, never
