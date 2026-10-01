@@ -215,7 +215,7 @@ The inviter never learns whether a referee chose a trial or a paid plan: only
 
 The referral database is the WakeSharp Supabase project (`wakesharp`,
 `ltwchaijzcvncxzexdnk`), not a database of its own. The schema is one migration
-in the app repository, `supabase/migrations/20261001150000_growth_referrals.sql`:
+in the app repository, `supabase/migrations/20261001153843_growth_referrals.sql`:
 this repository's former `db/migrations/001`, `002` and `003`, in order and
 unchanged in substance, placed in a private `growth` schema. It is applied with
 the rest of the project's migrations (`supabase db push`), never from here, so
@@ -334,16 +334,14 @@ owner reviews and publishes it.
    `346044402255`, set `PLAY_INTEGRITY_SERVICE_ACCOUNT` on the Supabase
    `attestation-verifier`, confirm the Play Console link, and verify that
    `assetlinks.json` carries the Play app-signing certificate.
-4. **Supabase.** From a checkout of the app repository's `main`, apply the
-   migration with the rest of the history: `supabase link --project-ref
-   ltwchaijzcvncxzexdnk`, `supabase migration list --linked` (Local and Remote
-   must agree first; see `Docs/SUPABASE-MIGRATIONS.md`), then
-   `supabase db push --linked`. Optionally run
-   `GROWTH_TEST_DATABASE_URL=… npm run growth:test` against a Supabase branch
-   first. Then give the API's role a password in the SQL editor,
+4. **Supabase.** The schema is applied (2026-10-01, the app repository's
+   `20261001153843_growth_referrals.sql` and its follow-up). Give the API's
+   role a password in the SQL editor,
    `alter role referrals_api with login password '<new random password>';`,
-   and build `DATABASE_URL` from the transaction pooler string with that user
-   and password. Download the SSL certificate for `DATABASE_CA_CERT`.
+   build `DATABASE_URL` from the transaction pooler string with that user
+   and password, and download the SSL certificate for `DATABASE_CA_CERT`.
+   Optionally run `GROWTH_TEST_DATABASE_URL=… npm run growth:test` against a
+   Supabase branch first.
 5. **Vercel Production environment.** Set `REFERRAL_CREDENTIAL_PEPPER`,
    confirm `ATTESTATION_VERIFIER_URL` and `_SECRET`, set `CRON_SECRET`,
    `REFERRAL_OPERATIONS_SECRET`, `REFERRALS_SQUATS_LOCK=true`,
@@ -369,8 +367,8 @@ owner reviews and publishes it.
 
 ## Current blockers
 
-- The `growth` migration is in the app repository but not yet applied to the
-  Supabase project, `referrals_api` has no password, and `DATABASE_URL` /
+- The `growth` schema is applied to the Supabase project, but
+  `referrals_api` has no password yet, and `DATABASE_URL` /
   `DATABASE_CA_CERT` are unset in production (step 4).
 - The attestation verifier exists (built 2026-08-30, private app repo,
   `supabase/functions/attestation-verifier`) but no real device has attested
