@@ -306,6 +306,13 @@ names the cause without any request data:
 | `ENETUNREACH`, `ENOTFOUND`, `ETIMEDOUT` | Not the pooler: usually the IPv6-only direct `db.<ref>.supabase.co` host. |
 | `42P01`, `42501` | Connected, but the role is wrong: no `search_path = growth`, or missing grants. Re-check the migration's placement section. |
 
+Check a URL locally before setting it in Vercel; this connects exactly as
+production does and prints the host, user and outcome, never the URL:
+
+```sh
+DATABASE_URL='postgresql://…' npx tsx scripts/check-referrals-db.ts
+```
+
 The authenticated operations GET (`/api/internal/referrals/operations`)
 touches every table, so it is the end-to-end check after any change here.
 
