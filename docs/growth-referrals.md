@@ -1,11 +1,13 @@
 # Growth referral service
 
-Status: the 2.16 server work is on `feature/2.16-referral-conversions`. The
-service is **not provisioned, migrated, or enabled**. Every signed route answers
-503 `referrals_disabled` until `REFERRALS_API_ENABLED=true`, `/config` answers
-`referrals: false` until then, and registration answers 503
-`attestation_not_configured` until a verifier exists, so the deployed surface
-is inert.
+Status (2026-10-01): **enabled in production for iOS.** The schema is applied
+to the WakeSharp Supabase project, the operations GET answers counts, and
+`REFERRALS_API_ENABLED=true` with `REFERRALS_PLATFORMS=ios`, so
+`/config?platform=ios` answers `referrals: true` and Android stays
+`referrals: false` until Play Integrity works (activation step 3). No 2.16
+client has shipped yet, so nothing calls these routes in the wild; 2.13-2.15
+clients never read `/config`. Setting `REFERRALS_API_ENABLED` to anything but
+`true` makes every signed route 503 `referrals_disabled` again.
 
 Approval boundary: Gate C is required before the API is enabled. Gate G is
 required before any database migration, disclosure change, or client rollout.
@@ -396,9 +398,12 @@ owner reviews and publishes it.
 
 ## Current blockers
 
-- The database (step 4) is configured as of 2026-10-01: `referrals_api` has
-  a password and `DATABASE_URL` is set in production. The operations GET
-  answering JSON counts confirms it end to end.
+- Steps 4 and 5 are done (2026-10-01): `DATABASE_URL` reaches the `aws-0`
+  pooler as `referrals_api`, the operations GET answers counts, and the API
+  is enabled for iOS. The privacy section (step 6) was meant to be published
+  with that enablement and is still a draft: publish it before 2.16 ships.
+- iOS registration needs the app's App Attest entitlement (the Gate C
+  activation commit, after App Attest is enabled on the App ID).
 - The attestation verifier exists (built 2026-08-30, private app repo,
   `supabase/functions/attestation-verifier`) but no real device has attested
   yet, and Android needs the Play Integrity service account (step 3).
