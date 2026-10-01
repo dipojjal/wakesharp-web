@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 
 const migration = readFileSync(new URL('../../db/migrations/001_growth_referrals.sql', import.meta.url), 'utf8');
@@ -60,7 +60,8 @@ test('no cap, no deadline, and no entitlement is granted', () => {
   assert.doesNotMatch(migration, /v_recent_inviter_rewards|cap_blocked/);
   assert.doesNotMatch(migration, /growth_reward_grants/);
   for (const file of ['../../api/_lib/referrals.ts', '../../api/referrals/status.ts',
-    '../../api/referrals/success.ts', '../../api/internal/referrals/operations.ts']) {
+    '../../api/referrals/success.ts', '../../api/referrals/converted.ts',
+    '../../api/referrals/config.ts', '../../api/internal/referrals/operations.ts']) {
     const source = readFileSync(new URL(file, import.meta.url), 'utf8');
     assert.doesNotMatch(source, /fulfillRewardGrant|REFERRAL_REWARDS_ENABLED/);
   }
@@ -88,6 +89,8 @@ test('the unlock is twenty, recorded once, and never fires early', () => {
 
 test('raw referrers and attestation payloads have no database columns', () => {
   assert.doesNotMatch(migration, /raw_referrer|attestation_token|apple_token/i);
+  const conversions = readFileSync(new URL('../../db/migrations/003_referral_conversions.sql', import.meta.url), 'utf8');
+  assert.doesNotMatch(conversions, /raw_referrer|attestation_token|apple_token/i);
 });
 
 test('referral routes are wired, and the only scheduled job is retention', () => {
@@ -101,6 +104,12 @@ test('referral routes are wired, and the only scheduled job is retention', () =>
   const components = association.applinks.details[0].components;
   assert.ok(components.some((entry: { '/': string }) => entry['/'] === '/r/*'));
   assert.ok(vercel.functions['api/referrals/*.ts']);
+  // Every referral route, all inside that glob (conversion.test.ts
+  // pins the two new ones).
+  for (const route of ['challenge', 'register-install', 'create', 'claim', 'status', 'delete',
+    'landing', 'success', 'onboarded', 'converted', 'config']) {
+    assert.ok(existsSync(new URL(`../../api/referrals/${route}.ts`, import.meta.url)), route);
+  }
 });
 
 const fixes = readFileSync(new URL('../../db/migrations/002_referrals_2_13.sql', import.meta.url), 'utf8');

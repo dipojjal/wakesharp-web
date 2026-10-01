@@ -14,16 +14,20 @@ export async function POST(request: Request): Promise<Response> {
     const { raw } = await readJson(request, emptySchema);
     const installation = await authenticateInstallation(request, raw);
 
+    // Newest first. 50 rather than 10 from 2.16, because the Refer a Friend
+    // screen lists every invite and its converted state.
     const claims = await query<{
       role: 'inviter' | 'referred';
       confirmed: boolean;
+      converted: boolean;
     }>(
       `SELECT CASE WHEN c.inviter_installation_id = $1 THEN 'inviter' ELSE 'referred' END AS role,
-              (c.confirmed_at IS NOT NULL) AS confirmed
+              (c.confirmed_at IS NOT NULL) AS confirmed,
+              (c.converted_at IS NOT NULL) AS converted
          FROM growth_referral_claims c
         WHERE c.inviter_installation_id = $1 OR c.referred_installation_id = $1
         ORDER BY c.claimed_at DESC
-        LIMIT 10`,
+        LIMIT 50`,
       [installation.id],
     );
     const progress = await inviterProgress(installation.id);
@@ -36,12 +40,17 @@ export async function POST(request: Request): Promise<Response> {
       // no reward state left to report: `rewardsEnabled` is simply "the
       // programme is on", which any 200 from here already implies, and
       // `qualified` now carries the same meaning as `confirmed`.
+      //
+      // 2.16 adds `converted` per row and, through `progress`,
+      // `convertedSignups`, `awaitingConversion` and `squatsUnlocked`. New
+      // clients decode those as optional; every older field stays.
       rewardsEnabled: true,
       referrals: claims.map((claim) => ({
         role: claim.role,
         qualified: claim.confirmed,
         confirmed: claim.confirmed,
         ownRewardStatus: null,
+        converted: claim.converted,
       })),
       ...progress,
     });
