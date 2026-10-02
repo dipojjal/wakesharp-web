@@ -1,12 +1,15 @@
 # Growth referral service
 
-Status (2026-10-01): **enabled in production for iOS.** The schema is applied
-to the WakeSharp Supabase project, the operations GET answers counts, and
-`REFERRALS_API_ENABLED=true` with `REFERRALS_PLATFORMS=ios`, so
-`/config?platform=ios` answers `referrals: true` and Android stays
-`referrals: false` until Play Integrity works (activation step 3). No 2.16
-client has shipped yet, so nothing calls these routes in the wild; 2.13-2.15
-clients never read `/config`. Setting `REFERRALS_API_ENABLED` to anything but
+Status (2026-10-02): **enabled in production for iOS and Android.** The schema
+is applied to the WakeSharp Supabase project, the operations GET answers counts,
+and `REFERRALS_API_ENABLED=true` with `REFERRALS_PLATFORMS=ios,android`, so
+`/config` answers `referrals: true` for both. Android was added once the server
+half of Play Integrity was proven without a device (2026-10-02): a deliberately
+fake token went website, verifier, Google and back as
+`integrity_token_rejected` (Google's 400), so the shared secret, the service
+account key and the Cloud project link all work; a real device's verdict is the
+first internal-track registration. No 2.16 client has shipped yet, so nothing
+calls these routes in the wild; 2.13-2.15 clients never read `/config`. Setting `REFERRALS_API_ENABLED` to anything but
 `true` makes every signed route 503 `referrals_disabled` again.
 
 Approval boundary: Gate C is required before the API is enabled. Gate G is
@@ -404,8 +407,9 @@ code changes what is collected or how long it is kept.
 
 - Steps 4 and 5 are done (2026-10-01): `DATABASE_URL` reaches the `aws-0`
   pooler as `referrals_api`, the operations GET answers counts, and the API
-  is enabled for iOS. The privacy section (step 6) is published; the App
-  Privacy and Play Data safety answers still need the owner's re-check.
+  is enabled for iOS and Android. The privacy section (step 6) is published,
+  and the App Privacy and Play Data safety answers add App Functionality for
+  device IDs and app interactions (2026-10-01; Play's update in review).
 - iOS registration needs the app's App Attest entitlement (the Gate C
   activation commit, after App Attest is enabled on the App ID).
 - The attestation verifier exists (built 2026-08-30, private app repo,
