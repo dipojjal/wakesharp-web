@@ -14,7 +14,11 @@ const requestSchema = z.object({
   appVersion: z.string().min(1).max(32),
   firstOpenAt: z.iso.datetime({ offset: true }),
   publicKey: z.string().min(40).max(512),
-  revenueCatAppUserId: z.string().min(1).max(128),
+  // Named for history only. The 2.16 apps send a value derived from the
+  // install key ("install-" and 32 hex digits, ReferralPolicy.installIdentifier),
+  // never RevenueCat's ID; this refuses anything else, so no build can store a
+  // real one here (privacy policy, Inviting friends).
+  revenueCatAppUserId: z.string().regex(/^install-[0-9a-f]{32}$/),
   claimEligible: z.boolean(),
   challengeId: z.uuid(),
   challenge: z.string().regex(/^[A-Za-z0-9_-]{43}$/),

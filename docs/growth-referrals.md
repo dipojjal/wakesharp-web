@@ -333,10 +333,14 @@ touches every table, so it is the end-to-end check after any change here.
   its own mission unlock removed; the anonymized row then ages out after 180
   days.
 
-The privacy policy section for all of this is drafted in
-`src/templates/PrivacyBody.astro` behind `REFERRAL_DISCLOSURE.published`
-(`src/templates/legal-copy.ts`), which is `false`: nothing renders until the
-owner reviews and publishes it.
+The privacy policy section for all of this, "Inviting friends" in
+`src/templates/PrivacyBody.astro`, is published (2026-10-01,
+`REFERRAL_DISCLOSURE.published` in `src/templates/legal-copy.ts`). Every claim
+in it was checked against the code first; the comment above the section lists
+the behaviour it relies on (lazy registration, the derived install identifier
+only, masked code fields, no automatic deep-link capture on Android). Change
+the text whenever a route, the schema, the verifier or either app's invite
+code changes what is collected or how long it is kept.
 
 ## Environment variables
 
@@ -381,10 +385,10 @@ owner reviews and publishes it.
    Deploy, then smoke-test: `/api/referrals/config?platform=ios` answers
    `referrals: false`, signed routes answer 503, operations answers with the
    secret. Only then set `REFERRALS_API_ENABLED=true`.
-6. **Privacy.** Review and publish the "Inviting friends" section (set
-   `REFERRAL_DISCLOSURE.published` and `PRIVACY.lastUpdated`), before or with
-   step 5's enablement. Re-confirm the App Privacy and Play Data safety
-   answers (App functionality).
+6. **Privacy.** Done 2026-10-01: the "Inviting friends" section is published
+   and `PRIVACY.lastUpdated` moved. Still the owner's: re-confirm the App
+   Privacy and Play Data safety answers (App functionality) before 2.16 is
+   submitted.
 7. **PostHog.** Keep `growth_referrals_v1` and `growth_wake_squad_v1` off
    permanently.
 8. **QA.** TestFlight and the internal track with sandbox purchases, then set
@@ -400,14 +404,13 @@ owner reviews and publishes it.
 
 - Steps 4 and 5 are done (2026-10-01): `DATABASE_URL` reaches the `aws-0`
   pooler as `referrals_api`, the operations GET answers counts, and the API
-  is enabled for iOS. The privacy section (step 6) was meant to be published
-  with that enablement and is still a draft: publish it before 2.16 ships.
+  is enabled for iOS. The privacy section (step 6) is published; the App
+  Privacy and Play Data safety answers still need the owner's re-check.
 - iOS registration needs the app's App Attest entitlement (the Gate C
   activation commit, after App Attest is enabled on the App ID).
 - The attestation verifier exists (built 2026-08-30, private app repo,
   `supabase/functions/attestation-verifier`) but no real device has attested
   yet, and Android needs the Play Integrity service account (step 3).
-- The referral privacy section is drafted, not published.
 - `assetlinks.json` must be confirmed against the Play app-signing
   certificate.
 

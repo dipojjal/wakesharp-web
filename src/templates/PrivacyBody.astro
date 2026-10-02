@@ -299,7 +299,10 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       and shift names, the names you give scanned spots and photo references, the name you enter for a
       wake pact, and your alarm search text;</li>
     <li>your email address, and the whole Account screen where it appears;</li>
-    <li>the titles of your calendar events, everywhere they appear.</li>
+    <li>the titles of your calendar events, everywhere they appear{REFERRAL_DISCLOSURE.published ? ';' : '.'}</li>
+    {REFERRAL_DISCLOSURE.published && (
+      <li>your invite code, and any code you type, paste or receive from an invite link.</li>
+    )}
   </ul>
   <p>
     One exception: on iPhone, the profile menu in the alarm editor is drawn by iOS rather than by
@@ -416,22 +419,25 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   </ul>
 
   {/*
-    DRAFT (2.16), OWNER REVIEW REQUIRED BEFORE PUBLISHING. Not rendered while
-    REFERRAL_DISCLOSURE.published is false in src/templates/legal-copy.ts; see
-    the checklist there. Points to confirm:
-      - the database is the WakeSharp Supabase project (us-east-1), the same
-        processor and region as the backup and the onboarding answers;
-      - the processor links for Vercel and Supabase;
-      - deletion: the 2.16 apps do not call POST /api/referrals/delete, so
-        "email us" is the only route today. Add an in-app control or keep it;
-      - "has started WakeSharp Unlimited" matches the app's referral list
-        rows, which never show trial versus paid to the inviter;
+    Inviting friends (2.16). Published 2026-10-01 after every claim was checked
+    against the code: wakesharp-web api/referrals and api/_lib, the growth
+    schema in the app repository (supabase/migrations/*_growth_referrals.sql),
+    the attestation verifier (supabase/functions/attestation-verifier and its
+    migrations), and both 2.16 apps. Re-check it whenever any of those change.
+    Behaviour this text relies on, enforced in code:
+      - registration is lazy on both platforms (invite screen, invite link,
+        code entry, or the Play install referrer from an invite page);
+      - register-install accepts only the derived "install-" identifier in the
+        field still named revenueCatAppUserId;
+      - the code fields are masked from session replay on both platforms
+        (tools/privacy/check_replay_masks.py pins them), and Android's
+        automatic "Deep Link Opened" capture is off;
+      - the 2.16 apps never call /api/referrals/delete, /success or
+        /onboarded, so deletion is by email and wake-up days are not sent;
       - the PostHog flags growth_referrals_v1 and growth_wake_squad_v1 stay
-        off, so pre-2.16 builds never register or send wake-up days (this
-        text does not describe them).
-    Wording avoids the phrases scripts/check-copy.mjs bans while referrals are
-    off (the mission's name, "refer a friend", "referral programme/link/reward"),
-    so publishing does not need that check changed.
+        off, so pre-2.16 builds never register.
+    Wording avoids the phrases scripts/check-copy.mjs bans (the mission's
+    name, "refer a friend", "referral programme/link/reward").
   */}
   {REFERRAL_DISCLOSURE.published && (
     <Fragment>
@@ -441,59 +447,84 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
         invited starts a free trial or a paid plan of WakeSharp Unlimited, an extra mission unlocks in your
         app, permanently. The friend gets nothing for using your code and pays the normal price. Inviting is
         optional: none of the data below exists unless you open the invite screen, follow an invite link or
-        enter a code. Sharing uses your phone's own share sheet, and WakeSharp never reads your contacts or,
-        unless you tap Paste, your clipboard.
+        enter a code. On Android, installing WakeSharp from the Google Play button on an invite page counts
+        as following the link: Google Play hands the code to the app, which applies it the first time you
+        open WakeSharp. Sharing uses your phone's own share sheet, and WakeSharp never reads your contacts
+        or, unless you tap Paste, your clipboard. To know whether invites are available, the app also asks
+        the service every few hours; that request names only your platform.
       </p>
-      <p>Our invite service stores only this, in a database of its own:</p>
+      <p>Our invite service stores only this, in its own private section of our database:</p>
       <ul>
         <li>
           <strong>An anonymous installation key.</strong> Your phone creates a random key pair for this
           installation of WakeSharp and registers the public half, an identifier derived from it, your
-          platform, app version, the time you first opened the app, whether this is a fresh installation
-          and, where your phone's region provides it, a two-letter country code. It is not your account,
-          your email address, your advertising ID or your RevenueCat ID, and a reinstall creates a new one.
-          To keep out automated fake installs, Apple's App Attest or Google Play Integrity confirms that the
-          request comes from a genuine copy of WakeSharp; on Android, Google decodes that verdict. We keep a
-          hash of the App Attest key's identifier, never the attestation itself, and our verification
-          service, hosted by Supabase, keeps that key's public half and counter for up to a year after its
-          last use so that it cannot be replayed.
+          platform, app version, the time WakeSharp first recorded being opened on this installation,
+          whether this is a new installation (one with no alarms or settings yet) and, where your phone's
+          region setting provides it, a two-letter country code. The service also keeps a keyed hash of a
+          random secret it gives your phone to sign its later requests, and when the record was created
+          and last used. None of this is your account, your email address, your advertising ID or your
+          RevenueCat ID, and a reinstall creates a new key. To keep out automated fake installs, Apple's
+          App Attest or Google Play Integrity confirms that the request comes from a genuine copy of
+          WakeSharp on a genuine phone. On Android, Play Integrity also checks that the app came from
+          Google Play and that the phone is not asking for these checks unusually often, and Google decodes
+          that verdict for us. The invite records keep a hash of the App Attest key's identifier, never the
+          attestation itself or Google's verdict. Our verification service, also hosted by Supabase, keeps
+          that App Attest key's identifier, public half and counter, a hash of your installation's public
+          key, and when the key was created and last used, for a year after the key's last use so that it
+          cannot be replayed. Deleting your invite records does not remove them.
         </li>
         <li>
-          <strong>Your invite code, and who claimed it.</strong> Your ten-character code, and, when a friend
-          enters it, a record that their installation claimed your code and when. A code can only be entered
-          within 24 hours of first opening WakeSharp.
+          <strong>Your invite code, and who claimed it.</strong> Your ten-character code and when it was
+          created, and, when a friend uses it by entering it or by following your invite link, a record that
+          their installation claimed your code and when. A code can only be used on a new installation of
+          WakeSharp, within 24 hours of first opening it.
         </li>
         <li>
-          <strong>Whether an invited friend started a plan.</strong> If you entered a friend's code and then
-          start a free trial or a paid plan, your phone tells the service once, and we record when: whether
-          it was a trial or a paid plan, which store it came from, and whether it was a real or a test
-          purchase. The purchase
-          date is checked, so that restoring an older purchase does not count, and is not stored. To stop
-          one purchase counting twice, your phone turns the store's transaction ID into a one-way hash before
-          sending it, and we keep only a keyed hash of that. The plan's product identifier is checked to be a
+          <strong>Whether an invited friend started a plan.</strong> If you used a friend's code and start a
+          free trial or a paid plan on this installation, in either order, your phone tells the service. It
+          tries again until the report gets through, and only the first report counts. A plan bought before
+          you used a code waits on your phone, during your first 24 hours only, until a code is accepted. We
+          record when the report arrived, whether it was a trial or a paid plan, which store it came from,
+          and whether it was a real or a test purchase. The purchase date is checked, so that restoring an
+          older purchase does not count, and is not stored. To stop one purchase counting twice, your phone
+          turns the store's transaction ID, when the store provides one, into a one-way hash before sending
+          it, and we keep only a keyed hash of that. The plan's product identifier is checked to be a
           WakeSharp plan and is not stored. We never receive the transaction ID itself, the price, your
           receipt or your RevenueCat ID.
         </li>
-        <li><strong>The unlock.</strong> Which mission your invite unlocked, and when.</li>
+        <li>
+          <strong>The unlock.</strong> Which mission your invite unlocked, when, and which of your invites
+          unlocked it.
+        </li>
         <li>
           <strong>Security records.</strong> A log of registrations, claims, conversions, unlocks and
-          deletions for investigating abuse; single-use request numbers, kept for ten minutes; and per-network
-          rate-limit counters, keyed by a hash of your network address rather than the address itself and
-          kept for two days.
+          deletions for investigating abuse. Each entry holds the time, the anonymous record numbers
+          involved, what happened and, for a started plan, whether it was a trial or a paid plan, the store,
+          and whether it was a real or a test purchase. Also: single-use request numbers and registration
+          challenges, which expire after ten minutes and are deleted within a day; the verification
+          service's note of each challenge it checked, kept for two days; and per-network rate-limit
+          counters, keyed by a hash of your network address rather than the address itself and deleted
+          within three days.
         </li>
       </ul>
       <p>
         <strong>What the person who invited you sees.</strong> In their app, a list of their invites showing,
         for each one, that someone joined with their code and whether that person has started WakeSharp
-        Unlimited. They never see your name, account or device, or whether you started with a free trial or
-        a paid plan. Because they
-        know whom they sent the invite to, they may be able to guess which entry is you.
+        Unlimited. Until an invite unlocks the mission, they also see how many friends who joined have not
+        started a plan yet; a friend whose invite record has been deleted no longer counts there. They never
+        see your name, account or device, or whether you started with a free trial or a paid plan. Because
+        they know whom they sent the invite to, they may be able to guess which entry is you.
       </p>
       <p>
-        The invite service does not share its records with anyone, and they are not used for advertising or
-        marketing measurement. Separately, if product analytics is on, the app reports usage events such as
-        an invite code being copied or a mission unlocking, as described under usage analytics above. We
-        rely on our legitimate interest in running a feature you chose to use and in preventing its abuse.
+        The invite service does not share its records with anyone, and they are not used for advertising.
+        Two things do reach our measurement and analytics services, and only while <em>Settings → Privacy →
+        Product analytics</em> is on. AppsFlyer learns that the app was opened from an invite link, without
+        the code; and on Android, an install from an invite page's Google Play button carries the code and
+        an invite campaign tag in Google Play's install details, which AppsFlyer reads. The app also reports
+        usage events such as an invite code being copied or applied, a friend's plan being reported (with
+        whether it was a trial or a paid plan) or a mission unlocking, as described under usage analytics
+        above. These events never include a code, and invite codes are blanked out of session recordings.
+        We rely on our legitimate interest in running a feature you chose to use and in preventing its abuse.
       </p>
       <p>
         The service runs on <strong>Vercel, Inc.</strong> and its database is hosted by <strong>Supabase, Inc.</strong>,
@@ -503,21 +534,24 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
         and <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>.
       </p>
       <p>
-        <strong>How long it is kept.</strong> An installation's record is deleted 180 days after the app last
-        used the invite service. Two things outlive that, so that an invite that worked stays worked: a
-        record that has unlocked a mission is kept for as long as the unlock exists; and when an
-        invited friend's record is deleted, the claim and whether it led to a plan stay with the inviter's
+        <strong>How long it is kept.</strong> An installation's record is deleted 180 days after it was last
+        used, whether by the app or by a friend using its code or starting a plan. Two things outlive that,
+        so that an invite that worked stays worked: a record that has unlocked a mission is kept with no time
+        limit, until you ask us to delete it; and when an invited friend's record is deleted, the claim and
+        the record of any plan it led to, including the purchase's keyed hash, stay with the inviter's
         record, no longer linked to the friend's installation. The security log is kept for 180 days.
       </p>
       <p>
         <strong>Deleting it.</strong> When an installation's invite record is deleted, its keys are replaced
         with random values so it can never be linked to the device again, its code stops working, and its
         purchase hash is erased; the anonymized record is removed 180 days later. Any mission your own
-        invites unlocked is removed from our records. The fact that your claim was used, and the mission it
-        unlocked for the person who invited you, stay: they earned it before you asked to leave.
-        Uninstalling WakeSharp makes the record impossible to use, and it is then removed after 180 days as
-        above. Because the record is not linked to your name, email or account, email us if you want it
-        deleted sooner and we will explain how to identify your installation.
+        invites unlocked is removed from your record. The fact that your claim was used, and the mission it
+        unlocked for the person who invited you, stay: they earned it before you asked to leave. Uninstalling
+        WakeSharp means your phone can never use the record again, although your code keeps working for
+        friends; the record is then removed 180 days after its last use, unless it has unlocked a mission, in
+        which case it is kept until you ask us to delete it. There is no delete control in the app yet.
+        Because the record is not linked to your name, email or account, email us if you want it deleted and
+        we will explain how to identify your installation.
       </p>
     </Fragment>
   )}
@@ -558,7 +592,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li><strong>Purchase records at RevenueCat</strong>: kept while the record exists, under RevenueCat's own retention policy.</li>
     <li><strong>Your setup answers in our own table</strong>: deleted 180 days after the last answer, or at once when you delete the optional account. Turning off product analytics in the app stops new answers being sent.</li>
     {REFERRAL_DISCLOSURE.published && (
-      <li><strong>Invite records</strong>: deleted 180 days after the app last used the invite service, except that a record which has unlocked a mission is kept while the unlock exists, and a used invite stays with the inviter's record. The security log is kept for 180 days. See <a href="#inviting-friends">Inviting friends</a>.</li>
+      <li><strong>Invite records</strong>: deleted 180 days after their last use, by the app or by a friend using the code, except that a record which has unlocked a mission is kept until you ask us to delete it, and a used invite, with the record of any plan it led to, stays with the inviter's record. Request numbers and challenges are deleted within a day and rate-limit counters within three days. The security log is kept for 180 days, and the verification service keeps App Attest key records for a year after the key's last use. See <a href="#inviting-friends">Inviting friends</a>.</li>
     )}
     <li><strong>Analytics data at PostHog</strong>: usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us. If you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li><strong>Marketing records at AppsFlyer</strong>: retained according to the service's applicable retention settings and our measurement needs. Contact us to request access or deletion. Turning analytics off stops future collection; it does not itself delete historical records.</li>

@@ -269,16 +269,20 @@ test('/converted is behind the kill switch, then validates before it authenticat
 
 // ---------- the privacy disclosure ----------
 
-test('the referral privacy section is drafted, gated, and unpublished until the owner flips it', async () => {
+test('the referral privacy section is published, gated, and states what the code enforces', async () => {
   const privacy = read('../../src/templates/PrivacyBody.astro');
   const { REFERRAL_DISCLOSURE } = await import('../../src/templates/legal-copy');
-  assert.equal(typeof REFERRAL_DISCLOSURE.published, 'boolean');
+  assert.equal(REFERRAL_DISCLOSURE.published, true);
   const gate = privacy.indexOf('{REFERRAL_DISCLOSURE.published && (');
   const section = privacy.indexOf('<h2 id="inviting-friends">');
   assert.ok(gate > 0 && gate < section);
-  assert.match(privacy, /DRAFT \(2\.16\), OWNER REVIEW REQUIRED BEFORE PUBLISHING/);
+  assert.doesNotMatch(privacy, /OWNER REVIEW REQUIRED/);
+  assert.match(privacy, /Inviting friends \(2\.16\)\. Published 2026-10-01 after every claim was checked/);
   const body = privacy.slice(section, privacy.indexOf('</Fragment>', section));
-  for (const topic of ['anonymous installation key', 'keyed hash', 'trial or a paid plan', '180 days', 'Deleting it', 'What the person who invited you sees']) {
+  for (const topic of ['anonymous installation key', 'keyed hash', 'trial or a paid plan', '180 days', 'Deleting it', 'What the person who invited you sees',
+    // Facts the 2026-10-01 review corrected; each is enforced or verified in code.
+    'in either order', 'when the report arrived', 'which of your invites', 'kept with no time',
+    'for a year after the key', 'within three days', 'Google Play button', 'blanked out of session recordings']) {
     assert.ok(body.includes(topic), topic);
   }
   // Rendered text must pass scripts/check-copy.mjs as-is once published.

@@ -73,6 +73,9 @@ test('the challenge is spent before the verifier is called', () => {
   assert.ok(consume < identity);
   assert.match(registerRoute, /AND expires_at > now\(\)\s*\n\s*LIMIT 1/);
   assert.match(registerRoute, /enforceRateLimit\(request, 'register-install'/);
+  // The field is named for RevenueCat but must only ever carry the derived
+  // install identifier, never RevenueCat's ID (privacy policy).
+  assert.match(registerRoute, /revenueCatAppUserId: z\.string\(\)\.regex\(\/\^install-\[0-9a-f\]\{32\}\$\/\)/);
   const challenge = read('../../api/referrals/challenge.ts');
   assert.match(challenge, /enforceRateLimit\(request, 'challenge'/);
   assert.match(challenge, /challenge_limit/);

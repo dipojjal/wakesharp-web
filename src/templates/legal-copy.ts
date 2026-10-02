@@ -9,7 +9,7 @@ export const PRIVACY = {
   heading: 'Privacy Policy',
   intro:
     'WakeSharp is an alarm clock that runs on your phone and requires no account. This policy explains local data, optional backups and weather, purchases, and product and marketing measurement. WakeSharp shows no adverts. Measurement records use pseudonymous identifiers that can link to your account when you sign in.',
-  lastUpdated: '2026-09-30',
+  lastUpdated: '2026-10-01',
 };
 
 export const TERMS = {
@@ -22,17 +22,11 @@ export const TERMS = {
 };
 
 /**
- * DRAFT, OWNER REVIEW REQUIRED. The 2.16 "Inviting friends" section of the
- * privacy policy (src/templates/PrivacyBody.astro, and its line under "How
- * long data is kept") renders only while `published` is true. Before setting
- * it:
- *
- *   1. review the wording against docs/growth-referrals.md and the shipped
- *      2.16 apps, including the points listed in the comment above the section;
- *   2. set PRIVACY.lastUpdated to the publication date;
- *   3. publish before REFERRALS_API_ENABLED=true (Gate C), and re-confirm the
- *      App Privacy and Play Data safety answers.
- *
- * Merging this flag as false changes nothing on the live site.
+ * The 2.16 "Inviting friends" section of the privacy policy
+ * (src/templates/PrivacyBody.astro, its line under "How long data is kept",
+ * and its session-recording bullet). Published 2026-10-01, with
+ * PRIVACY.lastUpdated, after every claim was checked against the code; the
+ * comment above the section lists the behaviour it relies on. Setting this
+ * back to false hides all three again.
  */
-export const REFERRAL_DISCLOSURE: { published: boolean } = { published: false };
+export const REFERRAL_DISCLOSURE: { published: boolean } = { published: true };
