@@ -1,7 +1,7 @@
 import { SITE } from '../config/site';
 import { localeByCode, localeByPath } from '../i18n/config';
 export const WEBSITE_SOURCE = 'wakesharp_website';
-export const ONELINK = 'https://wakesharp.onelink.me/yhik';
+export const ONELINK = 'https://download.wakesharp.app/yhik';
 export interface DownloadContext { pageId: string; placement: string; locale: string }
 export function pageIdFor(path: string): string {
   const parts = path.split('/').filter(Boolean);

@@ -2,13 +2,27 @@
 
 Implementation / account audit: 2026-09-26. **Not deployed; real-device acquisition and subscription delivery validation remains a launch gate.** This setup is prospective. Do not backfill historical unattributed users.
 
+## Branded domain and media campaign — 2026-10-04
+
+- AppsFlyer verified `download.wakesharp.app` as configured and mapped to `wakesharp.onelink.me`. DNS resolves to `wakesharp.customlinks.appsflyer.com`; HTTPS and both platform association files returned 200 with the WakeSharp app identifiers.
+- Website short link: **https://download.wakesharp.app/yhik/website**. This is the branded alias of the existing link, preserving `pid=wakesharp_website`, `c=WakeSharp Website`, and `af_channel=website`. AppsFlyer's existing row still displays its original domain; its editor does not expose an editable domain for that saved link. No duplicate website link was created.
+- New saved AppsFlyer link: **[WakeSharp Media Campaign](https://download.wakesharp.app/yhik/media)**. Source `wakesharp_media`, campaign `WakeSharp Media Campaign`, channel `press`, click lookback `7d`, deep link `welcome`, URI fallback `wakesharp://welcome`, retargeting off. Confirmed in the saved link's long URL and the OneLink list.
+- Give every participating outlet the exact media short link for combined campaign reporting. Filter AppsFlyer by the source and campaign above for each platform. A shared URL does not identify individual outlets; use separate saved links with an outlet-specific `af_adset` if outlet comparisons are needed later.
+- Website source and generated QR links now use the branded hostname. Local build, copy validation across 368 pages, and all 10 tool tests passed. These code changes have not been deployed.
+
+### Remaining rollout checks
+
+The local native checkout at `/Users/dipojjal/Projects/WakeSharp` did not contain the branded domain or the AppsFlyer custom-domain SDK calls when inspected. [AppsFlyer's branded-domain setup](https://support.appsflyer.com/hc/en-us/articles/360002329137-Brand-OneLink-with-your-domain) requires adding `download.wakesharp.app` to iOS Associated Domains and `oneLinkCustomDomains`, plus the Android intent filter and `setOneLinkCustomDomain` before SDK initialization. Review native URL routing allowlists as part of that change, retain existing supported domains, release the apps, and test fresh installs and installed-app opening on real devices. No native files were changed in this task.
+
+Six HTTP smoke requests (one iOS, Android, and desktop user agent per short link) confirmed both URLs resolve: iOS returned an App Store redirect; Android returned a launch page containing the app scheme and Google Play package; desktop returned an App Store redirect. These requests may appear as test clicks and do not validate installs or in-app attribution. The pre-existing redirect allowlist warning remains: the intended website desktop destination is not honored. The media link currently uses the template's App Store website fallback for desktop visitors; it does not provide a campaign-preserving desktop QR journey. Complete native/device verification before distributing the branded campaign at scale.
+
 ## Delivered
 
 - Five client-side tools and their hub in all 12 site languages: 72 indexable pages. Localized controls, metadata, methods, sources, privacy FAQ, breadcrumbs, WebApplication schema, canonical/hreflang, and sitemap coverage.
 - Desktop Free Tools menu, mobile disclosure navigation, contextual article links, localized app promotion with paid-app disclosure.
 - One shared download component and URL builder. Canonical store URLs remain in application metadata. The untracked Safari Smart App Banner was removed. Existing challenge/pact parsing and open-app actions were retained.
 - Localized noindex QR download pages, tracked platform fallback links, desktop routing, consent-gated PostHog events, withdrawal control and privacy disclosure. No calculator inputs/results enter the analytics contract.
-- AppsFlyer custom link created: **[WakeSharp Website](https://wakesharp.onelink.me/yhik/website)** under `yhik`. Existing creator links/template unchanged.
+- AppsFlyer custom link created: **[WakeSharp Website](https://download.wakesharp.app/yhik/website)** under `yhik`. Branded domain verified on 2026-10-04; the original `wakesharp.onelink.me` alias continues to work. Existing creator links/template unchanged.
 - **[WakeSharp Website PostHog dashboard](https://us.posthog.com/project/559689/dashboard/2137569)**: seven insights plus interpretation/validation note. Saved definitions: `website-dashboard.json`.
 - Native attribution implementations inspected; no native source changes were required by this audit. Targeted existing tests: iOS MarketingAttributionTests **47 passed**, Android MarketingAttributionTest **18 passed**. These are unit/simulator results, not proof of real store attribution.
 
@@ -18,7 +32,7 @@ Implementation / account audit: 2026-09-26. **Not deployed; real-device acquisit
 
 | Field | Production value |
 |---|---|
-| OneLink | `https://wakesharp.onelink.me/yhik` |
+| OneLink | `https://download.wakesharp.app/yhik` |
 | `pid` | `wakesharp_website` |
 | `c` | `WakeSharp Website` |
 | `af_channel` | `website` |

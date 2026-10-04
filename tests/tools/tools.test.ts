@@ -32,7 +32,7 @@ test('timer survives suspension, pauses/resumes and cannot resume an overdue ala
 });
 test('tracking links fix attribution and constrain desktop redirects',()=>{
  const u=new URL(buildDownloadUrl({pageId:'sleep-calculator',placement:'tool-result',locale:'ar'}));
- assert.equal(u.hostname,'wakesharp.onelink.me');assert.equal(u.searchParams.get('pid'),'wakesharp_website');
+ assert.equal(u.hostname,'download.wakesharp.app');assert.equal(u.searchParams.get('pid'),'wakesharp_website');
  assert.equal(u.searchParams.get('c'),'WakeSharp Website');assert.equal(u.searchParams.get('af_adset'),'sleep-calculator');
  const fallback=new URL(u.searchParams.get('af_web_dp')!);assert.equal(fallback.pathname,'/ar/download');
  assert.equal(fallback.searchParams.get('placement'),'tool-result');
