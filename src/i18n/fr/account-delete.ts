@@ -13,14 +13,16 @@ export const accountDelete = {
       `Touchez **Compte**.`,
       `Touchez **Supprimer le compte**, puis confirmez.`,
     ],
-    body: `C’est tout le parcours. Cela supprime définitivement votre identifiant (Se connecter avec Apple ou Google), votre sauvegarde dans le cloud (alarmes, réglages, historique de réveils, scores, série, ainsi que toutes les vignettes de référence photo ou de scan enregistrées) et, pour Se connecter avec Apple, révoque le jeton de connexion auprès d’Apple. Il n’y a ni délai d’attente ni conservation partielle : la ligne du compte et tout ce qui y est rattaché sont supprimés ensemble.`,
+    body: `C’est tout le parcours. Cela supprime définitivement votre identifiant (Se connecter avec Apple ou Google), votre sauvegarde dans le cloud (alarmes, réglages, historique de réveils, scores, série, ainsi que toutes les vignettes de référence photo ou de scan enregistrées) et, pour Se connecter avec Apple, révoque le jeton de connexion auprès d’Apple. Il n’y a pas de délai d’attente : la ligne du compte et tout ce qui est stocké avec elle dans votre sauvegarde sont supprimés ensemble. Certaines données sont conservées plus longtemps, comme indiqué ci-dessous.`,
   },
   kept: {
     heading: `Ce qui n’est pas supprimé`,
     items: [
       `**Les données sur votre téléphone.** Vos alarmes, scores et réglages restent sur votre appareil: supprimer le compte, ce n’est pas supprimer vos alarmes. Retirez l’application elle-même si vous voulez aussi effacer les données locales.`,
       `**Les achats.** Un abonnement WakeSharp Illimité, comme un achat Lifetime (à vie), appartient à votre compte App Store ou Google Play, pas à votre compte WakeSharp, et survit à la suppression.`,
-      `**Les statistiques d’usage anonymes**, qui n’ont de toute façon jamais été liées à votre compte: voir la [politique de confidentialité](privacy).`,
+      `**Notre copie des événements d’achat.** Chaque événement d’abonnement que RevenueCat nous envoie est conservé 400 jours, même après la suppression du compte, puis supprimé.`,
+      `**Les copies par e-mail des réponses de résiliation et des messages au support.** Elles restent dans notre boîte de support tant que nous en avons besoin ; écrivez-nous pour les faire supprimer.`,
+      `**Les données d’analyse et de marketing** chez PostHog et AppsFlyer. Elles utilisent des identifiants pseudonymes qui peuvent être liés à votre compte après la connexion, et sont supprimées sur demande : voir la [politique de confidentialité](privacy).`,
     ],
   },
   byEmail: {

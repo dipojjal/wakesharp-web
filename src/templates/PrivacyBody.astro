@@ -16,7 +16,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
-      <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong> and an optional <strong>account backup</strong>. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
+      <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, an optional <strong>account backup</strong>, and anything you choose to send us, such as a support message or why you cancelled. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
       <li>On iPhone, weather is optional: choose a city or allow location access. Weather coordinates are rounded before being sent to our weather service and Apple Weather, as described below. Network services also receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
@@ -266,6 +266,18 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     eligible AppsFlyer identifier is available, to AppsFlyer. Delivery can continue while the app is closed.
     Cancelling a subscription is different from receiving a refund. Payment card details are not included.
   </p>
+  <p>
+    RevenueCat also sends its verified subscription events (including plan changes, billing problems and
+    transfers of a purchase between customer IDs) to a private part of our own database, hosted for us by
+    Supabase in the United States under the same terms as the backup, so that our own services know when a
+    trial was cancelled or a plan renewed while the app is closed, and so we can measure subscription
+    outcomes by paywall. Each event holds its type and time, the
+    store, product and plan, trial and renewal state and dates, the price, currency and country RevenueCat
+    reports, the store's reason for a cancellation or expiry, which paywall was shown, and your RevenueCat
+    customer IDs. From them we keep one summary of each RevenueCat customer's current subscription state. These records are
+    linked to your account when one of those customer IDs is your random account ID. They hold no card
+    details, receipts, name or email address, and nothing in the app can read them.
+  </p>
 
   <h2>Usage analytics and session replay (PostHog)</h2>
   <p>
@@ -297,7 +309,8 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li>the photos you take to complete a mission, and the reference photos you save;</li>
     <li>anything you typed or named yourself: alarm labels, activity names, profile names, rotation
       and shift names, the names you give scanned spots and photo references, the name you enter for a
-      wake pact, and your alarm search text;</li>
+      wake pact, your alarm search text, and what you write in a support form or in the note when you
+      cancel;</li>
     <li>your email address, and the whole Account screen where it appears;</li>
     <li>the titles of your calendar events, everywhere they appear{REFERRAL_DISCLOSURE.published ? ';' : '.'}</li>
     {REFERRAL_DISCLOSURE.published && (
@@ -407,14 +420,15 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     turn the alarm off and go back to sleep, how long it takes you to feel awake, how you feel right after
     waking) and records the choices you make on the way to your first alarm: wake time, bedtime, mission,
     difficulty, sound, wallpaper, and whether you allowed alarms. These answers reach our analytics service
-    as part of the usage events described above. On iPhone they are <strong>also stored in a small table
-    of our own</strong>, hosted for us by Supabase in the United States under the same terms as the backup.
-    (The Android app does not send them yet.)
+    as part of the usage events described above. On iPhone and Android they are <strong>also stored in a small
+    table of our own</strong>, hosted for us by Supabase in the United States under the same terms as the
+    backup.
   </p>
   <ul>
     <li>Each row is keyed by a random ID created on your device for this purpose alone: not the analytics ID, not the subscription ID, and not anything derived from your name, email or device.</li>
     <li>It holds only answers from that fixed list of setup questions, sent through a write-only channel that accepts nothing else. Never the content of your alarms, your calendar, or anything you typed.</li>
     <li>Why we keep our own copy: so that if you later create the optional account, your first-day answers can be connected to it, and we can learn how the way people start relates to what they go on to do. Until you sign in (and most people never do) the row is anonymous, and nothing can read it back.</li>
+    <li>To keep out automated fake installs, the channel counts new installs per network using keyed hashes of the network address, never the address itself. These counters are deleted within two days.</li>
     <li>Rows are deleted 180 days after the last answer. Deleting the optional account deletes them at once. Turning off <em>Settings → Privacy → Product analytics</em> in the app stops them being sent at all.</li>
   </ul>
 
@@ -556,6 +570,74 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     </Fragment>
   )}
 
+  {/*
+    Why you cancelled (iOS 2.22, Android 2.17). Written 2026-10-14 against the
+    app repository: supabase/migrations/20261014220000_cancellation_answers.sql
+    (columns, write-only RPC, user_id only from auth.uid(), limits, the hourly
+    prune: note nulled at 180 days, row deleted at 365, past-hour rate buckets
+    deleted), supabase/functions/delete-account (purge by account and by the
+    anonymous ids the phone names), both apps' SupportCenter email copy (no
+    user id, same submission id), and the replay masks pinned by
+    tools/privacy/check_replay_masks.py. Re-check it whenever any of those
+    change.
+  */}
+  <h2 id="cancellation-answers">Why you cancelled</h2>
+  <p>
+    From version 2.22 on iPhone and 2.17 on Android, WakeSharp asks why when you tap <em>Cancel
+    subscription</em> in the app. If it notices that you turned off renewal in your App Store or Google
+    Play settings instead, it may ask once on a later open, at most once per billing period. You pick one of six reasons and can
+    add a note of your own; if the reason is cost, you may be offered a discounted yearly plan. Answering
+    is optional: the question always offers <em>Skip</em> or <em>Not now</em>, which sends nothing.
+    Apart from the discounted plan you may be offered when you choose cost, and, during a free trial,
+    the app no longer showing you its other reminders of that offer once you turn it down, nothing about
+    your subscription, your price or the app depends on whether or how you answer.
+  </p>
+  <p>
+    When you pick a reason, the app sends your answer to a small table of our own, hosted for us by
+    Supabase in the United States under the same terms as the backup, and updates the same answer if you
+    then add a note or respond to the offer. The app can only add to this table, never read from it;
+    only we can read it. Each answer holds:
+  </p>
+  <ul>
+    <li>the reason you picked, from the six on screen, and your note if you write one (up to 2,000 characters);</li>
+    <li>what happened to the discounted plan if it was offered: shown, accepted, still waiting for the store, declined, or failed;</li>
+    <li>which screen asked (the cancel button or the renewal check), your platform, app version and language;</li>
+    <li>your subscription's store and plan, whether it is in a free trial or introductory period, and whether it was set to renew;</li>
+    <li>your RevenueCat customer ID: the generated app user ID before you sign in, or your random account ID once you are signed in;</li>
+    <li>a random ID for this one answer, and when it was sent and last updated.</li>
+  </ul>
+  <p>
+    So your answer is <strong>linked to you</strong>: to your account if you are signed in, and otherwise
+    to your RevenueCat customer ID, which RevenueCat and our own copy of your purchase records connect to
+    your account if you sign in later. When you finish, the app also emails a copy (the reason,
+    your note, what happened to the offer, which screen asked, your platform and language, and the same
+    random answer ID, but not your customer ID) to our support mailbox through Resend, as described under
+    <a href="#contact-form">Support and feedback messages</a>.
+  </p>
+  <p>
+    We use the answers to learn why people cancel, what to fix, and whether the offer helps; we rely on
+    our legitimate interest in understanding why people leave and improving the app. Our analytics
+    service receives which reason you picked, which screen asked and what happened to the offer, never
+    your note, and the note box is blanked out of session recordings. Please do not put personal
+    details, such as your name, email address or phone number, in the note.
+  </p>
+  <p>
+    <strong>How long it is kept.</strong> Your note is erased 180 days after you answered, and the rest of
+    the answer is deleted after 365 days. Deleting the optional account in the app deletes at once every
+    answer linked to it, together with the answers that phone sent before you signed in, as long as the
+    app on it still remembers the customer IDs they were sent with (it keeps up to 16, and forgets them if
+    the app is reinstalled). For any other answers sent while not signed in, email us. The email copy is not deleted with the account or on
+    that schedule: it stays in our support mailbox like any other support message, and Resend keeps
+    delivery data under its own policy. To keep out automated abuse, we also count new answers per
+    network using keyed hashes of the network address, never the address itself, and those counters are
+    deleted within two hours.
+  </p>
+  <p>
+    Because sending an answer is your choice each time, turning off <em>Settings → Privacy → Product
+    analytics</em> does not stop it. That switch does stop the analytics event; to send nothing at all,
+    choose <em>Skip</em> or <em>Not now</em>.
+  </p>
+
   <h2 id="contact-form">Support and feedback messages</h2>
   <p>
     The app offers Contact Support, Request Feature, Send Feedback and Report Bug forms.
@@ -565,9 +647,11 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     A reply email is required for Contact Support and optional for the other app forms.
     No account or name is required. The app also sends its platform, language and the screen
     the form was opened from. If you opt in, it includes app version, OS version and device model.
-    It never attaches your alarms, photos, recordings or raw logs. The cancellation questionnaire
-    sends the reason you select and any optional detail through the same service; delivery failure
-    does not prevent you from continuing to the store's subscription settings.
+    It never attaches your alarms, photos, recordings or raw logs. The cancellation questions also
+    send a copy of your answer through the same service, without a reply address; see
+    <a href="#cancellation-answers">Why you cancelled</a> for that copy and for the one we keep in our
+    own table. Delivery failure does not prevent you from continuing to the store's subscription
+    settings.
   </p>
   <p>
     App drafts stay on your device until successful submission or explicit discard. Written
@@ -577,12 +661,13 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   </p>
   <p>
     Message content is retained in our support mailbox while the correspondence is useful and
-    then deleted; Resend retains delivery data under its own retention policy. We do not create
-    a database of ticket content. To prevent abuse and duplicate delivery, Supabase stores native
-    submission IDs, keyed payload hashes, timestamps and delivery receipt IDs. Receipt metadata
-    is retained to recognize future retries. Rate limits use keyed hashes of network addresses,
-    never raw addresses, and these counters expire after two days. Neither table contains your
-    message or email address. Please avoid sending sensitive information in ordinary support email.
+    then deleted; Resend retains delivery data under its own retention policy. Apart from the
+    cancellation answers described above, we do not create a database of what you write to us. To
+    prevent abuse and duplicate delivery, Supabase stores native submission IDs, keyed payload hashes,
+    timestamps and delivery receipt IDs. Receipt metadata is retained to recognize future retries.
+    Rate limits use keyed hashes of network addresses, never raw addresses, and these counters expire
+    after two days. Neither of these delivery tables contains your message or email address. Please
+    avoid sending sensitive information in ordinary support email.
   </p>
 
   <h2>How long data is kept, and how to delete it</h2>
@@ -590,7 +675,9 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li><strong>On-device data</strong>: kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. Unless you created the optional account, we hold no copy, so there is nothing for us to delete.</li>
     <li><strong>The optional account backup</strong>: kept until you delete the account, then removed immediately and permanently. Past history (the journal of past alarms, game results and the record of each morning your alarms rang) is deleted from the backup sooner, once it is 400 days old. To delete the account: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>
     <li><strong>Purchase records at RevenueCat</strong>: kept while the record exists, under RevenueCat's own retention policy.</li>
-    <li><strong>Your setup answers in our own table</strong>: deleted 180 days after the last answer, or at once when you delete the optional account. Turning off product analytics in the app stops new answers being sent.</li>
+    <li><strong>Our copy of purchase records</strong>: each subscription event RevenueCat sends us is kept for 400 days, including after an account deletion, and then deleted. The summary of each RevenueCat customer's current subscription state has no fixed expiry: it is deleted with the optional account when it is linked to it, and otherwise when you ask us.</li>
+    <li><strong>Your setup answers in our own table</strong>: deleted 180 days after the last answer, or at once when you delete the optional account. Turning off product analytics in the app stops new answers being sent. Their rate-limit counters are deleted within two days.</li>
+    <li><strong>Why you cancelled, in our own table</strong>: the note is erased 180 days after you answered and the answer is deleted after 365 days. Deleting the optional account in the app deletes the answers linked to it, and those that phone sent before you signed in and still remembers, at once. The email copy stays in our support mailbox, and rate-limit counters are deleted within two hours. See <a href="#cancellation-answers">Why you cancelled</a>.</li>
     {REFERRAL_DISCLOSURE.published && (
       <li><strong>Invite records</strong>: deleted 180 days after their last use, by the app or by a friend using the code, except that a record which has unlocked a mission is kept until you ask us to delete it, and a used invite, with the record of any plan it led to, stays with the inviter's record. Request numbers and challenges are deleted within a day and rate-limit counters within three days. The security log is kept for 180 days, and the verification service keeps App Attest key records for a year after the key's last use. See <a href="#inviting-friends">Inviting friends</a>.</li>
     )}
@@ -640,7 +727,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
     passcode. Traffic to RevenueCat, PostHog, AppsFlyer and the backup service uses HTTPS. No system is perfectly
     secure. Alarm execution does not depend on a marketing server. Backups are isolated by account access
-    rules; subscription, analytics, marketing and setup records are held by the services described above.
+    rules; subscription, analytics, marketing, setup and cancellation records are held by the services described above.
   </p>
 
   <h2>Changes to this policy</h2>

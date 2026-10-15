@@ -13,14 +13,16 @@ export const accountDelete = {
       `Toca **Cuenta**.`,
       `Toca **Eliminar cuenta** y confirma.`,
     ],
-    body: `Ese es todo el proceso. Elimina permanentemente tu inicio de sesión (Iniciar sesión con Apple o Google), tu copia de seguridad en la nube -alarmas, ajustes, historial de despertares, puntuaciones, racha y cualquier miniatura de referencia de fotos o escaneos registrados- y, en el caso de Iniciar sesión con Apple, revoca el token de inicio de sesión ante Apple. No hay periodo de espera ni retención parcial: el registro de la cuenta y todo lo asociado a él se eliminan juntos.`,
+    body: `Ese es todo el proceso. Elimina permanentemente tu inicio de sesión (Iniciar sesión con Apple o Google), tu copia de seguridad en la nube -alarmas, ajustes, historial de despertares, puntuaciones, racha y cualquier miniatura de referencia de fotos o escaneos registrados- y, en el caso de Iniciar sesión con Apple, revoca el token de inicio de sesión ante Apple. No hay periodo de espera: el registro de la cuenta y todo lo que se guarda con él en tu copia de seguridad se eliminan juntos. Algunos registros se conservan durante más tiempo, como se indica a continuación.`,
   },
   kept: {
     heading: `Lo que no se elimina`,
     items: [
       `**Los datos de tu teléfono.** Tus alarmas, puntuaciones y ajustes se quedan en tu dispositivo: eliminar la cuenta no es eliminar tus alarmas. Desinstala la app si también quieres que desaparezcan los datos del dispositivo.`,
       `**Las compras.** Una suscripción a WakeSharp Ilimitado, al igual que una compra Lifetime (de por vida), pertenece a tu cuenta de App Store o Google Play, no a tu cuenta de WakeSharp, y sobrevive a la eliminación.`,
-      `**Las analíticas de uso anónimas**, que para empezar nunca estuvieron vinculadas a tu cuenta; consulta la [política de privacidad](privacy).`,
+      `**Nuestra copia de los eventos de compra.** Cada evento de suscripción que nos envía RevenueCat se conserva durante 400 días, incluso después de eliminar la cuenta, y luego se elimina.`,
+      `**Las copias por correo de las respuestas de cancelación y de los mensajes de soporte.** Se quedan en nuestro buzón de soporte hasta que ya no las necesitamos; escríbenos si quieres que las eliminemos.`,
+      `**Los registros de analítica y marketing** en PostHog y AppsFlyer. Usan identificadores seudónimos que pueden vincularse a tu cuenta después de iniciar sesión, y se eliminan si lo solicitas; consulta la [política de privacidad](privacy).`,
     ],
   },
   byEmail: {

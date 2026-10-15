@@ -11,14 +11,16 @@ export const accountDelete = {
       `Tap **Account**.`,
       `Tap **Delete account** and confirm.`,
     ],
-    body: `That's the whole flow. It permanently deletes your login (Sign in with Apple or Google), your cloud backup (alarms, settings, wake-up history, scores, streak, and any enrolled photo or scan reference thumbnails) and, for Sign in with Apple, revokes the sign-in token with Apple. There is no waiting period and no partial retention: the account row and everything attached to it are removed together.`,
+    body: `That's the whole flow. It permanently deletes your login (Sign in with Apple or Google), your cloud backup (alarms, settings, wake-up history, scores, streak, and any enrolled photo or scan reference thumbnails) and, for Sign in with Apple, revokes the sign-in token with Apple. There is no waiting period: the account row and everything stored with it in your backup are removed together. Some records are kept for longer, as listed below.`,
   },
   kept: {
     heading: `What is not deleted`,
     items: [
       `**The data on your phone.** Your alarms, scores and settings stay on your device. Deleting the account is not deleting your alarms. Remove the app itself if you want the on-device data gone too.`,
       `**Purchases.** A WakeSharp Unlimited subscription, like a Lifetime purchase, belongs to your App Store or Google Play account, not your WakeSharp account, and survives deletion.`,
-      `**Anonymous usage analytics**, which were never linked to your account in the first place. See the [privacy policy](privacy).`,
+      `**Our copy of purchase events.** Each subscription event RevenueCat sends us is kept for 400 days, even after the account is deleted, and then deleted.`,
+      `**Email copies of cancellation answers and support messages.** These stay in our support mailbox until we no longer need them; email us to have them deleted.`,
+      `**Analytics and marketing records** at PostHog and AppsFlyer. They use pseudonymous IDs that can be linked to your account after sign-in, and are deleted on request; see the [privacy policy](privacy).`,
     ],
   },
   byEmail: {

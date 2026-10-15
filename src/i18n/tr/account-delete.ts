@@ -13,14 +13,16 @@ export const accountDelete = {
       `**Hesap** öğesine dokunun.`,
       `**Hesabı sil** öğesine dokunun ve onaylayın.`,
     ],
-    body: `Bütün akış bu kadar. Girişinizi (Apple veya Google ile giriş), bulut yedeğinizi (alarmlar, ayarlar, uyanma geçmişi, puanlar, seri ve kayıtlı fotoğraf ya da tarama referanslarının küçük resimleri) kalıcı olarak siler ve Apple ile giriş için giriş belirtecini Apple nezdinde iptal eder. Bekleme süresi ve kısmi saklama yoktur: hesap kaydı ve ona bağlı her şey birlikte kaldırılır.`,
+    body: `Bütün akış bu kadar. Girişinizi (Apple veya Google ile giriş), bulut yedeğinizi (alarmlar, ayarlar, uyanma geçmişi, puanlar, seri ve kayıtlı fotoğraf ya da tarama referanslarının küçük resimleri) kalıcı olarak siler ve Apple ile giriş için giriş belirtecini Apple nezdinde iptal eder. Bekleme süresi yoktur: hesap kaydı ve yedeğinizde onunla birlikte saklanan her şey birlikte kaldırılır. Aşağıda listelenen bazı kayıtlar daha uzun süre saklanır.`,
   },
   kept: {
     heading: `Silinmeyenler`,
     items: [
       `**Telefonunuzdaki veriler.** Alarmlarınız, puanlarınız ve ayarlarınız cihazınızda kalır: hesabı silmek, alarmlarınızı silmek değildir. Cihazdaki verilerin de gitmesini istiyorsanız uygulamanın kendisini kaldırın.`,
       `**Satın almalar.** WakeSharp Sınırsız aboneliği, tıpkı bir Lifetime (ömür boyu) satın alımı gibi, WakeSharp hesabınıza değil, App Store veya Google Play hesabınıza aittir ve silme işleminden etkilenmez.`,
-      `**Anonim kullanım analitiği**; zaten en başından beri hesabınızla hiç ilişkilendirilmemişti: bkz. [gizlilik politikası](privacy).`,
+      `**Satın alma olaylarının bizdeki kopyası.** RevenueCat’in bize gönderdiği her abonelik olayı, hesap silindikten sonra bile 400 gün saklanır ve ardından silinir.`,
+      `**İptal yanıtlarının ve destek mesajlarının e-posta kopyaları.** Bunlar, ihtiyacımız kalmayana kadar destek posta kutumuzda kalır; silinmelerini istiyorsanız bize e-posta gönderin.`,
+      `**PostHog ve AppsFlyer’daki analitik ve pazarlama kayıtları.** Giriş yaptıktan sonra hesabınızla ilişkilendirilebilen takma adlı kimlikler kullanırlar ve talep üzerine silinirler: bkz. [gizlilik politikası](privacy).`,
     ],
   },
   byEmail: {

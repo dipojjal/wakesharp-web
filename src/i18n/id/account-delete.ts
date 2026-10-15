@@ -13,14 +13,16 @@ export const accountDelete = {
       `Ketuk **Akun**.`,
       `Ketuk **Hapus akun** dan konfirmasi.`,
     ],
-    body: `Itu saja seluruh alurnya. Tindakan ini menghapus secara permanen login Anda (Masuk dengan Apple atau Google), cadangan cloud Anda (alarm, pengaturan, riwayat bangun, skor, runtunan, dan thumbnail referensi foto atau pindai yang pernah Anda daftarkan) dan, untuk Masuk dengan Apple, mencabut token masuknya di Apple. Tidak ada masa tunggu dan tidak ada penyimpanan sebagian: baris akun dan semua yang melekat padanya dihapus bersamaan.`,
+    body: `Itu saja seluruh alurnya. Tindakan ini menghapus secara permanen login Anda (Masuk dengan Apple atau Google), cadangan cloud Anda (alarm, pengaturan, riwayat bangun, skor, runtunan, dan thumbnail referensi foto atau pindai yang pernah Anda daftarkan) dan, untuk Masuk dengan Apple, mencabut token masuknya di Apple. Tidak ada masa tunggu: baris akun dan semua yang disimpan bersamanya di cadangan Anda dihapus bersamaan. Beberapa catatan disimpan lebih lama, seperti tercantum di bawah.`,
   },
   kept: {
     heading: `Yang tidak dihapus`,
     items: [
       `**Data di ponsel Anda.** Alarm, skor, dan pengaturan tetap ada di perangkat Anda; menghapus akun bukan berarti menghapus alarm Anda. Hapus aplikasinya sendiri jika Anda juga ingin data di perangkat hilang.`,
       `**Pembelian.** Langganan WakeSharp Unlimited, sama seperti pembelian Lifetime, melekat pada akun App Store atau Google Play Anda, bukan akun WakeSharp Anda, dan tetap ada setelah penghapusan.`,
-      `**Analitik penggunaan anonim**, yang memang sejak awal tidak pernah ditautkan ke akun Anda; lihat [kebijakan privasi](privacy).`,
+      `**Salinan kami atas peristiwa pembelian.** Setiap peristiwa langganan yang dikirim RevenueCat kepada kami disimpan selama 400 hari, bahkan setelah akun dihapus, lalu dihapus.`,
+      `**Salinan email jawaban pembatalan dan pesan dukungan.** Salinan ini tetap ada di kotak surat dukungan kami sampai tidak kami perlukan lagi; kirim email kepada kami jika ingin salinan itu dihapus.`,
+      `**Catatan analitik dan pemasaran** di PostHog dan AppsFlyer. Catatan ini memakai ID berpseudonim yang dapat ditautkan ke akun Anda setelah Anda masuk, dan dihapus atas permintaan; lihat [kebijakan privasi](privacy).`,
     ],
   },
   byEmail: {

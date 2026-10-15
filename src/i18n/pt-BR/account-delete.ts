@@ -13,14 +13,16 @@ export const accountDelete = {
       `Toque em **Conta**.`,
       `Toque em **Excluir conta** e confirme.`,
     ],
-    body: `É só isso. A exclusão apaga permanentemente seu login (Iniciar sessão com a Apple ou login com o Google), seu backup na nuvem (alarmes, ajustes, histórico de despertares, notas, sequência e quaisquer miniaturas de referência de foto ou de escaneamento que você cadastrou) e, no caso do Iniciar sessão com a Apple, revoga o token de login junto à Apple. Não há período de espera nem retenção parcial: o registro da conta e tudo o que está ligado a ele são removidos juntos.`,
+    body: `É só isso. A exclusão apaga permanentemente seu login (Iniciar sessão com a Apple ou login com o Google), seu backup na nuvem (alarmes, ajustes, histórico de despertares, notas, sequência e quaisquer miniaturas de referência de foto ou de escaneamento que você cadastrou) e, no caso do Iniciar sessão com a Apple, revoga o token de login junto à Apple. Não há período de espera: o registro da conta e tudo o que fica guardado com ele no seu backup são removidos juntos. Alguns registros são mantidos por mais tempo, como listado abaixo.`,
   },
   kept: {
     heading: `O que não é excluído`,
     items: [
       `**Os dados no seu celular.** Seus alarmes, notas e ajustes continuam no aparelho: excluir a conta não é excluir seus alarmes. Remova o próprio app se quiser que os dados do aparelho também sumam.`,
       `**As compras.** Uma assinatura do WakeSharp Unlimited, assim como uma compra Lifetime (vitalícia), pertence à sua conta da App Store ou do Google Play, não à sua conta do WakeSharp, e sobrevive à exclusão.`,
-      `**As estatísticas de uso anônimas**, que nunca estiveram ligadas à sua conta, para começo de conversa: veja a [política de privacidade](privacy).`,
+      `**Nossa cópia dos eventos de compra.** Cada evento de assinatura que o RevenueCat nos envia é mantido por 400 dias, mesmo depois que a conta é excluída, e então apagado.`,
+      `**As cópias por e-mail das respostas de cancelamento e das mensagens ao suporte.** Elas ficam na nossa caixa de suporte até não precisarmos mais delas; escreva para nós se quiser que sejam apagadas.`,
+      `**Os registros de análise e marketing** no PostHog e no AppsFlyer. Eles usam IDs pseudônimos que podem ser ligados à sua conta depois do login e são apagados mediante solicitação: veja a [política de privacidade](privacy).`,
     ],
   },
   byEmail: {
