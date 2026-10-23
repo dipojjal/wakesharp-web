@@ -34,7 +34,7 @@ const DESCRIPTION_MAX = 160;
 const NO_LENGTH_LIMITS = new Set(['ja', 'hi', 'ar']);
 
 /** Pages that must never be indexed, relative to dist/ or dist/<locale>/. */
-const MUST_BE_NOINDEX = ['404.html', 'c.html', 'p.html', 'contact-sent.html', 'contact-error.html'];
+const MUST_BE_NOINDEX = ['404.html', 'c.html', 'p.html', 'g.html', 'contact-sent.html', 'contact-error.html'];
 
 const OTHER_LOCALES = enabledLocales().filter((l) => l.code !== DEFAULT_LOCALE);
 

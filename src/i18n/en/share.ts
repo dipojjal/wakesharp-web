@@ -1,8 +1,9 @@
 /**
- * The two link-landing pages, /c (a "Beat my wake" challenge) and /p (a
- * wake-up pact). The `script` strings are read by each page's inline decoder;
- * `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}` and `{days}` are
- * filled in by that script from the link itself.
+ * The link-landing pages: /c (a "Beat my wake" challenge), /p (a wake-up pact,
+ * the shared alarm before group alarms; old links still open in the app) and
+ * /g (a group alarm invite). The `script` strings are read by each page's
+ * inline decoder; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}`
+ * and `{days}` are filled in by that script from the link itself.
  */
 export const share = {
   challenge: {
@@ -32,6 +33,27 @@ export const share = {
       invitedAnonymous: `You have been invited to {time} · {days}`,
       once: `once`,
       /** Sunday first, matching the codec's weekday mask. */
+      days: [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`],
+    },
+  },
+  group: {
+    title: `A group alarm invite - WakeSharp`,
+    description: `Someone invited you to a WakeSharp group alarm.`,
+    heading: `A group alarm invite`,
+    intro: `Someone wants to wake up with you.`,
+    opening: `Opening your invite…`,
+    /** Shown once the link's code checks out. */
+    cta: `Open this link on an iPhone with WakeSharp installed to join the group. Everyone’s alarm rings at the same time, on their own phone, and the group can see who is up. Joining needs a WakeSharp account, so your friends can see you are up. Group alarms are on iPhone for now: Google Play’s version 2.9 does not have them.`,
+    /** The button that hands the code to the installed app. */
+    open: `Open WakeSharp`,
+    error: `This link could not be read. Ask whoever sent it to send it again, or to share a new invite link from the group.`,
+    script: {
+      /** When the link carries the schedule. */
+      invited: `You’re invited to a group alarm at {time} · {days}`,
+      /** When it does not (an older app’s link). */
+      invitedNoTime: `You’re invited to a group alarm.`,
+      once: `once`,
+      /** Sunday first, matching the app's weekday mask. */
       days: [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`],
     },
   },

@@ -7,8 +7,8 @@ lang: "id"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/02-scan.png"
 screenshotAlt: "Objek dengan konfirmasi hijau"
 ---
@@ -23,4 +23,4 @@ Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan
 
 ## Yang perlu diperiksa
 
-Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya.
+Akun WakeSharp tidak wajib, kecuali untuk alarm grup. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya.

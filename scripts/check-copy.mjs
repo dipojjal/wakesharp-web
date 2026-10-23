@@ -104,7 +104,7 @@ const BANNED = [
   // Wake Squad does not exist, and every referral route answers 503
   // referrals_disabled until Gate C. Advertising either is selling a 503.
   { needle: 'wake squad', why: 'not built - referral-spec.md records it as unbuilt' },
-  { re: /\brefer a friend\b|\breferral (?:programme|program|bonus|reward|link)\b/g, why: 'every referral route answers 503 referrals_disabled (api/_lib/referrals.ts); Gate C not passed' },
+  { re: /\brefer a friend\b|\breferral (?:programme|program|bonus|reward|link)\b/g, why: 'Refer a Friend is switched off in 2.21 and hidden from 2.24 (app repo, Docs/releases/2.21-owner-changes.md); the API stays up only for older builds' },
 
   // GameRegistry.dailyPremiumGameCount is 3, and warmupPlan(excluding:) drops
   // whatever the mission just played. A subscriber does meet all five games in a
@@ -120,6 +120,11 @@ const BANNED = [
   // deliberate divergence from the store copy, not an oversight.
   { needle: 'unlimited alarms', why: 'AlarmPlanning.armedAlarmBudget = 96 is a real ceiling - say "as many alarms as you need"' },
   { needle: 'trusted by', why: 'the stores hold a handful of ratings, and no social proof may be fabricated or borrowed' },
+  // The "As seen on" badge (src/config/press.ts) names where a PAID press release
+  // ran. Only "as seen on" is true of that; these read as editorial coverage.
+  { re: /\b(?:as )?featured (?:in|on|by)\b/g, unless: /\b(?:not|never|no)\b/, why: 'the launch announcement is a paid press release - say "as seen on", never "featured in" (src/config/press.ts)' },
+  { re: /\bcovered by (?:business insider|the associated press|ap news|ap\b|streetinsider|ips\b|the press)/g, why: 'a paid press release is not coverage - say "as seen on" (src/config/press.ts)' },
+  { re: /\bin the press\b|\bpress coverage\b|\bwritten about (?:in|by)\b/g, why: 'a paid press release is not coverage - say "as seen on" (src/config/press.ts)' },
   { needle: 'apple app store', why: 'Apple style: "the App Store", never "Apple App Store"' },
   { needle: 'itunes app store', why: 'Apple style: "the App Store"' },
 
@@ -130,12 +135,20 @@ const BANNED = [
   // Counts that moved. Five warm-up games ship (GameRegistry.allWarmupGames) and
   // Plus history is uncapped (StatsView.trendDays is nil for subscribers), so the
   // old "3 games" and "30-day trend" numbers are wrong wherever they survive.
-  { re: /\b(?:seven|7) (?:wake-up )?missions\b|\bfive of (?:the )?seven\b/g, why: 'fourteen missions plus Surprise Me (GameCatalog.json) - describe them by kind, not by count' },
+  { re: /\b(?:seven|7|fourteen|14) (?:wake-up )?missions\b|\bfive of (?:the )?seven\b/g, why: 'fifteen missions plus Surprise Me (GameCatalog.json) - describe them by kind, not by count' },
   { needle: '3 brain games', why: 'GameRegistry.allWarmupGames has five entries' },
   { needle: 'three brain games', why: 'GameRegistry.allWarmupGames has five entries' },
   { needle: '30-day trend', why: 'Plus history is uncapped - StatsView.trendDays is nil when premium' },
   { needle: '30 day trend', why: 'Plus history is uncapped' },
   { needle: '30-day sharpness', why: 'Plus history is uncapped' },
+
+  // Renamed in the app's plus panel (audit IHE-34, 2026-10-16): a reader finds
+  // "Calendar alarm" on screen, and Sleep Cycle's own listing is the one smart alarm the site may name.
+  { re: /\bsmart (?:calendar )?alarms?\b|\bsmart(?:-alarm)? rules?\b/g, unless: /\bsleep cycle\b/, why: 'the app calls them calendar alarms since 2026-10-16 (app repo, Docs/AUDIT-2026-10-16.md IHE-34)' },
+  // The warm-up has had no entry point since iOS 2.23 (Docs/releases/2.23-owner-round.md): the site may say it is not offered, never sell it.
+  { re: /\b(?:optional|daily|morning|two-minute) (?:brain )?warm-ups?\b|\bwarm-up (?:games?|rotation)\b|\bbrain warm-ups?\b/g, unless: /\b(?:not offered|no longer|not currently|is not|isn’t|isn't)\b/, why: 'the Sharpness warm-up cannot be started in the current app (iOS 2.23, Docs/releases/2.23-owner-round.md) - the score comes from missions' },
+  // The pact (a shared alarm set from a link, no account) is replaced by group alarms (2.23); old /p links still open.
+  { re: /\bwake-up pacts?\b|\bwake pacts?\b/g, unless: /\b(?:older|old|earlier|still open|replaced)\b/, why: 'the pact is replaced by group alarms (app repo, Docs/releases/2.23-owner-round.md); describe the group alarm' },
 ];
 
 /*
@@ -317,7 +330,13 @@ const LISTING_LINK = /https:\/\/(?:apps\.apple\.com\/\S*?app\/[^"'\s]+|play\.goo
  * attributes and <script> bodies - where these can hide.
  */
 const BANNED_RAW = [
-  { re: /\b(?:Squats|Serial Sevens|Mind Games|Gentle Start)\b/i, why: 'gated or retired product claim; use the public 2.14 facts' },
+  { re: /\b(?:Serial Sevens|Mind Games|Gentle Start)\b/i, why: 'retired product claim - Serial Sevens became Math Problems, Mind Games was the old name for it, Gentle Start is off (src/lib/product.ts)' },
+  // Renamed in the app on 2026-10-16 (GameCatalog.json): the site must show the name a reader finds in the picker.
+  { re: /\bColour Clash\b/, why: 'the mission is "Color Clash" since 2026-10-16 (GameCatalog.json) - US spelling, as the app shows it' },
+  // The prices that changed on 2026-10-04 (Play) and 2026-10-06 (App Store); the yearly $34.99 did not. src/config/site.ts is the only source.
+  { re: /\$4\.99 (?:a|per) month|\$4\.99\/month/i, why: 'Monthly is $9.99 since 2026-10-06 (site.ts) - read SITE.unlimited, never type a price' },
+  { re: /\$17\.49/, why: 'a retired discounted-yearly figure; targeted offers are never named on the site' },
+  { re: /\bSnooze 1 min\b/i, why: 'the ring\'s button reads "Snooze 30 sec" since 2.16 (claims-matrix.md, the wake-up contract)' },
   { re: /\u2014|&mdash;|&#0*8212;|&#x0*2014;|\\u2014/i, why: 'em dash in website copy - use a hyphen, comma, colon, parentheses or a separate sentence as appropriate' },
   { re: /\[\[/, why: 'unfilled "[[…]]" placeholder - one shipped live on /terms, a page both apps link to' },
   { re: /com\.dipojjal\.wakesharp/i, why: 'dead package id - renamed to com.wakesharp.app on 2026-08-14' },
@@ -346,19 +365,21 @@ const UNTRANSLATED_ALLOW = [
   'trademarks of apple inc',
   'service mark of apple inc',
   'trademarks of google llc',
+  'trademarks of their respective owners',
   'support@wakesharp.app',
 ];
 
 /** Pages every enabled locale must ship, relative to dist/<path>/ (the home page is dist/<path>.html). */
-const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-error.html', 'account/delete.html', 'c.html', 'p.html', 'privacy.html', 'terms.html'];
+const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-error.html', 'account/delete.html', 'c.html', 'p.html', 'g.html', 'privacy.html', 'terms.html'];
 /** Of those, the indexable ones, which must carry the x-default hreflang link. */
 const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', 'account/delete.html']);
 /**
- * The share-link decoders. vercel.json rewrites every /c/<payload> and
- * /p/<payload> onto these files, so each one stands for an unbounded set of
- * URLs: they must be noindex, and carry no hreflang, in every language.
+ * The share-link decoders. vercel.json rewrites every /c/<payload>,
+ * /p/<payload> and /g/<code> onto these files, so each one stands for an
+ * unbounded set of URLs: they must be noindex, and carry no hreflang, in
+ * every language.
  */
-const SHARE_SHELLS = ['c.html', 'p.html'];
+const SHARE_SHELLS = ['c.html', 'p.html', 'g.html'];
 /** Localized routes that wrap the English legal text on purpose: no untranslated-sentence check. */
 /**
  * Product and feature names the glossary keeps in English on pages whose
@@ -386,7 +407,7 @@ const MUST_STAY_ENGLISH = [
   'Reaction Tap',
   'Scan an Object',
   'Walk It Off',
-  'Colour Clash',
+  'Color Clash',
   'Type It Out',
   'Fetch',
   'Face Check',
@@ -399,6 +420,10 @@ const MUST_STAY_ENGLISH = [
   'Alarm reliability',
   'Beat my wake',
   'Wake with a friend',
+  'Squats',
+  'Push-ups',
+  'Group alarm',
+  'Achievements',
 ];
 
 const ENGLISH_BODY_BY_DESIGN = new Set(['privacy.html', 'terms.html']);
@@ -695,6 +720,7 @@ if (existsSync(join(DIST, 'sitemap.xml'))) {
     'https://wakesharp.app/contact-error',
     'https://wakesharp.app/c',
     'https://wakesharp.app/p',
+    'https://wakesharp.app/g',
     'https://wakesharp.app/es/privacy',
     'https://wakesharp.app/es/terms',
   ]) {
@@ -759,8 +785,8 @@ for (const loc of OTHER_LOCALES) {
   }
   // The share links must reach the localized landing pages through the same
   // rewrite the English ones use; a locale missing from the alternation 404s.
-  for (const page of ['c', 'p']) {
-    const rule = (vercel.rewrites ?? []).find((r) => new RegExp(`^/:lang\\([^)]+\\)/${page}/:payload$`).test(r.source));
+  for (const page of ['c', 'p', 'g']) {
+    const rule = (vercel.rewrites ?? []).find((r) => new RegExp(`^/:lang\\([^)]+\\)/${page}/:(?:payload|code)$`).test(r.source));
     const alternation = rule ? rule.source.match(/\(([^)]+)\)/)[1].split('|') : [];
     if (!alternation.includes(loc.path)) {
       console.error(`  ✗ vercel.json: no rewrite for /${loc.path}/${page}/:payload - add "${loc.path}" to the /:lang(…)/${page}/:payload alternation`);

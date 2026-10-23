@@ -7,8 +7,8 @@ lang: "fr"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/fr/01-home.png"
 screenshotAlt: "La prochaine alarme et votre matinée"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "La prochaine alarme et votre matinée"
 
 ## Comment l’utiliser
 
-1. Autorisez le calendrier et créez une règle.
+1. Autorisez l’accès au calendrier et créez un réveil calendrier.
 2. Choisissez l’avance et les heures minimale et maximale.
 3. Vérifiez l’alarme après un changement. Prévoyez un réveil de secours pour un rendez-vous essentiel.
 

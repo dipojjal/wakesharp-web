@@ -7,13 +7,13 @@ lang: "id"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "Misi alarm yang tersedia"
 ---
 
-Pilih satu misi di bawah atau susun beberapa misi. Ini adalah pilihan publik untuk iPhone 2.14. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.
+Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.
 
 ## Cara menggunakan
 
@@ -23,4 +23,4 @@ Pilih satu misi di bawah atau susun beberapa misi. Ini adalah pilihan publik unt
 
 ## Yang perlu diperiksa
 
-Di iPhone 2.14, menghentikan atau menunda alarm mengundurnya satu menit. Alarm dapat berulang hingga satu jam bila misi belum selesai. Kontrol ponsel tetap berfungsi.
+Di iPhone, hentikan atau tunda alarmnya dan alarm berbunyi lagi dalam 30 detik, sampai misi Anda selesai. Google Play versi 2.9 berbunyi lagi satu menit kemudian, hingga satu jam. Kontrol ponsel Anda sendiri tetap berfungsi.

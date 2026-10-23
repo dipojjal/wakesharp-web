@@ -7,13 +7,13 @@ lang: "tr"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/tr/03-missions.png"
 screenshotAlt: "Kullanılabilir alarm görevleri"
 ---
 
-Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iPhone 2.14’ün herkese açık seçimidir. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.
+Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.
 
 ## Nasıl kullanılır
 
@@ -23,4 +23,4 @@ Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iP
 
 ## Kontrol etmen gerekenler
 
-iPhone 2.14’te durdurmak veya ertelemek alarmı bir dakika geciktirir. Görev tamamlanmazsa en fazla bir saat tekrarlanabilir. Telefonun kendi kontrolleri çalışmaya devam eder.
+iPhone’da durdur ya da ertele, görevin bitene kadar 30 saniye içinde yeniden çalar. Google Play’in 2.9 sürümü bir dakika sonra yeniden çalar, en fazla bir saat boyunca. Telefonun kendi kontrolleri çalışmaya devam eder.

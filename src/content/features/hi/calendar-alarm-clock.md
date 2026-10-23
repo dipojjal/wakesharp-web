@@ -7,8 +7,8 @@ lang: "hi"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/01-home.png"
 screenshotAlt: "अगला अलार्म और सुबह का सार"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "अगला अलार्म और सुबह का स�
 
 ## इस्तेमाल कैसे करें
 
-1. कैलेंडर की अनुमति देकर नियम बनाएँ।
+1. कैलेंडर की अनुमति देकर कैलेंडर अलार्म बनाएँ।
 2. कितने मिनट पहले बजना है और सबसे पहले व आखिरी समय चुनें।
 3. इवेंट बदलने पर अलार्म जाँचें। ज़रूरी काम के लिए दूसरा अलार्म रखें।
 

@@ -7,13 +7,13 @@ lang: "en"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "The available alarm missions"
 ---
 
-Choose from the missions below, or put several in a sequence. This is the public iPhone 2.14 selection. Camera, movement and voice missions need their corresponding permissions and supported hardware.
+Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.
 
 ## How to use it
 
@@ -23,4 +23,4 @@ Choose from the missions below, or put several in a sequence. This is the public
 
 ## What to check
 
-In iPhone 2.14, stopping or snoozing delays the alarm by one minute. It can repeat for up to one hour unless you finish the mission. Your phone’s own controls still work.
+On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work.

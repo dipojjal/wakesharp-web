@@ -7,8 +7,8 @@ lang: "id"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/01-home.png"
 screenshotAlt: "Alarm berikutnya dan ringkasan pagi"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "Alarm berikutnya dan ringkasan pagi"
 
 ## Cara menggunakan
 
-1. Izinkan kalender dan buat aturan alarm.
+1. Izinkan akses kalender dan buat alarm kalender.
 2. Pilih jarak menit serta waktu paling awal dan akhir.
 3. Periksa alarm setelah perubahan acara dan gunakan cadangan untuk janji penting.
 

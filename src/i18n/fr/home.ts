@@ -18,7 +18,7 @@ export const home = {
       "accent": "vous faire lever",
       "post": ""
     },
-    "lede": "Choisissez une mission ci-dessous ou combinez-en plusieurs. Voici la sélection publique sur iPhone 2.14. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
+    "lede": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
     "missions": [
       {
         "name": "Problèmes de maths",
@@ -59,7 +59,7 @@ export const home = {
       {
         "name": "Scanner un objet",
         "kind": "Caméra",
-        "body": "Levez-vous et pointez la caméra vers une bouteille, une tasse ou un lavabo.",
+        "body": "Levez-vous et pointez la caméra vers un objet de votre liste.",
         "id": "object_scan"
       },
       {
@@ -93,6 +93,18 @@ export const home = {
         "id": "first_light"
       },
       {
+        "name": "Squats",
+        "kind": "Mouvement · iPhone",
+        "body": "Faites des squats, suivis par la caméra sur votre appareil.",
+        "id": "squats"
+      },
+      {
+        "name": "Pompes",
+        "kind": "Mouvement · iPhone",
+        "body": "Faites des pompes au-dessus de votre téléphone posé au sol, comptées par la caméra.",
+        "id": "push_ups"
+      },
+      {
         "name": "Nommez cinq",
         "kind": "Voix",
         "body": "Nommez cinq choses d’une catégorie, à voix haute.",
@@ -108,7 +120,7 @@ export const home = {
     "note": "Les missions font partie de l’alarme que vous créez : le marché se conclut la veille, il ne se négocie pas à 6 h du matin."
   },
   "smart": {
-    "alt": "L’éditeur de règle d’alarme intelligente, réglé pour sonner 90 minutes avant la première réunion",
+    "alt": "L’éditeur de réveil calendrier, réglé pour sonner 90 minutes avant la première réunion",
     "heading": {
       "pre": "Vous réveille avant votre ",
       "accent": "première réunion",
@@ -124,18 +136,14 @@ export const home = {
       "accent": "quelqu’un avec vous",
       "post": ""
     },
-    "lede": "Partagez un lien : le téléphone qui l’ouvre programme la même alarme, puis la fait sonner tout seul. Rien à rejoindre, aucun compte à créer, et aucun serveur au milieu.",
+    "lede": "Créez un réveil de groupe et partagez son lien d’invitation. L’alarme de chacun sonne à la même heure, sur son propre téléphone, et le groupe voit qui est debout.",
     "cards": [
       {
-        "title": "Se réveiller avec un ami",
-        "body": "Vous envoyez un lien ; le téléphone d’en face construit l’alarme en local. Chacun garde sa propre copie, donc modifier la vôtre ne touche pas la sienne."
-      },
-      {
-        "title": "Beat my wake",
-        "body": "Battez mon réveil : terminez une mission et vous pouvez défier quelqu’un sur le même jeu de problèmes: même graine, mêmes manches, même difficulté. Vous saurez ensuite lequel de vous deux était vraiment réveillé."
+        "title": "Réveil de groupe",
+        "body": "Créez un réveil de groupe depuis le bouton plus et envoyez le lien d’invitation. Il s’active dès qu’un premier ami rejoint le groupe, et chaque matin il montre qui est debout, qui a reporté et qui dort encore. Il nécessite un compte WakeSharp, pour que vos amis voient que vous êtes debout. Sur iPhone pour l’instant : la version 2.9 de Google Play ne l’a pas."
       }
     ],
-    "note": "Les deux ne sont que des liens : le téléphone qui en reçoit un fait tout le travail lui-même."
+    "note": "L’invitation est un lien. Le téléphone qui l’ouvre rejoint le groupe, puis règle l’alarme d’un geste."
   },
   "platforms": {
     "heading": {
@@ -143,9 +151,9 @@ export const home = {
       "accent": "Sur les deux téléphones.",
       "post": ""
     },
-    "lede": "WakeSharp existe aussi sur Android. Le canal audio, les autorisations et les réglages de batterie diffèrent. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes de votre application installée. WakeSharp nécessite {ios} sur iPhone, ou {android} sur Android. Les applications de montre nécessitent watchOS 26 ou Wear OS 3.",
-    "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée.",
-    "account": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
+    "lede": "WakeSharp est aussi sur Google Play, où la version actuelle est la 2.9. Son canal audio, ses autorisations et ses réglages de batterie diffèrent de ceux de l’iPhone, et elle n’inclut pas les fonctions iPhone plus récentes citées sur cette page. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes disponibles dans votre application installée. WakeSharp nécessite {ios} sur iPhone, ou {android} sur Android. Les applications de montre nécessitent watchOS 26 ou Wear OS 3.",
+    "watch": "Sur iPhone, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée.",
+    "account": "Aucun compte WakeSharp n’est obligatoire, sauf pour les réveils de groupe. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
   },
   "reliable": {
     "heading": {
@@ -180,21 +188,20 @@ export const home = {
       "accent": "tout compris",
       "post": ""
     },
-    "lede": "WakeSharp Illimité, c’est toute l’application : toutes les missions de réveil, l’échauffement quotidien, les alarmes d’agenda intelligentes, les rotations d’équipe et les profils, tout votre historique de Vivacité, ainsi que toutes les scènes du Lark et tous les fonds d’écran. WakeSharp n’affiche aucune publicité.",
+    "lede": "WakeSharp Illimité, c’est toute l’application : toutes les missions de réveil, les réveils de groupe, les réveils calendrier, les rotations d’équipe et les profils, tout votre historique de Vivacité, ainsi que toutes les scènes du Lark et tous les fonds d’écran. WakeSharp n’affiche aucune publicité.",
     "unlimited": {
       "name": "WakeSharp Illimité",
       "perYear": "/an",
       "trial": "Commencez par **{trialDays} jours d’essai gratuit**, puis {annual} par an",
       "monthly": "ou **{monthly} par mois**, sans essai",
       "features": [
-        "Toutes les missions de réveil, et plusieurs à la suite si vous voulez",
-        "Trois jeux d’échauffement chaque matin, en rotation",
-        "Tout votre historique de Vivacité",
-        "Des alarmes d’agenda intelligentes qui peuvent se déplacer quand votre première réunion bouge",
+        "Toutes les missions de réveil, et jusqu’à quatre à la suite si vous voulez",
+        "Tout votre historique de Vivacité, vos badges et vos succès",
+        "Des réveils calendrier qui peuvent se déplacer quand votre première réunion bouge",
         "Les rotations d’équipe, les profils et autant d’alarmes que nécessaire",
         "La vérification de fiabilité et toutes les sonneries d’alarme",
         "Toutes les scènes du Lark, tous les fonds d’écran d’alarme et toutes les célébrations",
-        "Se réveiller avec un ami, et l’application de montre aux deux poignets",
+        "Les réveils de groupe sur iPhone, et l’application de montre aux deux poignets",
         "Sans publicité"
       ]
     },
@@ -218,15 +225,15 @@ export const home = {
       },
       {
         "q": "Dois-je faire des calculs à 6 h du matin ?",
-        "a": "Choisissez une mission ci-dessous ou combinez-en plusieurs. Voici la sélection publique sur iPhone 2.14. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants."
+        "a": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants."
       },
       {
         "q": "Puis-je tricher et sauter la mission ?",
-        "a": "Sur iPhone 2.14, arrêter ou reporter l’alarme la repousse d’une minute. Elle peut se répéter pendant une heure au maximum si la mission reste inachevée. Les commandes du téléphone restent utilisables."
+        "a": "Sur iPhone, arrêtez-la ou reportez-la et elle sonne de nouveau en moins de 30 secondes, jusqu’à ce que votre mission soit terminée. La version 2.9 de Google Play sonne de nouveau une minute plus tard, pendant une heure au maximum. Les commandes du téléphone restent utilisables. Une pièce sombre ou une autorisation refusée ne remplace jamais la mission par une plus facile non plus : l’application vous prévient, ou redemande l’autorisation."
       },
       {
         "q": "Que fait l’appareil photo ?",
-        "a": "Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirigez la caméra vers cet objet. La confirmation verte indique que WakeSharp l’a reconnu. La reconnaissance se fait sur votre téléphone. Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
+        "a": "Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirigez la caméra vers cet objet. La confirmation verte indique que WakeSharp l’a reconnu. La reconnaissance se fait sur votre téléphone. Aucun compte WakeSharp n’est obligatoire, sauf pour les réveils de groupe. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
       },
       {
         "q": "WakeSharp suit-il mon sommeil ?",
@@ -238,11 +245,11 @@ export const home = {
       },
       {
         "q": "Ai-je besoin d’un compte ?",
-        "a": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
+        "a": "Aucun compte WakeSharp n’est obligatoire, sauf pour les réveils de groupe. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité."
       },
       {
         "q": "Que se passe-t-il si ma montre est déchargée ?",
-        "a": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée."
+        "a": "Sur iPhone, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée."
       },
       {
         "q": "Combien coûte WakeSharp ?",

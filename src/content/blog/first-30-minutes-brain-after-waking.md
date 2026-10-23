@@ -3,7 +3,7 @@ title: "The First 30 Minutes: What Happens in Your Brain Between Alarm and Coffe
 seoTitle: "Morning Brain Fog: What Happens in the First 30 Minutes"
 description: "A minute-by-minute account of the first half hour after your alarm: the cortisol surge, leftover adenosine, and why your prefrontal cortex arrives last."
 pubDate: 2026-09-05T08:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-10-23T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/first-30-minutes-brain-after-waking/hero.jpg
@@ -87,7 +87,7 @@ Recovery is not purely passive. If the prefrontal region is the one lagging, giv
 
 Everything above is a population average. Your own curve is the one you live in, and it is close to invisible from the inside, which is the trap. Van Dongen and colleagues showed the general version of the problem: across two weeks of restricted sleep, objective performance degraded cumulatively while subjective sleepiness ratings flattened out and failed to distinguish six hours a night from four ([Van Dongen et al., *Sleep*, 2003](https://pubmed.ncbi.nlm.nih.gov/12683469/)). People are poor judges of their own impairment; a number helps where a feeling cannot.
 
-WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with optional brain warm-ups and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
+WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with badges and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
 
 Play one at minute five and another at minute twenty five for a week and you get a rough picture of your own recovery curve: how steep it is, and which nights flatten it.
 

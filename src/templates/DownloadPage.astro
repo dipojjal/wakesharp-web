@@ -5,6 +5,7 @@ import type { EnabledLocale } from '../i18n/config';
 import { localePath } from '../i18n/routes';
 import { buildDownloadUrl } from '../lib/download';
 import QRCode from 'qrcode';
+import PressBadge from '../components/PressBadge.astro';
 import '../styles/tools.css';
 interface Props { locale: EnabledLocale }
 const {locale}=Astro.props; const t=toolCopy(locale.code);
@@ -15,7 +16,7 @@ const qr = await QRCode.toString(buildDownloadUrl(context),{type:'svg',width:320
 <section class="tool-page" data-tone="morning"><div class="tool-wrap" style="max-width:42rem;text-align:center" data-download-page data-locale={locale.code}>
 <h1>{t.download}</h1><p class="tool-intro">{t.qrHelp}</p><h2>{t.qr}</h2><div data-qr class="tool-qr" role="img" aria-label={t.qr} set:html={qr}/>
 <div class="tool-actions" id="download-options">{(['ios','android'] as const).map(platform=><a class="pill bg-[var(--color-night-deep)] text-[var(--color-night-text)] px-5 py-3 m-2" href={buildDownloadUrl(context,platform)} data-platform={platform} data-download data-page="home" data-placement="download" data-locale={locale.code}>{platform==='ios'?'App Store':'Google Play'}</a>)}</div>
-<p class="tool-intro">{t.available}</p><a href={localePath(locale,'/#pricing')}>{t.freeNote}</a>
+<p class="tool-intro">{t.available}</p><PressBadge variant="full" localeCode={locale.code} class="mx-auto my-6"/><a href={localePath(locale,'/#pricing')}>{t.freeNote}</a>
 </div></section>
 </BaseLayout>
 <script>

@@ -12,7 +12,7 @@ const pages = await getFeaturePages(locale.code);
 const t = refreshCopy(locale.code);
 const missions = getCatalog(locale.code).home.mission.missions;
 ---
-<LegalLayout title={t.hubTitle} description={t.hubDescription} heading={t.hubTitle} intro={t.missionsIntro} path={localePath(locale,'/features')} locale={locale} alternates={alternatesFor('/features')} lastUpdated="2026-09-28">
+<LegalLayout title={t.hubTitle} description={t.hubDescription} heading={t.hubTitle} intro={t.missionsIntro} path={localePath(locale,'/features')} locale={locale} alternates={alternatesFor('/features')} lastUpdated="2026-10-23">
   <ReleaseNotice localeCode={locale.code}/>
   <ul class="!list-none !ps-0 grid gap-6 sm:grid-cols-2">{pages.map(page => <li class="card p-5"><a class="text-xl font-bold" href={featurePath(page)}>{page.data.title}</a><p>{page.data.description}</p><p class="text-sm dim">{page.data.missions.map(id=>missions.find(m=>m.id===id)?.name).filter(Boolean).join(', ')}</p></li>)}</ul>
 </LegalLayout>

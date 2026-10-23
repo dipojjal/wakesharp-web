@@ -7,8 +7,8 @@ lang: "es"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/es/02-scan.png"
 screenshotAlt: "Objeto reconocido con confirmación verde"
 ---
@@ -23,4 +23,4 @@ Elige un objeto, como una botella, una taza o un lavabo. Cuando suene la alarma,
 
 ## Qué comprobar
 
-No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad.
+No necesitas una cuenta de WakeSharp, salvo para las alarmas de grupo. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad.

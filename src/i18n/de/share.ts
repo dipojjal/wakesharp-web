@@ -1,8 +1,10 @@
 import { share as en } from '../en/share';
 
 /**
- * Die beiden Link-Landeseiten, /c (eine „Beat my wake“-Herausforderung)
- * und /p (eine Weck-Verabredung). Die `script`-Strings liest der Inline-Decoder
+ * Die Link-Landeseiten: /c (eine „Beat my wake“-Herausforderung), /p (eine
+ * Weck-Verabredung, der geteilte Alarm vor den Gruppenweckern; alte Links
+ * öffnen weiterhin die App) und /g (eine Gruppenwecker-Einladung). Die
+ * `script`-Strings liest der Inline-Decoder
  * jeder Seite; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}` und
  * `{days}` füllt dieses Skript aus dem Link selbst.
  */
@@ -34,6 +36,27 @@ export const share = {
       invitedAnonymous: `Du wurdest eingeladen zu {time} · {days}`,
       once: `einmalig`,
       /** Sonntag zuerst, passend zur Wochentagsmaske des Codecs. */
+      days: [`So`, `Mo`, `Di`, `Mi`, `Do`, `Fr`, `Sa`],
+    },
+  },
+  group: {
+    title: `Eine Gruppenwecker-Einladung - WakeSharp`,
+    description: `Jemand hat dich zu einem WakeSharp-Gruppenwecker eingeladen.`,
+    heading: `Eine Gruppenwecker-Einladung`,
+    intro: `Jemand möchte mit dir zusammen aufwachen.`,
+    opening: `Einladung wird geöffnet …`,
+    /** Erscheint, sobald der Code im Link geprüft ist. */
+    cta: `Öffne diesen Link auf einem iPhone mit installiertem WakeSharp, um der Gruppe beizutreten. Bei allen klingelt der Wecker zur selben Zeit, auf dem eigenen Telefon, und die Gruppe sieht, wer schon wach ist. Zum Beitreten brauchst du ein WakeSharp-Konto, damit deine Freunde sehen, dass du wach bist. Gruppenwecker gibt es vorerst nur auf dem iPhone: Die Version 2.9 bei Google Play hat sie nicht.`,
+    /** Der Button, der den Code an die installierte App übergibt. */
+    open: `WakeSharp öffnen`,
+    error: `Dieser Link ließ sich nicht lesen. Bitte die Person, die ihn geschickt hat, ihn noch einmal zu schicken oder einen neuen Einladungslink aus der Gruppe zu teilen.`,
+    script: {
+      /** Wenn der Link den Zeitplan enthält. */
+      invited: `Du bist zu einem Gruppenwecker eingeladen: {time} · {days}`,
+      /** Wenn nicht (ein Link aus einer älteren App). */
+      invitedNoTime: `Du bist zu einem Gruppenwecker eingeladen.`,
+      once: `einmalig`,
+      /** Sonntag zuerst, passend zur Wochentagsmaske der App. */
       days: [`So`, `Mo`, `Di`, `Mi`, `Do`, `Fr`, `Sa`],
     },
   },

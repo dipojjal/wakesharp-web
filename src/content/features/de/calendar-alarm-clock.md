@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/de/01-home.png"
 screenshotAlt: "Nächster Wecker und Morgenübersicht"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "Nächster Wecker und Morgenübersicht"
 
 ## So funktioniert es
 
-1. Erlaube Kalenderzugriff und erstelle eine Regel.
+1. Erlaube Kalenderzugriff und erstelle einen Kalenderwecker.
 2. Wähle den zeitlichen Vorlauf sowie früheste und späteste Weckzeit.
 3. Prüfe den nächsten Wecker nach Terminänderungen. Nutze für wichtige Termine einen Ersatzwecker.
 

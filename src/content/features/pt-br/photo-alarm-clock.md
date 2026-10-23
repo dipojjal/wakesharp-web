@@ -7,8 +7,8 @@ lang: "pt-BR"
 translationOf: "photo-alarm-clock"
 order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "Missões disponíveis"
 ---
@@ -28,4 +28,4 @@ Tire de novo a foto do lugar que você escolheu na noite anterior.
 
 ## O que conferir
 
-Não é preciso ter conta no WakeSharp. Entrar com Apple ou Google é opcional e permite salvar alarmes, histórico, preferências e pequenas miniaturas de fotos de referência. A comparação de fotos e o calendário são processados no aparelho. O conteúdo dos eventos fica nele. Consulte a política de privacidade.
+Não é preciso ter conta no WakeSharp, exceto para os alarmes de grupo (Group alarm). Entrar com Apple ou Google é opcional e permite salvar alarmes, histórico, preferências e pequenas miniaturas de fotos de referência. A comparação de fotos e o calendário são processados no aparelho. O conteúdo dos eventos fica nele. Consulte a política de privacidade.

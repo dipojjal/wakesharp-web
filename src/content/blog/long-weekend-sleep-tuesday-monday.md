@@ -3,7 +3,7 @@ title: "The Long-Weekend Effect: Why Tuesday Feels Like Double Monday"
 seoTitle: "Long Weekend Sleep Schedule: Why Tuesday Feels Like Monday"
 description: "Three days of drift is a small self-inflicted time zone shift. A recovery plan for today, tonight and tomorrow, before the short week starts."
 pubDate: 2026-09-07T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-10-23T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/long-weekend-sleep-tuesday-monday/hero.jpg
@@ -77,17 +77,17 @@ Aim 45 to 60 minutes earlier than last night. Take the same again on Tuesday nig
 
 And then Wednesday, which nobody plans for. Wednesday often feels worse than Tuesday, because the adrenaline of a first day back is gone and the clock has only advanced by an hour or so. Hold the wake time anyway. Do not repay Tuesday's shortfall with a Wednesday lie-in, because that reopens the gap you spent two days closing. Wednesday is the day the plan is actually being tested.
 
-## The pact, and what it can and cannot do
+## The group alarm, and what it can and cannot do
 
 The hard part of all this is not the plan. It is 6:32 tomorrow morning, when the plan is abstract and forty more minutes is concrete.
 
-That is a commitment problem, not an information problem, so a commitment device is a reasonable answer. WakeSharp has **wake-up pacts**: you agree a wake time with a friend, send them a link, and their phone sets the same alarm. Nothing is shared but the time, so the witness part is the old-fashioned kind: whoever finishes the mission first texts the other. Not whether you slept well, not whether you dismissed something at 6:31 and rolled over. Whether you did the thing.
+That is a commitment problem, not an information problem, so a commitment device is a reasonable answer. WakeSharp has **group alarms** (on iPhone for now): you agree a wake time with a friend, send them the invite link, and everyone’s alarm rings at the same time on their own phone. The group sees who is up, who snoozed and who is still asleep, so the witness is built in. Not whether you slept well, not whether you dismissed something at 6:31 and rolled over. Whether you did the thing.
 
-Tomorrow is the right day for one, because tomorrow is the day with the biggest gap between what you intend tonight and what you will want at 6:32. Text someone who is in the same short-week hole. Agree on a time. That is the whole setup.
+Tomorrow is the right day for one, because tomorrow is the day with the biggest gap between what you intend tonight and what you will want at 6:32. Invite someone who is in the same short-week hole. Agree on a time. That is the whole setup.
 
 Now the honest limits, because a commitment device that oversells itself stops working.
 
-A pact is social pressure and nothing more. It works because a specific person will see a specific outcome, and it does nothing at all if you and your friend quietly agree to let each other off, which is the most common way these fail. It is also not a wake-up mechanism. No alarm app can promise you will wake up, this one included. Your phone's own controls always work: nothing stops you switching the phone off, and nothing should. However you quiet the alarm, the morning only counts once the mission is done.
+A group alarm is social pressure and nothing more. It works because a specific person will see a specific outcome, and it does nothing at all if you and your friend quietly agree to let each other off, which is the most common way these fail. It is also not a wake-up mechanism. No alarm app can promise you will wake up, this one included. Your phone's own controls always work: nothing stops you switching the phone off, and nothing should. However you quiet the alarm, the morning only counts once the mission is done.
 
 WakeSharp does no sleep tracking of any kind, so it cannot tell you how far you have drifted or how much you have paid back. It holds a wake time you chose and asks for a conscious act, the mission, before the morning counts. The light and the schedule are the actual intervention.
 

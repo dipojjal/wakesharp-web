@@ -44,6 +44,7 @@ Individually:
 | `npm run copy` | Greps `dist/` for marketing claims the app doesn't actually make good on, for un-scoped platform claims ("Focus" without naming iOS), for unfilled `[[PLACEHOLDER]]`s, and for any store link that isn't one of the two canonical listing URLs. It also fails if *no* page links a listing at all, so the site can never silently regress to its pre-launch state. On the localized pages it checks each locale's own seed list of prohibited claims instead, and it fails if an enabled locale is only partly built, lacks `<html lang>` or the x-default hreflang link, or still carries an English sentence verbatim. The `/c` and `/p` share-link decoders must be `noindex` with no hreflang in every language, because a rewrite serves each of them for an unbounded set of URLs. |
 | `npm run i18n:test` | The rich-text parser, the URL helpers and a structural diff of every registered catalog against the English one (keys, array lengths, `{placeholders}`, link keys, balanced markup). |
 | `npm run posts` | Every post under `src/content/blog/` against the authoring contract in `docs/blog-schedule.md`: frontmatter, dates with offsets, hero paths, locale placement, and the no-dash gate. Runs before the build, so a bad post fails fast. |
+| `npm run features:check` | The 108 feature pages under `src/content/features/` are generated from `src/data/refresh/<locale>.json` and the `home`/`support` catalogs by `scripts/build-feature-pages.mjs`; this fails if any page differs from what the data would produce. Edit the data, then `npm run features:build`. |
 | `npm run seo` | What search engines read on every built page: a `<title>` of at most 60 characters and a description of 70–160 (Japanese, Hindi and Arabic exempt from the lengths), exactly one `<h1>`, a canonical naming the page itself (the localized legal wrappers excepted), an `og:image`, JSON-LD that parses, noindex on the pages that must never be indexed, a sitemap listing exactly the indexable pages, and no internal link to a page that was not built. Warns by default; `-- --strict` fails. |
 
 ## The contact form
@@ -73,6 +74,10 @@ its MX never collides with the root MX that carries the `support@` mailbox.
 
 ## Assets
 
+The "As seen on" badge pieces under `src/assets/press/` are cut from the owner's artwork by
+`npm run assets:press` (transparent, black ink; the component recolours them with CSS). Replace
+`as-seen-on-source.png`, run it again, commit what changes.
+
 Images are derived from the app repo's `Design/` folder and committed here as
 web-sized derivatives:
 
@@ -90,8 +95,20 @@ separate archive. Don't treat this repo as the system of record for screenshots.
 Both apps are live: Google Play since 2026-08-18, the App Store since 2026-08-22, both
 as *WakeSharp: Math Alarm Clock* from KineticBit Inc.
 
-Version **2.14 is live on both iOS and Android**, confirmed by the developer on
-2026-09-29. Release notices and feature pages describe this live release.
+The two stores serve **different versions**, and the site says so. Checked
+2026-10-22: the App Store serves **2.25** (released 2026-10-21) and Google Play
+still serves **2.9** (nothing later was ever uploaded: the Play upload key was
+lost on 2026-09-23, see the app repo's `Docs/PLAY-STORE-METADATA.md`). The
+release notices and feature pages describe 2.25 and mark what 2.9 lacks
+(Squats, Push-ups, group alarms, the 30-second repeat) as iPhone. Both versions
+live in `src/lib/product.ts` (`RELEASE`); when Android ships 2.18, set
+`publicAndroid` and drop the iPhone-only marks.
+
+The "As seen on" badge (`src/config/press.ts`, `src/components/PressBadge.astro`,
+`npm run assets:press`) names the outlets that ran the 2026-10-08 launch press
+release. It is a paid distribution, recorded as an owner-accepted risk in
+`press.ts`; re-open its source pages before each refresh and set `enabled` to
+false there if one is gone.
 
 The two listing **names have since changed**: verified 2026-09-24, the App Store reads
 *Loud Alarm Clock - WakeSharp* and Play reads *WakeSharp: Loud Alarm Clock*.
@@ -127,6 +144,10 @@ The site describes only what holds for the build a reader downloads today and fo
 so it names missions by kind and never how the alarm comes back after a snooze.
 `scripts/check-copy.mjs` encodes the decisions that came out of that reading, with the source
 that settles each one in its `why` string.
+
+The feature pages are not hand-written: `scripts/build-feature-pages.mjs` assembles each of the
+108 from the refresh JSON and the catalogs, so a product fact is changed once and `npm run
+features:build` carries it to every language.
 
 ## Structure
 

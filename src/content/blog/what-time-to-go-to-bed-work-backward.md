@@ -2,6 +2,7 @@
 title: "What Time Should You Go to Bed? Work Backward From Sharp"
 description: "Stop counting eight hours back from your alarm. Count back from tomorrow's first real commitment, then budget grogginess, latency and time in bed."
 pubDate: 2026-09-06T19:00:00-04:00
+updatedDate: 2026-10-23T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/what-time-to-go-to-bed-work-backward/hero.jpg
@@ -85,7 +86,7 @@ And if the problem is not that you cannot sleep but that you will not go, that i
 
 ## The wake side is already automated. The bed side is on you.
 
-This is the one place WakeSharp fits into tonight's problem. [Smart calendar alarms](/blog/meeting-ready-morning-calendar-alarm) read your calendar on device and ring a set number of minutes before your first commitment, rechecked overnight so a moved 8:00 meeting moves the alarm with it. That is the top half of the table above, done for you: you tell it how much runway you need in front of the commitment, and it does the subtraction every night without you re-deriving it at midnight.
+This is the one place WakeSharp fits into tonight's problem. [Calendar alarms](/blog/meeting-ready-morning-calendar-alarm) read your calendar on device and ring a set number of minutes before your first commitment, rechecked overnight so a moved 8:00 meeting moves the alarm with it. That is the top half of the table above, done for you: you tell it how much runway you need in front of the commitment, and it does the subtraction every night without you re-deriving it at midnight.
 
 The bottom half of the table is not something an app can do. WakeSharp does not track your sleep, so it does not know your real efficiency or your real latency; those numbers have to come from you. It cannot make you go to bed at 10:10. And no alarm app can guarantee you wake up, ours included. What it can do is stop the wake-side arithmetic from silently drifting when your calendar changes, which is the failure mode that costs most people their morning.
 

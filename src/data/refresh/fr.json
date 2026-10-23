@@ -1,27 +1,27 @@
 {
-  "releaseNotice": "WakeSharp 2.14 est désormais disponible sur iOS et Android. Téléchargez la dernière mise à jour sur l’App Store ou Google Play.",
+  "releaseNotice": "WakeSharp 2.25 est disponible sur l’App Store. Google Play a la version 2.9, donc certaines fonctions décrites ici sont pour l’instant réservées à l’iPhone. Téléchargez la dernière mise à jour sur l’App Store ou Google Play.",
   "hero": "Choisissez un son dans la catégorie Forte, puis votre mission au réveil. Résolvez quelques calculs, scannez une bouteille ou faites quelques pas.",
   "loudTitle": "Un son que vous remarquerez",
   "loud": "Forte est une catégorie du sélecteur de sons. Écoutez les tonalités et choisissez celle de cette alarme. Vous pouvez l’associer à toute mission disponible.",
   "volume": "Sur iPhone, iOS règle le volume de l’alarme système. Un son de la catégorie Forte ne modifie pas ce réglage. Sur Android, vérifiez le volume des alarmes et leur autorisation dans Ne pas déranger. Faites un essai sur votre téléphone.",
   "scanTitle": "Levez-vous, trouvez l’objet, scannez-le",
   "scan": "Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirigez la caméra vers cet objet. La confirmation verte indique que WakeSharp l’a reconnu. La reconnaissance se fait sur votre téléphone.",
-  "missionsIntro": "Choisissez une mission ci-dessous ou combinez-en plusieurs. Voici la sélection publique sur iPhone 2.14. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
+  "missionsIntro": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
   "hubTitle": "Des missions de réveil pour vous mettre en mouvement",
-  "hubDescription": "Découvrez les missions, sons forts, alarmes de calendrier et rotations de WakeSharp. Choisissez une tâche adaptée à votre matinée.",
+  "hubDescription": "Découvrez les missions, sons forts, réveils de groupe, réveils calendrier et rotations de WakeSharp. Choisissez une tâche adaptée à votre matinée.",
   "galleryTitle": "Découvrez les écrans de WakeSharp",
   "englishArtwork": "Les captures sont en anglais. Les légendes décrivent les écrans en français.",
   "open": "Agrandir la capture",
   "close": "Fermer la capture",
-  "watch": "Sur iPhone 2.14, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée.",
-  "android": "WakeSharp existe aussi sur Android. Le canal audio, les autorisations et les réglages de batterie diffèrent. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes de votre application installée.",
-  "backup": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.",
+  "watch": "Sur iPhone, toucher « Je suis debout » sur Apple Watch repousse l’alarme du téléphone d’une minute. Terminez la mission sur l’iPhone pour arrêter les répétitions. La montre doit être chargée, connectée et configurée.",
+  "android": "WakeSharp est aussi sur Google Play, où la version actuelle est la 2.9. Son canal audio, ses autorisations et ses réglages de batterie diffèrent de ceux de l’iPhone, et elle n’inclut pas les fonctions iPhone plus récentes citées sur cette page : Squats, Pompes, les réveils de groupe et la répétition en 30 secondes. Ces images montrent l’iPhone et l’Apple Watch, pas Android ni Wear OS. Consultez les missions et commandes disponibles dans votre application installée.",
+  "backup": "Aucun compte WakeSharp n’est obligatoire, sauf pour les réveils de groupe. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.",
   "deleting": "Désinstaller efface les données locales, mais pas la sauvegarde cloud ni l’abonnement. Supprimez la sauvegarde dans Réglages → Compte → Supprimer le compte ou sur la page dédiée. Gérez l’abonnement séparément dans la boutique.",
   "scoreTitle": "Regardez comment votre matinée s’est passée",
-  "score": "Le score d’acuité est un résultat quotidien dans l’application. Retrouvez l’historique, les séries et les badges, puis votre progression avec Lark dans Nest. Ce n’est ni un score de sommeil ni une évaluation médicale. Il ne détermine pas votre aptitude à conduire ou travailler.",
-  "warmup": "L’échauffement mental est facultatif. Les calculs, les paires et les séquences peuvent aussi servir de missions. Word Dash et Reaction Tap sont des jeux d’échauffement, pas des missions de réveil.",
+  "score": "Le score d’acuité est un résultat quotidien dans l’application. Retrouvez-le dans Succès, avec l’historique, les séries et les badges, puis votre progression avec Lark dans Nest. Ce n’est ni un score de sommeil ni une évaluation médicale. Il ne détermine pas votre aptitude à conduire ou travailler.",
+  "warmup": "Votre score de Vivacité vient des missions que vous terminez quand l’alarme sonne. L’échauffement mental à part n’est pas proposé dans l’application actuelle. Problèmes de maths, Paires de mémoire et Rappel de séquence sont des missions de réveil.",
   "developer": "Je suis Dipojjal, le développeur de WakeSharp chez KineticBit. Je veux expliquer clairement ce que fait l’application et ce qui dépend du téléphone. Si une explication manque ou si une alarme pose problème, le formulaire de contact me parvient.",
-  "repeat": "Sur iPhone 2.14, arrêter ou reporter l’alarme la repousse d’une minute. Elle peut se répéter pendant une heure au maximum si la mission reste inachevée. Les commandes du téléphone restent utilisables.",
+  "repeat": "Sur iPhone, arrêtez-la ou reportez-la et elle sonne de nouveau en moins de 30 secondes, jusqu’à ce que votre mission soit terminée. La version 2.9 de Google Play sonne de nouveau une minute plus tard, pendant une heure au maximum. Les commandes du téléphone restent utilisables.",
   "how": "Comment l’utiliser",
   "limits": "À vérifier",
   "related": "Découvrez les autres fonctions",
@@ -72,7 +72,7 @@
       "Réveil avec casse-tête",
       "Choisissez des paires, des séquences ou des couleurs. Utilisez une mission ou combinez plusieurs tâches.",
       [
-        "Choisissez Paires, Séquence ou Conflit de couleurs.",
+        "Choisissez Paires de mémoire, Rappel de séquence ou Choc des couleurs.",
         "Essayez un niveau adapté à votre réveil.",
         "Trouvez les paires, répétez le motif ou touchez la couleur de l’encre."
       ]
@@ -87,19 +87,19 @@
       ]
     ],
     [
-      "Réveil qui fait marcher",
-      "Walk It Off compte vos pas pendant la mission. First Light vous invite à vous rapprocher de la lumière.",
+      "Réveil qui fait marcher et bouger",
+      "Marchez un peu compte vos pas durant l’alarme. Première lumière demande la lumière du jour. Sur iPhone, Squats et Pompes comptent vos répétitions à la caméra.",
       [
-        "Choisissez Walk It Off et autorisez le mouvement.",
-        "Testez un trajet court avec le téléphone sur vous.",
-        "Marchez prudemment. First Light demande plutôt de tenir le téléphone à la lumière du jour."
+        "Choisissez Marchez un peu et accordez l’autorisation de mouvement nécessaire, ou choisissez Squats ou Pompes sur iPhone et autorisez la caméra.",
+        "Testez un trajet court avec le téléphone en main ou en poche. Vérifiez que les pas sont comptés. Pour la mission Pompes, posez le téléphone au sol et laissez la caméra frontale compter.",
+        "Marchez prudemment quand l’alarme sonne. Première lumière demande plutôt de tenir le téléphone à la lumière du jour."
       ]
     ],
     [
       "Réveil lié au calendrier",
       "Réglez un réveil avant le premier événement avec des limites horaires. Le calendrier reste sur l’appareil.",
       [
-        "Autorisez le calendrier et créez une règle.",
+        "Autorisez l’accès au calendrier et créez un réveil calendrier.",
         "Choisissez l’avance et les heures minimale et maximale.",
         "Vérifiez l’alarme après un changement. Prévoyez un réveil de secours pour un rendez-vous essentiel."
       ]
@@ -115,11 +115,11 @@
     ],
     [
       "Score d’acuité WakeSharp",
-      "Consultez votre score quotidien, l’échauffement facultatif et l’historique sans en faire un test médical.",
+      "Consultez votre score d’acuité quotidien, vos badges et l’historique de vos matinées dans Succès. Suivez votre progression sans en faire un test médical.",
       [
-        "Ouvrez la vue du score après votre matinée.",
-        "Faites un échauffement si vous le souhaitez et consultez le détail.",
-        "Comparez plusieurs jours. Les badges et Nest encouragent la progression, sans fournir de diagnostic."
+        "Terminez votre matinée et ouvrez Succès.",
+        "Consultez le détail du score affiché dans l’application, et les badges que vous avez obtenus.",
+        "Comparez plusieurs matinées dans votre historique. Les badges et Nest encouragent, sans fournir de diagnostic."
       ]
     ]
   ]

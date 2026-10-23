@@ -38,5 +38,5 @@ const schema = { '@context':'https://schema.org','@graph':[
   <Content/>
   <p><a href={localePath(locale,'/support')}>{shell.footer.support}</a> · <a href={localePath(locale,'/privacy')}>{shell.footer.privacy}</a></p>
   <h2>{t.related}</h2><ul>{peers.map(p => <li><a href={featurePath(p)}>{p.data.title}</a>{p.data.translationOf === 'object-scan-alarm' && !SITE.appLanguages.some(code => code === locale.code) && <span> (Scan an Object)</span>}</li>)}</ul>
-  <StoreButtons pageId={pageIdFor(path)} tone="light" placement="feature-bottom" localeCode={locale.code}/>
+  <StoreButtons pageId={pageIdFor(path)} tone="light" placement="feature-bottom" localeCode={locale.code} press="full"/>
 </LegalLayout>

@@ -7,13 +7,13 @@ lang: "pt-BR"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "Missões disponíveis"
 ---
 
-Escolha uma missão abaixo ou combine várias. Esta é a seleção pública do iPhone 2.14. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.
+Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.25; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.
 
 ## Como usar
 
@@ -23,4 +23,4 @@ Escolha uma missão abaixo ou combine várias. Esta é a seleção pública do i
 
 ## O que conferir
 
-No iPhone 2.14, parar ou adiar atrasa o alarme por um minuto. Ele pode se repetir por até uma hora se a missão não for concluída. Os controles do telefone continuam funcionando.
+No iPhone, pare ou adie o alarme e ele toca de novo em até 30 segundos, até a missão ser concluída. A versão 2.9 do Google Play toca de novo um minuto depois, por até uma hora. Os controles do telefone continuam funcionando.

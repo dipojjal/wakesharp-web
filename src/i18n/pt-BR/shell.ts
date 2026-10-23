@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * strings que em inglês vêm de site.ts entram aqui como texto literal.
  */
 export const shell = {
-  siteDescription: "WakeSharp combina sons altos com missões de matemática, câmera e caminhada. A versão 2.14 já está no iOS e Android com alarmes de calendário e histórico.",
+  siteDescription: "WakeSharp: despertador alto com missões de cálculo, câmera, caminhada e exercício, alarmes de grupo e de calendário e pontuação diária. 2.25 na App Store.",
   tagline: `Acorde afiado. Não só acordado.`,
   requirements: { ios: `iOS 26 ou posterior`, android: `Android 8.0 ou posterior` },
   ogImageAlt: `WakeSharp - acorde afiado, não só acordado.`,
@@ -57,6 +57,16 @@ export const shell = {
    * nunca dar a entender que existe um app em português.
    */
   appLanguageNote: `O app WakeSharp está disponível em inglês, espanhol, russo, turco, alemão, francês e árabe.`,
+
+  /**
+   * O selo "Visto em" (src/components/PressBadge.astro). O rótulo é o literal
+   * "As seen on" em português, como o app o escreve, e nunca "Destaque em" nem
+   * "Na imprensa": a fonte é um comunicado pago (src/config/press.ts). Os nomes
+   * dos veículos não são traduzidos.
+   */
+  press: {
+    label: `Visto em`,
+  },
 
   legalLayout: {
     lastUpdated: `Última atualização: {date}`,

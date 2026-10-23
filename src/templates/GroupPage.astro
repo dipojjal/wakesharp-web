@@ -1,0 +1,132 @@
+---
+/**
+ * The destination for `wakesharp.app/g/<CODE>` (and `/<locale>/g/<CODE>`): a
+ * group alarm's invite link (iOS 2.23, Android 2.18).
+ *
+ * A **static page plus a rewrite**, like /p: `vercel.json` rewrites `/g/:code`
+ * here and the page reads the path itself. The AASA lists `/g/*`, so an iPhone
+ * with WakeSharp installed opens the app instead; this page is for everyone
+ * else, and for the "Open WakeSharp" button when the link was opened in a
+ * browser anyway.
+ *
+ * The code is ten characters of the app's referral alphabet (no 0, O, 1 or I),
+ * read in any case (`GroupInviteParser` in the app repo). The link may carry
+ * the schedule in its fragment, `#t=HHMM&d=<weekday mask>`, Sunday first as
+ * the pact link spells it; a fragment never reaches a server, and this page
+ * only shows it. No name travels in the link: the message around it says who
+ * sent it. The server is never asked anything here: joining happens in the
+ * app, signed in.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { SITE } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { interpolate } from '../i18n/rich';
+import { alternatesFor, localePath } from '../i18n/routes';
+import type { EnabledLocale } from '../i18n/config';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const { group: t, get } = getCatalog(locale.code).share;
+const base = localePath(locale, '/g');
+// noindex and no hreflang, as /c and /p: every /g/<CODE> serves this one file.
+---
+
+<LegalLayout
+  title={t.title}
+  description={t.description}
+  path={base}
+  heading={t.heading}
+  intro={t.intro}
+  locale={locale}
+  noindex
+  showUpdated={false}
+  alternates={[]}
+  switchTo={alternatesFor('/g')}
+>
+  <div class="callout" id="group-callout">
+    <p id="group-summary" class="!mb-0">{t.opening}</p>
+  </div>
+
+  <p id="group-cta" hidden>{t.cta}</p>
+  <p id="group-open" hidden><a class="pill bg-[var(--color-coral)] text-[var(--color-night-deep)] px-6 py-3 text-base" style="text-decoration:none" href="#" data-open-app>{t.open}</a></p>
+
+  <p id="group-error" hidden>{t.error}</p>
+
+  <h2>{get.heading}</h2>
+  <p>{interpolate(get.body, { annual: SITE.unlimited.annual, trialDays: SITE.unlimited.trialDays })}</p>
+  <StoreButtons pageId="g" tone="light" />
+</LegalLayout>
+
+<script is:inline define:vars={{ S: t.script, BASE: base }}>
+  // Port of GroupInviteParser (the code) and GroupInvitePreview (the
+  // fragment). Inline and dependency-free, as /p: a stranger's link on a cold
+  // visit should not wait on a bundle to say "6:30, weekdays".
+  (function () {
+    var ALPHABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+    var LENGTH = 10;
+
+    function readCode(path) {
+      if (path.indexOf(BASE + '/') !== 0) return null;
+      var raw = path.slice(BASE.length + 1).split('/')[0];
+      var code = raw.toUpperCase();
+      if (code.length !== LENGTH) return null;
+      for (var i = 0; i < code.length; i++) if (ALPHABET.indexOf(code[i]) < 0) return null;
+      return code;
+    }
+
+    // `t=HHMM&d=<mask>`; anyone can write a fragment, so it is a preview only.
+    function readPreview(fragment) {
+      if (!fragment) return null;
+      var fields = {};
+      var pairs = fragment.replace(/^#/, '').split('&');
+      for (var i = 0; i < pairs.length; i++) {
+        var eq = pairs[i].indexOf('=');
+        if (eq > 0) fields[pairs[i].slice(0, eq)] = pairs[i].slice(eq + 1);
+      }
+      var t = fields.t, d = fields.d;
+      if (!/^\d{4}$/.test(t || '') || !/^\d{1,3}$/.test(d || '')) return null;
+      var hour = parseInt(t.slice(0, 2), 10), minute = parseInt(t.slice(2), 10), mask = parseInt(d, 10);
+      if (hour > 23 || minute > 59 || mask > 127) return null;
+      var days = [];
+      for (var w = 1; w <= 7; w++) if (mask & (1 << (w - 1))) days.push(S.days[w - 1]);
+      return { hour: hour, minute: minute, days: days };
+    }
+
+    function pad(value) { return value < 10 ? '0' + value : String(value); }
+    function fill(template, values) {
+      return template.replace(/\{([a-zA-Z]+)\}/g, function (m, key) {
+        return Object.prototype.hasOwnProperty.call(values, key) ? String(values[key]) : m;
+      });
+    }
+
+    var code = readCode(location.pathname);
+    var summary = document.getElementById('group-summary');
+    var cta = document.getElementById('group-cta');
+    var open = document.getElementById('group-open');
+    var error = document.getElementById('group-error');
+
+    if (!code) {
+      document.getElementById('group-callout').hidden = true;
+      error.hidden = false;
+      return;
+    }
+
+    // Keep the code (and the schedule) when switching language.
+    var alts = document.querySelectorAll('a[data-lang-alt]');
+    for (var k = 0; k < alts.length; k++) {
+      alts[k].setAttribute('href', alts[k].getAttribute('href') + '/' + code + location.hash);
+    }
+
+    var preview = readPreview(location.hash);
+    summary.textContent = preview
+      ? fill(S.invited, { time: pad(preview.hour) + ':' + pad(preview.minute), days: preview.days.length ? preview.days.join(' ') : S.once })
+      : S.invitedNoTime;
+    cta.hidden = false;
+    var button = open.querySelector('[data-open-app]');
+    button.setAttribute('href', 'wakesharp://g/' + code);
+    open.hidden = false;
+  })();
+</script>

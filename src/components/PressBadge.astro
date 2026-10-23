@@ -1,0 +1,150 @@
+---
+/**
+ * "As seen on" over the four outlets' logos, between two laurels: the badge
+ * the owner supplied, redrawn in whatever ink the band around it uses.
+ *
+ * The artwork is black on white. Each piece (scripts/prep-press-badge.mjs)
+ * is a transparent PNG used as a CSS mask over `currentColor`, so the same
+ * logos read as near-white on the night bands, dark on the morning ones and
+ * night-dim in the footer, with no second set of files and nothing for the
+ * contrast walk to miss: the ink is the band's own text colour. Forced-colour
+ * modes get CanvasText for the same reason.
+ *
+ * Sizing follows the artwork's own proportions. Every piece is drawn at the
+ * same scale (`--unit`, pixels per artwork pixel), so a logo is never larger
+ * or smaller than the owner's composition made it. `full` is one row at
+ * container widths from 560px, laurels included, and a 2 x 2 grid of the four
+ * logos below that, where a single row would shrink the wordmarks past
+ * legibility on a phone. `compact` is a small wrapping row with no laurels,
+ * for the footer and the blog card.
+ *
+ * The label is live text (shell.press.label), uppercased and tracked in the
+ * page's language, never baked into a picture; Arabic and Hindi keep their
+ * joins. The logos' names are their accessible names and are never
+ * translated. Nothing here is a link, as in the app: the outlets are trust,
+ * not navigation. src/config/press.ts says why each one is here, and its
+ * `enabled` removes the badge from every page in one edit.
+ */
+import { PRESS } from '../config/press';
+import { getCatalog } from '../i18n/catalog';
+import { resolveLocale } from '../i18n/routes';
+import laurelLeft from '../assets/press/laurel-left.png';
+import laurelRight from '../assets/press/laurel-right.png';
+import businessInsider from '../assets/press/business-insider.png';
+import ap from '../assets/press/ap.png';
+import streetinsider from '../assets/press/streetinsider.png';
+import ips from '../assets/press/ips.png';
+
+interface Props {
+  variant?: 'full' | 'compact';
+  localeCode?: string;
+  class?: string;
+}
+const { variant = 'full', localeCode = Astro.currentLocale, class: className } = Astro.props;
+const locale = resolveLocale(localeCode);
+const label = getCatalog(locale.code).shell.press.label;
+const logos = { 'business-insider': businessInsider, ap, streetinsider, ips } as const;
+const piece = (image: ImageMetadata) => `--w:${image.width};--h:${image.height};--m:url(${image.src})`;
+---
+{PRESS.enabled && (
+  <figure class:list={['press', `press--${variant}`, className]} data-press-badge={variant}>
+    <figcaption class="press-label">{label}</figcaption>
+    <ul class="press-logos" role="list">
+      {variant === 'full' && <li class="press-laurel" aria-hidden="true"><span class="press-logo" style={piece(laurelLeft)}></span></li>}
+      {PRESS.outlets.map((outlet) => (
+        <li><span class="press-logo" role="img" aria-label={outlet.name} style={piece(logos[outlet.logo])}></span></li>
+      ))}
+      {variant === 'full' && <li class="press-laurel" aria-hidden="true"><span class="press-logo" style={piece(laurelRight)}></span></li>}
+    </ul>
+  </figure>
+)}
+
+<style>
+  /* `.press` is the size container; a container query reads the nearest
+     ANCESTOR container, so every sized part sits in `.press-logos`, whose
+     `--unit` (pixels per artwork pixel) the logos inherit. The fallback unit
+     stands wherever container queries are unsupported. */
+  .press {
+    container-type: inline-size;
+    margin: 0;
+    width: 100%;
+    /* The band's ink, unless a surface names a quieter one (the footer sets --press-ink). */
+    color: var(--press-ink, inherit);
+  }
+  .press-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .press-label::before,
+  .press-label::after {
+    content: '';
+    flex: 1 1 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.35;
+  }
+  /* A joined script loses its joins to tracking, and Devanagari has no capitals. */
+  .press-label:lang(ar),
+  .press-label:lang(hi) {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .press-logos {
+    --unit: 0.45px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: calc(48 * var(--unit));
+    margin: 0.9rem 0 0;
+    padding: 0;
+    list-style: none;
+    /* The logos are Latin and the laurels mirror each other outward. */
+    direction: ltr;
+  }
+  .press-logos li { display: flex; justify-content: center; }
+  .press-logo {
+    display: block;
+    width: calc(var(--w) * var(--unit));
+    aspect-ratio: var(--w) / var(--h);
+    background-color: currentColor;
+    -webkit-mask: var(--m) center / contain no-repeat;
+    mask: var(--m) center / contain no-repeat;
+  }
+
+  /* full: the owner's composition, one row, scaled to the column. The six
+     pieces are 889 artwork pixels wide and the five gaps 240 more. */
+  .press--full { max-width: 44rem; }
+  @container (min-width: 560px) {
+    .press--full .press-logos { --unit: min(calc(100cqw / 1129), 0.6px); flex-wrap: nowrap; }
+  }
+  /* full, narrow: the four logos two by two at a scale a phone can read.
+     Each cell is as wide as the widest logo (200 artwork pixels). */
+  @container (max-width: 559.98px) {
+    .press--full .press-laurel { display: none; }
+    .press--full .press-logos {
+      --unit: min(calc((100cqw - 1.5rem) / 400), 0.6px);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem 1.5rem;
+      justify-items: center;
+    }
+  }
+
+  .press--compact { max-width: 26rem; }
+  .press--compact .press-label { font-size: 0.7rem; }
+  .press--compact .press-logos { --unit: 0.42px; gap: 0.75rem 1.25rem; margin-top: 0.6rem; }
+
+  @media (forced-colors: active) {
+    .press-logo { forced-color-adjust: none; background-color: CanvasText; }
+    .press-label::before, .press-label::after { background: CanvasText; opacity: 1; }
+  }
+</style>

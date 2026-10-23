@@ -7,7 +7,7 @@ import { shell as en } from '../en/shell';
  */
 export const shell = {
   /** 検索結果で切れないよう90文字前後で、トップページが狙う検索語から始めます。 */
-  siteDescription: "WakeSharpは大きな音と計算、カメラ、歩行のミッションを組み合わせた目覚ましです。カレンダー連動や朝の履歴を備えたバージョン2.14をiOSとAndroidで配信中です。",
+  siteDescription: "WakeSharpは大きな音と、計算、カメラ、歩行、運動のミッションを組み合わせた目覚ましです。グループアラーム、カレンダーアラーム、毎日のスコアも備え、バージョン2.25をApp Storeで配信中です。",
   tagline: `目覚めるなら、冴えた頭で。ただ起きるだけじゃない。`,
   requirements: { ios: `iOS 26以降`, android: `Android 8.0以降` },
   ogImageAlt: `WakeSharp。目覚めるなら、冴えた頭で。ただ起きるだけじゃない。`,
@@ -59,6 +59,17 @@ export const shell = {
    * があるかのように示唆しないためです。言語名はこのページの言語で書きます。
    */
   appLanguageNote: `WakeSharpアプリは、英語、スペイン語、ロシア語、トルコ語、ドイツ語、フランス語、アラビア語で利用できます。`,
+
+  /**
+   * 「As seen on」バッジ（src/components/PressBadge.astro）。ラベルは
+   * 「As seen on」の直訳で、アプリのバッジと同じ言い回しです。「紹介されました」
+   * 「報道されました」「メディア掲載」のように取材や記事を思わせる表現は
+   * 使いません。出典は有料のプレスリリースだからです（src/config/press.ts）。
+   * 媒体名は訳しません。
+   */
+  press: {
+    label: `掲載先`,
+  },
 
   legalLayout: {
     lastUpdated: `最終更新日 {date}`,

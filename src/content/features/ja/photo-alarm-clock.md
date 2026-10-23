@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "photo-alarm-clock"
 order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "選べるアラームミッション"
 ---
@@ -28,4 +28,4 @@ screenshotAlt: "選べるアラームミッション"
 
 ## 確認すること
 
-WakeSharpアカウントは必須ではありません。任意でAppleやGoogleにサインインすると、アラーム、履歴、設定、写真ターゲットの小さなサムネイルをバックアップします。写真照合とカレンダー処理は端末内で行い、予定の内容も端末に残ります。詳しくはプライバシーポリシーをご覧ください。
+グループアラームを除き、WakeSharpアカウントは必須ではありません。任意でAppleやGoogleにサインインすると、アラーム、履歴、設定、写真ターゲットの小さなサムネイルをバックアップします。写真照合とカレンダー処理は端末内で行い、予定の内容も端末に残ります。詳しくはプライバシーポリシーをご覧ください。

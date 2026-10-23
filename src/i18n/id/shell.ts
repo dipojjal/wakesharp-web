@@ -7,7 +7,7 @@ import { shell as en } from '../en/shell';
  * sebagai teks literal.
  */
 export const shell = {
-  siteDescription: "WakeSharp memadukan suara keras dengan misi matematika, kamera, dan berjalan. Versi 2.14 kini hadir di iOS dan Android dengan alarm kalender dan riwayat pagi.",
+  siteDescription: "WakeSharp: alarm keras dengan misi matematika, kamera, berjalan, dan olahraga, alarm grup, alarm kalender, serta skor harian. Versi 2.25 ada di App Store.",
   tagline: `Bangun sigap. Bukan sekadar terjaga.`,
   requirements: { ios: `iOS 26 atau lebih baru`, android: `Android 8.0 atau lebih baru` },
   ogImageAlt: `WakeSharp - bangun sigap, bukan sekadar terjaga.`,
@@ -60,6 +60,17 @@ export const shell = {
    * Indonesia. Sebutkan bahasa-bahasanya dalam bahasa lokal ini.
    */
   appLanguageNote: `Aplikasi WakeSharp tersedia dalam bahasa Inggris, Spanyol, Rusia, Turki, Jerman, Prancis, dan Arab.`,
+
+  /**
+   * Lencana "As seen on" (src/components/PressBadge.astro). Labelnya adalah
+   * terjemahan harfiah "As seen on", yaitu kata-kata yang dipakai lencana di
+   * aplikasi, dan tidak pernah "diliput", "diulas", atau "di media": sumbernya
+   * adalah siaran pers berbayar (src/config/press.ts). Nama media tidak
+   * diterjemahkan.
+   */
+  press: {
+    label: `Seperti terlihat di`,
+  },
 
   legalLayout: {
     lastUpdated: `Terakhir diperbarui {date}`,

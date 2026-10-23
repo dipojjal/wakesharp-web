@@ -8,7 +8,7 @@ import { shell as en } from '../en/shell';
  * homepage targets ("ağır uyuyanlar için alarm saati").
  */
 export const shell = {
-  siteDescription: "WakeSharp yüksek sesleri matematik, kamera ve yürüyüş görevleriyle birleştirir. 2.14 sürümü, takvim alarmları ve geçmişle iOS ve Android’de yayında.",
+  siteDescription: "WakeSharp; matematik, kamera, yürüyüş ve egzersiz görevleri, grup ve takvim alarmları ve günlük puanla yüksek sesli bir alarm saati. 2.25 App Store’da.",
   tagline: `Uyanın, hem de zinde. Sadece uyanık değil.`,
   requirements: { ios: `iOS 26 veya üzeri`, android: `Android 8.0 veya üzeri` },
   ogImageAlt: `WakeSharp - uyanın, hem de zinde; sadece uyanık değil.`,
@@ -59,6 +59,15 @@ export const shell = {
    * Turkish, so Turkish pages never show it, but every catalog carries the key.
    */
   appLanguageNote: `WakeSharp uygulaması İngilizce, İspanyolca, Rusça, Türkçe, Almanca, Fransızca ve Arapça olarak kullanılabilir.`,
+
+  /**
+   * The "As seen on" badge (src/components/PressBadge.astro): the literal
+   * wording the app's own badge uses, because the source is a paid press
+   * release (src/config/press.ts). The outlets' names are not translated.
+   */
+  press: {
+    label: `Şurada görüldü`,
+  },
 
   legalLayout: {
     lastUpdated: `Son güncelleme: {date}`,

@@ -18,7 +18,7 @@ export const home = {
       "accent": "yataktan kaldıran",
       "post": " görevler"
     },
-    "lede": "Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iPhone 2.14’ün herkese açık seçimidir. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
+    "lede": "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
     "missions": [
       {
         "name": "Matematik Problemleri",
@@ -59,7 +59,7 @@ export const home = {
       {
         "name": "Bir Nesne Tara",
         "kind": "Kamera",
-        "body": "Kalkın ve kamerayı bir şişeye, kupaya ya da lavaboya doğrultun.",
+        "body": "Kalkın ve kamerayı listenizdeki bir nesneye doğrultun.",
         "id": "object_scan"
       },
       {
@@ -93,6 +93,18 @@ export const home = {
         "id": "first_light"
       },
       {
+        "name": "Squat",
+        "kind": "Hareket · iPhone",
+        "body": "Cihaz üzerinde kamera takibiyle squat yap.",
+        "id": "squats"
+      },
+      {
+        "name": "Şınav",
+        "kind": "Hareket · iPhone",
+        "body": "Yerdeki telefonunuzun üzerinde şınav çekin, kamera saysın.",
+        "id": "push_ups"
+      },
+      {
         "name": "Beş Tane Say",
         "kind": "Ses",
         "body": "Bir kategoriden beş şeyi sesli söyleyin.",
@@ -108,7 +120,7 @@ export const home = {
     "note": "Görevler kurduğunuz alarmın parçasıdır; anlaşma sabah 6’da pazarlıkla değil, bir gece önceden yapılır."
   },
   "smart": {
-    "alt": "İlk toplantıdan 90 dakika önce çalacak şekilde ayarlanmış akıllı alarm kuralı düzenleyicisi",
+    "alt": "İlk toplantıdan 90 dakika önce çalacak şekilde ayarlanmış takvim alarmı düzenleyicisi",
     "heading": {
       "pre": "Sizi ",
       "accent": "ilk toplantınızdan",
@@ -124,18 +136,14 @@ export const home = {
       "accent": "birini",
       "post": " alın"
     },
-    "lede": "Bir bağlantı paylaşın; onu açan telefon aynı alarmı kurar ve sonra kendi başına çalar. Katılacak bir şey yok, kaydolacak bir şey yok, arada sunucu da yok.",
+    "lede": "Bir grup alarmı kurun ve davet bağlantısını paylaşın. Herkesin alarmı aynı saatte, kendi telefonunda çalar ve grup kimin kalktığını görebilir.",
     "cards": [
       {
-        "title": "Bir arkadaşla uyan",
-        "body": "Siz bir bağlantı gönderirsiniz; onun telefonu alarmı yerel olarak kurar. Herkes kendi kopyasını tutar, yani sizinkini değiştirmek onunkine dokunmaz."
-      },
-      {
-        "title": "Beat my wake",
-        "body": "Uyanışımı geçme çağrısı: bir görevi bitirin ve birine birebir aynı problem setiyle meydan okuyun: aynı tohum değeri, aynı turlar, aynı zorluk. Sonra hanginizin gerçekten uyanık olduğunu öğrenin."
+        "title": "Grup alarmı",
+        "body": "Artı düğmesinden bir grup alarmı oluşturun ve davet bağlantısını gönderin. İlk arkadaşınız katıldığında açılır ve her sabah kimin kalktığını, kimin ertelediğini ve kimin hâlâ uyuduğunu gösterir. Bir WakeSharp hesabı gerektirir; böylece arkadaşlarınız kalktığınızı görebilir. Şimdilik iPhone’da: Google Play’in 2.9 sürümünde yok."
       }
     ],
-    "note": "İkisi de yalnızca birer bağlantı: bağlantıyı alan telefon bütün işi kendisi yapar."
+    "note": "Davet bir bağlantıdır. Onu açan telefon gruba katılır, sonra alarmı tek dokunuşla kurar."
   },
   "platforms": {
     "heading": {
@@ -143,9 +151,9 @@ export const home = {
       "accent": "İki telefonda da.",
       "post": ""
     },
-    "lede": "WakeSharp Android’de de kullanılabilir. Alarm ses kanalı, izinler ve pil ayarları farklıdır. Bu görüntüler iPhone ve Apple Watch’a aittir, Android veya Wear OS’a değil. Platformundaki görevleri ve ayarları yüklü uygulamadan kontrol et. WakeSharp, iPhone’da {ios}, Android’de {android} gerektirir. Saat uygulamaları watchOS 26 veya Wear OS 3 gerektirir.",
-    "watch": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır.",
-    "account": "WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
+    "lede": "WakeSharp Google Play’de de var; oradaki güncel sürüm 2.9. Alarm ses kanalı, izinler ve pil ayarları iPhone’dan farklıdır ve bu sayfada adı geçen daha yeni iPhone özelliklerini içermez. Bu görüntüler iPhone ve Apple Watch’a aittir, Android veya Wear OS’a değil. Platformundaki görevleri ve ayarları yüklü uygulamadan kontrol et. WakeSharp, iPhone’da {ios}, Android’de {android} gerektirir. Saat uygulamaları watchOS 26 veya Wear OS 3 gerektirir.",
+    "watch": "iPhone’da Apple Watch üzerindeki “Kalktım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır.",
+    "account": "Grup alarmları dışında WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
   },
   "reliable": {
     "heading": {
@@ -180,21 +188,20 @@ export const home = {
       "accent": "her şey dahil",
       "post": ""
     },
-    "lede": "WakeSharp Sınırsız uygulamanın tamamıdır: tüm uyanma görevleri, günlük ısınma, akıllı takvim alarmları, vardiya rotasyonları ve profiller, Zindelik geçmişinizin tamamı, tüm Lark sahneleri ve duvar kâğıtları. WakeSharp reklam göstermez.",
+    "lede": "WakeSharp Sınırsız uygulamanın tamamıdır: tüm uyanma görevleri, grup alarmları, takvim alarmları, vardiya rotasyonları ve profiller, Zindelik geçmişinizin tamamı, tüm Lark sahneleri ve duvar kâğıtları. WakeSharp reklam göstermez.",
     "unlimited": {
       "name": "WakeSharp Sınırsız",
       "perYear": "/yıl",
       "trial": "**{trialDays} gün ücretsiz deneyerek** başlayın, ardından yılda {annual}",
       "monthly": "ya da **ayda {monthly}**, deneme süresi olmadan",
       "features": [
-        "Tüm uyanma görevleri; isterseniz art arda birkaç tane",
-        "Her sabah dönüşümlü üç ısınma oyunu",
-        "Zindelik geçmişinizin tamamı",
-        "İlk toplantınız kaydığında onunla birlikte kayabilen akıllı takvim alarmları",
+        "Tüm uyanma görevleri; isterseniz art arda en fazla dört tane",
+        "Zindelik geçmişinizin tamamı, rozetleriniz ve başarılarınız",
+        "İlk toplantınız kaydığında onunla birlikte kayabilen takvim alarmları",
         "Vardiya rotasyonları, profiller ve ihtiyacınız kadar alarm",
         "Güvenilirlik kontrolü ve tüm alarm sesleri",
         "Tüm Lark sahneleri, alarm duvar kâğıtları ve kutlamalar",
-        "“Bir arkadaşla uyan” ve her iki bilek için saat uygulaması",
+        "iPhone’da grup alarmları ve her iki bilek için saat uygulaması",
         "Reklam yok"
       ]
     },
@@ -218,15 +225,15 @@ export const home = {
       },
       {
         "q": "Sabah 6’da matematik yapmak zorunda mıyım?",
-        "a": "Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iPhone 2.14’ün herkese açık seçimidir. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir."
+        "a": "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir."
       },
       {
         "q": "Görevi atlatıp hile yapabilir miyim?",
-        "a": "iPhone 2.14’te durdurmak veya ertelemek alarmı bir dakika geciktirir. Görev tamamlanmazsa en fazla bir saat tekrarlanabilir. Telefonun kendi kontrolleri çalışmaya devam eder."
+        "a": "iPhone’da durdur ya da ertele, görevin bitene kadar 30 saniye içinde yeniden çalar. Google Play’in 2.9 sürümü bir dakika sonra yeniden çalar, en fazla bir saat boyunca. Telefonun kendi kontrolleri çalışmaya devam eder. Karanlık bir oda ya da reddedilmiş bir izin de asla daha kolay bir görev koymaz: uygulama seni uyarır ya da izni yeniden ister."
       },
       {
         "q": "Kamera ne işe yarıyor?",
-        "a": "Şişe, kupa veya lavabo gibi bir hedef seç. Alarm çaldığında kamerayı o nesneye yönelt. Yeşil eşleşme onayı, WakeSharp’ın nesneyi tanıdığını gösterir. Nesne tanıma telefonunda çalışır. WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
+        "a": "Şişe, kupa veya lavabo gibi bir hedef seç. Alarm çaldığında kamerayı o nesneye yönelt. Yeşil eşleşme onayı, WakeSharp’ın nesneyi tanıdığını gösterir. Nesne tanıma telefonunda çalışır. Grup alarmları dışında WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
       },
       {
         "q": "WakeSharp uykumu takip ediyor mu?",
@@ -238,11 +245,11 @@ export const home = {
       },
       {
         "q": "Hesap açmam gerekiyor mu?",
-        "a": "WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
+        "a": "Grup alarmları dışında WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır."
       },
       {
         "q": "Saatimin şarjı biterse ne olur?",
-        "a": "iPhone 2.14’te Apple Watch üzerindeki “Uyandım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır."
+        "a": "iPhone’da Apple Watch üzerindeki “Kalktım” düğmesi telefon alarmını bir dakika erteler. Tekrarları durdurmak için görevi iPhone’da tamamla. Saat şarj edilmiş, bağlı ve ayarlanmış olmalıdır."
       },
       {
         "q": "WakeSharp’ın fiyatı nedir?",

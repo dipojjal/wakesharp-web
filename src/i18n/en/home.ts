@@ -17,7 +17,7 @@ export const home = {
       "accent": "get you up",
       "post": ""
     },
-    "lede": "Choose from the missions below, or put several in a sequence. This is the public iPhone 2.14 selection. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
+    "lede": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
     "missions": [
       {
         "name": "Math Problems",
@@ -38,9 +38,9 @@ export const home = {
         "id": "sequence_recall"
       },
       {
-        "name": "Colour Clash",
+        "name": "Color Clash",
         "kind": "Mind",
-        "body": "Tap the ink colour, not the word.",
+        "body": "Tap the ink color, not the word.",
         "id": "colour_clash"
       },
       {
@@ -58,7 +58,7 @@ export const home = {
       {
         "name": "Scan an Object",
         "kind": "Camera",
-        "body": "Get up and point the camera at a bottle, a mug or a sink.",
+        "body": "Get up and point the camera at an object on your list.",
         "id": "object_scan"
       },
       {
@@ -92,6 +92,18 @@ export const home = {
         "id": "first_light"
       },
       {
+        "name": "Squats",
+        "kind": "Movement · iPhone",
+        "body": "Complete squats with on-device camera tracking.",
+        "id": "squats"
+      },
+      {
+        "name": "Push-ups",
+        "kind": "Movement · iPhone",
+        "body": "Do push-ups over your phone on the floor, counted by the camera.",
+        "id": "push_ups"
+      },
+      {
         "name": "Name Five",
         "kind": "Voice",
         "body": "Name five things from a category, out loud.",
@@ -107,7 +119,7 @@ export const home = {
     "note": "Missions are part of the alarm you build, so the deal is made the night before, not negotiated at 6am."
   },
   "smart": {
-    "alt": "The smart alarm rule editor, set to ring 90 minutes before the first meeting",
+    "alt": "The calendar alarm editor, set to ring 90 minutes before the first meeting",
     "heading": {
       "pre": "Wakes you before your ",
       "accent": "first meeting",
@@ -123,18 +135,14 @@ export const home = {
       "accent": "someone with you",
       "post": ""
     },
-    "lede": "Share a link and the phone that opens it sets the same alarm, then rings it on its own. Nothing to join, nothing to sign up for, and no server in the middle.",
+    "lede": "Set a group alarm and share its invite link. Everyone’s alarm rings at the same time, on their own phone, and the group can see who is up.",
     "cards": [
       {
-        "title": "Wake with a friend",
-        "body": "You send a link; their phone builds the alarm locally. Everyone keeps their own copy, so changing yours doesn’t reach into theirs."
-      },
-      {
-        "title": "Beat my wake",
-        "body": "Finish a mission and you can challenge someone to the identical problem set: same seed, same rounds, same difficulty. Then you find out which of you was actually awake."
+        "title": "Group alarm",
+        "body": "Create a group alarm from the plus button and send the invite link. It switches on when the first friend joins, and each morning shows who is up, who snoozed and who is still asleep. It needs a WakeSharp account, so your friends can see you are up. On iPhone for now: Google Play’s version 2.9 does not have it."
       }
     ],
-    "note": "Both are just links: the phone that receives one does all the work itself."
+    "note": "The invite is a link. The phone that opens it joins the group, then sets the alarm with a tap."
   },
   "platforms": {
     "heading": {
@@ -142,9 +150,9 @@ export const home = {
       "accent": "Both phones.",
       "post": ""
     },
-    "lede": "WakeSharp is also available on Android. Its alarm stream, permissions and battery settings differ from iPhone. These images show iPhone and Apple Watch, not Android or Wear OS. Check the installed app for the missions and controls available on your platform. WakeSharp needs {ios} on iPhone, or {android} on Android. The watch apps need watchOS 26 or Wear OS 3.",
-    "watch": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up.",
-    "account": "No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
+    "lede": "WakeSharp is also on Google Play, where version 2.9 is the current release. Its alarm stream, permissions and battery settings differ from iPhone, and it does not include the newer iPhone features named on this page. These images show iPhone and Apple Watch, not Android or Wear OS. Check the installed app for the missions and controls available on your platform. WakeSharp needs {ios} on iPhone, or {android} on Android. The watch apps need watchOS 26 or Wear OS 3.",
+    "watch": "On iPhone, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up.",
+    "account": "No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
   },
   "reliable": {
     "heading": {
@@ -179,21 +187,20 @@ export const home = {
       "accent": "everything in it",
       "post": ""
     },
-    "lede": "WakeSharp Unlimited is the whole app: every wake-up mission, the daily warm-up, smart calendar alarms, shift rotations and profiles, your full Sharpness history, and every Lark scene and wallpaper. WakeSharp shows no ads.",
+    "lede": "WakeSharp Unlimited is the whole app: every wake-up mission, group alarms, calendar alarms, shift rotations and profiles, your full Sharpness history, and every Lark scene and wallpaper. WakeSharp shows no ads.",
     "unlimited": {
       "name": "WakeSharp Unlimited",
       "perYear": "/year",
       "trial": "Start with a **{trialDays}-day free trial**, then {annual} a year",
       "monthly": "or **{monthly} a month**, with no trial",
       "features": [
-        "Every wake-up mission, and several in a row if you like",
-        "Three warm-up games every morning, rotating",
-        "Your full Sharpness history",
-        "Smart calendar alarms that can move when your first meeting does",
+        "Every wake-up mission, and up to four in a row if you like",
+        "Your full Sharpness history, badges and achievements",
+        "Calendar alarms that can move when your first meeting does",
         "Shift rotations, profiles, and as many alarms as you need",
         "The reliability check and every alarm tone",
         "Every Lark scene, alarm wallpaper and celebration",
-        "Wake with a friend, and the watch app on both wrists",
+        "Group alarms on iPhone, and the watch app on both wrists",
         "No ads"
       ]
     },
@@ -217,15 +224,15 @@ export const home = {
       },
       {
         "q": "Do I have to do maths at 6am?",
-        "a": "Choose from the missions below, or put several in a sequence. This is the public iPhone 2.14 selection. Camera, movement and voice missions need their corresponding permissions and supported hardware."
+        "a": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware."
       },
       {
         "q": "Can I cheat past the mission?",
-        "a": "In iPhone 2.14, stopping or snoozing delays the alarm by one minute. It can repeat for up to one hour unless you finish the mission. Your phone’s own controls still work."
+        "a": "On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work. A dark room or a refused permission never swaps in an easier mission either: the app warns you, or asks for the permission back."
       },
       {
         "q": "What does the camera do?",
-        "a": "Choose a target such as a bottle, mug or sink. When the alarm rings, point the camera at that object. The green match confirmation tells you when WakeSharp has recognised it. Object recognition runs on your phone. No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
+        "a": "Choose a target such as a bottle, mug or sink. When the alarm rings, point the camera at that object. The green match confirmation tells you when WakeSharp has recognised it. Object recognition runs on your phone. No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
       },
       {
         "q": "Does WakeSharp track my sleep?",
@@ -237,11 +244,11 @@ export const home = {
       },
       {
         "q": "Do I need an account?",
-        "a": "No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
+        "a": "No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details."
       },
       {
         "q": "What happens if my watch is dead?",
-        "a": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up."
+        "a": "On iPhone, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up."
       },
       {
         "q": "What does WakeSharp cost?",

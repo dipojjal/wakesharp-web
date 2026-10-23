@@ -3,7 +3,7 @@ title: "How Alcohol Rewrites Your Sleep Architecture (and Your Morning)"
 seoTitle: "Alcohol and Sleep Quality: How a Drink Rewrites Your Night"
 description: "Alcohol knocks you out fast, then wrecks the second half of the night. What sedation does to REM, your heart rate and the morning after."
 pubDate: 2026-09-08T19:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-10-23T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/alcohol-sleep-architecture/hero.jpg
@@ -84,7 +84,7 @@ That is the hangover literature, which requires an actual hangover. But the slee
 
 Averages are a starting point, not a verdict. Your body is not the median body in a Finnish employee cohort.
 
-WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with optional brain warm-ups and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
+WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with badges and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
 
 The honest limits: WakeSharp does not track your sleep, so it cannot tell you what happened to your REM. It measures how you perform on a short cognitive task minutes after waking, which is a downstream proxy at best. It is noisy, it is a sample size of one, and a single drinking night compared against a single dry night proves nothing. Stress, illness, late meetings and [a hot bedroom](/blog/sleep-in-heat-late-summer) all move the same number. What a run of ten or fifteen mornings can show you is a direction, and a direction is often enough to change behavior that a review paper never will. (What is happening in those first minutes is covered in more depth in [the first 30 minutes after waking](/blog/first-30-minutes-brain-after-waking).) No alarm app, ours included, can promise you will wake up; that depends on your device, your settings and your night.
 

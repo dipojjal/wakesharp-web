@@ -7,8 +7,8 @@ lang: "fr"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/fr/02-scan.png"
 screenshotAlt: "Un objet reconnu avec confirmation verte"
 ---
@@ -23,4 +23,4 @@ Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirige
 
 ## À vérifier
 
-Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.
+Aucun compte WakeSharp n’est obligatoire, sauf pour les réveils de groupe. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.

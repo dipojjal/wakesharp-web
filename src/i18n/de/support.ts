@@ -52,25 +52,29 @@ export const support = {
   "missions": {
     "heading": "Missionen und Schlummern",
     "items": [
-      "Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffentliche Auswahl für iPhone 2.14. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
+      "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
       "Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingeln die Kamera darauf. Die grüne Bestätigung zeigt, dass WakeSharp das Objekt erkannt hat. Die Erkennung läuft auf deinem Telefon.",
-      "**Wenn eine Mission an diesem Morgen nicht laufen kann** (eine kaputte Kamera, ein Telefon ohne Schrittzähler), weicht WakeSharp auf eine aus, die funktioniert, damit du nicht mit einem Alarm dastehst, den du nicht abschließen kannst.",
-      "Unter iPhone 2.14 verschiebt Stoppen oder Schlummern den Wecker um eine Minute. Ohne abgeschlossene Mission kann er sich bis zu einer Stunde wiederholen. Die eigenen Bedienelemente des Telefons funktionieren weiter."
+      "**Ein dunkler Raum oder eine verweigerte Berechtigung tauscht die Mission nie gegen eine leichtere.** WakeSharp warnt dich oder bittet erneut um die Berechtigung. Nur ein echter Defekt, etwa ein Telefon ohne Kamera oder ohne Schrittzähler, übergibt den Morgen an Rechenaufgaben, damit du nicht mit einem Alarm dastehst, den du nicht abschließen kannst.",
+      "Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter."
     ]
   },
   "smartAlarms": {
-    "heading": "Smarte Kalenderalarme",
-    "body": "Eine smarte Regel klingelt eine festgelegte Zahl Minuten vor deinem ersten Meeting, begrenzt durch eine früheste und eine späteste Weckzeit, die du wählst. WakeSharp prüft deinen Kalender über Nacht erneut; verschiebt sich das Meeting, verschiebt sich der Alarm. Lehnst du den Kalenderzugriff ab, funktioniert alles andere weiter: du stellst die Zeiten dann selbst. Deine Termine verlassen dein Gerät nie; siehe die [Datenschutzerklärung](privacy).",
+    "heading": "Kalenderwecker",
+    "body": "Ein Kalenderwecker klingelt eine festgelegte Zahl Minuten vor deinem ersten Meeting, begrenzt durch eine früheste und eine späteste Weckzeit, die du wählst. WakeSharp prüft deinen Kalender über Nacht erneut; verschiebt sich das Meeting, verschiebt sich der Alarm. Lehnst du den Kalenderzugriff ab, funktioniert alles andere weiter: du stellst die Zeiten dann selbst. Deine Termine verlassen dein Gerät nie; siehe die [Datenschutzerklärung](privacy).",
     "limits": "Ein Schichtrhythmus ist für Muster, die nicht wöchentlich sind: 4 Tage an, 4 Tage frei ab einem Startdatum, jede Phase mit eigener Zeit, und ein Vorschaukalender, damit du es prüfen kannst, bevor du eine Nacht darüber schläfst."
+  },
+  "groups": {
+    "heading": "Gruppenwecker",
+    "body": "Ein Gruppenwecker klingelt zur selben Zeit auf dem Telefon jedes Mitglieds, und die Gruppe sieht, wer wach ist, wer geschlummert hat und wer noch schläft. Erstelle einen über den Plus-Button auf dem Startbildschirm, gib ihm einen Namen und deinen eigenen dazu, und teile dann den Einladungslink; der Wecker schaltet sich ein, sobald der erste Freund beitritt. Gruppenwecker brauchen ein WakeSharp-Konto, damit deine Freunde sehen, dass du wach bist, und es gibt sie vorerst nur auf dem iPhone: Die Version 2.9 bei Google Play hat sie nicht. Was die Gruppe sieht, steht in der [Datenschutzerklärung](privacy)."
   },
   "sharpness": {
     "heading": "Der Wachheitswert",
-    "body": "Sharpness ist ein täglicher Wert in der App. Sieh dir Verlauf, Serien und Abzeichen an und besuche Lark in Nest. Der Wert ist keine Schlafmessung und keine medizinische Beurteilung. Er sagt nicht, ob du sicher fahren oder arbeiten kannst.",
-    "physical": "Das mentale Aufwärmen ist freiwillig. Rechenaufgaben, Paare und Sequenzen können auch Weckmissionen sein. Word Dash und Reaction Tap sind Aufwärmspiele und stehen nicht als Weckmission zur Auswahl."
+    "body": "Sharpness ist ein täglicher Wert in der App. Sieh ihn dir unter Erfolge an, zusammen mit Verlauf, Serien und Abzeichen, und besuche Lark in Nest. Der Wert ist keine Schlafmessung und keine medizinische Beurteilung. Er sagt nicht, ob du sicher fahren oder arbeiten kannst.",
+    "physical": "Dein Wachheitswert kommt aus den Missionen, die du beim Klingeln abschließt. Das separate mentale Aufwärmen gibt es in der aktuellen App nicht. Rechenaufgaben, Memory und Reihenfolge sind Weckmissionen."
   },
   "backup": {
     "heading": "Backup und der Umzug auf ein neues Telefon",
-    "body": "Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.",
+    "body": "Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.",
     "items": [
       "**Standardmäßig ist es aus**, und jede Funktion arbeitet auch abgemeldet. Das Backup läuft still, nachdem sich deine Daten geändert haben, und ein Alarm wartet zum Klingeln nie auf das Netz.",
       "**Für den Umzug auf ein neues Telefon** installierst du WakeSharp, meldest dich mit demselben Apple- oder Google-Konto an und stellst wieder her. Neuere Änderungen, die schon auf dem neuen Gerät liegen, bleiben erhalten.",
@@ -82,7 +86,7 @@ export const support = {
   "purchases": {
     "heading": "Käufe und WakeSharp Unbegrenzt",
     "items": [
-      "**WakeSharp Unbegrenzt** ist die ganze App: jede Weck-Mission, der tägliche Wechsel der Aufwärmspiele, dein vollständiger Wachheitsverlauf, smarte Kalenderalarme, Schichtrhythmen und Profile sowie jede Lark-Szene und jedes Hintergrundbild. Wenn du neu abonnierst, kannst du den Jahresplan mit **{trialDays} Tagen kostenlos** starten, danach {annual} pro Jahr, oder du wählst den Monatsplan für {monthly} pro Monat, der keine Testphase hat. WakeSharp zeigt keine Werbung.",
+      "**WakeSharp Unbegrenzt** ist die ganze App: jede Weck-Mission, dein vollständiger Wachheitsverlauf, Kalenderwecker, Gruppenwecker auf dem iPhone, Schichtrhythmen und Profile sowie jede Lark-Szene und jedes Hintergrundbild. Wenn du neu abonnierst, kannst du den Jahresplan mit **{trialDays} Tagen kostenlos** starten, danach {annual} pro Jahr, oder du wählst den Monatsplan für {monthly} pro Monat, der keine Testphase hat. WakeSharp zeigt keine Werbung.",
       "**Der lebenslange Zugang** war ein einmaliger Kauf und bleibt für alle gültig, die ihn gekauft haben: Er verlängert sich nie, und es gibt nichts zu kündigen.",
       "**Einen Kauf wiederherstellen:** Öffne die Kaufseite und tippe auf _Wiederherstellen_. Achte darauf, dass du mit demselben Apple- oder Google-Konto angemeldet bist, mit dem du gekauft hast.",
       "**Kündigen:** [Abos im App Store](apple-subs) oder [Abos bei Google Play](google-subs), jederzeit, auch während der kostenlosen Testphase. Die App zu löschen kündigt kein Abo.",

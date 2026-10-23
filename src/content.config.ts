@@ -97,7 +97,7 @@ const features = defineCollection({
         lang: z.enum(LOCALE_CODES).default('en'),
         translationOf: z.string().regex(/^[a-z0-9-]+$/),
         updatedDate: z.string(),
-        release: z.literal('2.14'),
+        release: z.literal('2.25'),
         /** The paragraph under the <h1>. */
         lede: z.string().min(1),
         /** Position on the /features hub. */

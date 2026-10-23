@@ -7,13 +7,13 @@ lang: "de"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/de/03-missions.png"
 screenshotAlt: "Verfügbare Weckmissionen"
 ---
 
-Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffentliche Auswahl für iPhone 2.14. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.
+Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.
 
 ## So funktioniert es
 
@@ -23,4 +23,4 @@ Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffe
 
 ## Darauf solltest du achten
 
-Unter iPhone 2.14 verschiebt Stoppen oder Schlummern den Wecker um eine Minute. Ohne abgeschlossene Mission kann er sich bis zu einer Stunde wiederholen. Die eigenen Bedienelemente des Telefons funktionieren weiter.
+Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter.

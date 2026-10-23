@@ -7,7 +7,7 @@ export function pageIdFor(path: string): string {
   const parts = path.split('/').filter(Boolean);
   if (localeByPath(parts[0] ?? '')) parts.shift();
   // Share payloads must never become analytics dimensions.
-  if (['c', 'p', 'r'].includes(parts[0])) return parts[0];
+  if (['c', 'p', 'r', 'g'].includes(parts[0])) return parts[0];
   return clean(parts.join('-'), 'home');
 }
 const clean = (value: string, fallback: string) => /^[a-zA-Z0-9_-]{1,100}$/.test(value) ? value : fallback;

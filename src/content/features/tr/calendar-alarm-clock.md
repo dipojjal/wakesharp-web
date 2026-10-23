@@ -7,8 +7,8 @@ lang: "tr"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/tr/01-home.png"
 screenshotAlt: "Sıradaki alarm ve sabah özeti"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "Sıradaki alarm ve sabah özeti"
 
 ## Nasıl kullanılır
 
-1. Takvim izni ver ve akıllı alarm kuralı oluştur.
+1. Takvim izni ver ve bir takvim alarmı oluştur.
 2. Kaç dakika önce çalacağını, en erken ve en geç saati seç.
 3. Etkinlik değişince alarmı kontrol et. Önemli randevular için yedek alarm kullan.
 

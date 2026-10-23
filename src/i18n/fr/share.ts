@@ -1,8 +1,10 @@
 import { share as en } from '../en/share';
 
 /**
- * Les deux pages d’atterrissage des liens, /c (un défi « Beat my wake ») et
- * /p (un pacte de réveil). Les chaînes `script` sont lues par le décodeur en
+ * Les pages d’atterrissage des liens : /c (un défi « Beat my wake »), /p (un
+ * pacte de réveil, l’alarme partagée d’avant les réveils de groupe ; les anciens
+ * liens ouvrent toujours l’application) et /g (une invitation à un réveil de
+ * groupe). Les chaînes `script` sont lues par le décodeur en
  * ligne de chaque page ; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`,
  * `{time}` et `{days}` sont remplis par ce script à partir du lien lui-même.
  */
@@ -34,6 +36,27 @@ export const share = {
       invitedAnonymous: `Vous êtes invité à {time} · {days}`,
       once: `une fois`,
       /** Dimanche en premier, comme le masque des jours du codec. */
+      days: [`dim.`, `lun.`, `mar.`, `mer.`, `jeu.`, `ven.`, `sam.`],
+    },
+  },
+  group: {
+    title: `Une invitation à un réveil de groupe - WakeSharp`,
+    description: `Quelqu’un vous a invité à un réveil de groupe WakeSharp.`,
+    heading: `Une invitation à un réveil de groupe`,
+    intro: `Quelqu’un veut se réveiller avec vous.`,
+    opening: `Ouverture de votre invitation…`,
+    /** Affiché une fois le code du lien vérifié. */
+    cta: `Ouvrez ce lien sur un iPhone avec WakeSharp installé pour rejoindre le groupe. L’alarme de chacun sonne à la même heure, sur son propre téléphone, et le groupe voit qui est debout. Rejoindre le groupe nécessite un compte WakeSharp, pour que vos amis voient que vous êtes debout. Les réveils de groupe sont sur iPhone pour l’instant : la version 2.9 de Google Play ne les a pas.`,
+    /** Le bouton qui transmet le code à l’application installée. */
+    open: `Ouvrir WakeSharp`,
+    error: `Ce lien n’a pas pu être lu. Demandez à la personne qui vous l’a envoyé de le renvoyer, ou de partager un nouveau lien d’invitation depuis le groupe.`,
+    script: {
+      /** Quand le lien contient l’horaire. */
+      invited: `Vous êtes invité à un réveil de groupe à {time} · {days}`,
+      /** Quand il ne le contient pas (lien d’une application plus ancienne). */
+      invitedNoTime: `Vous êtes invité à un réveil de groupe.`,
+      once: `une fois`,
+      /** Dimanche en premier, comme le masque des jours de l’application. */
       days: [`dim.`, `lun.`, `mar.`, `mer.`, `jeu.`, `ven.`, `sam.`],
     },
   },

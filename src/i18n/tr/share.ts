@@ -1,7 +1,9 @@
 import { share as en } from '../en/share';
 
 /**
- * The two link-landing pages in Turkish. `{name}`, `{rounds}`, `{difficulty}`,
+ * The link-landing pages in Turkish: /c (a challenge), /p (the wake-up pact,
+ * the shared alarm before group alarms; old links still open in the app) and
+ * /g (a group alarm invite). `{name}`, `{rounds}`, `{difficulty}`,
  * `{seconds}`, `{time}` and `{days}` are filled in by each page's inline script.
  */
 export const share = {
@@ -32,6 +34,27 @@ export const share = {
       invitedAnonymous: `Davet edildiniz: {time} · {days}`,
       once: `bir kez`,
       /** Sunday first, matching the codec's weekday mask. */
+      days: [`Paz`, `Pzt`, `Sal`, `Çar`, `Per`, `Cum`, `Cmt`],
+    },
+  },
+  group: {
+    title: `Bir grup alarmı daveti - WakeSharp`,
+    description: `Biri sizi bir WakeSharp grup alarmına davet etti.`,
+    heading: `Bir grup alarmı daveti`,
+    intro: `Biri sizinle birlikte uyanmak istiyor.`,
+    opening: `Davetiniz açılıyor…`,
+    /** Shown once the link's code checks out. */
+    cta: `Gruba katılmak için bu bağlantıyı WakeSharp yüklü bir iPhone’da açın. Herkesin alarmı aynı saatte, kendi telefonunda çalar ve grup kimin kalktığını görebilir. Katılmak için WakeSharp hesabı gerekir; böylece arkadaşlarınız kalktığınızı görebilir. Grup alarmları şimdilik iPhone’da: Google Play’in 2.9 sürümünde yok.`,
+    /** The button that hands the code to the installed app. */
+    open: `WakeSharp’ı aç`,
+    error: `Bu bağlantı okunamadı. Gönderen kişiden yeniden göndermesini ya da gruptan yeni bir davet bağlantısı paylaşmasını isteyin.`,
+    script: {
+      /** When the link carries the schedule. */
+      invited: `Bir grup alarmına davet edildiniz: {time} · {days}`,
+      /** When it does not (an older app's link). */
+      invitedNoTime: `Bir grup alarmına davet edildiniz.`,
+      once: `bir kez`,
+      /** Sunday first, matching the app's weekday mask. */
       days: [`Paz`, `Pzt`, `Sal`, `Çar`, `Per`, `Cum`, `Cmt`],
     },
   },

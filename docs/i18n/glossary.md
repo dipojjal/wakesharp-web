@@ -43,13 +43,13 @@ Arabic (`SITE.appLanguages`). A reader has to be able to find the same words on 
 | WakeSharp, WakeSharp Unlimited, Unlimited | the app, and the one plan it is sold as |
 | Sharpness, Sharpness Score | the morning score out of 100 against your own baseline |
 | the Lark | the mascot bird |
-| Mind Games, Memory Match, Sequence Recall, Colour Clash, Type It Out | the brain missions |
+| Math Problems, Memory Match, Sequence Recall, Color Clash, Type It Out | the brain missions (Color Clash took the US spelling on 2026-10-16, as the app shows it) |
 | Photo Proof, Scan an Object, Fetch, Face Check, Fruit Slash | the camera missions |
-| Walk It Off, First Light | the movement missions |
+| Walk It Off, First Light, Squats, Push-ups | the movement missions. Squats and Push-ups count reps with the camera and are iPhone-only while Google Play serves 2.9 |
 | Serial Sevens, Name Five | the spoken missions |
 | Surprise Me | a different mission every morning |
-| Mind Games, Memory Match, Sequence Recall, Word Dash, Reaction Tap | the five warm-up games. The first three are also missions, so they appear in both lists |
-| Wake with a friend | the shared-alarm feature |
+| Word Dash, Reaction Tap | the warm-up games, which the current app does not offer (no entry point since iOS 2.23); the site only ever says so |
+| Group alarm, Achievements | the shared alarm (one invite link, every phone rings at the same time, the group sees who is up; needs an account; iPhone for now) and the tab that holds the Sharpness history and badges. "Wake with a friend" was the older pact row and is gone from the English |
 | Beat my wake | the challenge you send after a mission |
 | My spots & codes | the registered targets inside Scan an Object |
 | Gentle start | the iOS quiet-opening tone option |
@@ -63,8 +63,14 @@ reader who was sent a "Beat my wake" link has already seen those exact words in 
 and "Wake with a friend" is a row they will tap in the alarm editor. Both keep their sentence
 case, matching the app.
 
-Store buttons, prices (`$4.99`), the email address and the trademark lines are supplied by
+Store buttons, prices (`$9.99`, `$34.99`), the email address and the trademark lines are supplied by
 the site and never appear in a catalog.
+
+The "As seen on" badge label (`shell.press.label`) is the literal "As seen on" in your language, the
+wording the app uses: es _Visto en_, fr _Vu sur_, de _Gesehen auf_, ru _Нас видели на_, tr _Şurada
+görüldü_, ar _كما شوهد على_. Never "featured in", "covered by" or "in the press", or a translation
+of them: the source is a paid press release (`src/config/press.ts`), and the outlets' names stay as
+they are.
 
 ## Voice
 
@@ -94,10 +100,12 @@ These are enforced on the English pages by `scripts/check-copy.mjs` and seeded p
   Never "free, forever", never "free missions", never "Plus". Lifetime is no longer sold.
 - **"WakeSharp shows no ads."** Never "no tracking": it measures which ad brought someone in, on
   iPhone only with permission.
-- **Describe the mission, never the dismissal mechanism.** It changed between app versions, so the
-  site never says how many times the alarm comes back, never names Strict Mode (retired) or snooze
-  presets, and never "impossible to dismiss", "won't stop until" or "the only way out". The
-  version-proof line: however you quiet the alarm, the morning only counts once the mission is done.
+- **The re-ring, in the approved words only.** On iPhone: "stop it or snooze it and it rings again
+  within 30 seconds, until your mission is done"; Google Play's 2.9 "rings again a minute later, for
+  up to an hour"; and always "your phone's own controls still work". Never Strict Mode (retired),
+  snooze presets, "impossible to dismiss", "won't stop until", "no way out" or "the only way out".
+  The version-proof line elsewhere: however you quiet the alarm, the morning only counts once the
+  mission is done.
 - **Do Not Disturb:** on Android the alarm rings through Do Not Disturb *when it allows alarms*;
   never the unqualified promise.
 - Say "as many alarms as you need", never "unlimited alarms"which is why the plan name must not

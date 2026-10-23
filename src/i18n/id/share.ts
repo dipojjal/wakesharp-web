@@ -1,10 +1,11 @@
 import { share as en } from '../en/share';
 
 /**
- * Dua halaman pendaratan tautan, /c (tantangan "Beat my wake") dan
- * /p (pakta bangun pagi). String `script` dibaca oleh dekoder inline tiap
- * halaman; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}` dan
- * `{days}` diisi skrip itu dari tautannya sendiri.
+ * Halaman pendaratan tautan: /c (tantangan "Beat my wake"), /p (pakta bangun
+ * pagi, alarm bersama sebelum ada alarm grup; tautan lama tetap terbuka di
+ * aplikasi) dan /g (undangan alarm grup). String `script` dibaca oleh dekoder
+ * inline tiap halaman; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`,
+ * `{time}` dan `{days}` diisi skrip itu dari tautannya sendiri.
  */
 export const share = {
   challenge: {
@@ -34,6 +35,27 @@ export const share = {
       invitedAnonymous: `Anda diajak bangun pukul {time} · {days}`,
       once: `sekali`,
       /** Minggu lebih dulu, sesuai mask hari dalam codec. */
+      days: [`Min`, `Sen`, `Sel`, `Rab`, `Kam`, `Jum`, `Sab`],
+    },
+  },
+  group: {
+    title: `Undangan alarm grup - WakeSharp`,
+    description: `Seseorang mengundang Anda ke alarm grup WakeSharp.`,
+    heading: `Undangan alarm grup`,
+    intro: `Seseorang ingin bangun bersama Anda.`,
+    opening: `Membuka undangan Anda…`,
+    /** Ditampilkan setelah kode tautannya terbaca dengan benar. */
+    cta: `Group alarm (alarm grup): Buka tautan ini di iPhone yang sudah terpasang WakeSharp untuk bergabung ke grup. Alarm setiap orang berbunyi pada waktu yang sama, di ponsel masing-masing, dan grup bisa melihat siapa yang sudah bangun. Bergabung memerlukan akun WakeSharp, supaya teman Anda bisa melihat bahwa Anda sudah bangun. Alarm grup untuk saat ini hanya ada di iPhone: Google Play versi 2.9 tidak memilikinya.`,
+    /** Tombol yang menyerahkan kodenya ke aplikasi yang terpasang. */
+    open: `Buka WakeSharp`,
+    error: `Tautan ini tidak bisa dibaca. Minta pengirimnya mengirim ulang, atau membagikan tautan undangan baru dari grupnya.`,
+    script: {
+      /** Saat tautannya memuat jadwal. */
+      invited: `Anda diundang ke alarm grup pukul {time} · {days}`,
+      /** Saat tidak (tautan dari aplikasi versi lama). */
+      invitedNoTime: `Anda diundang ke alarm grup.`,
+      once: `sekali`,
+      /** Minggu lebih dulu, sesuai mask hari dalam aplikasi. */
       days: [`Min`, `Sen`, `Sel`, `Rab`, `Kam`, `Jum`, `Sab`],
     },
   },

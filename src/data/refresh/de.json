@@ -1,27 +1,27 @@
 {
-  "releaseNotice": "WakeSharp 2.14 ist jetzt für iOS und Android verfügbar. Lade das aktuelle Update im App Store oder bei Google Play herunter.",
+  "releaseNotice": "WakeSharp 2.25 ist im App Store. Google Play hat Version 2.9, einige hier beschriebene Funktionen gibt es also vorerst nur auf dem iPhone. Lade das aktuelle Update im App Store oder bei Google Play herunter.",
   "hero": "Wähle einen Ton aus der Kategorie Laut und eine Aufgabe für den Wecker. Löse ein paar Rechnungen, scanne eine Flasche oder komm mit einer Gehmission in Bewegung.",
   "loudTitle": "Beginne mit einem auffälligen Ton",
   "loud": "Laut ist eine Kategorie in der Tonauswahl. Höre dir die Töne an und speichere einen für diesen Wecker. Du kannst ihn mit jeder verfügbaren Mission kombinieren.",
   "volume": "Auf dem iPhone regelt iOS die Lautstärke des Systemweckers. Ein lauter Ton ändert diese Einstellung nicht. Prüfe auf Android die Weckerlautstärke und erlaube Wecker in Nicht stören. Teste den Ton auf deinem Telefon.",
   "scanTitle": "Aufstehen, finden, scannen",
   "scan": "Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingeln die Kamera darauf. Die grüne Bestätigung zeigt, dass WakeSharp das Objekt erkannt hat. Die Erkennung läuft auf deinem Telefon.",
-  "missionsIntro": "Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffentliche Auswahl für iPhone 2.14. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
+  "missionsIntro": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
   "hubTitle": "Weckmissionen, die dich in Bewegung bringen",
-  "hubDescription": "Entdecke WakeSharp-Missionen, laute Töne, Kalenderwecker und Schichtrotationen. Wähle eine Aufgabe, die zu deinem Morgen passt.",
+  "hubDescription": "Entdecke WakeSharp-Missionen, laute Töne, Gruppenwecker, Kalenderwecker und Schichtrotationen. Wähle eine Aufgabe, die zu deinem Morgen passt.",
   "galleryTitle": "Ein Blick in WakeSharp",
   "englishArtwork": "Die Bilder sind auf Englisch. Die Bildunterschriften erklären die Ansichten auf Deutsch.",
   "open": "Bild vergrößern",
   "close": "Bild schließen",
-  "watch": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein.",
-  "android": "WakeSharp gibt es auch für Android. Audiokanal, Berechtigungen und Akkueinstellungen unterscheiden sich. Diese Bilder zeigen iPhone und Apple Watch, nicht Android oder Wear OS. Prüfe die verfügbaren Missionen und Einstellungen in deiner installierten App.",
-  "backup": "Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.",
+  "watch": "Auf dem iPhone verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein.",
+  "android": "WakeSharp gibt es auch bei Google Play, dort aktuell als Version 2.9. Audiokanal, Berechtigungen und Akkueinstellungen unterscheiden sich vom iPhone, und die neueren iPhone-Funktionen auf dieser Seite fehlen dort: Kniebeugen, Liegestütze, Gruppenwecker und die Wiederholung nach 30 Sekunden. Diese Bilder zeigen iPhone und Apple Watch, nicht Android oder Wear OS. Prüfe die verfügbaren Missionen und Einstellungen in deiner installierten App.",
+  "backup": "Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.",
   "deleting": "Deinstallieren entfernt lokale Daten, aber weder die optionale Cloud-Sicherung noch dein Abonnement. Lösche die Sicherung unter Einstellungen → Konto → Konto löschen oder auf der Kontolöschseite. Verwalte das Abo separat im Store.",
   "scoreTitle": "Sieh dir deinen Morgen an",
-  "score": "Sharpness ist ein täglicher Wert in der App. Sieh dir Verlauf, Serien und Abzeichen an und besuche Lark in Nest. Der Wert ist keine Schlafmessung und keine medizinische Beurteilung. Er sagt nicht, ob du sicher fahren oder arbeiten kannst.",
-  "warmup": "Das mentale Aufwärmen ist freiwillig. Rechenaufgaben, Paare und Sequenzen können auch Weckmissionen sein. Word Dash und Reaction Tap sind Aufwärmspiele und stehen nicht als Weckmission zur Auswahl.",
+  "score": "Sharpness ist ein täglicher Wert in der App. Sieh ihn dir unter Erfolge an, zusammen mit Verlauf, Serien und Abzeichen, und besuche Lark in Nest. Der Wert ist keine Schlafmessung und keine medizinische Beurteilung. Er sagt nicht, ob du sicher fahren oder arbeiten kannst.",
+  "warmup": "Dein Wachheitswert kommt aus den Missionen, die du beim Klingeln abschließt. Das separate mentale Aufwärmen gibt es in der aktuellen App nicht. Rechenaufgaben, Memory und Reihenfolge sind Weckmissionen.",
   "developer": "Ich bin Dipojjal und entwickle WakeSharp bei KineticBit. Mir ist wichtig, klar zu sagen, was die App kann und was vom Telefon abhängt. Wenn etwas unklar ist oder ein Wecker Probleme macht, erreicht mich das Kontaktformular.",
-  "repeat": "Unter iPhone 2.14 verschiebt Stoppen oder Schlummern den Wecker um eine Minute. Ohne abgeschlossene Mission kann er sich bis zu einer Stunde wiederholen. Die eigenen Bedienelemente des Telefons funktionieren weiter.",
+  "repeat": "Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter.",
   "how": "So funktioniert es",
   "limits": "Darauf solltest du achten",
   "related": "Weitere Funktionen entdecken",
@@ -72,7 +72,7 @@
       "Wecker mit Rätseln",
       "Wähle Gedächtnis-, Sequenz- oder Farbaufgaben. Kombiniere mehrere Missionen, wenn das zu dir passt.",
       [
-        "Wähle Paare, Sequenz oder Farbdurcheinander.",
+        "Wähle Memory, Reihenfolge oder Farbkonflikt.",
         "Teste einen für den Morgen passenden Schwierigkeitsgrad.",
         "Finde Paare, wiederhole das Muster oder tippe auf die Schriftfarbe."
       ]
@@ -87,19 +87,19 @@
       ]
     ],
     [
-      "Wecker zum Aufstehen und Gehen",
-      "Walk It Off zählt echte Schritte während deiner Mission. First Light führt dich zum Tageslicht.",
+      "Wecker zum Gehen und Trainieren",
+      "Lauf dich wach zählt echte Schritte in der Mission. Erstes Licht will Tageslicht. Auf dem iPhone zählen Kniebeugen und Liegestütze Wiederholungen per Kamera.",
       [
-        "Wähle Walk It Off und erlaube den Bewegungszugriff.",
-        "Teste einen kurzen Weg mit dem Telefon bei dir.",
-        "Gehe vorsichtig. Bei First Light hältst du das Telefon ins Tageslicht."
+        "Wähle Lauf dich wach und erlaube den nötigen Bewegungszugriff, oder wähle auf dem iPhone Kniebeugen oder Liegestütze und erlaube die Kamera.",
+        "Teste einen kurzen Weg mit dem Telefon in der Hand oder in der Tasche. Prüfe, ob Schritte gezählt werden. Bei Liegestütze legst du das Telefon auf den Boden und lässt die Frontkamera zählen.",
+        "Gehe vorsichtig, wenn der Wecker klingelt. Bei Erstes Licht hältst du stattdessen das Telefon ins Tageslicht."
       ]
     ],
     [
       "Kalenderwecker",
       "Stelle einen Wecker vor dem ersten Termin mit frühester und spätester Zeit. Die Daten bleiben auf dem Gerät.",
       [
-        "Erlaube Kalenderzugriff und erstelle eine Regel.",
+        "Erlaube Kalenderzugriff und erstelle einen Kalenderwecker.",
         "Wähle den zeitlichen Vorlauf sowie früheste und späteste Weckzeit.",
         "Prüfe den nächsten Wecker nach Terminänderungen. Nutze für wichtige Termine einen Ersatzwecker."
       ]
@@ -115,11 +115,11 @@
     ],
     [
       "WakeSharp Sharpness Score",
-      "Betrachte deinen täglichen Wert, freiwillige Aufwärmspiele und den Verlauf ohne medizinische Schlussfolgerungen.",
+      "Sieh dir unter Erfolge deinen täglichen Wachheitswert, Abzeichen und Morgenverlauf an. Verfolge deinen Fortschritt, ohne ihn als medizinischen Test zu werten.",
       [
-        "Öffne nach deinem Morgen die Sharpness-Ansicht.",
-        "Spiele bei Bedarf ein Aufwärmspiel und lies die Aufschlüsselung.",
-        "Vergleiche mehrere Tage. Abzeichen und Nest motivieren, stellen aber keine Diagnose."
+        "Beende deinen Morgen und öffne Erfolge.",
+        "Lies die Aufschlüsselung des Werts in der App und sieh dir die Abzeichen an, die du verdient hast.",
+        "Vergleiche mehrere Morgen in deinem Verlauf. Abzeichen und Nest motivieren, stellen aber keine Diagnose."
       ]
     ]
   ]

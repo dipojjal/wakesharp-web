@@ -52,25 +52,29 @@ export const support = {
   "missions": {
     "heading": "Misi dan tunda",
     "items": [
-      "Pilih satu misi di bawah atau susun beberapa misi. Ini adalah pilihan publik untuk iPhone 2.14. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
+      "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
       "Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan kamera ke objek itu. Konfirmasi hijau menandakan WakeSharp mengenalinya. Pengenalan berjalan di ponselmu.",
-      "**Jika sebuah misi tidak bisa berjalan** pagi itu (kamera rusak, ponsel tanpa penghitung langkah), WakeSharp beralih ke misi yang bisa, jadi Anda tidak terjebak dengan alarm yang tidak bisa Anda selesaikan.",
-      "Di iPhone 2.14, menghentikan atau menunda alarm mengundurnya satu menit. Alarm dapat berulang hingga satu jam bila misi belum selesai. Kontrol ponsel tetap berfungsi."
+      "**Ruangan gelap atau izin yang ditolak tidak pernah menggantinya dengan misi yang lebih mudah.** WakeSharp memperingatkan Anda, atau meminta izinnya kembali. Hanya kerusakan sungguhan, seperti ponsel tanpa kamera atau tanpa penghitung langkah, yang menyerahkan pagi itu ke Math Problems, jadi Anda tidak terjebak dengan alarm yang tidak bisa Anda selesaikan.",
+      "Di iPhone, hentikan atau tunda alarmnya dan alarm berbunyi lagi dalam 30 detik, sampai misi Anda selesai. Google Play versi 2.9 berbunyi lagi satu menit kemudian, hingga satu jam. Kontrol ponsel Anda sendiri tetap berfungsi."
     ]
   },
   "smartAlarms": {
-    "heading": "Alarm kalender pintar",
-    "body": "Aturan pintar berbunyi sekian menit sebelum rapat pertama Anda, dibatasi antara waktu bangun paling awal dan paling akhir yang Anda pilih. WakeSharp memeriksa ulang kalender Anda sepanjang malam, jadi jika rapatnya bergeser, alarmnya ikut bergeser. Jika Anda menolak akses kalender, semua yang lain tetap berfungsi; Anda hanya perlu menyetel waktunya sendiri. Acara Anda tidak pernah keluar dari perangkat; lihat [Kebijakan Privasi](privacy).",
+    "heading": "Alarm kalender",
+    "body": "Alarm kalender berbunyi sekian menit sebelum rapat pertama Anda, dibatasi antara waktu bangun paling awal dan paling akhir yang Anda pilih. WakeSharp memeriksa ulang kalender Anda sepanjang malam, jadi jika rapatnya bergeser, alarmnya ikut bergeser. Jika Anda menolak akses kalender, semua yang lain tetap berfungsi; Anda hanya perlu menyetel waktunya sendiri. Acara Anda tidak pernah keluar dari perangkat; lihat [Kebijakan Privasi](privacy).",
     "limits": "Rotasi shift ditujukan untuk pola yang tidak mingguan (4 hari kerja / 4 hari libur dari tanggal jangkar, tiap fase dengan waktunya sendiri) dan kalender pratinjau supaya Anda bisa memeriksanya sebelum mempercayakan tidur Anda padanya."
+  },
+  "groups": {
+    "heading": "Group alarm (alarm grup)",
+    "body": "Alarm grup berbunyi pada waktu yang sama di ponsel setiap anggota, dan grup bisa melihat siapa yang sudah bangun, siapa yang menunda, dan siapa yang masih tidur. Buat alarm grup dari tombol plus di Beranda, beri nama grupnya dan nama Anda sendiri, lalu bagikan tautan undangannya; alarm aktif begitu teman pertama bergabung. Alarm grup memerlukan akun WakeSharp, supaya teman Anda bisa melihat bahwa Anda sudah bangun, dan untuk saat ini hanya ada di iPhone: Google Play versi 2.9 tidak memilikinya. Apa yang dilihat grup dijelaskan di [Kebijakan Privasi](privacy)."
   },
   "sharpness": {
     "heading": "Sharpness Score (skor kesigapan)",
-    "body": "Sharpness Score adalah skor harian di aplikasi. Lihat bersama riwayat, rentetan, dan lencana, lalu ikuti kemajuan Lark di Nest. Ini bukan skor tidur atau penilaian medis. Skor tidak menentukan apakah kamu aman mengemudi atau bekerja.",
-    "physical": "Pemanasan otak bersifat opsional. Math Problems, Memory Match, dan Sequence Recall juga dapat menjadi misi. Word Dash dan Reaction Tap adalah permainan pemanasan, bukan misi alarm."
+    "body": "Sharpness Score adalah skor harian di aplikasi. Lihat di bagian Achievements (pencapaian) bersama riwayat, rentetan, dan lencana, lalu ikuti kemajuan Lark di Nest. Ini bukan skor tidur atau penilaian medis. Skor tidak menentukan apakah Anda aman mengemudi atau bekerja.",
+    "physical": "Sharpness Score Anda berasal dari misi yang Anda selesaikan saat alarm berbunyi. Pemanasan otak yang terpisah tidak ditawarkan di aplikasi versi saat ini. Math Problems, Memory Match, dan Sequence Recall adalah misi alarm."
   },
   "backup": {
     "heading": "Cadangan, dan pindah ke ponsel baru",
-    "body": "Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya.",
+    "body": "Akun WakeSharp tidak wajib, kecuali untuk alarm grup. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya.",
     "items": [
       "**Nonaktif secara default**, dan setiap fitur berfungsi tanpa masuk. Pencadangan berjalan diam-diam setelah data Anda berubah, dan alarm tidak pernah menunggu jaringan untuk berbunyi.",
       "**Untuk pindah ke ponsel baru**, pasang WakeSharp, masuk dengan akun Apple atau Google yang sama, lalu pulihkan. Perubahan yang lebih baru yang sudah ada di perangkat baru tetap disimpan.",
@@ -82,7 +86,7 @@ export const support = {
   "purchases": {
     "heading": "Pembelian dan WakeSharp Unlimited",
     "items": [
-      "**WakeSharp Unlimited** adalah seluruh aplikasi: setiap misi bangun, rotasi pemanasan harian, riwayat Sharpness lengkap Anda, alarm kalender pintar, rotasi shift dan profil, serta setiap adegan Lark dan wallpaper. Pelanggan baru bisa memulai dengan **uji coba gratis {trialDays} hari** untuk paket tahunan, lalu {annual} per tahun, atau memilih paket bulanan seharga {monthly} per bulan, yang tidak punya masa uji coba. WakeSharp tidak menampilkan iklan.",
+      "**WakeSharp Unlimited** adalah seluruh aplikasi: setiap misi bangun, riwayat Sharpness lengkap Anda, alarm kalender, alarm grup di iPhone, rotasi shift dan profil, serta setiap adegan Lark dan wallpaper. Pelanggan baru bisa memulai dengan **uji coba gratis {trialDays} hari** untuk paket tahunan, lalu {annual} per tahun, atau memilih paket bulanan seharga {monthly} per bulan, yang tidak punya masa uji coba. WakeSharp tidak menampilkan iklan.",
       "**Lifetime** (seumur hidup) dulu dijual sebagai pembelian sekali bayar, dan tetap berlaku bagi semua yang sudah membelinya: tidak pernah diperpanjang, dan tidak ada yang perlu dibatalkan.",
       "**Memulihkan pembelian:** buka halaman langganan dan ketuk _Restore_ (pulihkan). Pastikan Anda masuk dengan akun Apple atau Google yang sama dengan yang Anda pakai saat membeli.",
       "**Membatalkan:** [langganan App Store](apple-subs) atau [langganan Google Play](google-subs), kapan saja, termasuk selama masa uji coba gratis. Menghapus aplikasi tidak membatalkan langganan.",

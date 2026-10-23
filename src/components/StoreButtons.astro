@@ -1,11 +1,13 @@
 ---
 import DownloadButton from './DownloadButton.astro';
+import PressBadge from './PressBadge.astro';
 import { SITE } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
 import { resolveLocale } from '../i18n/routes';
 import { toolCopy } from '../i18n/tools';
-interface Props { pageId?: string; tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string }
-const { pageId, align = 'start', placement = 'download', localeCode = Astro.currentLocale } = Astro.props;
+/** `press` draws the "As seen on" badge under the button (src/components/PressBadge.astro). */
+interface Props { pageId?: string; tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string; press?: 'full' | 'compact' }
+const { pageId, align = 'start', placement = 'download', localeCode = Astro.currentLocale, press } = Astro.props;
 const locale = resolveLocale(localeCode);
 const t = toolCopy(locale.code);
 ---
@@ -13,4 +15,5 @@ const t = toolCopy(locale.code);
   <DownloadButton pageId={pageId} placement={placement} localeCode={locale.code} />
   <p class="text-sm">{t.available}</p>
   {!(SITE.appLanguages as readonly string[]).includes(locale.code) && <p class="text-sm">{getCatalog(locale.code).shell.appLanguageNote}</p>}
+  {press && <PressBadge variant={press} localeCode={locale.code} class="mt-3 self-stretch" />}
 </div>

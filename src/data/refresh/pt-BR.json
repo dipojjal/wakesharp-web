@@ -1,27 +1,27 @@
 {
-  "releaseNotice": "O WakeSharp 2.14 já está disponível para iOS e Android. Baixe a atualização mais recente na App Store ou no Google Play.",
+  "releaseNotice": "O WakeSharp 2.25 está na App Store. O Google Play tem a versão 2.9, então alguns recursos descritos aqui por enquanto são só para iPhone. Baixe a atualização mais recente na App Store ou no Google Play.",
   "hero": "Escolha um som na categoria Loud e decida o que fazer quando o alarme tocar. Resolva contas, escaneie uma garrafa ou comece a se mover com uma missão de caminhada.",
   "loudTitle": "Comece com um som que chame atenção",
   "loud": "Loud é uma categoria no seletor de sons do alarme. Ouça os toques e salve o que quiser para esse alarme. Você pode combiná-lo com qualquer missão disponível.",
   "volume": "No iPhone, o iOS controla o volume do alarme do sistema. Um toque Loud não altera esse ajuste. No Android, confira o volume do alarme e permita alarmes no Não perturbe. Faça um teste no seu telefone.",
   "scanTitle": "Levante, encontre e escaneie",
   "scan": "Escolha um alvo, como garrafa, caneca ou pia. Quando o alarme tocar, aponte a câmera para ele. A confirmação verde indica que o WakeSharp reconheceu o objeto. O reconhecimento acontece no telefone.",
-  "missionsIntro": "Escolha uma missão abaixo ou combine várias. Esta é a seleção pública do iPhone 2.14. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.",
+  "missionsIntro": "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.25; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.",
   "hubTitle": "Missões de alarme para sair da cama",
-  "hubDescription": "Conheça as missões, os sons altos, os alarmes de calendário e os ciclos de turnos do WakeSharp. Escolha uma tarefa para sua manhã.",
+  "hubDescription": "Conheça as missões, os sons altos, os alarmes de grupo, os alarmes de calendário e os ciclos de turnos do WakeSharp. Escolha uma tarefa para sua manhã.",
   "galleryTitle": "Veja o WakeSharp por dentro",
   "englishArtwork": "As imagens estão em inglês. As legendas explicam cada tela em português.",
   "open": "Ampliar imagem",
   "close": "Fechar imagem",
-  "watch": "No iPhone 2.14, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado.",
-  "android": "O WakeSharp também está disponível no Android. O canal de áudio, as permissões e os ajustes de bateria são diferentes. Estas imagens mostram iPhone e Apple Watch, não Android ou Wear OS. Confira as opções no aplicativo instalado.",
-  "backup": "Não é preciso ter conta no WakeSharp. Entrar com Apple ou Google é opcional e permite salvar alarmes, histórico, preferências e pequenas miniaturas de fotos de referência. A comparação de fotos e o calendário são processados no aparelho. O conteúdo dos eventos fica nele. Consulte a política de privacidade.",
+  "watch": "No iPhone, tocar em “I’m up” no Apple Watch adia o alarme do telefone por um minuto. Termine a missão no iPhone para parar as repetições. O relógio precisa estar carregado, conectado e configurado.",
+  "android": "O WakeSharp também está no Google Play, onde a versão atual é a 2.9. O canal de áudio, as permissões e os ajustes de bateria são diferentes dos do iPhone, e ela não inclui os recursos mais novos do iPhone citados nesta página: Squats, Push-ups, Group alarms (alarmes de grupo) e a repetição em 30 segundos. Estas imagens mostram iPhone e Apple Watch, não Android ou Wear OS. Confira no app instalado as missões e os controles disponíveis na sua plataforma.",
+  "backup": "Não é preciso ter conta no WakeSharp, exceto para os alarmes de grupo (Group alarm). Entrar com Apple ou Google é opcional e permite salvar alarmes, histórico, preferências e pequenas miniaturas de fotos de referência. A comparação de fotos e o calendário são processados no aparelho. O conteúdo dos eventos fica nele. Consulte a política de privacidade.",
   "deleting": "Desinstalar apaga os dados locais, mas não o backup na nuvem nem a assinatura. Apague o backup em Ajustes → Conta → Excluir conta ou na página de exclusão. Gerencie a assinatura separadamente na loja.",
   "scoreTitle": "Veja como foi sua manhã",
-  "score": "Sharpness Score é uma pontuação diária no aplicativo. Veja o histórico, as sequências e os emblemas e acompanhe Lark no Nest. Não é uma pontuação de sono nem uma avaliação médica. Ela não determina se você pode dirigir ou trabalhar com segurança.",
-  "warmup": "O aquecimento mental é opcional. Math Problems, Memory Match e Sequence Recall também podem ser missões. Word Dash e Reaction Tap são jogos de aquecimento, não missões de alarme.",
+  "score": "Sharpness Score é uma pontuação diária no aplicativo. Veja a pontuação em Achievements (conquistas), junto com o histórico, as sequências e os emblemas, e acompanhe Lark no Nest. Não é uma pontuação de sono nem uma avaliação médica. Ela não determina se você pode dirigir ou trabalhar com segurança.",
+  "warmup": "Seu Sharpness Score vem das missões que você conclui quando o alarme toca. O aquecimento mental separado não é oferecido no app atual. Math Problems, Memory Match e Sequence Recall são missões de alarme.",
   "developer": "Sou Dipojjal, desenvolvedor do WakeSharp na KineticBit. Quero explicar o que o aplicativo faz e o que depende do telefone. Se algo estiver confuso ou um alarme falhar, o formulário de contato chega até mim.",
-  "repeat": "No iPhone 2.14, parar ou adiar atrasa o alarme por um minuto. Ele pode se repetir por até uma hora se a missão não for concluída. Os controles do telefone continuam funcionando.",
+  "repeat": "No iPhone, pare ou adie o alarme e ele toca de novo em até 30 segundos, até a missão ser concluída. A versão 2.9 do Google Play toca de novo um minuto depois, por até uma hora. Os controles do telefone continuam funcionando.",
   "how": "Como usar",
   "limits": "O que conferir",
   "related": "Conheça outros recursos",
@@ -72,7 +72,7 @@
       "Alarme com quebra-cabeças",
       "Escolha tarefas de memória, sequência ou cores. Combine várias missões se isso funcionar para você.",
       [
-        "Escolha Memory Match, Sequence Recall ou Colour Clash.",
+        "Escolha Memory Match, Sequence Recall ou Color Clash.",
         "Experimente um nível adequado para a manhã.",
         "Encontre pares, repita o padrão ou toque na cor da tinta."
       ]
@@ -87,19 +87,19 @@
       ]
     ],
     [
-      "Alarme para caminhar",
-      "Walk It Off conta passos reais na missão. First Light oferece outra tarefa para chegar à luz do dia.",
+      "Alarme para caminhar e se exercitar",
+      "Walk It Off conta passos reais durante sua missão de alarme. First Light pede luz do dia. No iPhone, Squats e Push-ups contam suas repetições com a câmera.",
       [
-        "Escolha Walk It Off e permita o acesso ao movimento.",
-        "Teste um trajeto curto com o telefone junto ao corpo.",
-        "Caminhe com cuidado. First Light pede que segure o telefone na luz do dia."
+        "Escolha Walk It Off e permita o acesso ao movimento de que ele precisa, ou escolha Squats (agachamentos) ou Push-ups (flexões) no iPhone e permita a câmera.",
+        "Teste um trajeto curto com o celular na mão ou no bolso. Confira se os passos estão sendo contados. Em Push-ups, deixe o celular no chão e deixe a câmera frontal contar.",
+        "Caminhe com cuidado quando o alarme tocar. First Light, em vez disso, pede que você segure o celular na luz do dia."
       ]
     ],
     [
       "Alarme de calendário",
       "Acorde antes do primeiro evento dentro dos limites de horário escolhidos. O calendário fica no aparelho.",
       [
-        "Permita o calendário e crie uma regra.",
+        "Permita o acesso ao calendário e crie um alarme de calendário.",
         "Escolha a antecedência e os horários mínimo e máximo.",
         "Confira o alarme após mudanças e use um reserva para compromissos importantes."
       ]
@@ -115,11 +115,11 @@
     ],
     [
       "WakeSharp Sharpness Score",
-      "Veja a pontuação diária, o aquecimento opcional e o histórico sem tratar os resultados como teste médico.",
+      "Veja seu Sharpness Score diário, seus emblemas e seu histórico de manhãs em Achievements (conquistas). Acompanhe seu progresso sem tratá-lo como teste médico.",
       [
-        "Abra Sharpness depois de completar a manhã.",
-        "Faça o aquecimento se quiser e veja os detalhes da pontuação.",
-        "Compare vários dias. Emblemas e Nest incentivam, mas não fazem diagnósticos."
+        "Termine sua manhã e abra Achievements.",
+        "Veja os detalhes da pontuação mostrados no app e os emblemas que você conquistou.",
+        "Compare várias manhãs no seu histórico. Use os emblemas e o Nest como incentivo, não como diagnóstico de saúde."
       ]
     ]
   ]

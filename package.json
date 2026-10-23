@@ -14,7 +14,7 @@
     "assets:prep": "node scripts/prep-assets.mjs",
     "contrast": "node scripts/check-contrast.mjs",
     "copy": "tsx scripts/check-copy.mjs",
-    "verify": "npm run contrast && npm run posts && npm run build && npm run copy && npm run seo && npm run growth:test && npm run i18n:test && npm run tools:test && npm run product:test && npm run support:test",
+    "verify": "npm run contrast && npm run posts && npm run features:check && npm run build && npm run copy && npm run seo && npm run growth:test && npm run i18n:test && npm run tools:test && npm run product:test && npm run support:test",
     "growth:test": "tsx --test tests/growth/*.test.ts",
     "i18n:test": "tsx --test tests/i18n/*.test.ts",
     "posts": "tsx scripts/check-blog-post.mjs --all",
@@ -22,7 +22,10 @@
     "product:test": "tsx --test tests/product/*.test.ts",
     "assets:store": "node scripts/import-store.mjs",
     "tools:test": "tsx --test tests/tools/*.test.ts",
-    "support:test": "tsx --test tests/support/*.test.ts"
+    "support:test": "tsx --test tests/support/*.test.ts",
+    "assets:press": "node scripts/prep-press-badge.mjs",
+    "features:build": "tsx scripts/build-feature-pages.mjs",
+    "features:check": "tsx scripts/build-feature-pages.mjs --check"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

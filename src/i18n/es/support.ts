@@ -52,25 +52,29 @@ export const support = {
   "missions": {
     "heading": "Misiones y posponer",
     "items": [
-      "Elige una de estas misiones o combina varias. Esta es la selección pública de iPhone 2.14. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
+      "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
       "Elige un objeto, como una botella, una taza o un lavabo. Cuando suene la alarma, apunta la cámara hacia él. La confirmación verde indica que WakeSharp lo ha reconocido. El reconocimiento se realiza en tu teléfono.",
-      "**Si una misión no puede funcionar** esa mañana -una cámara estropeada, un teléfono sin podómetro-, WakeSharp recurre a otra que sí pueda, para que no te quedes con una alarma que no puedes terminar.",
-      "En iPhone 2.14, detener o posponer retrasa la alarma un minuto. Puede repetirse durante una hora como máximo si no completas la misión. Los controles del teléfono siguen funcionando."
+      "**Una habitación a oscuras o un permiso rechazado nunca cambian la misión por otra más fácil.** WakeSharp te avisa, o te vuelve a pedir el permiso. Solo un fallo real, como un teléfono sin cámara o sin podómetro, deja la mañana en manos de Problemas de matemáticas, para que no te quedes con una alarma que no puedes terminar.",
+      "En iPhone, si la detienes o la pospones, vuelve a sonar en menos de 30 segundos, hasta que completes la misión. La versión 2.9 de Google Play vuelve a sonar un minuto después, durante una hora como máximo. Los controles del teléfono siguen funcionando."
     ]
   },
   "smartAlarms": {
-    "heading": "Alarmas inteligentes de calendario",
-    "body": "Una regla inteligente suena un número fijado de minutos antes de tu primera reunión, acotado entre una hora más temprana y una más tardía que eliges tú. WakeSharp vuelve a comprobar tu calendario durante la noche, así que si la reunión se mueve, la alarma se mueve. Si rechazas el acceso al calendario, todo lo demás sigue funcionando; simplemente fijas las horas tú. Tus eventos nunca salen de tu dispositivo; consulta la [Política de privacidad](privacy).",
+    "heading": "Alarmas de calendario",
+    "body": "Una alarma de calendario suena un número fijado de minutos antes de tu primera reunión, acotado entre una hora más temprana y una más tardía que eliges tú. WakeSharp vuelve a comprobar tu calendario durante la noche, así que si la reunión se mueve, la alarma se mueve. Si rechazas el acceso al calendario, todo lo demás sigue funcionando; simplemente fijas las horas tú. Tus eventos nunca salen de tu dispositivo; consulta la [Política de privacidad](privacy).",
     "limits": "Una rotación de turnos es para patrones que no son semanales -4 de trabajo / 4 libres desde una fecha de anclaje, cada fase con su propia hora- y con un calendario de vista previa para que lo compruebes antes de confiarle tu sueño."
+  },
+  "groups": {
+    "heading": "Alarmas de grupo",
+    "body": "Una alarma de grupo suena a la misma hora en el teléfono de cada miembro, y el grupo puede ver quién ya se ha levantado, quién ha pospuesto y quién sigue dormido. Crea una desde el botón de más de la pantalla de inicio, ponle un nombre y pon también el tuyo, y comparte el enlace de invitación; la alarma se activa cuando se une el primer amigo. Las alarmas de grupo necesitan una cuenta de WakeSharp, para que tus amigos vean que te has levantado, y por ahora son solo para iPhone: la versión 2.9 de Google Play no las tiene. Lo que ve el grupo se describe en la [Política de privacidad](privacy)."
   },
   "sharpness": {
     "heading": "La puntuación de Agudeza",
-    "body": "La puntuación de agudeza es un resultado diario dentro de la aplicación. Revísala junto al historial, las rachas y las insignias, y sigue tu progreso con Lark en Nest. No mide el sueño ni es una evaluación médica. No determina si puedes conducir o trabajar con seguridad.",
-    "physical": "El calentamiento mental es opcional. Problemas de matemáticas, Parejas y Secuencia también pueden ser misiones. Word Dash y Reaction Tap son juegos de calentamiento, no misiones de alarma."
+    "body": "La puntuación de agudeza es un resultado diario dentro de la aplicación. Revísala en Logros, junto al historial, las rachas y las insignias, y sigue tu progreso con Lark en Nest. No mide el sueño ni es una evaluación médica. No determina si puedes conducir o trabajar con seguridad.",
+    "physical": "Tu puntuación de Agudeza sale de las misiones que completas cuando suena la alarma. El calentamiento mental aparte no se ofrece en la app actual. Problemas de matemáticas, Parejas de Memoria y Recordar Secuencia son misiones de alarma."
   },
   "backup": {
     "heading": "Copia de seguridad y cambio a un teléfono nuevo",
-    "body": "No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad.",
+    "body": "No necesitas una cuenta de WakeSharp, salvo para las alarmas de grupo. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad.",
     "items": [
       "**Está desactivada por defecto**, y todas las funciones funcionan sin iniciar sesión. La copia de seguridad se ejecuta silenciosamente después de que cambien tus datos, y una alarma nunca espera a la red para sonar.",
       "**Para pasar a un teléfono nuevo**, instala WakeSharp, inicia sesión con la misma cuenta de Apple o Google y restaura. Los cambios más recientes que ya estén en el dispositivo nuevo se conservan.",
@@ -82,7 +86,7 @@ export const support = {
   "purchases": {
     "heading": "Compras y WakeSharp Ilimitado",
     "items": [
-      "**WakeSharp Ilimitado** es la app entera: todas las misiones para despertar, la rotación diaria de calentamiento, tu historial completo de Agudeza, las alarmas inteligentes de calendario, las rotaciones de turnos y los perfiles, y todas las escenas de Lark (la alondra mascota) y todos los fondos. Los nuevos suscriptores pueden empezar con **{trialDays} días de prueba gratis** del plan anual, y después {annual} al año, o elegir el plan mensual a {monthly} al mes, que no tiene prueba. WakeSharp no muestra anuncios.",
+      "**WakeSharp Ilimitado** es la app entera: todas las misiones para despertar, tu historial completo de Agudeza, las alarmas de calendario, las alarmas de grupo en iPhone, las rotaciones de turnos y los perfiles, y todas las escenas de Lark (la alondra mascota) y todos los fondos. Los nuevos suscriptores pueden empezar con **{trialDays} días de prueba gratis** del plan anual, y después {annual} al año, o elegir el plan mensual a {monthly} al mes, que no tiene prueba. WakeSharp no muestra anuncios.",
       "**Lifetime** (de por vida) fue una compra única, y sigue siendo válida para todos los que la compraron: nunca se renueva y no hay nada que cancelar.",
       "**Restaurar una compra:** abre la pantalla de pago y toca _Restaurar_. Asegúrate de haber iniciado sesión con la misma cuenta de Apple o Google con la que compraste.",
       "**Cancelar:** [suscripciones de App Store](apple-subs) o [suscripciones de Google Play](google-subs), en cualquier momento, incluso durante la prueba gratis. Borrar la app no cancela una suscripción.",

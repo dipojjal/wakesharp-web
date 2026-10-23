@@ -18,7 +18,7 @@ export const home = {
       "accent": "membuat Anda bangun",
       "post": ""
     },
-    "lede": "Pilih satu misi di bawah atau susun beberapa misi. Ini adalah pilihan publik untuk iPhone 2.14. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
+    "lede": "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
     "missions": [
       {
         "name": "Math Problems",
@@ -39,7 +39,7 @@ export const home = {
         "id": "sequence_recall"
       },
       {
-        "name": "Colour Clash",
+        "name": "Color Clash",
         "kind": "Otak",
         "body": "Ketuk warna tintanya, bukan katanya.",
         "id": "colour_clash"
@@ -59,7 +59,7 @@ export const home = {
       {
         "name": "Scan an Object",
         "kind": "Kamera",
-        "body": "Bangun dan arahkan kamera ke botol, cangkir, atau wastafel.",
+        "body": "Bangun dan arahkan kamera ke salah satu objek dalam daftar Anda.",
         "id": "object_scan"
       },
       {
@@ -93,6 +93,18 @@ export const home = {
         "id": "first_light"
       },
       {
+        "name": "Squats",
+        "kind": "Gerak · iPhone",
+        "body": "Selesaikan squat (jongkok berdiri) dengan pelacakan kamera di perangkat Anda.",
+        "id": "squats"
+      },
+      {
+        "name": "Push-ups",
+        "kind": "Gerak · iPhone",
+        "body": "Lakukan push-up di atas ponsel yang diletakkan di lantai, dihitung oleh kamera.",
+        "id": "push_ups"
+      },
+      {
         "name": "Name Five",
         "kind": "Suara",
         "body": "Sebutkan lima hal dari satu kategori, dengan lantang.",
@@ -108,7 +120,7 @@ export const home = {
     "note": "Misi adalah bagian dari alarm yang Anda buat, jadi kesepakatannya dibuat malam sebelumnya, bukan ditawar pada pukul 6 pagi."
   },
   "smart": {
-    "alt": "Editor aturan alarm pintar, diatur untuk berbunyi 90 menit sebelum rapat pertama",
+    "alt": "Editor alarm kalender, diatur untuk berbunyi 90 menit sebelum rapat pertama",
     "heading": {
       "pre": "Membangunkan Anda sebelum ",
       "accent": "rapat pertama",
@@ -124,18 +136,14 @@ export const home = {
       "accent": "seseorang ikut serta",
       "post": ""
     },
-    "lede": "Bagikan tautan, dan ponsel yang membukanya menyetel alarm yang sama, lalu membunyikannya sendiri. Tidak ada yang perlu diikuti, tidak ada yang perlu didaftar, dan tidak ada server di tengahnya.",
+    "lede": "Setel alarm grup dan bagikan tautan undangannya. Alarm setiap orang berbunyi pada waktu yang sama, di ponsel masing-masing, dan grup bisa melihat siapa yang sudah bangun.",
     "cards": [
       {
-        "title": "Wake with a friend",
-        "body": "Bangun bersama teman: Anda mengirim tautan; ponsel mereka membuat alarmnya secara lokal. Setiap orang menyimpan salinannya sendiri, jadi mengubah alarm Anda tidak menyentuh alarm mereka."
-      },
-      {
-        "title": "Beat my wake",
-        "body": "Kalahkan bangun pagiku: selesaikan misi, dan Anda bisa menantang seseorang dengan set soal yang identik, yaitu seed yang sama, ronde yang sama, tingkat kesulitan yang sama. Lalu ketahuan siapa di antara Anda berdua yang benar-benar sudah bangun."
+        "title": "Group alarm",
+        "body": "Alarm grup: buat alarm grup dari tombol plus dan kirim tautan undangannya. Alarm aktif begitu teman pertama bergabung, dan setiap pagi menampilkan siapa yang sudah bangun, siapa yang menunda, dan siapa yang masih tidur. Fitur ini memerlukan akun WakeSharp, supaya teman Anda bisa melihat bahwa Anda sudah bangun. Untuk saat ini hanya di iPhone: Google Play versi 2.9 tidak memilikinya."
       }
     ],
-    "note": "Keduanya hanya tautan: ponsel yang menerimanya mengerjakan semuanya sendiri."
+    "note": "Undangannya berupa tautan. Ponsel yang membukanya bergabung ke grup, lalu menyetel alarmnya dengan satu ketukan."
   },
   "platforms": {
     "heading": {
@@ -143,9 +151,9 @@ export const home = {
       "accent": "Kedua ponsel.",
       "post": ""
     },
-    "lede": "WakeSharp juga tersedia di Android. Saluran audio, izin, dan pengaturan baterainya berbeda. Gambar ini menampilkan iPhone dan Apple Watch, bukan Android atau Wear OS. Periksa pilihan yang tersedia di aplikasi terpasang. WakeSharp memerlukan {ios} di iPhone, atau {android} di Android. Aplikasi jam tangannya memerlukan watchOS 26 atau Wear OS 3.",
-    "watch": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan.",
-    "account": "Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
+    "lede": "WakeSharp juga ada di Google Play, dengan versi 2.9 sebagai rilis saat ini. Saluran audio alarm, izin, dan pengaturan baterainya berbeda dari iPhone, dan versi itu tidak menyertakan fitur iPhone yang lebih baru yang disebut di halaman ini. Gambar ini menampilkan iPhone dan Apple Watch, bukan Android atau Wear OS. Periksa aplikasi yang terpasang untuk melihat misi dan kontrol yang tersedia di platform Anda. WakeSharp memerlukan {ios} di iPhone, atau {android} di Android. Aplikasi jam tangannya memerlukan watchOS 26 atau Wear OS 3.",
+    "watch": "Di iPhone, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan.",
+    "account": "Akun WakeSharp tidak wajib, kecuali untuk alarm grup. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
   },
   "reliable": {
     "heading": {
@@ -180,21 +188,20 @@ export const home = {
       "accent": "semuanya termasuk",
       "post": ""
     },
-    "lede": "WakeSharp Unlimited adalah seluruh aplikasi: setiap misi bangun, pemanasan harian, alarm kalender pintar, rotasi shift dan profil, riwayat Sharpness lengkap Anda, serta setiap adegan Lark dan wallpaper. WakeSharp tidak menampilkan iklan.",
+    "lede": "WakeSharp Unlimited adalah seluruh aplikasi: setiap misi bangun, alarm grup, alarm kalender, rotasi shift dan profil, riwayat Sharpness lengkap Anda, serta setiap adegan Lark dan wallpaper. WakeSharp tidak menampilkan iklan.",
     "unlimited": {
       "name": "WakeSharp Unlimited",
       "perYear": "/tahun",
       "trial": "Mulai dengan **uji coba gratis {trialDays} hari**, lalu {annual} per tahun",
       "monthly": "atau **{monthly} per bulan**, tanpa uji coba",
       "features": [
-        "Setiap misi bangun, dan beberapa berturut-turut jika Anda mau",
-        "Tiga permainan pemanasan setiap pagi, bergiliran",
-        "Riwayat Sharpness lengkap Anda",
-        "Alarm kalender pintar yang bisa ikut bergeser saat rapat pertama Anda bergeser",
+        "Setiap misi bangun, dan hingga empat berturut-turut jika Anda mau",
+        "Riwayat Sharpness lengkap Anda, lencana, dan pencapaian",
+        "Alarm kalender yang bisa ikut bergeser saat rapat pertama Anda bergeser",
         "Rotasi shift, profil, dan alarm sebanyak yang Anda butuhkan",
         "Pemeriksaan keandalan dan semua nada alarm",
         "Setiap adegan Lark, wallpaper alarm, dan perayaan",
-        "Wake with a friend, dan aplikasi jam tangan untuk kedua pergelangan",
+        "Group alarm (alarm grup) di iPhone, dan aplikasi jam tangan untuk kedua pergelangan",
         "Tanpa iklan"
       ]
     },
@@ -218,15 +225,15 @@ export const home = {
       },
       {
         "q": "Apakah saya harus berhitung pada pukul 6 pagi?",
-        "a": "Pilih satu misi di bawah atau susun beberapa misi. Ini adalah pilihan publik untuk iPhone 2.14. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai."
+        "a": "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai."
       },
       {
         "q": "Bisakah saya curang dan melewati misi?",
-        "a": "Di iPhone 2.14, menghentikan atau menunda alarm mengundurnya satu menit. Alarm dapat berulang hingga satu jam bila misi belum selesai. Kontrol ponsel tetap berfungsi."
+        "a": "Di iPhone, hentikan atau tunda alarmnya dan alarm berbunyi lagi dalam 30 detik, sampai misi Anda selesai. Google Play versi 2.9 berbunyi lagi satu menit kemudian, hingga satu jam. Kontrol ponsel Anda sendiri tetap berfungsi. Ruangan gelap atau izin yang ditolak juga tidak pernah menggantinya dengan misi yang lebih mudah: aplikasi memperingatkan Anda, atau meminta izinnya kembali."
       },
       {
         "q": "Apa yang dilakukan kamera?",
-        "a": "Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan kamera ke objek itu. Konfirmasi hijau menandakan WakeSharp mengenalinya. Pengenalan berjalan di ponselmu. Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
+        "a": "Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan kamera ke objek itu. Konfirmasi hijau menandakan WakeSharp mengenalinya. Pengenalan berjalan di ponselmu. Akun WakeSharp tidak wajib, kecuali untuk alarm grup. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
       },
       {
         "q": "Apakah WakeSharp melacak tidur saya?",
@@ -238,11 +245,11 @@ export const home = {
       },
       {
         "q": "Apakah saya perlu akun?",
-        "a": "Akun WakeSharp tidak wajib. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
+        "a": "Akun WakeSharp tidak wajib, kecuali untuk alarm grup. Masuk secara opsional dengan Apple atau Google mencadangkan alarm, riwayat, preferensi, dan gambar mini target foto. Pencocokan foto dan pemrosesan kalender dilakukan di perangkat. Isi acara tetap di sana. Baca kebijakan privasi untuk rinciannya."
       },
       {
         "q": "Bagaimana jika jam tangan saya mati?",
-        "a": "Di iPhone 2.14, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan."
+        "a": "Di iPhone, mengetuk “I’m up” di Apple Watch menunda alarm ponsel satu menit. Selesaikan misi di iPhone untuk menghentikan pengulangan. Jam harus terisi daya, terhubung, dan disiapkan."
       },
       {
         "q": "Berapa biaya WakeSharp?",

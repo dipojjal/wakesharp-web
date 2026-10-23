@@ -8,8 +8,8 @@ export const PRIVACY = {
     'How WakeSharp handles optional accounts, purchases, product analytics and campaign measurement, and how you control your privacy. WakeSharp shows no ads.',
   heading: 'Privacy Policy',
   intro:
-    'WakeSharp is an alarm clock that runs on your phone and requires no account. This policy explains local data, optional backups and weather, purchases, and product and marketing measurement. WakeSharp shows no adverts. Measurement records use pseudonymous identifiers that can link to your account when you sign in.',
-  lastUpdated: '2026-10-14',
+    'WakeSharp is an alarm clock that runs on your phone and requires no account, except for group alarms. This policy explains local data, optional backups and weather, group alarms, purchases, and product and marketing measurement. WakeSharp shows no adverts. Measurement records use pseudonymous identifiers that can link to your account when you sign in.',
+  lastUpdated: '2026-10-23',
 };
 
 export const TERMS = {

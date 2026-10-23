@@ -1,26 +1,26 @@
 ---
 title: "WakeSharp Sharpness Score"
 seoTitle: "WakeSharp Sharpness Score"
-description: "Tinjau skor harian, pemanasan opsional, dan riwayat tanpa menganggapnya sebagai tes medis."
-lede: "Tinjau skor harian, pemanasan opsional, dan riwayat tanpa menganggapnya sebagai tes medis."
+description: "Tinjau Sharpness Score harian, lencana, dan riwayat pagi Anda di Achievements (pencapaian). Ikuti kemajuan Anda sendiri tanpa menganggapnya sebagai tes medis."
+lede: "Tinjau Sharpness Score harian, lencana, dan riwayat pagi Anda di Achievements (pencapaian). Ikuti kemajuan Anda sendiri tanpa menganggapnya sebagai tes medis."
 lang: "id"
 translationOf: "sharpness-score"
 order: 8
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/06-sharpness.png"
 screenshotAlt: "Sharpness Score harian"
 ---
 
-Sharpness Score adalah skor harian di aplikasi. Lihat bersama riwayat, rentetan, dan lencana, lalu ikuti kemajuan Lark di Nest. Ini bukan skor tidur atau penilaian medis. Skor tidak menentukan apakah kamu aman mengemudi atau bekerja.
+Sharpness Score adalah skor harian di aplikasi. Lihat di bagian Achievements (pencapaian) bersama riwayat, rentetan, dan lencana, lalu ikuti kemajuan Lark di Nest. Ini bukan skor tidur atau penilaian medis. Skor tidak menentukan apakah Anda aman mengemudi atau bekerja.
 
 ## Cara menggunakan
 
-1. Buka tampilan Sharpness setelah menyelesaikan pagi.
-2. Coba pemanasan jika ingin dan lihat rincian skor.
+1. Selesaikan pagi Anda dan buka Achievements.
+2. Lihat rincian skor yang ditampilkan di aplikasi, dan lencana yang sudah Anda raih.
 3. Bandingkan beberapa pagi. Lencana dan Nest memberi dorongan, bukan diagnosis.
 
 ## Yang perlu diperiksa
 
-Pemanasan otak bersifat opsional. Math Problems, Memory Match, dan Sequence Recall juga dapat menjadi misi. Word Dash dan Reaction Tap adalah permainan pemanasan, bukan misi alarm.
+Sharpness Score Anda berasal dari misi yang Anda selesaikan saat alarm berbunyi. Pemanasan otak yang terpisah tidak ditawarkan di aplikasi versi saat ini. Math Problems, Memory Match, dan Sequence Recall adalah misi alarm.

@@ -1,27 +1,27 @@
 {
-  "releaseNotice": "WakeSharp 2.14 is now live on iOS and Android. Get the latest update from the App Store or Google Play.",
+  "releaseNotice": "WakeSharp 2.25 is live on the App Store. Google Play has version 2.9, so some features described here are iPhone-only for now. Get the latest update from the App Store or Google Play.",
   "hero": "Pick a sound from the Loud category, then choose what you want to do when the alarm rings. Solve a few math problems, scan a bottle, or get moving with a walking mission.",
   "loudTitle": "Start with a sound you will notice",
   "loud": "Loud is a sound category in the alarm editor. Open the sound picker, listen to the tones, and choose the one you want for that alarm. You can pair the same tone with any available mission.",
   "volume": "On iPhone, system alarm volume is controlled by iOS. Choosing a Loud tone does not override that setting. On Android, check the alarm volume and allow alarms in Do Not Disturb. Test the sound on your own phone before relying on it.",
   "scanTitle": "Get up. Find it. Scan it.",
   "scan": "Choose a target such as a bottle, mug or sink. When the alarm rings, point the camera at that object. The green match confirmation tells you when WakeSharp has recognised it. Object recognition runs on your phone.",
-  "missionsIntro": "Choose from the missions below, or put several in a sequence. This is the public iPhone 2.14 selection. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
+  "missionsIntro": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
   "hubTitle": "Alarm missions that give you a reason to get up",
-  "hubDescription": "Explore WakeSharp alarm missions, loud tones, calendar alarms and shift rotations. Choose a task that fits your morning and see how it works.",
+  "hubDescription": "Explore WakeSharp alarm missions, loud tones, group alarms, calendar alarms and shift rotations. Choose a task that fits your morning and see how it works.",
   "galleryTitle": "A closer look at WakeSharp",
   "englishArtwork": "The screenshots are in English. The captions describe each screen in your language.",
   "open": "Enlarge screenshot",
   "close": "Close screenshot",
-  "watch": "In iPhone 2.14, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up.",
-  "android": "WakeSharp is also available on Android. Its alarm stream, permissions and battery settings differ from iPhone. These images show iPhone and Apple Watch, not Android or Wear OS. Check the installed app for the missions and controls available on your platform.",
-  "backup": "No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.",
+  "watch": "On iPhone, tapping “I’m up” on Apple Watch delays the phone alarm by one minute. Finish the mission on your iPhone to stop the repeat alarms. The Watch needs to be charged, connected and set up.",
+  "android": "WakeSharp is also on Google Play, where version 2.9 is the current release. Its alarm stream, permissions and battery settings differ from iPhone, and it does not include the newer iPhone features named on this page: Squats, Push-ups, group alarms and the 30-second repeat. These images show iPhone and Apple Watch, not Android or Wear OS. Check the installed app for the missions and controls available on your platform.",
+  "backup": "No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.",
   "deleting": "Uninstalling removes local app data, but does not delete an optional cloud backup or cancel a store subscription. Delete the backup through Settings → Account → Delete account, or use the account deletion page. Manage your subscription separately in the store.",
   "scoreTitle": "See how your morning went",
-  "score": "Sharpness is a daily in-app score. Review it alongside your history, streaks and badges, then visit Nest for your progress with Lark. It is not a sleep score or a medical assessment. A single number does not tell you whether you are safe to drive or work.",
-  "warmup": "The brain warm-up is optional. Math Problems, Memory Match and Sequence Recall can also be alarm missions. Word Dash and Reaction Tap are warm-up games, not choices in the alarm mission directory.",
+  "score": "Sharpness is a daily in-app score. Review it under Achievements alongside your history, streaks and badges, then visit Nest for your progress with Lark. It is not a sleep score or a medical assessment. A single number does not tell you whether you are safe to drive or work.",
+  "warmup": "Your Sharpness Score comes from the missions you finish when the alarm rings. The separate brain warm-up is not offered in the current app. Math Problems, Memory Match and Sequence Recall are alarm missions.",
   "developer": "I’m Dipojjal, the developer behind WakeSharp. I build it at KineticBit. I want the app to be clear about what it can do and what depends on your phone. If something is confusing or an alarm misbehaves, the contact form reaches me.",
-  "repeat": "In iPhone 2.14, stopping or snoozing delays the alarm by one minute. It can repeat for up to one hour unless you finish the mission. Your phone’s own controls still work.",
+  "repeat": "On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work.",
   "how": "How to use it",
   "limits": "What to check",
   "related": "Explore the other features",
@@ -72,7 +72,7 @@
       "Puzzle alarm clock",
       "Choose memory, sequence or colour challenges for your morning alarm. WakeSharp lets you set a puzzle mission or combine several tasks.",
       [
-        "Choose Memory Match, Sequence Recall or Colour Clash.",
+        "Choose Memory Match, Sequence Recall or Color Clash.",
         "Try the difficulty before saving. A harder puzzle is not always a better alarm.",
         "Find the card pairs, repeat the pattern, or tap the ink colour when the alarm rings."
       ]
@@ -87,11 +87,11 @@
       ]
     ],
     [
-      "Walking alarm clock",
-      "Walk It Off counts real steps during your WakeSharp alarm mission. First Light gives you another way to move toward a brighter morning.",
+      "Walking and exercise alarm clock",
+      "Walk It Off counts real steps during your alarm mission. First Light asks for daylight. On iPhone, Squats and Push-ups count your reps with the camera.",
       [
-        "Choose Walk It Off and allow the motion permission it needs.",
-        "Try a short route with your phone in your hand or pocket. Check that steps register.",
+        "Choose Walk It Off and allow the motion permission it needs, or choose Squats or Push-ups on iPhone and allow the camera.",
+        "Try a short route with your phone in your hand or pocket. Check that steps register. For Push-ups, lay the phone on the floor and let the front camera count.",
         "Walk carefully when the alarm rings. First Light instead asks you to hold your phone in daylight."
       ]
     ],
@@ -99,7 +99,7 @@
       "Calendar alarm clock",
       "Set a WakeSharp alarm before your first calendar event, with an earliest and latest wake time. Calendar processing stays on your device.",
       [
-        "Allow calendar access and create a smart alarm rule.",
+        "Allow calendar access and create a calendar alarm.",
         "Choose how many minutes before the event to ring, plus the earliest and latest times.",
         "Review the next alarm after editing your calendar. Keep a fixed backup for an appointment you cannot miss."
       ]
@@ -115,10 +115,10 @@
     ],
     [
       "WakeSharp Sharpness Score",
-      "Review your daily Sharpness Score, optional warm-ups and morning history. Follow your own progress without treating it as a medical test.",
+      "Review your daily Sharpness Score, your badges and your morning history under Achievements. Follow your own progress without treating it as a medical test.",
       [
-        "Finish your morning and open the Sharpness view.",
-        "Try an optional brain warm-up when you want to. Review the score breakdown shown in the app.",
+        "Finish your morning and open Achievements.",
+        "Review the score breakdown shown in the app, and the badges you have earned.",
         "Look at several mornings in your history. Use badges and Nest as encouragement, not as a health diagnosis."
       ]
     ]

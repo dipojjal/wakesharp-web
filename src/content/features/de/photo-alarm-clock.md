@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "photo-alarm-clock"
 order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/de/03-missions.png"
 screenshotAlt: "Verfügbare Weckmissionen"
 ---
@@ -28,4 +28,4 @@ Fotografiere noch einmal die Stelle, die du am Abend vorher gewählt hast.
 
 ## Darauf solltest du achten
 
-Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.
+Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.

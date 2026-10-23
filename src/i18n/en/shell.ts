@@ -7,7 +7,7 @@ import { SAFETY_NOTICE, SITE } from '../../config/site';
  */
 export const shell = {
   /** The sitewide meta + OG description; the JSON-LD one reads it too. */
-  siteDescription: "WakeSharp is a loud alarm clock with math, camera and walking missions. Version 2.14 is now live on iOS and Android, with calendar alarms and daily scores.",
+  siteDescription: "WakeSharp is a loud alarm clock with math, camera, walking and exercise missions, group alarms, calendar alarms and daily scores. 2.25 is on the App Store.",
   /** The footer strapline; the hero heading carries the same words split for emphasis. */
   tagline: SITE.tagline as string,
   /** Minimum OS versions, mirrored from SITE.requirements so the sentence around them translates. */
@@ -63,6 +63,17 @@ export const shell = {
    * never implies an app in, say, Japanese. Name the languages in this locale.
    */
   appLanguageNote: `The WakeSharp app is available in English, Spanish, Russian, Turkish, German, French and Arabic.`,
+
+  /**
+   * The "As seen on" badge (src/components/PressBadge.astro). The label is the
+   * literal "As seen on" in each language, the wording the app's badge uses,
+   * and never "Featured in", "Covered by" or "In the press": the source is a
+   * paid press release (src/config/press.ts). The outlets' names are not
+   * translated.
+   */
+  press: {
+    label: `As seen on`,
+  },
 
   legalLayout: {
     lastUpdated: `Last updated {date}`,

@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/de/02-scan.png"
 screenshotAlt: "Objekterkennung mit grüner Bestätigung"
 ---
@@ -23,4 +23,4 @@ Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingel
 
 ## Darauf solltest du achten
 
-Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.
+Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung.

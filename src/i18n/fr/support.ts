@@ -52,25 +52,29 @@ export const support = {
   "missions": {
     "heading": "Missions et rappel d’alarme",
     "items": [
-      "Choisissez une mission ci-dessous ou combinez-en plusieurs. Voici la sélection publique sur iPhone 2.14. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
+      "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
       "Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirigez la caméra vers cet objet. La confirmation verte indique que WakeSharp l’a reconnu. La reconnaissance se fait sur votre téléphone.",
-      "**Si une mission ne peut pas fonctionner** ce matin-là (un appareil photo en panne, un téléphone sans podomètre), WakeSharp se rabat sur une autre qui le peut, pour que vous ne restiez pas coincé avec une alarme que vous ne pouvez pas terminer.",
-      "Sur iPhone 2.14, arrêter ou reporter l’alarme la repousse d’une minute. Elle peut se répéter pendant une heure au maximum si la mission reste inachevée. Les commandes du téléphone restent utilisables."
+      "**Une pièce sombre ou une autorisation refusée ne remplace jamais la mission par une plus facile.** WakeSharp vous prévient, ou redemande l’autorisation. Seule une vraie panne, comme un téléphone sans caméra ou sans podomètre, confie la matinée à Problèmes de maths, pour que vous ne restiez pas coincé avec une alarme que vous ne pouvez pas terminer.",
+      "Sur iPhone, arrêtez-la ou reportez-la et elle sonne de nouveau en moins de 30 secondes, jusqu’à ce que votre mission soit terminée. La version 2.9 de Google Play sonne de nouveau une minute plus tard, pendant une heure au maximum. Les commandes du téléphone restent utilisables."
     ]
   },
   "smartAlarms": {
-    "heading": "Alarmes d’agenda intelligentes",
-    "body": "Une règle intelligente sonne un nombre de minutes défini avant votre première réunion, dans les limites d’une heure de réveil au plus tôt et au plus tard que vous choisissez. WakeSharp revérifie votre agenda pendant la nuit : si la réunion se déplace, l’alarme se déplace. Si vous refusez l’accès à l’agenda, tout le reste fonctionne: vous réglez simplement les heures vous-même. Vos événements ne quittent jamais votre appareil ; voir la [Politique de confidentialité](privacy).",
+    "heading": "Réveils calendrier",
+    "body": "Un réveil calendrier sonne un nombre de minutes défini avant votre première réunion, dans les limites d’une heure de réveil au plus tôt et au plus tard que vous choisissez. WakeSharp revérifie votre agenda pendant la nuit : si la réunion se déplace, l’alarme se déplace. Si vous refusez l’accès à l’agenda, tout le reste fonctionne: vous réglez simplement les heures vous-même. Vos événements ne quittent jamais votre appareil ; voir la [Politique de confidentialité](privacy).",
     "limits": "Une rotation d’équipe sert aux rythmes qui ne sont pas hebdomadaires: 4 jours travaillés / 4 de repos à partir d’une date d’ancrage, chaque phase avec sa propre heure, et un calendrier d’aperçu pour vérifier avant d’aller dormir."
+  },
+  "groups": {
+    "heading": "Réveils de groupe",
+    "body": "Un réveil de groupe sonne à la même heure sur le téléphone de chaque membre, et le groupe voit qui est debout, qui a reporté et qui dort encore. Créez-en un depuis le bouton plus de l’écran d’accueil, donnez-lui un nom ainsi que le vôtre, puis partagez le lien d’invitation ; l’alarme s’active dès qu’un premier ami rejoint le groupe. Les réveils de groupe nécessitent un compte WakeSharp, pour que vos amis voient que vous êtes debout, et ils sont sur iPhone pour l’instant : la version 2.9 de Google Play ne les a pas. Ce que voit le groupe est décrit dans la [Politique de confidentialité](privacy)."
   },
   "sharpness": {
     "heading": "Le score de Vivacité",
-    "body": "Le score d’acuité est un résultat quotidien dans l’application. Retrouvez l’historique, les séries et les badges, puis votre progression avec Lark dans Nest. Ce n’est ni un score de sommeil ni une évaluation médicale. Il ne détermine pas votre aptitude à conduire ou travailler.",
-    "physical": "L’échauffement mental est facultatif. Les calculs, les paires et les séquences peuvent aussi servir de missions. Word Dash et Reaction Tap sont des jeux d’échauffement, pas des missions de réveil."
+    "body": "Le score d’acuité est un résultat quotidien dans l’application. Retrouvez-le dans Succès, avec l’historique, les séries et les badges, puis votre progression avec Lark dans Nest. Ce n’est ni un score de sommeil ni une évaluation médicale. Il ne détermine pas votre aptitude à conduire ou travailler.",
+    "physical": "Votre score de Vivacité vient des missions que vous terminez quand l’alarme sonne. L’échauffement mental à part n’est pas proposé dans l’application actuelle. Problèmes de maths, Paires de mémoire et Rappel de séquence sont des missions de réveil."
   },
   "backup": {
     "heading": "Sauvegarde et passage à un nouveau téléphone",
-    "body": "Aucun compte WakeSharp n’est obligatoire. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.",
+    "body": "Aucun compte WakeSharp n’est obligatoire, sauf pour les réveils de groupe. Une connexion facultative avec Apple ou Google sauvegarde les alarmes, l’historique, les préférences et de petites vignettes des photos cibles. La comparaison des photos et le calendrier sont traités sur l’appareil. Le contenu des événements y reste. Consultez la politique de confidentialité.",
     "items": [
       "**C’est désactivé par défaut**, et toutes les fonctions marchent sans connexion. La sauvegarde s’exécute discrètement après une modification de vos données, et une alarme n’attend jamais le réseau pour sonner.",
       "**Pour passer à un nouveau téléphone**, installez WakeSharp, connectez-vous avec le même compte Apple ou Google, puis restaurez. Les modifications plus récentes déjà présentes sur le nouvel appareil sont conservées.",
@@ -82,7 +86,7 @@ export const support = {
   "purchases": {
     "heading": "Achats et WakeSharp Illimité",
     "items": [
-      "**WakeSharp Illimité**, c’est toute l’application : toutes les missions de réveil, la rotation quotidienne des jeux d’échauffement, tout votre historique de Vivacité, les alarmes d’agenda intelligentes, les rotations d’équipe et les profils, ainsi que toutes les scènes du Lark et tous les fonds d’écran. Les nouveaux abonnés peuvent commencer par **{trialDays} jours d’essai gratuit** de la formule annuelle, puis {annual} par an, ou choisir la formule mensuelle à {monthly} par mois, sans essai. WakeSharp n’affiche aucune publicité.",
+      "**WakeSharp Illimité**, c’est toute l’application : toutes les missions de réveil, tout votre historique de Vivacité, les réveils calendrier, les réveils de groupe sur iPhone, les rotations d’équipe et les profils, ainsi que toutes les scènes du Lark et tous les fonds d’écran. Les nouveaux abonnés peuvent commencer par **{trialDays} jours d’essai gratuit** de la formule annuelle, puis {annual} par an, ou choisir la formule mensuelle à {monthly} par mois, sans essai. WakeSharp n’affiche aucune publicité.",
       "**Lifetime** (à vie) était un achat unique, et il reste valable pour tous ceux qui l’ont acheté : il ne se renouvelle jamais, et il n’y a rien à résilier.",
       "**Restaurer un achat :** ouvrez la page d’abonnement et touchez _Restaurer_. Assurez-vous d’être connecté avec le compte Apple ou Google qui a servi à l’achat.",
       "**Résilier :** [abonnements App Store](apple-subs) ou [abonnements Google Play](google-subs), quand vous voulez, y compris pendant l’essai gratuit. Supprimer l’application ne résilie pas un abonnement.",

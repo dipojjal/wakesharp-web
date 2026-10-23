@@ -7,8 +7,8 @@ lang: "en"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../assets/store/2.14/sources/ios/en/02-scan.png"
 screenshotAlt: "Scan an Object with a green bottle match"
 ---
@@ -23,4 +23,4 @@ Choose a target such as a bottle, mug or sink. When the alarm rings, point the c
 
 ## What to check
 
-No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.
+No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.

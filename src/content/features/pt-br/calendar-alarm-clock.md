@@ -7,8 +7,8 @@ lang: "pt-BR"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/01-home.png"
 screenshotAlt: "Próximo alarme e resumo da manhã"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "Próximo alarme e resumo da manhã"
 
 ## Como usar
 
-1. Permita o calendário e crie uma regra.
+1. Permita o acesso ao calendário e crie um alarme de calendário.
 2. Escolha a antecedência e os horários mínimo e máximo.
 3. Confira o alarme após mudanças e use um reserva para compromissos importantes.
 

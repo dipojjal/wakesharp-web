@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/en/01-home.png"
 screenshotAlt: "次のアラームと朝の概要"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "次のアラームと朝の概要"
 
 ## 使い方
 
-1. カレンダーを許可してルールを作ります。
+1. カレンダーを許可してカレンダーアラームを作ります。
 2. 予定の何分前か、最も早い時刻と遅い時刻を決めます。
 3. 予定変更後は次のアラームを確認し、大切な予定には予備を用意します。
 

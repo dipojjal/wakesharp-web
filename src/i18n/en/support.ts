@@ -51,25 +51,29 @@ export const support = {
   "missions": {
     "heading": "Missions and snoozing",
     "items": [
-      "Choose from the missions below, or put several in a sequence. This is the public iPhone 2.14 selection. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
+      "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
       "Choose a target such as a bottle, mug or sink. When the alarm rings, point the camera at that object. The green match confirmation tells you when WakeSharp has recognised it. Object recognition runs on your phone.",
-      "**If a mission can't run** that morning (a dead camera, a phone with no step counter), WakeSharp falls back to one that can, so you are not left with an alarm you cannot finish.",
-      "In iPhone 2.14, stopping or snoozing delays the alarm by one minute. It can repeat for up to one hour unless you finish the mission. Your phone’s own controls still work."
+      "**A dark room or a refused permission never swaps in an easier mission.** WakeSharp warns you, or asks for the permission back. Only a real fault, such as a phone with no camera or no step counter, hands the morning over to Math Problems, so you are not left with an alarm you cannot finish.",
+      "On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work."
     ]
   },
   "smartAlarms": {
-    "heading": "Smart calendar alarms",
-    "body": "A smart rule rings a set number of minutes before your first meeting, clamped between an earliest and a latest wake time you choose. WakeSharp re-checks your calendar overnight, so if the meeting moves, the alarm moves. If you decline calendar access, everything else still works. You just set times yourself. Your events never leave your device; see the [Privacy Policy](privacy).",
+    "heading": "Calendar alarms",
+    "body": "A calendar alarm rings a set number of minutes before your first meeting, clamped between an earliest and a latest wake time you choose. WakeSharp re-checks your calendar overnight, so if the meeting moves, the alarm moves. If you decline calendar access, everything else still works. You just set times yourself. Your events never leave your device; see the [Privacy Policy](privacy).",
     "limits": "A shift rotation is for patterns that aren't weekly: 4-on / 4-off from an anchor date, each phase with its own time, and a preview calendar so you can check it before you sleep on it."
+  },
+  "groups": {
+    "heading": "Group alarms",
+    "body": "A group alarm rings at the same time on every member's phone, and the group can see who is up, who snoozed and who is still asleep. Create one from the plus button on Home, give it a name and your own name, then share the invite link; the alarm switches on when the first friend joins. Group alarms need a WakeSharp account, so your friends can see you are up, and they are on iPhone for now: Google Play's version 2.9 does not have them. What the group sees is described in the [Privacy Policy](privacy)."
   },
   "sharpness": {
     "heading": "The Sharpness Score",
-    "body": "Sharpness is a daily in-app score. Review it alongside your history, streaks and badges, then visit Nest for your progress with Lark. It is not a sleep score or a medical assessment. A single number does not tell you whether you are safe to drive or work.",
-    "physical": "The brain warm-up is optional. Math Problems, Memory Match and Sequence Recall can also be alarm missions. Word Dash and Reaction Tap are warm-up games, not choices in the alarm mission directory."
+    "body": "Sharpness is a daily in-app score. Review it under Achievements alongside your history, streaks and badges, then visit Nest for your progress with Lark. It is not a sleep score or a medical assessment. A single number does not tell you whether you are safe to drive or work.",
+    "physical": "Your Sharpness Score comes from the missions you finish when the alarm rings. The separate brain warm-up is not offered in the current app. Math Problems, Memory Match and Sequence Recall are alarm missions."
   },
   "backup": {
     "heading": "Backup, and moving to a new phone",
-    "body": "No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.",
+    "body": "No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.",
     "items": [
       "**It is off by default**, and every feature works signed out. Backup runs quietly after your data changes, and an alarm never waits on the network to ring.",
       "**To move to a new phone**, install WakeSharp, sign in with the same Apple or Google account, and restore. Newer changes already on the new device are kept.",
@@ -81,7 +85,7 @@ export const support = {
   "purchases": {
     "heading": "Purchases and WakeSharp Unlimited",
     "items": [
-      "**WakeSharp Unlimited** is the whole app: every wake-up mission, the daily warm-up rotation, your full Sharpness history, smart calendar alarms, shift rotations and profiles, and every Lark scene and wallpaper. New subscribers can start with a **{trialDays}-day free trial** of the yearly plan, then {annual} a year, or choose the monthly plan at {monthly} a month, which has no trial. WakeSharp shows no ads.",
+      "**WakeSharp Unlimited** is the whole app: every wake-up mission, your full Sharpness history, calendar alarms, group alarms on iPhone, shift rotations and profiles, and every Lark scene and wallpaper. New subscribers can start with a **{trialDays}-day free trial** of the yearly plan, then {annual} a year, or choose the monthly plan at {monthly} a month, which has no trial. WakeSharp shows no ads.",
       "**Lifetime** was a one-time purchase, and it stays valid for everyone who bought it: it never renews, and there is nothing to cancel.",
       "**Restoring a purchase:** open the paywall and tap _Restore_. Make sure you are signed in with the same Apple or Google account you bought with.",
       "**Cancelling:** [App Store subscriptions](apple-subs) or [Google Play subscriptions](google-subs), any time, including during the free trial. Deleting the app does not cancel a subscription.",

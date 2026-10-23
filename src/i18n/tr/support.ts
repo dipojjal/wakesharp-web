@@ -52,25 +52,29 @@ export const support = {
   "missions": {
     "heading": "Görevler ve erteleme",
     "items": [
-      "Aşağıdaki görevlerden birini seç veya birkaçını sıraya koy. Bu liste iPhone 2.14’ün herkese açık seçimidir. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
+      "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
       "Şişe, kupa veya lavabo gibi bir hedef seç. Alarm çaldığında kamerayı o nesneye yönelt. Yeşil eşleşme onayı, WakeSharp’ın nesneyi tanıdığını gösterir. Nesne tanıma telefonunda çalışır.",
-      "**Bir görev o sabah çalışamazsa** (bitmiş bir kamera, adım sayarı olmayan bir telefon), WakeSharp çalışabilecek bir göreve geçer; böylece bitiremeyeceğiniz bir alarmla baş başa kalmazsınız.",
-      "iPhone 2.14’te durdurmak veya ertelemek alarmı bir dakika geciktirir. Görev tamamlanmazsa en fazla bir saat tekrarlanabilir. Telefonun kendi kontrolleri çalışmaya devam eder."
+      "**Karanlık bir oda ya da reddedilmiş bir izin asla daha kolay bir görev koymaz.** WakeSharp sizi uyarır ya da izni yeniden ister. Yalnızca gerçek bir arıza, örneğin kamerası ya da adım sayarı olmayan bir telefon, sabahı Matematik Problemleri’ne devreder; böylece bitiremeyeceğiniz bir alarmla baş başa kalmazsınız.",
+      "iPhone’da durdur ya da ertele, görevin bitene kadar 30 saniye içinde yeniden çalar. Google Play’in 2.9 sürümü bir dakika sonra yeniden çalar, en fazla bir saat boyunca. Telefonun kendi kontrolleri çalışmaya devam eder."
     ]
   },
   "smartAlarms": {
-    "heading": "Akıllı takvim alarmları",
-    "body": "Bir akıllı kural, ilk toplantınızdan belirlediğiniz sayıda dakika önce çalar; sizin seçtiğiniz en erken ve en geç uyanma saatleri arasında sınırlanır. WakeSharp takviminizi gece boyunca yeniden kontrol eder; toplantı kayarsa alarm da kayar. Takvim erişimini reddederseniz diğer her şey yine çalışır: saatleri kendiniz ayarlarsınız, o kadar. Etkinlikleriniz cihazınızdan asla çıkmaz; bkz. [Gizlilik Politikası](privacy).",
+    "heading": "Takvim alarmları",
+    "body": "Bir takvim alarmı, ilk toplantınızdan belirlediğiniz sayıda dakika önce çalar; sizin seçtiğiniz en erken ve en geç uyanma saatleri arasında sınırlanır. WakeSharp takviminizi gece boyunca yeniden kontrol eder; toplantı kayarsa alarm da kayar. Takvim erişimini reddederseniz diğer her şey yine çalışır: saatleri kendiniz ayarlarsınız, o kadar. Etkinlikleriniz cihazınızdan asla çıkmaz; bkz. [Gizlilik Politikası](privacy).",
     "limits": "Vardiya rotasyonu, haftalık olmayan düzenler içindir: bir başlangıç tarihinden itibaren 4 gün çalışma / 4 gün izin, her aşamanın kendi saati ve gece yatmadan önce kontrol edebilmeniz için bir önizleme takvimi."
+  },
+  "groups": {
+    "heading": "Grup alarmları",
+    "body": "Bir grup alarmı her üyenin telefonunda aynı saatte çalar ve grup kimin kalktığını, kimin ertelediğini ve kimin hâlâ uyuduğunu görebilir. Ana ekrandaki artı düğmesinden bir tane oluşturun, ona bir ad ve kendi adınızı verin, sonra davet bağlantısını paylaşın; alarm ilk arkadaşınız katıldığında açılır. Grup alarmları için hesap gerekir; böylece arkadaşlarınız kalktığınızı görebilir. Şimdilik iPhone’dalar: Google Play’in 2.9 sürümünde yok. Grubun ne gördüğü için bkz. [Gizlilik Politikası](privacy)."
   },
   "sharpness": {
     "heading": "Zindelik puanı",
-    "body": "Sharpness, uygulama içindeki günlük bir puandır. Geçmişin, serilerin ve rozetlerinle birlikte incele; Nest’te Lark ile ilerlemeni gör. Bu bir uyku puanı veya tıbbi değerlendirme değildir. Güvenle araç kullanıp çalışabileceğini belirlemez.",
-    "physical": "Zihin ısınması isteğe bağlıdır. Matematik Problemleri, Hafıza Eşleştirme ve Sıra Hatırlama alarm görevi de olabilir. Word Dash ve Reaction Tap ısınma oyunlarıdır, alarm görevi değildir."
+    "body": "Sharpness, uygulama içindeki günlük bir puandır. Başarılar altında geçmişin, serilerin ve rozetlerinle birlikte incele; Nest’te Lark ile ilerlemeni gör. Bu bir uyku puanı veya tıbbi değerlendirme değildir. Güvenle araç kullanıp çalışabileceğini belirlemez.",
+    "physical": "Zindelik puanın, alarm çaldığında bitirdiğin görevlerden gelir. Ayrı zihin ısınması mevcut uygulamada sunulmuyor. Matematik Problemleri, Hafıza Eşleme ve Sıra Hatırlama alarm görevleridir."
   },
   "backup": {
     "heading": "Yedekleme ve yeni bir telefona geçiş",
-    "body": "WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır.",
+    "body": "Grup alarmları dışında WakeSharp hesabı gerekmez. Apple veya Google ile isteğe bağlı giriş; alarmları, geçmişi, tercihleri ve küçük fotoğraf hedefi ön izlemelerini yedekler. Fotoğraf eşleştirme ve takvim işlemleri cihazda yapılır. Takvim etkinliklerinin içeriği cihazda kalır. Ayrıntılar gizlilik politikasındadır.",
     "items": [
       "**Varsayılan olarak kapalıdır** ve her özellik oturum açmadan çalışır. Yedekleme, verileriniz değiştikten sonra sessizce çalışır ve bir alarm çalmak için asla ağı beklemez.",
       "**Yeni bir telefona geçmek için** WakeSharp’ı yükleyin, aynı Apple veya Google hesabıyla giriş yapın ve geri yükleyin. Yeni cihazda zaten bulunan daha yeni değişiklikler korunur.",
@@ -82,7 +86,7 @@ export const support = {
   "purchases": {
     "heading": "Satın almalar ve WakeSharp Sınırsız",
     "items": [
-      "**WakeSharp Sınırsız** uygulamanın tamamıdır: tüm uyanma görevleri, günlük ısınma rotasyonu, Zindelik geçmişinizin tamamı, akıllı takvim alarmları, vardiya rotasyonları ve profiller, tüm Lark sahneleri ve duvar kâğıtları. Yeni aboneler yıllık planı **{trialDays} gün ücretsiz deneyerek** başlayabilir, ardından yılda {annual} öder; ya da deneme süresi olmayan aylık planı ayda {monthly} karşılığında seçebilir. WakeSharp reklam göstermez.",
+      "**WakeSharp Sınırsız** uygulamanın tamamıdır: tüm uyanma görevleri, Zindelik geçmişinizin tamamı, takvim alarmları, iPhone’da grup alarmları, vardiya rotasyonları ve profiller, tüm Lark sahneleri ve duvar kâğıtları. Yeni aboneler yıllık planı **{trialDays} gün ücretsiz deneyerek** başlayabilir, ardından yılda {annual} öder; ya da deneme süresi olmayan aylık planı ayda {monthly} karşılığında seçebilir. WakeSharp reklam göstermez.",
       "**Lifetime** (ömür boyu) tek seferlik bir satın almaydı ve satın alan herkes için geçerliliğini korur: hiç yenilenmez ve iptal edilecek bir şey yoktur.",
       "**Bir satın almayı geri yüklemek:** Abonelik ekranını açın ve _Geri yükle_ düğmesine dokunun. Satın aldığınız Apple veya Google hesabıyla giriş yapmış olduğunuzdan emin olun.",
       "**İptal etmek:** [App Store abonelikleri](apple-subs) veya [Google Play abonelikleri](google-subs) üzerinden, istediğiniz zaman; ücretsiz deneme süresi içinde de. Uygulamayı silmek aboneliği iptal etmez.",

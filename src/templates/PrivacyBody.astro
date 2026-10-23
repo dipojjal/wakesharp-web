@@ -12,7 +12,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   <div class="callout">
     <h2 class="!mt-0">The short version</h2>
     <ul>
-      <li>No account is required. You can optionally sign in with Apple or Google to back up your alarms and progress and link your WakeSharp Unlimited purchases across your devices.</li>
+      <li>No account is required, except for group alarms. You can optionally sign in with Apple or Google to back up your alarms and progress and link your WakeSharp Unlimited purchases across your devices. A group alarm shares your display name and your morning status (asleep, snoozed, up) with the members of that group, and nothing else.</li>
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
@@ -30,7 +30,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
 
   <h2>What WakeSharp does not do</h2>
   <ul>
-    <li>It does not require an account. Sign-in supports backup, restoration and purchase continuity.</li>
+    <li>It does not require an account, except for group alarms. Sign-in supports backup, restoration, purchase continuity and group alarms.</li>
     <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the name your sign-in provider shares, and the name you give the Lark to call you by, if you choose to. Your email address is held if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address), or if you enter it in a support form.</li>
     <li>It does not collect a location route. On iPhone, optional weather uses a chosen city or a location fix rounded to two decimal places before transmission. Approximate location inferred from IP addresses is described below.</li>
     <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, from version 2.10, the advertising identifier is read only after you allow tracking through Apple's prompt; before that version, and after a refusal, it is not read at all.</li>
@@ -44,9 +44,9 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   </p>
   <ul>
     <li>Your alarms, their times, repeat days and settings.</li>
-    <li>Your smart-alarm rules and the wake times computed from them.</li>
+    <li>Your calendar-alarm rules and the wake times computed from them.</li>
     <li>A journal of alarms scheduled, fired, snoozed, missed or silenced by a completed mission.</li>
-    <li>Your warm-up game results, personal baseline, daily Sharpness scores, streaks and freeze tokens.</li>
+    <li>Your mission results, personal baseline, daily Sharpness scores, streaks and freeze tokens.</li>
     <li>Your app preferences.</li>
   </ul>
   <p>
@@ -65,14 +65,14 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   <p>If you create an account, this is stored in your private backup:</p>
   <ul>
     <li>Your <strong>sign-in identity</strong>: a random account ID and the email your provider discloses (with Sign in with Apple you can hide your real address behind Apple's relay).</li>
-    <li>Your <strong>alarms and settings</strong>: times, repeat days, labels, missions, snooze rules, smart-alarm rules and shift rotations, and your app preferences, including badge reminders and your answers to the onboarding questions that pick your missions.</li>
-    <li>Your <strong>progress</strong>: daily Sharpness scores, streak and freeze tokens, badges, game results and personal baselines, a record of each morning your alarms rang and how it ended, your recent missions and wake-up times, and the journal of past alarms (only completed history; never diagnostics about your device, and never the calendar event a smart alarm woke you for).</li>
+    <li>Your <strong>alarms and settings</strong>: times, repeat days, labels, missions, snooze rules, calendar-alarm rules, shift rotations and the group a group alarm belongs to, and your app preferences, including badge reminders and your answers to the onboarding questions that pick your missions.</li>
+    <li>Your <strong>progress</strong>: daily Sharpness scores, streak and freeze tokens, badges, game results and personal baselines, a record of each morning your alarms rang and how it ended, your recent missions and wake-up times, and the journal of past alarms (only completed history; never diagnostics about your device, and never the calendar event a calendar alarm woke you for).</li>
     <li>Your <strong>Lark</strong>: its stage, the items it has found, its outfit and decorations, and the name you asked it to call you by. That name is personal information: it is stored in your backup, linked to your account, and deleted with it.</li>
     <li>Your <strong>profile photo</strong>, if you add one: a small copy, 256 pixels on its longest side.</li>
     <li>Your <strong>mission references</strong>: the small thumbnail and on-device fingerprint of a spot or photo target you enrolled. The full photographs are never stored, on your device or in the cloud.</li>
   </ul>
   <p>
-    Deliberately <strong>not</strong> in the backup: your calendar events (smart rules are backed up, the
+    Deliberately <strong>not</strong> in the backup: your calendar events (calendar-alarm rules are backed up, the
     events they read are not), camera frames, step counts, your finger-signature, and device diagnostics.
   </p>
   <p>
@@ -102,7 +102,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li>Access is <strong>read-only</strong>. WakeSharp never creates, edits or deletes an event.</li>
     <li>Events are read <strong>on your device</strong>, and used for one purpose: to compute the time your alarm should ring.</li>
     <li>Event titles, attendees, locations, notes and times are <strong>never transmitted to us or to anyone else</strong>. They are not written to any server, and they are not included in any diagnostic report.</li>
-    <li>You can revoke calendar access at any time in your phone's system settings. The smart alarm stops adjusting; nothing else changes.</li>
+    <li>You can revoke calendar access at any time in your phone's system settings. The calendar alarm stops adjusting; nothing else changes.</li>
   </ul>
 
   <h2>Optional weather on iPhone</h2>
@@ -126,7 +126,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   <p>On iPhone, WakeSharp asks for:</p>
   <ul>
     <li><strong>Alarms</strong>: so the alarm can ring loudly and reliably through Silent mode and Focus, using Apple's system alarm framework.</li>
-    <li><strong>Calendar</strong>: optional, read-only, for smart alarms only.</li>
+    <li><strong>Calendar</strong>: optional, read-only, for calendar alarms only.</li>
     <li><strong>Location</strong>: optional on iPhone for local weather. A manually selected city works without location permission. Coordinates are rounded before transmission, as described above.</li>
     <li><strong>Camera</strong>: optional, only for an alarm you have set to Scan an Object, Fetch, Photo Proof, First Light, Face Check or Fruit Slash, when you enrol a target and while that mission runs. Face Check and Fruit Slash use the front camera. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong>: optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
@@ -144,7 +144,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li><code>POST_NOTIFICATIONS</code>: for the ring notification, the optional bedtime reminder, and the missed-alarm report.</li>
     <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>: to keep the alarm tone playing while the alarm is ringing.</li>
     <li><code>RECEIVE_BOOT_COMPLETED</code>: to restore your alarms after a restart, because Android discards scheduled alarms on reboot.</li>
-    <li><code>READ_CALENDAR</code>: optional, read-only, for smart alarms only.</li>
+    <li><code>READ_CALENDAR</code>: optional, read-only, for calendar alarms only.</li>
     <li><code>CAMERA</code>: optional, for the Scan an Object, Fetch, Photo Proof, First Light, Face Check and Fruit Slash missions only. The last two use the front camera. See the next section.</li>
     <li><code>ACTIVITY_RECOGNITION</code>: optional, for walking missions only. See the next section.</li>
     <li><code>WAKE_LOCK</code> and <code>VIBRATE</code>: to wake the screen and vibrate while ringing.</li>
@@ -308,11 +308,11 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li>the camera viewfinder in the photo and scan missions;</li>
     <li>the photos you take to complete a mission, and the reference photos you save;</li>
     <li>anything you typed or named yourself: alarm labels, activity names, profile names, rotation
-      and shift names, the names you give scanned spots and photo references, the name you enter for a
-      wake pact, your alarm search text, and what you write in a support form or in the note when you
+      and shift names, the names you give scanned spots and photo references, the name you enter for a group alarm, your alarm search text, and what you write in a support form or in the note when you
       cancel;</li>
     <li>your email address, and the whole Account screen where it appears;</li>
     <li>the titles of your calendar events, everywhere they appear{REFERRAL_DISCLOSURE.published ? ';' : '.'}</li>
+    <li><strong>Group alarms, in our own tables</strong>: each morning's record is deleted after 14 days; a group with one member and no change for 30 days is deleted; leaving removes your membership at once, and deleting the optional account removes all of your memberships and records. See <a href="#group-alarms">Group alarms</a>.</li>
     {REFERRAL_DISCLOSURE.published && (
       <li>your invite code, and any code you type, paste or receive from an invite link.</li>
     )}
@@ -571,6 +571,56 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   )}
 
   {/*
+    Group alarms (iOS 2.23, live in 2.24 from 2026-10-21; Android 2.18, not
+    yet on Play). Written 2026-10-23 against the app repository:
+    supabase/migrations/20261021220348_wake_groups.sql (the three tables and
+    their columns, RLS through is_wake_group_member, the column grants that
+    leave user_id and creator_id out, member_key, the RPCs, the 14-day event
+    prune and the 30-day single-member prune on pg_cron, the Realtime
+    publication of wake_groups alone, purge_wake_group_memberships called by
+    delete-account), WSCore/GroupAlarm.swift (GroupInviteParser: the code and
+    the schedule-only fragment; no name in a link) and Docs/releases/
+    2.23-owner-round.md (no push notifications). Re-check it whenever any of
+    those change.
+  */}
+  <h2 id="group-alarms">Group alarms</h2>
+  <p>
+    A group alarm (iPhone, from version 2.24; not yet in the Google Play version) rings at the same time on
+    every member's phone and lets the group see who is up. It is the one feature that needs the optional
+    account: you sign in before creating or joining one, so that the people you wake with can see your
+    status. Everything else in this policy about the account applies to it.
+  </p>
+  <p>When you create or join a group, this is stored in a small set of tables of our own, hosted for us by Supabase in the United States under the same terms as the backup:</p>
+  <ul>
+    <li><strong>The group</strong>: the name the organizer gave it, the alarm's time, repeat days, mission, difficulty and, for Squats or Push-ups, the rep count, an invite code, and when it was created and last changed.</li>
+    <li><strong>Each member</strong>: the display name you typed when you created or joined the group, whether you are the organizer, when you joined, and a random key that stands for you within that group.</li>
+    <li><strong>Each morning</strong>: one record per member and day holding the day, when your alarm rang, when you finished the mission, how many times you snoozed, and your status: asleep, snoozed or up. Your phone sends these as the morning unfolds, and they are what the other members see.</li>
+  </ul>
+  <p>
+    The other members of a group see your display name and your morning status, and nothing else: not
+    your account ID, your email address or anything from your backup. Database rules let only a group's
+    members read its rows, and the columns that identify your account are never readable by another
+    member; the app tells members apart by the random per-group key. Anyone who has the invite link can
+    join the group until the organizer removes a member or makes a new link, which retires the old one.
+    While a group's screen is open, the app keeps a live connection to the database so the status line
+    updates as people get up. Group alarms send no push notifications.
+  </p>
+  <p>
+    The invite link carries the invite code and, optionally, the alarm's time and repeat days in the
+    part of the link after the <code>#</code>, which browsers never send to a server, ours included. It
+    never carries a name. The link opens the app on an iPhone that has it, and otherwise a page on this
+    site that only reads the code and shows the schedule; the page asks nothing of our database.
+  </p>
+  <p>
+    Each morning's record is deleted after 14 days. A group that has had a single member and no change
+    for 30 days is deleted. Leaving a group removes your membership at once, and when the last member
+    leaves, the group is deleted; if the organizer leaves, the earliest remaining member becomes the
+    organizer. Deleting the optional account removes every membership and morning record of yours, and
+    hands over or deletes the groups you organized, before the account itself goes. See
+    <a href="#retention">How long data is kept</a>.
+  </p>
+
+  {/*
     Why you cancelled (iOS 2.22, Android 2.17). Written 2026-10-14 against the
     app repository: supabase/migrations/20261014220000_cancellation_answers.sql
     (columns, write-only RPC, user_id only from auth.uid(), limits, the hourly
@@ -670,7 +720,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     avoid sending sensitive information in ordinary support email.
   </p>
 
-  <h2>How long data is kept, and how to delete it</h2>
+  <h2 id="retention">How long data is kept, and how to delete it</h2>
   <ul>
     <li><strong>On-device data</strong>: kept until you delete it in the app or uninstall WakeSharp. Uninstalling removes all of it. Unless you created the optional account, we hold no copy, so there is nothing for us to delete.</li>
     <li><strong>The optional account backup</strong>: kept until you delete the account, then removed immediately and permanently. Past history (the journal of past alarms, game results and the record of each morning your alarms rang) is deleted from the backup sooner, once it is 400 days old. To delete the account: <em>Settings → Account → Delete account</em> in the app, or the routes at <a href="/account/delete">wakesharp.app/account/delete</a> if you no longer have it installed.</li>

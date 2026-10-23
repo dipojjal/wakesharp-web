@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * Englischen aus site.ts kommen, stehen hier als übersetzter Text.
  */
 export const shell = {
-  siteDescription: "WakeSharp verbindet laute Töne mit Rechen-, Kamera- und Gehmissionen. Version 2.14 ist jetzt für iOS und Android verfügbar, mit Kalenderweckern und Verlauf.",
+  siteDescription: "WakeSharp 2.25 ist im App Store: lauter Wecker mit Rechen-, Kamera-, Geh- und Sportmissionen, Gruppenweckern, Kalenderweckern und täglichem Wachheitswert.",
   tagline: `Hellwach aufwachen. Nicht nur wach.`,
   requirements: { ios: `iOS 26 oder neuer`, android: `Android 8.0 oder neuer` },
   ogImageAlt: `WakeSharp - hellwach aufwachen, nicht nur wach.`,
@@ -59,6 +59,17 @@ export const shell = {
    * suggeriert. Die Sprachen werden in der Sprache dieses Katalogs genannt.
    */
   appLanguageNote: `Die WakeSharp-App gibt es auf Englisch, Spanisch, Russisch, Türkisch, Deutsch, Französisch und Arabisch.`,
+
+  /**
+   * Das Badge „Gesehen auf“ (src/components/PressBadge.astro). Die Beschriftung
+   * ist das wörtliche „As seen on“ auf Deutsch, so wie es die App schreibt, und
+   * nie „Bekannt aus“ oder „In der Presse“: Die Quelle ist eine bezahlte
+   * Pressemitteilung (src/config/press.ts). Die Namen der Medien werden nicht
+   * übersetzt.
+   */
+  press: {
+    label: `Gesehen auf`,
+  },
 
   legalLayout: {
     lastUpdated: `Zuletzt aktualisiert am {date}`,

@@ -18,7 +18,7 @@ export const home = {
       "accent": "te sacan de la cama",
       "post": ""
     },
-    "lede": "Elige una de estas misiones o combina varias. Esta es la selección pública de iPhone 2.14. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
+    "lede": "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
     "missions": [
       {
         "name": "Problemas de matemáticas",
@@ -59,7 +59,7 @@ export const home = {
       {
         "name": "Escanear un Objeto",
         "kind": "Cámara",
-        "body": "Levántate y apunta la cámara a una botella, una taza o un lavabo.",
+        "body": "Levántate y apunta la cámara a un objeto de tu lista.",
         "id": "object_scan"
       },
       {
@@ -93,6 +93,18 @@ export const home = {
         "id": "first_light"
       },
       {
+        "name": "Sentadillas",
+        "kind": "Movimiento · iPhone",
+        "body": "Haz sentadillas con seguimiento de cámara en el propio dispositivo.",
+        "id": "squats"
+      },
+      {
+        "name": "Flexiones",
+        "kind": "Movimiento · iPhone",
+        "body": "Haz flexiones sobre el teléfono, en el suelo, contadas por la cámara.",
+        "id": "push_ups"
+      },
+      {
         "name": "Nombra Cinco",
         "kind": "Voz",
         "body": "Nombra en voz alta cinco cosas de una categoría.",
@@ -108,7 +120,7 @@ export const home = {
     "note": "Las misiones forman parte de la alarma que creas, así que el trato se cierra la noche anterior, no se negocia a las 6 de la mañana."
   },
   "smart": {
-    "alt": "El editor de reglas de alarma inteligente, configurado para sonar 90 minutos antes de la primera reunión",
+    "alt": "El editor de alarma de calendario, configurado para sonar 90 minutos antes de la primera reunión",
     "heading": {
       "pre": "Te despierta antes de tu ",
       "accent": "primera reunión",
@@ -124,18 +136,14 @@ export const home = {
       "accent": "alguien contigo",
       "post": ""
     },
-    "lede": "Comparte un enlace y el teléfono que lo abre configura la misma alarma y luego la hace sonar por su cuenta. Nada a lo que unirse, nada en lo que registrarse y ningún servidor de por medio.",
+    "lede": "Crea una alarma de grupo y comparte su enlace de invitación. La alarma de todos suena a la misma hora, cada uno en su teléfono, y el grupo puede ver quién ya se ha levantado.",
     "cards": [
       {
-        "title": "Despertar con un amigo",
-        "body": "Tú envías un enlace; su teléfono crea la alarma en local. Cada uno conserva su propia copia, así que cambiar la tuya no toca la suya."
-      },
-      {
-        "title": "Beat my wake",
-        "body": "Supera mi despertar: termina una misión y podrás retar a alguien al mismo conjunto de problemas -misma semilla, mismas rondas, misma dificultad. Así se sabe cuál de los dos estaba despierto de verdad."
+        "title": "Alarma de grupo",
+        "body": "Crea una alarma de grupo desde el botón de más y envía el enlace de invitación. Se activa cuando se une el primer amigo, y cada mañana muestra quién ya se ha levantado, quién ha pospuesto y quién sigue dormido. Necesita una cuenta de WakeSharp, para que tus amigos vean que te has levantado. Por ahora solo en iPhone: la versión 2.9 de Google Play no la tiene."
       }
     ],
-    "note": "Las dos cosas son solo enlaces: el teléfono que recibe uno hace todo el trabajo por sí mismo."
+    "note": "La invitación es un enlace. El teléfono que lo abre se une al grupo y luego configura la alarma con un toque."
   },
   "platforms": {
     "heading": {
@@ -143,9 +151,9 @@ export const home = {
       "accent": "Los dos teléfonos.",
       "post": ""
     },
-    "lede": "WakeSharp también está disponible en Android. El canal de audio, los permisos y los ajustes de batería son diferentes. Estas imágenes muestran iPhone y Apple Watch, no Android ni Wear OS. Consulta las opciones disponibles en tu aplicación instalada. WakeSharp necesita {ios} en iPhone, o {android} en Android. Las apps de reloj necesitan watchOS 26 o Wear OS 3.",
-    "watch": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado.",
-    "account": "No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
+    "lede": "WakeSharp también está en Google Play, donde la versión actual es la 2.9. Su canal de audio, sus permisos y sus ajustes de batería difieren de los del iPhone, y no incluye las funciones más recientes del iPhone que se mencionan en esta página. Estas imágenes muestran iPhone y Apple Watch, no Android ni Wear OS. Consulta en la app instalada las misiones y los controles disponibles en tu plataforma. WakeSharp necesita {ios} en iPhone, o {android} en Android. Las apps de reloj necesitan watchOS 26 o Wear OS 3.",
+    "watch": "En iPhone, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado.",
+    "account": "No necesitas una cuenta de WakeSharp, salvo para las alarmas de grupo. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
   },
   "reliable": {
     "heading": {
@@ -180,21 +188,20 @@ export const home = {
       "accent": "todo incluido",
       "post": ""
     },
-    "lede": "WakeSharp Ilimitado es la app entera: todas las misiones para despertar, el calentamiento diario, las alarmas inteligentes de calendario, las rotaciones de turnos y los perfiles, tu historial completo de Agudeza, y todas las escenas de Lark y todos los fondos. WakeSharp no muestra anuncios.",
+    "lede": "WakeSharp Ilimitado es la app entera: todas las misiones para despertar, las alarmas de grupo, las alarmas de calendario, las rotaciones de turnos y los perfiles, tu historial completo de Agudeza, y todas las escenas de Lark y todos los fondos. WakeSharp no muestra anuncios.",
     "unlimited": {
       "name": "WakeSharp Ilimitado",
       "perYear": "/año",
       "trial": "Empieza con **{trialDays} días de prueba gratis**, y después {annual} al año",
       "monthly": "o **{monthly} al mes**, sin prueba",
       "features": [
-        "Todas las misiones para despertar, y varias seguidas si quieres",
-        "Tres juegos de calentamiento cada mañana, en rotación",
-        "Tu historial completo de Agudeza",
-        "Alarmas inteligentes de calendario que pueden moverse cuando se mueve tu primera reunión",
+        "Todas las misiones para despertar, y hasta cuatro seguidas si quieres",
+        "Tu historial completo de Agudeza, con insignias y logros",
+        "Alarmas de calendario que pueden moverse cuando se mueve tu primera reunión",
         "Rotaciones de turnos, perfiles y todas las alarmas que necesites",
         "La comprobación de fiabilidad y todos los tonos de alarma",
         "Todas las escenas de Lark, los fondos de alarma y las celebraciones",
-        "Despertar con un amigo, y la app de reloj para las dos muñecas",
+        "Alarmas de grupo en iPhone, y la app de reloj para las dos muñecas",
         "Sin anuncios"
       ]
     },
@@ -218,15 +225,15 @@ export const home = {
       },
       {
         "q": "¿Tengo que hacer cuentas a las 6 de la mañana?",
-        "a": "Elige una de estas misiones o combina varias. Esta es la selección pública de iPhone 2.14. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes."
+        "a": "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes."
       },
       {
         "q": "¿Puedo hacer trampa y saltarme la misión?",
-        "a": "En iPhone 2.14, detener o posponer retrasa la alarma un minuto. Puede repetirse durante una hora como máximo si no completas la misión. Los controles del teléfono siguen funcionando."
+        "a": "En iPhone, si la detienes o la pospones, vuelve a sonar en menos de 30 segundos, hasta que completes la misión. La versión 2.9 de Google Play vuelve a sonar un minuto después, durante una hora como máximo. Los controles del teléfono siguen funcionando. Una habitación a oscuras o un permiso rechazado tampoco cambian la misión por otra más fácil: la app te avisa, o te vuelve a pedir el permiso."
       },
       {
         "q": "¿Qué hace la cámara?",
-        "a": "Elige un objeto, como una botella, una taza o un lavabo. Cuando suene la alarma, apunta la cámara hacia él. La confirmación verde indica que WakeSharp lo ha reconocido. El reconocimiento se realiza en tu teléfono. No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
+        "a": "Elige un objeto, como una botella, una taza o un lavabo. Cuando suene la alarma, apunta la cámara hacia él. La confirmación verde indica que WakeSharp lo ha reconocido. El reconocimiento se realiza en tu teléfono. No necesitas una cuenta de WakeSharp, salvo para las alarmas de grupo. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
       },
       {
         "q": "¿WakeSharp registra mi sueño?",
@@ -238,11 +245,11 @@ export const home = {
       },
       {
         "q": "¿Necesito una cuenta?",
-        "a": "No necesitas una cuenta de WakeSharp. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
+        "a": "No necesitas una cuenta de WakeSharp, salvo para las alarmas de grupo. Iniciar sesión con Apple o Google es opcional y permite guardar alarmas, historial, preferencias y pequeñas miniaturas de fotos objetivo. La comparación de fotos y el calendario se procesan en el dispositivo. Los eventos no salen de él. Consulta la política de privacidad."
       },
       {
         "q": "¿Qué pasa si mi reloj está sin batería?",
-        "a": "En iPhone 2.14, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado."
+        "a": "En iPhone, tocar «Ya estoy despierto» en el Apple Watch retrasa la alarma del teléfono un minuto. Completa la misión en el iPhone para detener las repeticiones. El reloj debe estar cargado, conectado y configurado."
       },
       {
         "q": "¿Cuánto cuesta WakeSharp?",

@@ -7,8 +7,8 @@ lang: "en"
 translationOf: "photo-alarm-clock"
 order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../assets/store/2.14/sources/ios/en/03-missions.png"
 screenshotAlt: "The available alarm missions"
 ---
@@ -28,4 +28,4 @@ Retake the photo of the spot you chose the night before.
 
 ## What to check
 
-No WakeSharp account is required. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.
+No WakeSharp account is required, except for group alarms. Optional sign-in with Apple or Google backs up alarms, history, preferences and small photo-target thumbnails. Camera matching and calendar processing happen on your device. Calendar event content stays there. Read the privacy policy for the full details.

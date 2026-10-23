@@ -7,17 +7,17 @@ lang: "es"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../../assets/store/2.14/sources/ios/es/03-missions.png"
 screenshotAlt: "Las misiones disponibles"
 ---
 
-Elige una de estas misiones o combina varias. Esta es la selección pública de iPhone 2.14. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.
+Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.
 
 ## Cómo usarlo
 
-1. Elige Parejas, Secuencia o Choque de colores.
+1. Elige Parejas de Memoria, Recordar Secuencia o Choque de Colores.
 2. Prueba un nivel que no te resulte excesivo al despertar.
 3. Encuentra parejas, repite el patrón o toca el color de la tinta.
 
@@ -30,4 +30,4 @@ Elige una de estas misiones o combina varias. Esta es la selección pública de 
 
 ## Qué comprobar
 
-En iPhone 2.14, detener o posponer retrasa la alarma un minuto. Puede repetirse durante una hora como máximo si no completas la misión. Los controles del teléfono siguen funcionando.
+En iPhone, si la detienes o la pospones, vuelve a sonar en menos de 30 segundos, hasta que completes la misión. La versión 2.9 de Google Play vuelve a sonar un minuto después, durante una hora como máximo. Los controles del teléfono siguen funcionando.

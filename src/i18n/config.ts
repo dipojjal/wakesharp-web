@@ -71,7 +71,7 @@ export const DEFAULT_LOCALE = 'en' satisfies EnabledLocaleCode;
  */
 export const RESERVED_ROOT_SEGMENTS = [
   'blog', 'privacy', 'terms', 'support', 'contact', 'contact-sent', 'contact-error',
-  'c', 'p', 'r', 'account', 'api', '404', 'rss.xml', 'sitemap.xml', '_astro', 'badges',
+  'c', 'p', 'r', 'g', 'account', 'api', '404', 'rss.xml', 'sitemap.xml', '_astro', 'badges',
   'about', 'press', 'features', 'compare', 'play', 'tools', 'download',
 ] as const;
 

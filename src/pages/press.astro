@@ -1,27 +1,41 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
 import ReleaseNotice from '../components/ReleaseNotice.astro';
+import PressBadge from '../components/PressBadge.astro';
 import { SITE } from '../config/site';
+import { PRESS, pressSources } from '../config/press';
+import { RELEASE } from '../lib/product';
 import { storeAssets } from '../lib/store-assets';
 import { getImage } from 'astro:assets';
 const screenshots = await Promise.all(storeAssets('en','iphone').map(async s => ({ ...s, download: await getImage({src:s.image,width:1000,format:'webp',quality:88}) })));
 const captions = ['Home and next alarm','Loud alarm tones','Scan an Object','Wake-up missions','Shared alarm','Sharpness Score','Shift rotations','Morning progress'];
+const sources = pressSources();
+const published = new Date(`${PRESS.published}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
-<LegalLayout title="WakeSharp Press Kit: Facts, Screenshots and Contact" description="Official WakeSharp facts, developer contact and iPhone 2.14 screenshots. Version 2.14 is live on iOS and Android. See platform requirements and pricing." path="/press" heading="WakeSharp press kit" intro="I’m Dipojjal, the developer behind WakeSharp at KineticBit. Here are the facts and images you can use when writing about the app." lastUpdated="2026-09-29">
+<LegalLayout title="WakeSharp Press Kit: Facts, Screenshots and Contact" description={`Official WakeSharp facts, developer contact and App Store screenshots. Version ${RELEASE.publicIOS} is live on the App Store; Google Play has ${RELEASE.publicAndroid}. Requirements and pricing.`} path="/press" heading="WakeSharp press kit" intro="I’m Dipojjal, the developer behind WakeSharp at KineticBit. Here are the facts and images you can use when writing about the app." lastUpdated={RELEASE.checked}>
   <ReleaseNotice localeCode="en"/>
   <h2>A short description</h2>
-  <p>WakeSharp is an alarm clock for heavy sleepers with loud tones, wake-up missions, calendar alarms and shift rotations. It also offers a daily Sharpness Score, optional brain warm-ups and morning history. It does not track sleep.</p>
+  <p>WakeSharp is an alarm clock for heavy sleepers with loud tones, wake-up missions, group alarms, calendar alarms and shift rotations. Missions include arithmetic, puzzles, scanning a household object, retaking a photo, walking, and squats and push-ups counted by the camera. It keeps a daily Sharpness Score and a history of your mornings. It does not track sleep.</p>
   <h2>Product facts</h2>
   <ul>
     <li>Developer: Dipojjal Chakrabarti. Publisher: {SITE.publisher}, Ontario, Canada.</li>
-    <li>Platforms: {SITE.requirements.ios}; {SITE.requirements.android}. Version 2.14 is live on both platforms. System controls and permissions differ.</li>
+    <li>Platforms: {SITE.requirements.ios}; {SITE.requirements.android}. Version {RELEASE.publicIOS} is live on the App Store (checked {RELEASE.checked}). Google Play has version {RELEASE.publicAndroid}, which does not include Squats, Push-ups or group alarms. System controls and permissions differ.</li>
     <li>App languages: English, Spanish, Russian, Turkish, German, French and Arabic. The website has 12 languages.</li>
     <li>WakeSharp Unlimited: {SITE.unlimited.annual} per year after a {SITE.unlimited.trialDays}-day free trial for eligible new subscribers, or {SITE.unlimited.monthly} per month without a trial. US prices. Local prices appear in each store.</li>
-    <li>No ads in the app. An account is optional. See the <a href="/privacy">privacy policy</a> for backup and analytics details.</li>
+    <li>No ads in the app. An account is optional, except for group alarms. See the <a href="/privacy">privacy policy</a> for backup and analytics details.</li>
     <li>Mission completion is an app action, not a medical assessment. Phone controls, permissions, volume and battery still matter.</li>
   </ul>
-  <h2>iPhone 2.14 screenshots</h2>
-  <p>These screenshots show the live 2.14 release on iPhone. Keep the artwork intact. The images below are WebP copies of the revision 2 store artwork, submitted September 28, 2026, in store order.</p>
+  {PRESS.enabled && (
+    <>
+      <h2>Where the launch announcement ran</h2>
+      <PressBadge variant="full" localeCode="en" class="my-6"/>
+      <p>WakeSharp’s launch announcement, “WakeSharp Launches Alarm Clock App that Makes Users Scan Household Objects to Silence the Alarm”, was published on {published} as a press release distributed through Plentisoft and the Evertise network. It is a paid distribution, not editorial coverage, and the outlets’ editorial teams were not involved. The pages below carried it when checked on {PRESS.verified}:</p>
+      <ul>{sources.map(s => <li><a href={s.source} rel="noopener nofollow">{s.name}</a> ({s.host})</li>)}</ul>
+      <p>The AP logo on the badge is the owner’s; no AP News page carrying the release has been located, so none is listed here.</p>
+    </>
+  )}
+  <h2>iPhone screenshots</h2>
+  <p>These are the eight screenshots on the App Store listing, captured on the 2.14 build and submitted on September 28, 2026; the {RELEASE.publicIOS} listing still shows them, so the phone screens are earlier than the current app. Keep the artwork intact. The images are WebP copies in store order.</p>
   <ol>{screenshots.map((s,i)=><li><a href={s.download.src}>{captions[i]}</a></li>)}</ol>
   <p><a href="/icon-512.png">WakeSharp app icon</a></p>
   <h2>Sources and contact</h2>

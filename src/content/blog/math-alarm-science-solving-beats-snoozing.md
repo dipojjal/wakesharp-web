@@ -3,7 +3,7 @@ title: "Math Problems at 6 AM: The Science of Why Solving Beats Snoozing"
 seoTitle: "Do Math Alarms Work? Why Solving Beats Snoozing at 6 AM"
 description: "Why your brain fails arithmetic worse right after waking than after a sleepless night, and what a math alarm clock actually does about it."
 pubDate: 2026-09-03T08:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-10-23T12:00:00-04:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/math-alarm-science-solving-beats-snoozing/hero.jpg
@@ -70,7 +70,7 @@ Two things follow, and I would rather state them than let them be inferred.
 
 The honest limit first. No published trial has tested WakeSharp's missions against a plain alarm, and the broader literature has not established that any reactive task shortens sleep inertia. What a solvable puzzle reliably does is require you to be conscious while you solve it. What it does not do is make the next twenty minutes trustworthy. Plan the morning as though you are impaired, because for a while you are.
 
-Second, the design details that matter here. Snoozing and stopping do not finish the morning: however you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off, and we are not going to design around pretending otherwise. Math Problems is also one of the five brain games in the optional warm-up that follows the mission. The warm-up plays three of them on a rotation, skipping whichever game the mission just used, and it adds an optional way to practise. Your daily Sharpness Score and its breakdown are explained in the app.
+Second, the design details that matter here. Snoozing and stopping do not finish the morning: however you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off, and we are not going to design around pretending otherwise. Your daily Sharpness Score, built from the missions you finish, and its breakdown are explained in the app.
 
 ## FAQ
 

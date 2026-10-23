@@ -41,7 +41,7 @@ const missions = publicMissions().map(fact => ({ ...fact, ...t.mission.missions.
         <Lark pose="asleep" width={110} priority />
         <h1 class="mt-6 text-[clamp(2.5rem,7vw,4.25rem)] leading-[1.08]"><span class="mb-3 block text-base uppercase tracking-wider">{t.hero.kicker}</span>{t.hero.heading.pre}<span class="accent">{t.hero.heading.accent}</span> {t.hero.heading.post}</h1>
         <p class="lede mt-6">{r.hero}</p>
-        <div class="mt-7"><StoreButtons pageId="home" placement="hero" localeCode={locale.code} /></div>
+        <div class="mt-7"><StoreButtons pageId="home" placement="hero" localeCode={locale.code} press="full" /></div>
         <ReleaseNotice localeCode={locale.code}/>
       </div>
       <div class="flex justify-center"><PhoneFrame src={capture(locale.code,'home')} alt={r.captions[0]} width={290} priority tilt={-2}/></div>
@@ -178,7 +178,7 @@ const missions = publicMissions().map(fact => ({ ...fact, ...t.mission.missions.
       <Lark pose="encouraging" width={170} />
       <h2 class="mt-6 text-[clamp(1.9rem,5vw,3rem)]">{t.cta.heading.pre}<span class="accent">{t.cta.heading.accent}</span>{t.cta.heading.post}</h2>
       <p class="lede mx-auto mt-5 text-center">{t.cta.lede}</p>
-      <div class="mt-8"><StoreButtons pageId="home" tone="light" align="center" placement="home-bottom" localeCode={locale.code} /></div>
+      <div class="mt-8 w-full max-w-2xl"><StoreButtons pageId="home" tone="light" align="center" placement="home-bottom" localeCode={locale.code} press="full" /></div>
     </div>
   </SunriseSection>
 </BaseLayout>

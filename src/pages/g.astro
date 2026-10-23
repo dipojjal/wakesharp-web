@@ -1,0 +1,7 @@
+---
+// Target of the vercel.json rewrite `/g/:code`.
+import GroupPage from '../templates/GroupPage.astro';
+import { resolveLocale } from '../i18n/routes';
+---
+
+<GroupPage locale={resolveLocale('en')} />

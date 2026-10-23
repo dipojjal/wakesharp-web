@@ -1,0 +1,8 @@
+---
+/** /<locale>/g - rendered for every enabled non-default locale. */
+import GroupPage from '../../templates/GroupPage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<GroupPage locale={localeFromParams(Astro.params)} />

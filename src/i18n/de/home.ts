@@ -18,7 +18,7 @@ export const home = {
       "accent": "aus dem Bett holen",
       "post": ""
     },
-    "lede": "Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffentliche Auswahl für iPhone 2.14. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
+    "lede": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
     "missions": [
       {
         "name": "Rechenaufgaben",
@@ -59,7 +59,7 @@ export const home = {
       {
         "name": "Objekt scannen",
         "kind": "Kamera",
-        "body": "Steh auf und richte die Kamera auf eine Flasche, eine Tasse oder ein Waschbecken.",
+        "body": "Steh auf und richte die Kamera auf ein Objekt aus deiner Liste.",
         "id": "object_scan"
       },
       {
@@ -93,6 +93,18 @@ export const home = {
         "id": "first_light"
       },
       {
+        "name": "Kniebeugen",
+        "kind": "Bewegung · iPhone",
+        "body": "Mach Kniebeugen, von der Kamera direkt auf deinem Gerät erkannt.",
+        "id": "squats"
+      },
+      {
+        "name": "Liegestütze",
+        "kind": "Bewegung · iPhone",
+        "body": "Mach Liegestütze über deinem Telefon auf dem Boden, gezählt von der Kamera.",
+        "id": "push_ups"
+      },
+      {
         "name": "Nenne fünf",
         "kind": "Stimme",
         "body": "Nenne laut fünf Dinge aus einer Kategorie.",
@@ -108,7 +120,7 @@ export const home = {
     "note": "Missionen sind Teil des Alarms, den du anlegst: Der Deal steht also schon am Abend vorher und wird nicht um 6 Uhr morgens verhandelt."
   },
   "smart": {
-    "alt": "Der Editor für smarte Alarmregeln, eingestellt auf 90 Minuten vor dem ersten Meeting",
+    "alt": "Der Kalenderwecker-Editor, eingestellt auf 90 Minuten vor dem ersten Meeting",
     "heading": {
       "pre": "Weckt dich vor deinem ",
       "accent": "ersten Meeting",
@@ -124,18 +136,14 @@ export const home = {
       "accent": "jemanden mit",
       "post": ""
     },
-    "lede": "Teile einen Link, und das Telefon, das ihn öffnet, stellt denselben Alarm ein und klingelt ihn dann von allein. Nichts, dem man beitreten muss, nichts, wofür man sich anmeldet, und kein Server dazwischen.",
+    "lede": "Stell einen Gruppenwecker ein und teile seinen Einladungslink. Bei allen klingelt der Wecker zur selben Zeit, auf dem eigenen Telefon, und die Gruppe sieht, wer schon wach ist.",
     "cards": [
       {
-        "title": "Mit einem Freund aufwachen",
-        "body": "Du schickst einen Link; das Telefon der anderen Person baut den Alarm lokal. Jede Seite behält ihre eigene Kopie, deine Änderungen greifen also nicht in ihre ein."
-      },
-      {
-        "title": "Beat my wake",
-        "body": "Schlag meinen Morgen: Beende eine Mission und du kannst jemanden zum identischen Aufgabensatz herausfordern: gleicher Seed, gleiche Runden, gleiche Schwierigkeit. Danach weißt du, wer von euch wirklich wach war."
+        "title": "Gruppenwecker",
+        "body": "Erstelle einen Gruppenwecker über den Plus-Button und schick den Einladungslink. Er schaltet sich ein, sobald der erste Freund beitritt, und zeigt jeden Morgen, wer wach ist, wer geschlummert hat und wer noch schläft. Er braucht ein WakeSharp-Konto, damit deine Freunde sehen, dass du wach bist. Vorerst nur auf dem iPhone: Die Version 2.9 bei Google Play hat ihn nicht."
       }
     ],
-    "note": "Beides sind einfach Links: Das Telefon, das einen empfängt, erledigt die ganze Arbeit selbst."
+    "note": "Die Einladung ist ein Link. Das Telefon, das ihn öffnet, tritt der Gruppe bei und stellt den Wecker dann mit einem Tipp ein."
   },
   "platforms": {
     "heading": {
@@ -143,9 +151,9 @@ export const home = {
       "accent": "Beide Telefone.",
       "post": ""
     },
-    "lede": "WakeSharp gibt es auch für Android. Audiokanal, Berechtigungen und Akkueinstellungen unterscheiden sich. Diese Bilder zeigen iPhone und Apple Watch, nicht Android oder Wear OS. Prüfe die verfügbaren Missionen und Einstellungen in deiner installierten App. WakeSharp braucht {ios} auf dem iPhone oder {android} auf Android. Die Uhren-Apps brauchen watchOS 26 oder Wear OS 3.",
-    "watch": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein.",
-    "account": "Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
+    "lede": "WakeSharp gibt es auch bei Google Play, dort aktuell als Version 2.9. Audiokanal, Berechtigungen und Akkueinstellungen unterscheiden sich vom iPhone, und die neueren iPhone-Funktionen auf dieser Seite fehlen dort. Diese Bilder zeigen iPhone und Apple Watch, nicht Android oder Wear OS. Prüfe die verfügbaren Missionen und Einstellungen in deiner installierten App. WakeSharp braucht {ios} auf dem iPhone oder {android} auf Android. Die Uhren-Apps brauchen watchOS 26 oder Wear OS 3.",
+    "watch": "Auf dem iPhone verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein.",
+    "account": "Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
   },
   "reliable": {
     "heading": {
@@ -180,21 +188,20 @@ export const home = {
       "accent": "alles drin",
       "post": ""
     },
-    "lede": "WakeSharp Unbegrenzt ist die ganze App: jede Weck-Mission, das tägliche Aufwärmen, smarte Kalenderalarme, Schichtrhythmen und Profile, dein vollständiger Wachheitsverlauf sowie jede Lark-Szene und jedes Hintergrundbild. WakeSharp zeigt keine Werbung.",
+    "lede": "WakeSharp Unbegrenzt ist die ganze App: jede Weck-Mission, Gruppenwecker, Kalenderwecker, Schichtrhythmen und Profile, dein vollständiger Wachheitsverlauf sowie jede Lark-Szene und jedes Hintergrundbild. WakeSharp zeigt keine Werbung.",
     "unlimited": {
       "name": "WakeSharp Unbegrenzt",
       "perYear": "/Jahr",
       "trial": "Starte mit **{trialDays} Tagen kostenlos**, danach {annual} pro Jahr",
       "monthly": "oder **{monthly} pro Monat**, ohne Testphase",
       "features": [
-        "Jede Weck-Mission, auf Wunsch mehrere hintereinander",
-        "Drei Aufwärmspiele jeden Morgen, im Wechsel",
-        "Dein vollständiger Wachheitsverlauf",
-        "Smarte Kalenderalarme, die mitwandern, wenn sich dein erstes Meeting verschiebt",
+        "Jede Weck-Mission, auf Wunsch bis zu vier hintereinander",
+        "Dein vollständiger Wachheitsverlauf, Abzeichen und Erfolge",
+        "Kalenderwecker, die mitwandern, wenn sich dein erstes Meeting verschiebt",
         "Schichtrhythmen, Profile und so viele Alarme, wie du brauchst",
         "Die Zuverlässigkeitsprüfung und jeder Alarmton",
         "Jede Lark-Szene, jedes Alarm-Hintergrundbild und jede Feier",
-        "„Mit einem Freund aufwachen“ und die Uhren-App für beide Handgelenke",
+        "Gruppenwecker auf dem iPhone und die Uhren-App für beide Handgelenke",
         "Keine Werbung"
       ]
     },
@@ -218,15 +225,15 @@ export const home = {
       },
       {
         "q": "Muss ich um 6 Uhr morgens rechnen?",
-        "a": "Wähle eine der folgenden Missionen oder mehrere nacheinander. Das ist die öffentliche Auswahl für iPhone 2.14. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware."
+        "a": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware."
       },
       {
         "q": "Kann ich die Mission umgehen?",
-        "a": "Unter iPhone 2.14 verschiebt Stoppen oder Schlummern den Wecker um eine Minute. Ohne abgeschlossene Mission kann er sich bis zu einer Stunde wiederholen. Die eigenen Bedienelemente des Telefons funktionieren weiter."
+        "a": "Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter. Ein dunkler Raum oder eine verweigerte Berechtigung tauscht die Mission auch nie gegen eine leichtere: Die App warnt dich oder bittet erneut um die Berechtigung."
       },
       {
         "q": "Was macht die Kamera?",
-        "a": "Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingeln die Kamera darauf. Die grüne Bestätigung zeigt, dass WakeSharp das Objekt erkannt hat. Die Erkennung läuft auf deinem Telefon. Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
+        "a": "Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingeln die Kamera darauf. Die grüne Bestätigung zeigt, dass WakeSharp das Objekt erkannt hat. Die Erkennung läuft auf deinem Telefon. Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
       },
       {
         "q": "Erfasst WakeSharp meinen Schlaf?",
@@ -238,11 +245,11 @@ export const home = {
       },
       {
         "q": "Brauche ich ein Konto?",
-        "a": "Ein WakeSharp-Konto ist nicht nötig. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
+        "a": "Ein WakeSharp-Konto ist nicht nötig, außer für Gruppenwecker. Die freiwillige Anmeldung mit Apple oder Google sichert Wecker, Verlauf, Einstellungen und kleine Vorschaubilder von Fotozielen. Fotoabgleich und Kalenderverarbeitung laufen auf deinem Gerät. Kalenderinhalte bleiben dort. Details stehen in der Datenschutzerklärung."
       },
       {
         "q": "Was passiert, wenn meine Uhr leer ist?",
-        "a": "Unter iPhone 2.14 verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein."
+        "a": "Auf dem iPhone verschiebt „Ich bin wach“ auf der Apple Watch den Telefonwecker um eine Minute. Beende die Mission auf dem iPhone, um die Wiederholungen zu stoppen. Die Watch muss geladen, verbunden und eingerichtet sein."
       },
       {
         "q": "Was kostet WakeSharp?",

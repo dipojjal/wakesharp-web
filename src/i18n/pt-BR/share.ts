@@ -1,8 +1,10 @@
 import { share as en } from '../en/share';
 
 /**
- * As duas páginas de destino de link, /c (um desafio "Beat my wake") e
- * /p (um pacto de despertar). As strings em `script` são lidas pelo decodificador
+ * As páginas de destino de link: /c (um desafio "Beat my wake"), /p (um pacto
+ * de despertar, o alarme compartilhado anterior aos alarmes de grupo; links
+ * antigos continuam abrindo o app) e /g (um convite para um alarme de grupo).
+ * As strings em `script` são lidas pelo decodificador
  * embutido de cada página; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`,
  * `{time}` e `{days}` são preenchidos por esse script a partir do próprio link.
  */
@@ -34,6 +36,27 @@ export const share = {
       invitedAnonymous: `Você recebeu um convite para as {time} · {days}`,
       once: `uma vez`,
       /** Domingo primeiro, como na máscara de dias da semana do codec. */
+      days: [`dom`, `seg`, `ter`, `qua`, `qui`, `sex`, `sáb`],
+    },
+  },
+  group: {
+    title: `Um convite para um alarme de grupo - WakeSharp`,
+    description: `Alguém convidou você para um Group alarm (alarme de grupo) do WakeSharp.`,
+    heading: `Um convite para um alarme de grupo`,
+    intro: `Alguém quer acordar com você.`,
+    opening: `Abrindo seu convite…`,
+    /** Aparece quando o código do link é válido. */
+    cta: `Abra este link em um iPhone com o WakeSharp instalado para entrar no grupo. O alarme de todos toca na mesma hora, cada um no próprio celular, e o grupo vê quem já levantou. Para entrar é preciso ter uma conta no WakeSharp, para que seus amigos vejam que você levantou. Os Group alarms (alarmes de grupo) por enquanto são só para iPhone: a versão 2.9 do Google Play não tem esse recurso.`,
+    /** O botão que entrega o código ao app instalado. */
+    open: `Abrir o WakeSharp`,
+    error: `Não foi possível ler este link. Peça para quem enviou mandar de novo, ou compartilhar um novo link de convite a partir do grupo.`,
+    script: {
+      /** Quando o link traz o horário. */
+      invited: `Você foi convidado para um alarme de grupo às {time} · {days}`,
+      /** Quando não traz (link de um app mais antigo). */
+      invitedNoTime: `Você foi convidado para um alarme de grupo.`,
+      once: `uma vez`,
+      /** Domingo primeiro, como na máscara de dias da semana do app. */
       days: [`dom`, `seg`, `ter`, `qua`, `qui`, `sex`, `sáb`],
     },
   },

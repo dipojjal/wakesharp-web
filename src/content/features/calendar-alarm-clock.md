@@ -7,8 +7,8 @@ lang: "en"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-09-29"
-release: "2.14"
+updatedDate: "2026-10-22"
+release: "2.25"
 screenshot: "../../assets/store/2.14/sources/ios/en/01-home.png"
 screenshotAlt: "Your next alarm and morning overview"
 ---
@@ -17,7 +17,7 @@ screenshotAlt: "Your next alarm and morning overview"
 
 ## How to use it
 
-1. Allow calendar access and create a smart alarm rule.
+1. Allow calendar access and create a calendar alarm.
 2. Choose how many minutes before the event to ring, plus the earliest and latest times.
 3. Review the next alarm after editing your calendar. Keep a fixed backup for an appointment you cannot miss.
 

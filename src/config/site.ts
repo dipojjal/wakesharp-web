@@ -1,10 +1,12 @@
 /**
  * THE one file to edit when the stores change.
  *
- * Both apps are live - iOS on the App Store since 2026-08-22 (2.1 since
- * 2026-08-26), Android on Google Play since 2026-08-18, both from KineticBit Inc.
- * StoreButtons, the JSON-LD, the Smart App Banner and the footer all read from
- * here, so a store change is a one-file change.
+ * Both apps are live - iOS on the App Store since 2026-08-22, Android on
+ * Google Play since 2026-08-18, both from KineticBit Inc. StoreButtons, the
+ * JSON-LD, the Smart App Banner and the footer all read from here, so a store
+ * change is a one-file change. Which VERSION each store serves is a separate
+ * fact and lives in src/lib/product.ts (RELEASE): checked 2026-10-22, the App
+ * Store serves 2.25 and Google Play still 2.9, and the site says both.
  *
  * The two listing NAMES differ and neither is ours to guess. Verified
  * 2026-09-24: the App Store reads "Loud Alarm Clock - WakeSharp" and Play reads
@@ -43,13 +45,13 @@ export const SITE = {
    * controls always work, so no mission is the only way to stop an alarm.
    */
   description:
-    'WakeSharp is a loud alarm clock with math, camera and walking missions. Version 2.14 is now live on iOS and Android, with calendar alarms and daily scores.',
+    'WakeSharp is a loud alarm clock with math, camera, walking and exercise missions, group alarms, calendar alarms and daily scores. 2.25 is on the App Store.',
   url: 'https://wakesharp.app',
   email: 'support@wakesharp.app',
   /** The entity that publishes both apps, and the one named in the legal pages. */
   publisher: 'KineticBit Inc.',
-  /** Stamped on the legal pages. Bump when their content materially changes. */
-  lastUpdated: '2026-09-24',
+  /** Stamped on the Terms. Bump when their content materially changes (the privacy policy has its own, in src/templates/legal-copy.ts). */
+  lastUpdated: '2026-10-23',
 
   /**
    * Governing law for the Terms. KineticBit Inc. is at 1044 Acoustic Way,
@@ -72,8 +74,14 @@ export const SITE = {
    * the price that follows it (claims-matrix.md, App Review 3.1.2(c)). Lifetime
    * is no longer sold; existing Lifetime purchases stay valid, which the Terms
    * say. The app itself never hardcodes these; RevenueCat serves them at runtime.
+   *
+   * US prices. Monthly went from $4.99 to $9.99 on the App Store on 2026-10-06
+   * and on Play on 2026-10-04 (app repo, Docs/releases/2.16-paywall-v2.md);
+   * the yearly price did not change. The discounted yearly plan some people
+   * are offered after cancelling is a targeted offer, never a public price,
+   * and is not named on this site.
    */
-  unlimited: { monthly: '$4.99', annual: '$34.99', trialDays: 7 },
+  unlimited: { monthly: '$9.99', annual: '$34.99', trialDays: 7 },
 
   /**
    * The languages the app itself ships in (iOS CFBundleLocalizations and the
@@ -132,4 +140,7 @@ export const SAFETY_NOTICE =
 export const TRADEMARKS = [
   'Apple, the Apple logo and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.',
   'Google Play and the Google Play logo are trademarks of Google LLC.',
+  // The "As seen on" badge (src/config/press.ts): the outlets' names and logos
+  // are theirs, shown to say where the launch announcement ran and nothing more.
+  'Business Insider, AP, StreetInsider.com and IPS are trademarks of their respective owners, which do not endorse WakeSharp.',
 ];
