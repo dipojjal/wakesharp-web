@@ -1,0 +1,7 @@
+---
+// Target of the vercel.json rewrite `/o/:route*` (lifecycle email and push links).
+import LifecycleLinkPage from '../templates/LifecycleLinkPage.astro';
+import { resolveLocale } from '../i18n/routes';
+---
+
+<LifecycleLinkPage locale={resolveLocale('en')} />

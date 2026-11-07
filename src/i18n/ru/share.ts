@@ -60,6 +60,19 @@ export const share = {
       days: [`вс`, `пн`, `вт`, `ср`, `чт`, `пт`, `сб`],
     },
   },
+  lifecycle: {
+    title: `Продолжите в приложении - WakeSharp`,
+    description: `Эта ссылка WakeSharp открывает приложение на вашем телефоне.`,
+    heading: `Продолжите в WakeSharp`,
+    intro: `Эта ссылка открывает WakeSharp на вашем телефоне.`,
+    open: `Открыть WakeSharp`,
+    desktop: `Вы за компьютером? Откройте эту ссылку на телефоне, где у вас WakeSharp.`,
+    offer: `Войдите в тот же аккаунт Apple или Google, чтобы найти свой подарок.`,
+    other: `Новый телефон или удалили приложение? Установите WakeSharp и войдите в тот же аккаунт Apple или Google, чтобы продолжить с того места, где остановились.`,
+    billing: `Все платежи за WakeSharp проходят через App Store или Google Play. Если платёж не прошёл, обновите там способ оплаты, чтобы сохранить подписку.`,
+    billingApple: `Обновить способ оплаты в App Store`,
+    billingGoogle: `Обновить способ оплаты в Google Play`,
+  },
   get: {
     heading: `Скачать WakeSharp`,
     /** `{trialDays}` и `{annual}` приходят из src/config/site.ts; пробный период никогда не упоминается без цены. */

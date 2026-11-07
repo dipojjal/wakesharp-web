@@ -24,6 +24,7 @@
     "tools:test": "tsx --test tests/tools/*.test.ts",
     "support:test": "tsx --test tests/support/*.test.ts",
     "assets:press": "node scripts/prep-press-badge.mjs",
+    "assets:email": "node scripts/prep-email-art.mjs",
     "features:build": "tsx scripts/build-feature-pages.mjs",
     "features:check": "tsx scripts/build-feature-pages.mjs --check"
   },

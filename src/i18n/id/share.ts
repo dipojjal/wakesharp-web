@@ -59,6 +59,19 @@ export const share = {
       days: [`Min`, `Sen`, `Sel`, `Rab`, `Kam`, `Jum`, `Sab`],
     },
   },
+  lifecycle: {
+    title: `Lanjutkan di aplikasi - WakeSharp`,
+    description: `Tautan WakeSharp ini membuka aplikasi di ponsel Anda.`,
+    heading: `Lanjutkan di WakeSharp`,
+    intro: `Tautan ini membuka WakeSharp di ponsel Anda.`,
+    open: `Buka WakeSharp`,
+    desktop: `Sedang di komputer? Buka tautan ini di ponsel tempat Anda memakai WakeSharp.`,
+    offer: `Masuk dengan akun Apple atau Google yang sama untuk menemukan hadiah Anda.`,
+    other: `Ponsel baru, atau aplikasinya terhapus? Pasang WakeSharp, lalu masuk dengan akun Apple atau Google yang sama untuk melanjutkan dari tempat Anda berhenti.`,
+    billing: `Semua pembayaran WakeSharp diproses lewat App Store atau Google Play. Jika pembayaran gagal, perbarui metode pembayaran Anda di sana agar paket Anda tetap aktif.`,
+    billingApple: `Perbarui metode pembayaran di App Store`,
+    billingGoogle: `Perbarui metode pembayaran di Google Play`,
+  },
   get: {
     heading: `Unduh WakeSharp`,
     /** `{trialDays}` dan `{annual}` berasal dari src/config/site.ts; uji coba tidak pernah tampil tanpa harganya. */

@@ -47,6 +47,9 @@ test('noindex, duplicate-canonical and decoder-shell URLs stay out', () => {
     '/uk/p',
     '/g',
     '/ja/g',
+    '/o',
+    '/de/o',
+    '/ar/o',
   ]) {
     assert.equal(includeInSitemap(url(path)), false, path);
   }

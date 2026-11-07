@@ -58,6 +58,19 @@ export const share = {
       days: [`Paz`, `Pzt`, `Sal`, `Çar`, `Per`, `Cum`, `Cmt`],
     },
   },
+  lifecycle: {
+    title: `Uygulamada devam edin - WakeSharp`,
+    description: `Bu WakeSharp bağlantısı uygulamayı telefonunuzda açar.`,
+    heading: `WakeSharp’ta devam edin`,
+    intro: `Bu bağlantı WakeSharp’ı telefonunuzda açar.`,
+    open: `WakeSharp’ı aç`,
+    desktop: `Bilgisayarda mısınız? Bu bağlantıyı WakeSharp’ı kullandığınız telefonda açın.`,
+    offer: `Hediyenizi bulmak için aynı Apple veya Google hesabıyla giriş yapın.`,
+    other: `Yeni bir telefon mu, yoksa uygulamayı mı sildiniz? WakeSharp’ı yükleyin, ardından kaldığınız yerden devam etmek için aynı Apple veya Google hesabıyla giriş yapın.`,
+    billing: `WakeSharp ödemelerinin tümü App Store veya Google Play üzerinden yapılır. Bir ödeme gerçekleşmediyse planınızı korumak için ödeme yönteminizi orada güncelleyin.`,
+    billingApple: `App Store’da ödeme yönteminizi güncelleyin`,
+    billingGoogle: `Google Play’de ödeme yönteminizi güncelleyin`,
+  },
   get: {
     heading: `WakeSharp’ı indirin`,
     /** `{trialDays}` and `{annual}` come from src/config/site.ts; the trial never appears without its price. */

@@ -1,0 +1,188 @@
+---
+/**
+ * The destination for `wakesharp.app/o/<route>` (and `/<locale>/o/<route>`):
+ * the link in every lifecycle email and remote push (app repo plan
+ * "Lifecycle email + push", 2026-11-07). Routes and query are read by
+ * src/lib/lifecycle-link.ts.
+ *
+ * A **static page plus a rewrite**, like /g: `vercel.json` rewrites
+ * `/o/:route*` here and the page reads the path itself. The AASA lists `/o/*`,
+ * so an iPhone with WakeSharp opens the app instead; this page is for a phone
+ * without the app, a computer, and an in-app browser that kept the link. Its
+ * "Open WakeSharp" button hands the same route and query to the app as
+ * `wakesharp://o/<route>?…`.
+ *
+ * - The links carry no locale (`/o/…` in every language). So on the English
+ *   page, a visitor who arrives from outside the site and whose browser
+ *   prefers another of the site's languages is moved to that language's page
+ *   before anything is drawn. A visitor who arrives from this site (the
+ *   language switcher, which keeps the route and query) is never moved, so
+ *   choosing English sticks.
+ * - The query (`j`, `s`, `c`, `sid`) is only handed on to the app. Vercel Web
+ *   Analytics records the visit without it (`webAnalyticsBeforeSend`), and the
+ *   page sends no PostHog event: the store links are the canonical listings,
+ *   not the attributed download button.
+ * - It never states a price: an offer's price depends on the store country,
+ *   and the app shows the real one.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Lark from '../components/Lark.astro';
+import { SITE, isLive } from '../config/site';
+import { getCatalog } from '../i18n/catalog';
+import { DEFAULT_LOCALE, enabledLocales, type EnabledLocale } from '../i18n/config';
+import { alternatesFor, localePath } from '../i18n/routes';
+import { appUrlFor, FALLBACK_ROUTE } from '../lib/lifecycle-link';
+
+interface Props {
+  locale: EnabledLocale;
+}
+const { locale } = Astro.props;
+const { lifecycle: t, get } = getCatalog(locale.code).share;
+const base = localePath(locale, '/o');
+
+// The hop, on the English page only: a browser language's primary subtag to
+// that language's prefix ('' for English, which stays).
+const hop =
+  locale.code === DEFAULT_LOCALE
+    ? Object.fromEntries(
+        enabledLocales().map((l) => [l.code.split('-')[0]!.toLowerCase(), l.code === DEFAULT_LOCALE ? '' : `/${l.path}`]),
+      )
+    : null;
+
+const stores = [
+  { store: SITE.stores.ios, label: 'App Store' },
+  { store: SITE.stores.android, label: 'Google Play' },
+].filter(({ store }) => isLive(store));
+
+// Where each store keeps a subscriber's payment method (route `billing`).
+const BILLING = {
+  apple: 'https://apps.apple.com/account/billing',
+  google: 'https://play.google.com/store/account/subscriptions',
+};
+// noindex and no hreflang, as /c, /p and /g: every /o/<route> serves this one file.
+---
+
+<LegalLayout
+  title={t.title}
+  description={t.description}
+  path={base}
+  heading={t.heading}
+  intro={t.intro}
+  locale={locale}
+  noindex
+  showUpdated={false}
+  alternates={[]}
+  switchTo={alternatesFor('/o')}
+>
+  <Fragment slot="head">
+    <script is:inline define:vars={{ HOP: hop }}>
+      // The page view is recorded without the link's query or fragment.
+      window.webAnalyticsBeforeSend = function (event) {
+        try {
+          var url = new URL(event.url);
+          url.search = '';
+          url.hash = '';
+          return Object.assign({}, event, { url: url.href });
+        } catch (e) {
+          return null;
+        }
+      };
+      if (HOP) {
+        var fromHere = false;
+        try {
+          fromHere = !!document.referrer && new URL(document.referrer).origin === location.origin;
+        } catch (e) {}
+        if (!fromHere) {
+          var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+          for (var i = 0; i < langs.length; i++) {
+            var primary = String(langs[i]).toLowerCase().split(/[-_]/)[0];
+            if (Object.prototype.hasOwnProperty.call(HOP, primary)) {
+              if (HOP[primary]) location.replace(HOP[primary] + location.pathname + location.search + location.hash);
+              break;
+            }
+          }
+        }
+      }
+    </script>
+  </Fragment>
+
+  <div class="flex justify-center">
+    <Lark pose="encouraging" width={168} priority />
+  </div>
+
+  <p id="lifecycle-open" class="text-center">
+    <a
+      class="pill bg-[var(--color-coral)] px-6 py-3 text-base"
+      style="text-decoration:none;color:var(--color-night-deep)"
+      href={appUrlFor({ route: FALLBACK_ROUTE, query: '' })}
+      data-open-app>{t.open}</a
+    >
+  </p>
+  <p id="lifecycle-desktop" class="text-center" hidden>{t.desktop}</p>
+
+  <div class="callout">
+    <p class="!my-0" data-route-line="offer" hidden>{t.offer}</p>
+    <div data-route-line="billing" hidden>
+      <p class="!mt-0">{t.billing}</p>
+      <ul class="!mb-0">
+        <li><a href={BILLING.apple} rel="noopener">{t.billingApple}</a></li>
+        <li><a href={BILLING.google} rel="noopener">{t.billingGoogle}</a></li>
+      </ul>
+    </div>
+    <p class="!my-0" data-route-line="other">{t.other}</p>
+  </div>
+
+  {
+    stores.length > 0 && (
+      <Fragment>
+        <h2>{get.heading}</h2>
+        <p class="flex flex-wrap gap-3">
+          {stores.map(({ store, label }) => (
+            <a
+              class="pill bg-[var(--color-night-deep)] px-5 py-3"
+              style="text-decoration:none;color:var(--color-night-text)"
+              href={store.url}
+              rel="noopener"
+            >
+              {label}
+            </a>
+          ))}
+        </p>
+      </Fragment>
+    )
+  }
+</LegalLayout>
+
+<script>
+  import { DEFAULT_LOCALE, enabledLocales } from '../i18n/config';
+  import { appUrlFor, readLifecycleLink, sitePathFor } from '../lib/lifecycle-link';
+
+  const localePaths = enabledLocales()
+    .filter((l) => l.code !== DEFAULT_LOCALE)
+    .map((l) => l.path);
+  const link = readLifecycleLink(location.pathname, location.search, localePaths);
+
+  // The button hands the same route and query to the app.
+  document.querySelector<HTMLAnchorElement>('[data-open-app]')?.setAttribute('href', appUrlFor(link));
+
+  // One line per route: the gift, the store payment pages, or the neutral one.
+  const line = link.route === 'offer' || link.route === 'billing' ? link.route : 'other';
+  for (const el of document.querySelectorAll<HTMLElement>('[data-route-line]')) {
+    el.hidden = el.dataset.routeLine !== line;
+  }
+
+  // Only a phone or tablet can open the app; a computer is told so instead.
+  // iPadOS Safari reports a Mac, so a Mac with a touch screen counts as an iPad.
+  const ua = navigator.userAgent;
+  const handheld = /iPhone|iPad|iPod|Android/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (!handheld) {
+    document.getElementById('lifecycle-open')!.hidden = true;
+    document.getElementById('lifecycle-desktop')!.hidden = false;
+  }
+
+  // Keep the route and query when switching language.
+  for (const a of document.querySelectorAll<HTMLAnchorElement>('a[data-lang-alt]')) {
+    const href = a.getAttribute('href');
+    if (href) a.setAttribute('href', sitePathFor(href, link));
+  }
+</script>

@@ -1,0 +1,8 @@
+---
+/** /<locale>/o - rendered for every enabled non-default locale. */
+import LifecycleLinkPage from '../../templates/LifecycleLinkPage.astro';
+import { localeFromParams, localeStaticPaths } from '../../i18n/routes';
+export const getStaticPaths = localeStaticPaths;
+---
+
+<LifecycleLinkPage locale={localeFromParams(Astro.params)} />

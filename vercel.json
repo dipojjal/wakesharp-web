@@ -72,6 +72,10 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }]
     },
     {
+      "source": "/email/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }]
+    },
+    {
       "source": "/.well-known/apple-app-site-association",
       "headers": [{ "key": "Content-Type", "value": "application/json" }]
     },
@@ -85,8 +89,10 @@
     { "source": "/c/:payload", "destination": "/c" },
     { "source": "/p/:payload", "destination": "/p" },
     { "source": "/g/:code", "destination": "/g" },
+    { "source": "/o/:route*", "destination": "/o" },
     { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/c/:payload", "destination": "/:lang/c" },
     { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/p/:payload", "destination": "/:lang/p" },
-    { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/g/:code", "destination": "/:lang/g" }
+    { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/g/:code", "destination": "/:lang/g" },
+    { "source": "/:lang(es|ru|tr|pt-br|id|uk|de|ar|fr|hi|ja)/o/:route*", "destination": "/:lang/o" }
   ]
 }

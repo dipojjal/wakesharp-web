@@ -16,7 +16,8 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       <li>Your alarms, missions, game results, Sharpness scores and streaks are stored <strong>on your device</strong>. If you create the optional account they are additionally mirrored to your private cloud backup, described below.</li>
       <li>Calendar access is <strong>optional and read-only</strong>. Your events are read on your phone to work out a wake time and are <strong>never transmitted anywhere</strong>.</li>
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
-      <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, an optional <strong>account backup</strong>, and anything you choose to send us, such as a support message or why you cancelled. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
+      <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, a small <strong>record of each installation</strong> that decides which notifications and emails to send, an optional <strong>account backup</strong>, and anything you choose to send us, such as a support message or why you cancelled. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
+      <li>If you create the optional account, WakeSharp may <strong>email</strong> you about your own plan, such as a payment that did not go through, and send the Lark's <strong>offers and check-ins</strong> by email or, on iPhone, as notifications. Offer emails follow your choice, and where you live decides whether that choice starts on or off. Every offer email has a one-click unsubscribe link. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
       <li>On iPhone, weather is optional: choose a city or allow location access. Weather coordinates are rounded before being sent to our weather service and Apple Weather, as described below. Network services also receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
@@ -31,7 +32,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   <h2>What WakeSharp does not do</h2>
   <ul>
     <li>It does not require an account, except for group alarms. Sign-in supports backup, restoration, purchase continuity and group alarms.</li>
-    <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the name your sign-in provider shares, and the name you give the Lark to call you by, if you choose to. Your email address is held if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address), or if you enter it in a support form.</li>
+    <li>It does not collect your phone number or contacts. It holds your name only if you create the optional account: the first name your sign-in provider shares, or the name you give the Lark to call you by. The Lark greets you by it, and our emails and notifications use it. Your email address is held if you create the optional account, because your sign-in provider discloses it (Apple can hide it behind a relay address), or if you enter it in a support form.</li>
     <li>It does not collect a location route. On iPhone, optional weather uses a chosen city or a location fix rounded to two decimal places before transmission. Approximate location inferred from IP addresses is described below.</li>
     <li>Marketing measurement connects campaign interactions to app opens and subscription outcomes using AppsFlyer. Advertising identifiers are used only when available and permitted by your privacy choices. On iPhone, from version 2.10, the advertising identifier is read only after you allow tracking through Apple's prompt; before that version, and after a refusal, it is not read at all.</li>
     <li>We do not sell customer lists. Advertising and measurement may involve sharing with the providers and enabled advertising partners described below; regional privacy choices apply to that processing.</li>
@@ -64,7 +65,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   </p>
   <p>If you create an account, this is stored in your private backup:</p>
   <ul>
-    <li>Your <strong>sign-in identity</strong>: a random account ID and the email your provider discloses (with Sign in with Apple you can hide your real address behind Apple's relay).</li>
+    <li>Your <strong>sign-in identity</strong>: a random account ID, the email your provider discloses (with Sign in with Apple you can hide your real address behind Apple's relay), and your first name, as described under <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li>Your <strong>alarms and settings</strong>: times, repeat days, labels, missions, snooze rules, calendar-alarm rules, shift rotations and the group a group alarm belongs to, and your app preferences, including badge reminders and your answers to the onboarding questions that pick your missions.</li>
     <li>Your <strong>progress</strong>: daily Sharpness scores, streak and freeze tokens, badges, game results and personal baselines, a record of each morning your alarms rang and how it ended, your recent missions and wake-up times, and the journal of past alarms (only completed history; never diagnostics about your device, and never the calendar event a calendar alarm woke you for).</li>
     <li>Your <strong>Lark</strong>: its stage, the items it has found, its outfit and decorations, and the name you asked it to call you by. That name is personal information: it is stored in your backup, linked to your account, and deleted with it.</li>
@@ -84,8 +85,9 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   </p>
   <p>
     Your random account ID can also become your RevenueCat customer ID, linking purchase and measurement
-    records across your devices. Your email is not sent by WakeSharp to PostHog or AppsFlyer as a marketing
-    attribute. Signing out keeps your local data and stops account backups. Deleting the account (in the
+    records across your devices. Your email address is used for the emails described under
+    <a href="#emails-and-notifications">Emails and notifications</a>, which Resend delivers. Your email is not
+    sent by WakeSharp to PostHog or AppsFlyer as a marketing attribute. Signing out keeps your local data and stops account backups. Deleting the account (in the
     app at <em>Settings → Account → Delete account</em>, or as
     described at <a href="/account/delete">wakesharp.app/account/delete</a>) permanently removes the
     backup and the login itself (for Sign in with Apple, the sign-in token is revoked with Apple), while
@@ -131,7 +133,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li><strong>Camera</strong>: optional, only for an alarm you have set to Scan an Object, Fetch, Photo Proof, First Light, Face Check or Fruit Slash, when you enrol a target and while that mission runs. Face Check and Fruit Slash use the front camera. See the next section.</li>
     <li><strong>Motion &amp; Fitness</strong>: optional, only for an alarm you have set to a walking mission, to count the steps it asks for. See the next section.</li>
     <li><strong>Microphone and Speech Recognition</strong>: optional on iPhone for spoken missions such as Name Five. Recognition is restricted to on-device processing. Audio buffers and transcripts are used only to check your answer, then discarded; they are not recorded to a file, logged, backed up or uploaded. If on-device recognition is unavailable or permission is declined, the mission offers a fallback.</li>
-    <li><strong>Notifications</strong>: for the optional pre-bed wind-down reminder, the reliability warning that rides with it, and the report shown when an alarm did not ring.</li>
+    <li><strong>Notifications</strong>: for the optional pre-bed wind-down reminder, the reliability warning that rides with it, the report shown when an alarm did not ring, and the setup reminders, trial reminder, alarm notices and messages from our server described under <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li><strong>Tracking</strong>: optional, from version 2.10, to measure which advert or link brought you to WakeSharp and whether it led to a trial or a subscription. It is never used to show you adverts inside WakeSharp, because there are none. Declining does not prevent alarm use or purchasing a plan.</li>
   </ul>
   <p>On Android, the app's permissions include:</p>
@@ -141,7 +143,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     <li><code>USE_EXACT_ALARM</code>: to schedule an alarm that fires at the exact minute you asked for.</li>
     <li><code>SCHEDULE_EXACT_ALARM</code>: the same thing on Android 12 and 12L only, which predate the permission above. It is dropped from the build on Android 13 and later.</li>
     <li><code>USE_FULL_SCREEN_INTENT</code>: to show the ringing screen over the lock screen.</li>
-    <li><code>POST_NOTIFICATIONS</code>: for the ring notification, the optional bedtime reminder, and the missed-alarm report.</li>
+    <li><code>POST_NOTIFICATIONS</code>: for the ring notification, the optional bedtime reminder, the missed-alarm report, and the setup reminders, trial reminder and alarm notices described under <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>: to keep the alarm tone playing while the alarm is ringing.</li>
     <li><code>RECEIVE_BOOT_COMPLETED</code>: to restore your alarms after a restart, because Android discards scheduled alarms on reboot.</li>
     <li><code>READ_CALENDAR</code>: optional, read-only, for calendar alarms only.</li>
@@ -425,9 +427,9 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     backup.
   </p>
   <ul>
-    <li>Each row is keyed by a random ID created on your device for this purpose alone: not the analytics ID, not the subscription ID, and not anything derived from your name, email or device.</li>
+    <li>Each row is keyed by a random ID created on your device for our own records: these answers and the installation record described under <a href="#emails-and-notifications">Emails and notifications</a>. It is not the analytics ID, not the subscription ID, and not anything derived from your name, email or device.</li>
     <li>It holds only answers from that fixed list of setup questions, sent through a write-only channel that accepts nothing else. Never the content of your alarms, your calendar, or anything you typed.</li>
-    <li>Why we keep our own copy: so that if you later create the optional account, your first-day answers can be connected to it, and we can learn how the way people start relates to what they go on to do. Until you sign in (and most people never do) the row is anonymous, and nothing can read it back.</li>
+    <li>Why we keep our own copy: so that if you later create the optional account, your first-day answers can be connected to it, and we can learn how the way people start relates to what they go on to do. Until you sign in (and most people never do) the row is linked to no account, only to that installation's record, and nothing in the app can read it back.</li>
     <li>To keep out automated fake installs, the channel counts new installs per network using keyed hashes of the network address, never the address itself. These counters are deleted within two days.</li>
     <li>Rows are deleted 180 days after the last answer. Deleting the optional account deletes them at once. Turning off <em>Settings → Privacy → Product analytics</em> in the app stops them being sent at all.</li>
   </ul>
@@ -688,6 +690,113 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     choose <em>Skip</em> or <em>Not now</em>.
   </p>
 
+  {/*
+    Emails and notifications. Written 2026-11-07 against the app repository:
+    the lifecycle plan approved that day and its server work
+    (supabase/migrations/20261107180000_lifecycle_messaging.sql: the devices,
+    contacts and sends tables, rows going with the account or losing the link
+    to it, the daily prune at 400 days; supabase/functions/lifecycle-dispatch:
+    each step's service or offer class in planner.ts, the opt-in storefronts
+    in consent.ts, the footers in render.ts), and the local notifications
+    already shipping: WSCore/SetupReminder.swift (mornings 1 to 7, 10 and 14,
+    the day-7 offer only under the bedtime-v2 offers consent),
+    TrialReminderPlanner (36 to 48 hours before a trial converts),
+    AlarmAccessNoticePlanner (the evening before the last alarm, and when the
+    alarms are off) and their Android twins. Re-check it whenever any of
+    those change, and before lifecycle.config.policy_live is set: that switch
+    lets offer emails reach accounts in opt-out regions under this notice.
+  */}
+  <h2 id="emails-and-notifications">Emails and notifications</h2>
+  <p>
+    WakeSharp can reach you outside the app in two ways: by email, if you created the optional account (we
+    write to the address your sign-in provider shared), and by notifications on your phone, if you allowed
+    them. Messages come in two kinds:
+  </p>
+  <ul>
+    <li><strong>Service messages</strong> are about your own subscription: a payment that did not go through, and a free trial or plan that is ending after you turned off renewal. They need no consent, because they are part of the service you bought, and they stop once the payment goes through or the plan has ended.</li>
+    <li><strong>Offer messages</strong> are the Lark's: an offer to come back after you cancel a trial or a plan, a reminder that your plan is waiting if you signed up but never started one, a summary of your free trial (mornings on time, your streak, your next badge) before it renews, and a check-in when you have not set an alarm for a while. An offer can include a discount; the app shows the real price before you buy.</li>
+  </ul>
+  <p>
+    <strong>Your choice for offer emails.</strong> Where you sign in, and in <em>Settings → Emails from
+    Lark</em>, a switch reads "Email me tips and offers from Lark". If your App Store or Google Play account is
+    in the European Union or the rest of the EEA, the United Kingdom, Switzerland, Canada or Australia, or we
+    cannot tell its country, the switch starts off and you get offer emails only if you turn it on. Everywhere
+    else it starts on, with the notice "Lark may email you now and then. Unsubscribe anytime." An account
+    created before the switch existed is treated by the same rule: outside those countries it may receive
+    offer emails, which this policy announces, and inside them it receives none until you turn the switch on.
+    We record your choice, when and where in the app you made it, the wording you saw, and your store country.
+  </p>
+  <p>
+    <strong>Notifications.</strong> On iPhone, WakeSharp can also receive notifications from our server.
+    Service notifications, such as a payment that did not go through, need only your permission for
+    notifications. Offer notifications also need the agreement to offers you gave when you allowed notifications
+    during setup, and stop when you turn off <em>Setup reminders and offers</em> in WakeSharp's Settings. Android
+    does not receive notifications from our server yet. These reminders are scheduled by the app itself, on both
+    platforms, and need no server:
+  </p>
+  <ul>
+    <li><strong>Setup reminders</strong>: if you allowed notifications during setup but did not finish it, a morning reminder on days 1 to 7, 10 and 14, a quarter of an hour after the wake time you chose (or at 08:00). The one on day 7 can carry an offer for the yearly plan, only if you agreed to offers when you allowed notifications. They stop when you finish setup or buy a plan, and the reminder's Stop button or the <em>Setup reminders and offers</em> switch in Settings turns them off.</li>
+    <li><strong>The trial reminder</strong>: one notification about two days before a free trial turns into a paid plan, withdrawn if you cancel first.</li>
+    <li><strong>Alarm notices</strong>: when your access is ending, a notification the evening before your last alarm, and another when your alarms are off, saying how to fix a payment or subscribe to turn them back on.</li>
+  </ul>
+  <p>
+    <strong>Your name.</strong> When you sign in, WakeSharp keeps the first name your Apple or Google account
+    shares (Apple shares a name only the first time you sign in with it, and only if you allow it), or the name
+    you type when the Lark asks what to call you. It is stored with your account. The Lark greets you by it in
+    the app, and our emails and notifications use it. You can change or clear it in <em>Settings → Account →
+    Your name</em>; without a name, messages simply leave it out.
+  </p>
+  <p>
+    <strong>What your phone tells our server.</strong> So that a message reaches the right phone at a sensible
+    hour and stops when it no longer applies, the app keeps a small record of each installation on our server,
+    hosted by Supabase in the United States under the same terms as the backup. It holds a random installation
+    ID (the one your setup answers use), your RevenueCat customer ID, your platform and app version, on iPhone
+    the push token Apple issues for notifications, whether notifications are allowed and whether you agreed to
+    offers (and under which wording), the app's language, your time zone, the country of your App Store or
+    Google Play account, your wake time, how far you got in setup, whether an alarm is set (and since when none
+    has been), whether you subscribe, your account ID while you are signed in, and when the app last reported.
+    It holds no name and no email address. To keep out automated fake installs, new records are counted per
+    network using keyed hashes of the network address, never the address itself, and these counters are
+    deleted within two days.
+  </p>
+  <p>
+    <strong>Who delivers them.</strong> Emails are sent by <strong>Resend, Inc.</strong>, in the United States,
+    as our processor. For each email it receives your address and the message, which can include your first
+    name, the date your trial or plan ends and, in a trial summary, your mornings and streak, and it tells us
+    whether the email was delivered, bounced or reported as spam. A bounce or a spam report stops further email
+    to that address, and so does turning off forwarding for an Apple private relay address in your Apple
+    account. Before sending anything, our server asks RevenueCat for your current subscription, so that nothing
+    goes out that no longer applies. Notifications to an iPhone go through the <strong>Apple Push Notification
+    service</strong>, which receives the push token and the notification's text. Your email address and your
+    push token are not sent to PostHog or AppsFlyer. Resend's privacy policy is at
+    <a href="https://resend.com/legal/privacy-policy" rel="noopener">resend.com/legal/privacy-policy</a>.
+  </p>
+  <p>
+    Links in these messages open the app, or a page on this site that hands the link to the app, and they say
+    which message they came from: the kind of message, which one in its series, email or notification, and a
+    random message ID. When you open one, the app's usage analytics record the first three, never the message
+    ID or your address, and the page on this site records none of them.
+  </p>
+  <p>
+    <strong>Stopping them.</strong> Every offer email has a one-click unsubscribe link, and mail apps that
+    support it show their own unsubscribe button; <em>Settings → Emails from Lark</em> turns offer emails off
+    and on again. Service emails carry a link to your email preferences instead, and keep coming while a payment
+    or the end of your plan needs your attention. To stop notifications, turn them off for WakeSharp in your
+    phone's settings, or turn off <em>Setup reminders and offers</em> to stop only the offers.
+  </p>
+  <p>
+    We rely on our contract with you for service messages; on your consent for offer emails in the countries
+    named above and wherever you turned the switch on yourself; and elsewhere on our legitimate interest in
+    telling customers about our own app, with a way out in every offer email.
+  </p>
+  <p>
+    <strong>How long it is kept.</strong> The log of messages (which message, by email or notification, to
+    which account, installation or RevenueCat customer ID, when, and whether it was sent) is kept for 400 days.
+    An installation's record is deleted 400 days after the app last reported. Deleting the optional account
+    deletes your email choices and the log of messages sent to it at once, and unlinks your installations'
+    records from it.
+  </p>
+
   <h2 id="contact-form">Support and feedback messages</h2>
   <p>
     The app offers Contact Support, Request Feature, Send Feedback and Report Bug forms.
@@ -731,6 +840,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     {REFERRAL_DISCLOSURE.published && (
       <li><strong>Invite records</strong>: deleted 180 days after their last use, by the app or by a friend using the code, except that a record which has unlocked a mission is kept until you ask us to delete it, and a used invite, with the record of any plan it led to, stays with the inviter's record. Request numbers and challenges are deleted within a day and rate-limit counters within three days. The security log is kept for 180 days, and the verification service keeps App Attest key records for a year after the key's last use. See <a href="#inviting-friends">Inviting friends</a>.</li>
     )}
+    <li><strong>Emails and notifications</strong>: the message log is kept for 400 days, and an installation's record until 400 days after the app last reported; your email choices go with the account. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li><strong>Analytics data at PostHog</strong>: usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us. If you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li><strong>Marketing records at AppsFlyer</strong>: retained according to the service's applicable retention settings and our measurement needs. Contact us to request access or deletion. Turning analytics off stops future collection; it does not itself delete historical records.</li>
     <li>
@@ -775,7 +885,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   <h2>Security</h2>
   <p>
     Your data stays inside your phone's app sandbox and is protected by your device's own encryption and
-    passcode. Traffic to RevenueCat, PostHog, AppsFlyer and the backup service uses HTTPS. No system is perfectly
+    passcode. Traffic to RevenueCat, PostHog, AppsFlyer, Resend, Apple's notification service and the backup service uses HTTPS. No system is perfectly
     secure. Alarm execution does not depend on a marketing server. Backups are isolated by account access
     rules; subscription, analytics, marketing, setup and cancellation records are held by the services described above.
   </p>

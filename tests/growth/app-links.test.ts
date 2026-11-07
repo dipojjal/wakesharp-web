@@ -18,3 +18,25 @@ test('Android association trusts the verified Play signer, not the upload or deb
     .headers.some((header: { key: string; value: string }) => header.key === 'Content-Type' && header.value === 'application/json'));
   assert.ok(!config.redirects.some((entry: { source: string }) => entry.source === path));
 });
+
+test('the AASA claims every app link path, lifecycle /o/* included, and is served as JSON', () => {
+  const aasa = JSON.parse(readFileSync(new URL('../../public/.well-known/apple-app-site-association', import.meta.url), 'utf8'));
+  const [details] = aasa.applinks.details;
+  assert.deepEqual(details.appIDs, ['W4HPRW2JT4.com.wakesharp.app']);
+  assert.deepEqual(details.components.map((c: { '/': string }) => c['/']), ['/c/*', '/p/*', '/g/*', '/r/*', '/o/*']);
+  const config = JSON.parse(readFileSync(new URL('../../vercel.json', import.meta.url), 'utf8'));
+  const path = '/.well-known/apple-app-site-association';
+  assert.ok(config.headers.find((entry: { source: string }) => entry.source === path)
+    .headers.some((header: { key: string; value: string }) => header.key === 'Content-Type' && header.value === 'application/json'));
+  // Apple fetches it without following redirects, and a rewrite would serve a page instead.
+  for (const list of [config.redirects, config.rewrites]) {
+    assert.ok(!list.some((entry: { source: string }) => entry.source.startsWith('/.well-known')));
+  }
+});
+
+test('every /o/<route> and /<locale>/o/<route> reaches the lifecycle page', () => {
+  const config = JSON.parse(readFileSync(new URL('../../vercel.json', import.meta.url), 'utf8'));
+  const rewrites: { source: string; destination: string }[] = config.rewrites;
+  assert.ok(rewrites.some((r) => r.source === '/o/:route*' && r.destination === '/o'));
+  assert.ok(rewrites.some((r) => /^\/:lang\([^)]+\)\/o\/:route\*$/.test(r.source) && r.destination === '/:lang/o'));
+});

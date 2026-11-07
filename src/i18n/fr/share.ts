@@ -60,6 +60,19 @@ export const share = {
       days: [`dim.`, `lun.`, `mar.`, `mer.`, `jeu.`, `ven.`, `sam.`],
     },
   },
+  lifecycle: {
+    title: `Continuer dans l’app - WakeSharp`,
+    description: `Ce lien WakeSharp ouvre l’app sur votre téléphone.`,
+    heading: `Continuer dans WakeSharp`,
+    intro: `Ce lien ouvre WakeSharp sur votre téléphone.`,
+    open: `Ouvrir WakeSharp`,
+    desktop: `Sur un ordinateur ? Ouvrez ce lien sur le téléphone où vous utilisez WakeSharp.`,
+    offer: `Connectez-vous avec le même compte Apple ou Google pour trouver votre cadeau.`,
+    other: `Nouveau téléphone, ou app supprimée ? Installez WakeSharp, puis connectez-vous avec le même compte Apple ou Google pour reprendre là où vous vous étiez arrêté.`,
+    billing: `Tous les paiements de WakeSharp passent par l’App Store ou Google Play. Si un paiement n’a pas abouti, mettez à jour votre moyen de paiement là-bas pour conserver votre abonnement.`,
+    billingApple: `Mettre à jour le moyen de paiement dans l’App Store`,
+    billingGoogle: `Mettre à jour le moyen de paiement dans Google Play`,
+  },
   get: {
     heading: `Obtenir WakeSharp`,
     /** `{trialDays}` et `{annual}` viennent de src/config/site.ts ; l’essai n’apparaît jamais sans son prix. */

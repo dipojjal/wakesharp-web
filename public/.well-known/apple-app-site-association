@@ -7,7 +7,8 @@
           { "/": "/c/*", "comment": "Beat My Wake challenge links" },
           { "/": "/p/*", "comment": "Wake pact invite links" },
           { "/": "/g/*", "comment": "Group alarm invites" },
-          { "/": "/r/*", "comment": "Explicit WakeSharp referral links" }
+          { "/": "/r/*", "comment": "Explicit WakeSharp referral links" },
+          { "/": "/o/*", "comment": "Lifecycle email and push links" }
         ]
       }
     ]

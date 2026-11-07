@@ -370,16 +370,16 @@ const UNTRANSLATED_ALLOW = [
 ];
 
 /** Pages every enabled locale must ship, relative to dist/<path>/ (the home page is dist/<path>.html). */
-const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-error.html', 'account/delete.html', 'c.html', 'p.html', 'g.html', 'privacy.html', 'terms.html'];
+const TIER_A = ['support.html', 'contact.html', 'contact-sent.html', 'contact-error.html', 'account/delete.html', 'c.html', 'p.html', 'g.html', 'o.html', 'privacy.html', 'terms.html'];
 /** Of those, the indexable ones, which must carry the x-default hreflang link. */
 const NEEDS_X_DEFAULT = new Set(['index.html', 'support.html', 'contact.html', 'account/delete.html']);
 /**
  * The share-link decoders. vercel.json rewrites every /c/<payload>,
- * /p/<payload> and /g/<code> onto these files, so each one stands for an
+ * /p/<payload>, /g/<code> and /o/<route> onto these files, so each one stands for an
  * unbounded set of URLs: they must be noindex, and carry no hreflang, in
  * every language.
  */
-const SHARE_SHELLS = ['c.html', 'p.html', 'g.html'];
+const SHARE_SHELLS = ['c.html', 'p.html', 'g.html', 'o.html'];
 /** Localized routes that wrap the English legal text on purpose: no untranslated-sentence check. */
 /**
  * Product and feature names the glossary keeps in English on pages whose
@@ -721,6 +721,7 @@ if (existsSync(join(DIST, 'sitemap.xml'))) {
     'https://wakesharp.app/c',
     'https://wakesharp.app/p',
     'https://wakesharp.app/g',
+    'https://wakesharp.app/o',
     'https://wakesharp.app/es/privacy',
     'https://wakesharp.app/es/terms',
   ]) {
@@ -785,8 +786,8 @@ for (const loc of OTHER_LOCALES) {
   }
   // The share links must reach the localized landing pages through the same
   // rewrite the English ones use; a locale missing from the alternation 404s.
-  for (const page of ['c', 'p', 'g']) {
-    const rule = (vercel.rewrites ?? []).find((r) => new RegExp(`^/:lang\\([^)]+\\)/${page}/:(?:payload|code)$`).test(r.source));
+  for (const page of ['c', 'p', 'g', 'o']) {
+    const rule = (vercel.rewrites ?? []).find((r) => new RegExp(`^/:lang\\([^)]+\\)/${page}/:(?:payload|code|route\\*)$`).test(r.source));
     const alternation = rule ? rule.source.match(/\(([^)]+)\)/)[1].split('|') : [];
     if (!alternation.includes(loc.path)) {
       console.error(`  ✗ vercel.json: no rewrite for /${loc.path}/${page}/:payload - add "${loc.path}" to the /:lang(…)/${page}/:payload alternation`);

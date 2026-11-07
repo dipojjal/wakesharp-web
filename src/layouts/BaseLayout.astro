@@ -72,6 +72,8 @@ const blogHref = await blogIndexPath(locale);
       alternates={alternates}
       canonicalOverride={canonicalOverride}
     />
+    {/* A page's own early script, e.g. the /o language hop. Empty everywhere else. */}
+    <slot name="head" />
   </head>
   <body class="min-h-dvh">
     <a class="skip-link" href="#main">{shell.skipLink}</a>

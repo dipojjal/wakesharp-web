@@ -61,6 +61,7 @@ const hasNotice = Astro.slots.has('notice');
   fallbackPath={fallbackPath}
   canonicalOverride={canonicalOverride}
 >
+  <slot name="head" slot="head" />
   <!--
     Legal pages are a flat morning surface, deliberately outside the sunrise ramp.
     These URLs are hardcoded in both shipped apps' paywalls; they need to be

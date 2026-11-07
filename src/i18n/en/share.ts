@@ -1,7 +1,8 @@
 /**
  * The link-landing pages: /c (a "Beat my wake" challenge), /p (a wake-up pact,
  * the shared alarm before group alarms; old links still open in the app) and
- * /g (a group alarm invite). The `script` strings are read by each page's
+ * /g (a group alarm invite), plus /o (a lifecycle email or push link, whose
+ * `lifecycle` strings are plain text). The `script` strings are read by each page's
  * inline decoder; `{name}`, `{rounds}`, `{difficulty}`, `{seconds}`, `{time}`
  * and `{days}` are filled in by that script from the link itself.
  */
@@ -56,6 +57,26 @@ export const share = {
       /** Sunday first, matching the app's weekday mask. */
       days: [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`],
     },
+  },
+  /**
+   * /o/<route>: where a lifecycle email's or push's link lands when the app did
+   * not open by itself (no app on this phone, a computer, an in-app browser).
+   * The page picks `offer`, `billing` or `other` by route. It never states a
+   * price: an offer's price depends on the store country, and the app shows
+   * the real one.
+   */
+  lifecycle: {
+    title: `Continue in the app - WakeSharp`,
+    description: `This WakeSharp link opens the app on your phone.`,
+    heading: `Continue in WakeSharp`,
+    intro: `This link opens WakeSharp on your phone.`,
+    open: `Open WakeSharp`,
+    desktop: `On a computer? Open this link on the phone where you use WakeSharp.`,
+    offer: `Sign in with the same Apple or Google account to find your gift.`,
+    other: `New phone, or deleted the app? Install WakeSharp, then sign in with the same Apple or Google account to pick up where you left off.`,
+    billing: `The App Store or Google Play handles every WakeSharp payment. If a payment didn’t go through, update your payment method there to keep your plan.`,
+    billingApple: `Update your payment method in the App Store`,
+    billingGoogle: `Update your payment method in Google Play`,
   },
   get: {
     heading: `Get WakeSharp`,

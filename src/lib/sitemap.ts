@@ -24,7 +24,8 @@ for (const locale of enabledLocales()) {
   }
   // Share-link decoder shells, noindex in every language: vercel.json rewrites
   // every /c/:payload onto the one file, and the bare page decodes nothing.
-  for (const path of ['/c', '/p', '/g'] as const) {
+  // /o, the lifecycle email and push landing page, is one more.
+  for (const path of ['/c', '/p', '/g', '/o'] as const) {
     EXCLUDED_PATHS.add(localePath(locale, path));
   }
   // Localized legal wrappers canonicalize to the English page, so listing them

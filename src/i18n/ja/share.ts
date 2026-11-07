@@ -59,6 +59,19 @@ export const share = {
       days: [`日`, `月`, `火`, `水`, `木`, `金`, `土`],
     },
   },
+  lifecycle: {
+    title: `アプリで続ける - WakeSharp`,
+    description: `このWakeSharpのリンクは、スマホでアプリを開きます。`,
+    heading: `WakeSharpで続ける`,
+    intro: `このリンクは、スマホでWakeSharpを開きます。`,
+    open: `WakeSharpを開く`,
+    desktop: `パソコンでご覧ですか？WakeSharpを使っているスマホで、このリンクを開いてください。`,
+    offer: `同じAppleまたはGoogleアカウントでサインインすると、プレゼントが見つかります。`,
+    other: `スマホを替えた、またはアプリを削除した場合は、WakeSharpをインストールして、同じAppleまたはGoogleアカウントでサインインすると、続きから使えます。`,
+    billing: `WakeSharpのお支払いは、すべてApp StoreまたはGoogle Playを通して行われます。支払いが完了しなかった場合は、プランを続けるために、そちらでお支払い方法を更新してください。`,
+    billingApple: `App Storeでお支払い方法を更新`,
+    billingGoogle: `Google Playでお支払い方法を更新`,
+  },
   get: {
     heading: `WakeSharpを入手`,
     /** `{trialDays}` と `{annual}` は src/config/site.ts から。無料トライアルは必ずそのあとの価格とセットで書きます。 */
