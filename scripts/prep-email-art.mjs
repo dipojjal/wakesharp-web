@@ -7,13 +7,15 @@
  *
  *   WAKESHARP_APP_DIR=/path/to/WakeSharp npm run assets:email
  *
- * Every image has a 1x file and an @2x file for sharp screens, both
- * transparent, so one layout serves light and dark mail clients:
+ * `lark.png` is the one the emails use today: the Lark facing forward in a
+ * 336 px square, which the lifecycle-dispatch renderer (app repo,
+ * supabase/functions/lifecycle-dispatch/render.ts) draws at 112x112 CSS px,
+ * so it stays sharp on 3x screens. The rest are spares for later templates.
+ * Each has a 1x file and an @2x file for sharp screens. All are transparent,
+ * so one layout serves light and dark mail clients:
  *   - `lark-<pose>.png`: a 600x240 banner (1200x480 at 2x) for a 600 px wide
  *     email, the pose trimmed to its own outline and centred;
- *   - `lark-<pose>-square.png`: the same pose in a 112 px square (224 at 2x),
- *     the slot the lifecycle-dispatch renderer draws (app repo,
- *     supabase/functions/lifecycle-dispatch/render.ts);
+ *   - `lark-<pose>-square.png`: the same pose in a 112 px square (224 at 2x);
  *   - `wordmark-on-light.png` / `wordmark-on-dark.png`: the app icon beside
  *     "WakeSharp", 200 px wide (400 at 2x), in the ink for a light or a dark
  *     background.
@@ -44,6 +46,9 @@ const LARKS = [
   ['mascot_celebrating.webp', 'lark-celebrating', 'cheering, wings up'],
   ['mascot_night_cap.webp', 'lark-night-cap', 'in a night cap, winking'],
 ];
+
+/** The emails' Lark: facing forward, one 336 px square file (112 CSS px at 3x). */
+const MAIN = { source: 'mascot_hero.webp', file: 'lark.png', size: 336, inset: 6 };
 
 /** [source under Logos/, output name]. */
 const WORDMARKS = [
@@ -81,25 +86,33 @@ async function emit(file, pipeline) {
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
 
+/** The trimmed pose, fitted inside a transparent `width` x `height` canvas with `inset` px to spare. */
+async function framed(trimmed, width, height, inset) {
+  const pose = await sharp(trimmed)
+    .resize({ width: width - 2 * inset, height: height - 2 * inset, fit: 'inside', withoutEnlargement: true })
+    .toBuffer();
+  const meta = await sharp(pose).metadata();
+  return png(
+    sharp({ create: { width, height, channels: 4, background: TRANSPARENT } }).composite([
+      { input: pose, left: Math.round((width - meta.width) / 2), top: Math.round((height - meta.height) / 2) },
+    ]),
+  );
+}
+
+{
+  const trimmed = await sharp(join(ART, MAIN.source)).trim({ threshold: 1 }).toBuffer();
+  await emit(MAIN.file, await framed(trimmed, MAIN.size, MAIN.size, MAIN.inset));
+}
+
 for (const [source, name] of LARKS) {
   const input = join(ART, source);
   // Trim to the pose's own outline, then fit it into the 2x banner's inner box.
   const trimmed = await sharp(input).trim({ threshold: 1 }).toBuffer();
   for (const [suffix, box, inset] of [['', BANNER, INSET], ['-square', { width: SQUARE, height: SQUARE }, 2]]) {
     for (const scale of [2, 1]) {
-      const width = box.width * scale;
-      const height = box.height * scale;
-      const pose = await sharp(trimmed)
-        .resize({ width: width - 2 * inset * scale, height: height - 2 * inset * scale, fit: 'inside', withoutEnlargement: true })
-        .toBuffer();
-      const meta = await sharp(pose).metadata();
       await emit(
         `${name}${suffix}${scale === 2 ? '@2x' : ''}.png`,
-        png(
-          sharp({ create: { width, height, channels: 4, background: TRANSPARENT } }).composite([
-            { input: pose, left: Math.round((width - meta.width) / 2), top: Math.round((height - meta.height) / 2) },
-          ]),
-        ),
+        await framed(trimmed, box.width * scale, box.height * scale, inset * scale),
       );
     }
   }

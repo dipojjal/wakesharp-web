@@ -50,6 +50,7 @@ test('noindex, duplicate-canonical and decoder-shell URLs stay out', () => {
     '/o',
     '/de/o',
     '/ar/o',
+    '/unsubscribe',
   ]) {
     assert.equal(includeInSitemap(url(path)), false, path);
   }

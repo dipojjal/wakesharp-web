@@ -1,0 +1,147 @@
+---
+/**
+ * https://wakesharp.app/unsubscribe?t=<token>: where every lifecycle email's
+ * unsubscribe (or email preferences) link lands. Supabase serves no HTML from
+ * its own domain, so the page lives here and asks the lifecycle-unsubscribe
+ * function for the token's status, then turns offer emails off or back on
+ * (src/lib/unsubscribe.ts). Mail apps' own one-click unsubscribe goes to the
+ * function directly and never comes here.
+ *
+ * Deliberately bare: no header, footer, download button or language menu, and
+ * no analytics of any kind (neither BaseLayout's Vercel Web Analytics nor the
+ * PostHog consent script), because the token in the address is the only key
+ * to someone's email choice. It never leaves in a Referer header either. The
+ * page speaks the email's language once the function names it (seven, from
+ * src/i18n/unsubscribe.ts), the browser's before that. noindex, out of the
+ * sitemap, and not in the AASA: it must open in the browser, not the app.
+ */
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import hero from '../assets/mascot/hero.png';
+import { resolveLocale } from '../i18n/routes';
+import { UNSUBSCRIBE_COPY } from '../i18n/unsubscribe';
+
+const t = UNSUBSCRIBE_COPY.en;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <BaseHead
+      title={t.title}
+      description="Turn WakeSharp's offer emails off, or back on, from the link in an email."
+      path="/unsubscribe"
+      noindex
+      locale={resolveLocale('en')}
+      alternates={[]}
+    />
+    <meta name="referrer" content="no-referrer" />
+  </head>
+  <body class="min-h-dvh">
+    <main
+      id="main"
+      data-tone="morning"
+      class="flex min-h-dvh justify-center bg-[var(--color-morning-cream)] px-6 py-14 text-[var(--color-morning-text)] sm:py-20"
+    >
+      <div class="w-full max-w-md text-center">
+        <Image src={hero} alt="" width={112} densities={[1, 2]} format="webp" quality={80} loading="eager" class="mx-auto" />
+        <div id="unsubscribe" class="mt-8" aria-live="polite">
+          <h1 class="text-3xl sm:text-4xl" data-heading>{t.loading}</h1>
+          <p class="mt-4 text-lg leading-relaxed" data-body hidden></p>
+          <p class="mt-8">
+            <button
+              type="button"
+              class="pill cursor-pointer bg-[var(--color-coral)] px-6 py-3 text-base text-[var(--color-night-deep)] disabled:cursor-wait disabled:opacity-60"
+              data-action
+              hidden></button>
+          </p>
+        </div>
+        <noscript>
+          <p class="mt-6 text-lg">This page needs JavaScript. You can also turn offer emails off in the WakeSharp app’s settings.</p>
+        </noscript>
+        <p class="mt-12 text-sm">
+          <a
+            class="font-semibold text-[var(--color-coral-ink)] underline underline-offset-2"
+            href="/privacy#emails-and-notifications"
+            data-privacy>{t.privacy}</a
+          >
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  import { UNSUBSCRIBE_COPY, type UnsubscribeLocale } from '../i18n/unsubscribe';
+  import {
+    callUnsubscribe,
+    matchLocale,
+    pickLocale,
+    readToken,
+    viewFor,
+    type UnsubscribeAction,
+    type UnsubscribeView,
+  } from '../lib/unsubscribe';
+
+  const root = document.getElementById('unsubscribe')!;
+  const heading = root.querySelector<HTMLElement>('[data-heading]')!;
+  const body = root.querySelector<HTMLElement>('[data-body]')!;
+  const button = root.querySelector<HTMLButtonElement>('[data-action]')!;
+  const privacy = document.querySelector<HTMLAnchorElement>('[data-privacy]')!;
+
+  const token = readToken(location.search);
+  let locale: UnsubscribeLocale = pickLocale(navigator.languages?.length ? navigator.languages : [navigator.language]);
+  let view: UnsubscribeView = token ? 'loading' : 'invalid';
+  let lastAction: UnsubscribeAction = 'status';
+
+  function render(): void {
+    const t = UNSUBSCRIBE_COPY[locale];
+    document.documentElement.lang = locale;
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.title = t.title;
+    privacy.textContent = t.privacy;
+    privacy.href = `${locale === 'en' ? '' : `/${locale}`}/privacy#emails-and-notifications`;
+    // [heading, body, button] per view; null hides the part.
+    const parts: Record<UnsubscribeView, [string, string | null, string | null]> = {
+      loading: [t.loading, null, null],
+      ask: [t.askHeading, null, t.unsubscribe],
+      done: [t.doneHeading, t.doneBody, t.subscribeAgain],
+      again: [t.againHeading, null, t.unsubscribe],
+      invalid: [t.invalidHeading, t.invalidBody, null],
+      error: [t.errorHeading, t.errorBody, t.retry],
+    };
+    const [headingText, bodyText, label] = parts[view];
+    heading.textContent = headingText;
+    body.textContent = bodyText ?? '';
+    body.hidden = bodyText === null;
+    button.textContent = label ?? '';
+    button.hidden = label === null;
+  }
+
+  async function run(action: UnsubscribeAction): Promise<void> {
+    if (!token) return;
+    lastAction = action;
+    button.disabled = true;
+    root.setAttribute('aria-busy', 'true');
+    const answer = await callUnsubscribe(fetch, token, action);
+    root.removeAttribute('aria-busy');
+    button.disabled = false;
+    if (answer === 'invalid' || answer === 'error') {
+      view = answer;
+    } else {
+      // The email's own language, when the function names one the page speaks.
+      locale = matchLocale(answer.locale) ?? locale;
+      view = viewFor(action, answer);
+    }
+    render();
+  }
+
+  button.addEventListener('click', () => {
+    const next: UnsubscribeAction =
+      view === 'ask' || view === 'again' ? 'unsubscribe' : view === 'done' ? 'subscribe' : lastAction;
+    void run(next);
+  });
+
+  render();
+  void run('status');
+</script>

@@ -722,6 +722,7 @@ if (existsSync(join(DIST, 'sitemap.xml'))) {
     'https://wakesharp.app/p',
     'https://wakesharp.app/g',
     'https://wakesharp.app/o',
+    'https://wakesharp.app/unsubscribe',
     'https://wakesharp.app/es/privacy',
     'https://wakesharp.app/es/terms',
   ]) {

@@ -15,7 +15,8 @@ import { DEFAULT_LOCALE, enabledLocales, localeByPath } from '../i18n/config';
 import { localePath } from '../i18n/routes';
 import { PRIVACY } from '../templates/legal-copy';
 
-const EXCLUDED_PATHS = new Set<string>();
+// The email unsubscribe page: English-only URL, noindex, useless without its token.
+const EXCLUDED_PATHS = new Set<string>(['/unsubscribe']);
 
 for (const locale of enabledLocales()) {
   // 303 destinations after the contact form; they carry noindex in the head.

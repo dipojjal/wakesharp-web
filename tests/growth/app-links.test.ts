@@ -24,6 +24,8 @@ test('the AASA claims every app link path, lifecycle /o/* included, and is serve
   const [details] = aasa.applinks.details;
   assert.deepEqual(details.appIDs, ['W4HPRW2JT4.com.wakesharp.app']);
   assert.deepEqual(details.components.map((c: { '/': string }) => c['/']), ['/c/*', '/p/*', '/g/*', '/r/*', '/o/*']);
+  // The email unsubscribe page must open in the browser, never the app.
+  assert.ok(!details.components.some((c: { '/': string }) => c['/'].startsWith('/unsubscribe') || c['/'] === '*' || c['/'] === '/*'));
   const config = JSON.parse(readFileSync(new URL('../../vercel.json', import.meta.url), 'utf8'));
   const path = '/.well-known/apple-app-site-association';
   assert.ok(config.headers.find((entry: { source: string }) => entry.source === path)
