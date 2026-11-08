@@ -18,6 +18,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
       <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, a small <strong>record of each installation</strong> that decides which notifications and emails to send, an optional <strong>account backup</strong>, and anything you choose to send us, such as a support message or why you cancelled. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
       <li>If you create the optional account, WakeSharp may <strong>email</strong> you about your own plan, such as a payment that did not go through, and send the Lark's <strong>offers and check-ins</strong> by email or, on iPhone, as notifications. Offer emails follow your choice, and where you live decides whether that choice starts on or off. Every email has an unsubscribe link, and your mail app's own unsubscribe button works too. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
+      <li>Some Lark features can use <strong>Claude</strong>, an AI made by Anthropic. They are <strong>off unless you turn them on</strong>, and your name, calendar, location and alarm labels are not sent. See <a href="#ai-features">AI features</a>.</li>
       <li>On iPhone, weather is optional: choose a city or allow location access. Weather coordinates are rounded before being sent to our weather service and Apple Weather, as described below. Network services also receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
@@ -802,6 +803,60 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     records from it.
   </p>
 
+  {/*
+    AI features. Written 2026-11-08 against the app repository: the lark-ai edge
+    function and Docs/LARK-AI.md (what each route takes, no bodies in logs, the
+    HMAC sent as metadata.user_id, the lark schema's expiring rows), the consent
+    sheets and LarkAISettings on both apps, LarkChatStore (backup-excluded
+    files), and Anthropic's privacy center as read that day (API inputs and
+    outputs deleted within 30 days; up to 2 years when flagged; not used for
+    training). Re-check it whenever those change, and tighten the retention
+    sentence if Anthropic grants zero data retention.
+  */}
+  <h2 id="ai-features">AI features</h2>
+  <p>
+    Some Lark features can use Claude, an AI made by
+    <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic</a>. They are
+    <strong>off unless you turn them on</strong>. The app asks once, and you can change your answer any time in
+    Settings under Lark AI. Your answer is kept on your phone only, so a restored backup or a new phone asks again.
+    With them off, nothing goes to Anthropic and the Lark uses its own scripts and templates. Screens written by
+    Claude say so, and the Lark says it is an AI if you ask.
+  </p>
+  <p>Here is what each feature sends when it is on:</p>
+  <ul>
+    <li><strong>Ask the Lark</strong> (help with the app): what you type and, when the Lark needs them, the last 14 days of your mornings (when the alarm rang, how long you took, snoozes, the mission and how it ended), your alarms' times, days and missions, and the status of the app's reliability checks.</li>
+    <li><strong>Your trial letter, weekly report and morning briefing</strong>: numbers your phone works out, such as mornings finished, your fastest finish, snoozes, your streak and your Sharpness trend, and the names of missions and badges.</li>
+    <li><strong>Talking to the Lark</strong>: what you type, up to your last eight messages each time, the notes you kept in its notebook, and how your Lark is doing in the Nest. On Android and on iPhones without Apple Intelligence, Claude can also rephrase the Lark's scripted lines.</li>
+    <li><strong>Describe it</strong> (setting up an alarm from a sentence): the sentence, today's date and your time zone, the missions your phone can run, and the settings of the alarm you are editing.</li>
+    <li><strong>Second look at close photos</strong>, which has its own switch and is off until you turn it on: when Photo Proof is a close call, the photo you just took and your saved thumbnail, both small and with their metadata removed.</li>
+  </ul>
+  <p>
+    <strong>What is never sent:</strong> your alarm labels, your location, your calendar events, the weather where
+    you are, your name and your friends' names. Where the Lark mentions one of these, Claude writes a placeholder and
+    your phone fills it in.
+  </p>
+  <p>
+    Requests go through our server, which checks that you have a subscription, counts your daily allowance and passes
+    the request on. We do not store or log what is sent or what comes back. We keep counters under keyed hashes for
+    at most 35 days, and daily usage totals with no person attached. Anthropic receives a keyed hash that changes each
+    month, for abuse tracking, and not your subscription ID. If you ask us for help with a reply, using
+    <em>Report this reply</em>, that reply goes to us in your message, and only when you tap Send.
+  </p>
+  <p>
+    Anthropic handles this data as our service provider under its
+    <a href="https://www.anthropic.com/legal/commercial-terms" rel="noopener">Commercial Terms</a> and does not use it
+    to train its models. It deletes inputs and outputs within 30 days, unless it must keep them longer to enforce its
+    <a href="https://www.anthropic.com/legal/aup" rel="noopener">Usage Policy</a> (a conversation its systems flag can
+    be kept for up to 2 years) or to comply with the law. See its
+    <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" rel="noopener">retention page</a>.
+  </p>
+  <p>
+    Your chat with the Lark and its notebook are stored on your phone only and are left out of backups. You can
+    delete them in Settings under Lark AI, and deleting the optional account deletes them too. Turning the features off
+    cancels anything in progress and deletes the letters, reports and briefings Claude wrote, and templates take their place.
+    Replies can be wrong, so check anything that matters.
+  </p>
+
   <h2 id="contact-form">Support and feedback messages</h2>
   <p>
     The app offers Contact Support, Request Feature, Send Feedback and Report Bug forms.
@@ -845,6 +900,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     {REFERRAL_DISCLOSURE.published && (
       <li><strong>Invite records</strong>: deleted 180 days after their last use, by the app or by a friend using the code, except that a record which has unlocked a mission is kept until you ask us to delete it, and a used invite, with the record of any plan it led to, stays with the inviter's record. Request numbers and challenges are deleted within a day and rate-limit counters within three days. The security log is kept for 180 days, and the verification service keeps App Attest key records for a year after the key's last use. See <a href="#inviting-friends">Inviting friends</a>.</li>
     )}
+    <li><strong>AI features</strong>: we keep no content. Counters under keyed hashes last at most 35 days. Anthropic's retention is described in <a href="#ai-features">AI features</a>.</li>
     <li><strong>Emails and notifications</strong>: the message log is kept for 400 days, and an installation's record until 400 days after the app last reported; your email choices go with the account. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li><strong>Analytics data at PostHog</strong>: usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us. If you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
     <li><strong>Marketing records at AppsFlyer</strong>: retained according to the service's applicable retention settings and our measurement needs. Contact us to request access or deletion. Turning analytics off stops future collection; it does not itself delete historical records.</li>
@@ -863,6 +919,12 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     We do not knowingly let children under 13 (or the equivalent age in your country) create the optional
     account, and we do not knowingly collect personal data from them; if you believe a child has created
     one, email us and we will delete it.
+  </p>
+  <p>
+    The AI features are for people aged 13 and over, and the app is rated accordingly. Every screen written by Claude
+    says so. Claude is told to stay away from romantic or sexual content and medical advice, replies are checked on our
+    server and on your phone before you see them, and every reply has a <em>Report this reply</em> button that reaches us. If a message suggests someone is in distress, the app shows a fixed
+    card about talking to someone.
   </p>
 
   <h2>Your rights</h2>

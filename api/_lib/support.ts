@@ -5,7 +5,7 @@ import { clientNetworks, rateBucketKey } from './rate-limit.js';
 export const categories = {
   contact: { alarms_sound: 'Alarms & sound', missions: 'Missions', subscription_billing: 'Subscription & billing', account_backup: 'Account & backup', other: 'Other' },
   feature: { alarm_scheduling: 'Alarm scheduling', new_mission: 'New mission', customization: 'Customization', integrations: 'Integrations', other: 'Other' },
-  feedback: { what_i_like: 'What I like', could_be_better: 'Could be better', confusing: 'Confusing experience', other: 'Other' },
+  feedback: { what_i_like: 'What I like', could_be_better: 'Could be better', confusing: 'Confusing experience', lark_reply: 'Lark reply', other: 'Other' },
   bug: { alarm_didnt_ring: 'Alarm didn’t ring', mission_wont_finish: 'Mission won’t finish', crash_freeze: 'Crash or freeze', subscription_access: 'Subscription/access', other: 'Other' },
 } as const;
 const email = z.string().trim().max(160).regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
@@ -18,7 +18,7 @@ export const supportSchema = z.object({
   replyEmail: email.nullish().transform(value => value ?? undefined),
   platform: z.enum(['iOS', 'Android']),
   locale: z.string().min(2).max(40).regex(/^[A-Za-z0-9_-]+$/),
-  source: z.enum(['settings', 'app_icon', 'cancellation']),
+  source: z.enum(['settings', 'app_icon', 'cancellation', 'lark_help', 'lark_chat']),
   diagnostics: z.object({ appVersion: boundedLine, os: boundedLine, deviceModel: boundedLine }).strict().nullish().transform(value => value ?? undefined),
 }).strict().superRefine((value, ctx) => {
   if (!Object.hasOwn(categories[value.ticketType], value.category)) ctx.addIssue({ code: 'custom', path: ['category'], message: 'Invalid category' });

@@ -54,6 +54,14 @@ test('store persists only keyed hashes, ID and receipt; IPv6 uses both network b
   assert.deepEqual((body.p_buckets as Array<{ factor: number }>).map(value => value.factor), [1, 8]);
   assert.match(body.p_payload_hash as string, /^[a-f0-9]{64}$/);
 });
+test('a report of a Lark reply is accepted from help and from chat', () => {
+  for (const source of ['lark_help', 'lark_chat']) {
+    const ticket = supportSchema.parse({ ...base, ticketType: 'feedback', category: 'lark_reply', replyEmail: undefined, source });
+    assert.equal(ticket.category, 'lark_reply');
+    assert.equal(ticket.source, source);
+  }
+  assert.equal(supportSchema.safeParse({ ...base, source: 'lark_other' }).success, false);
+});
 test('canonical schema handles Android nulls and stable wire order for retry digests', () => {
   const android = supportSchema.parse({ ...base, platform: 'Android', diagnostics: null });
   const ios = supportSchema.parse({ diagnostics: undefined, source: base.source, locale: base.locale, platform: 'Android', replyEmail: base.replyEmail, message: base.message, category: base.category, ticketType: base.ticketType, submissionId: base.submissionId });
