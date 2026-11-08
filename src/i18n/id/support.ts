@@ -52,7 +52,7 @@ export const support = {
   "missions": {
     "heading": "Misi dan tunda",
     "items": [
-      "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
+      "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.30; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
       "Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan kamera ke objek itu. Konfirmasi hijau menandakan WakeSharp mengenalinya. Pengenalan berjalan di ponselmu.",
       "**Ruangan gelap atau izin yang ditolak tidak pernah menggantinya dengan misi yang lebih mudah.** WakeSharp memperingatkan Anda, atau meminta izinnya kembali. Hanya kerusakan sungguhan, seperti ponsel tanpa kamera atau tanpa penghitung langkah, yang menyerahkan pagi itu ke Math Problems, jadi Anda tidak terjebak dengan alarm yang tidak bisa Anda selesaikan.",
       "Di iPhone, hentikan atau tunda alarmnya dan alarm berbunyi lagi dalam 30 detik, sampai misi Anda selesai. Google Play versi 2.9 berbunyi lagi satu menit kemudian, hingga satu jam. Kontrol ponsel Anda sendiri tetap berfungsi."

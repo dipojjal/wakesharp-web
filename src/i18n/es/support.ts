@@ -52,7 +52,7 @@ export const support = {
   "missions": {
     "heading": "Misiones y posponer",
     "items": [
-      "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
+      "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.30; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
       "Elige un objeto, como una botella, una taza o un lavabo. Cuando suene la alarma, apunta la cámara hacia él. La confirmación verde indica que WakeSharp lo ha reconocido. El reconocimiento se realiza en tu teléfono.",
       "**Una habitación a oscuras o un permiso rechazado nunca cambian la misión por otra más fácil.** WakeSharp te avisa, o te vuelve a pedir el permiso. Solo un fallo real, como un teléfono sin cámara o sin podómetro, deja la mañana en manos de Problemas de matemáticas, para que no te quedes con una alarma que no puedes terminar.",
       "En iPhone, si la detienes o la pospones, vuelve a sonar en menos de 30 segundos, hasta que completes la misión. La versión 2.9 de Google Play vuelve a sonar un minuto después, durante una hora como máximo. Los controles del teléfono siguen funcionando."

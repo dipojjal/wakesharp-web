@@ -17,7 +17,7 @@ export const home = {
       "accent": "get you up",
       "post": ""
     },
-    "lede": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
+    "lede": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.30 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
     "missions": [
       {
         "name": "Math Problems",
@@ -230,7 +230,7 @@ export const home = {
       },
       {
         "q": "Do I have to do maths at 6am?",
-        "a": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware."
+        "a": "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.30 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware."
       },
       {
         "q": "Can I cheat past the mission?",

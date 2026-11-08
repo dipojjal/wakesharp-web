@@ -7,8 +7,8 @@ lang: "es"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/es/missions.webp"
 screenshotAlt: "Las misiones disponibles"
 ---
@@ -28,4 +28,4 @@ Da pasos de verdad, contados por tu teléfono.
 
 ## Qué comprobar
 
-Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes. En iPhone, si la detienes o la pospones, vuelve a sonar en menos de 30 segundos, hasta que completes la misión. La versión 2.9 de Google Play vuelve a sonar un minuto después, durante una hora como máximo. Los controles del teléfono siguen funcionando.
+Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.30; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes. En iPhone, si la detienes o la pospones, vuelve a sonar en menos de 30 segundos, hasta que completes la misión. La versión 2.9 de Google Play vuelve a sonar un minuto después, durante una hora como máximo. Los controles del teléfono siguen funcionando.

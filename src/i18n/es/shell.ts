@@ -6,7 +6,7 @@ import { shell as en } from '../en/shell';
  * cadenas que en inglés se importan de site.ts van aquí como texto literal.
  */
 export const shell = {
-  siteDescription: "WakeSharp 2.25, en el App Store: alarma fuerte con misiones de cálculo, cámara, pasos y ejercicio, alarmas de grupo y de calendario y puntuación diaria.",
+  siteDescription: "WakeSharp 2.30, en el App Store: alarma fuerte con misiones de cálculo, cámara, pasos y ejercicio, alarmas de grupo y de calendario y puntuación diaria.",
   tagline: `Despierta lúcido. No solo despierto.`,
   requirements: { ios: `iOS 26 o posterior`, android: `Android 8.0 o posterior` },
   ogImageAlt: `WakeSharp - despierta lúcido, no solo despierto.`,

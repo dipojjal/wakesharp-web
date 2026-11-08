@@ -7,13 +7,13 @@ lang: "uk"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "Доступні завдання будильника"
 ---
 
-Виберіть одне із завдань нижче або складіть послідовність до чотирьох. Це набір iPhone 2.25; у Google Play версія 2.9, тож Squats (присідання) і Push-ups (відтискання) поки що лише на iPhone. Завдання з камерою, рухом і голосом потребують відповідних дозволів та обладнання.
+Виберіть одне із завдань нижче або складіть послідовність до чотирьох. Це набір iPhone 2.30; у Google Play версія 2.9, тож Squats (присідання) і Push-ups (відтискання) поки що лише на iPhone. Завдання з камерою, рухом і голосом потребують відповідних дозволів та обладнання.
 
 ## Як користуватися
 

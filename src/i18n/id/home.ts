@@ -18,7 +18,7 @@ export const home = {
       "accent": "membuat Anda bangun",
       "post": ""
     },
-    "lede": "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
+    "lede": "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.30; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.",
     "missions": [
       {
         "name": "Math Problems",
@@ -231,7 +231,7 @@ export const home = {
       },
       {
         "q": "Apakah saya harus berhitung pada pukul 6 pagi?",
-        "a": "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai."
+        "a": "Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.30; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai."
       },
       {
         "q": "Bisakah saya curang dan melewati misi?",

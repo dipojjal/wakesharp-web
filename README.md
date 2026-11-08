@@ -117,13 +117,22 @@ Both apps are live: Google Play since 2026-08-18, the App Store since 2026-08-22
 as *WakeSharp: Math Alarm Clock* from KineticBit Inc.
 
 The two stores serve **different versions**, and the site says so. Checked
-2026-10-22: the App Store serves **2.25** (released 2026-10-21) and Google Play
+2026-11-07: the App Store serves **2.30** (released 2026-11-04) and Google Play
 still serves **2.9** (nothing later was ever uploaded: the Play upload key was
 lost on 2026-09-23, see the app repo's `Docs/PLAY-STORE-METADATA.md`). The
-release notices and feature pages describe 2.25 and mark what 2.9 lacks
+release notices and feature pages describe 2.30 and mark what 2.9 lacks
 (Squats, Push-ups, group alarms, the 30-second repeat) as iPhone. Both versions
 live in `src/lib/product.ts` (`RELEASE`); when Android ships 2.18, set
 `publicAndroid` and drop the iPhone-only marks.
+
+The App Store number is also written into the copy, so when it changes, `git grep`
+the old one: `SITE.description`, `siteDescription` in each
+`src/i18n/<locale>/shell.ts`, `releaseNotice` and `missionsIntro` in each
+`src/data/refresh/<locale>.json` (and the same sentence in the `home` and
+`support` catalogs), the `release` literal in `src/content.config.ts`, the
+Spanish, Russian and Turkish `iphone-alarm-didnt-go-off-causes` posts and
+`/compare/wakesharp-vs-alarmy`. Then run `npm run features:build`, which stamps
+`RELEASE.version` and `RELEASE.checked` on the feature pages.
 
 The "As seen on" badge (`src/config/press.ts`, `src/components/PressBadge.astro`,
 `npm run assets:press`) names the outlets that ran the 2026-10-08 launch press

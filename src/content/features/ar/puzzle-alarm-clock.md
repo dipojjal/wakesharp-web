@@ -7,13 +7,13 @@ lang: "ar"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/ar/missions.webp"
 screenshotAlt: "مهام المنبه المتاحة"
 ---
 
-اختر مهمة من القائمة أدناه أو اجمع حتى أربع مهام بالتتابع. هذه مهام iPhone 2.25؛ أما Google Play فلديه الإصدار 2.9، لذا فإن «القرفصاء» و«تمرين الضغط» متاحان على iPhone فقط حاليًا. تحتاج مهام الكاميرا والحركة والصوت إلى الأذونات والأجهزة المناسبة.
+اختر مهمة من القائمة أدناه أو اجمع حتى أربع مهام بالتتابع. هذه مهام iPhone 2.30؛ أما Google Play فلديه الإصدار 2.9، لذا فإن «القرفصاء» و«تمرين الضغط» متاحان على iPhone فقط حاليًا. تحتاج مهام الكاميرا والحركة والصوت إلى الأذونات والأجهزة المناسبة.
 
 ## طريقة الاستخدام
 

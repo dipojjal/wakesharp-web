@@ -7,13 +7,13 @@ lang: "en"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "The available alarm missions"
 ---
 
-Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.
+Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.30 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.
 
 ## How to use it
 

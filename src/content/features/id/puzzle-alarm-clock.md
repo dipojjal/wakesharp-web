@@ -7,13 +7,13 @@ lang: "id"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "Misi alarm yang tersedia"
 ---
 
-Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.25; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.
+Pilih dari misi di bawah, atau susun hingga empat misi dalam satu urutan. Ini adalah pilihan di iPhone 2.30; Google Play memiliki versi 2.9, jadi Squats dan Push-ups untuk saat ini hanya ada di iPhone. Misi kamera, gerak, dan suara memerlukan izin serta perangkat keras yang sesuai.
 
 ## Cara menggunakan
 

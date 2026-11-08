@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "選べるアラームミッション"
 ---
@@ -28,4 +28,4 @@ screenshotAlt: "選べるアラームミッション"
 
 ## 確認すること
 
-以下から選ぶか、最大4つのミッションを順番に設定できます。これはiPhone 2.25で利用できる選択肢です。Google Playはバージョン2.9なので、SquatsとPush-upsはいまのところiPhoneのみです。カメラ、動き、音声を使うミッションには対応機器と権限が必要です。 iPhoneでは、停止してもスヌーズしても、ミッションを終えるまで30秒以内にまた鳴ります。Google Playのバージョン2.9は1分後にまた鳴り、最長1時間続きます。電話自体の操作は引き続き使えます。
+以下から選ぶか、最大4つのミッションを順番に設定できます。これはiPhone 2.30で利用できる選択肢です。Google Playはバージョン2.9なので、SquatsとPush-upsはいまのところiPhoneのみです。カメラ、動き、音声を使うミッションには対応機器と権限が必要です。 iPhoneでは、停止してもスヌーズしても、ミッションを終えるまで30秒以内にまた鳴ります。Google Playのバージョン2.9は1分後にまた鳴り、最長1時間続きます。電話自体の操作は引き続き使えます。

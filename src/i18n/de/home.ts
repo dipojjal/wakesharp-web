@@ -18,7 +18,7 @@ export const home = {
       "accent": "aus dem Bett holen",
       "post": ""
     },
-    "lede": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
+    "lede": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.30; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
     "missions": [
       {
         "name": "Rechenaufgaben",
@@ -231,7 +231,7 @@ export const home = {
       },
       {
         "q": "Muss ich um 6 Uhr morgens rechnen?",
-        "a": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware."
+        "a": "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.30; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware."
       },
       {
         "q": "Kann ich die Mission umgehen?",

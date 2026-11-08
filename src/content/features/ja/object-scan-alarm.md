@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "object-scan-alarm"
 order: 1
 missions: ["object_scan"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/scan.webp"
 screenshotAlt: "緑色で一致を確認した対象"
 ---

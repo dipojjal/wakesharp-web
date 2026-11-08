@@ -18,7 +18,7 @@ export const home = {
       "accent": "tiram você da cama",
       "post": ""
     },
-    "lede": "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.25; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.",
+    "lede": "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.30; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.",
     "missions": [
       {
         "name": "Math Problems",
@@ -231,7 +231,7 @@ export const home = {
       },
       {
         "q": "Eu preciso fazer contas às 6 da manhã?",
-        "a": "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.25; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes."
+        "a": "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.30; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes."
       },
       {
         "q": "Dá para trapacear e pular a missão?",

@@ -7,7 +7,7 @@ import { shell as en } from '../en/shell';
  * sebagai teks literal.
  */
 export const shell = {
-  siteDescription: "WakeSharp: alarm keras dengan misi matematika, kamera, berjalan, dan olahraga, alarm grup, alarm kalender, serta skor harian. Versi 2.25 ada di App Store.",
+  siteDescription: "WakeSharp: alarm keras dengan misi matematika, kamera, berjalan, dan olahraga, alarm grup, alarm kalender, serta skor harian. Versi 2.30 ada di App Store.",
   tagline: `Bangun sigap. Bukan sekadar terjaga.`,
   requirements: { ios: `iOS 26 atau lebih baru`, android: `Android 8.0 atau lebih baru` },
   ogImageAlt: `WakeSharp - bangun sigap, bukan sekadar terjaga.`,

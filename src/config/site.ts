@@ -5,8 +5,8 @@
  * Google Play since 2026-08-18, both from KineticBit Inc. StoreButtons, the
  * JSON-LD, the Smart App Banner and the footer all read from here, so a store
  * change is a one-file change. Which VERSION each store serves is a separate
- * fact and lives in src/lib/product.ts (RELEASE): checked 2026-10-22, the App
- * Store serves 2.25 and Google Play still 2.9, and the site says both.
+ * fact and lives in src/lib/product.ts (RELEASE): checked 2026-11-07, the App
+ * Store serves 2.30 and Google Play still 2.9, and the site says both.
  *
  * The two listing NAMES differ and neither is ours to guess. Verified
  * 2026-09-24: the App Store reads "Loud Alarm Clock - WakeSharp" and Play reads
@@ -45,7 +45,7 @@ export const SITE = {
    * controls always work, so no mission is the only way to stop an alarm.
    */
   description:
-    'WakeSharp is a loud alarm clock with math, camera, walking and exercise missions, group alarms, calendar alarms and daily scores. 2.25 is on the App Store.',
+    'WakeSharp is a loud alarm clock with math, camera, walking and exercise missions, group alarms, calendar alarms and daily scores. 2.30 is on the App Store.',
   url: 'https://wakesharp.app',
   email: 'support@wakesharp.app',
   /** The entity that publishes both apps, and the one named in the legal pages. */

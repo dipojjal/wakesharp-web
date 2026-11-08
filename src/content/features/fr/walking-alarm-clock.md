@@ -7,8 +7,8 @@ lang: "fr"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/fr/missions.webp"
 screenshotAlt: "Les missions de réveil disponibles"
 ---
@@ -28,4 +28,4 @@ Faites de vrais pas, comptés par votre téléphone.
 
 ## À vérifier
 
-Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants. Sur iPhone, arrêtez-la ou reportez-la et elle sonne de nouveau en moins de 30 secondes, jusqu’à ce que votre mission soit terminée. La version 2.9 de Google Play sonne de nouveau une minute plus tard, pendant une heure au maximum. Les commandes du téléphone restent utilisables.
+Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.30 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants. Sur iPhone, arrêtez-la ou reportez-la et elle sonne de nouveau en moins de 30 secondes, jusqu’à ce que votre mission soit terminée. La version 2.9 de Google Play sonne de nouveau une minute plus tard, pendant une heure au maximum. Les commandes du téléphone restent utilisables.

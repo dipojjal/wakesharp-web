@@ -7,8 +7,8 @@ lang: "hi"
 translationOf: "calendar-alarm-clock"
 order: 6
 missions: []
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/home.webp"
 screenshotAlt: "अगला अलार्म और सुबह का सार"
 ---

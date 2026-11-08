@@ -1,11 +1,15 @@
 /**
  * Public product facts: which release each store serves and which missions
- * the site may name. Checked 2026-10-22 against the stores and the app repo.
+ * the site may name. Checked 2026-11-07 against the stores and the app repo.
  *
- * The App Store serves 2.25 (itunes.apple.com/lookup?id=6801198703, released
- * 2026-10-21). Google Play still serves 2.9: nothing later was ever uploaded
- * (app repo, Docs/PLAY-STORE-METADATA.md), so the site names both versions
- * and marks what 2.9 lacks as iPhone. Squats is public since the server
+ * The App Store serves 2.30 (itunes.apple.com/lookup?id=6801198703, released
+ * 2026-11-04; app repo 4036424b7). 2.26 to 2.30 kept what the site describes:
+ * the mission catalog (WSGames GameCatalog.json) is the same in 2.25's build
+ * and 2.30's, and the claims-matrix rows the copy rests on have not changed
+ * since 2026-10-22. What they added (the iPad from 2.29, iPhone Duo in 2.30) is
+ * not named on the site. Google Play still serves 2.9: nothing later was ever
+ * uploaded (app repo, Docs/PLAY-STORE-METADATA.md), so the site names both
+ * versions and marks what 2.9 lacks as iPhone. Squats is public since the server
  * unlock of 2026-10-14 and the 2.21 builds (DeviceValidation.squatsReleased,
  * ReferralReward.missionLockInEffect = false); Push-ups shipped in 2.18 with
  * no gate. The warm-up games have no entry point in the app since iOS 2.23,
@@ -13,12 +17,12 @@
  */
 export const RELEASE = {
   /** The newest public release, the one the copy describes. */
-  version: '2.25',
+  version: '2.30',
   status: 'live',
-  publicIOS: '2.25',
+  publicIOS: '2.30',
   /** Play production, fully rolled out since 2026-09-11; its upload key was lost on 2026-09-23. */
   publicAndroid: '2.9',
-  checked: '2026-10-22',
+  checked: '2026-11-07',
 } as const;
 const definitions = [
   ['math_sprint', 'mind', 'math-alarm-clock', '2.14'],

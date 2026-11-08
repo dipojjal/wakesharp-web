@@ -7,8 +7,8 @@ lang: "en"
 translationOf: "shift-work-alarm-clock"
 order: 7
 missions: []
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../assets/store/2.29/en/rotation.webp"
 screenshotAlt: "A shift rotation and its calendar"
 ---

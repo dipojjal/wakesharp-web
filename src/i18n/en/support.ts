@@ -51,7 +51,7 @@ export const support = {
   "missions": {
     "heading": "Missions and snoozing",
     "items": [
-      "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
+      "Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.30 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware.",
       "Choose a target such as a bottle, mug or sink. When the alarm rings, point the camera at that object. The green match confirmation tells you when WakeSharp has recognised it. Object recognition runs on your phone.",
       "**A dark room or a refused permission never swaps in an easier mission.** WakeSharp warns you, or asks for the permission back. Only a real fault, such as a phone with no camera or no step counter, hands the morning over to Math Problems, so you are not left with an alarm you cannot finish.",
       "On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work."

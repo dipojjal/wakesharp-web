@@ -7,13 +7,13 @@ lang: "fr"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/fr/missions.webp"
 screenshotAlt: "Les missions de réveil disponibles"
 ---
 
-Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.
+Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.30 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.
 
 ## Comment l’utiliser
 

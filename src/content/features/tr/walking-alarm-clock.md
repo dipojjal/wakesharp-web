@@ -7,8 +7,8 @@ lang: "tr"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/tr/missions.webp"
 screenshotAlt: "Kullanılabilir alarm görevleri"
 ---
@@ -28,4 +28,4 @@ Telefonunuzun saydığı gerçek adımlar atın.
 
 ## Kontrol etmen gerekenler
 
-Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir. iPhone’da durdur ya da ertele, görevin bitene kadar 30 saniye içinde yeniden çalar. Google Play’in 2.9 sürümü bir dakika sonra yeniden çalar, en fazla bir saat boyunca. Telefonun kendi kontrolleri çalışmaya devam eder.
+Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.30 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir. iPhone’da durdur ya da ertele, görevin bitene kadar 30 saniye içinde yeniden çalar. Google Play’in 2.9 sürümü bir dakika sonra yeniden çalar, en fazla bir saat boyunca. Telefonun kendi kontrolleri çalışmaya devam eder.

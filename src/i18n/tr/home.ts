@@ -18,7 +18,7 @@ export const home = {
       "accent": "yataktan kaldıran",
       "post": " görevler"
     },
-    "lede": "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
+    "lede": "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.30 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
     "missions": [
       {
         "name": "Matematik Problemleri",
@@ -231,7 +231,7 @@ export const home = {
       },
       {
         "q": "Sabah 6’da matematik yapmak zorunda mıyım?",
-        "a": "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir."
+        "a": "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.30 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir."
       },
       {
         "q": "Görevi atlatıp hile yapabilir miyim?",
