@@ -583,8 +583,12 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     publication of wake_groups alone, purge_wake_group_memberships called by
     delete-account), WSCore/GroupAlarm.swift (GroupInviteParser: the code and
     the schedule-only fragment; no name in a link) and Docs/releases/
-    2.23-owner-round.md (no push notifications). Re-check it whenever any of
-    those change.
+    2.23-owner-round.md (no push notifications). The paragraph on the reward
+    for a first morning together (iOS 2.32) was written 2026-11-08 against
+    supabase/migrations/20261108200000_wake_group_rewards.sql (first_joins,
+    invites and rewards, first_seen, same_person, the keyed network hash and
+    its 14-day prune, what an account deletion cascades to), which goes live
+    with the 2.32 release. Re-check it whenever any of those change.
   */}
   <h2 id="group-alarms">Group alarms</h2>
   <p>
@@ -613,6 +617,16 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     part of the link after the <code>#</code>, which browsers never send to a server, ours included. It
     never carries a name. The link opens the app on an iPhone that has it, and otherwise a page on this
     site that only reads the code and shows the schedule; the page asks nothing of our database.
+  </p>
+  <p>
+    If you create or join a group alarm, we keep a record that you have been in a group, who organized
+    the group when you joined it, and whether your first morning together earned a reward. To decide
+    that, we compare the times your group's alarms rang and were finished, check that you are new to
+    WakeSharp using your account, morning, setup-answer and subscription dates, and check that the two
+    accounts do not belong to the same person using your subscription record. To keep one household
+    from earning the reward repeatedly, we keep a keyed hash of the network each "I'm up" post came
+    from for about 14 days at most. It is not your IP address. If you delete your account, these
+    records are deleted, and the other person keeps any reward they earned with no link back to you.
   </p>
   <p>
     Each morning's record is deleted after 14 days. A group that has had a single member and no change
