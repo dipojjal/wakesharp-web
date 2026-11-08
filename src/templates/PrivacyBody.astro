@@ -694,7 +694,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   {/*
     Emails and notifications. Written 2026-11-07 against the app repository:
     the lifecycle plan approved that day and its server work
-    (supabase/migrations/20261107180000_lifecycle_messaging.sql: the devices,
+    (supabase/migrations/20261107235821_lifecycle_messaging.sql: the devices,
     contacts and sends tables, rows going with the account or losing the link
     to it, the daily prune at 400 days; supabase/functions/lifecycle-dispatch:
     each step's service or offer class in planner.ts, the opt-in storefronts
@@ -716,8 +716,8 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     them. Messages come in two kinds:
   </p>
   <ul>
-    <li><strong>Service messages</strong> are about your own subscription: a payment that did not go through, and a free trial or plan that is ending after you turned off renewal. They need no consent, because they are part of the service you bought, and they stop once the payment goes through or the plan has ended.</li>
-    <li><strong>Offer messages</strong> are the Lark's: an offer to come back after you cancel a trial or a plan, a reminder that your plan is waiting if you signed up but never started one, a summary of your free trial (mornings on time, your streak, your next badge) before it renews, and a check-in when you have not set an alarm for a while. An offer can include a discount; the app shows the real price before you buy.</li>
+    <li><strong>Service messages</strong> are about your own subscription: a payment that did not go through, a free trial or plan that is ending after you turned off renewal, and a notice shortly before a free trial turns into a paid plan, with the date and how to cancel. They need no consent, because they are part of the service you bought, and they stop once the payment goes through or the plan has ended.</li>
+    <li><strong>Offer messages</strong> are the Lark's: an offer to come back after you cancel a trial or a plan, a reminder that your plan is waiting if you signed up but never started one, and a check-in when you have not set an alarm for a while. An offer can include a discount; the app shows the real price before you buy.</li>
   </ul>
   <p>
     <strong>Your choice for offer emails.</strong> Where you sign in, and in <em>Settings → Emails from
