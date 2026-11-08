@@ -66,7 +66,7 @@ export const share = {
     intro: `このリンクは、スマホでWakeSharpを開きます。`,
     open: `WakeSharpを開く`,
     desktop: `パソコンでご覧ですか？WakeSharpを使っているスマホで、このリンクを開いてください。`,
-    offer: `同じAppleまたはGoogleアカウントでサインインすると、プレゼントが見つかります。`,
+    offer: `同じAppleまたはGoogleアカウントでサインインすると、オファーが見つかります。`,
     other: `スマホを替えた、またはアプリを削除した場合は、WakeSharpをインストールして、同じAppleまたはGoogleアカウントでサインインすると、続きから使えます。`,
     billing: `WakeSharpのお支払いは、すべてApp StoreまたはGoogle Playを通して行われます。支払いが完了しなかった場合は、プランを続けるために、そちらでお支払い方法を更新してください。`,
     billingApple: `App Storeでお支払い方法を更新`,
