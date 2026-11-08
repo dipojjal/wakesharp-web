@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/ru/06-sharpness.png"
-screenshotAlt: "Ежедневный результат Sharpness"
+screenshot: "../../../assets/store/2.29/ru/stats.webp"
+screenshotAlt: "История и прогресс"
 ---
 
 Sharpness отражает ежедневный результат внутри приложения. Смотрите его в разделе «Достижения» вместе с историей, сериями и наградами, а также прогресс с Lark в Nest. Это не оценка сна и не медицинский тест. Число не определяет, безопасно ли вам водить или работать.

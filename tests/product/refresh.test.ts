@@ -9,7 +9,8 @@ import { enabledLocales } from '../../src/i18n/config';
 import { localePath } from '../../src/i18n/routes';
 import { compareShape } from '../../src/i18n/shape';
 import { PRESS } from '../../src/config/press';
-import manifest from '../../src/data/store-2.14.json';
+import { SITE } from '../../src/config/site';
+import manifest from '../../src/data/store-assets.json';
 const read = (path:string) => readFileSync(`dist${path === '/' ? '/index' : path}.html`,'utf8');
 const releaseStamp = `data-release-version="${RELEASE.version}" data-release-status="${RELEASE.status}"`;
 
@@ -21,18 +22,40 @@ test('production visibility excludes retired and warm-up-only entries and names 
  for(const id of IPHONE_ONLY_MISSIONS) assert.ok(visible.has(id));
  for(const locale of enabledLocales()) assert.deepEqual(CATALOGS[locale.code].home.mission.missions.map(m=>m.id),expected,locale.code);
 });
-test('versioned artwork preserves submitted checksums, dimensions and frame order',()=>{
- // The App Store listing still shows the 2.14 revision 2 set with 2.25 (its
- // first frame still carries the Lark, checked 2026-10-22), so the site keeps it.
- assert.equal(manifest.version,'2.14');assert.equal(manifest.revision,2);
+test('store artwork: the bold gallery, the 2.29 in-app screens and the 2.14 watch frames match their manifest',()=>{
+ // The gallery shows the "Bold designed screenshots" set (app repo, Design/Store/ab-bold:
+ // nine iPhone frames in the seven languages the listing's images ship in); the hero,
+ // feature rows and feature pages show in-app screens cut from the 2.29 listing frames.
+ // scripts/import-store.mjs writes both and this manifest.
+ assert.equal(manifest.gallery.set,'ab-bold');assert.equal(manifest.captures.version,'2.29');
  for(const lang of ['en','es','ru','tr','de','fr','ar']){
-  assert.deepEqual(manifest.assets.filter(a=>a.platform==='iphone'&&a.language===lang).map(a=>a.order),[1,2,3,4,5,6,7,8]);
+  assert.deepEqual(manifest.assets.filter(a=>a.platform==='iphone'&&a.language===lang).map(a=>a.order),[1,2,3,4,5,6,7,8,9],lang);
+  assert.deepEqual(manifest.assets.filter(a=>a.platform==='capture'&&a.language===lang).map(a=>a.key).sort(),['home','missions','rotation','scan','stats','tones'],lang);
  }
  assert.deepEqual(manifest.assets.filter(a=>a.platform==='watch').map(a=>[a.language,a.order]),[['en',1],['en',2],['en',3]]);
  for(const asset of manifest.assets){
-  assert.ok(existsSync(asset.file));
+  assert.ok(existsSync(asset.file),asset.file);
   assert.equal(createHash('sha256').update(readFileSync(asset.file)).digest('hex'),asset.sha256,asset.file);
-  assert.ok(asset.width>0 && asset.height>0);assert.ok(asset.captionKey);
+  assert.ok(asset.width>0 && asset.height>0);
+ }
+ // One caption per gallery frame in every language.
+ for(const locale of enabledLocales()) assert.equal(REFRESH[locale.code].captions.length,9,locale.code);
+});
+test('pricing shows both plans, the yearly trial always beside its price, and no retired price',()=>{
+ for(const locale of enabledLocales()){
+  const home=read(localePath(locale,'/'));
+  const yearly=home.slice(home.indexOf('data-plan="yearly"'),home.indexOf('data-plan="monthly"'));
+  assert.ok(yearly.includes('class="trial-badge"'),locale.code);
+  assert.ok(yearly.includes(SITE.unlimited.annual),locale.code);
+  assert.ok(home.slice(home.indexOf('data-plan="monthly"')).includes(SITE.unlimited.monthly),locale.code);
+  // The trial line under the hero's and the closing download buttons names both prices.
+  const offers=home.match(/<p class="store-offer"[^>]*data-offer[^>]*>[\s\S]*?<\/p>/g)||[];
+  assert.equal(offers.length,2,locale.code);
+  for(const offer of offers) assert.ok(offer.includes(SITE.unlimited.annual)&&offer.includes(SITE.unlimited.monthly),locale.code);
+  for(const path of ['/','/support','/terms',...FEATURE_SLUGS.map(slug=>`/features/${slug}`)]){
+   const html=read(localePath(locale,path));
+   assert.ok(!html.includes('$34.99'),`${locale.code} ${path} still says $34.99`);
+  }
  }
 });
 test('every locale has complete copy, a visible directory, all screenshots and linked feature pages',()=>{
@@ -40,7 +63,7 @@ test('every locale has complete copy, a visible directory, all screenshots and l
   const t=REFRESH[locale.code];assert.deepEqual(compareShape(REFRESH.en,t),[],locale.code);
   const home=read(localePath(locale,'/'));
   assert.equal((home.match(/data-mission-id=/g)||[]).length,16,locale.code);
-  assert.equal((home.match(/<a[^>]*data-enlarge/g)||[]).length,11,locale.code);
+  assert.equal((home.match(/<a[^>]*data-enlarge/g)||[]).length,12,locale.code);
   assert.ok(home.includes(releaseStamp),locale.code);
   assert.ok(!home.includes('data-release-preview'));
   assert.ok(!/\b(?:Serial Sevens|Mind Games|Gentle Start|Colour Clash)\b|—/i.test(home),locale.code);

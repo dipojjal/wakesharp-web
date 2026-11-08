@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/06-sharpness.png"
-screenshotAlt: "Щоденний Sharpness Score"
+screenshot: "../../../assets/store/2.29/en/stats.webp"
+screenshotAlt: "Історія та прогрес"
 ---
 
 Sharpness Score є щоденним результатом у застосунку. Переглядайте його в розділі Achievements (досягнення) разом з історією, серіями та відзнаками, а потім загляньте в Nest, щоб побачити прогрес із Lark. Це не оцінка сну й не медичний тест. Число не визначає, чи безпечно вам керувати авто або працювати.

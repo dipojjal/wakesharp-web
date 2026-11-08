@@ -58,6 +58,8 @@ export const shell = {
    */
   appLanguageNote: `O app WakeSharp está disponível em inglês, espanhol, russo, turco, alemão, francês e árabe.`,
 
+  offer: `**{trialDays} dias de teste grátis** no plano anual, depois {annual} por ano. Ou {monthly} por mês, sem teste.`,
+
   /**
    * O selo "Visto em" (src/components/PressBadge.astro). O rótulo é o literal
    * "As seen on" em português, como o app o escreve, e nunca "Destaque em" nem

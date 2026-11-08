@@ -60,6 +60,8 @@ export const shell = {
    */
   appLanguageNote: `WakeSharpアプリは、英語、スペイン語、ロシア語、トルコ語、ドイツ語、フランス語、アラビア語で利用できます。`,
 
+  offer: `年額プランは**{trialDays}日間の無料トライアル**付きで、その後は年額{annual}。無料トライアルのない月額{monthly}のプランもあります。`,
+
   /**
    * 「As seen on」バッジ（src/components/PressBadge.astro）。ラベルは
    * 「As seen on」の直訳で、アプリのバッジと同じ言い回しです。「紹介されました」

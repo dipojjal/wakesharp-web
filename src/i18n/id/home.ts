@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Unlimited",
       "perYear": "/tahun",
-      "trial": "Mulai dengan **uji coba gratis {trialDays} hari**, lalu {annual} per tahun",
-      "monthly": "atau **{monthly} per bulan**, tanpa uji coba",
+      "perMonth": "/bulan",
+      "yearly": "Tahunan",
+      "monthlyPlan": "Bulanan",
+      "trialBadge": "Uji coba gratis {trialDays} hari",
+      "trial": "**Gratis selama {trialDays} hari**, lalu {annual} per tahun",
+      "trialCancel": "Batalkan paling lambat 24 jam sebelum uji coba berakhir, dan Anda tidak akan ditagih.",
+      "monthly": "Ditagih setiap bulan, tanpa uji coba gratis",
+      "included": "Kedua paket mencakup seluruh WakeSharp Unlimited:",
       "features": [
         "Setiap misi bangun, dan hingga empat berturut-turut jika Anda mau",
         "Riwayat Sharpness lengkap Anda, lencana, dan pencapaian",

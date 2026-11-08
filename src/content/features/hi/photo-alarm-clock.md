@@ -9,7 +9,7 @@ order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/03-missions.png"
+screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "उपलब्ध अलार्म मिशन"
 ---
 

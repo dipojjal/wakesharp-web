@@ -1,0 +1,1464 @@
+{
+  "gallery": {
+    "set": "ab-bold",
+    "drawn": "2026-11-07",
+    "source": "Design/Store/ab-bold",
+    "frames": 9
+  },
+  "captures": {
+    "version": "2.29",
+    "captured": "2026-10-28",
+    "source": "Design/Screenshots",
+    "frames": {
+      "home": "06",
+      "scan": "02",
+      "missions": "03",
+      "tones": "04",
+      "rotation": "07",
+      "stats": "08"
+    }
+  },
+  "watch": {
+    "version": "2.14",
+    "source": "Design/Store/2.14/watch"
+  },
+  "assets": [
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 1,
+      "source": "Store/ab-bold/ios-6.9/01.png",
+      "sourceSha256": "f34da4a5d6f3ca5245c798300feea8e2d7f82d12971ec470edf41206eb76d8ce",
+      "file": "src/assets/store/bold/en/01.webp",
+      "sha256": "7968a81e1b633341cd0c074f5fe3a1fc8ab1d1beb5b1292fe550fec741974791",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 2,
+      "source": "Store/ab-bold/ios-6.9/02.png",
+      "sourceSha256": "be8fcdc2bbf01e2c2dbe5713f195f58852592d583ef6852dc881866c75d73bec",
+      "file": "src/assets/store/bold/en/02.webp",
+      "sha256": "7f4e37045e9f4172c96d63b27e51be010f22f190432900b597dc980f7272849c",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 3,
+      "source": "Store/ab-bold/ios-6.9/03.png",
+      "sourceSha256": "f92dbb591ac6d0587bbee4addfcec273f1ccfb663b0238005e6183a457b9181d",
+      "file": "src/assets/store/bold/en/03.webp",
+      "sha256": "965f220f0eb21838bab894cc4efad43e8664d145cca4f2c7bfa660368d4355ac",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 4,
+      "source": "Store/ab-bold/ios-6.9/04.png",
+      "sourceSha256": "4823a6e23998f2c268010f1be3ce8210626e1e77e9250b53ffa603abb16c7453",
+      "file": "src/assets/store/bold/en/04.webp",
+      "sha256": "a05dcf82c0a7d0d97bfc118031ad5f427f53f2b792e50beffefb0e23dcbc9d00",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 5,
+      "source": "Store/ab-bold/ios-6.9/05.png",
+      "sourceSha256": "4fc426f7a5fb7c45d04c64c4bb059b2a6052130a945b8a1be7da0847c9299800",
+      "file": "src/assets/store/bold/en/05.webp",
+      "sha256": "dd8d1f7dc38481f448ef2d6c1ca4ef162cb4adb2845311cf919c4e4b3e23452f",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 6,
+      "source": "Store/ab-bold/ios-6.9/06.png",
+      "sourceSha256": "7aa14ec7b5121818aa14861a4581849aa41c76d81af6c89b7da5bee0bc1f39f0",
+      "file": "src/assets/store/bold/en/06.webp",
+      "sha256": "254985282e0e878835757554c70db2a1a074099bfbb688eb79b3332de6ce7c58",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 7,
+      "source": "Store/ab-bold/ios-6.9/07.png",
+      "sourceSha256": "6a98315b950cc064ca7a47c46ff684ffca8c5c2d5e2f732fc21388963ee0906b",
+      "file": "src/assets/store/bold/en/07.webp",
+      "sha256": "124e888e53ba59bb8f025c0e154f354e599bcc427a64407656e2ecccc2577d81",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 8,
+      "source": "Store/ab-bold/ios-6.9/08.png",
+      "sourceSha256": "cf2f83593b88ec011d6aba1103a0693f5391d5ae91e1448cb84fc22344795f73",
+      "file": "src/assets/store/bold/en/08.webp",
+      "sha256": "a4ebc6c320663ab2ea294c130993c917a6ad4d96dcf1b7be570a4c1dc4462e53",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "en",
+      "order": 9,
+      "source": "Store/ab-bold/ios-6.9/09.png",
+      "sourceSha256": "d6d62d2c1e605261e2808d6e22b3d34b31786a4d1171614293422384220381a6",
+      "file": "src/assets/store/bold/en/09.webp",
+      "sha256": "291cc8fe2e1c44266016c15e69c9dfe908f1ed74948079a85c934a322c9302eb",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 1,
+      "source": "Store/ab-bold/ru/ios-6.9/01.png",
+      "sourceSha256": "b1857c7dd7ecb22930b0f0adfcbd909cbf11abc5616b45926656efb8fc3934eb",
+      "file": "src/assets/store/bold/ru/01.webp",
+      "sha256": "050f0de2ff85c03b3fc58ac788a3ad40f37ce097cc568eced208996b5bf26cc4",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 2,
+      "source": "Store/ab-bold/ru/ios-6.9/02.png",
+      "sourceSha256": "ca8de93cbb518152610bec31313207091003d073edeaa989336da49588047dbf",
+      "file": "src/assets/store/bold/ru/02.webp",
+      "sha256": "dd9dd6d85074e73b22f66abe236b2544761305f40e054be0bf5980b0b97018a9",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 3,
+      "source": "Store/ab-bold/ru/ios-6.9/03.png",
+      "sourceSha256": "2ac07d5571068192db9f7640e5f9a689511ef85ae58f9dbf8e7bde699dc45bfb",
+      "file": "src/assets/store/bold/ru/03.webp",
+      "sha256": "1f1d102e8c6e03e7cfc9c1154ac2db73f1fd976318a52183a08d88c7814dc5aa",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 4,
+      "source": "Store/ab-bold/ru/ios-6.9/04.png",
+      "sourceSha256": "336b4050af0efc198a4eaa815eb65b5686580d48a95ae5bb68c794356e8c03bf",
+      "file": "src/assets/store/bold/ru/04.webp",
+      "sha256": "5b54c5f7c32912a37fa97dbc2934afc85929668135fdb53bc3238153df63cd42",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 5,
+      "source": "Store/ab-bold/ru/ios-6.9/05.png",
+      "sourceSha256": "caa974d57fd53dc47b059cfdb4bdbce47fc21ff1ce063edaf67a2d589b1edb35",
+      "file": "src/assets/store/bold/ru/05.webp",
+      "sha256": "60997fe4ad437eecdfb78c3a8c44843fcc88ad4648c8e7fb17d5e17dd8033589",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 6,
+      "source": "Store/ab-bold/ru/ios-6.9/06.png",
+      "sourceSha256": "9ea2282fb5be44f4b38f637ccf6ddc206f1e9a70d7980661016b9e652fa79d21",
+      "file": "src/assets/store/bold/ru/06.webp",
+      "sha256": "228b615513ec08983592aa7717d4c739027ed29908f8a98b51b30d907df18203",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 7,
+      "source": "Store/ab-bold/ru/ios-6.9/07.png",
+      "sourceSha256": "86e5ad4ae3bf0fba9c8ec86006a4d811d7de458de4aca2982e56a39616bdafbd",
+      "file": "src/assets/store/bold/ru/07.webp",
+      "sha256": "4713c0a99a238868caf209fc658cbd3fa29b3a954b1b8f8b3c28f0af92e332c6",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 8,
+      "source": "Store/ab-bold/ru/ios-6.9/08.png",
+      "sourceSha256": "fb5c26c9e5c48b7505496b0c69256a36f069ddb1f20d46c452fbc72bebc18428",
+      "file": "src/assets/store/bold/ru/08.webp",
+      "sha256": "a7dc25b33ca101239099acdde942f15618777df67a124768a987cc335276e036",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ru",
+      "order": 9,
+      "source": "Store/ab-bold/ru/ios-6.9/09.png",
+      "sourceSha256": "a01d5ee246628127fc32a9e2a7e122b29201f1d062c19e36ba739daac7604833",
+      "file": "src/assets/store/bold/ru/09.webp",
+      "sha256": "4e7a73ae5fd2fb0fb108f53df98f747d14e4e56b7999932dc39b1ee2640278ba",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 1,
+      "source": "Store/ab-bold/de/ios-6.9/01.png",
+      "sourceSha256": "9fb8088a260af15062e1694f2c4eaa4ad95fbf493813e7e56bdcd4dac7c67505",
+      "file": "src/assets/store/bold/de/01.webp",
+      "sha256": "7e2eab057c1689f9875a01d25cb0736cff6899af69413df7fac0edaecafaac7d",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 2,
+      "source": "Store/ab-bold/de/ios-6.9/02.png",
+      "sourceSha256": "da8005298214bbbb33de3b442df230635ce917d549f40ff88fbd42784a7bbd15",
+      "file": "src/assets/store/bold/de/02.webp",
+      "sha256": "b28a11613639f920956454c43444762450ed3cb12a793cf81612bdd8fdff96eb",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 3,
+      "source": "Store/ab-bold/de/ios-6.9/03.png",
+      "sourceSha256": "3368972d732a9e9c300befb09a4e0a96e70ce26340c9e3386f57734846ee700d",
+      "file": "src/assets/store/bold/de/03.webp",
+      "sha256": "750cb66526a7874dc1553e8cdbc3e819c4e37d9cbbffd5cf152c216955a3dc9d",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 4,
+      "source": "Store/ab-bold/de/ios-6.9/04.png",
+      "sourceSha256": "b6a850d4c93ba001d7caf285de02222f723dc4508de3e61d46d8656c38fa2087",
+      "file": "src/assets/store/bold/de/04.webp",
+      "sha256": "b93e97c74b20730ebb505108c7f851f2e4187b6e48ae1b48d769248d0414165a",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 5,
+      "source": "Store/ab-bold/de/ios-6.9/05.png",
+      "sourceSha256": "d8885de601dbfe806c3207eb7b03c2c5ebd75155b438b7574547953032f92473",
+      "file": "src/assets/store/bold/de/05.webp",
+      "sha256": "e2708aa53994e84b70218942aa29dc7225fbb4556f6656c58e568ed3aa75e5ea",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 6,
+      "source": "Store/ab-bold/de/ios-6.9/06.png",
+      "sourceSha256": "9d92b82fc43d26cd1cc749779c3dffcb099101befc862a9dd87522f689ec8323",
+      "file": "src/assets/store/bold/de/06.webp",
+      "sha256": "a6a52d9a84db828f33ed47c2ca65f272e8e10da4415f767396951f7986f27909",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 7,
+      "source": "Store/ab-bold/de/ios-6.9/07.png",
+      "sourceSha256": "a3b71df1cf5da60a23bedfd7c924c0c0b231bc70c04ba2056e69fb534dadfce2",
+      "file": "src/assets/store/bold/de/07.webp",
+      "sha256": "dcf63e744893b0c64aaa4a7e5778132b76f9bfa6be466a3e9883befcc0a704af",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 8,
+      "source": "Store/ab-bold/de/ios-6.9/08.png",
+      "sourceSha256": "44b90584a0581b5bc4efebe8fff02ef45b26bbad5cedae8d83ce451059f926af",
+      "file": "src/assets/store/bold/de/08.webp",
+      "sha256": "653771eebb84e7a12aa44bafd30cb1163c2aa9d6027e0aa0037ab8d956e31c92",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "de",
+      "order": 9,
+      "source": "Store/ab-bold/de/ios-6.9/09.png",
+      "sourceSha256": "a75462dc03d3531b601c658631d425b394cd1d280bd2b42774aff1909314255d",
+      "file": "src/assets/store/bold/de/09.webp",
+      "sha256": "57f524dff5fd96f0616e3ceb4b65ad033381d7dd413d78f4bfb35878abd7b6a2",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 1,
+      "source": "Store/ab-bold/fr/ios-6.9/01.png",
+      "sourceSha256": "6842f2a98697be3460b9d07dab8b0c3d4527bc0baa4eb1329f4811f41abede2f",
+      "file": "src/assets/store/bold/fr/01.webp",
+      "sha256": "00e2f7b85f2ce90da36eb5eb62bc2273dc00ca6e9f8cdc6505d1f0f116a8db34",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 2,
+      "source": "Store/ab-bold/fr/ios-6.9/02.png",
+      "sourceSha256": "c8fdf2ecc7c6682af91a965f0c4c0317e47d33b190aa69495b216c1ab7221795",
+      "file": "src/assets/store/bold/fr/02.webp",
+      "sha256": "2f00a6a2c9eedf164eadcab8183f9197cbcb3ca4a12b3534aa3388e488c858ed",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 3,
+      "source": "Store/ab-bold/fr/ios-6.9/03.png",
+      "sourceSha256": "700ef5a2363f29d0fbc7fe93e78a375da22845fe383e7877480c3e30e1aab206",
+      "file": "src/assets/store/bold/fr/03.webp",
+      "sha256": "40a46a96a7bbfd2da8a588b2dcbd140a8b7f503c0ab5a6b5a4ddb236277194b4",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 4,
+      "source": "Store/ab-bold/fr/ios-6.9/04.png",
+      "sourceSha256": "2c52266c91a251375b603e79020d587a575be6aa90dbe35657d356840e34efeb",
+      "file": "src/assets/store/bold/fr/04.webp",
+      "sha256": "b125b8ecfe6e0b84b14d06ffbbba77872512fe953c5418fc4d78b0a34ba0e0b4",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 5,
+      "source": "Store/ab-bold/fr/ios-6.9/05.png",
+      "sourceSha256": "d4fa2d8a8a1342eeaf9108fa8bd8fb9c408183e8929c90543d1cbb093ddddf09",
+      "file": "src/assets/store/bold/fr/05.webp",
+      "sha256": "2458cf7bd87fae35f3bf22b5904370344234c0d61be881dd1084b4080def4b36",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 6,
+      "source": "Store/ab-bold/fr/ios-6.9/06.png",
+      "sourceSha256": "4f6ee93d9ea68345e1c8af89246852314b5d4969b2843ef878d1c664c2b10b8a",
+      "file": "src/assets/store/bold/fr/06.webp",
+      "sha256": "7654215f0f918b6913b6f0f62630505df745fc647e5007a1031c7e1c2e82c998",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 7,
+      "source": "Store/ab-bold/fr/ios-6.9/07.png",
+      "sourceSha256": "68f8016d9359401ecd41880f37269cc73bb4cd9829c4918039a44aa7b47ae549",
+      "file": "src/assets/store/bold/fr/07.webp",
+      "sha256": "1cb37f8d186f3d10aead4d0f4bc5179275140410ca2862636f648e0019eae79f",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 8,
+      "source": "Store/ab-bold/fr/ios-6.9/08.png",
+      "sourceSha256": "a059ba846f1125be4455011bd02126a8b1bd4ec8b5266af5448f53d62aa09bea",
+      "file": "src/assets/store/bold/fr/08.webp",
+      "sha256": "351414f75045bce7714e6fc48dadbe4852d9ddba3a8f45b9711d4ba5058af355",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "fr",
+      "order": 9,
+      "source": "Store/ab-bold/fr/ios-6.9/09.png",
+      "sourceSha256": "3c3cafa05e9f2108df7a74bd6d08b33601e816183027b4d98f2883ab86459930",
+      "file": "src/assets/store/bold/fr/09.webp",
+      "sha256": "b18c36b14437df874915ff56df57a7c70b78c1aca3aa0cab0d4e7a802f9f7273",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 1,
+      "source": "Store/ab-bold/tr/ios-6.9/01.png",
+      "sourceSha256": "51f7ccf3d3c71a733ec6ab954d696654d2b271d165366cc6729ec462798de50a",
+      "file": "src/assets/store/bold/tr/01.webp",
+      "sha256": "99adf05bce4a8d95a98b8d9e30e6c89534cab4d980ad96359867b45d5950b88d",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 2,
+      "source": "Store/ab-bold/tr/ios-6.9/02.png",
+      "sourceSha256": "80d2a75fab43137154b277794219f418cb5747d57b99b13cfa4f3583357ae3be",
+      "file": "src/assets/store/bold/tr/02.webp",
+      "sha256": "fc3c0de1cab48ad0ac7a5f9fe54c14932781f10b0f82ae739ae3c3b77295baa4",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 3,
+      "source": "Store/ab-bold/tr/ios-6.9/03.png",
+      "sourceSha256": "711538eac51e62fead5b9dd41fa94c4503ed816af24a3d23a669e148047d2aeb",
+      "file": "src/assets/store/bold/tr/03.webp",
+      "sha256": "542f1dbc46aad942482b4271b2fe24ab2c1acca8a0dc4e22412e2105f7d1acda",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 4,
+      "source": "Store/ab-bold/tr/ios-6.9/04.png",
+      "sourceSha256": "d5e9d430e6d0ea06b28e7b94015ed403960e425ffcdfc245ee41fa775042e564",
+      "file": "src/assets/store/bold/tr/04.webp",
+      "sha256": "8de881085c60211994645400ca987d49528a2d92722de82c529af44c9ae2a7a4",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 5,
+      "source": "Store/ab-bold/tr/ios-6.9/05.png",
+      "sourceSha256": "f52895d704be76a3574836edf58d4b66fff53e31611613a1d69d85c1777c1f05",
+      "file": "src/assets/store/bold/tr/05.webp",
+      "sha256": "a794017943142f31c6c2e3a43b92f7d41c5eeaa0f30d51c06539a1bdf53ec80a",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 6,
+      "source": "Store/ab-bold/tr/ios-6.9/06.png",
+      "sourceSha256": "a2cb54ad9ce7724f12cb5fd036fe63116e7805dfef55231d6c2f419575b55263",
+      "file": "src/assets/store/bold/tr/06.webp",
+      "sha256": "b308225d16e5db762a493a807e4d7238572ce4ac0990a2d00e6f8cc34bd95090",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 7,
+      "source": "Store/ab-bold/tr/ios-6.9/07.png",
+      "sourceSha256": "199d673ee5ad8dbaceac17f0ed4dd9f99fa512659fa4deb1fd4b75316e74c884",
+      "file": "src/assets/store/bold/tr/07.webp",
+      "sha256": "0ecf307d8fa9177931e9844d8b962c7360ec88ee11e807357419bf763f9c2d87",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 8,
+      "source": "Store/ab-bold/tr/ios-6.9/08.png",
+      "sourceSha256": "9798d5ac14657e64d77c69ca2c96af07b43602b459908498cd6a1b5f452bbac8",
+      "file": "src/assets/store/bold/tr/08.webp",
+      "sha256": "6e1c41de9c352d2343ff0cd350d371f302865cce0d84cf659856627f07b357bc",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "tr",
+      "order": 9,
+      "source": "Store/ab-bold/tr/ios-6.9/09.png",
+      "sourceSha256": "e478c44a5b7d2b4b042fdea9732f1e6f3efa2de1ec95a3ca8640c6ae109bb60f",
+      "file": "src/assets/store/bold/tr/09.webp",
+      "sha256": "6e5eeb77ef3e8e7acd370e8d3e49e421c3d0752a10137b1def1fc29049dd530e",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 1,
+      "source": "Store/ab-bold/es/ios-6.9/01.png",
+      "sourceSha256": "b7b28197f447a144123c87f748283876269bb904163fca716c7ff6edeac3c4eb",
+      "file": "src/assets/store/bold/es/01.webp",
+      "sha256": "0313fb0ceec7a02285f1e9186388ca31b44304a19c888a3a091b77b8fae2056a",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 2,
+      "source": "Store/ab-bold/es/ios-6.9/02.png",
+      "sourceSha256": "e5db9930ead12bf16730627a4ba1ba1de87f3a4c5c7b301d9c6181a51d1e6664",
+      "file": "src/assets/store/bold/es/02.webp",
+      "sha256": "a30a077de40889ceaba336d83383ddcad5b426e81670c413341e5c3f90662456",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 3,
+      "source": "Store/ab-bold/es/ios-6.9/03.png",
+      "sourceSha256": "aef3a3b459086d1c102597d682f2764dce4880667deaa7472b57a3b73b06e337",
+      "file": "src/assets/store/bold/es/03.webp",
+      "sha256": "8c7bb59572464f9d382063b5361094d3ed6302693e4a9d1576e4ea23afb89430",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 4,
+      "source": "Store/ab-bold/es/ios-6.9/04.png",
+      "sourceSha256": "45aef7941af2774257112b39e3aa0ad09db660a808dfa71a33f6a780660d8841",
+      "file": "src/assets/store/bold/es/04.webp",
+      "sha256": "14bcc142203756aeb8c4208e429f9bcb00860d84003c5ad735bfbe30184982b9",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 5,
+      "source": "Store/ab-bold/es/ios-6.9/05.png",
+      "sourceSha256": "717765cc881dbe4d3b83d3959d83afeffe24d239e9462a24ef08388cb45c39c1",
+      "file": "src/assets/store/bold/es/05.webp",
+      "sha256": "f9e0e706acc3b023002d73b774db2f5bed95bfa531a41044d7cae20ad04ef42e",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 6,
+      "source": "Store/ab-bold/es/ios-6.9/06.png",
+      "sourceSha256": "db90afaaec9c28c941f2db03bb500faf3956d579f3003e3588452f94033eea1e",
+      "file": "src/assets/store/bold/es/06.webp",
+      "sha256": "dc96f15eafc90dbae09d5f11e92058b4b5926ecbe7fbc6dff0ab1250de34915b",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 7,
+      "source": "Store/ab-bold/es/ios-6.9/07.png",
+      "sourceSha256": "e7e22d1b4485005df57162e8a8e5286d5f3871172e59010ea966c0f4f631f209",
+      "file": "src/assets/store/bold/es/07.webp",
+      "sha256": "b2b6791d9c6208a889134c2d0f5c71205afe065b11391e639dd2cf45700f2d26",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 8,
+      "source": "Store/ab-bold/es/ios-6.9/08.png",
+      "sourceSha256": "21f7dcf03cb09ef363473102bc15b1522bdf0f1f9f2be94ecb648c63b04cb2fa",
+      "file": "src/assets/store/bold/es/08.webp",
+      "sha256": "1b70b894d4774f655955680316e073eadba52c43c2cee7f5f14c0a3fcfa49c47",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "es",
+      "order": 9,
+      "source": "Store/ab-bold/es/ios-6.9/09.png",
+      "sourceSha256": "68d36d34e4dd5522a41caac03582e4e702fb0b21c51e1df8778f71b2806c8901",
+      "file": "src/assets/store/bold/es/09.webp",
+      "sha256": "adcc0cfb92d832a4508fde658686ba0efb773b78c7d7e5b834cbf0dc638f6cb9",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 1,
+      "source": "Store/ab-bold/ar/ios-6.9/01.png",
+      "sourceSha256": "15910ecf2738e5c5a634a76a240e79ba46a8f48f0e76c80a8c56ab288c075f3a",
+      "file": "src/assets/store/bold/ar/01.webp",
+      "sha256": "e713edf892f527f240034ddf3536344c69385003e783e97a856354e5b855705f",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 2,
+      "source": "Store/ab-bold/ar/ios-6.9/02.png",
+      "sourceSha256": "0eb837ea7b6d6656611df93209930709f06f072d48da410e199cec5ecdb95fa4",
+      "file": "src/assets/store/bold/ar/02.webp",
+      "sha256": "95fcbf46c17d458d944dc4656335e3a06c965c09fa107a9011f06f1b6b7130dc",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 3,
+      "source": "Store/ab-bold/ar/ios-6.9/03.png",
+      "sourceSha256": "41c8839c5fe18aa782c3c6f6db48bbc6006b2efeb8a8f686f615c48f6938ca29",
+      "file": "src/assets/store/bold/ar/03.webp",
+      "sha256": "bf0a308565677635f498dc6843b4a7163aa93b6a045e58de1256d26e85da7226",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 4,
+      "source": "Store/ab-bold/ar/ios-6.9/04.png",
+      "sourceSha256": "b13d384f1ef65ec840abef8836bd32a84903a4bbaa8622faa2217dea4401214f",
+      "file": "src/assets/store/bold/ar/04.webp",
+      "sha256": "477d306b00cfa11005855c868c5dff6c4affabd1e46e67e774144d17f97d09cb",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 5,
+      "source": "Store/ab-bold/ar/ios-6.9/05.png",
+      "sourceSha256": "4546afd9731fe27aaf29f42af6478f8ce8dd8f1a6d22ae26725eb267d7546e7c",
+      "file": "src/assets/store/bold/ar/05.webp",
+      "sha256": "82b0e8d3bd42cc752f48f98dda1fd959ee36f609bec7c27ac2bcb3b95fd019e3",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 6,
+      "source": "Store/ab-bold/ar/ios-6.9/06.png",
+      "sourceSha256": "976a697a1059c882da6dab37bdbfb43b9aff236c6e1040ba743bb4de8a284414",
+      "file": "src/assets/store/bold/ar/06.webp",
+      "sha256": "5aacd3618a3b52b7c2555204cc636cfc72f450bcaa7f365e5753fc7fc5353b8c",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 7,
+      "source": "Store/ab-bold/ar/ios-6.9/07.png",
+      "sourceSha256": "ac9e9737a719a3d9e36ea4456d0d7c6136514d3722b6f677d0e06d147e72d54f",
+      "file": "src/assets/store/bold/ar/07.webp",
+      "sha256": "dfda5a91f4104aa78432edb6cc556a29356ada13eeca3e362aa8bbdb270b5456",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 8,
+      "source": "Store/ab-bold/ar/ios-6.9/08.png",
+      "sourceSha256": "ab77c10df36595c7c3bc6de2ee315be0d50a7ac7dec88dddbbd4864373e33f1a",
+      "file": "src/assets/store/bold/ar/08.webp",
+      "sha256": "0696692a8a8a2153da45eeaaf72cb10128ead6ea389c1542539a75d11280e39d",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "iphone",
+      "language": "ar",
+      "order": 9,
+      "source": "Store/ab-bold/ar/ios-6.9/09.png",
+      "sourceSha256": "41a2b6850fa77a8fa42a2fda2741fd5bf7caaf5fa3ec9f6562fa1dfb82939d7c",
+      "file": "src/assets/store/bold/ar/09.webp",
+      "sha256": "a454427adf18c65654fdde900b82ec98d2e08261f149123c4c36468acd490c6d",
+      "width": 1000,
+      "height": 2173
+    },
+    {
+      "platform": "capture",
+      "language": "en",
+      "key": "home",
+      "source": "Screenshots/ios-6.9/06.png",
+      "sourceSha256": "fa7707f0dbae16be4c13ef7e25eea54636e0f6eb64a480bba830773f8bcc54e5",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/en/home.webp",
+      "sha256": "557562042beae39a5d1cbd570851a3c34fa89ce6dd277a7f2197bb69834964a6",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "en",
+      "key": "scan",
+      "source": "Screenshots/ios-6.9/02.png",
+      "sourceSha256": "787e93303196b7fba26746ec4aacf343ac56ab16249d4722c0d97f3477918a12",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/en/scan.webp",
+      "sha256": "8875140ed86e348685eb17b2a148eaa1739c1e1141cb78a38911db0843c99c2d",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "en",
+      "key": "missions",
+      "source": "Screenshots/ios-6.9/03.png",
+      "sourceSha256": "d283f61a63901147e9bf82bf13d53f4b434b382faa50b57979db1bfe570e338b",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/en/missions.webp",
+      "sha256": "e85a3a7ce8f23b8108cc8a4e75ca3c077986f94ffcd89c3fb552635b314583c7",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "en",
+      "key": "tones",
+      "source": "Screenshots/ios-6.9/04.png",
+      "sourceSha256": "7c7cb53cd9499edb53f4426e21317863f089465cf8a69174de5afaf28cf98372",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/en/tones.webp",
+      "sha256": "c25217c152d4969d1d90d642777302ab2566af2edbb303bc5cc848e3d9753bb3",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "en",
+      "key": "rotation",
+      "source": "Screenshots/ios-6.9/07.png",
+      "sourceSha256": "89058a822c24a268ed07689fe6b867e753212cf24fdfc1dfd9eedb4995f4cba2",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/en/rotation.webp",
+      "sha256": "cc4850d43c1121bd885b84100e730e7da1a409917f6efefbcfb0fa34d1312179",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "en",
+      "key": "stats",
+      "source": "Screenshots/ios-6.9/08.png",
+      "sourceSha256": "6227382de2f657c5ced178192d5641ae3ecab62671f0c07a8e60d9c64d8cd7d3",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/en/stats.webp",
+      "sha256": "908a981871f7d3d47c0ea7bc67001b9fc3ccae387d23e122c8129e2cfb981696",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ru",
+      "key": "home",
+      "source": "Screenshots/ru/ios-6.9/06.png",
+      "sourceSha256": "f5ec197465bbccb456efccbc7399e7ea81aed22d7a4ad9d353179b715faca380",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ru/home.webp",
+      "sha256": "919abb3fbd9ce9e8dcdd7e654f3f6ea783075040bb15db841f5e462ed7086cf4",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ru",
+      "key": "scan",
+      "source": "Screenshots/ru/ios-6.9/02.png",
+      "sourceSha256": "a65bc0964da97db81cf0086760e72587b5388745d1b7631e9a8e2e94ecc3d19c",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ru/scan.webp",
+      "sha256": "c27b8fea06af745e083e6056d6b14fdc5b78c85cac90b0c040e392b7476aabf8",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ru",
+      "key": "missions",
+      "source": "Screenshots/ru/ios-6.9/03.png",
+      "sourceSha256": "f50f3ac975bc1be5e358d6914d2ff355f492004e1302bc59363c115e348dd270",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ru/missions.webp",
+      "sha256": "0c26176e32278a210758002ed038507bc01de10a65ca7ffa7d2cb6e9f5450702",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ru",
+      "key": "tones",
+      "source": "Screenshots/ru/ios-6.9/04.png",
+      "sourceSha256": "d6dde9e01494c68788a23a7ae8c83bd712c6c6815e59faa30136b3af84886473",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ru/tones.webp",
+      "sha256": "c746a96726c54d2029ee8678e481dd02f7a8fbb48ee0146fc20a3785f6ec88e6",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ru",
+      "key": "rotation",
+      "source": "Screenshots/ru/ios-6.9/07.png",
+      "sourceSha256": "5e231f6a13e040b7df3a5ff6585a7f54a40cad09cfe7f694f2f4fa79c185048f",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ru/rotation.webp",
+      "sha256": "eb11e56308e60dedbe1ae1cb0b33f78bafe0aacbd12ea4e645d52ea9a3302ff6",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ru",
+      "key": "stats",
+      "source": "Screenshots/ru/ios-6.9/08.png",
+      "sourceSha256": "fb00e75de3c5298ad68f7e59aa062f71539bf996d3d0939fdfe548c7265a2c14",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ru/stats.webp",
+      "sha256": "ef1f4337b09338f761b52cd8f0c31a3efc017f336ffe9a518a6a7c7e586f36e2",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "de",
+      "key": "home",
+      "source": "Screenshots/de/ios-6.9/06.png",
+      "sourceSha256": "6ae71de871885423682073215a2908236bcdb299b933d8a4f5e8bf3c6eebbc76",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/de/home.webp",
+      "sha256": "b5e2716d777dc5d83f8356deef702ece82077b70f3b4c11adddbd4cebe57ce62",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "de",
+      "key": "scan",
+      "source": "Screenshots/de/ios-6.9/02.png",
+      "sourceSha256": "5ea805ccbf11ae3e42c3f5250763bfe2915a0b7d266564d84fc12b2e5098ae53",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/de/scan.webp",
+      "sha256": "f1a60cb506743a8a79cabdafe230af86b12dc0b1e5d7e563aa79983348ac14a7",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "de",
+      "key": "missions",
+      "source": "Screenshots/de/ios-6.9/03.png",
+      "sourceSha256": "295df6c7cbf4c8cdc0b9e9b02a7d43d795c690bdc62421465999f0ca83358bdd",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/de/missions.webp",
+      "sha256": "51ca64441d7c4c4db2584cfa55ceeaa3be7b8b7e41c22e8303463895770e6abd",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "de",
+      "key": "tones",
+      "source": "Screenshots/de/ios-6.9/04.png",
+      "sourceSha256": "78918a1f90f7ce423a09b1720e93e6b9bb7dd8160cf7b0e390d858828fb0190e",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/de/tones.webp",
+      "sha256": "dfd6dd95da6ee27a90c73c35abaada65f7e4b36f1d01beaf058828cb1ca1ff20",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "de",
+      "key": "rotation",
+      "source": "Screenshots/de/ios-6.9/07.png",
+      "sourceSha256": "ece09910a076fcff49bf0d097747c291e32c536d4d2754cc5a41ee9729373b3a",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/de/rotation.webp",
+      "sha256": "ebdb68435c10cf0871e53d59f5c719a0bce363d940a5647082af73cb32bee398",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "de",
+      "key": "stats",
+      "source": "Screenshots/de/ios-6.9/08.png",
+      "sourceSha256": "7743009672b3404f2de3af0620b6b79068eef9190581deda92e9ceed71d0b7e2",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/de/stats.webp",
+      "sha256": "915908f8f133ba7fccdf9169d6a3320836deb0312ac19f901de11ccf3fd5a286",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "fr",
+      "key": "home",
+      "source": "Screenshots/fr/ios-6.9/06.png",
+      "sourceSha256": "9a0d02cc32a2324407376da40c184c55cd2ace36b9b4a4e7ad43e1b090367642",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/fr/home.webp",
+      "sha256": "b57eddc9db21c1497729022fe1a29f8cfaf134874273fa9fc7a2283ee2b30937",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "fr",
+      "key": "scan",
+      "source": "Screenshots/fr/ios-6.9/02.png",
+      "sourceSha256": "3e1b59adbc3fd68c83bdf35ad83779cd6f979bad4b009da4d26ab8320491c4b8",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/fr/scan.webp",
+      "sha256": "ce849720b5471913ca411e4e0e70a5a15afd01d9c51906ed0810647fc0ff7f08",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "fr",
+      "key": "missions",
+      "source": "Screenshots/fr/ios-6.9/03.png",
+      "sourceSha256": "058e3c2ca245778aaa940d98596ae9489b096c7262f7f9bcbeb3fc8a010b6485",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/fr/missions.webp",
+      "sha256": "b557fa868394fea44ed960f499d756308ff5575d84dea7826c3487ba0401bfb6",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "fr",
+      "key": "tones",
+      "source": "Screenshots/fr/ios-6.9/04.png",
+      "sourceSha256": "569a84ce9e6836321ec5c5b5f4cb44312e89904f7272bea5855e41e546b5d3bd",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/fr/tones.webp",
+      "sha256": "c4874fe0838ca801de4824ea181382989b51a46837e31a937f70f42eafffc29c",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "fr",
+      "key": "rotation",
+      "source": "Screenshots/fr/ios-6.9/07.png",
+      "sourceSha256": "18ad862311adb00391d177d20cb9fc4637f67eba6ebb3b7ef08e131694338a5e",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/fr/rotation.webp",
+      "sha256": "423dab9cbc49cff6863b8aecff895a5986bff8ad06f18f580bd4112c7a483882",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "fr",
+      "key": "stats",
+      "source": "Screenshots/fr/ios-6.9/08.png",
+      "sourceSha256": "640e67696f8c8ab15140a8be4989fe72cbca37c96781db56f540f4fa06b5509f",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/fr/stats.webp",
+      "sha256": "8d9d0d84ad8843b08172ab60a0e198298cdd4b0730346949ed3a19d27220a7b2",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "tr",
+      "key": "home",
+      "source": "Screenshots/tr/ios-6.9/06.png",
+      "sourceSha256": "d29fd2e8dc9157857928602e7f8bb815a89d645b55105e6249019654974a3ec6",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/tr/home.webp",
+      "sha256": "98c430488c163a905725b0789817d92dd70055d5b68efe934b7552e23bc50d04",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "tr",
+      "key": "scan",
+      "source": "Screenshots/tr/ios-6.9/02.png",
+      "sourceSha256": "8ac1fda379f7f7254a13200974ce4b09e493f48d29fe519410255ac043b4afeb",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/tr/scan.webp",
+      "sha256": "a5ed3b0da3e79514ed623cf6bae0606cb8f9dafba64fd9fa4c7e035a8bb33ec8",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "tr",
+      "key": "missions",
+      "source": "Screenshots/tr/ios-6.9/03.png",
+      "sourceSha256": "3b464243198f4a0fcc1da23e0e40ffbe359614004665eaea58285fad67b59df6",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/tr/missions.webp",
+      "sha256": "fad46d1917cd11137ac27af2c0ca12bf1dafafe7916dbd1a3b91aea8294b8fee",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "tr",
+      "key": "tones",
+      "source": "Screenshots/tr/ios-6.9/04.png",
+      "sourceSha256": "7f53612da257abfac5018981de07f5d840010f1568414849f901874a23e9aac5",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/tr/tones.webp",
+      "sha256": "e178427e6fc38fee6bfdd0c7169e9436d60a9697dcc2c45fe018b5fad01dbc47",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "tr",
+      "key": "rotation",
+      "source": "Screenshots/tr/ios-6.9/07.png",
+      "sourceSha256": "121df7d9a909f2f2d625c32f4271001255070e67df396d7ff4c8622d3b37d02e",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/tr/rotation.webp",
+      "sha256": "776327337efbf29a5ddacb41ab0752e1c5d1b50fe71cbee78cc72afb318031e5",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "tr",
+      "key": "stats",
+      "source": "Screenshots/tr/ios-6.9/08.png",
+      "sourceSha256": "e8999499bdd7387ffcf4ce43edc85a5302f97cef45a98d8b51e0464cf336fb91",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/tr/stats.webp",
+      "sha256": "82a0cfcd5e17e41cc9185c76ecc1a8dc8411df85f56afbdb785f348ea00af8c0",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "es",
+      "key": "home",
+      "source": "Screenshots/es/ios-6.9/06.png",
+      "sourceSha256": "d85b80262fe12756aad911cf2bd58dd55471f4ed139b7268927cde21a3abdaaa",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/es/home.webp",
+      "sha256": "be067c0f75fea7cfbdd22038e0ddf63bd4b9a10bbd5465f13fa802ecf4ae58ba",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "es",
+      "key": "scan",
+      "source": "Screenshots/es/ios-6.9/02.png",
+      "sourceSha256": "69f97f9f99f3e85947ee4196c96372994759747282f2eddc0f1ef25ea819311c",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/es/scan.webp",
+      "sha256": "c0ad91f2c83971697c150be31354f5e771310f3d7817826cb74860b6d0836d86",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "es",
+      "key": "missions",
+      "source": "Screenshots/es/ios-6.9/03.png",
+      "sourceSha256": "02f5b383f71c52c034427581cdb553a5486a98a097afad2e9918fe84752e1136",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/es/missions.webp",
+      "sha256": "ba2326976198c30e09d915264fff0c911ee7fa40c74be69fcdfa6bc50b7d3277",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "es",
+      "key": "tones",
+      "source": "Screenshots/es/ios-6.9/04.png",
+      "sourceSha256": "c20549756a5919c99a22104f7a404ce164114f13371f2028c7e4049ac03b011e",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/es/tones.webp",
+      "sha256": "b8d5f35009559068eaa75c129c1d38aae659bf727f1d1fb7b09db44ab7e8b0a7",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "es",
+      "key": "rotation",
+      "source": "Screenshots/es/ios-6.9/07.png",
+      "sourceSha256": "90c1601de661976cb6fa2c685c5e0e43a6112dcb403cdcb259750da2b9c136f4",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/es/rotation.webp",
+      "sha256": "7efbced9b913faebfb22812b78794946abdd751c5fd29f04096590fc636aec2f",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "es",
+      "key": "stats",
+      "source": "Screenshots/es/ios-6.9/08.png",
+      "sourceSha256": "45469d3dad12c92c5d029e16636823071d1dc3dc8cfd1db81ce2164d2b89b824",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/es/stats.webp",
+      "sha256": "3725b34950c1712948fb8145cbec3312c6d00fbfc7c86c22450a333327d26362",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ar",
+      "key": "home",
+      "source": "Screenshots/ar/ios-6.9/06.png",
+      "sourceSha256": "8105c5fcb5437b90ed7a5b81750a1c8ca8f74078cf43286d9f4244c5c5aa3a93",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ar/home.webp",
+      "sha256": "a845699d273f205be773e4ef8f25e6ffac0e9c7ee2cfcca1efba26a3df403811",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ar",
+      "key": "scan",
+      "source": "Screenshots/ar/ios-6.9/02.png",
+      "sourceSha256": "267b23b399235ba9db4889cd1276cecf2acd78ee48e3a26cd37e6e2dca6621e9",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ar/scan.webp",
+      "sha256": "a509997d3ea78415b47a773f4d1013c0220d595a5983437f7f6d34ac298f86fa",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ar",
+      "key": "missions",
+      "source": "Screenshots/ar/ios-6.9/03.png",
+      "sourceSha256": "d48541f6da63bf83aa34d4a56e0d31e334ce91ac43713f72a07455bc78515ae3",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ar/missions.webp",
+      "sha256": "91257b639fc20a2d9ef9a98f64e940739e56f5e4085bb0a126ab9ed768a6f60e",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ar",
+      "key": "tones",
+      "source": "Screenshots/ar/ios-6.9/04.png",
+      "sourceSha256": "ee17384d61f9aa92c17185c4b201237aed58a4e6ce1551b790b26e6e5b99f06b",
+      "box": [
+        198,
+        860,
+        1121,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ar/tones.webp",
+      "sha256": "336bcb64f9cdf634d3d153d842e96fb20a2cd12d69e8fef0790b2295a794cfdf",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ar",
+      "key": "rotation",
+      "source": "Screenshots/ar/ios-6.9/07.png",
+      "sourceSha256": "0528188dbe5a0c116769d90a57af5b8ab7f7abad100b6b5eb5790ad137641a16",
+      "box": [
+        198,
+        860,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ar/rotation.webp",
+      "sha256": "46e4cba4fe56cf87fd6a37d9086c3451ba09132472e3265392a16d87c7c20dfe",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "capture",
+      "language": "ar",
+      "key": "stats",
+      "source": "Screenshots/ar/ios-6.9/08.png",
+      "sourceSha256": "b1a0aaf3361772ee58a919c5322f1233e07bc8b7f1aa36815c899249e76bef06",
+      "box": [
+        198,
+        861,
+        1122,
+        2868
+      ],
+      "file": "src/assets/store/2.29/ar/stats.webp",
+      "sha256": "e43e46effcb577d5e1d3319f22e730cc3e88316f75d9ce46e65309b870500505",
+      "width": 924,
+      "height": 2008
+    },
+    {
+      "platform": "watch",
+      "language": "en",
+      "order": 1,
+      "source": "Store/2.14/watch/en/01.png",
+      "file": "src/assets/store/2.14/watch/en/01.png",
+      "sha256": "3bd7dd1f5bb7dd0e33f08e8db40ae1a5d4c741841e7a3a9aeafa9f14d81c7166",
+      "width": 422,
+      "height": 514
+    },
+    {
+      "platform": "watch",
+      "language": "en",
+      "order": 2,
+      "source": "Store/2.14/watch/en/02.png",
+      "file": "src/assets/store/2.14/watch/en/02.png",
+      "sha256": "f3435f2bb78c78fcc5e2721df11fce94addf9d5e1da0e75519e66b851994e6bd",
+      "width": 422,
+      "height": 514
+    },
+    {
+      "platform": "watch",
+      "language": "en",
+      "order": 3,
+      "source": "Store/2.14/watch/en/03.png",
+      "file": "src/assets/store/2.14/watch/en/03.png",
+      "sha256": "453417d7e0fbcdfc398e7c5e31a8449e4208ea8e1ee6ad4608df0d4fc3d261ce",
+      "width": 422,
+      "height": 514
+    }
+  ]
+}

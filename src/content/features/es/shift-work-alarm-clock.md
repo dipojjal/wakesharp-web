@@ -9,7 +9,7 @@ order: 7
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/es/07-rotation.png"
+screenshot: "../../../assets/store/2.29/es/rotation.webp"
 screenshotAlt: "Un ciclo de turnos y su calendario"
 ---
 

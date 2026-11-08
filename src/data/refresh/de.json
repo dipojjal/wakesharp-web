@@ -26,15 +26,24 @@
   "limits": "Darauf solltest du achten",
   "related": "Weitere Funktionen entdecken",
   "captions": [
-    "Nächster Wecker und Morgenübersicht",
-    "Die Kategorie Laut und ihre Töne",
-    "Objekterkennung mit grüner Bestätigung",
-    "Verfügbare Weckmissionen",
-    "Ein geteilter Wecker mit einem Freund",
-    "Der tägliche Sharpness-Wert",
-    "Schichtrotation mit Kalender",
-    "Verlauf und Fortschritt"
+    "Der Wecker für Tiefschläfer",
+    "Super laute Wecktöne: Sirenen, Klaxons und Summer",
+    "Missionen, die den Wecker beenden, von Liegestützen bis Rechnen",
+    "Aufstehen und ein Objekt scannen, um den Wecker zu beenden",
+    "Sanfte Klänge zum Einschlafen",
+    "Ein Gruppenwecker, um mit Freunden aufzuwachen",
+    "Abzeichen, die du fürs Aufwachen bekommst",
+    "Lark wächst, wenn du aufwachst",
+    "Lark mit Goldmedaille, gesehen auf Business Insider"
   ],
+  "screens": {
+    "home": "Nächster Wecker und Morgenübersicht",
+    "tones": "Die Kategorie Laut und ihre Töne",
+    "scan": "Objekterkennung mit grüner Bestätigung",
+    "missions": "Verfügbare Weckmissionen",
+    "rotation": "Schichtrotation mit Kalender",
+    "stats": "Verlauf und Fortschritt"
+  },
   "watchCaptions": [
     "Weckerübersicht auf der Apple Watch",
     "Aufwachhinweis auf der Apple Watch",

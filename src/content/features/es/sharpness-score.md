@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/es/06-sharpness.png"
-screenshotAlt: "La puntuación diaria de agudeza"
+screenshot: "../../../assets/store/2.29/es/stats.webp"
+screenshotAlt: "Historial y progreso"
 ---
 
 La puntuación de agudeza es un resultado diario dentro de la aplicación. Revísala en Logros, junto al historial, las rachas y las insignias, y sigue tu progreso con Lark en Nest. No mide el sueño ni es una evaluación médica. No determina si puedes conducir o trabajar con seguridad.

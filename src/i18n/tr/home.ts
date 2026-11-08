@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Sınırsız",
       "perYear": "/yıl",
-      "trial": "**{trialDays} gün ücretsiz deneyerek** başlayın, ardından yılda {annual}",
-      "monthly": "ya da **ayda {monthly}**, deneme süresi olmadan",
+      "perMonth": "/ay",
+      "yearly": "Yıllık",
+      "monthlyPlan": "Aylık",
+      "trialBadge": "{trialDays} gün ücretsiz deneme",
+      "trial": "**{trialDays} gün ücretsiz**, ardından yılda {annual}",
+      "trialCancel": "Denemenin bitmesinden en az 24 saat önce iptal ederseniz ücret alınmaz.",
+      "monthly": "Her ay faturalandırılır, ücretsiz deneme yoktur",
+      "included": "İki plan da WakeSharp Sınırsız’ın tamamını içerir:",
       "features": [
         "Tüm uyanma görevleri; isterseniz art arda en fazla dört tane",
         "Zindelik geçmişinizin tamamı, rozetleriniz ve başarılarınız",

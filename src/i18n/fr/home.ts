@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Illimité",
       "perYear": "/an",
-      "trial": "Commencez par **{trialDays} jours d’essai gratuit**, puis {annual} par an",
-      "monthly": "ou **{monthly} par mois**, sans essai",
+      "perMonth": "/mois",
+      "yearly": "Annuelle",
+      "monthlyPlan": "Mensuelle",
+      "trialBadge": "{trialDays} jours d’essai gratuit",
+      "trial": "**Gratuit pendant {trialDays} jours**, puis {annual} par an",
+      "trialCancel": "Résiliez au moins 24 heures avant la fin de l’essai et rien ne vous sera facturé.",
+      "monthly": "Facturée chaque mois, sans essai gratuit",
+      "included": "Les deux formules donnent accès à tout WakeSharp Illimité :",
       "features": [
         "Toutes les missions de réveil, et jusqu’à quatre à la suite si vous voulez",
         "Tout votre historique de Vivacité, vos badges et vos succès",

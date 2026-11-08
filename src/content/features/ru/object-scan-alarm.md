@@ -9,7 +9,7 @@ order: 1
 missions: ["object_scan"]
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/ru/02-scan.png"
+screenshot: "../../../assets/store/2.29/ru/scan.webp"
 screenshotAlt: "Объект с зелёным подтверждением"
 ---
 

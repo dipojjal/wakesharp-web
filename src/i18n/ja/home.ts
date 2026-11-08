@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Unlimited",
       "perYear": "/年",
-      "trial": "**{trialDays}日間の無料トライアル**から始めて、その後は年額{annual}",
-      "monthly": "または**月額{monthly}**（無料トライアルなし）",
+      "perMonth": "/月",
+      "yearly": "年額プラン",
+      "monthlyPlan": "月額プラン",
+      "trialBadge": "{trialDays}日間の無料トライアル",
+      "trial": "**{trialDays}日間無料**、その後は年額{annual}",
+      "trialCancel": "トライアル終了の24時間前までに解約すれば、料金はかかりません。",
+      "monthly": "毎月のお支払い。無料トライアルはありません",
+      "included": "どちらのプランでも、WakeSharp Unlimitedのすべてを使えます：",
       "features": [
         "すべての起床ミッション、お好みで最大4つの連続設定も",
         "Sharpnessの全履歴、バッジ、実績",

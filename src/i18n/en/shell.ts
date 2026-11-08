@@ -65,6 +65,14 @@ export const shell = {
   appLanguageNote: `The WakeSharp app is available in English, Spanish, Russian, Turkish, German, French and Arabic.`,
 
   /**
+   * The free trial, said under the download button on the homepage and the
+   * feature pages (StoreButtons `offer`). The trial is the yearly plan's, and
+   * it never appears without the price that follows it (claims-matrix.md);
+   * {trialDays}, {annual} and {monthly} come from SITE.unlimited.
+   */
+  offer: `**{trialDays}-day free trial** on the yearly plan, then {annual} a year. Or {monthly} a month, with no trial.`,
+
+  /**
    * The "As seen on" badge (src/components/PressBadge.astro). The label is the
    * literal "As seen on" in each language, the wording the app's badge uses,
    * and never "Featured in", "Covered by" or "In the press": the source is a

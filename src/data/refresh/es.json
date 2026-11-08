@@ -26,15 +26,24 @@
   "limits": "Qué comprobar",
   "related": "Explora otras funciones",
   "captions": [
-    "Tu próxima alarma y el resumen de la mañana",
-    "La categoría Fuerte y sus tonos",
-    "Objeto reconocido con confirmación verde",
-    "Las misiones disponibles",
-    "Una alarma compartida con un amigo",
-    "La puntuación diaria de agudeza",
-    "Un ciclo de turnos y su calendario",
-    "Historial y progreso"
+    "La alarma para el sueño pesado",
+    "Tonos de alarma súper fuertes: sirenas, cláxones y zumbadores",
+    "Misiones que apagan la alarma, de las flexiones a las matemáticas",
+    "Levántate y escanea un objeto para apagar la alarma",
+    "Sonidos relajantes para quedarte dormido",
+    "Una alarma de grupo para despertar con tus amigos",
+    "Insignias que ganas al despertar",
+    "Lark crece cada vez que despiertas",
+    "Lark con una medalla de oro, visto en Business Insider"
   ],
+  "screens": {
+    "home": "Tu próxima alarma y el resumen de la mañana",
+    "tones": "La categoría Fuerte y sus tonos",
+    "scan": "Objeto reconocido con confirmación verde",
+    "missions": "Las misiones disponibles",
+    "rotation": "Un ciclo de turnos y su calendario",
+    "stats": "Historial y progreso"
+  },
   "watchCaptions": [
     "Resumen de alarmas en Apple Watch",
     "Aviso para despertar en Apple Watch",

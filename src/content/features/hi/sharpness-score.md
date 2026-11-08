@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/06-sharpness.png"
-screenshotAlt: "रोज़ का Sharpness Score"
+screenshot: "../../../assets/store/2.29/en/stats.webp"
+screenshotAlt: "इतिहास और प्रगति"
 ---
 
 Sharpness Score ऐप में मिलने वाला रोज़ का स्कोर है। इसे Achievements (उपलब्धियाँ) में इतिहास, लगातार दिनों और बैज के साथ देखें और Nest में Lark के साथ प्रगति जानें। यह नींद का स्कोर या चिकित्सीय जाँच नहीं है। इससे सुरक्षित ड्राइविंग या काम करने की क्षमता तय नहीं होती।

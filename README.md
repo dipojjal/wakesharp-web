@@ -90,6 +90,27 @@ python3 scripts/build-og.py     # regenerates public/og.png
 originals: those are gitignored there and live only on the author's machine and in a
 separate archive. Don't treat this repo as the system of record for screenshots.
 
+The store screenshots come from the same folder through their own script:
+
+```bash
+WAKESHARP_DESIGN_DIR=../WakeSharp/Design npm run assets:store
+```
+
+- **The gallery** shows the "Bold designed screenshots" set (`Design/Store/ab-bold`): nine
+  iPhone frames in English, Spanish, Russian, Turkish, German, French and Arabic, stored under
+  `src/assets/store/bold/` as 1000px WebP (the painted frames are about 2 MB each as PNG). The
+  other five languages show the English frames with captions in their own language
+  (`captions` in `src/data/refresh/<locale>.json`, one per frame). Frames 01 and 09 carry the
+  "As seen on" badge in the artwork itself, so `PRESS.enabled = false` does not remove it there.
+- **The hero, the feature rows and the feature pages** show in-app screens cut out of the 2.29
+  App Store listing frames (`Design/Screenshots/[<lang>/]ios-6.9`) along each frame's
+  `placements.json` screen box, under `src/assets/store/2.29/`. `PhoneFrame` draws the device;
+  their alt texts are `screens` in the refresh JSON.
+- **The Apple Watch frames** are still the 2.14 files under `src/assets/store/2.14/watch/`.
+
+`src/data/store-assets.json` records each file's source, the source's SHA-256 and its own;
+`npm run product:test` checks the committed files against it.
+
 ## Store state
 
 Both apps are live: Google Play since 2026-08-18, the App Store since 2026-08-22, both
@@ -117,7 +138,11 @@ Re-read both before quoting either name.
 
 Since 2.10 the app is sold only as **WakeSharp Unlimited** (a 7-day free trial of the yearly plan,
 or monthly with no trial), with no free tier and no ads; Lifetime is no longer sold. The prices
-live in `SITE.unlimited`, and every page that states the trial states the price after it.
+live in `SITE.unlimited` ($29.99 a year and $9.99 a month on both stores since the start of
+November 2026), and every page that states the trial states the price after it. The homepage
+shows the two plans side by side with the trial as a badge on the yearly one, and the homepage
+and feature pages repeat the trial and both prices under the download button
+(`StoreButtons offer`).
 
 **`src/config/site.ts` is the only file to edit when that changes.** `StoreButtons`, the
 JSON-LD, the Smart App Banner, the footer and the install CTAs on `/c`, `/p` and `/404`

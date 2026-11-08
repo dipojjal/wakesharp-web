@@ -26,15 +26,24 @@
   "limits": "Yang perlu diperiksa",
   "related": "Jelajahi fitur lain",
   "captions": [
-    "Alarm berikutnya dan ringkasan pagi",
-    "Kategori Loud dan nada alarm",
-    "Objek dengan konfirmasi hijau",
-    "Misi alarm yang tersedia",
-    "Alarm bersama teman",
-    "Sharpness Score harian",
-    "Rotasi sif dan kalender",
-    "Riwayat dan kemajuan"
+    "Jam alarm untuk orang yang susah bangun",
+    "Nada alarm super keras: sirene, klakson, dan bel",
+    "Misi untuk mematikan alarm, dari push-up sampai matematika",
+    "Bangun dan pindai sebuah benda untuk mematikan alarm",
+    "Suara menenangkan untuk membantu Anda tertidur",
+    "Alarm grup untuk bangun bersama teman",
+    "Lencana yang Anda dapat setiap kali bangun",
+    "Lark tumbuh setiap kali Anda bangun",
+    "Lark dengan medali emas, seperti terlihat di Business Insider"
   ],
+  "screens": {
+    "home": "Alarm berikutnya dan ringkasan pagi",
+    "tones": "Kategori Loud dan nada alarm",
+    "scan": "Objek dengan konfirmasi hijau",
+    "missions": "Misi alarm yang tersedia",
+    "rotation": "Rotasi sif dan kalender",
+    "stats": "Riwayat dan kemajuan"
+  },
   "watchCaptions": [
     "Ringkasan alarm Apple Watch",
     "Pengingat bangun Apple Watch",

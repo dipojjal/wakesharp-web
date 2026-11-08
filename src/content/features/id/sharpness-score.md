@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/06-sharpness.png"
-screenshotAlt: "Sharpness Score harian"
+screenshot: "../../../assets/store/2.29/en/stats.webp"
+screenshotAlt: "Riwayat dan kemajuan"
 ---
 
 Sharpness Score adalah skor harian di aplikasi. Lihat di bagian Achievements (pencapaian) bersama riwayat, rentetan, dan lencana, lalu ikuti kemajuan Lark di Nest. Ini bukan skor tidur atau penilaian medis. Skor tidak menentukan apakah Anda aman mengemudi atau bekerja.

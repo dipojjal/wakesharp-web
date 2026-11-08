@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../assets/store/2.14/sources/ios/en/06-sharpness.png"
-screenshotAlt: "The daily Sharpness Score"
+screenshot: "../../assets/store/2.29/en/stats.webp"
+screenshotAlt: "Morning history and progress"
 ---
 
 Sharpness is a daily in-app score. Review it under Achievements alongside your history, streaks and badges, then visit Nest for your progress with Lark. It is not a sleep score or a medical assessment. A single number does not tell you whether you are safe to drive or work.

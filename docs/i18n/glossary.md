@@ -63,7 +63,7 @@ reader who was sent a "Beat my wake" link has already seen those exact words in 
 and "Wake with a friend" is a row they will tap in the alarm editor. Both keep their sentence
 case, matching the app.
 
-Store buttons, prices (`$9.99`, `$34.99`), the email address and the trademark lines are supplied by
+Store buttons, prices (`$9.99`, `$29.99`), the email address and the trademark lines are supplied by
 the site and never appear in a catalog.
 
 The "As seen on" badge label (`shell.press.label`) is the literal "As seen on" in your language, the

@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/06-sharpness.png"
-screenshotAlt: "毎日のSharpness Score"
+screenshot: "../../../assets/store/2.29/en/stats.webp"
+screenshotAlt: "履歴と進捗"
 ---
 
 Sharpness Scoreはアプリ内の毎日のスコアです。Achievements（実績）で履歴、連続記録、バッジと一緒に振り返り、NestでLarkとの進み具合を確認できます。睡眠スコアや医学的な評価ではありません。安全に運転や仕事ができるかを判断するものでもありません。

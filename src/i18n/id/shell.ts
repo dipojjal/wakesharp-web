@@ -61,6 +61,8 @@ export const shell = {
    */
   appLanguageNote: `Aplikasi WakeSharp tersedia dalam bahasa Inggris, Spanyol, Rusia, Turki, Jerman, Prancis, dan Arab.`,
 
+  offer: `**Uji coba gratis {trialDays} hari** dengan paket tahunan, lalu {annual} per tahun. Atau {monthly} per bulan, tanpa uji coba.`,
+
   /**
    * Lencana "As seen on" (src/components/PressBadge.astro). Labelnya adalah
    * terjemahan harfiah "As seen on", yaitu kata-kata yang dipakai lencana di

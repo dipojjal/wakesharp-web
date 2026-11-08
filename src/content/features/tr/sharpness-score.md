@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/tr/06-sharpness.png"
-screenshotAlt: "Günlük Sharpness puanı"
+screenshot: "../../../assets/store/2.29/tr/stats.webp"
+screenshotAlt: "Sabah geçmişi ve ilerleme"
 ---
 
 Sharpness, uygulama içindeki günlük bir puandır. Başarılar altında geçmişin, serilerin ve rozetlerinle birlikte incele; Nest’te Lark ile ilerlemeni gör. Bu bir uyku puanı veya tıbbi değerlendirme değildir. Güvenle araç kullanıp çalışabileceğini belirlemez.

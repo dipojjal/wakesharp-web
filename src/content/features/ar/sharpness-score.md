@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/ar/06-sharpness.png"
-screenshotAlt: "نتيجة Sharpness اليومية"
+screenshot: "../../../assets/store/2.29/ar/stats.webp"
+screenshotAlt: "السجل والتقدم"
 ---
 
 Sharpness نتيجة يومية داخل التطبيق. راجعها ضمن «الإنجازات» مع السجل والسلاسل والشارات، ثم تابع تقدمك مع Lark في Nest. ليست تقييمًا للنوم أو فحصًا طبيًا. لا تحدد النتيجة قدرتك على القيادة أو العمل بأمان.

@@ -51,7 +51,7 @@ export const SITE = {
   /** The entity that publishes both apps, and the one named in the legal pages. */
   publisher: 'KineticBit Inc.',
   /** Stamped on the Terms. Bump when their content materially changes (the privacy policy has its own, in src/templates/legal-copy.ts). */
-  lastUpdated: '2026-10-23',
+  lastUpdated: '2026-11-07',
 
   /**
    * Governing law for the Terms. KineticBit Inc. is at 1044 Acoustic Way,
@@ -76,12 +76,14 @@ export const SITE = {
    * say. The app itself never hardcodes these; RevenueCat serves them at runtime.
    *
    * US prices. Monthly went from $4.99 to $9.99 on the App Store on 2026-10-06
-   * and on Play on 2026-10-04 (app repo, Docs/releases/2.16-paywall-v2.md);
-   * the yearly price did not change. The discounted yearly plan some people
-   * are offered after cancelling is a targeted offer, never a public price,
-   * and is not named on this site.
+   * and on Play on 2026-10-04 (app repo, Docs/releases/2.16-paywall-v2.md).
+   * Yearly went from $34.99 to $29.99 at the start of November 2026: the US
+   * App Store page read Annual $29.99, Monthly $9.99 on 2026-11-07, and the
+   * owner confirmed the same day that Google Play charges $29.99 too. The
+   * discounted yearly plan some people are offered after cancelling is a
+   * targeted offer, never a public price, and is not named on this site.
    */
-  unlimited: { monthly: '$9.99', annual: '$34.99', trialDays: 7 },
+  unlimited: { monthly: '$9.99', annual: '$29.99', trialDays: 7 },
 
   /**
    * The languages the app itself ships in (iOS CFBundleLocalizations and the

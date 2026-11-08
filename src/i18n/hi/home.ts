@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Unlimited",
       "perYear": "/साल",
-      "trial": "**{trialDays} दिन के मुफ़्त ट्रायल** से शुरुआत करें, फिर {annual} प्रति साल",
-      "monthly": "या **{monthly} प्रति माह**, बिना ट्रायल के",
+      "perMonth": "/माह",
+      "yearly": "सालाना",
+      "monthlyPlan": "मासिक",
+      "trialBadge": "{trialDays} दिन का मुफ़्त ट्रायल",
+      "trial": "**{trialDays} दिन मुफ़्त**, फिर {annual} प्रति साल",
+      "trialCancel": "ट्रायल खत्म होने से कम से कम 24 घंटे पहले रद्द करें, तो आपसे कोई शुल्क नहीं लिया जाएगा।",
+      "monthly": "हर महीने बिल, बिना मुफ़्त ट्रायल के",
+      "included": "दोनों प्लान में पूरा WakeSharp Unlimited शामिल है:",
       "features": [
         "हर वेक-अप मिशन, और चाहें तो एक के बाद एक चार तक",
         "आपका पूरा Sharpness इतिहास, बैज और उपलब्धियाँ",

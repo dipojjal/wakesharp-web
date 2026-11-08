@@ -58,6 +58,8 @@ export const shell = {
    */
   appLanguageNote: `L’application WakeSharp est disponible en anglais, espagnol, russe, turc, allemand, français et arabe.`,
 
+  offer: `**{trialDays} jours d’essai gratuit** avec la formule annuelle, puis {annual} par an. Ou {monthly} par mois, sans essai.`,
+
   /**
    * Le badge « Vu sur » (src/components/PressBadge.astro). Le libellé est le
    * littéral « As seen on » en français, celui qu’emploie l’application, et

@@ -26,15 +26,24 @@
   "limits": "À vérifier",
   "related": "Découvrez les autres fonctions",
   "captions": [
-    "La prochaine alarme et votre matinée",
-    "La catégorie Forte et ses sons",
-    "Un objet reconnu avec confirmation verte",
-    "Les missions de réveil disponibles",
-    "Une alarme partagée avec un ami",
-    "Le score d’acuité quotidien",
-    "Une rotation et son calendrier",
-    "Historique et progression"
+    "Le réveil des gros dormeurs",
+    "Des sonneries super fortes : sirènes, klaxons et buzzers",
+    "Des missions qui arrêtent l’alarme, des pompes au calcul",
+    "Levez-vous et scannez un objet pour arrêter l’alarme",
+    "Des sons apaisants pour vous endormir",
+    "Une alarme de groupe pour se réveiller entre amis",
+    "Des badges à gagner en vous réveillant",
+    "Le Lark grandit à chaque réveil",
+    "Le Lark et sa médaille d’or, vu sur Business Insider"
   ],
+  "screens": {
+    "home": "La prochaine alarme et votre matinée",
+    "tones": "La catégorie Forte et ses sons",
+    "scan": "Un objet reconnu avec confirmation verte",
+    "missions": "Les missions de réveil disponibles",
+    "rotation": "Une rotation et son calendrier",
+    "stats": "Historique et progression"
+  },
   "watchCaptions": [
     "Vue des alarmes sur Apple Watch",
     "Invitation à se lever sur Apple Watch",

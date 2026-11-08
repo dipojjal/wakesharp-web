@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/fr/06-sharpness.png"
-screenshotAlt: "Le score d’acuité quotidien"
+screenshot: "../../../assets/store/2.29/fr/stats.webp"
+screenshotAlt: "Historique et progression"
 ---
 
 Le score d’acuité est un résultat quotidien dans l’application. Retrouvez-le dans Succès, avec l’historique, les séries et les badges, puis votre progression avec Lark dans Nest. Ce n’est ni un score de sommeil ni une évaluation médicale. Il ne détermine pas votre aptitude à conduire ou travailler.

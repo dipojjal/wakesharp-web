@@ -9,7 +9,7 @@ order: 0
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/es/04-tones.png"
+screenshot: "../../../assets/store/2.29/es/tones.webp"
 screenshotAlt: "La categoría Fuerte y sus tonos"
 ---
 

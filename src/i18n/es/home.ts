@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Ilimitado",
       "perYear": "/año",
-      "trial": "Empieza con **{trialDays} días de prueba gratis**, y después {annual} al año",
-      "monthly": "o **{monthly} al mes**, sin prueba",
+      "perMonth": "/mes",
+      "yearly": "Anual",
+      "monthlyPlan": "Mensual",
+      "trialBadge": "{trialDays} días de prueba gratis",
+      "trial": "**Gratis durante {trialDays} días**, y después {annual} al año",
+      "trialCancel": "Cancela al menos 24 horas antes de que termine la prueba y no se te cobrará nada.",
+      "monthly": "Se cobra cada mes, sin prueba gratis",
+      "included": "Los dos planes incluyen todo WakeSharp Ilimitado:",
       "features": [
         "Todas las misiones para despertar, y hasta cuatro seguidas si quieres",
         "Tu historial completo de Agudeza, con insignias y logros",

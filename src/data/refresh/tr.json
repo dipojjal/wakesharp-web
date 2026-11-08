@@ -26,15 +26,24 @@
   "limits": "Kontrol etmen gerekenler",
   "related": "Diğer özellikleri keşfet",
   "captions": [
-    "Sıradaki alarm ve sabah özeti",
-    "Yüksek Ses kategorisi ve alarm sesleri",
-    "Yeşil onayla tanınan nesne",
-    "Kullanılabilir alarm görevleri",
-    "Bir arkadaşla paylaşılan alarm",
-    "Günlük Sharpness puanı",
-    "Vardiya döngüsü ve takvimi",
-    "Sabah geçmişi ve ilerleme"
+    "Ağır uyuyanlar için çalar saat",
+    "Süper güçlü alarm sesleri: sirenler, klaksonlar ve zil sesleri",
+    "Alarmı susturan görevler, şınavdan matematiğe",
+    "Kalk ve alarmı susturmak için bir nesne tara",
+    "Uykuya dalmak için huzurlu sesler",
+    "Arkadaşlarınla birlikte uyanmak için grup alarmı",
+    "Uyandıkça kazandığın rozetler",
+    "Sen uyandıkça Lark büyür",
+    "Altın madalyalı Lark, Business Insider’da görüldü"
   ],
+  "screens": {
+    "home": "Sıradaki alarm ve sabah özeti",
+    "tones": "Yüksek Ses kategorisi ve alarm sesleri",
+    "scan": "Yeşil onayla tanınan nesne",
+    "missions": "Kullanılabilir alarm görevleri",
+    "rotation": "Vardiya döngüsü ve takvimi",
+    "stats": "Sabah geçmişi ve ilerleme"
+  },
   "watchCaptions": [
     "Apple Watch alarm özeti",
     "Apple Watch uyanma bildirimi",

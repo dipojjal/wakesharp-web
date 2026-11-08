@@ -26,15 +26,24 @@
   "limits": "O que conferir",
   "related": "Conheça outros recursos",
   "captions": [
-    "Próximo alarme e resumo da manhã",
-    "Categoria Loud e seus sons",
-    "Objeto reconhecido com confirmação verde",
-    "Missões disponíveis",
-    "Alarme compartilhado com um amigo",
-    "Sharpness Score diário",
-    "Ciclo de turnos e calendário",
-    "Histórico e progresso"
+    "O despertador para quem tem sono pesado",
+    "Toques de alarme superaltos: sirenes, buzinas e campainhas",
+    "Missões que desligam o alarme, das flexões à matemática",
+    "Levante-se e escaneie um objeto para desligar o alarme",
+    "Sons tranquilos para pegar no sono",
+    "Um alarme em grupo para acordar com os amigos",
+    "Emblemas que você ganha ao acordar",
+    "O Lark cresce conforme você acorda",
+    "O Lark com uma medalha de ouro, visto no Business Insider"
   ],
+  "screens": {
+    "home": "Próximo alarme e resumo da manhã",
+    "tones": "Categoria Loud e seus sons",
+    "scan": "Objeto reconhecido com confirmação verde",
+    "missions": "Missões disponíveis",
+    "rotation": "Ciclo de turnos e calendário",
+    "stats": "Histórico e progresso"
+  },
   "watchCaptions": [
     "Alarmes no Apple Watch",
     "Aviso para acordar no Apple Watch",

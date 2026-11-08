@@ -59,6 +59,8 @@ export const shell = {
    */
   appLanguageNote: `WakeSharp ऐप अंग्रेज़ी, स्पैनिश, रूसी, तुर्की, जर्मन, फ़्रेंच और अरबी में उपलब्ध है।`,
 
+  offer: `सालाना प्लान पर **{trialDays} दिन का मुफ़्त ट्रायल**, फिर {annual} प्रति साल। या {monthly} प्रति माह, बिना ट्रायल के।`,
+
   /**
    * "As seen on" बैज (src/components/PressBadge.astro)। लेबल "As seen on" का
    * शाब्दिक अनुवाद है, वही शब्द जो ऐप का बैज इस्तेमाल करता है, और कभी

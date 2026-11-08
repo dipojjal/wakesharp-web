@@ -9,7 +9,7 @@ order: 2
 missions: ["math_sprint"]
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/03-missions.png"
+screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "Доступні завдання будильника"
 ---
 

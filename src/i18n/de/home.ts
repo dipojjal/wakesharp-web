@@ -192,8 +192,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Unbegrenzt",
       "perYear": "/Jahr",
-      "trial": "Starte mit **{trialDays} Tagen kostenlos**, danach {annual} pro Jahr",
-      "monthly": "oder **{monthly} pro Monat**, ohne Testphase",
+      "perMonth": "/Monat",
+      "yearly": "Jahresabo",
+      "monthlyPlan": "Monatsabo",
+      "trialBadge": "{trialDays} Tage kostenlos testen",
+      "trial": "**{trialDays} Tage kostenlos**, danach {annual} pro Jahr",
+      "trialCancel": "Kündige mindestens 24 Stunden vor Ende der Testphase, dann wird nichts abgebucht.",
+      "monthly": "Monatlich abgerechnet, ohne kostenlose Testphase",
+      "included": "Beide Abos enthalten alles von WakeSharp Unbegrenzt:",
       "features": [
         "Jede Weck-Mission, auf Wunsch bis zu vier hintereinander",
         "Dein vollständiger Wachheitsverlauf, Abzeichen und Erfolge",

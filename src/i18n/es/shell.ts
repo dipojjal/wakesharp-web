@@ -58,6 +58,8 @@ export const shell = {
    */
   appLanguageNote: `La app de WakeSharp está disponible en inglés, español, ruso, turco, alemán, francés y árabe.`,
 
+  offer: `**{trialDays} días de prueba gratis** con el plan anual, y después {annual} al año. O {monthly} al mes, sin prueba.`,
+
   /**
    * La insignia «Visto en» (src/components/PressBadge.astro). La etiqueta es el
    * literal «As seen on» en español, tal como lo escribe la app, y nunca

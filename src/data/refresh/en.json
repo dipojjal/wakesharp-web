@@ -26,15 +26,24 @@
   "limits": "What to check",
   "related": "Explore the other features",
   "captions": [
-    "Your next alarm and morning overview",
-    "The Loud sound category and alarm tones",
-    "Scan an Object with a green bottle match",
-    "The available alarm missions",
-    "A shared alarm for waking with a friend",
-    "The daily Sharpness Score",
-    "A shift rotation and its calendar",
-    "Morning history and progress"
+    "The alarm clock for heavy sleepers",
+    "Super loud alarm tones: sirens, klaxons and buzzers",
+    "Missions that stop the alarm, from push-ups to math",
+    "Get up and scan an object to stop the alarm",
+    "Calming sounds to fall asleep to",
+    "A group alarm for waking up with friends",
+    "Badges you earn for waking up",
+    "The Lark grows as you wake up",
+    "The Lark with a gold medal, as seen on Business Insider"
   ],
+  "screens": {
+    "home": "Your next alarm and morning overview",
+    "tones": "The Loud sound category and alarm tones",
+    "scan": "Scan an Object with a green bottle match",
+    "missions": "The available alarm missions",
+    "rotation": "A shift rotation and its calendar",
+    "stats": "Morning history and progress"
+  },
   "watchCaptions": [
     "Apple Watch alarm overview",
     "Apple Watch wake-up prompt",

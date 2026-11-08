@@ -21,6 +21,7 @@ import { CATALOGS } from '../src/i18n/catalog';
 import { REFRESH } from '../src/lib/refresh';
 import { enabledLocales } from '../src/i18n/config';
 import { RELEASE } from '../src/lib/product';
+import STORE from '../src/data/store-assets.json';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'src', 'content', 'features');
@@ -36,19 +37,20 @@ const artworkLocale = (code) => (['en', 'es', 'ru', 'tr', 'de', 'fr', 'ar'].incl
  * numbered steps, read from the refresh copy (r), a mission's catalog entry
  * (m), the home catalog (h) or the support catalog (s); `bullets` lists
  * missions by their catalog name and blurb.
- * `feature` indexes refresh `features`, `capture` the English store capture
- * and `caption` the refresh caption that describes it.
+ * `feature` indexes refresh `features`; `screen` names the in-app screen
+ * (src/lib/store-assets.ts, cut from the 2.29 listing by
+ * scripts/import-store.mjs) and the refresh `screens` text that describes it.
  */
 const PAGES = [
-  { slug: 'loud-alarm-clock', order: 0, feature: 0, capture: '04-tones', caption: 1, missions: [], intro: (r) => r.loud, check: (r) => r.volume },
-  { slug: 'object-scan-alarm', order: 1, feature: 1, capture: '02-scan', caption: 2, missions: ['object_scan'], intro: (r) => r.scan, check: (r) => r.backup },
-  { slug: 'math-alarm-clock', order: 2, feature: 2, capture: '03-missions', caption: 3, missions: ['math_sprint'], intro: (r) => r.missionsIntro, check: (r) => r.repeat },
-  { slug: 'puzzle-alarm-clock', order: 3, feature: 3, capture: '03-missions', caption: 3, missions: ['memory_match', 'sequence_recall', 'colour_clash', 'type_quote', 'name_five', 'surprise'], bullets: true, intro: (r) => r.missionsIntro, check: (r) => r.repeat },
-  { slug: 'photo-alarm-clock', order: 4, feature: 4, capture: '03-missions', caption: 3, missions: ['photo_proof', 'fetch', 'face_check', 'fruit_slash'], bullets: true, intro: (r, m) => m('photo_proof').body, check: (r) => r.backup },
-  { slug: 'walking-alarm-clock', order: 5, feature: 5, capture: '03-missions', caption: 3, missions: ['walk_steps', 'first_light', 'squats', 'push_ups'], bullets: true, intro: (r, m) => m('walk_steps').body, check: (r) => `${r.missionsIntro} ${r.repeat}` },
-  { slug: 'calendar-alarm-clock', order: 6, feature: 6, capture: '01-home', caption: 0, missions: [], intro: (r, m, h) => h.smart.lede, check: (r, m, h, s) => s.smartAlarms.limits },
-  { slug: 'shift-work-alarm-clock', order: 7, feature: 7, capture: '07-rotation', caption: 6, missions: [], intro: (r, m, h) => h.smart.shifts, check: (r, m, h) => h.smart.labels },
-  { slug: 'sharpness-score', order: 8, feature: 8, capture: '06-sharpness', caption: 5, missions: [], intro: (r) => r.score, check: (r) => r.warmup },
+  { slug: 'loud-alarm-clock', order: 0, feature: 0, screen: 'tones', missions: [], intro: (r) => r.loud, check: (r) => r.volume },
+  { slug: 'object-scan-alarm', order: 1, feature: 1, screen: 'scan', missions: ['object_scan'], intro: (r) => r.scan, check: (r) => r.backup },
+  { slug: 'math-alarm-clock', order: 2, feature: 2, screen: 'missions', missions: ['math_sprint'], intro: (r) => r.missionsIntro, check: (r) => r.repeat },
+  { slug: 'puzzle-alarm-clock', order: 3, feature: 3, screen: 'missions', missions: ['memory_match', 'sequence_recall', 'colour_clash', 'type_quote', 'name_five', 'surprise'], bullets: true, intro: (r) => r.missionsIntro, check: (r) => r.repeat },
+  { slug: 'photo-alarm-clock', order: 4, feature: 4, screen: 'missions', missions: ['photo_proof', 'fetch', 'face_check', 'fruit_slash'], bullets: true, intro: (r, m) => m('photo_proof').body, check: (r) => r.backup },
+  { slug: 'walking-alarm-clock', order: 5, feature: 5, screen: 'missions', missions: ['walk_steps', 'first_light', 'squats', 'push_ups'], bullets: true, intro: (r, m) => m('walk_steps').body, check: (r) => `${r.missionsIntro} ${r.repeat}` },
+  { slug: 'calendar-alarm-clock', order: 6, feature: 6, screen: 'home', missions: [], intro: (r, m, h) => h.smart.lede, check: (r, m, h, s) => s.smartAlarms.limits },
+  { slug: 'shift-work-alarm-clock', order: 7, feature: 7, screen: 'rotation', missions: [], intro: (r, m, h) => h.smart.shifts, check: (r, m, h) => h.smart.labels },
+  { slug: 'sharpness-score', order: 8, feature: 8, screen: 'stats', missions: [], intro: (r) => r.score, check: (r) => r.warmup },
 ];
 
 const quote = (s) => JSON.stringify(s);
@@ -67,7 +69,7 @@ function render(locale, page) {
   const [title, lede, steps] = r.features[page.feature];
   const art = artworkLocale(locale.code);
   const depth = locale.code === 'en' ? '../../' : '../../../';
-  const screenshot = `${depth}assets/store/2.14/sources/ios/${art}/${page.capture}.png`;
+  const screenshot = `${depth}assets/store/${STORE.captures.version}/${art}/${page.screen}.webp`;
   const lines = [
     '---',
     `title: ${quote(title)}`,
@@ -81,7 +83,7 @@ function render(locale, page) {
     `updatedDate: ${quote(UPDATED)}`,
     `release: ${quote(RELEASE.version)}`,
     `screenshot: ${quote(screenshot)}`,
-    `screenshotAlt: ${quote(r.captions[page.caption])}`,
+    `screenshotAlt: ${quote(r.screens[page.screen])}`,
     '---',
     '',
     page.intro(r, mission, home, support),

@@ -9,7 +9,7 @@ order: 7
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/de/07-rotation.png"
+screenshot: "../../../assets/store/2.29/de/rotation.webp"
 screenshotAlt: "Schichtrotation mit Kalender"
 ---
 

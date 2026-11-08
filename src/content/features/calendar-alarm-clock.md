@@ -9,7 +9,7 @@ order: 6
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../assets/store/2.14/sources/ios/en/01-home.png"
+screenshot: "../../assets/store/2.29/en/home.webp"
 screenshotAlt: "Your next alarm and morning overview"
 ---
 

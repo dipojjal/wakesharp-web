@@ -9,7 +9,7 @@ order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/es/03-missions.png"
+screenshot: "../../../assets/store/2.29/es/missions.webp"
 screenshotAlt: "Las misiones disponibles"
 ---
 

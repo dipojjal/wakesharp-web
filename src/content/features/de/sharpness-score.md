@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/de/06-sharpness.png"
-screenshotAlt: "Der tägliche Sharpness-Wert"
+screenshot: "../../../assets/store/2.29/de/stats.webp"
+screenshotAlt: "Verlauf und Fortschritt"
 ---
 
 Sharpness ist ein täglicher Wert in der App. Sieh ihn dir unter Erfolge an, zusammen mit Verlauf, Serien und Abzeichen, und besuche Lark in Nest. Der Wert ist keine Schlafmessung und keine medizinische Beurteilung. Er sagt nicht, ob du sicher fahren oder arbeiten kannst.

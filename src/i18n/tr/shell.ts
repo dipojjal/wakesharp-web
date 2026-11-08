@@ -60,6 +60,8 @@ export const shell = {
    */
   appLanguageNote: `WakeSharp uygulaması İngilizce, İspanyolca, Rusça, Türkçe, Almanca, Fransızca ve Arapça olarak kullanılabilir.`,
 
+  offer: `Yıllık planda **{trialDays} gün ücretsiz deneme**, ardından yılda {annual}. Ya da deneme süresi olmadan ayda {monthly}.`,
+
   /**
    * The "As seen on" badge (src/components/PressBadge.astro): the literal
    * wording the app's own badge uses, because the source is a paid press

@@ -9,7 +9,7 @@ order: 1
 missions: ["object_scan"]
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/fr/02-scan.png"
+screenshot: "../../../assets/store/2.29/fr/scan.webp"
 screenshotAlt: "Un objet reconnu avec confirmation verte"
 ---
 

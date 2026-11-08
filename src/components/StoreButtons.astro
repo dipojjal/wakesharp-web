@@ -1,19 +1,37 @@
 ---
 import DownloadButton from './DownloadButton.astro';
 import PressBadge from './PressBadge.astro';
-import { SITE } from '../config/site';
+import Rich from '../i18n/Rich.astro';
+import { SITE, anyStoreLive } from '../config/site';
 import { getCatalog } from '../i18n/catalog';
 import { resolveLocale } from '../i18n/routes';
 import { toolCopy } from '../i18n/tools';
-/** `press` draws the "As seen on" badge under the button (src/components/PressBadge.astro). */
-interface Props { pageId?: string; tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string; press?: 'full' | 'compact' }
-const { pageId, align = 'start', placement = 'download', localeCode = Astro.currentLocale, press } = Astro.props;
+/**
+ * `press` draws the "As seen on" badge under the button (src/components/PressBadge.astro).
+ * `offer` says the yearly plan's free trial, and the prices, right under the button.
+ */
+interface Props { pageId?: string; tone?: 'dark' | 'light'; align?: 'start' | 'center'; placement?: string; localeCode?: string; press?: 'full' | 'compact'; offer?: boolean }
+const { pageId, align = 'start', placement = 'download', localeCode = Astro.currentLocale, press, offer = false } = Astro.props;
 const locale = resolveLocale(localeCode);
 const t = toolCopy(locale.code);
+const shell = getCatalog(locale.code).shell;
+// Prices come from the one config file, never from a catalog.
+const vars = { annual: SITE.unlimited.annual, monthly: SITE.unlimited.monthly, trialDays: SITE.unlimited.trialDays };
 ---
 <div class:list={['flex flex-col gap-3', align === 'center' ? 'items-center text-center' : 'items-start']}>
   <DownloadButton pageId={pageId} placement={placement} localeCode={locale.code} />
+  {offer && anyStoreLive() && <p class="store-offer" data-offer><Rich text={shell.offer} vars={vars} strongClass="accent font-extrabold" /></p>}
   <p class="text-sm">{t.available}</p>
-  {!(SITE.appLanguages as readonly string[]).includes(locale.code) && <p class="text-sm">{getCatalog(locale.code).shell.appLanguageNote}</p>}
+  {!(SITE.appLanguages as readonly string[]).includes(locale.code) && <p class="text-sm">{shell.appLanguageNote}</p>}
   {press && <PressBadge variant={press} localeCode={locale.code} class="mt-3 self-stretch" />}
 </div>
+<style>
+  .store-offer {
+    max-width: 30rem;
+    padding: 0.6rem 0.95rem;
+    border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

@@ -9,8 +9,8 @@ order: 8
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/en/06-sharpness.png"
-screenshotAlt: "Sharpness Score diário"
+screenshot: "../../../assets/store/2.29/en/stats.webp"
+screenshotAlt: "Histórico e progresso"
 ---
 
 Sharpness Score é uma pontuação diária no aplicativo. Veja a pontuação em Achievements (conquistas), junto com o histórico, as sequências e os emblemas, e acompanhe Lark no Nest. Não é uma pontuação de sono nem uma avaliação médica. Ela não determina se você pode dirigir ou trabalhar com segurança.

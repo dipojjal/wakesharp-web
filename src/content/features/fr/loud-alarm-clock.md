@@ -9,7 +9,7 @@ order: 0
 missions: []
 updatedDate: "2026-10-22"
 release: "2.25"
-screenshot: "../../../assets/store/2.14/sources/ios/fr/04-tones.png"
+screenshot: "../../../assets/store/2.29/fr/tones.webp"
 screenshotAlt: "La catégorie Forte et ses sons"
 ---
 

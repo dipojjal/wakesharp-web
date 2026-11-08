@@ -191,8 +191,14 @@ export const home = {
     "unlimited": {
       "name": "WakeSharp Unlimited",
       "perYear": "/year",
-      "trial": "Start with a **{trialDays}-day free trial**, then {annual} a year",
-      "monthly": "or **{monthly} a month**, with no trial",
+      "perMonth": "/month",
+      "yearly": "Yearly",
+      "monthlyPlan": "Monthly",
+      "trialBadge": "{trialDays}-day free trial",
+      "trial": "**Free for {trialDays} days**, then {annual} a year",
+      "trialCancel": "Cancel at least 24 hours before the trial ends and you won’t be charged.",
+      "monthly": "Billed every month, with no free trial",
+      "included": "Both plans include all of WakeSharp Unlimited:",
       "features": [
         "Every wake-up mission, and up to four in a row if you like",
         "Your full Sharpness history, badges and achievements",
