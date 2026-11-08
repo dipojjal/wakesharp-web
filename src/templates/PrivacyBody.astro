@@ -315,7 +315,6 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       cancel;</li>
     <li>your email address, and the whole Account screen where it appears;</li>
     <li>the titles of your calendar events, everywhere they appear{REFERRAL_DISCLOSURE.published ? ';' : '.'}</li>
-    <li><strong>Group alarms, in our own tables</strong>: each morning's record is deleted after 14 days; a group with one member and no change for 30 days is deleted; leaving removes your membership at once, and deleting the optional account removes all of your memberships and records. See <a href="#group-alarms">Group alarms</a>.</li>
     {REFERRAL_DISCLOSURE.published && (
       <li>your invite code, and any code you type, paste or receive from an invite link.</li>
     )}
@@ -738,7 +737,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     Lark</em>, a switch reads "Email me tips and offers from Lark". If your App Store or Google Play account is
     in the European Union or the rest of the EEA, the United Kingdom, Switzerland, Canada or Australia, or we
     cannot tell its country, the switch starts off and you get offer emails only if you turn it on. Everywhere
-    else it starts on, with the notice "Lark may email you now and then. Unsubscribe anytime." An account
+    else it starts on, with the notice "Lark may email you now and then. Unsubscribe any time." An account
     created before the switch existed is treated by the same rule: outside those countries it may receive
     offer emails, which this policy announces, and inside them it receives none until you turn the switch on.
     We record your choice, when and where in the app you made it, the wording you saw, and your store country.
@@ -914,6 +913,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     {REFERRAL_DISCLOSURE.published && (
       <li><strong>Invite records</strong>: deleted 180 days after their last use, by the app or by a friend using the code, except that a record which has unlocked a mission is kept until you ask us to delete it, and a used invite, with the record of any plan it led to, stays with the inviter's record. Request numbers and challenges are deleted within a day and rate-limit counters within three days. The security log is kept for 180 days, and the verification service keeps App Attest key records for a year after the key's last use. See <a href="#inviting-friends">Inviting friends</a>.</li>
     )}
+    <li><strong>Group alarms, in our own tables</strong>: each morning's record is deleted after 14 days; a group with one member and no change for 30 days is deleted; leaving removes your membership at once, and deleting the optional account removes all of your memberships and records. See <a href="#group-alarms">Group alarms</a>.</li>
     <li><strong>AI features</strong>: we keep no content. Counters under keyed hashes last at most 35 days. Anthropic's retention is described in <a href="#ai-features">AI features</a>.</li>
     <li><strong>Emails and notifications</strong>: the message log is kept for 400 days, and an installation's record until 400 days after the app last reported; your email choices go with the account. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li><strong>Analytics data at PostHog</strong>: usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us. If you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
