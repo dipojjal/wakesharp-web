@@ -22,7 +22,7 @@ export const shell = {
     blog: `Blog`,
     contact: `Kontak`,
     faq: `Tanya Jawab`,
-    cta: `Unduh WakeSharp`,
+    cta: `Coba WakeSharp gratis`,
   },
 
   language: {
@@ -60,8 +60,6 @@ export const shell = {
    * Indonesia. Sebutkan bahasa-bahasanya dalam bahasa lokal ini.
    */
   appLanguageNote: `Aplikasi WakeSharp tersedia dalam bahasa Inggris, Spanyol, Rusia, Turki, Jerman, Prancis, dan Arab.`,
-
-  offer: `**Uji coba gratis {trialDays} hari** dengan paket tahunan, lalu {annual} per tahun. Atau {monthly} per bulan, tanpa uji coba.`,
 
   /**
    * Lencana "As seen on" (src/components/PressBadge.astro). Labelnya adalah

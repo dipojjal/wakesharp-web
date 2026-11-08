@@ -139,10 +139,14 @@ Re-read both before quoting either name.
 Since 2.10 the app is sold only as **WakeSharp Unlimited** (a 7-day free trial of the yearly plan,
 or monthly with no trial), with no free tier and no ads; Lifetime is no longer sold. The prices
 live in `SITE.unlimited` ($29.99 a year and $9.99 a month on both stores since the start of
-November 2026), and every page that states the trial states the price after it. The homepage
-shows the two plans side by side with the trial as a badge on the yearly one, and the homepage
-and feature pages repeat the trial and both prices under the download button
-(`StoreButtons offer`).
+November 2026), and wherever the site's copy states the trial it states the price after it. The
+homepage shows the two plans side by side with the trial as a badge on the yearly one.
+
+Every download button, the header's included, reads **"Try WakeSharp For Free"** (`download` in
+`src/i18n/tools/<locale>.json`, and `nav.cta` in each `shell.ts`), with nothing under it about the
+price: the owner's decision of 2026-11-07, on the grounds that the homepage's pricing section,
+which the header's Pricing link reaches from every page, carries the trial's terms. That is the one
+place the site names the trial without its price beside it.
 
 **`src/config/site.ts` is the only file to edit when that changes.** `StoreButtons`, the
 JSON-LD, the Smart App Banner, the footer and the install CTAs on `/c`, `/p` and `/404`

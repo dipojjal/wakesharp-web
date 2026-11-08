@@ -21,7 +21,7 @@ export const shell = {
     blog: `ब्लॉग`,
     contact: `संपर्क`,
     faq: `सवाल-जवाब`,
-    cta: `WakeSharp लें`,
+    cta: `WakeSharp मुफ़्त में आज़माएँ`,
   },
 
   language: {
@@ -58,8 +58,6 @@ export const shell = {
    * कि ऐप, मसलन, हिंदी में है। भाषाओं के नाम इसी भाषा में लिखें।
    */
   appLanguageNote: `WakeSharp ऐप अंग्रेज़ी, स्पैनिश, रूसी, तुर्की, जर्मन, फ़्रेंच और अरबी में उपलब्ध है।`,
-
-  offer: `सालाना प्लान पर **{trialDays} दिन का मुफ़्त ट्रायल**, फिर {annual} प्रति साल। या {monthly} प्रति माह, बिना ट्रायल के।`,
 
   /**
    * "As seen on" बैज (src/components/PressBadge.astro)। लेबल "As seen on" का

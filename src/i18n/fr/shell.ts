@@ -21,7 +21,7 @@ export const shell = {
     blog: `Blog`,
     contact: `Contact`,
     faq: `FAQ`,
-    cta: `Obtenir WakeSharp`,
+    cta: `Essayer WakeSharp gratuitement`,
   },
 
   language: {
@@ -57,8 +57,6 @@ export const shell = {
    * invisible en français, mais chaque catalogue porte la clé.
    */
   appLanguageNote: `L’application WakeSharp est disponible en anglais, espagnol, russe, turc, allemand, français et arabe.`,
-
-  offer: `**{trialDays} jours d’essai gratuit** avec la formule annuelle, puis {annual} par an. Ou {monthly} par mois, sans essai.`,
 
   /**
    * Le badge « Vu sur » (src/components/PressBadge.astro). Le libellé est le

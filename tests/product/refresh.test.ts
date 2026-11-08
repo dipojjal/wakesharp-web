@@ -10,6 +10,7 @@ import { localePath } from '../../src/i18n/routes';
 import { compareShape } from '../../src/i18n/shape';
 import { PRESS } from '../../src/config/press';
 import { SITE } from '../../src/config/site';
+import { toolCopy } from '../../src/i18n/tools';
 import manifest from '../../src/data/store-assets.json';
 const read = (path:string) => readFileSync(`dist${path === '/' ? '/index' : path}.html`,'utf8');
 const releaseStamp = `data-release-version="${RELEASE.version}" data-release-status="${RELEASE.status}"`;
@@ -41,17 +42,21 @@ test('store artwork: the bold gallery, the 2.29 in-app screens and the 2.14 watc
  // One caption per gallery frame in every language.
  for(const locale of enabledLocales()) assert.equal(REFRESH[locale.code].captions.length,9,locale.code);
 });
-test('pricing shows both plans, the yearly trial always beside its price, and no retired price',()=>{
+test('pricing shows both plans with the trial beside the yearly price, every download button says "Try WakeSharp For Free", and no retired price',()=>{
  for(const locale of enabledLocales()){
   const home=read(localePath(locale,'/'));
   const yearly=home.slice(home.indexOf('data-plan="yearly"'),home.indexOf('data-plan="monthly"'));
   assert.ok(yearly.includes('class="trial-badge"'),locale.code);
   assert.ok(yearly.includes(SITE.unlimited.annual),locale.code);
   assert.ok(home.slice(home.indexOf('data-plan="monthly"')).includes(SITE.unlimited.monthly),locale.code);
-  // The trial line under the hero's and the closing download buttons names both prices.
-  const offers=home.match(/<p class="store-offer"[^>]*data-offer[^>]*>[\s\S]*?<\/p>/g)||[];
-  assert.equal(offers.length,2,locale.code);
-  for(const offer of offers) assert.ok(offer.includes(SITE.unlimited.annual)&&offer.includes(SITE.unlimited.monthly),locale.code);
+  // One label on every download button, the header's included (owner, 2026-11-07); the
+  // trial's price is in the pricing section, not in a note under the button.
+  const label=toolCopy(locale.code).download;
+  assert.equal(CATALOGS[locale.code].shell.nav.cta,label,locale.code);
+  const buttons=[...home.matchAll(/<a\b[^>]*\bdata-download\b[^>]*>([^<]*)<\/a>/g)].map(m=>m[1]!.replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&amp;/g,'&'));
+  assert.ok(buttons.length>=3,`${locale.code}: ${buttons.length} download buttons`);
+  for(const text of buttons) assert.equal(text,label,locale.code);
+  assert.ok(!home.includes('data-offer'),locale.code);
   for(const path of ['/','/support','/terms',...FEATURE_SLUGS.map(slug=>`/features/${slug}`)]){
    const html=read(localePath(locale,path));
    assert.ok(!html.includes('$34.99'),`${locale.code} ${path} still says $34.99`);

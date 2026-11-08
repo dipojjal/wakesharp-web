@@ -23,7 +23,7 @@ export const shell = {
     blog: `Blog`,
     contact: `İletişim`,
     faq: `SSS`,
-    cta: `WakeSharp’ı indir`,
+    cta: `WakeSharp’ı ücretsiz dene`,
   },
 
   language: {
@@ -59,8 +59,6 @@ export const shell = {
    * Turkish, so Turkish pages never show it, but every catalog carries the key.
    */
   appLanguageNote: `WakeSharp uygulaması İngilizce, İspanyolca, Rusça, Türkçe, Almanca, Fransızca ve Arapça olarak kullanılabilir.`,
-
-  offer: `Yıllık planda **{trialDays} gün ücretsiz deneme**, ardından yılda {annual}. Ya da deneme süresi olmadan ayda {monthly}.`,
 
   /**
    * The "As seen on" badge (src/components/PressBadge.astro): the literal

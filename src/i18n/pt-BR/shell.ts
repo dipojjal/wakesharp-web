@@ -21,7 +21,7 @@ export const shell = {
     blog: `Blog`,
     contact: `Contato`,
     faq: `Dúvidas`,
-    cta: `Baixar WakeSharp`,
+    cta: `Experimente o WakeSharp grátis`,
   },
 
   language: {
@@ -57,8 +57,6 @@ export const shell = {
    * nunca dar a entender que existe um app em português.
    */
   appLanguageNote: `O app WakeSharp está disponível em inglês, espanhol, russo, turco, alemão, francês e árabe.`,
-
-  offer: `**{trialDays} dias de teste grátis** no plano anual, depois {annual} por ano. Ou {monthly} por mês, sem teste.`,
 
   /**
    * O selo "Visto em" (src/components/PressBadge.astro). O rótulo é o literal

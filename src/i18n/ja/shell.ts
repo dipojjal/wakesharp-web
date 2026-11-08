@@ -22,7 +22,7 @@ export const shell = {
     blog: `ブログ`,
     contact: `問い合わせ`,
     faq: `FAQ`,
-    cta: `WakeSharpを入手`,
+    cta: `WakeSharpを無料で試す`,
   },
 
   language: {
@@ -59,8 +59,6 @@ export const shell = {
    * があるかのように示唆しないためです。言語名はこのページの言語で書きます。
    */
   appLanguageNote: `WakeSharpアプリは、英語、スペイン語、ロシア語、トルコ語、ドイツ語、フランス語、アラビア語で利用できます。`,
-
-  offer: `年額プランは**{trialDays}日間の無料トライアル**付きで、その後は年額{annual}。無料トライアルのない月額{monthly}のプランもあります。`,
 
   /**
    * 「As seen on」バッジ（src/components/PressBadge.astro）。ラベルは

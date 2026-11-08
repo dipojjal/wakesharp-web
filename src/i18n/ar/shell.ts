@@ -22,7 +22,7 @@ export const shell = {
     blog: `المدونة`,
     contact: `تواصل معنا`,
     faq: `أسئلة شائعة`,
-    cta: `حمّل WakeSharp`,
+    cta: `جرّب WakeSharp مجانًا`,
   },
 
   language: {
@@ -59,8 +59,6 @@ export const shell = {
    * باليابانية مثلًا. سمِّ اللغات بلغة هذه الصفحة.
    */
   appLanguageNote: `يتوفر تطبيق WakeSharp باللغات الإنجليزية والإسبانية والروسية والتركية والألمانية والفرنسية والعربية.`,
-
-  offer: `**تجربة مجانية لمدة {trialDays} أيام** مع الخطة السنوية، ثم {annual} سنويًا. أو {monthly} شهريًا دون فترة تجريبية.`,
 
   /**
    * شارة «كما شوهد على» (src/components/PressBadge.astro): الترجمة الحرفية لعبارة
