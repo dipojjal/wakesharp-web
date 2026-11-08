@@ -7,13 +7,13 @@ lang: "es"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/es/missions.webp"
 screenshotAlt: "Las misiones disponibles"
 ---
 
-Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.
+Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.30; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.
 
 ## Cómo usarlo
 

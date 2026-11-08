@@ -18,7 +18,7 @@ export const home = {
       "accent": "vous faire lever",
       "post": ""
     },
-    "lede": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
+    "lede": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.30 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
     "missions": [
       {
         "name": "Problèmes de maths",
@@ -231,7 +231,7 @@ export const home = {
       },
       {
         "q": "Dois-je faire des calculs à 6 h du matin ?",
-        "a": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants."
+        "a": "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.30 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants."
       },
       {
         "q": "Puis-je tricher et sauter la mission ?",

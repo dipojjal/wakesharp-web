@@ -7,13 +7,13 @@ lang: "ja"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "選べるアラームミッション"
 ---
 
-以下から選ぶか、最大4つのミッションを順番に設定できます。これはiPhone 2.25で利用できる選択肢です。Google Playはバージョン2.9なので、SquatsとPush-upsはいまのところiPhoneのみです。カメラ、動き、音声を使うミッションには対応機器と権限が必要です。
+以下から選ぶか、最大4つのミッションを順番に設定できます。これはiPhone 2.30で利用できる選択肢です。Google Playはバージョン2.9なので、SquatsとPush-upsはいまのところiPhoneのみです。カメラ、動き、音声を使うミッションには対応機器と権限が必要です。
 
 ## 使い方
 

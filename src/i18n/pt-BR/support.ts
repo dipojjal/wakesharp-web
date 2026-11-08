@@ -52,7 +52,7 @@ export const support = {
   "missions": {
     "heading": "Missões e soneca",
     "items": [
-      "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.25; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.",
+      "Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.30; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes.",
       "Escolha um alvo, como garrafa, caneca ou pia. Quando o alarme tocar, aponte a câmera para ele. A confirmação verde indica que o WakeSharp reconheceu o objeto. O reconhecimento acontece no telefone.",
       "**Um quarto escuro ou uma permissão recusada nunca troca a missão por uma mais fácil.** O WakeSharp avisa você, ou pede a permissão de novo. Só uma falha real, como um celular sem câmera ou sem contador de passos, entrega a manhã ao Math Problems, para você não ficar com um alarme que não consegue concluir.",
       "No iPhone, pare ou adie o alarme e ele toca de novo em até 30 segundos, até a missão ser concluída. A versão 2.9 do Google Play toca de novo um minuto depois, por até uma hora. Os controles do telefone continuam funcionando."

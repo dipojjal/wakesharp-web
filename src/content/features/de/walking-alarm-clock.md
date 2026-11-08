@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/de/missions.webp"
 screenshotAlt: "Verfügbare Weckmissionen"
 ---
@@ -28,4 +28,4 @@ Mach echte Schritte, gezählt von deinem Telefon.
 
 ## Darauf solltest du achten
 
-Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware. Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter.
+Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.30; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware. Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter.

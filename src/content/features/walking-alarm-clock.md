@@ -7,8 +7,8 @@ lang: "en"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "The available alarm missions"
 ---
@@ -28,4 +28,4 @@ Take real steps, counted by your phone.
 
 ## What to check
 
-Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.25 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware. On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work.
+Choose from the missions below, or put up to four in a sequence. This is the iPhone 2.30 selection; Google Play has version 2.9, so Squats and Push-ups are iPhone-only for now. Camera, movement and voice missions need their corresponding permissions and supported hardware. On iPhone, stop it or snooze it and it rings again within 30 seconds, until your mission is done. Google Play’s version 2.9 rings again a minute later, for up to an hour. Your phone’s own controls still work.

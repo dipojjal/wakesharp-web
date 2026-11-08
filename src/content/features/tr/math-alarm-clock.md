@@ -7,13 +7,13 @@ lang: "tr"
 translationOf: "math-alarm-clock"
 order: 2
 missions: ["math_sprint"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/tr/missions.webp"
 screenshotAlt: "Kullanılabilir alarm görevleri"
 ---
 
-Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.
+Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.30 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.
 
 ## Nasıl kullanılır
 

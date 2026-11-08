@@ -7,7 +7,7 @@ import { shell as en } from '../en/shell';
  */
 export const shell = {
   /** 検索結果で切れないよう90文字前後で、トップページが狙う検索語から始めます。 */
-  siteDescription: "WakeSharpは大きな音と、計算、カメラ、歩行、運動のミッションを組み合わせた目覚ましです。グループアラーム、カレンダーアラーム、毎日のスコアも備え、バージョン2.25をApp Storeで配信中です。",
+  siteDescription: "WakeSharpは大きな音と、計算、カメラ、歩行、運動のミッションを組み合わせた目覚ましです。グループアラーム、カレンダーアラーム、毎日のスコアも備え、バージョン2.30をApp Storeで配信中です。",
   tagline: `目覚めるなら、冴えた頭で。ただ起きるだけじゃない。`,
   requirements: { ios: `iOS 26以降`, android: `Android 8.0以降` },
   ogImageAlt: `WakeSharp。目覚めるなら、冴えた頭で。ただ起きるだけじゃない。`,

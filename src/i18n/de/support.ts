@@ -52,7 +52,7 @@ export const support = {
   "missions": {
     "heading": "Missionen und Schlummern",
     "items": [
-      "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.25; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
+      "Wähle eine der folgenden Missionen oder bis zu vier nacheinander. Das ist die Auswahl für iPhone 2.30; Google Play hat Version 2.9, Kniebeugen und Liegestütze gibt es also vorerst nur auf dem iPhone. Kamera, Bewegung und Sprache benötigen passende Berechtigungen und Hardware.",
       "Wähle etwa eine Flasche, einen Becher oder ein Waschbecken. Richte beim Klingeln die Kamera darauf. Die grüne Bestätigung zeigt, dass WakeSharp das Objekt erkannt hat. Die Erkennung läuft auf deinem Telefon.",
       "**Ein dunkler Raum oder eine verweigerte Berechtigung tauscht die Mission nie gegen eine leichtere.** WakeSharp warnt dich oder bittet erneut um die Berechtigung. Nur ein echter Defekt, etwa ein Telefon ohne Kamera oder ohne Schrittzähler, übergibt den Morgen an Rechenaufgaben, damit du nicht mit einem Alarm dastehst, den du nicht abschließen kannst.",
       "Auf dem iPhone klingelt der Wecker nach Stoppen oder Schlummern innerhalb von 30 Sekunden erneut, bis deine Mission erledigt ist. Die Version 2.9 bei Google Play klingelt eine Minute später erneut, bis zu einer Stunde lang. Die eigenen Bedienelemente des Telefons funktionieren weiter."

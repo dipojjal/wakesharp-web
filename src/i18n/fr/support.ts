@@ -52,7 +52,7 @@ export const support = {
   "missions": {
     "heading": "Missions et rappel d’alarme",
     "items": [
-      "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.25 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
+      "Choisissez une mission ci-dessous ou enchaînez-en jusqu’à quatre. Voici la sélection sur iPhone 2.30 ; Google Play a la version 2.9, donc Squats et Pompes sont pour l’instant réservés à l’iPhone. Les missions utilisant la caméra, le mouvement ou la voix demandent les autorisations et le matériel correspondants.",
       "Choisissez une bouteille, une tasse ou un lavabo. Quand l’alarme sonne, dirigez la caméra vers cet objet. La confirmation verte indique que WakeSharp l’a reconnu. La reconnaissance se fait sur votre téléphone.",
       "**Une pièce sombre ou une autorisation refusée ne remplace jamais la mission par une plus facile.** WakeSharp vous prévient, ou redemande l’autorisation. Seule une vraie panne, comme un téléphone sans caméra ou sans podomètre, confie la matinée à Problèmes de maths, pour que vous ne restiez pas coincé avec une alarme que vous ne pouvez pas terminer.",
       "Sur iPhone, arrêtez-la ou reportez-la et elle sonne de nouveau en moins de 30 secondes, jusqu’à ce que votre mission soit terminée. La version 2.9 de Google Play sonne de nouveau une minute plus tard, pendant une heure au maximum. Les commandes du téléphone restent utilisables."

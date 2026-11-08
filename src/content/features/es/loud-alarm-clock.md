@@ -7,8 +7,8 @@ lang: "es"
 translationOf: "loud-alarm-clock"
 order: 0
 missions: []
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/es/tones.webp"
 screenshotAlt: "La categoría Fuerte y sus tonos"
 ---

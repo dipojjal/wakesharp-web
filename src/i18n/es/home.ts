@@ -18,7 +18,7 @@ export const home = {
       "accent": "te sacan de la cama",
       "post": ""
     },
-    "lede": "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
+    "lede": "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.30; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes.",
     "missions": [
       {
         "name": "Problemas de matemáticas",
@@ -231,7 +231,7 @@ export const home = {
       },
       {
         "q": "¿Tengo que hacer cuentas a las 6 de la mañana?",
-        "a": "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.25; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes."
+        "a": "Elige una de estas misiones o pon hasta cuatro en secuencia. Esta es la selección de iPhone 2.30; Google Play tiene la versión 2.9, así que Sentadillas y Flexiones por ahora son solo para iPhone. Las misiones de cámara, movimiento y voz necesitan los permisos y el hardware correspondientes."
       },
       {
         "q": "¿Puedo hacer trampa y saltarme la misión?",

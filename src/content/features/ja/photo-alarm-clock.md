@@ -7,8 +7,8 @@ lang: "ja"
 translationOf: "photo-alarm-clock"
 order: 4
 missions: ["photo_proof", "fetch", "face_check", "fruit_slash"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "選べるアラームミッション"
 ---

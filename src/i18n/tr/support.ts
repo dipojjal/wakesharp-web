@@ -52,7 +52,7 @@ export const support = {
   "missions": {
     "heading": "Görevler ve erteleme",
     "items": [
-      "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.25 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
+      "Aşağıdaki görevlerden birini seç veya en fazla dördünü sıraya koy. Bu liste iPhone 2.30 seçimidir; Google Play’de 2.9 sürümü var, bu yüzden Squat ve Şınav şimdilik yalnızca iPhone’da. Kamera, hareket ve ses görevleri ilgili izinleri ve desteklenen donanımı gerektirir.",
       "Şişe, kupa veya lavabo gibi bir hedef seç. Alarm çaldığında kamerayı o nesneye yönelt. Yeşil eşleşme onayı, WakeSharp’ın nesneyi tanıdığını gösterir. Nesne tanıma telefonunda çalışır.",
       "**Karanlık bir oda ya da reddedilmiş bir izin asla daha kolay bir görev koymaz.** WakeSharp sizi uyarır ya da izni yeniden ister. Yalnızca gerçek bir arıza, örneğin kamerası ya da adım sayarı olmayan bir telefon, sabahı Matematik Problemleri’ne devreder; böylece bitiremeyeceğiniz bir alarmla baş başa kalmazsınız.",
       "iPhone’da durdur ya da ertele, görevin bitene kadar 30 saniye içinde yeniden çalar. Google Play’in 2.9 sürümü bir dakika sonra yeniden çalar, en fazla bir saat boyunca. Telefonun kendi kontrolleri çalışmaya devam eder."

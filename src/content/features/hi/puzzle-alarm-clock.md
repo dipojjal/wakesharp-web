@@ -7,13 +7,13 @@ lang: "hi"
 translationOf: "puzzle-alarm-clock"
 order: 3
 missions: ["memory_match", "sequence_recall", "colour_clash", "type_quote", "name_five", "surprise"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "उपलब्ध अलार्म मिशन"
 ---
 
-नीचे दिए मिशनों में से चुनें, या चार तक को एक क्रम में रखें। यह iPhone 2.25 की सूची है; Google Play पर संस्करण 2.9 है, इसलिए Squats और Push-ups फ़िलहाल सिर्फ़ iPhone पर हैं। कैमरा, गतिविधि और आवाज़ वाले मिशन के लिए संबंधित अनुमति और समर्थित हार्डवेयर चाहिए।
+नीचे दिए मिशनों में से चुनें, या चार तक को एक क्रम में रखें। यह iPhone 2.30 की सूची है; Google Play पर संस्करण 2.9 है, इसलिए Squats और Push-ups फ़िलहाल सिर्फ़ iPhone पर हैं। कैमरा, गतिविधि और आवाज़ वाले मिशन के लिए संबंधित अनुमति और समर्थित हार्डवेयर चाहिए।
 
 ## इस्तेमाल कैसे करें
 

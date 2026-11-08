@@ -7,8 +7,8 @@ lang: "de"
 translationOf: "sharpness-score"
 order: 8
 missions: []
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/de/stats.webp"
 screenshotAlt: "Verlauf und Fortschritt"
 ---

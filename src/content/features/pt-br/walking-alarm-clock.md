@@ -7,8 +7,8 @@ lang: "pt-BR"
 translationOf: "walking-alarm-clock"
 order: 5
 missions: ["walk_steps", "first_light", "squats", "push_ups"]
-updatedDate: "2026-10-22"
-release: "2.25"
+updatedDate: "2026-11-07"
+release: "2.30"
 screenshot: "../../../assets/store/2.29/en/missions.webp"
 screenshotAlt: "Missões disponíveis"
 ---
@@ -28,4 +28,4 @@ Dê passos de verdade, contados pelo seu celular.
 
 ## O que conferir
 
-Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.25; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes. No iPhone, pare ou adie o alarme e ele toca de novo em até 30 segundos, até a missão ser concluída. A versão 2.9 do Google Play toca de novo um minuto depois, por até uma hora. Os controles do telefone continuam funcionando.
+Escolha uma missão abaixo ou coloque até quatro em sequência. Esta é a seleção do iPhone 2.30; o Google Play tem a versão 2.9, então Squats (agachamentos) e Push-ups (flexões) por enquanto são só para iPhone. Missões de câmera, movimento e voz precisam das permissões e do hardware correspondentes. No iPhone, pare ou adie o alarme e ele toca de novo em até 30 segundos, até a missão ser concluída. A versão 2.9 do Google Play toca de novo um minuto depois, por até uma hora. Os controles do telefone continuam funcionando.
