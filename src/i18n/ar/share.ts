@@ -66,7 +66,7 @@ export const share = {
     intro: `يفتح هذا الرابط WakeSharp على هاتفك.`,
     open: `افتح WakeSharp`,
     desktop: `تستخدم حاسوبًا؟ افتح هذا الرابط على الهاتف الذي تستخدم عليه WakeSharp.`,
-    offer: `سجّل الدخول بحساب Apple أو Google نفسه لتجد هديتك.`,
+    offer: `سجّل الدخول بحساب Apple أو Google نفسه لتجد عرضك.`,
     other: `هاتف جديد، أو حذفت التطبيق؟ ثبّت WakeSharp ثم سجّل الدخول بحساب Apple أو Google نفسه لتتابع من حيث توقفت.`,
     billing: `تتم كل مدفوعات WakeSharp عبر App Store أو Google Play. إذا لم تنجح عملية دفع، فحدّث طريقة الدفع هناك لتحتفظ باشتراكك.`,
     billingApple: `حدّث طريقة الدفع في App Store`,

@@ -18,7 +18,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
       <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, a small <strong>record of each installation</strong> that decides which notifications and emails to send, an optional <strong>account backup</strong>, and anything you choose to send us, such as a support message or why you cancelled. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
       <li>If you create the optional account, WakeSharp may <strong>email</strong> you about your own plan, such as a payment that did not go through, and send the Lark's <strong>offers and check-ins</strong> by email or, on iPhone, as notifications. Offer emails follow your choice, and where you live decides whether that choice starts on or off. Every email has an unsubscribe link, and your mail app's own unsubscribe button works too. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
-      <li>Some Lark features can use <strong>Claude</strong>, an AI made by Anthropic. They are <strong>off unless you turn them on</strong>, and your name, calendar, location and alarm labels are not sent. See <a href="#ai-features">AI features</a>.</li>
+      <li>Some Lark features, called <strong>Lark AI</strong> in the app, can use Claude, an AI made by Anthropic. They are <strong>off unless you turn them on</strong>, and your name, calendar, location and alarm labels are not sent. See <a href="#ai-features">AI features</a>.</li>
       <li>On iPhone, weather is optional: choose a city or allow location access. Weather coordinates are rounded before being sent to our weather service and Apple Weather, as described below. Network services also receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
@@ -315,7 +315,6 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       cancel;</li>
     <li>your email address, and the whole Account screen where it appears;</li>
     <li>the titles of your calendar events, everywhere they appear{REFERRAL_DISCLOSURE.published ? ';' : '.'}</li>
-    <li><strong>Group alarms, in our own tables</strong>: each morning's record is deleted after 14 days; a group with one member and no change for 30 days is deleted; leaving removes your membership at once, and deleting the optional account removes all of your memberships and records. See <a href="#group-alarms">Group alarms</a>.</li>
     {REFERRAL_DISCLOSURE.published && (
       <li>your invite code, and any code you type, paste or receive from an invite link.</li>
     )}
@@ -583,8 +582,12 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     publication of wake_groups alone, purge_wake_group_memberships called by
     delete-account), WSCore/GroupAlarm.swift (GroupInviteParser: the code and
     the schedule-only fragment; no name in a link) and Docs/releases/
-    2.23-owner-round.md (no push notifications). Re-check it whenever any of
-    those change.
+    2.23-owner-round.md (no push notifications). The paragraph on the reward
+    for a first morning together (iOS 2.32) was written 2026-11-08 against
+    supabase/migrations/20261109020440_wake_group_rewards.sql (first_joins,
+    invites and rewards, first_seen, same_person, the keyed network hash and
+    its 14-day prune, what an account deletion cascades to), which goes live
+    with the 2.32 release. Re-check it whenever any of those change.
   */}
   <h2 id="group-alarms">Group alarms</h2>
   <p>
@@ -613,6 +616,16 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     part of the link after the <code>#</code>, which browsers never send to a server, ours included. It
     never carries a name. The link opens the app on an iPhone that has it, and otherwise a page on this
     site that only reads the code and shows the schedule; the page asks nothing of our database.
+  </p>
+  <p>
+    If you create or join a group alarm, we keep a record that you have been in a group, who organized
+    the group when you joined it, and whether your first morning together earned a reward. To decide
+    that, we compare the times your group's alarms rang and were finished, check that you are new to
+    WakeSharp using your account, morning, setup-answer and subscription dates, and check that the two
+    accounts do not belong to the same person using your subscription record. To keep one household
+    from earning the reward repeatedly, we keep a keyed hash of the network each "I'm up" post came
+    from for about 14 days at most. It is not your IP address. If you delete your account, these
+    records are deleted, and the other person keeps any reward they earned with no link back to you.
   </p>
   <p>
     Each morning's record is deleted after 14 days. A group that has had a single member and no change
@@ -694,7 +707,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   {/*
     Emails and notifications. Written 2026-11-07 against the app repository:
     the lifecycle plan approved that day and its server work
-    (supabase/migrations/20261107180000_lifecycle_messaging.sql: the devices,
+    (supabase/migrations/20261107235821_lifecycle_messaging.sql: the devices,
     contacts and sends tables, rows going with the account or losing the link
     to it, the daily prune at 400 days; supabase/functions/lifecycle-dispatch:
     each step's service or offer class in planner.ts, the opt-in storefronts
@@ -716,15 +729,15 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     them. Messages come in two kinds:
   </p>
   <ul>
-    <li><strong>Service messages</strong> are about your own subscription: a payment that did not go through, and a free trial or plan that is ending after you turned off renewal. They need no consent, because they are part of the service you bought, and they stop once the payment goes through or the plan has ended.</li>
-    <li><strong>Offer messages</strong> are the Lark's: an offer to come back after you cancel a trial or a plan, a reminder that your plan is waiting if you signed up but never started one, a summary of your free trial (mornings on time, your streak, your next badge) before it renews, and a check-in when you have not set an alarm for a while. An offer can include a discount; the app shows the real price before you buy.</li>
+    <li><strong>Service messages</strong> are about your own subscription: a payment that did not go through, a free trial or plan that is ending after you turned off renewal, and a notice shortly before a free trial turns into a paid plan, with the date and how to cancel. They need no consent, because they are part of the service you bought, and they stop once the payment goes through or the plan has ended.</li>
+    <li><strong>Offer messages</strong> are the Lark's: an offer to come back after you cancel a trial or a plan, a reminder that your plan is waiting if you signed up but never started one, and a check-in when you have not set an alarm for a while. An offer can include a discount; the app shows the real price before you buy.</li>
   </ul>
   <p>
     <strong>Your choice for offer emails.</strong> Where you sign in, and in <em>Settings → Emails from
     Lark</em>, a switch reads "Email me tips and offers from Lark". If your App Store or Google Play account is
     in the European Union or the rest of the EEA, the United Kingdom, Switzerland, Canada or Australia, or we
     cannot tell its country, the switch starts off and you get offer emails only if you turn it on. Everywhere
-    else it starts on, with the notice "Lark may email you now and then. Unsubscribe anytime." An account
+    else it starts on, with the notice "Lark may email you now and then. Unsubscribe any time." An account
     created before the switch existed is treated by the same rule: outside those countries it may receive
     offer emails, which this policy announces, and inside them it receives none until you turn the switch on.
     We record your choice, when and where in the app you made it, the wording you saw, and your store country.
@@ -815,12 +828,12 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   */}
   <h2 id="ai-features">AI features</h2>
   <p>
-    Some Lark features can use Claude, an AI made by
+    Some Lark features, called Lark AI in the app, can use Claude, an AI made by
     <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic</a>. They are
     <strong>off unless you turn them on</strong>. The app asks once, and you can change your answer any time in
     Settings under Lark AI. Your answer is kept on your phone only, so a restored backup or a new phone asks again.
     With them off, nothing goes to Anthropic and the Lark uses its own scripts and templates. Screens written by
-    Claude say so, and the Lark says it is an AI if you ask.
+    Lark AI say so, and the Lark says it is an AI if you ask.
   </p>
   <p>Here is what each feature sends when it is on:</p>
   <ul>
@@ -900,6 +913,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     {REFERRAL_DISCLOSURE.published && (
       <li><strong>Invite records</strong>: deleted 180 days after their last use, by the app or by a friend using the code, except that a record which has unlocked a mission is kept until you ask us to delete it, and a used invite, with the record of any plan it led to, stays with the inviter's record. Request numbers and challenges are deleted within a day and rate-limit counters within three days. The security log is kept for 180 days, and the verification service keeps App Attest key records for a year after the key's last use. See <a href="#inviting-friends">Inviting friends</a>.</li>
     )}
+    <li><strong>Group alarms, in our own tables</strong>: each morning's record is deleted after 14 days; a group with one member and no change for 30 days is deleted; leaving removes your membership at once, and deleting the optional account removes all of your memberships and records. See <a href="#group-alarms">Group alarms</a>.</li>
     <li><strong>AI features</strong>: we keep no content. Counters under keyed hashes last at most 35 days. Anthropic's retention is described in <a href="#ai-features">AI features</a>.</li>
     <li><strong>Emails and notifications</strong>: the message log is kept for 400 days, and an installation's record until 400 days after the app last reported; your email choices go with the account. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
     <li><strong>Analytics data at PostHog</strong>: usage events are kept for as long as we analyse them; session recordings are deleted after 30 days. To have your analytics record deleted, email us. If you can send it from the app's device or tell us roughly when you used the app and on what device model, we can locate the random ID and delete everything attached to it.</li>
@@ -921,7 +935,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     one, email us and we will delete it.
   </p>
   <p>
-    The AI features are for people aged 13 and over, and the app is rated accordingly. Every screen written by Claude
+    The AI features are for people aged 13 and over, and the app is rated accordingly. Every screen written by Lark AI
     says so. Claude is told to stay away from romantic or sexual content and medical advice, replies are checked on our
     server and on your phone before you see them, and every reply has a <em>Report this reply</em> button that reaches us. If a message suggests someone is in distress, the app shows a fixed
     card about talking to someone.

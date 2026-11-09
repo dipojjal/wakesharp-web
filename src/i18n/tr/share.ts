@@ -65,7 +65,7 @@ export const share = {
     intro: `Bu bağlantı WakeSharp’ı telefonunuzda açar.`,
     open: `WakeSharp’ı aç`,
     desktop: `Bilgisayarda mısınız? Bu bağlantıyı WakeSharp’ı kullandığınız telefonda açın.`,
-    offer: `Hediyenizi bulmak için aynı Apple veya Google hesabıyla giriş yapın.`,
+    offer: `Teklifinizi bulmak için aynı Apple veya Google hesabıyla giriş yapın.`,
     other: `Yeni bir telefon mu, yoksa uygulamayı mı sildiniz? WakeSharp’ı yükleyin, ardından kaldığınız yerden devam etmek için aynı Apple veya Google hesabıyla giriş yapın.`,
     billing: `WakeSharp ödemelerinin tümü App Store veya Google Play üzerinden yapılır. Bir ödeme gerçekleşmediyse planınızı korumak için ödeme yönteminizi orada güncelleyin.`,
     billingApple: `App Store’da ödeme yönteminizi güncelleyin`,

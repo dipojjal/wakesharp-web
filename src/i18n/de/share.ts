@@ -67,7 +67,7 @@ export const share = {
     intro: `Dieser Link öffnet WakeSharp auf deinem Telefon.`,
     open: `WakeSharp öffnen`,
     desktop: `Am Computer? Öffne diesen Link auf dem Telefon, auf dem du WakeSharp nutzt.`,
-    offer: `Melde dich mit demselben Apple- oder Google-Konto an, um dein Geschenk zu finden.`,
+    offer: `Melde dich mit demselben Apple- oder Google-Konto an, um dein Angebot zu finden.`,
     other: `Neues Telefon oder die App gelöscht? Installiere WakeSharp und melde dich mit demselben Apple- oder Google-Konto an, um dort weiterzumachen, wo du aufgehört hast.`,
     billing: `Jede Zahlung für WakeSharp läuft über den App Store oder Google Play. Wenn eine Zahlung nicht geklappt hat, aktualisiere dort deine Zahlungsmethode, damit dein Abo weiterläuft.`,
     billingApple: `Zahlungsmethode im App Store aktualisieren`,
