@@ -18,7 +18,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
       <li>The <strong>camera</strong> (Scan an Object, Fetch, Photo Proof, First Light, and Face Check and Fruit Slash, which use the <strong>front</strong> camera) and your <strong>step count</strong> (Walk It Off) are optional, used only when you set that mission up and while it runs, and processed <strong>entirely on your device</strong>. Live camera frames and step counts are not uploaded. If you create an optional account, the small reference-photo thumbnails you enrol are included in your private backup, as described below.</li>
       <li><strong>WakeSharp shows no adverts.</strong> Data sent off your device includes <strong>usage and marketing measurement</strong>, <strong>purchase records</strong>, a small <strong>record of each installation</strong> that decides which notifications and emails to send, an optional <strong>account backup</strong>, and anything you choose to send us, such as a support message or why you cancelled. Measurement uses app, subscription and permitted device identifiers; it can be linked to your random account ID when you sign in. Alarm labels, calendar content, camera frames and step counts are not marketing data.</li>
       <li>If you create the optional account, WakeSharp may <strong>email</strong> you about your own plan, such as a payment that did not go through, and send the Lark's <strong>offers and check-ins</strong> by email or, on iPhone, as notifications. Offer emails follow your choice, and where you live decides whether that choice starts on or off. Every email has an unsubscribe link, and your mail app's own unsubscribe button works too. See <a href="#emails-and-notifications">Emails and notifications</a>.</li>
-      <li>Some Lark features can use <strong>Claude</strong>, an AI made by Anthropic. They are <strong>off unless you turn them on</strong>, and your name, calendar, location and alarm labels are not sent. See <a href="#ai-features">AI features</a>.</li>
+      <li>Some Lark features, called <strong>Lark AI</strong> in the app, can use Claude, an AI made by Anthropic. They are <strong>off unless you turn them on</strong>, and your name, calendar, location and alarm labels are not sent. See <a href="#ai-features">AI features</a>.</li>
       <li>On iPhone, weather is optional: choose a city or allow location access. Weather coordinates are rounded before being sent to our weather service and Apple Weather, as described below. Network services also receive your IP address and may infer an approximate region. You can turn off product and marketing analytics in Settings. Tracking permission and regional privacy choices are separate controls.</li>
     </ul>
   </div>
@@ -584,7 +584,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     the schedule-only fragment; no name in a link) and Docs/releases/
     2.23-owner-round.md (no push notifications). The paragraph on the reward
     for a first morning together (iOS 2.32) was written 2026-11-08 against
-    supabase/migrations/20261108200000_wake_group_rewards.sql (first_joins,
+    supabase/migrations/20261109020440_wake_group_rewards.sql (first_joins,
     invites and rewards, first_seen, same_person, the keyed network hash and
     its 14-day prune, what an account deletion cascades to), which goes live
     with the 2.32 release. Re-check it whenever any of those change.
@@ -828,12 +828,12 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   */}
   <h2 id="ai-features">AI features</h2>
   <p>
-    Some Lark features can use Claude, an AI made by
+    Some Lark features, called Lark AI in the app, can use Claude, an AI made by
     <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic</a>. They are
     <strong>off unless you turn them on</strong>. The app asks once, and you can change your answer any time in
     Settings under Lark AI. Your answer is kept on your phone only, so a restored backup or a new phone asks again.
     With them off, nothing goes to Anthropic and the Lark uses its own scripts and templates. Screens written by
-    Claude say so, and the Lark says it is an AI if you ask.
+    Lark AI say so, and the Lark says it is an AI if you ask.
   </p>
   <p>Here is what each feature sends when it is on:</p>
   <ul>
@@ -935,7 +935,7 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
     one, email us and we will delete it.
   </p>
   <p>
-    The AI features are for people aged 13 and over, and the app is rated accordingly. Every screen written by Claude
+    The AI features are for people aged 13 and over, and the app is rated accordingly. Every screen written by Lark AI
     says so. Claude is told to stay away from romantic or sexual content and medical advice, replies are checked on our
     server and on your phone before you see them, and every reply has a <em>Report this reply</em> button that reaches us. If a message suggests someone is in distress, the app shows a fixed
     card about talking to someone.
