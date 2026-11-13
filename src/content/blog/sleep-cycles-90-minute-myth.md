@@ -1,9 +1,9 @@
 ---
 title: "The 90-Minute Myth: What Sleep Cycles Actually Mean for Your Bedtime"
-seoTitle: "Sleep Cycle Calculator Myth: What 90 Minutes Really Means"
-description: "Sleep cycles are not a fixed 90 minutes. They run roughly 70 to 120. Here is what that means for the bedtime you pick tonight, and what actually helps."
+seoTitle: "How Long Is a Sleep Cycle? Why 90 Minutes Is a Myth"
+description: "How long is a sleep cycle? About 90 minutes on average, but really 70 to 120. What that means for the bedtime a sleep cycle calculator gives you tonight."
 pubDate: 2026-08-29T19:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-cycles-90-minute-myth/hero.jpg
@@ -18,6 +18,8 @@ It is 9:40 PM. You have to be up at six. You have typed "sleep cycle calculator"
 Then you wake at six feeling like a dropped plate anyway.
 
 The reasoning that got you there is not silly. It is a real fact, applied with a precision the fact cannot support. Since you are probably deciding tonight's bedtime in the next hour or so, it is worth separating those two things before you set the alarm.
+
+**The short answer:** a sleep cycle lasts about 90 minutes on average, but the first cycle of the night usually runs 70 to 100 minutes and later ones 90 to 120. Most adults go through four to six cycles a night, with deep sleep concentrated in the early cycles and REM sleep in the later ones. Because the length varies that much, timing your alarm to a cycle boundary is guesswork; total sleep and a steady wake time matter more.
 
 ## Start with the part that is true
 
@@ -65,7 +67,7 @@ You have just traded something with strong evidence behind it for something with
 
 2. **Treat regularity as a separate variable from duration, because it is.** Following 61 undergraduates for a month, researchers found that more irregular sleepers had lower grades and a body clock running nearly three hours later, with no significant difference in their average sleep duration ([Phillips et al., *Scientific Reports*, 2017](https://www.nature.com/articles/s41598-017-03171-4)). Same hours. Different outcomes. The variable doing the work was consistency.
 
-3. **Work backward to a sleep opportunity, not a boundary.** From your wake time, count back 8 to 8.5 hours in bed to give yourself a realistic shot at 7 plus asleep, then round to the nearest quarter hour. Fifteen-minute granularity is about as much precision as the underlying biology will honestly support.
+3. **Work backward to a sleep opportunity, not a boundary.** From your wake time, count back 8 to 8.5 hours in bed to give yourself a realistic shot at 7 plus asleep, then round to the nearest quarter hour. Fifteen-minute granularity is about as much precision as the underlying biology will honestly support. Our [sleep calculator](/tools/sleep-calculator) does this in hours rather than cycles, and there is a [bedtime chart by wake-up time](/blog/what-time-to-go-to-bed-work-backward) if you would rather read it off a table.
 
 4. **If you are already late, just go to bed.** Do not wait for the next boundary. The next boundary is imaginary; the next 74 minutes of [scrolling](/blog/revenge-bedtime-procrastination) are not.
 
@@ -94,6 +96,14 @@ Not in the way they present themselves. They assume a fixed 90-minute cycle, but
 ### How long is a sleep cycle, really?
 
 There is no single number. The first NREM to REM cycle of the night averages 70 to 100 minutes and later cycles run roughly 90 to 120, so most people complete four to six in a full night. The composition changes too: deep slow-wave sleep dominates the early cycles and REM dominates the later ones. Ninety is a reasonable average to teach. It is a poor number to multiply by five and act on.
+
+### How many sleep cycles do you need a night?
+
+Most adults complete four to six, which is simply what seven to nine hours of sleep contains. Aim for the hours rather than the cycle count: adults are advised to sleep seven or more hours regularly, and that recommendation is about total sleep, not about landing on a particular number of cycles.
+
+### Is it bad to wake up in the middle of a sleep cycle?
+
+Waking from deep sleep makes the first stretch of the morning foggier, which is the real effect behind the cycle idea. But you cannot reliably time it, and the fog passes within about 15 to 60 minutes. Daylight, movement and a fixed wake time help more than moving your alarm around. The details are in [sleep inertia](/blog/sleep-inertia-why-you-wake-up-groggy).
 
 ### Is it better to sleep 6 hours or 7.5 hours to wake at the end of a cycle?
 

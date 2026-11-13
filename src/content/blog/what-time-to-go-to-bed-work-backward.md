@@ -1,8 +1,9 @@
 ---
 title: "What Time Should You Go to Bed? Work Backward From Sharp"
-description: "Stop counting eight hours back from your alarm. Count back from tomorrow's first real commitment, then budget grogginess, latency and time in bed."
+seoTitle: "What Time Should I Go to Bed? A Bedtime Chart by Wake Time"
+description: "What time should you go to bed? A bedtime chart by wake-up time, and why to count back from tomorrow's first commitment rather than from the alarm."
 pubDate: 2026-09-06T19:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/what-time-to-go-to-bed-work-backward/hero.jpg
@@ -17,6 +18,8 @@ It is 11:20 on a Sunday night. Your alarm is set for 6:30. You run the arithmeti
 Monday at 9:00 you are present and not much else. You have answers, but they arrive a beat late. You reread the same line in the deck twice. By 10:15 your head finally turns over properly, which is roughly forty minutes after anybody needed it to.
 
 The arithmetic was not wrong. It was aimed at the wrong target.
+
+**The short answer:** most adults need at least 7 hours of actual sleep, and getting that takes roughly 8 to 9 hours in bed. For a 7:00 AM alarm, that means lights out between about 10:10 and 10:45 PM; for 6:00 AM, between about 9:10 and 9:45 PM. The chart below covers other wake times. If your first important commitment comes soon after you wake, move the alarm earlier first and then the bedtime with it.
 
 ## Your alarm is not your deadline
 
@@ -48,6 +51,14 @@ Eighty five percent sounds high until you turn it around. At 85 percent efficien
 
 The joint consensus statement from the American Academy of Sleep Medicine and the Sleep Research Society recommends that [adults sleep seven or more hours per night](https://jcsm.aasm.org/doi/10.5664/jcsm.4758) on a regular basis. Note the shape of that: a floor, not a target, and the same statement acknowledges that individual need varies with genetic, behavioral, medical and environmental factors. Seven is where the evidence stops arguing, not where you personally stop being tired.
 
+Children and teenagers need more, which is worth knowing if you are setting someone else's bedtime too. The AASM's [pediatric consensus statement](https://jcsm.aasm.org/doi/10.5664/jcsm.5866) recommends:
+
+| Age | Recommended sleep per night |
+| --- | --- |
+| 6 to 12 years | 9 to 12 hours |
+| 13 to 18 years | 8 to 10 hours |
+| Adults | 7 hours or more |
+
 ## Run the arithmetic backward
 
 Pick the first thing tomorrow that actually requires cognition. Not the alarm. Not "getting up." The meeting, the exam, the drive, the interview, the surgery, the toddler handoff that goes badly when you are slow.
@@ -67,6 +78,22 @@ That is the whole method. Your bedtime tonight is 10:10, not 11:00.
 Two notes on the last row, because this is where people double count. Sleep efficiency already absorbs your latency and your night wakings, so divide your sleep need by your efficiency (7.5 / 0.85 = 8.8 hours) **or** add latency and wake time separately. Do not do both. And if you have no idea what your efficiency is, 85 percent is a reasonable working assumption for a healthy sleeper; use a lower number if you know you are a slow starter.
 
 Compare that to the naive version. Alarm at 7:00, minus eight, bedtime at 11:00. Same alarm, same morning, fifty minutes less sleep than you thought you were getting, and a 9:00 commitment that lands right at the edge of the inertia window instead of safely past it.
+
+## Bedtime chart: what time to go to bed for your wake-up time
+
+If the alarm time is already settled, here is the bottom row of that table worked out for common wake times. Each bedtime is the time in bed needed to get that much actual sleep at 85 percent efficiency (8 hours 15 minutes for 7 hours asleep, 8 hours 50 minutes for 7.5, and 9 hours 25 minutes for 8).
+
+| Wake-up time | Lights out for 7 hours asleep | For 7.5 hours | For 8 hours |
+| --- | --- | --- | --- |
+| 5:00 AM | 8:45 PM | 8:10 PM | 7:35 PM |
+| 5:30 AM | 9:15 PM | 8:40 PM | 8:05 PM |
+| 6:00 AM | 9:45 PM | 9:10 PM | 8:35 PM |
+| 6:30 AM | 10:15 PM | 9:40 PM | 9:05 PM |
+| 7:00 AM | 10:45 PM | 10:10 PM | 9:35 PM |
+| 7:30 AM | 11:15 PM | 10:40 PM | 10:05 PM |
+| 8:00 AM | 11:45 PM | 11:10 PM | 10:35 PM |
+
+If you fall asleep within minutes and rarely wake in the night, your efficiency is higher and you can go to bed up to half an hour later than the chart says. If you are a slow starter, go earlier. For other numbers, the [sleep calculator](/tools/sleep-calculator) does the same subtraction for seven, eight or nine hours with your own time to fall asleep.
 
 ## Where your numbers will differ from mine
 
@@ -95,6 +122,14 @@ The bottom half of the table is not something an app can do. WakeSharp does not 
 ### What time should I go to bed if I have to wake up at 6 a.m.?
 
 Work backward from your sleep need, not from six. For 7.5 hours asleep at 85 percent sleep efficiency you need about 8 hours 50 minutes in bed, which puts lights out near 9:10 p.m. If seven hours is enough for you, that is about 8 hours 15 minutes in bed and a 9:45 p.m. bedtime. Then check the other direction too: if your first real commitment is at 7:30, a 6:00 alarm may not leave enough room for the grogginess window.
+
+### What time should I go to bed if I wake up at 7 a.m.?
+
+Between about 10:10 and 10:45 p.m. for most adults. That gives 7.5 to 7 hours of actual sleep at a typical 85 percent sleep efficiency. If you need eight real hours, lights out is closer to 9:35 p.m.
+
+### Is 10 p.m. to 5 a.m. enough sleep?
+
+Probably not, for most adults. Seven hours in bed usually means about six hours asleep once falling asleep and normal night wakings are subtracted, which is below the seven or more hours adults are advised to get regularly. If 5:00 is fixed, aim for lights out between about 8:45 and 9:15, depending on how quickly you usually fall asleep.
 
 ### Is 8 hours in bed the same as 8 hours of sleep?
 

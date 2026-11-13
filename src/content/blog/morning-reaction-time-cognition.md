@@ -1,9 +1,9 @@
 ---
 title: "Your Reaction Time at 7 AM Is Worse Than You Think"
-seoTitle: "Reaction Time After Waking Is Worse Than You Think"
-description: "Sleep inertia shows up in milliseconds. What the psychomotor vigilance task reveals about your reaction time at 7 AM, and how to measure your own."
+seoTitle: "Average Reaction Time: Why Yours Is Worse at 7 AM"
+description: "Average reaction time is about a quarter of a second, and slower just after waking. What the research and the vigilance test show, and how to measure yours."
 pubDate: 2026-09-09T08:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/morning-reaction-time-cognition/hero.jpg
@@ -16,6 +16,12 @@ draft: false
 It is 7:04 AM. You are three minutes into the day. You tilt the kettle, and the water goes past the rim of the mug and onto the back of your hand. You did see it happening. You watched it happen for what felt like a long time, and your arm did not get the message.
 
 Twenty minutes later you would not have spilled it. Nothing about your character changed in those twenty minutes. Something about your speed did, and unlike most things people say about mornings, that something has a unit: milliseconds.
+
+## What is the average reaction time?
+
+**The short answer:** for a simple visual signal, a healthy adult's average reaction time is roughly a quarter of a second. In a study of 1,469 people aged 18 to 65, mean simple reaction time was 231 milliseconds (213 after correcting for hardware delay), and it slowed by about half a millisecond for every year of age ([Woods et al., *Frontiers in Human Neuroscience*, 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4374455/)).
+
+Two caveats before you compare yourself with that number. Online and phone tests read slower than lab equipment, because screens and touch input add their own delay (more on that below). And your number is not fixed: in the first minutes after waking it is measurably worse, and the occasional response does not come at all.
 
 ## The test that turns grogginess into a number
 
@@ -94,6 +100,10 @@ Most of the recovery happens in the first 15 to 30 minutes, but the tail is long
 ### What counts as a slow reaction time in the morning?
 
 In the research literature the meaningful threshold is not an average but a lapse: any response slower than 500 milliseconds on the vigilance task. Rested adults produce very few. Santhi and colleagues recorded roughly two and a half times as many lapses immediately on waking as at baseline ([*PLOS ONE*, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3832615/)). Absolute millisecond figures from your phone will read higher than lab numbers because of touchscreen latency, so compare them only with your own.
+
+### What is a good reaction time?
+
+On a simple visual test with decent equipment, anything noticeably under the adult average of about 230 milliseconds is quick, and most rested adults land somewhere in the 200s. The more useful comparison is with yourself: the same test, on the same device, at the same time of day. Online scores vary with your screen and mouse or touchscreen as much as with you.
 
 ### Can a phone app measure reaction time accurately?
 

@@ -1,8 +1,9 @@
 ---
 title: "Your Phone Sleeps in Your Bedroom. Should It?"
-description: "Your phone is your alarm, so it stays. What the research says about light, notifications and charging distance, and what to change tonight."
+seoTitle: "Is Sleeping Next to Your Phone Bad? What Research Says"
+description: "Is it bad to sleep with your phone next to you? What research says about light, notifications, radiation and charging in bed, and what to change tonight."
 pubDate: 2026-09-02T19:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/phone-in-bedroom-at-night/hero.jpg
@@ -19,6 +20,8 @@ It is now 12:50 AM. The alarm is still set. That part of the evening worked perf
 The standard advice at this point is to ban the phone from the bedroom. It is clean advice, it is easy to say, and for most people it is unusable, because the phone **is** the alarm clock. Telling someone to remove their alarm clock from the room where they sleep is not sleep hygiene. It is a scheduling error.
 
 So let us ask a better question. Not "should the phone be in the room," but "what job does the phone have while it is in the room, and does it know that?"
+
+**The short answer:** sleeping next to your phone is not a proven health risk from radiation; a large 2024 review commissioned by the World Health Organization found no link between mobile phone use and brain cancer. The real costs are the light, the notifications and the late-night scrolling it invites, plus a heat risk if it charges under a pillow or blanket. Keep it across the room, silence everything except the alarm, and never charge it in the bed.
 
 ## What the light research actually found
 
@@ -56,6 +59,12 @@ You may have read that a phone on the nightstand costs you cognitive capacity ju
 
 It is a good study and it has not aged into certainty. A meta-analysis by [Böttger, Poschik and Zierer (2023) in Behavioral Sciences](https://pmc.ncbi.nlm.nih.gov/articles/PMC10525686/), covering 22 studies and 43 effect sizes, found a small overall negative effect (g = -0.14), significant for memory but not for attention, and inconsistent across regions. So: real, small, and patchy. Do not move your charger because a phone emits an invisible attention field. Move it because your arm can reach it at 3 AM, and your arm has no judgement.
 
+## What about radiation, and charging in bed?
+
+Two worries come up more than anything above. The first is radio waves. A systematic review commissioned by the World Health Organization, published in 2024, pooled the human studies and found no increase in brain tumours such as glioma, meningioma or acoustic neuroma with longer or heavier mobile phone use ([Karipidis et al., *Environment International*, 2024](https://pubmed.ncbi.nlm.nih.gov/39241333/)). A phone lying idle on a nightstand also transmits far less than one held to your ear during a call. Distance does nothing measurable here; it does a lot for everything else in this article.
+
+The second worry is heat, and that one has a real basis. Apple's own safety guidance says not to sleep on a device, its power adapter or a wireless charger, or put them under a blanket, pillow or your body, while they are connected to power ([Apple, important safety information for iPhone](https://support.apple.com/guide/iphone/important-safety-information-iph301fc905/ios)). A phone charging under a pillow traps heat and muffles the alarm at the same time. Charge it on a hard surface, in the open, out of arm's reach.
+
 ## Seven things you can change before you sleep tonight
 
 **1. Give the phone one job, and say it out loud.** Tonight the phone is an alarm clock. That is the whole contract. This sounds like a self-help affirmation and is really just a decision made in advance, while you still have the capacity to make one.
@@ -91,6 +100,14 @@ Only if you have a separate alarm clock you actually trust. For most people the 
 ### How far away should I charge my phone at night?
 
 There is no studied optimal distance, so ignore anyone who quotes one. Use a behavioural test instead: far enough that you have to get out of bed to reach it, close enough that you can hear the alarm clearly. A dresser or desk across the room usually satisfies both. The point is the standing up, not the metres.
+
+### Can sleeping next to your phone cause cancer?
+
+The best current evidence says no. A 2024 systematic review commissioned by the World Health Organization found no association between mobile phone use and brain cancers, even with long-term and heavy use, and a phone resting on a nightstand emits much less than one in use against your head. The reasons to move the phone are sleep-related, not radiation-related.
+
+### Is it safe to sleep with your phone under your pillow?
+
+Not while it is charging. Apple's safety guidance specifically says not to put a device that is connected to power under a pillow, blanket or your body, because of heat. Even unplugged, a phone under a pillow muffles the alarm. Put it on a hard surface across the room instead.
 
 ### Does airplane mode help you sleep?
 

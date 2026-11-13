@@ -1,9 +1,9 @@
 ---
 title: "How Alcohol Rewrites Your Sleep Architecture (and Your Morning)"
-seoTitle: "Alcohol and Sleep Quality: How a Drink Rewrites Your Night"
-description: "Alcohol knocks you out fast, then wrecks the second half of the night. What sedation does to REM, your heart rate and the morning after."
+seoTitle: "Does Alcohol Affect Sleep? What a Drink Does to Your Night"
+description: "Does alcohol affect sleep? It knocks you out fast, then wrecks the second half of the night. What it does to REM, your heart rate and the morning after."
 pubDate: 2026-09-08T19:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/alcohol-sleep-architecture/hero.jpg
@@ -18,6 +18,8 @@ Two glasses of wine with dinner. Asleep by 11:10, roughly nine minutes after you
 Then it is 3:14 AM. You are flat on your back, heart working a little harder than the room justifies, mouth like carpet, and your brain has decided that right now is the ideal moment to review an email you sent in 2019. You drift off again somewhere near four. The alarm goes at 6:30 and you feel scraped out, which seems deeply unfair, because you were nowhere near drunk.
 
 Nothing went wrong with your discipline. Alcohol did what alcohol reliably does: it borrowed against the first half of your night and collected on the second half, with interest.
+
+**The short answer:** yes, alcohol affects sleep, even in modest amounts. It helps you fall asleep faster, then, as your body clears it in the second half of the night, it fragments sleep, suppresses REM, keeps your heart rate up and makes early waking more likely. The more you drink and the closer to bedtime, the bigger the effect. Finishing your last drink three to four hours before bed helps; no amount is free.
 
 ## Sedation is not sleep
 
@@ -109,6 +111,10 @@ There is no single validated cutoff, but the wearable evidence points in a clear
 ### Why do I wake up at 3 AM after drinking?
 
 Several things converge. Blood alcohol is falling toward zero, so the sedation lifts and produces a rebound into lighter, more fragmented sleep. Sympathetic nervous system activity rises, heart rate stays elevated, and alcohol's suppression of vasopressin means a fuller bladder. That combination lands in the second half of the night, which is where the disruption is concentrated.
+
+### Which alcohol is worst for sleep?
+
+The amount matters far more than the type. A standard drink of beer, wine or spirits carries roughly the same alcohol, and that is what does the damage. Mixers add their own problem: cola and energy drinks bring caffeine, which [stays in your system for hours](/blog/caffeine-cutoff-time-sleep), so a rum and cola late in the evening costs you twice.
 
 ### Does one glass of wine affect sleep?
 

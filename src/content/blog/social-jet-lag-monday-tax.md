@@ -1,8 +1,8 @@
 ---
 title: "Social Jet Lag: The Monday Tax on Your Weekend Sleep-In"
-description: "Sleeping in on Saturday shifts your body clock later, then Monday's alarm fires at your biological 4 AM. The midsleep math, and the one hour rule."
+description: "Social jet lag: sleeping in on Saturday shifts your body clock, so Monday's alarm fires at your biological 4 AM. Signs, the midsleep math, and how to fix it."
 pubDate: 2026-08-30T19:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/social-jet-lag-monday-tax/hero.jpg
@@ -17,6 +17,8 @@ It is Sunday, a little after nine, and you are doing the arithmetic. Alarm at 6:
 Monday morning it is not plenty. The alarm goes off and something in you flatly declines. It does not feel like ordinary tiredness. It feels like an airport at 4 AM. What the arithmetic missed is that on Friday you went to bed at 1:30 and got up at ten, and on Saturday you did roughly the same. Over two days your body quietly relocated to a time zone a few hours west of the one your employer uses, and nobody thought to inform your alarm.
 
 This has a name, a formula, and twenty years of literature behind it. It is called social jet lag, and Monday is when the bill arrives.
+
+**The short answer:** social jet lag is the mismatch between when your body clock wants you to sleep and when your work or school schedule makes you sleep, measured as the shift in the middle of your sleep between free days and workdays. The usual signs are trouble falling asleep on Sunday night, a brutal Monday alarm and leaning harder on caffeine early in the week. The fix is keeping your weekend wake time within about an hour of your weekday one, and getting morning light on both.
 
 ## Jet lag without the airport
 
@@ -97,6 +99,10 @@ What it can do is make the wake time much harder to negotiate away at the exact 
 ### What is social jet lag?
 
 Social jet lag is the mismatch between the sleep schedule your body clock would choose and the one your work or school calendar imposes. It is measured as the difference between the midpoint of your sleep on free days and the midpoint on work days. Shifting your sleep timing by three hours between Friday and Monday causes the same kind of misalignment as a transatlantic flight, except you repeat it weekly and never adapt.
+
+### What are the symptoms of social jet lag?
+
+Mostly the same as travel jet lag, on a weekly loop: lying awake on Sunday night, a Monday alarm that feels like the middle of the night, grogginess that takes longer than usual to lift, and more caffeine early in the week. It tends to be worse for evening types with early schedules. If you also run short on sleep during the week, see [what a weekend lie-in can and cannot repay](/blog/sleep-debt-weekend-lie-ins).
 
 ### How do I calculate my social jet lag?
 

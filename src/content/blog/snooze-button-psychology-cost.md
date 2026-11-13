@@ -1,9 +1,9 @@
 ---
 title: "Why the Snooze Button Feels So Good (and What It Costs)"
-seoTitle: "Why Is Snoozing Bad? What the Snooze Button Really Costs"
-description: "Snoozing is not a character flaw, and the research is kinder to it than the headlines. What those eleven minutes actually cost, and what they do not."
+seoTitle: "Is Hitting Snooze Bad? What the Snooze Button Really Costs"
+description: "Is hitting snooze bad for you? The research is kinder than the headlines. What snoozing really costs, why the button wins, and how to stop hitting snooze."
 pubDate: 2026-09-04T08:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/snooze-button-psychology-cost/hero.jpg
@@ -18,6 +18,8 @@ You did not decide to snooze. That is the part worth sitting with.
 At 6:00 the noise started. Somewhere in the next second and a half, a hand you were not supervising found the largest soft target on the screen, and the noise stopped, and something in your chest unclenched. At 6:11 you were awake for real, mildly annoyed, and slightly behind. You could not have described the intervening decision, because there was not one. There was a stimulus and a response, and the response was faster than you.
 
 This is the most common human behaviour nobody has a good story about. Here is one, along with an honest account of where the evidence runs out, because on this question the honest version is more interesting than the sermon.
+
+**The short answer:** hitting snooze is less harmful than its reputation. In the best-controlled study so far, 30 minutes of snoozing cost habitual snoozers about six minutes of sleep and did not hurt their thinking on rising. The real costs are the minutes themselves, what a daily snooze habit says about your sleep timing, and the repeated decisions it hands to a half-awake brain. If you snooze every morning, fix the timing before you fight the button.
 
 ## Eleven minutes, 2.4 times, most mornings
 
@@ -69,7 +71,7 @@ Three things, none of which are the ones you have been sold.
 
 **It costs you an unguarded decision, repeatedly.** Sundelin's participants did fine on cognitive tests after 30 minutes of snoozing. But a cognitive test is not the same as the choices that actually happen in the snooze window: whether to skip the shower, whether to answer that message from bed, whether the run is happening. Those get made by a prefrontal cortex that Hilditch and McHill would tell you is the last one back on duty, and they get made two or three times per morning rather than once. The problem was never the ten minutes of light sleep. It is that the ten minutes contain three re-runs of a decision you already made last night, adjudicated by the least qualified version of you.
 
-## Four things that actually help
+## How to stop hitting snooze: four things that help
 
 1. **Move the alarm to where the evidence points.** If you snooze every morning, try setting the alarm 20 minutes later for a week and going to bed 20 minutes earlier. Robbins' bedtime finding suggests this does more than any amount of resolve. It is unglamorous and it usually works.
 2. **Decide the number the night before.** A bounded snooze that you chose while awake is a completely different object from an open-ended one you did not. Two is a policy. "Until I feel like it" is a habit loop with the brakes off.
@@ -92,7 +94,7 @@ And the honest scientific limit: nothing above proves that capping your snoozes 
 
 ## FAQ
 
-### Why is snoozing bad for you?
+### Is hitting snooze bad for you?
 
 Less bad than you have been told. The best controlled study, Sundelin and colleagues in 2024, found that 30 minutes of snoozing improved or did not affect cognition in habitual snoozers, cost about six minutes of sleep, and did not disturb sleep architecture or the cortisol awakening response. The real costs are the time, the fact that heavy snoozing signals insufficient or mistimed sleep, and the repeated handing of decisions to a brain that has not finished starting up.
 
@@ -104,6 +106,10 @@ In Robbins and colleagues' 2025 analysis of over three million nights, 55.6 perc
 
 The premise is half right. REM periods genuinely do get longer as the night goes on, so morning sleep is REM-rich. But the polysomnography in Sundelin's study found no clear effect of a 30-minute snooze period on overnight sleep architecture. The mechanism sounds convincing; the measurement has not backed it up.
 
-### How do I stop snoozing?
+### Does hitting snooze make you more tired?
+
+Not necessarily. In Sundelin's lab study, habitual snoozers were no sleepier and no worse on cognitive tests after 30 minutes of snoozing, possibly because snoozing kept them from being woken out of deep sleep. Where snoozing does leave people more tired, it is usually covering for a short night, and the tiredness is the sleep debt rather than the button.
+
+### How do I stop hitting snooze?
 
 Treat it as a timing problem first. Snoozing tracks strongly with later-than-usual bedtimes and evening chronotypes, so shifting your alarm later or your bedtime earlier addresses the cause. Then set a fixed number of snoozes while you are awake enough to mean it, and put something you can fail at between yourself and the off switch. Willpower at 6:00 is not a resource you have.

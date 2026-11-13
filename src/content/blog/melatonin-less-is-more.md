@@ -1,9 +1,9 @@
 ---
 title: "Melatonin: Why Less Is More (and When It Does Nothing)"
-seoTitle: "Melatonin Dosage: Why Less Is More, and When It Fails"
-description: "Melatonin is a timing signal, not a sedative. What the evidence says about 0.5 mg versus 10 mg gummies, when to take it, and when it does nothing."
+seoTitle: "How Much Melatonin Should You Take? Why Less Is More"
+description: "How much melatonin should you take? Usually far less than the bottle says. Dosage, timing, how long it takes to work, and when melatonin does nothing."
 pubDate: 2026-09-07T19:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/melatonin-less-is-more/hero.jpg
@@ -16,6 +16,8 @@ draft: false
 It is 11:40 PM. You chewed a raspberry gummy at 10:30 because the label said 10 mg, and 10 mg sounded like it meant business. Seventy minutes later you are awake, staring at the ceiling, doing the arithmetic on how many hours are left. Tomorrow you will surface at 6:30 feeling like you were dredged up from a lake, and you will draw one of two conclusions: melatonin does not work on you, or you need 15 mg.
 
 Both conclusions are wrong, and they are wrong in the same direction.
+
+**The short answer:** for most adults the research points to low doses, roughly 0.3 to 1 mg, not the 5 to 10 mg most bottles sell. Taken 30 to 60 minutes before bed it modestly helps you fall asleep; taken several hours earlier it can shift a late body clock. Bigger doses are not more effective, and they are more likely to leave you groggy the next morning. Check with a clinician first if you are pregnant, take other medication, or are thinking of giving it to a child.
 
 ## Melatonin is a "when", not a "how much"
 
@@ -95,9 +97,17 @@ Lower than the bottle suggests. The dose-response research points to roughly 0.3
 
 For a plain wind-down, 30 to 60 minutes before bed is the usual instruction. For actually shifting a late body clock earlier, phase response curve research suggests low-dose melatonin works best taken hours earlier, in the late afternoon or early evening, roughly 2 to 4 hours before your natural melatonin onset. For jet lag, the Cochrane evidence favours bedtime at your destination, and warns against taking it earlier in the local day.
 
-### Why does melatonin make me groggy in the morning?
+### How long does melatonin take to work?
 
-Usually because the dose was large enough to keep circulating past sunrise. High doses have been shown to leave plasma melatonin elevated into daylight hours, which reads to your body as an extended night. Cutting the dose rather than the habit is the first thing to try. Note also that label accuracy is poor, so your 5 mg may have been considerably more.
+Ordinary immediate-release melatonin peaks in the blood about 50 minutes after you take it and has a short half-life of around 45 minutes, according to a systematic review of its pharmacokinetics ([Harpsøe et al., *European Journal of Clinical Pharmacology*, 2015](https://pubmed.ncbi.nlm.nih.gov/26008214/)). That is why the usual advice for falling asleep is 30 to 60 minutes before bed. Shifting your body clock is slower: it builds over several nights of consistently timed doses.
+
+### How much melatonin is too much?
+
+There is no single proven limit, but more than about 5 mg rarely adds anything except a longer tail into the morning. NCCIH notes that short-term studies in adults reported only mild side effects, such as nausea and sleepiness, and that the possible long-term effects are unclear. Children are a different matter: accidental ingestions of gummies have sent children to hospital, so keep it stored like any other medicine and speak to a pediatric professional before using it.
+
+### Does melatonin make you groggy the next day?
+
+It can, usually because the dose was large enough to keep circulating past sunrise. High doses have been shown to leave plasma melatonin elevated into daylight hours, which reads to your body as an extended night. Cutting the dose rather than the habit is the first thing to try. Note also that label accuracy is poor, so your 5 mg may have been considerably more.
 
 ### Is it safe to take melatonin every night?
 

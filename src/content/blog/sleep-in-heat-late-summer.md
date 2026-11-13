@@ -1,9 +1,9 @@
 ---
 title: "Hot Nights, Sharp Mornings: Sleeping Through Late-Summer Heat"
-seoTitle: "How to Sleep in the Heat (and Still Wake Up Sharp)"
-description: "Heat blocks the core-temperature drop that starts sleep. Six fixes to run tonight, and an honest way to see what a hot night cost you tomorrow."
+seoTitle: "Too Hot to Sleep? 6 Ways to Sleep in the Heat Tonight"
+description: "Too hot to sleep? Heat blocks the core-temperature drop that starts sleep. The best temperature for sleep, six fixes to run tonight, and when to worry."
 pubDate: 2026-09-01T19:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-in-heat-late-summer/hero.jpg
@@ -18,6 +18,8 @@ It is 3:40 in the morning on the first of September. The sheet is on the floor. 
 At 6:30 the alarm goes off and you are a worse person than you were on Friday. Slower, shorter-tempered, unable to hold a sentence in your head long enough to finish it.
 
 The instinct is to call this a discipline problem. But on a hot night, what failed was not your willpower. It was a piece of thermoregulatory plumbing that has to work before sleep can start at all, and heat is very good at jamming it.
+
+**The short answer:** to sleep in the heat, help your body shed heat. Aim for a bedroom around 16 to 20°C (60 to 68°F) if you can get it, shade the windows by day and open them once it is cooler outside than in, take a warm shower one to two hours before bed, sleep under a single cotton or linen sheet with your feet out, and use a fan while the air is still cooler than your skin. The details, and the limits of each, are below.
 
 ## Sleep starts with a temperature drop, not a decision
 
@@ -93,13 +95,17 @@ Early September is also when hot nights collide with restarting schedules, so if
 
 ## FAQ
 
-### What is the best temperature for sleeping?
+### What is the best temperature for sleep?
 
 Most sleep research lands around 16 to 20 degrees Celsius, roughly 60 to 68 Fahrenheit, under a normal amount of bedding. The number matters less than the principle: the room has to be cooler than your skin for your body to shed heat into it. Bedding, humidity and nightwear shift the ideal figure by several degrees, which is why two people in one bed can genuinely disagree.
 
 ### How do you sleep in the heat without air conditioning?
 
 Stack the small effects, because none wins alone. Shade the windows by day and ventilate once outside air is cooler, warm shower one to two hours before bed, a single cotton or linen sheet with hands and feet uncovered, a cross-breeze rather than a fan aimed at your face, and humidity attacked separately from temperature.
+
+### Should you open the windows at night in a heatwave?
+
+Yes, once the air outside is cooler than the air inside, which is usually well after sunset and into the early morning. During the hot part of the day, do the opposite: keep the windows shut and the sun-facing side shaded, so the room has less heat to lose by bedtime. If the night stays hotter outside than in, opening up only lets more heat in.
 
 ### Does a fan actually help you sleep when it is hot?
 

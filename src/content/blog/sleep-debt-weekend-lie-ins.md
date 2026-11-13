@@ -1,9 +1,9 @@
 ---
 title: "Sleep Debt Is Real. Weekend Lie-Ins Aren't the Fix"
 seoTitle: "Can You Catch Up on Sleep Debt on Weekends? Not Really"
-description: "Recovery sleep repays some of what you lost. It does not repay your body clock. What a weekend lie-in buys back, and what it charges on Monday."
+description: "Can you catch up on sleep? Partly. What a weekend lie-in repays, what it charges your body clock on Monday, and how to recover from sleep debt properly."
 pubDate: 2026-09-04T19:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/sleep-debt-weekend-lie-ins/hero.jpg
@@ -18,6 +18,8 @@ It is Friday evening, and a small accountant in the back of your skull has been 
 Here is how that tends to go. Saturday you surface at 10:40, and it feels earned, because it is. Saturday night you are not remotely tired at eleven, so you stay up, and bed happens at one. Sunday you sleep in again, slightly less. Then comes the last night of the weekend, whichever night that is for you, and you lie there wide awake with an alarm booked for 6:15 that has started to look less like a schedule and more like a threat. The morning after, you are precisely as wrecked as the Thursday you were trying to repair.
 
 None of that is a discipline problem. It is what happens when you settle one debt in a currency the lender does not accept.
+
+**The short answer:** you can partly catch up on sleep. Extra sleep restores how alert and cheerful you feel within a night or two, but attention and processing speed recover more slowly, and a long weekend lie-in shifts your body clock later, which makes Monday harder. The reliable way to repay sleep debt is a fixed wake time with earlier bedtimes and short naps, spread over a week or more.
 
 ## Sleep debt is a real quantity. It is not a bank balance.
 
@@ -59,13 +61,13 @@ Neither one can establish that lie-ins repair anything, and it is worth saying s
 
 Regularity beat quantity. That is the practical headline, and it points away from the weekend fix rather than toward it.
 
-## Six things that work better than sleeping until eleven
+## How to recover from sleep debt (better than sleeping until eleven)
 
 1. **Hold the wake time, move the bedtime.** This is the entire trick. Extra sleep taken at the front of the night costs your body clock nothing. Extra sleep taken at the back of the morning is what moves it.
 2. **Cap the lie-in at about an hour.** Sleeping in by 45 to 60 minutes on a free day is a rounding error to your circadian system. Three hours is [a westward flight you did not book](/blog/long-weekend-sleep-tuesday-monday).
 3. **Get light early anyway.** Even after a longer night, going outside within half an hour of waking anchors the clock against the drift the weekend is trying to introduce. Coffee outdoors counts.
 4. **Take extra sleep as an early afternoon nap, not a late morning.** A short nap adds sleep without touching the timing of your night, which is the specific thing a lie-in gets wrong.
-5. **Repay across weeks, not weekends.** Thirty extra minutes a night, seven nights a week, is more sleep than a three-hour Saturday and costs nothing in rhythm. It is boring. It is also the only version the evidence supports.
+5. **Repay across weeks, not weekends.** Thirty extra minutes a night, seven nights a week, is more sleep than a three-hour Saturday and costs nothing in rhythm. It is boring. It is also the only version the evidence supports. If you want to see the size of the hole first, our [sleep debt calculator](/tools/sleep-debt-calculator) compares seven nights against the amount you are aiming for.
 6. **Guard the last evening of the weekend.** Sunday night insomnia is mostly a timing artefact, not anxiety, and caffeine makes it considerably worse than people assume. See [Caffeine's 10-Hour Tail](/blog/caffeine-cutoff-time-sleep) for how long that afternoon cup is actually still working.
 
 ## Where WakeSharp fits, and where it does not
@@ -99,3 +101,7 @@ Sleeping in by up to about an hour is fine and probably useful. The trouble star
 ### How long does it take to recover from a week of sleep deprivation?
 
 Longer than a weekend, and the honest answer is that it depends on how deep the deficit went. In Belenky's dose-response study, restricted groups had not fully recovered vigilance performance after three consecutive nights of 8 hours in bed. In Lo and colleagues' adolescent study, some cognitive measures were still lagging after the recovery nights. Plan for a week of consistent, slightly longer nights rather than one heroic Saturday.
+
+### Can naps help you catch up on lost sleep?
+
+Yes, within limits. An early-afternoon nap adds sleep without moving your body clock, which is exactly what a late lie-in gets wrong. Keep it to roughly 10 to 20 minutes if you need to be sharp straight afterwards, since longer naps can leave you [groggy for a while](/blog/sleep-inertia-why-you-wake-up-groggy), and avoid napping in the evening, when it eats into the sleep pressure you need at bedtime.
