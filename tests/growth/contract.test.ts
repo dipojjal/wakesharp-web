@@ -37,10 +37,14 @@ test('no route grants an entitlement', () => {
   assert.match(read('../../api/_lib/referrals.ts'), /SQUAD_UNLOCK_THRESHOLD = 20/);
 });
 
-test('referral routes are wired, and the only scheduled job is retention', () => {
+test('referral routes are wired, and the scheduled jobs are retention and blog publishing', () => {
   assert.ok(vercel.rewrites.some((entry: { source: string }) => entry.source === '/r/:code'));
-  // G1-04: growth_prune_expired existed and nothing called it.
-  assert.deepEqual(vercel.crons, [{ path: '/api/internal/referrals/prune', schedule: '17 3 * * *' }]);
+  // G1-04: growth_prune_expired existed and nothing called it. The second job
+  // rebuilds the site when a staged blog post comes due (blog-publish.test.ts).
+  assert.deepEqual(vercel.crons, [
+    { path: '/api/internal/referrals/prune', schedule: '17 3 * * *' },
+    { path: '/api/internal/blog/publish', schedule: '5 23 * * *' },
+  ]);
   const prune = read('../../api/internal/referrals/prune.ts');
   assert.match(prune, /growth_prune_expired\(\)/);
   assert.match(prune, /growth_prune_rate_limits\(\)/);

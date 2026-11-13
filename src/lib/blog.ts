@@ -40,16 +40,30 @@ const isLive = (p: BlogPost): boolean => !p.data.draft && p.data.pubDate.getTime
  * automatically absent from the sitemap, so there is no separate filter to
  * keep in sync in astro.config.mjs.
  *
- * The date check runs once per build, not in real time. That is safe here
- * because publishing IS pushing: every scheduled post lands as a fresh commit,
- * and that push triggers the build that first evaluates it. A staged
+ * The date check runs once per build, not in real time. That is safe because a
+ * build runs at or after every pubDate: either the push that lands a post, or
+ * the daily publish cron (api/internal/blog/publish.ts), which rebuilds through
+ * a deploy hook once /blog-schedule.json says a staged post has come due. A
  * future-dated post therefore appears on the first build at-or-after its
- * pubDate - and if the routine ever skips a run, the failure direction is
- * "appears late," never "appears early."
+ * pubDate - and if a run is ever missed, the failure direction is "appears
+ * late," never "appears early."
  */
 export async function getPublishedPosts(locale: LocaleCode = DEFAULT_LOCALE): Promise<BlogPost[]> {
   const posts = (await allPosts()).filter((p) => p.data.lang === locale && isLive(p));
   return posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+}
+
+/**
+ * When the next staged post goes live: the earliest pubDate still in the
+ * future among posts that are not drafts, in any language, or null. Served as
+ * /blog-schedule.json for the daily publish cron, which rebuilds the site once
+ * this moment has passed.
+ */
+export async function nextScheduledPubDate(now = Date.now()): Promise<Date | null> {
+  const upcoming = (await allPosts())
+    .filter((p) => !p.data.draft && p.data.pubDate.getTime() > now)
+    .map((p) => p.data.pubDate.getTime());
+  return upcoming.length ? new Date(Math.min(...upcoming)) : null;
 }
 
 /** Every live version of one article, English included, in enabled locales only. */

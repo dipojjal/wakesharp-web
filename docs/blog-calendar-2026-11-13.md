@@ -1,8 +1,8 @@
 # WakeSharp Blog: 30-Day Calendar (Nov 13 to Dec 12, 2026)
 
-One English post a day at **6:00 PM ET** for 30 days, starting Friday November 13, 2026. Every slot is EST, so every `pubDate` uses the `-05:00` offset. The desktop scheduled task **WakeSharp daily blog post** (`wakesharp-daily-blog`, cron `0 18 * * *`) writes, checks, commits and pushes one post per run from this file, following the routine handbook in [blog-schedule.md](./blog-schedule.md) (the authoring contract, copy linter, claim rules and style laws all still apply). It switches itself off once all 30 are live.
+One English post a day at **6:00 PM ET** for 30 days, starting Friday November 13, 2026. Every slot is EST, so every `pubDate` uses the `-05:00` offset.
 
-This file is the source of truth for what each day publishes. To change a post, edit its row and brief before its slot; to skip one, set its status to `Skipped`.
+**All 30 posts were written on November 13** and sit in `src/content/blog/` with their future `pubDate`s, following the routine handbook in [blog-schedule.md](./blog-schedule.md). The site hides a post until a build runs at or after its `pubDate`, so publishing needs only a rebuild: a Vercel cron (`/api/internal/blog/publish`, daily at 23:00 UTC, 6 PM EST) reads the live site's `/blog-schedule.json` and, when a scheduled post has come due, triggers a production build through a deploy hook. Nothing has to run on a laptop. To change a post, edit its file before its date; to hold one back, set `draft: true`.
 
 ## How the 30 were picked
 
@@ -10,42 +10,42 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Score.** (November to December search volume for the target query, plus half the volume of its secondary queries) × ((100 − keyword difficulty) / 100)² × WakeSharp fit (1.0 for alarms, waking and mornings; 0.7 to 0.9 for sleep timing and morning cognition; 0.5 for general sleep health) × 0.6 when the head term is shopping intent and the post is informational.
 - **Kept on topic.** Magnesium for sleep (135,000, KD 10), dizziness on waking (12,100, KD 15), sleep score (14,800, KD 22), mouth taping (60,500, KD 18) and hypnic jerks (27,100, KD 30) scored well but sit too far from waking up and alarms; head terms such as sleep hygiene (KD 65) and circadian rhythm (KD 80) are out of reach for now.
 - **No cannibalising.** Queries an existing post, tool or feature page already targets were left out (keyword map in [the Nov 13 audit](./audits/blog-seo-dataforseo-2026-11-13.md)); where a page owns a head term (math alarm clock, nap timer, sleep calculator), the new post targets a different query and links to it.
-- **Placement.** Daylight saving ended on November 1, so the light posts come early and spread out: sunrise alarm clocks on Day 1, SAD lamps on Day 6 at November's peak, winter blues on Day 19 at December's. Turkey and food coma land five days before Thanksgiving, earplugs on Thanksgiving for guest-room sleepers, finals on Day 25 and habits on Day 30, ahead of New Year. No two posts from the same cluster run on consecutive days.
+- **Placement.** Sunrise keeps getting later from mid-November to early January, so the light posts come early and spread out: sunrise alarm clocks on Day 1, SAD lamps on Day 6 at November's peak, winter blues on Day 19 at December's. Turkey and food coma land five days before Thanksgiving, earplugs on Thanksgiving for guest-room sleepers, finals on Day 25 and habits on Day 30, ahead of New Year. No two posts from the same cluster run on consecutive days.
 
 ## Calendar
 
 | Day | Slot (ET) | Headline | Slug · Category | Target query (US volume/mo, KD) | Status |
 |---|---|---|---|---|---|
-| 1 | Fri Nov 13, 6:00 PM | Do Sunrise Alarm Clocks Work? What Dawn Simulation Can and Can't Do | `do-sunrise-alarm-clocks-work` · tips-and-tricks | sunrise alarm clock (49,500, KD 4) | Scheduled (hero ready) |
-| 2 | Sat Nov 14, 6:00 PM | Why Do I Wake Up With a Headache? 9 Causes and What Helps | `waking-up-with-a-headache` · sleep-science | waking up with a headache / wake up headache (27,100 (cluster), KD 3) | Scheduled |
-| 3 | Sun Nov 15, 6:00 PM | iPhone Alarm Too Quiet? How to Make Your Alarm Louder | `iphone-alarm-volume-too-low` · tips-and-tricks | iphone alarm volume (18,100, KD 8) | Scheduled |
-| 4 | Mon Nov 16, 6:00 PM | Sleep Paralysis: Why You Wake Up and Can't Move (and How to Make It Rarer) | `sleep-paralysis-causes-how-to-stop` · sleep-science | sleep paralysis (201,000, KD 33) | Scheduled |
-| 5 | Tue Nov 17, 6:00 PM | How to Wake Yourself Up When You're Still Tired: 11 Things That Work | `how-to-wake-yourself-up` · morning-routines | how to wake yourself up (8,100, KD 16) | Scheduled |
-| 6 | Wed Nov 18, 6:00 PM | SAD Lamps: How to Use Light Therapy on Dark Winter Mornings | `sad-lamp-light-therapy-guide` · sleep-science | sad lamp (18,100, KD 8) | Scheduled |
-| 7 | Thu Nov 19, 6:00 PM | The Best Alarm Sound to Wake Up To, According to Research | `best-alarm-sound-to-wake-up` · tips-and-tricks | alarm sounds (14,800, KD 3) | Scheduled |
-| 8 | Fri Nov 20, 6:00 PM | Is 6 Hours of Sleep Enough? What 4, 5, 6 and 7 Hours Do to Your Mornings | `is-6-hours-of-sleep-enough` · sleep-science | is 6 hours of sleep enough (22,200, KD 11) | Scheduled |
-| 9 | Sat Nov 21, 6:00 PM | Does Turkey Make You Sleepy? The Tryptophan Myth and the Real Food Coma | `does-turkey-make-you-sleepy` · sleep-science | does turkey make you sleepy (5,400, KD 4) | Scheduled |
-| 10 | Sun Nov 22, 6:00 PM | How to Fall Asleep Fast: The Military Method, 4-7-8 and What Actually Works | `how-to-fall-asleep-fast` · tips-and-tricks | how to fall asleep fast (74,000, KD 26) | Scheduled |
-| 11 | Mon Nov 23, 6:00 PM | Night Owl in a 9-to-5 World: What You Can (and Can't) Change | `night-owl-wake-up-early` · sleep-science | night owl (49,500, KD 18) | Scheduled |
-| 12 | Tue Nov 24, 6:00 PM | Math Puzzles for Adults: 12 Quick Ones to Wake Up Your Brain | `math-puzzles-brain-warm-up` · productivity | math puzzles (8,100, KD 13) | Scheduled |
-| 13 | Wed Nov 25, 6:00 PM | Why Am I Always Tired? 10 Reasons You Wake Up Exhausted | `why-am-i-always-tired` · sleep-science | why am i always tired (33,100, KD 36) | Scheduled |
-| 14 | Thu Nov 26, 6:00 PM | Sleeping With Earplugs: Is It Safe, and Will You Hear Your Alarm? | `sleeping-with-earplugs` · tips-and-tricks | sleeping with earplugs (14,800, KD 18) | Scheduled |
-| 15 | Fri Nov 27, 6:00 PM | How Much Deep Sleep Do You Need? (and How to Get More) | `how-much-deep-sleep-do-you-need` · sleep-science | how much deep sleep do you need (22,200, KD 18) | Scheduled |
-| 16 | Sat Nov 28, 6:00 PM | A Morning Routine That Survives Real Mornings: 7 Steps in 20 Minutes | `morning-routine-that-sticks` · morning-routines | morning routine (18,100, KD 38) | Scheduled |
-| 17 | Sun Nov 29, 6:00 PM | Chronotype Quiz: Bear, Wolf, Lion or Dolphin, and What the Science Says | `chronotype-quiz-body-clock` · sleep-science | chronotype quiz (3,600, KD 7) | Scheduled |
-| 18 | Mon Nov 30, 6:00 PM | Time Blindness: Why ADHD Mornings Slip Away (and Alarms That Help) | `time-blindness-adhd-mornings` · productivity | time blindness (12,100, KD 27) | Scheduled |
-| 19 | Tue Dec 1, 6:00 PM | Winter Blues and Dark Mornings: How to Wake Up When It's Still Night Outside | `winter-blues-dark-mornings` · morning-routines | winter blues (5,400, KD 20) | Scheduled |
-| 20 | Wed Dec 2, 6:00 PM | Why Do I Wake Up at 3 AM? Causes and How to Fall Back Asleep | `why-do-i-wake-up-at-3am` · sleep-science | waking up at 3am (9,900, KD 25) | Scheduled |
-| 21 | Thu Dec 3, 6:00 PM | Working Memory: What It Is, Why Mornings Shrink It, and How to Help It | `working-memory-morning-brain` · productivity | working memory (18,100, KD 38) | Scheduled |
-| 22 | Fri Dec 4, 6:00 PM | The Best Temperature for Sleep, and How to Hit It on Winter Nights | `best-temperature-for-sleep` · tips-and-tricks | best temperature for sleep (18,100, KD 23) | Scheduled |
-| 23 | Sat Dec 5, 6:00 PM | Dysania: Why Getting Out of Bed Feels Impossible (and What Helps) | `dysania-cant-get-out-of-bed` · morning-routines | dysania (3,600, KD 3) | Scheduled |
-| 24 | Sun Dec 6, 6:00 PM | Delayed Sleep Phase Syndrome: When Your Body Clock Runs Hours Late | `delayed-sleep-phase-syndrome` · sleep-science | delayed sleep phase syndrome (12,100, KD 20) | Scheduled |
-| 25 | Mon Dec 7, 6:00 PM | How to Stay Awake While Studying (and in Class) Without Wrecking Tomorrow | `how-to-stay-awake-while-studying` · productivity | how to stay awake while studying (720, KD 2) | Scheduled |
-| 26 | Tue Dec 8, 6:00 PM | Why Do I Wake Up With Anxiety? Morning Cortisol, Explained | `waking-up-with-anxiety` · morning-routines | waking up with anxiety (4,400, KD 9) | Scheduled |
-| 27 | Wed Dec 9, 6:00 PM | How Long Should a Nap Be? The 20-Minute Rule and When to Break It | `how-long-should-a-nap-be` · productivity | how long should a nap be (9,900, KD 40) | Scheduled |
-| 28 | Thu Dec 10, 6:00 PM | Why Is Snooze 9 Minutes? (and How to Change Snooze Time on iPhone) | `why-is-snooze-9-minutes` · tips-and-tricks | how to change snooze time on iphone (3,600, KD 5) | Scheduled |
-| 29 | Fri Dec 11, 6:00 PM | Sleep Drunkenness: Why Some People Wake Up Confused | `sleep-drunkenness-confusional-arousal` · sleep-science | confusional arousal / sleep drunkenness (2,900 / 1,900, KD 6) | Scheduled |
-| 30 | Sat Dec 12, 6:00 PM | How Long Does It Take to Form a Habit? (Not 21 Days) | `how-long-does-it-take-to-form-a-habit` · productivity | how long does it take to form a habit (8,100, KD 15) | Scheduled |
+| 1 | Fri Nov 13, 6:00 PM | Do Sunrise Alarm Clocks Work? What Dawn Simulation Can and Can't Do | `do-sunrise-alarm-clocks-work` · tips-and-tricks | sunrise alarm clock (49,500, KD 4) | Ready |
+| 2 | Sat Nov 14, 6:00 PM | Why Do I Wake Up With a Headache? 9 Causes and What Helps | `waking-up-with-a-headache` · sleep-science | waking up with a headache / wake up headache (27,100 (cluster), KD 3) | Writing |
+| 3 | Sun Nov 15, 6:00 PM | iPhone Alarm Too Quiet? How to Make Your Alarm Louder | `iphone-alarm-volume-too-low` · tips-and-tricks | iphone alarm volume (18,100, KD 8) | Writing |
+| 4 | Mon Nov 16, 6:00 PM | Sleep Paralysis: Why You Wake Up and Can't Move (and How to Make It Rarer) | `sleep-paralysis-causes-how-to-stop` · sleep-science | sleep paralysis (201,000, KD 33) | Writing |
+| 5 | Tue Nov 17, 6:00 PM | How to Wake Yourself Up When You're Still Tired: 11 Things That Work | `how-to-wake-yourself-up` · morning-routines | how to wake yourself up (8,100, KD 16) | Writing |
+| 6 | Wed Nov 18, 6:00 PM | SAD Lamps: How to Use Light Therapy on Dark Winter Mornings | `sad-lamp-light-therapy-guide` · sleep-science | sad lamp (18,100, KD 8) | Writing |
+| 7 | Thu Nov 19, 6:00 PM | The Best Alarm Sound to Wake Up To, According to Research | `best-alarm-sound-to-wake-up` · tips-and-tricks | alarm sounds (14,800, KD 3) | Writing |
+| 8 | Fri Nov 20, 6:00 PM | Is 6 Hours of Sleep Enough? What 4, 5, 6 and 7 Hours Do to Your Mornings | `is-6-hours-of-sleep-enough` · sleep-science | is 6 hours of sleep enough (22,200, KD 11) | Writing |
+| 9 | Sat Nov 21, 6:00 PM | Does Turkey Make You Sleepy? The Tryptophan Myth and the Real Food Coma | `does-turkey-make-you-sleepy` · sleep-science | does turkey make you sleepy (5,400, KD 4) | Writing |
+| 10 | Sun Nov 22, 6:00 PM | How to Fall Asleep Fast: The Military Method, 4-7-8 and What Actually Works | `how-to-fall-asleep-fast` · tips-and-tricks | how to fall asleep fast (74,000, KD 26) | Writing |
+| 11 | Mon Nov 23, 6:00 PM | Night Owl in a 9-to-5 World: What You Can (and Can't) Change | `night-owl-wake-up-early` · sleep-science | night owl (49,500, KD 18) | Writing |
+| 12 | Tue Nov 24, 6:00 PM | Math Puzzles for Adults: 12 Quick Ones to Wake Up Your Brain | `math-puzzles-for-adults` · productivity | math puzzles (8,100, KD 13) | Writing |
+| 13 | Wed Nov 25, 6:00 PM | Why Am I Always Tired? 10 Reasons You Wake Up Exhausted | `why-am-i-always-tired` · sleep-science | why am i always tired (33,100, KD 36) | Writing |
+| 14 | Thu Nov 26, 6:00 PM | Sleeping With Earplugs: Is It Safe, and Will You Hear Your Alarm? | `sleeping-with-earplugs` · tips-and-tricks | sleeping with earplugs (14,800, KD 18) | Writing |
+| 15 | Fri Nov 27, 6:00 PM | How Much Deep Sleep Do You Need? (and How to Get More) | `how-much-deep-sleep-do-you-need` · sleep-science | how much deep sleep do you need (22,200, KD 18) | Writing |
+| 16 | Sat Nov 28, 6:00 PM | A Morning Routine That Survives Real Mornings: 7 Steps in 20 Minutes | `morning-routine-that-sticks` · morning-routines | morning routine (18,100, KD 38) | Writing |
+| 17 | Sun Nov 29, 6:00 PM | Chronotype Quiz: Bear, Wolf, Lion or Dolphin, and What the Science Says | `chronotype-quiz-body-clock` · sleep-science | chronotype quiz (3,600, KD 7) | Writing |
+| 18 | Mon Nov 30, 6:00 PM | Time Blindness: Why ADHD Mornings Slip Away (and Alarms That Help) | `time-blindness-adhd-mornings` · productivity | time blindness (12,100, KD 27) | Writing |
+| 19 | Tue Dec 1, 6:00 PM | Winter Blues and Dark Mornings: How to Wake Up When It's Still Night Outside | `winter-blues-dark-mornings` · morning-routines | winter blues (5,400, KD 20) | Writing |
+| 20 | Wed Dec 2, 6:00 PM | Why Do I Wake Up at 3 AM? Causes and How to Fall Back Asleep | `why-do-i-wake-up-at-3am` · sleep-science | waking up at 3am (9,900, KD 25) | Writing |
+| 21 | Thu Dec 3, 6:00 PM | Working Memory: What It Is, Why Mornings Shrink It, and How to Help It | `working-memory-morning-brain` · productivity | working memory (18,100, KD 38) | Writing |
+| 22 | Fri Dec 4, 6:00 PM | The Best Temperature for Sleep, and How to Hit It on Winter Nights | `best-temperature-for-sleep` · tips-and-tricks | best temperature for sleep (18,100, KD 23) | Writing |
+| 23 | Sat Dec 5, 6:00 PM | Dysania: Why Getting Out of Bed Feels Impossible (and What Helps) | `dysania-cant-get-out-of-bed` · morning-routines | dysania (3,600, KD 3) | Writing |
+| 24 | Sun Dec 6, 6:00 PM | Delayed Sleep Phase Syndrome: When Your Body Clock Runs Hours Late | `delayed-sleep-phase-syndrome` · sleep-science | delayed sleep phase syndrome (12,100, KD 20) | Writing |
+| 25 | Mon Dec 7, 6:00 PM | How to Stay Awake While Studying (and in Class) Without Wrecking Tomorrow | `how-to-stay-awake-while-studying` · productivity | how to stay awake while studying (720, KD 2) | Writing |
+| 26 | Tue Dec 8, 6:00 PM | Why Do I Wake Up With Anxiety? Morning Cortisol, Explained | `waking-up-with-anxiety` · morning-routines | waking up with anxiety (4,400, KD 9) | Writing |
+| 27 | Wed Dec 9, 6:00 PM | How Long Should a Nap Be? The 20-Minute Rule and When to Break It | `how-long-should-a-nap-be` · productivity | how long should a nap be (9,900, KD 40) | Writing |
+| 28 | Thu Dec 10, 6:00 PM | Why Is Snooze 9 Minutes? (and How to Change Snooze Time on iPhone) | `why-is-snooze-9-minutes` · tips-and-tricks | how to change snooze time on iphone (3,600, KD 5) | Writing |
+| 29 | Fri Dec 11, 6:00 PM | Sleep Drunkenness: Why Some People Wake Up Confused | `sleep-drunkenness-confusional-arousal` · sleep-science | confusional arousal / sleep drunkenness (2,900 / 1,900, KD 6) | Writing |
+| 30 | Sat Dec 12, 6:00 PM | How Long Does It Take to Form a Habit? (Not 21 Days) | `how-long-does-it-take-to-form-a-habit` · productivity | how long does it take to form a habit (8,100, KD 15) | Writing |
 
 ## Rules for this series (on top of the handbook)
 
@@ -53,8 +53,9 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **The footer is the layout's.** Every post gets the same end-of-article block as the rest of the blog automatically: the tool card when the slug matches, the download card with the store badges, trial and price, the tags, related posts, and the site footer with the safety notice. Write no footer, call to action or store link by hand.
 - **Frontmatter.** `pubDate` exactly as in the brief; no `updatedDate`; never `reviewedBy` or `reviewedDate`; `seoTitle` and `description` as briefed unless verified facts require a change (then keep the target query first, `seoTitle` at most 60 characters, `description` at most 160).
 - **Two store versions.** The App Store and Google Play serve different versions (`RELEASE` in `src/lib/product.ts`); anything Android's version lacks is described as iPhone-only. Check every product sentence against the claim rules in the handbook and the app repo's `Docs/marketing-execution/claims-matrix.md`.
-- **Hero.** A new illustration per post in the house style (flat editorial illustration, deep indigo night, coral and amber light, cream, no text), saved as `src/assets/blog/<slug>/hero.jpg` at 1600×900. If generation fails, copy `src/assets/blog/_fallback/<category>.jpg` so the slot never slips.
-- **Status.** When a post is pushed, the routine sets its status to `Published <date>`.
+- **Newer product sources win.** Where the handbook's Sep 24 claim rules disagree with the current feature pages (`src/content/features/*.md`) or the copy linter, the newer sources win: the brain warm-up is no longer offered and the Sharpness Score comes from the missions you finish; wake-up pacts are replaced by group alarms (iPhone only while Google Play serves 2.9); mission names are as the feature pages write them.
+- **Hero.** Each post has its own illustration in the house style (flat editorial illustration, deep indigo night, coral and amber light, cream, no text) at `src/assets/blog/<slug>/hero.jpg`, 1600×900.
+- **Status.** `Ready` means written, checked and on `main`; the post goes live by itself on its date.
 
 ## Post briefs
 
@@ -67,7 +68,7 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Category:** `tips-and-tricks` · **Tags:** `[morning-light, dark-mornings, circadian-rhythm]`
 - **Target query:** sunrise alarm clock: 49,500 US searches a month (window: Nov to Dec about 82,000), keyword difficulty 4
 - **Meta keywords:** sunrise alarm clock; do sunrise alarm clocks work (320); wake up light (2,900, KD 23); dawn simulation; dark mornings
-- **What the article covers:** Daylight saving time ended on November 1, so most readers now wake before sunrise. How dawn simulators work (a light ramp through closed eyelids over 20 to 40 minutes), what studies of dawn simulation found for grogginess, mood and winter mornings, the limits (heavy sleepers, partners, light leaks, a bulb is not the sun), how to set one up (timing, brightness, placement), and why it still needs a sound alarm behind it.
+- **What the article covers:** Daylight saving time ended on November 1, which bought a few weeks of earlier sunrises; mornings now get darker every day until early January. How dawn simulators work (a light ramp through closed eyelids over 20 to 40 minutes), what studies of dawn simulation found for grogginess, mood and winter mornings, the limits (heavy sleepers, partners, light leaks, a bulb is not the sun), how to set one up (timing, brightness, placement), and why it still needs a sound alarm behind it.
 - **WakeSharp tie-in:** First Light (walk to a window and hold your phone in daylight) gets real light plus movement once the sun is up; on dark mornings a lamp starts the wake-up and a mission finishes it.
 - **Inline links:** /features/walking-alarm-clock (First Light), /download, /blog/sleep-inertia-why-you-wake-up-groggy, /blog/become-morning-person-realistic
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): Do sunrise alarm clocks actually work? · How long before waking should a sunrise alarm start? · Are sunrise alarm clocks good for heavy sleepers? · Do sunrise alarms help with winter depression?
@@ -124,7 +125,7 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Target query:** how to wake yourself up: 8,100 US searches a month (window: 8,100), keyword difficulty 16
 - **Meta keywords:** how to wake yourself up; how to wake up when tired (3,600, KD 28); how to wake up in the morning (3,600, KD 19); how to feel awake (210); how to wake up fast
 - **What the article covers:** Fixes for the first 30 minutes ranked by evidence: bright light, getting vertical and moving, cold water on the face, a cognitive task, water, coffee timing, music, cool air, breakfast, talking to someone; then the long-term fix (a consistent wake time and enough sleep). Why the first 15 to 30 minutes feel worst (sleep inertia).
-- **WakeSharp tie-in:** Missions bundle several fixes at once: Walk It Off and First Light for movement and light, Mind Games for the brain.
+- **WakeSharp tie-in:** Missions bundle several fixes at once: Walk It Off and First Light for movement and light, the math mission for the brain.
 - **Inline links:** /features/walking-alarm-clock, /features/math-alarm-clock, /download, /blog/sleep-inertia-why-you-wake-up-groggy, /blog/first-30-minutes-brain-after-waking
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): How can I wake myself up fast? · What is the fastest way to wake up when you're tired? · Does cold water wake you up? · Should I drink coffee as soon as I wake up?
 
@@ -166,7 +167,7 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Target query:** is 6 hours of sleep enough: 22,200 US searches a month (window: 18,100), keyword difficulty 11
 - **Meta keywords:** is 6 hours of sleep enough; is 7 hours of sleep enough (18,100, KD 37); is 5 hours of sleep enough (8,100, KD 4); is 4 hours of sleep enough (3,600, KD 14); how much sleep do i need
 - **What the article covers:** The adult recommendation (7 or more hours), chronic restriction studies (performance keeps falling while felt sleepiness levels off), what 4, 5, 6 and 7 hours look like, the rare short-sleeper genetics, and how to tell whether you get enough (weekend oversleep, daytime sleepiness, sleep debt).
-- **WakeSharp tie-in:** The Sharpness Score shows your own mornings against your own baseline: an in-app score, not a sleep or cognitive test.
+- **WakeSharp tie-in:** The Sharpness Score as a running record of your mornings: it comes from the missions you finish and is not a sleep or cognitive test.
 - **Inline links:** /tools/sleep-debt-calculator, /tools/sleep-calculator, /features/sharpness-score, /download, /blog/sleep-debt-weekend-lie-ins, /blog/morning-reaction-time-cognition
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): Is 6 hours of sleep enough for an adult? · Is 7 hours of sleep enough? · Can you function on 5 hours of sleep? · Is it better to sleep 6 hours or 8?
 
@@ -208,21 +209,21 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Target query:** night owl: 49,500 US searches a month (window: 45,000), keyword difficulty 18
 - **Meta keywords:** night owl; night owl vs early bird; morning person vs night owl (320, KD 10); can a night owl become a morning person; late chronotype
 - **What the article covers:** What a night owl is (a late chronotype), genetics and age, the costs in a morning-shaped world (social jet lag), what can shift (studies that moved owls earlier with morning light and fixed sleep and meal times), what can't, and a two-week plan. Signs it is a delayed sleep phase disorder instead.
-- **WakeSharp tie-in:** A fixed wake time held every day is the backbone of any shift; Sharpness compares you with your own baseline, not a lark's.
+- **WakeSharp tie-in:** A fixed wake time held every day is the backbone of any shift; the Sharpness Score and streaks track your own mornings, not a lark's.
 - **Inline links:** /download, /features/sharpness-score, /blog/social-jet-lag-monday-tax, /blog/become-morning-person-realistic, /blog/sad-lamp-light-therapy-guide (Day 6)
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): Can a night owl become a morning person? · Is being a night owl genetic? · Are night owls less healthy? · What time do night owls naturally wake up?
 
-### Day 12 · Tuesday November 24 · `math-puzzles-brain-warm-up`
+### Day 12 · Tuesday November 24 · `math-puzzles-for-adults`
 
 - **pubDate:** `2026-11-24T18:00:00-05:00`
 - **Headline (`title`):** Math Puzzles for Adults: 12 Quick Ones to Wake Up Your Brain
-- **`seoTitle`** (55 characters): Math Puzzles for Adults: 12 Brain Warm-Ups With Answers
+- **`seoTitle`** (51 characters): Math Puzzles for Adults: 12 Quick Ones With Answers
 - **`description`** (152 characters): Math puzzles for adults that take under two minutes each: twelve mental math warm-ups with answers, and why a little arithmetic wakes up a groggy brain.
 - **Category:** `productivity` · **Tags:** `[morning-cognition, brain-games, math]`
 - **Target query:** math puzzles: 8,100 US searches a month (window: 8,100), keyword difficulty 13
 - **Meta keywords:** math puzzles; mental math (4,400, KD 1); mental math tricks (480); math puzzles for adults; brain teasers
 - **What the article covers:** Twelve short puzzles with answers (arithmetic chains, number patterns, estimation, logic), four mental math tricks (multiplying by 11, doubling and halving, rounding and compensating, casting out nines), and why working-memory tasks help shake off morning grogginess. Thanksgiving week: puzzles for the table.
-- **WakeSharp tie-in:** Mind Games, the arithmetic and puzzle mission. The feature page owns "math alarm clock"; this post targets the puzzles and links to it.
+- **WakeSharp tie-in:** The math mission (use its current name from the math alarm clock feature page). That page owns "math alarm clock"; this post targets the puzzles and links to it.
 - **Inline links:** /features/math-alarm-clock, /features/puzzle-alarm-clock, /download, /blog/math-alarm-science-solving-beats-snoozing
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): What are good math puzzles for adults? · How can I get better at mental math? · Do math puzzles help your brain?
 
@@ -278,7 +279,7 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Target query:** morning routine: 18,100 US searches a month (window: 16,450), keyword difficulty 38
 - **Meta keywords:** morning routine; healthy morning routine (480, KD 31); morning routine ideas (880, KD 26); morning routine for productivity (480, KD 22); simple morning routine
 - **What the article covers:** A minimal routine in seven steps (fixed wake time, light, water, movement, a short brain warm-up, one important task, a look at the day), habit stacking and if-then plans, the night-before prep that makes it work, and a two-minute fallback for bad mornings.
-- **WakeSharp tie-in:** The mission plus the optional warm-up (three of the five brain games, on rotation) as the first two steps; streaks for consistency.
+- **WakeSharp tie-in:** The alarm mission as step one (it gets you up and thinking), then the Sharpness Score, badges and streaks for consistency, described as the feature page describes them.
 - **Inline links:** /features/sharpness-score, /download, /blog/become-morning-person-realistic, /blog/first-30-minutes-brain-after-waking, /blog/how-to-wake-yourself-up (Day 5)
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): What is a good morning routine? · How long should a morning routine be? · What should I do first thing in the morning? · How do I stick to a morning routine?
 
@@ -292,7 +293,7 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Target query:** chronotype quiz: 3,600 US searches a month (window: 1,900), keyword difficulty 7
 - **Meta keywords:** chronotype quiz; chronotype (12,100, KD 3); what is my chronotype (720, KD 2); dolphin chronotype (880); bear, wolf and lion chronotype (480, 480, 390)
 - **What the article covers:** A short self-scored quiz modelled on the questions in validated questionnaires (sleep timing on free days, preferred wake time, peak alertness), clearly marked as informal; how researchers measure chronotype (MEQ, MCTQ and mid-sleep on free days); the four animal types as a popular framework rather than validated science; what to do with your result.
-- **WakeSharp tie-in:** Choose a wake time your chronotype can keep seven days a week and hold it with an alarm; Sharpness against your own baseline.
+- **WakeSharp tie-in:** Choose a wake time your chronotype can keep seven days a week and hold it with an alarm; the Sharpness Score tracks your own mornings.
 - **Inline links:** /tools/sleep-calculator, /download, /features/sharpness-score, /blog/social-jet-lag-monday-tax, /blog/night-owl-wake-up-early (Day 11)
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): What are the 4 chronotypes? · How do I know my chronotype? · Can your chronotype change? · Is the bear chronotype the most common?
 
@@ -348,8 +349,8 @@ This file is the source of truth for what each day publishes. To change a post, 
 - **Target query:** working memory: 18,100 US searches a month (window: 22,200), keyword difficulty 38
 - **Meta keywords:** working memory; how to improve working memory (1,300, KD 25); working memory examples; working memory and sleep; memory games (49,500, KD 16)
 - **What the article covers:** The working memory model and its small capacity, everyday examples, how sleep loss and sleep inertia reduce it, what brain training can and can't do (it improves the trained task; meta-analyses find little transfer), and practical ways to protect it (sleep, offloading, chunking, fewer interruptions).
-- **WakeSharp tie-in:** Memory Match and Sequence Recall as a morning warm-up, framed honestly as warming up rather than training.
-- **Inline links:** /features/puzzle-alarm-clock, /features/sharpness-score, /download, /blog/morning-reaction-time-cognition, /blog/math-puzzles-brain-warm-up (Day 12)
+- **WakeSharp tie-in:** Memory Match and Sequence Recall missions get working memory going after waking; say honestly that they get you thinking and do not train your memory.
+- **Inline links:** /features/puzzle-alarm-clock, /features/sharpness-score, /download, /blog/morning-reaction-time-cognition, /blog/math-puzzles-for-adults (Day 12)
 - **Questions to answer** (as `##` sections or FAQ `###`; replace with live People Also Ask where they differ): What is working memory? · Can you improve working memory? · How does sleep affect working memory? · Do memory games improve working memory?
 
 ### Day 22 · Friday December 4 · `best-temperature-for-sleep`

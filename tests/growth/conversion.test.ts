@@ -120,7 +120,10 @@ test('the new routes are covered by the existing function config', () => {
   assert.ok(vercel.functions['api/referrals/*.ts']);
   assert.ok(existsSync(new URL('../../api/referrals/converted.ts', import.meta.url)));
   assert.ok(existsSync(new URL('../../api/referrals/config.ts', import.meta.url)));
-  assert.deepEqual(vercel.crons, [{ path: '/api/internal/referrals/prune', schedule: '17 3 * * *' }]);
+  assert.deepEqual(vercel.crons, [
+    { path: '/api/internal/referrals/prune', schedule: '17 3 * * *' },
+    { path: '/api/internal/blog/publish', schedule: '5 23 * * *' },
+  ]);
 });
 
 // ---------- the request schema ----------
