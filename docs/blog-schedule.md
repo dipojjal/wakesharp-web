@@ -1,5 +1,7 @@
 # WakeSharp Blog - 50-Article Schedule (Aug 28 – Sep 21, 2026)
 
+> **Current series (Nov 13 to Dec 12, 2026):** one post a day at 6:00 PM ET, planned from DataForSEO data in [blog-calendar-2026-11-13.md](./blog-calendar-2026-11-13.md) and published by the `wakesharp-daily-blog` scheduled task. The launch schedule below stopped after slot 26 on Sep 10; its unwritten slots are not being published, though several of their topics return in the new calendar. The routine handbook further down still governs every post.
+
 Two posts per day for 25 days: **8:00 AM ET** (waking / morning-performance topics (readers starting their day) and **7:00 PM ET** (sleep / bedtime / tomorrow-prep topics) readers winding down). Derived from a full sweep of Alarmy's 74 and Wayk's 10 articles: see [competitor-content-analysis.md](./competitor-content-analysis.md) for the strategy behind the mix.
 
 Content mix: sleep science (16) · troubleshooting & reliability SEO (7) · morning routines & habits (7) · cognition & productivity (8) · audience-specific (5) · product-led & psychology of the product (4) · seasonal for this exact window (3).
