@@ -1,8 +1,9 @@
 ---
-title: "iPhone Alarm Didn't Go Off? The 7 Real Causes"
-description: "Your iPhone alarm never rang. Here are the seven causes that actually explain it, how to check each one tonight, and which ones are Apple's to fix."
+title: "iPhone Alarm Not Going Off? The 7 Real Causes (and Fixes)"
+seoTitle: "iPhone Alarm Not Going Off? 7 Real Causes and Fixes"
+description: "iPhone alarm not going off, or going off silently? The seven causes that explain it, how to check each one tonight, and which ones are Apple's to fix."
 pubDate: 2026-08-31T08:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/iphone-alarm-didnt-go-off-causes/hero.jpg
@@ -19,6 +20,18 @@ That is the part that stings. A missed alarm arrives with no evidence, so the on
 Almost always, it is not that. Between "the alarm fires" and "a sound loud enough to cross the room comes out of the speaker" there are roughly a dozen independent switches on an iPhone, and not one of them announces itself. Last night, one of them was in the wrong position.
 
 Here are the seven causes that account for most missed alarms, roughly in the order they turn out to be the answer. Each takes under a minute to check. Some leave evidence you can still find this morning. Some leave none at all, and I will say so where that is true.
+
+**Quick fixes, in the order to try them:**
+
+1. Raise the slider under Settings > Sounds & Haptics > Ringtone and Alerts, and turn off Change with Buttons.
+2. Open the alarm in the Clock app and make sure its Sound is not set to None.
+3. Turn off Attention Aware Features in Settings > Face ID & Passcode.
+4. Check the alarm is switched on and repeats on the days you expect.
+5. Charge the phone overnight and confirm it is on.
+6. If you use a sleep schedule, set the wake-up alarm's own volume in the Health app.
+7. Put the phone out of arm's reach, so you cannot switch it off half asleep.
+
+On Android instead? The causes there are different, and mostly about battery managers: see [Android alarm not ringing](/blog/android-alarm-not-ringing-battery-optimizer).
 
 ## The seven real causes
 
@@ -102,13 +115,24 @@ This is the one cause on the list that no setting fixes, because nothing was mis
 
 Three popular suspects deserve to be cleared or convicted properly.
 
-Silent mode and Do Not Disturb are the biggest myth in this whole category. Apple states plainly that [Do Not Disturb, the Ring/Silent switch and Silent mode do not affect the alarm sound](https://support.apple.com/en-us/118444) for Clock alarms. If your alarm was silent, the switch on the side of your iPhone was almost certainly not why.
+Silent mode and Do Not Disturb are the biggest myth in this whole category. Apple states plainly that [Do Not Disturb, the Ring/Silent switch and Silent mode do not affect the alarm sound](https://support.apple.com/en-us/118444) for Clock alarms. If your alarm was silent, the switch on the side of your iPhone was almost certainly not why. (The full platform-by-platform answer is in [will your alarm ring on silent or Do Not Disturb](/blog/will-alarm-ring-on-silent-dnd).)
 
 Bluetooth is nearly as overrated. The same Apple page says the alarm plays through the iPhone's built-in speakers as well as connected headphones. Worth ten seconds of checking, unlikely to be your answer.
 
 Physical muffling is real but modest: face down on a duvet, under a pillow, or a thick case covering the bottom speaker grille. Move the phone onto a hard surface with the speaker clear and you get most of that back.
 
 And sometimes it genuinely is a bug, and none of this is your fault. The 2024 reports were widespread enough that Apple acknowledged them. In January 2025 the same silent-alarm reports [surfaced again](https://appleinsider.com/articles/25/01/23/if-your-iphone-alarms-arent-going-off-youre-not-alone), with no acknowledgement that time. That category is Apple's to fix, and your only real defence against it is the same defence you have against a dead battery: a second alarm, on a different device.
+
+## If every setting checks out
+
+When the volume, the sound and the switches all look right and the alarm still misbehaves, these are the remaining steps worth a few minutes:
+
+- **Delete the alarm and create it again** rather than editing it. In Apple's community forums it is the fix people report most often once the settings look fine.
+- **Restart the iPhone and install any pending iOS update**, since Apple's fixes for alarm bugs arrive in software updates.
+- **Test it in the state you sleep in**: locked, on the charger, and in StandBy if you use it. Some people report alarms behaving differently in StandBy; if that matches your pattern, try a few nights with StandBy off.
+- **Do not blame Low Power Mode.** Apple's list of what [Low Power Mode limits](https://support.apple.com/en-us/101604) covers things like display brightness, mail fetch and background refresh. Alarms are not on it.
+
+If the alarm still fails after all of that, treat it as a fault to report to Apple, and keep a second alarm on another device until it is fixed.
 
 ## Where WakeSharp fits
 
@@ -120,7 +144,7 @@ On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted al
 
 For cause number seven, missions are the point. The alarm rings and the morning asks for a mission: arithmetic and puzzles, such as Math Problems; the camera, such as Photo Proof, which has you retake the photo of the spot you chose the night before; movement, such as Walk It Off; voice, such as Name Five; or Surprise Me, a different mission every morning. However you quiet the alarm, the morning only counts once the mission is done. Your phone's own controls always work: nothing stops you switching the phone off. What changes is that the mission requires enough of you to be awake to notice you are doing it.
 
-The limit is the honest one, and it is the same limit every alarm app has: WakeSharp is not a medical device, your phone's settings, battery restrictions or power state can prevent any alarm from sounding, and you should use a second, independent alarm for anything you cannot afford to be late for.
+The limit is the honest one, and it is the same limit every alarm app has: WakeSharp is not a medical device, your phone's settings, battery restrictions or power state can prevent any alarm from sounding, and you should use a second, independent alarm for anything you cannot afford to be late for. If you would rather prevent tomorrow's miss than diagnose today's, run [tonight's 6-point alarm checklist](/blog/alarm-reliability-checklist-tonight) before bed.
 
 ## FAQ
 
@@ -135,6 +159,14 @@ Yes. Apple is explicit that Silent mode, the Ring/Silent switch and Do Not Distu
 ### Why is my iPhone alarm so quiet?
 
 Usually one of three things: the Ringtone and Alerts slider is low, Change with Buttons let a volume press drain it, or Attention Aware Features lowered the volume because the front camera saw you looking at the screen. A sleep schedule wake-up alarm also has its own volume slider in Health, separate from everything else.
+
+### Why does my iPhone alarm go off but make no sound?
+
+Because an alarm can fire without making noise. The usual reasons are an alarm Sound set to None (it still lights the screen and vibrates if haptics are on), a Ringtone and Alerts volume near zero, or Attention Aware Features lowering the volume because the phone saw your face. Check those three in that order.
+
+### Does Low Power Mode affect alarms on iPhone?
+
+No. Low Power Mode reduces things like screen brightness, mail fetch and background activity, and alarms are not on Apple's list of what it limits. A phone that runs out of battery completely is a different story: then no alarm can ring.
 
 ### Can Attention Aware Features make my alarm quieter?
 

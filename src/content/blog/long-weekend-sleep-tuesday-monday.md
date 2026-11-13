@@ -3,13 +3,13 @@ title: "The Long-Weekend Effect: Why Tuesday Feels Like Double Monday"
 seoTitle: "Long Weekend Sleep Schedule: Why Tuesday Feels Like Monday"
 description: "Three days of drift is a small self-inflicted time zone shift. A recovery plan for today, tonight and tomorrow, before the short week starts."
 pubDate: 2026-09-07T08:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/long-weekend-sleep-tuesday-monday/hero.jpg
 heroImageAlt: "Flat editorial illustration of four rounded panels: three warm coral and amber days with low sunsets and a reclining figure, then a deep indigo night panel holding a small coral alarm clock, with a curving line that rises across the weekend and drops sharply into the dark panel."
 category: sleep-science
-tags: [social-jet-lag, circadian-rhythm, long-weekend]
+tags: [social-jet-lag, circadian-rhythm, long-weekend, sleep-schedule]
 draft: false
 ---
 
@@ -18,6 +18,8 @@ Picture tomorrow. It is 6:30 on Tuesday morning and the alarm is entirely correc
 It will feel like a personal failing. It is not one. It is a scheduling problem with a well-described mechanism, and today, Labor Day, is the last day on which you can do anything cheap about it.
 
 Two or three nights of drift are already banked, depending on when your weekend really started. One night is left, and it is tonight. Almost everything useful happens in the next fifteen hours.
+
+**The short answer:** a long weekend of late nights and lie-ins shifts your body clock later, like flying a couple of time zones west, so the first workday alarm lands in your biological night. To get your sleep schedule back after a long weekend, get up at your normal time even after a bad night, get outside early, skip long afternoon naps, and go to bed 45 to 60 minutes earlier than last night. Budget about a day per hour of drift. (For a bigger reset, there is a [one-week plan to fix your sleep schedule](/blog/back-to-school-sleep-schedule-reset).)
 
 ## The long weekend flew you west
 

@@ -3,13 +3,13 @@ title: "The Meeting-Ready Morning: Work Backward From Your Calendar"
 seoTitle: "Wake Up Before a Meeting: Work Backward From Your Calendar"
 description: "The 8:57 panic join is a scheduling error, not a character flaw. Set the alarm from your first meeting instead of a round number you picked months ago."
 pubDate: 2026-09-08T08:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/meeting-ready-morning-calendar-alarm/hero.jpg
 heroImageAlt: "Flat editorial illustration of a phone ringing in the dark, a grid of calendar blocks beside it, and a curved arrow sweeping backward from one glowing coral and amber block to the phone."
 category: productivity
-tags: [meetings, morning-routine, smart-alarms]
+tags: [meetings, morning-routine, calendar-alarms]
 draft: false
 ---
 
@@ -18,6 +18,8 @@ It is 8:56 and the standup starts at 9:00. You are awake in the narrow sense: ey
 Then somebody asks what you think about the migration. What comes out is two false starts and a sentence that dies halfway: "yeah, I think that's, yeah, probably fine." Around 9:20 your head finally turns over properly. That is roughly twenty minutes after anybody needed it, and about eight minutes after the conversation moved on.
 
 You did not oversleep. The alarm rang at 8:45, exactly as set. The plan failed, and it failed on one quiet assumption: that the minute you are awake is the minute you are usable.
+
+**The short answer:** for a meeting where you have to think out loud, present or decide, wake up about 90 minutes before it; for one where you mostly listen, 45 minutes is a defensible minimum. That covers the 20 to 30 minutes it takes to shake off grogginess plus your real logistics. Count back from the meeting rather than a round number, then move tonight's bedtime to match.
 
 ## Nobody sets an alarm from their calendar
 

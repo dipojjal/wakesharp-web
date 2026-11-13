@@ -1,9 +1,9 @@
 ---
-title: "Will Your Alarm Ring on Silent? iPhone and Android, Answered"
-seoTitle: "Will My Alarm Go Off on Silent? iPhone and Android, Answered"
-description: "Does your alarm ring on silent? Yes on both iPhone and Android, with real exceptions. A platform by platform truth table for Silent, Focus and Do Not Disturb."
+title: "Will Your Alarm Ring on Silent or Do Not Disturb? iPhone and Android, Answered"
+seoTitle: "Will My Alarm Go Off on Do Not Disturb or Silent?"
+description: "Will your alarm go off on Do Not Disturb or silent? On iPhone and Android, usually yes. The real exceptions, and a truth table for Silent, Focus and DND."
 pubDate: 2026-09-02T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/will-alarm-ring-on-silent-dnd/hero.jpg
@@ -68,7 +68,7 @@ For years this was the honest weak spot, and any app claiming otherwise was over
 
 iOS 26 changed the picture with AlarmKit, Apple's framework for scheduling genuine alarms from a third-party app. Apple's own description of the behavior, from [the WWDC session that introduced it](https://developer.apple.com/videos/play/wwdc2025/230/): when the alert fires, "the alert breaks through the silent mode and the current focus." You grant that permission per app, and you can take it back.
 
-The practical test for any alarm app on your iPhone: did it ask you for alarm permission, or only for notification permission? Those are different prompts backed by different capabilities. An app holding only notification permission is a reminder with ambitions.
+The practical test for any alarm app on your iPhone: did it ask you for alarm permission, or only for notification permission? Those are different prompts backed by different capabilities. An app holding only notification permission is a reminder with ambitions. (We applied that test, among others, in [our comparison of alarm apps for heavy sleepers](/blog/best-alarm-apps-for-heavy-sleepers).)
 
 ## Android
 
@@ -120,9 +120,17 @@ If you would rather check all of this before bed than reconstruct it afterwards,
 
 Yes, on both platforms, for the built-in Clock app alarm. Apple states that Silent mode, the Ring/Silent switch and Do Not Disturb do not affect the alarm sound. Android plays alarms on a separate audio stream that mute and vibrate mode do not touch. The exceptions are your alarm's own sound being set to None, a low ringtone and alerts volume on iPhone, a low alarm volume on Android, and a Samsung Clock setting that can silence alarms when the phone is muted.
 
-### Does Do Not Disturb turn off my alarm?
+### Will my alarm go off on Do Not Disturb?
 
-No, not by default on either platform. On iPhone, Do Not Disturb is a Focus mode and Apple exempts alarms from it. On Android, alarms are an allowed interruption category unless you go into the mode's notification filters and block them. The one real case is Total Silence on Android 8.1 and below, which did mute alarms.
+Yes, by default on both platforms. On iPhone, Do Not Disturb is a Focus mode and Apple exempts Clock alarms from it. On Android, alarms are an allowed interruption category unless you go into the mode's notification filters and block them yourself. The one real case of Do Not Disturb muting alarms is Total Silence on Android 8.1 and below.
+
+### Will my alarm go off in Sleep mode on iPhone?
+
+Yes. Sleep Focus dims the lock screen and silences notifications, but Clock alarms still sound. The catch is the wake-up alarm attached to a sleep schedule: it has its own sound and volume, set in the Health app, so it can be much quieter than your other alarms without telling you.
+
+### How do I silence my phone but keep the alarm?
+
+On iPhone, use Silent mode, Do Not Disturb or any Focus mode as you like: Clock alarms ring through all three, so the only thing to check is the Ringtone and Alerts volume in Settings. On Android, use vibrate, mute or Do Not Disturb with alarms allowed (the default), avoid Total Silence on older phones, and on a Samsung check the Clock app's own setting for alarm sound in Silent mode. Then set the alarm volume deliberately once.
 
 ### Will my alarm ring if my Android phone is on vibrate?
 

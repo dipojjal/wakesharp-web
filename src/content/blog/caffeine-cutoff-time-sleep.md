@@ -1,9 +1,9 @@
 ---
 title: "Caffeine's 10-Hour Tail: When Your Last Coffee Should Really Be"
-seoTitle: "Caffeine Cutoff Time: When to Have Your Last Coffee"
-description: "Caffeine's half-life means a 3 PM coffee is still working at bedtime. The pharmacology, a personal cutoff calculation, and a one-week sensitivity test."
+seoTitle: "How Long Does Caffeine Stay in Your System? Half-Life Math"
+description: "Caffeine's half-life is about five hours, so a 3 PM coffee is still working at bedtime. How long caffeine stays in your system, and when to stop drinking it."
 pubDate: 2026-09-03T19:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/caffeine-cutoff-time-sleep/hero.jpg
@@ -27,9 +27,11 @@ Caffeine works by getting there first. It antagonises all four adenosine recepto
 
 This is why caffeine feels like a loan rather than income. It does not reduce your sleep pressure. It mutes your awareness of it, and the muting wears off on a schedule.
 
-### The half-life, and the half after that
+## How long does caffeine stay in your system?
 
-In a healthy adult, caffeine's half-life averages roughly five hours, with a normal spread of about three to seven. Run the doubling backwards on a single 200 mg cup at 3 PM:
+**The short answer:** caffeine's half-life in a healthy adult averages about five hours, with a normal range of roughly three to seven. Half of a 3 PM coffee is still circulating at 8 PM, a quarter at 1 AM, and clearing a dose almost completely takes about five half-lives, roughly a day. Pregnancy, some medications and liver conditions can stretch that considerably.
+
+That is the half-life, and the half after that. Run the halving on a single 200 mg cup at 3 PM:
 
 - 8 PM: about 100 mg still circulating
 - 1 AM: about 50 mg
@@ -37,7 +39,7 @@ In a healthy adult, caffeine's half-life averages roughly five hours, with a nor
 
 Fifty milligrams at 1 AM is not a rounding error. That is roughly a can of cola's worth of an alertness drug sitting in your bloodstream during the stretch of night where your deepest sleep is supposed to happen. The tail is not ten hours of full-strength stimulation. It is ten hours of a slowly shrinking amount that never quite reaches zero before your alarm does.
 
-### The disruption you are least likely to notice
+## The disruption you are least likely to notice
 
 The most useful study here is small and unusually clean. Drake and colleagues gave twelve healthy adults 400 mg of caffeine at bedtime, three hours before bed, or six hours before bed, in a randomised, double-blind, placebo-controlled crossover ([Journal of Clinical Sleep Medicine, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3805807/)). All three timings cost more than an hour of total sleep compared with placebo.
 
@@ -47,7 +49,7 @@ That is the trap. You fall asleep on time, you rate the night as fine, and you w
 
 There is a clock effect too. A double-espresso dose taken three hours before habitual bedtime delayed the circadian melatonin rhythm by around 40 minutes, close to half the delay produced by three hours of bright evening light ([Burke et al., Science Translational Medicine, 2015](https://www.science.org/doi/10.1126/scitranslmed.aac5125)). So evening caffeine both fragments the night and nudges tomorrow later, which is a decent explanation for the specific fog described in [our piece on sleep inertia](/blog/sleep-inertia-why-you-wake-up-groggy).
 
-## So how long is the tail, actually
+## How long before bed should you stop drinking caffeine?
 
 A 2023 systematic review and meta-analysis pooled 24 studies and put numbers on it: caffeine cut total sleep time by about 45 minutes, cut sleep efficiency by 7 percent, added 9 minutes to falling asleep and 12 minutes of wakefulness once asleep, increased light sleep and shrank the share of deep sleep ([Gardiner et al., Sleep Medicine Reviews](https://pubmed.ncbi.nlm.nih.gov/36870101/)).
 
@@ -59,7 +61,7 @@ Look hard at those doses. A 107 mg coffee is a modest home cup. Large takeaway d
 
 ### 1. Calculate your own cutoff rather than borrowing a number
 
-Start from your target bedtime and subtract: about 9 hours for a standard cup, 10 to 12 for a large one or a double shot, and 13 for a pre-workout or a high-caffeine energy drink. An 11 PM bedtime with an ordinary coffee lands your last cup at 2 PM. Treat that as a hypothesis you are going to test, not a commandment.
+Start from your target bedtime and subtract: about 9 hours for a standard cup, 10 to 12 for a large one or a double shot, and 13 for a pre-workout or a high-caffeine energy drink. An 11 PM bedtime with an ordinary coffee lands your last cup at 2 PM. Treat that as a hypothesis you are going to test, not a commandment. Our [caffeine cutoff calculator](/tools/caffeine-calculator) runs the same half-life arithmetic for your own dose, timing and bedtime.
 
 ### 2. Move the timing before you cut the dose
 
@@ -94,6 +96,10 @@ One thing the experiment will not fix on its own: if you are staying up late bec
 ### How many hours before bed should I stop drinking caffeine?
 
 For a standard coffee, the meta-analytic estimate is at least 8.8 hours before bedtime to protect total sleep time, which rounds to about nine. For a large drink, a double shot, or a pre-workout supplement, push that to 10 to 13 hours. If you go to bed at 11 PM, a 1 to 2 PM cutoff is a sensible starting point, then adjust based on a week of your own data.
+
+### How long does 200 mg of caffeine stay in your system?
+
+At an average five-hour half-life, about 100 mg remains after five hours, 50 mg after ten and 25 mg after fifteen, and it takes roughly a day to clear almost completely. A slow metaboliser with a seven-hour half-life still has about 100 mg on board seven hours later, which is why the same afternoon cup can be harmless for one person and a lost night for another.
 
 ### Does caffeine still hurt my sleep if I fall asleep easily?
 

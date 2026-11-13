@@ -9,6 +9,10 @@
  * - Organization: the publisher, with its logo, so the references resolve.
  * - BreadcrumbList: Home › Blog › this post, in the post's language.
  *
+ * A post with a FAQ section also types its WebPage as FAQPage, with one
+ * Question per `###` under that heading (src/lib/faq.ts), read from the same
+ * markdown the page renders so the two cannot disagree.
+ *
  * Mirrors JsonLd.astro's is:inline + set:html pattern.
  */
 import { SITE } from '../config/site';
@@ -17,6 +21,7 @@ import type { CollectionEntry } from 'astro:content';
 import { localeByCode } from '../i18n/config';
 import { getCatalog } from '../i18n/catalog';
 import { localePath, resolveLocale } from '../i18n/routes';
+import { faqFromMarkdown } from '../lib/faq';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -35,6 +40,8 @@ const { title, description, pubDate, updatedDate, category, tags, reviewedBy, re
 const orgId = `${SITE.url}/#org`;
 const reviewer = reviewedBy ? PEOPLE[reviewedBy] : undefined;
 const absolute = (p: string): string => new URL(p, SITE.url).href.replace(/\/$/, '') || SITE.url;
+const inLanguage = localeByCode(post.data.lang)?.hreflang ?? 'en';
+const faq = faqFromMarkdown(post.body ?? '');
 
 const graph = [
   {
@@ -57,15 +64,26 @@ const graph = [
       ]
     : []),
   {
-    '@type': 'WebPage',
+    '@type': faq.length ? ['WebPage', 'FAQPage'] : 'WebPage',
     '@id': canonical,
     url: canonical,
     name: title,
-    inLanguage: localeByCode(post.data.lang)?.hreflang ?? 'en',
+    inLanguage,
     isPartOf: { '@id': `${SITE.url}/#website` },
     breadcrumb: { '@id': `${canonical}#breadcrumb` },
     ...(reviewedBy && reviewedDate
       ? { reviewedBy: { '@id': personId(reviewedBy, SITE.url) }, lastReviewed: reviewedDate.toISOString() }
+      : {}),
+    ...(faq.length
+      ? {
+          mainEntity: faq.map((item, i) => ({
+            '@type': 'Question',
+            '@id': `${canonical}#faq-${i + 1}`,
+            name: item.question,
+            inLanguage,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer, inLanguage },
+          })),
+        }
       : {}),
   },
   {
@@ -73,7 +91,7 @@ const graph = [
     '@id': `${canonical}#article`,
     headline: title,
     description,
-    inLanguage: localeByCode(post.data.lang)?.hreflang ?? 'en',
+    inLanguage,
     image: [imageUrl],
     datePublished: pubDate.toISOString(),
     dateModified: (updatedDate ?? pubDate).toISOString(),
@@ -81,7 +99,8 @@ const graph = [
     publisher: { '@id': orgId },
     mainEntityOfPage: { '@id': canonical },
     articleSection: blog.categories[category],
-    ...(tags.length ? { keywords: tags.join(', ') } : {}),
+    // Tags are kebab-case slugs on the page; as keywords they read as the phrases people search.
+    ...(tags.length ? { keywords: tags.map((tag) => tag.replace(/-/g, ' ')).join(', ') } : {}),
   },
   {
     '@type': 'BreadcrumbList',
@@ -95,6 +114,8 @@ const graph = [
 ];
 
 const schema = { '@context': 'https://schema.org', '@graph': graph };
+// FAQ answers are free text from the post; "<" as an escape keeps any "</" from ending the script early.
+const json = JSON.stringify(schema).replace(/</g, '\\u003c');
 ---
 
-<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" is:inline set:html={json} />

@@ -1,9 +1,9 @@
 ---
 title: "White Noise, Pink Noise, Brown Noise: What Helps You Fall Asleep?"
 seoTitle: "Brown Noise vs White Noise vs Pink Noise: What Helps Sleep?"
-description: "White, pink and brown noise all work the same way: masking. Here is what the research actually shows, and how to set it up without losing your alarm."
+description: "Brown noise vs white noise vs pink noise: what the colors mean, what the sleep research actually shows, and how to use one without losing your alarm."
 pubDate: 2026-09-05T19:00:00-04:00
-updatedDate: 2026-09-28T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/white-pink-brown-noise-sleep/hero.jpg
@@ -47,6 +47,16 @@ The colors are not moods. They describe how sound energy is distributed across f
 
 Brown noise sounds "deeper" for exactly one reason: the treble has been rolled off. That is the entire difference. Its recent popularity is a genuine preference signal (a lot of people find hiss irritating and rumble soothing) but it is not evidence of superior sleep physiology.
 
+Side by side:
+
+| Noise | Sounds like | Energy |
+| --- | --- | --- |
+| White | Hiss: a radio between stations, a shower | Equal at every pitch, so it sounds bright |
+| Pink | Steady rain, wind in trees | Fades as pitch rises: balanced, softer |
+| Brown | Rumble: a distant waterfall, a jet cabin | Mostly low pitches: deep, no hiss |
+
+The evidence that any of the three improves sleep is equally thin, so the column that matters most is the one this table cannot fill in: which one you can stop noticing.
+
 One thing worth separating out, because it gets mangled constantly: there is real, careful research on pink noise and deep sleep, and it is not about running a sound machine all night. [Papalambros and colleagues](https://doi.org/10.3389/fnhum.2017.00109) at Northwestern delivered *short bursts* of pink noise timed precisely to the upstate of slow oscillations in sleeping older adults, and saw enhanced slow wave activity along with better overnight word recall. That requires EEG and phase-locked timing. A continuous pink noise track on your phone is not doing that, and no one should imply otherwise.
 
 **Verdict: pick the one you find least annoying.** Genuinely. The masking effect depends on covering the frequencies of whatever is bothering you, and preference determines whether you relax or lie there resenting the noise. If your problem is traffic and low rumble, a bass-heavy brown track may just add to the mud, and something with more midrange may mask better. If your problem is voices or a television through a wall, midrange coverage matters more than depth.
@@ -78,6 +88,18 @@ This is the narrow, honest place WakeSharp fits. It offers optional wind-down au
 ### Is brown noise better than white noise for sleep?
 
 There is no good evidence that it is. The two reviews that have looked hardest at this found the overall evidence weak, and the one direct white versus pink comparison they identified produced no clear winner. Brown noise sounds deeper because its energy falls off steeply with frequency, which many people prefer, and preference is a legitimate reason to choose it. It is just not a physiological advantage.
+
+### Is brown noise good for sleep?
+
+It can be, if it covers the sounds that wake you and you find it pleasant enough to ignore. That is the same mechanism as white and pink noise, so the deciding factor is which one you like. Keep it at a quiet, conversational volume and place the speaker between you and the noise rather than beside your head.
+
+### Is it bad to sleep with brown noise every night?
+
+There is no evidence that it is, at a sensible volume. A review of auditory stimulation during sleep found no reported adverse effects from short-term use, though long-term studies are thin. The real risks are volume, which matters most for children, and an alarm you can no longer hear over it.
+
+### What is green noise?
+
+Not a standard engineering term. It usually describes noise concentrated in the middle of the audible range, marketed as sounding like nature. It works, or fails to, by the same masking logic as the other colors.
 
 ### Should I run white noise all night or use a sleep timer?
 

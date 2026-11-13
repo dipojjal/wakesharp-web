@@ -1,9 +1,9 @@
 ---
 title: "Android Alarm Not Ringing? Blame the Battery Optimizer"
 seoTitle: "Android Alarm Not Going Off? Blame the Battery Optimizer"
-description: "Your Android alarm didn't go off? Doze, exact alarm permissions and your phone maker's battery manager are the usual culprits. Per brand fixes for tonight."
+description: "Android or Samsung alarm not going off? Doze, exact alarm permission and your phone maker's battery manager are the usual culprits. Per-brand fixes."
 pubDate: 2026-09-01T08:00:00-04:00
-updatedDate: 2026-09-24T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/android-alarm-not-ringing-battery-optimizer/hero.jpg
@@ -19,7 +19,9 @@ Nothing crashed. Nothing warned you. The alarm was simply never delivered.
 
 If this is your second or third time, the story you are probably telling yourself is that you are a heavy sleeper who cannot be trusted with mornings. On Android, that is usually the wrong suspect. What happened overnight was closer to a resource decision: your phone looked at an app that had been idle for seven hours, decided it was not earning its keep, and stopped it. An app that has been stopped has no pending alarms.
 
-This is the Android counterpart to [iPhone alarm didn't go off? The 7 real causes](/blog/iphone-alarm-didnt-go-off-causes). It needs its own list, because Android has something the iPhone does not: a second, manufacturer-written battery manager sitting on top of the operating system, with its own opinions and its own menus.
+This is the Android counterpart to [iPhone alarm not going off? The 7 real causes](/blog/iphone-alarm-didnt-go-off-causes). It needs its own list, because Android has something the iPhone does not: a second, manufacturer-written battery manager sitting on top of the operating system, with its own opinions and its own menus.
+
+**The short answer:** when an Android alarm does not go off, the usual cause is battery management stopping the alarm app overnight, not your hearing. Give the app the "Alarms and reminders" permission, set its battery usage to Unrestricted, take it off your phone maker's sleeping-apps list (on Samsung: Battery, then Background usage limits), check the alarm volume and Do Not Disturb, and never swipe the app away from Recents. The steps for each brand are below.
 
 ## What is actually running while you sleep
 
@@ -121,6 +123,14 @@ Because a locked, still, unplugged phone is the exact condition that triggers Do
 ### Does battery saver stop alarms on Android?
 
 Standard battery saver usually will not stop a properly permitted alarm, but extreme or ultra power saving modes on Samsung, Xiaomi and Huawei can suspend third-party apps almost entirely. If you use one overnight, allowlist your alarm app or turn the mode off before bed, then test it with an alarm two minutes ahead.
+
+### Why did my Samsung alarm not go off?
+
+If it was a third-party alarm app, Samsung's battery manager is the first suspect: open Battery, then Background usage limits, take the app out of "Sleeping apps" and "Deep sleeping apps", and add it to "Never auto sleeping apps." If it was Samsung's own Clock app, check the alarm volume in Sound and vibration, the Clock app's setting for alarm sound in Silent mode, and whether Do Not Disturb or a Mode has alarms switched off.
+
+### Why isn't my Google Pixel alarm going off?
+
+On a Pixel, check the alarm volume slider first, then Bedtime mode and any Modes that might block alarms, then whether the alarm is playing to connected Bluetooth headphones. Install any pending updates for the Clock app and the system. If the alarm comes from a third-party app, set its battery usage to Unrestricted and turn off "Pause app activity if unused" for it.
 
 ### Why does my alarm app work for a week on Samsung and then stop?
 

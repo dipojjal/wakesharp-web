@@ -3,7 +3,7 @@ title: "Revenge Bedtime Procrastination: Why You Sabotage Tomorrow Every Night"
 seoTitle: "Revenge Bedtime Procrastination: Why You Stay Up Too Late"
 description: "You're not lazy at midnight. You're reclaiming the autonomy your day took. Here's the science of revenge bedtime procrastination, and how to get the hour back."
 pubDate: 2026-08-28T19:00:00-04:00
-updatedDate: 2026-10-23T12:00:00-04:00
+updatedDate: 2026-11-13T12:00:00-05:00
 reviewedBy: founder
 reviewedDate: 2026-09-24T12:00:00-04:00
 heroImage: ../../assets/blog/revenge-bedtime-procrastination/hero.jpg
@@ -19,6 +19,8 @@ Then comes the part that stings. You finally put the phone down, and instead of 
 
 That feeling is the whole phenomenon in one sentence. What happens at midnight is not really about sleep. It is about the day.
 
+**Revenge bedtime procrastination** is putting off sleep to claim free time your day did not give you, even though you know you will pay for it tomorrow. It is not laziness and not insomnia: you could sleep, and you choose not to yet. The fix is not more willpower at midnight. It is giving that need for personal time somewhere earlier to go, and making the end of the evening automatic.
+
 ## The phrase came from a country working 996
 
 The English term is a translation. On Chinese social media, people had been describing 报复性熬夜, *bàofùxìng áoyè*, roughly "retaliatory staying up late," as a response to the 996 schedule: nine in the morning to nine at night, six days a week. It crossed into English in 2020, and the [Sleep Foundation's summary](https://www.sleepfoundation.org/sleep-hygiene/revenge-bedtime-procrastination) captures the logic behind it neatly: people with little control over their daytime hours refuse to sleep early in order to claim back some sense of freedom at night.
@@ -33,7 +35,7 @@ It turned out not to be a fringe habit. In a representative sample of 2,431 Dutc
 
 Here is where the easy story usually starts, and where it deserves to be interrupted. The pop version says willpower is a battery, your day drains it, and by 11 PM there is nothing left to spend on going to bed. It is a satisfying story. The evidence for it is shakier than its popularity suggests. The ego-depletion effect that story rests on was tested by 23 laboratories with 2,141 participants in a preregistered replication, and the effect did not show up ([Hagger et al., *Perspectives on Psychological Science*, 2016](https://journals.sagepub.com/doi/10.1177/1745691616652873)).
 
-A daily diary study of employees found something even more awkward for the battery model. On evenings when people had *fewer* self-regulatory resources available, they procrastinated bedtime **less**, not more. What did predict late nights was chronotype: evening types delayed bedtime more on workdays ([Kühnel, Syrek & Dreher, *Frontiers in Psychology*, 2018](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00077/full)). The authors read this as a collision between biological sleep timing and the schedule society hands you, which is not the same thing as a character flaw.
+A daily diary study of employees found something even more awkward for the battery model. On evenings when people had *fewer* self-regulatory resources available, they procrastinated bedtime **less**, not more. What did predict late nights was chronotype: evening types delayed bedtime more on workdays ([Kühnel, Syrek & Dreher, *Frontiers in Psychology*, 2018](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00077/full)). The authors read this as a collision between biological sleep timing and the schedule society hands you, which is not the same thing as a character flaw. (How much of a late chronotype you can actually move is its own question, covered in [becoming a morning person without hating your life](/blog/become-morning-person-realistic).)
 
 So if it is not a drained battery, what is it?
 
@@ -77,9 +79,9 @@ None of these are "just go to bed earlier." That instruction has never worked on
 
 3. **Build a 20-minute wind-down and make it something you want.** The American Academy of Sleep Medicine's guidance is to keep a relaxing pre-bed routine and get off devices roughly half an hour before bed ([AASM, healthy sleep habits](https://sleepeducation.org/healthy-sleep/healthy-sleep-habits/)). The trap is treating this as a third round of chores. If your wind-down feels like an obligation, your brain files it under "the day" rather than "my time," and you will procrastinate it too. A book, a shower, music, a stretch: it needs to be the reward, not the last task.
 
-4. **Raise the friction on the drift, not on yourself.** Charge the phone in another room. Kill autoplay. Log out of the one app that eats hours. This is not moral discipline, it is changing what the path of least resistance leads to, which is a much more reliable lever than resolve at 12:40 AM.
+4. **Raise the friction on the drift, not on yourself.** Charge the phone in another room (or at least [across the bedroom](/blog/phone-in-bedroom-at-night)). Kill autoplay. Log out of the one app that eats hours. This is not moral discipline, it is changing what the path of least resistance leads to, which is a much more reliable lever than resolve at 12:40 AM.
 
-5. **Anchor the wake time before you touch the bedtime.** Bedtime is the end of a day and negotiable at every moment. Wake time is a fixed point you can actually hold, and holding it pulls sleep pressure forward until an earlier bedtime becomes something your body wants rather than something you enforce. Regularity is worth defending on its own terms: in over 60,000 UK Biobank participants, day-to-day consistency of sleep timing predicted mortality risk more strongly than sleep duration did ([Windred et al., *Sleep*, 2024](https://academic.oup.com/sleep/article/47/1/zsad253/7280269)).
+5. **Anchor the wake time before you touch the bedtime.** Bedtime is the end of a day and negotiable at every moment. Wake time is a fixed point you can actually hold, and holding it pulls sleep pressure forward until an earlier bedtime becomes something your body wants rather than something you enforce. Regularity is worth defending on its own terms: in over 60,000 UK Biobank participants, day-to-day consistency of sleep timing predicted mortality risk more strongly than sleep duration did ([Windred et al., *Sleep*, 2024](https://academic.oup.com/sleep/article/47/1/zsad253/7280269)). If you are unsure where to put the bedtime, [work backward from tomorrow's first commitment](/blog/what-time-to-go-to-bed-work-backward).
 
 6. **Check whether it is actually insomnia.** If you delay bedtime because lying down early means staring at the ceiling, that is Nauts' third category, and no amount of procrastination advice will touch it. Persistent trouble falling asleep is a clinical matter with an effective, well-established treatment, and it is worth raising with a doctor rather than self-managing for another year.
 
@@ -108,6 +110,10 @@ Because tiredness and the desire for unclaimed time are two different systems, a
 ### How do I stop revenge bedtime procrastination?
 
 Give the need somewhere earlier to go, then make the transition automatic. Protect real leisure time before the evening ends, set a specific if-then cue for starting your wind-down, keep that wind-down enjoyable rather than another chore, put friction between yourself and the endless-scroll app, and hold a fixed wake time so sleep pressure does the persuading for you.
+
+### Why is it called revenge bedtime procrastination?
+
+The "revenge" comes from the Chinese phrase it was translated from, which describes staying up late in retaliation against long working days. The revenge is aimed at the day that left you no time of your own, but the only person who pays for it is you, the next morning.
 
 ### Is revenge bedtime procrastination the same as insomnia?
 

@@ -198,6 +198,13 @@ before drafting any paragraph that describes what the app does.
 
 ~1,600–2,200 words. Hook with a concrete failure scene → reframe as biology, not character → mechanism with **real, named sources** (we cite studies; Alarmy doesn't: it's a trust edge) → numbered practical fixes → ONE WakeSharp feature tied to *this* article's problem (never a generic pitch; mention honestly what the app can't do when relevant) → 3–4 question FAQ with `##` heading "FAQ" on troubleshooting/science posts (snippet play) → link 1–3 related earlier posts inline. Voice: precise, safety-forward, lightly wry, anti-hype: the site's existing register. The safety notice appears in every footer; don't contradict it (no "guaranteed wake-up" claims).
 
+Search and AI-answer conventions (added Nov 13, from the DataForSEO pass in [docs/audits/blog-seo-dataforseo-2026-11-13.md](./audits/blog-seo-dataforseo-2026-11-13.md)):
+
+- **Pick the target query from data, not instinct.** Check volume and difficulty before drafting; the audit's keyword map lists what each existing post targets, so a new post does not compete with one of ours. The `seoTitle` starts with that query, phrased the way people type it ("How Long Does Caffeine Stay in Your System?").
+- **Right after the hook, a bold `**The short answer:**` paragraph** of two to four sentences that answers the target query outright, with the key number in it. Google's AI Overviews, ChatGPT and featured snippets lift exactly this kind of passage; the scene can stay first.
+- **Name the questions people actually ask.** Use the People Also Ask questions for the target query as `##` sections or FAQ `###` questions, worded as the question. Every FAQ question becomes FAQPage structured data automatically (`src/lib/faq.ts`).
+- **Link the matching tool or feature page** where one exists (`/tools/sleep-calculator`, `/tools/caffeine-calculator`, `/tools/sleep-debt-calculator`, `/tools/nap-timer`, `/features/…`), and give the post at least one tag it shares with its closest siblings, since related reading is ranked by shared tags.
+
 ## Growth notes
 
 - `/blog` is a single list (featured latest + grid). If the archive passes ~150 posts, add pagination at `/blog/page/[page]`never `[page].astro` beside `[slug].astro`.
