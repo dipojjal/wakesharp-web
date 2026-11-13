@@ -23,7 +23,7 @@ Here are the seven causes that account for most missed alarms, roughly in the or
 
 **Quick fixes, in the order to try them:**
 
-1. Raise the slider under Settings > Sounds & Haptics > Ringtone and Alerts, and turn off Change with Buttons.
+1. Raise the alarm volume in Settings > Sounds & Haptics: on iOS 27, turn off Match Ringtone Volume under Alarms and Timers and raise that slider; on iOS 26, raise the slider under Ringtone and Alerts. Then turn off Change with Buttons.
 2. Open the alarm in the Clock app and make sure its Sound is not set to None.
 3. Turn off Attention Aware Features in Settings > Face ID & Passcode.
 4. Check the alarm is switched on and repeats on the days you expect.
@@ -37,11 +37,11 @@ On Android instead? The causes there are different, and mostly about battery man
 
 ### 1. Alarm volume is not the volume you have been adjusting
 
-An iPhone keeps two volumes. Media volume covers music, video and podcasts. Ringtone and alerts volume covers the ringer, notification sounds and alarms. They move independently, and the physical buttons usually only touch the first one.
+An iPhone keeps two volumes. Media volume covers music, video and podcasts. Ringtone and alerts volume covers the ringer, notification sounds and, by default, alarms. They move independently, and the physical buttons usually only touch the first one. iOS 27 adds a way to split alarms off: under Alarms and Timers, turning off Match Ringtone Volume gives them a slider of their own ([Apple](https://support.apple.com/guide/iphone/set-an-alarm-iph2909d3a74/ios)).
 
 So the podcast you turned up at midnight did nothing for your alarm. And if you have "Change with Buttons" switched on, a long press of the volume-down button in a quiet cinema can drag your alarm close to inaudible without ever showing you an alarm-shaped warning.
 
-Check it now: Settings &gt; Sounds &amp; Haptics, then look at the slider under Ringtone and Alerts. Drag it and the phone plays a sample at that level, which is the honest test. [Apple lists this first](https://support.apple.com/en-us/118444) in its own alarm troubleshooting, which tells you how often it is the answer.
+Check it now: Settings &gt; Sounds &amp; Haptics. On iOS 26, look at the slider under Ringtone and Alerts; on iOS 27, look under Alarms and Timers, where the alarm follows that same slider unless you have turned off Match Ringtone Volume. Drag the slider and the phone plays a sample at that level, which is the honest test. [Apple lists this first](https://support.apple.com/en-us/118444) in its own alarm troubleshooting, which tells you how often it is the answer.
 
 The fix: set the slider deliberately, then turn off Change with Buttons on the same screen so a stray press cannot drain it again. Your volume buttons will then only move media, which is a small price.
 
@@ -138,7 +138,7 @@ If the alarm still fails after all of that, treat it as a fault to report to App
 
 Every cause above shares one shape. The phone knew, hours in advance, that the conditions were wrong. It just had no reason to mention it.
 
-That is the job of WakeSharp's reliability check, which lives at Settings &gt; Alarm reliability. It reads the conditions on your phone that can stop an alarm: permissions, alarm volume, notification settings, lock-screen takeover, battery restrictions. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out. The same checks for both iPhone and Android, step by step, are on [WakeSharp's support page](/support).
+That is the job of WakeSharp's reliability check, which lives at Settings &gt; Check alarm reliability. On iPhone it checks what iOS lets an app check, such as alarm permission and whether your alarms are switched on and actually scheduled. It cannot read your alarm volume, because iOS gives apps no way to see it, so that slider stays your job. It leads with a plain verdict rather than a promise, and where the platform will not tell it something, it says so instead of showing you a reassuring green tick. If an alarm does fail, it can often name the provable cause afterwards, or admit that it could not work it out. The same checks for both iPhone and Android, step by step, are on [WakeSharp's support page](/support).
 
 On iPhone, WakeSharp rings through Apple's AlarmKit, so once you have granted alarm permission the alarm sounds through Silent mode and Focus the way the Clock app does. That permission is the whole foundation: decline or revoke it and WakeSharp cannot schedule an alarm at all, which is exactly what the reliability check will tell you first.
 
@@ -150,7 +150,7 @@ The limit is the honest one, and it is the same limit every alarm app has: WakeS
 
 ### Why did my iPhone alarm not go off?
 
-In order of likelihood: the ringtone and alerts volume was low, the alarm's sound was set to None, Attention Aware Features quieted it, the alarm was not armed for today, the phone was off or flat, the wake-up alarm from your sleep schedule had its own quieter volume, or you dismissed it while barely awake. Check the Ringtone and Alerts slider and the alarm's Sound setting first, because those two account for most of it.
+In order of likelihood: the alarm volume was low (Ringtone and Alerts, or Alarms and Timers on iOS 27), the alarm's sound was set to None, Attention Aware Features quieted it, the alarm was not armed for today, the phone was off or flat, the wake-up alarm from your sleep schedule had its own quieter volume, or you dismissed it while barely awake. Check the alarm volume slider and the alarm's Sound setting first, because those two account for most of it.
 
 ### Does the iPhone alarm ring on silent?
 
@@ -158,11 +158,11 @@ Yes. Apple is explicit that Silent mode, the Ring/Silent switch and Do Not Distu
 
 ### Why is my iPhone alarm so quiet?
 
-Usually one of three things: the Ringtone and Alerts slider is low, Change with Buttons let a volume press drain it, or Attention Aware Features lowered the volume because the front camera saw you looking at the screen. A sleep schedule wake-up alarm also has its own volume slider in Health, separate from everything else.
+Usually one of three things: the alarm volume slider is low (Ringtone and Alerts, or Alarms and Timers on iOS 27), Change with Buttons let a volume press drain it, or Attention Aware Features lowered the volume because the front camera saw you looking at the screen. A sleep schedule wake-up alarm also has its own volume slider in Health, separate from everything else.
 
 ### Why does my iPhone alarm go off but make no sound?
 
-Because an alarm can fire without making noise. The usual reasons are an alarm Sound set to None (it still lights the screen and vibrates if haptics are on), a Ringtone and Alerts volume near zero, or Attention Aware Features lowering the volume because the phone saw your face. Check those three in that order.
+Because an alarm can fire without making noise. The usual reasons are an alarm Sound set to None (it still lights the screen and vibrates if haptics are on), an alarm volume near zero, or Attention Aware Features lowering the volume because the phone saw your face. Check those three in that order.
 
 ### Does Low Power Mode affect alarms on iPhone?
 

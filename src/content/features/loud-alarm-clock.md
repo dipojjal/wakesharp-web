@@ -1,8 +1,8 @@
 ---
 title: "Loud alarm tones"
 seoTitle: "Loud alarm tones"
-description: "Choose a sound from the Loud category for an alarm that stands out. Check volume and permissions on your iPhone or Android phone."
-lede: "Choose a sound from the Loud category for an alarm that stands out. Check volume and permissions on your iPhone or Android phone."
+description: "Choose a sound from the Loud category on iPhone for an alarm that stands out. Check volume and permissions on your iPhone or Android phone."
+lede: "Choose a sound from the Loud category on iPhone for an alarm that stands out. Check volume and permissions on your iPhone or Android phone."
 lang: "en"
 translationOf: "loud-alarm-clock"
 order: 0
@@ -13,7 +13,7 @@ screenshot: "../../assets/store/2.29/en/tones.webp"
 screenshotAlt: "The Loud sound category and alarm tones"
 ---
 
-Loud is a sound category in the alarm editor. Open the sound picker, listen to the tones, and choose the one you want for that alarm. You can pair the same tone with any available mission.
+On iPhone, Loud is a sound category in the alarm editor. Open the sound picker, listen to the tones, and choose the one you want for that alarm. You can pair the same tone with any available mission. Google Play has version 2.9, which does not have the Loud category yet, so on Android, preview the tones it offers and choose the one you notice most.
 
 ## How to use it
 

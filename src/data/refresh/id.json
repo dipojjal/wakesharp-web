@@ -2,7 +2,7 @@
   "releaseNotice": "WakeSharp 2.30 kini tersedia di App Store. Google Play memiliki versi 2.9, jadi beberapa fitur yang dijelaskan di sini untuk saat ini hanya ada di iPhone. Unduh pembaruan terbaru dari App Store atau Google Play.",
   "hero": "Pilih suara dari kategori Loud, lalu tentukan tugas saat alarm berbunyi. Kerjakan soal matematika, pindai botol, atau mulai bergerak dengan misi berjalan.",
   "loudTitle": "Mulai dengan suara yang menarik perhatian",
-  "loud": "Loud adalah kategori di pemilih suara alarm. Dengarkan nadanya dan simpan pilihan untuk alarm tersebut. Suara ini bisa dipasangkan dengan misi apa pun yang tersedia.",
+  "loud": "Di iPhone, Loud adalah kategori di pemilih suara alarm. Dengarkan nadanya dan simpan pilihan untuk alarm tersebut. Suara ini bisa dipasangkan dengan misi apa pun yang tersedia. Google Play memiliki versi 2.9, yang belum punya kategori Loud, jadi di Android dengarkan nada yang tersedia dan pilih yang paling mudah Anda sadari.",
   "volume": "Di iPhone, iOS mengatur volume alarm sistem. Nada Loud tidak mengubah pengaturan itu. Di Android, periksa volume alarm dan izinkan alarm dalam Jangan Ganggu. Uji pada ponselmu sendiri.",
   "scanTitle": "Bangun, temukan, lalu pindai",
   "scan": "Pilih target seperti botol, cangkir, atau wastafel. Saat alarm berbunyi, arahkan kamera ke objek itu. Konfirmasi hijau menandakan WakeSharp mengenalinya. Pengenalan berjalan di ponselmu.",
@@ -52,7 +52,7 @@
   "features": [
     [
       "Nada alarm keras",
-      "Pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm.",
+      "Di iPhone, pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm.",
       [
         "Buka pemilih suara alarm dan kategori Loud.",
         "Dengarkan nada, simpan, lalu pilih misi.",

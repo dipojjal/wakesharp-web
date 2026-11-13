@@ -1,8 +1,8 @@
 ---
 title: "Laute Wecktöne"
 seoTitle: "Laute Wecktöne"
-description: "Wähle einen Ton aus der Kategorie Laut. Prüfe Lautstärke und Berechtigungen, bevor du dich darauf verlässt."
-lede: "Wähle einen Ton aus der Kategorie Laut. Prüfe Lautstärke und Berechtigungen, bevor du dich darauf verlässt."
+description: "Wähle auf dem iPhone einen Ton aus der Kategorie Laut. Prüfe Lautstärke und Berechtigungen, bevor du dich darauf verlässt."
+lede: "Wähle auf dem iPhone einen Ton aus der Kategorie Laut. Prüfe Lautstärke und Berechtigungen, bevor du dich darauf verlässt."
 lang: "de"
 translationOf: "loud-alarm-clock"
 order: 0
@@ -13,7 +13,7 @@ screenshot: "../../../assets/store/2.29/de/tones.webp"
 screenshotAlt: "Die Kategorie Laut und ihre Töne"
 ---
 
-Laut ist eine Kategorie in der Tonauswahl. Höre dir die Töne an und speichere einen für diesen Wecker. Du kannst ihn mit jeder verfügbaren Mission kombinieren.
+Auf dem iPhone ist Laut eine Kategorie in der Tonauswahl. Höre dir die Töne an und speichere einen für diesen Wecker. Du kannst ihn mit jeder verfügbaren Mission kombinieren. Google Play hat Version 2.9, in der die Kategorie Laut noch fehlt. Höre dir unter Android die angebotenen Töne an und wähle den, den du am deutlichsten wahrnimmst.
 
 ## So funktioniert es
 

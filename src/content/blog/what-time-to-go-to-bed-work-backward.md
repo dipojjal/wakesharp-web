@@ -49,9 +49,9 @@ Eighty five percent sounds high until you turn it around. At 85 percent efficien
 
 ### 4. Your actual sleep need
 
-The joint consensus statement from the American Academy of Sleep Medicine and the Sleep Research Society recommends that [adults sleep seven or more hours per night](https://jcsm.aasm.org/doi/10.5664/jcsm.4758) on a regular basis. Note the shape of that: a floor, not a target, and the same statement acknowledges that individual need varies with genetic, behavioral, medical and environmental factors. Seven is where the evidence stops arguing, not where you personally stop being tired.
+The joint consensus statement from the American Academy of Sleep Medicine and the Sleep Research Society recommends that [adults sleep seven or more hours per night](https://pmc.ncbi.nlm.nih.gov/articles/PMC4442216/) on a regular basis. Note the shape of that: a floor, not a target, and the same statement acknowledges that individual need varies with genetic, behavioral, medical and environmental factors. Seven is where the evidence stops arguing, not where you personally stop being tired.
 
-Children and teenagers need more, which is worth knowing if you are setting someone else's bedtime too. The AASM's [pediatric consensus statement](https://jcsm.aasm.org/doi/10.5664/jcsm.5866) recommends:
+Children and teenagers need more, which is worth knowing if you are setting someone else's bedtime too. The AASM's [pediatric consensus statement](https://pmc.ncbi.nlm.nih.gov/articles/PMC4877308/) recommends:
 
 | Age | Recommended sleep per night |
 | --- | --- |
@@ -107,7 +107,7 @@ If you fall asleep within minutes and rarely wake in the night, your efficiency 
 
 Here is the part most bedtime advice skips. A computed bedtime is a target, not a command. You cannot decide to fall asleep, and grinding away at it in the dark is actively counterproductive.
 
-If you are lying there wide awake, the evidence-backed move is to get up. Stimulus control, one of the single-component therapies the AASM's [clinical practice guideline](https://jcsm.aasm.org/doi/10.5664/jcsm.8986) recommends for chronic insomnia, works by keeping the bed associated with sleep rather than with frustration: go to bed when sleepy, leave the bedroom when you cannot sleep, come back when you are drowsy again. Twenty minutes of staring is the usual rule of thumb. If this is happening most nights, that is a conversation for a clinician, not a blog post.
+If you are lying there wide awake, the evidence-backed move is to get up. Stimulus control, one of the single-component therapies the AASM's [clinical practice guideline](https://pmc.ncbi.nlm.nih.gov/articles/PMC7853203/) recommends for chronic insomnia, works by keeping the bed associated with sleep rather than with frustration: go to bed when sleepy, leave the bedroom when you cannot sleep, come back when you are drowsy again. Twenty minutes of staring is the usual rule of thumb. If this is happening most nights, that is a conversation for a clinician, not a blog post.
 
 And if the problem is not that you cannot sleep but that you will not go, that is a different animal with its own [rather uncomfortable name](/blog/revenge-bedtime-procrastination). The arithmetic does not fix it. It only tells you exactly what it is costing.
 

@@ -56,9 +56,9 @@ Where Sleep Focus does change something is one step upstream. If your morning al
 
 ### 3. The volume slider that applies, and the one that does not
 
-Your iPhone keeps two volumes. Media volume covers music, video and podcasts. Ringtone and alerts volume covers the ringer, notification sounds and alarms. Alarms follow the second one. The physical buttons usually move the first one.
+Your iPhone keeps two volumes. Media volume covers music, video and podcasts. Ringtone and alerts volume covers the ringer, notification sounds and alarms. Alarms follow the second one, unless you are on iOS 27 and have given them their own slider by turning off Match Ringtone Volume under Alarms and Timers ([Apple](https://support.apple.com/guide/iphone/set-an-alarm-iph2909d3a74/ios)). The physical buttons usually move the first one.
 
-Open Settings, then Sounds and Haptics, and look at the slider under Ringtone and Alerts. Drag it and the phone plays a sample at that level, which is the only honest test. Directly below it sits Change with Buttons. Leave that on and a long press of volume-down in a quiet cinema can drain your alarm to almost nothing, with no alarm-shaped warning at any point. Apple leads its own troubleshooting page with this slider, which tells you how often it turns out to be the answer.
+Open Settings, then Sounds and Haptics, and look at the slider under Ringtone and Alerts (on iOS 27, check Alarms and Timers too). Drag it and the phone plays a sample at that level, which is the only honest test. Directly below it sits Change with Buttons. Leave that on and a long press of volume-down in a quiet cinema can drain your alarm to almost nothing, with no alarm-shaped warning at any point. Apple leads its own troubleshooting page with this slider, which tells you how often it turns out to be the answer.
 
 So: the silent switch, no effect. The volume buttons, potentially an enormous effect. Two controls that feel like the same control and are not.
 
@@ -118,7 +118,7 @@ If you would rather check all of this before bed than reconstruct it afterwards,
 
 ### Will my alarm go off on silent?
 
-Yes, on both platforms, for the built-in Clock app alarm. Apple states that Silent mode, the Ring/Silent switch and Do Not Disturb do not affect the alarm sound. Android plays alarms on a separate audio stream that mute and vibrate mode do not touch. The exceptions are your alarm's own sound being set to None, a low ringtone and alerts volume on iPhone, a low alarm volume on Android, and a Samsung Clock setting that can silence alarms when the phone is muted.
+Yes, on both platforms, for the built-in Clock app alarm. Apple states that Silent mode, the Ring/Silent switch and Do Not Disturb do not affect the alarm sound. Android plays alarms on a separate audio stream that mute and vibrate mode do not touch. The exceptions are your alarm's own sound being set to None, a low alarm volume on iPhone, a low alarm volume on Android, and a Samsung Clock setting that can silence alarms when the phone is muted.
 
 ### Will my alarm go off on Do Not Disturb?
 
@@ -130,7 +130,7 @@ Yes. Sleep Focus dims the lock screen and silences notifications, but Clock alar
 
 ### How do I silence my phone but keep the alarm?
 
-On iPhone, use Silent mode, Do Not Disturb or any Focus mode as you like: Clock alarms ring through all three, so the only thing to check is the Ringtone and Alerts volume in Settings. On Android, use vibrate, mute or Do Not Disturb with alarms allowed (the default), avoid Total Silence on older phones, and on a Samsung check the Clock app's own setting for alarm sound in Silent mode. Then set the alarm volume deliberately once.
+On iPhone, use Silent mode, Do Not Disturb or any Focus mode as you like: Clock alarms ring through all three, so the only thing to check is the alarm volume in Settings (Ringtone and Alerts, or Alarms and Timers on iOS 27). On Android, use vibrate, mute or Do Not Disturb with alarms allowed (the default), avoid Total Silence on older phones, and on a Samsung check the Clock app's own setting for alarm sound in Silent mode. Then set the alarm volume deliberately once.
 
 ### Will my alarm ring if my Android phone is on vibrate?
 

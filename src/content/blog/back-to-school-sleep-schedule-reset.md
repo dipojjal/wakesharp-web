@@ -31,7 +31,7 @@ The second thing that drifted is habit, and habit is much easier to move than bi
 
 This is also why the American Academy of Pediatrics recommended in 2014 that middle and high schools [start no earlier than 8:30 a.m.](https://publications.aap.org/pediatrics/article/134/3/642/74175/School-Start-Times-for-Adolescents), noting that sleep-wake cycles shift up to two hours later at the start of puberty. Most districts did not take that advice. Which means the reset falls to you, at home, this week.
 
-For reference on what you are aiming at: the American Academy of Sleep Medicine's [pediatric consensus statement](https://jcsm.aasm.org/doi/10.5664/jcsm.5866) recommends 9 to 12 hours per night for ages 6 to 12 and 8 to 10 hours for ages 13 to 18. The CDC's own figures show the [large majority of high school students](https://archive.cdc.gov/www_cdc_gov/healthyschools/sleep.htm) do not hit that during the school year.
+For reference on what you are aiming at: the American Academy of Sleep Medicine's [pediatric consensus statement](https://pmc.ncbi.nlm.nih.gov/articles/PMC4877308/) recommends 9 to 12 hours per night for ages 6 to 12 and 8 to 10 hours for ages 13 to 18. The CDC's own figures show the [large majority of high school students](https://archive.cdc.gov/www_cdc_gov/healthyschools/sleep.htm) do not hit that during the school year.
 
 ## What actually moves a body clock
 

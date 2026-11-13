@@ -2,7 +2,7 @@
   "releaseNotice": "WakeSharp 2.30 is live on the App Store. Google Play has version 2.9, so some features described here are iPhone-only for now. Get the latest update from the App Store or Google Play.",
   "hero": "Pick a sound from the Loud category, then choose what you want to do when the alarm rings. Solve a few math problems, scan a bottle, or get moving with a walking mission.",
   "loudTitle": "Start with a sound you will notice",
-  "loud": "Loud is a sound category in the alarm editor. Open the sound picker, listen to the tones, and choose the one you want for that alarm. You can pair the same tone with any available mission.",
+  "loud": "On iPhone, Loud is a sound category in the alarm editor. Open the sound picker, listen to the tones, and choose the one you want for that alarm. You can pair the same tone with any available mission. Google Play has version 2.9, which does not have the Loud category yet, so on Android, preview the tones it offers and choose the one you notice most.",
   "volume": "On iPhone, system alarm volume is controlled by iOS. Choosing a Loud tone does not override that setting. On Android, check the alarm volume and allow alarms in Do Not Disturb. Test the sound on your own phone before relying on it.",
   "scanTitle": "Get up. Find it. Scan it.",
   "scan": "Choose a target such as a bottle, mug or sink. When the alarm rings, point the camera at that object. The green match confirmation tells you when WakeSharp has recognised it. Object recognition runs on your phone.",
@@ -52,7 +52,7 @@
   "features": [
     [
       "Loud alarm tones",
-      "Choose a sound from the Loud category for an alarm that stands out. Check volume and permissions on your iPhone or Android phone.",
+      "Choose a sound from the Loud category on iPhone for an alarm that stands out. Check volume and permissions on your iPhone or Android phone.",
       [
         "Open an alarm and its sound picker. Select the Loud category.",
         "Preview a tone and save it to that alarm. Choose a mission separately.",

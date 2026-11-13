@@ -1,8 +1,8 @@
 ---
 title: "Nada alarm keras"
 seoTitle: "Nada alarm keras"
-description: "Pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm."
-lede: "Pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm."
+description: "Di iPhone, pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm."
+lede: "Di iPhone, pilih nada dari kategori Loud dan periksa volume serta izin di ponsel sebelum mengandalkan alarm."
 lang: "id"
 translationOf: "loud-alarm-clock"
 order: 0
@@ -13,7 +13,7 @@ screenshot: "../../../assets/store/2.29/en/tones.webp"
 screenshotAlt: "Kategori Loud dan nada alarm"
 ---
 
-Loud adalah kategori di pemilih suara alarm. Dengarkan nadanya dan simpan pilihan untuk alarm tersebut. Suara ini bisa dipasangkan dengan misi apa pun yang tersedia.
+Di iPhone, Loud adalah kategori di pemilih suara alarm. Dengarkan nadanya dan simpan pilihan untuk alarm tersebut. Suara ini bisa dipasangkan dengan misi apa pun yang tersedia. Google Play memiliki versi 2.9, yang belum punya kategori Loud, jadi di Android dengarkan nada yang tersedia dan pilih yang paling mudah Anda sadari.
 
 ## Cara menggunakan
 

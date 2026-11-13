@@ -24,11 +24,11 @@ Kaçırılan alarmların çoğunu açıklayan yedi neden şunlar; kabaca, yanıt
 
 ### 1. Alarm ses düzeyi, ayarlayıp durduğunuz ses düzeyi değildir
 
-Bir iPhone iki ayrı ses düzeyi tutar. Medya ses düzeyi müziği, videoyu ve podcast'leri kapsar. Zil sesi ve uyarılar ses düzeyi ise zili, bildirim seslerini ve alarmları kapsar. Bağımsız hareket ederler ve fiziksel düğmeler genellikle yalnızca birincisine dokunur.
+Bir iPhone iki ayrı ses düzeyi tutar. Medya ses düzeyi müziği, videoyu ve podcast'leri kapsar. Zil sesi ve uyarılar ses düzeyi ise zili, bildirim seslerini ve varsayılan olarak alarmları kapsar. Bağımsız hareket ederler ve fiziksel düğmeler genellikle yalnızca birincisine dokunur. iOS 27, alarmları ayırmanın bir yolunu ekliyor: alarmlar ve zamanlayıcılar bölümünde, ses düzeylerini zil sesine eşitleyen seçeneği kapattığınızda alarmların kendi kaydırıcısı olur ([Apple](https://support.apple.com/guide/iphone/set-an-alarm-iph2909d3a74/ios)).
 
 Yani gece yarısı sesini açtığınız podcast alarmınız için hiçbir şey yapmadı. Ve "Düğmelerle Değiştir" açıksa, sessiz bir sinema salonunda ses kısma düğmesine uzun basmanız, size alarma dair hiçbir uyarı göstermeden alarmınızı duyulmaz sınırına kadar çekebilir.
 
-Şimdi kontrol edin: Ayarlar &gt; Sesler ve Dokunsallar, sonra Zil Sesi ve Uyarılar altındaki kaydırıcıya bakın. Kaydırıcıyı sürüklediğinizde telefon o düzeyde bir örnek çalar; dürüst test budur. Apple kendi alarm sorun giderme sayfasında [bunu ilk sıraya koyuyor](https://support.apple.com/en-us/118444); bu da size bunun ne sıklıkta yanıt olduğunu anlatır.
+Şimdi kontrol edin: Ayarlar &gt; Sesler ve Dokunsallar, sonra Zil Sesi ve Uyarılar altındaki kaydırıcıya bakın (iOS 27'de alarmlar ve zamanlayıcılar bölümüne de bakın). Kaydırıcıyı sürüklediğinizde telefon o düzeyde bir örnek çalar; dürüst test budur. Apple kendi alarm sorun giderme sayfasında [bunu ilk sıraya koyuyor](https://support.apple.com/en-us/118444); bu da size bunun ne sıklıkta yanıt olduğunu anlatır.
 
 Çözüm: kaydırıcıyı bilerek ayarlayın, sonra aynı ekranda Düğmelerle Değiştir'i kapatın; böylece yanlışlıkla bir basış onu yeniden boşaltamaz. Ses düğmeleriniz bundan sonra yalnızca medyayı oynatır; küçük bir bedel.
 
@@ -114,7 +114,7 @@ Bazen de gerçekten bir hatadır ve bunların hiçbiri sizin suçunuz değildir.
 
 Yukarıdaki her nedenin ortak bir biçimi var. Telefon, koşulların yanlış olduğunu saatler öncesinden biliyordu. Yalnızca bundan söz etmek için hiçbir nedeni yoktu.
 
-WakeSharp'ın güvenilirlik kontrolünün işi budur; Ayarlar &gt; Alarm güvenilirliği yolunda durur. Telefonunuzda bir alarmı durdurabilecek koşulları okur: izinler, alarm ses düzeyi, bildirim ayarları, kilit ekranının üzerinde görünme, pil kısıtlamaları. Söz vermek yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde, rahatlatıcı bir yeşil onay işareti göstermek yerine bunu belirtir. Bir alarm gerçekten çalmazsa, çoğu zaman sonrasında kanıtlanabilir nedeni adıyla söyleyebilir ya da bunu çözemediğini itiraf eder.
+WakeSharp'ın güvenilirlik kontrolünün işi budur; Ayarlar &gt; Alarm güvenilirliği yolunda durur. iPhone'da, iOS'in bir uygulamaya kontrol ettirdiği şeyleri kontrol eder; örneğin alarm iznini ve alarmlarınızın açık olup olmadığını ve gerçekten zamanlanıp zamanlanmadığını. Alarm ses düzeyini ise okuyamaz, çünkü iOS uygulamalara bunu görmenin bir yolunu vermez; o kaydırıcı sizin işiniz olarak kalır. Söz vermek yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde, rahatlatıcı bir yeşil onay işareti göstermek yerine bunu belirtir. Bir alarm gerçekten çalmazsa, çoğu zaman sonrasında kanıtlanabilir nedeni adıyla söyleyebilir ya da bunu çözemediğini itiraf eder.
 
 iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verdikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur. Bütün temel o izindir: reddeder ya da geri alırsanız WakeSharp hiçbir alarm zamanlayamaz ve güvenilirlik kontrolünün size ilk söyleyeceği şey tam olarak budur.
 
@@ -126,7 +126,7 @@ Sınır dürüst olanıdır ve her alarm uygulamasının sahip olduğu sınırla
 
 ### iPhone alarmım neden çalmadı?
 
-Olasılık sırasıyla: zil sesi ve uyarılar ses düzeyi düşüktü, alarmın sesi Hiçbiri'ye ayarlıydı, Dikkat Farkındalıklı Özellikler onu kıstı, alarm bugün için kurulu değildi, telefon kapalıydı ya da pili bitmişti, uyku programınızdan gelen uyanma alarmının kendi daha kısık ses düzeyi vardı ya da onu zar zor uyanıkken kapattınız. Önce Zil Sesi ve Uyarılar kaydırıcısına ve alarmın Ses ayarına bakın; çünkü bu ikisi çoğunu açıklar.
+Olasılık sırasıyla: alarm ses düzeyi düşüktü (Zil Sesi ve Uyarılar ya da iOS 27'de alarmlar ve zamanlayıcılar), alarmın sesi Hiçbiri'ye ayarlıydı, Dikkat Farkındalıklı Özellikler onu kıstı, alarm bugün için kurulu değildi, telefon kapalıydı ya da pili bitmişti, uyku programınızdan gelen uyanma alarmının kendi daha kısık ses düzeyi vardı ya da onu zar zor uyanıkken kapattınız. Önce alarm ses düzeyi kaydırıcısına ve alarmın Ses ayarına bakın; çünkü bu ikisi çoğunu açıklar.
 
 ### iPhone alarmı sessizdeyken çalar mı?
 
@@ -134,7 +134,7 @@ Evet. Apple açıkça belirtiyor: Sessiz mod, Zil/Sessiz anahtarı ve Rahatsız 
 
 ### iPhone alarmım neden bu kadar kısık?
 
-Genellikle üç şeyden biri: Zil Sesi ve Uyarılar kaydırıcısı düşüktür, Düğmelerle Değiştir bir ses düğmesine basışın onu boşaltmasına izin vermiştir ya da ön kamera ekrana baktığınızı gördüğü için Dikkat Farkındalıklı Özellikler sesi kısmıştır. Bir uyku programı uyanma alarmının da Sağlık uygulamasında, diğer her şeyden ayrı kendi ses düzeyi kaydırıcısı vardır.
+Genellikle üç şeyden biri: alarm ses düzeyi kaydırıcısı düşüktür (Zil Sesi ve Uyarılar ya da iOS 27'de alarmlar ve zamanlayıcılar), Düğmelerle Değiştir bir ses düğmesine basışın onu boşaltmasına izin vermiştir ya da ön kamera ekrana baktığınızı gördüğü için Dikkat Farkındalıklı Özellikler sesi kısmıştır. Bir uyku programı uyanma alarmının da Sağlık uygulamasında, diğer her şeyden ayrı kendi ses düzeyi kaydırıcısı vardır.
 
 ### Dikkat Farkındalıklı Özellikler alarmımı kısabilir mi?
 

@@ -21,7 +21,7 @@ Here is the uncomfortable part. To make sure an alarm goes off, wanting it is no
 
 This is the evening half of a pair. The morning half, [iPhone alarm didn't go off? the 7 real causes](/blog/iphone-alarm-didnt-go-off-causes), is a post-mortem for a morning that already went wrong. This one runs the other direction: six things you check tonight, each in well under thirty seconds, so tomorrow morning has nothing to investigate.
 
-**The short answer:** to make sure your alarm goes off, check six things before bed. The alarm has a sound and a real volume (Ringtone and Alerts on iPhone, Alarm volume on Android). The app is still allowed to ring. Do Not Disturb or your Focus allows alarms. The alarm app is exempt from battery saving. The phone is charging. And for anything important, a second alarm is set on another device.
+**The short answer:** to make sure your alarm goes off, check six things before bed. The alarm has a sound and a real volume (Ringtone and Alerts on iPhone, or Alarms and Timers on iOS 27; Alarm volume on Android). The app is still allowed to ring. Do Not Disturb or your Focus allows alarms. The alarm app is exempt from battery saving. The phone is charging. And for anything important, a second alarm is set on another device.
 
 ## An alarm is not one thing
 
@@ -45,7 +45,7 @@ Five checks cover the first four systems. The sixth covers you.
 
 Open the alarm itself. Three things have to be true on that one screen: it is switched on, it is armed for tomorrow rather than for a weekday you are not currently in, and its sound is not None. None is a real, selectable option on both platforms. An alarm set to it fires exactly on time, lights the screen, offers you a Stop button, and makes no noise at all.
 
-Then the volume, which is not the volume you have been adjusting all evening. On iPhone, alarms follow the Ringtone and Alerts slider in Settings, Sounds and Haptics, not the media volume your side buttons usually move. On Android, alarms have their own stream: open the Clock app, then Settings, then the Alarm volume slider, or press a volume button and open the menu to reach it.
+Then the volume, which is not the volume you have been adjusting all evening. On iPhone, alarms follow the Ringtone and Alerts slider in Settings, Sounds and Haptics, not the media volume your side buttons usually move; on iOS 27 you can give alarms their own slider by turning off Match Ringtone Volume under Alarms and Timers ([Apple](https://support.apple.com/guide/iphone/set-an-alarm-iph2909d3a74/ios)). On Android, alarms have their own stream: open the Clock app, then Settings, then the Alarm volume slider, or press a volume button and open the menu to reach it.
 
 Google's Clock app will actually tell you the morning after if [your alarm volume was below 30% and may be too low](https://support.google.com/pixelphone/answer/2840926). Useful information, delivered about nine hours late.
 
@@ -115,7 +115,7 @@ And no configuration, on any platform, can promise you will wake up. Anyone clai
 
 Every item on that list shares a shape: the phone knew, hours ahead of time, that the conditions were wrong, and had no reason to mention it.
 
-That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you: a missing permission, an alarm volume set too low, notification settings, battery restrictions. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does. The same checklist, split by platform, is on [WakeSharp's support page](/support).
+That is what WakeSharp's alarm reliability check does, and it lives in Settings, under Check alarm reliability. It runs this same class of check on your device and names the specific thing that would have silenced you, such as a missing alarm permission or an alarm that is switched off or not actually scheduled. On Android it also reads the alarm volume, notification settings and battery restrictions. On iPhone it cannot read the alarm volume, because iOS gives apps no way to see it, so that slider stays on your own list. The point is the naming. It leads with a plain verdict rather than a reassuring green tick, and where the platform will not tell it something, it says that instead of guessing. On iPhone, WakeSharp rings through Apple's AlarmKit, so once alarm permission is granted, the alarm sounds through Silent mode and Focus the way the Clock app does. The same checklist, split by platform, is on [WakeSharp's support page](/support).
 
 The honest limits: a checker can only see what the operating system chooses to expose, so it cannot rule out every cause, and it cannot promise you will wake up. WakeSharp is not a medical device. For a morning you cannot afford to miss, still set that second, independent alarm.
 
@@ -123,7 +123,7 @@ The honest limits: a checker can only see what the operating system chooses to e
 
 ### How do I make sure my alarm goes off in the morning?
 
-Check six things before bed. The alarm is switched on and armed for tomorrow with a sound that is not None; the alarm volume is set on the right slider (Ringtone and Alerts on iPhone, the Clock app's Alarm volume on Android); your alarm app has permission to ring; Do Not Disturb allows alarms if you are on Android; the app is not restricted by battery saving; and the phone is charging on a hard surface. Then set a second alarm on another device for anything critical.
+Check six things before bed. The alarm is switched on and armed for tomorrow with a sound that is not None; the alarm volume is set on the right slider (Ringtone and Alerts on iPhone, or Alarms and Timers on iOS 27; the Clock app's Alarm volume on Android); your alarm app has permission to ring; Do Not Disturb allows alarms if you are on Android; the app is not restricted by battery saving; and the phone is charging on a hard surface. Then set a second alarm on another device for anything critical.
 
 ### Will my alarm go off if my phone is on silent?
 

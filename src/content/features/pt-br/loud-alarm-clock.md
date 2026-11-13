@@ -1,8 +1,8 @@
 ---
 title: "Sons altos de alarme"
 seoTitle: "Sons altos de alarme"
-description: "Escolha um toque Loud e confira o volume e as permissões do seu telefone antes de usar o alarme."
-lede: "Escolha um toque Loud e confira o volume e as permissões do seu telefone antes de usar o alarme."
+description: "No iPhone, escolha um toque Loud e confira o volume e as permissões do seu telefone antes de usar o alarme."
+lede: "No iPhone, escolha um toque Loud e confira o volume e as permissões do seu telefone antes de usar o alarme."
 lang: "pt-BR"
 translationOf: "loud-alarm-clock"
 order: 0
@@ -13,7 +13,7 @@ screenshot: "../../../assets/store/2.29/en/tones.webp"
 screenshotAlt: "Categoria Loud e seus sons"
 ---
 
-Loud é uma categoria no seletor de sons do alarme. Ouça os toques e salve o que quiser para esse alarme. Você pode combiná-lo com qualquer missão disponível.
+No iPhone, Loud é uma categoria no seletor de sons do alarme. Ouça os toques e salve o que quiser para esse alarme. Você pode combiná-lo com qualquer missão disponível. O Google Play tem a versão 2.9, que ainda não tem a categoria Loud; no Android, ouça os toques disponíveis e escolha o que você mais percebe.
 
 ## Como usar
 

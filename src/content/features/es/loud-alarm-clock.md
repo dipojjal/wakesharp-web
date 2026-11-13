@@ -1,8 +1,8 @@
 ---
 title: "Tonos de alarma fuertes"
 seoTitle: "Tonos de alarma fuertes"
-description: "Elige un tono de la categoría Fuerte y comprueba el volumen y los permisos antes de usar la alarma."
-lede: "Elige un tono de la categoría Fuerte y comprueba el volumen y los permisos antes de usar la alarma."
+description: "Elige un tono de la categoría Fuerte en el iPhone y comprueba el volumen y los permisos antes de usar la alarma."
+lede: "Elige un tono de la categoría Fuerte en el iPhone y comprueba el volumen y los permisos antes de usar la alarma."
 lang: "es"
 translationOf: "loud-alarm-clock"
 order: 0
@@ -13,7 +13,7 @@ screenshot: "../../../assets/store/2.29/es/tones.webp"
 screenshotAlt: "La categoría Fuerte y sus tonos"
 ---
 
-Fuerte es una categoría del selector de sonidos. Escucha los tonos y guarda el que quieras para esa alarma. Puedes combinarlo con cualquier misión disponible.
+En el iPhone, Fuerte es una categoría del selector de sonidos. Escucha los tonos y guarda el que quieras para esa alarma. Puedes combinarlo con cualquier misión disponible. Google Play tiene la versión 2.9, que aún no incluye la categoría Fuerte, así que en Android escucha los tonos que ofrece y elige el que más notes.
 
 ## Cómo usarlo
 

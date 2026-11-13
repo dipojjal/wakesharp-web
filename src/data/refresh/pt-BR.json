@@ -2,7 +2,7 @@
   "releaseNotice": "O WakeSharp 2.30 está na App Store. O Google Play tem a versão 2.9, então alguns recursos descritos aqui por enquanto são só para iPhone. Baixe a atualização mais recente na App Store ou no Google Play.",
   "hero": "Escolha um som na categoria Loud e decida o que fazer quando o alarme tocar. Resolva contas, escaneie uma garrafa ou comece a se mover com uma missão de caminhada.",
   "loudTitle": "Comece com um som que chame atenção",
-  "loud": "Loud é uma categoria no seletor de sons do alarme. Ouça os toques e salve o que quiser para esse alarme. Você pode combiná-lo com qualquer missão disponível.",
+  "loud": "No iPhone, Loud é uma categoria no seletor de sons do alarme. Ouça os toques e salve o que quiser para esse alarme. Você pode combiná-lo com qualquer missão disponível. O Google Play tem a versão 2.9, que ainda não tem a categoria Loud; no Android, ouça os toques disponíveis e escolha o que você mais percebe.",
   "volume": "No iPhone, o iOS controla o volume do alarme do sistema. Um toque Loud não altera esse ajuste. No Android, confira o volume do alarme e permita alarmes no Não perturbe. Faça um teste no seu telefone.",
   "scanTitle": "Levante, encontre e escaneie",
   "scan": "Escolha um alvo, como garrafa, caneca ou pia. Quando o alarme tocar, aponte a câmera para ele. A confirmação verde indica que o WakeSharp reconheceu o objeto. O reconhecimento acontece no telefone.",
@@ -52,7 +52,7 @@
   "features": [
     [
       "Sons altos de alarme",
-      "Escolha um toque Loud e confira o volume e as permissões do seu telefone antes de usar o alarme.",
+      "No iPhone, escolha um toque Loud e confira o volume e as permissões do seu telefone antes de usar o alarme.",
       [
         "Abra os sons do alarme e a categoria Loud.",
         "Ouça um toque, salve e escolha uma missão.",

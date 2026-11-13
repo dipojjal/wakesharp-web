@@ -79,7 +79,7 @@ The second worry is heat, and that one has a real basis. Apple's own safety guid
 
 **6. Turn the brightness down and lower your expectations of warm modes.** Dim beats tinted. Distance from the screen also helps more than people think, since illuminance falls off sharply as you move a screen away from your eyes.
 
-**7. If you wake at 3 AM, do not reach.** The American Academy of Sleep Medicine's [clinical practice guideline on behavioural treatments for chronic insomnia](https://jcsm.aasm.org/doi/10.5664/jcsm.8986) recommends stimulus control as a standalone therapy: the bed is for sleep, and if you are awake and frustrated, you get up rather than lying there teaching your brain that bed is where you scroll. The same guideline declines to recommend sleep hygiene on its own, which is a useful piece of humility for any article that hands you a list of rules.
+**7. If you wake at 3 AM, do not reach.** The American Academy of Sleep Medicine's [clinical practice guideline on behavioural treatments for chronic insomnia](https://pmc.ncbi.nlm.nih.gov/articles/PMC7853203/) recommends stimulus control as a standalone therapy: the bed is for sleep, and if you are awake and frustrated, you get up rather than lying there teaching your brain that bed is where you scroll. The same guideline declines to recommend sleep hygiene on its own, which is a useful piece of humility for any article that hands you a list of rules.
 
 ## Where WakeSharp fits, and where it does not
 

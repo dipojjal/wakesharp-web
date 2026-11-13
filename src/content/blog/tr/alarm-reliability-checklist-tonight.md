@@ -42,7 +42,7 @@ Beş kontrol ilk dört sistemi kapsar. Altıncısı sizi.
 
 Alarmın kendisini açın. O tek ekranda üç şeyin doğru olması gerekir: alarm açık, içinde bulunmadığınız bir hafta günü için değil yarın için kurulu ve sesi Hiçbiri değil. Hiçbiri, iki platformda da gerçek, seçilebilir bir seçenektir. Buna ayarlanmış bir alarm tam zamanında tetiklenir, ekranı yakar, size bir Durdur düğmesi sunar ve hiç ses çıkarmaz.
 
-Sonra ses düzeyi; ki bu, bütün akşam ayarladığınız ses düzeyi değildir. iPhone'da alarmlar, yan düğmelerinizin genellikle oynattığı medya ses düzeyini değil, Ayarlar, Sesler ve Dokunsallar altındaki Zil Sesi ve Uyarılar kaydırıcısını izler. Android'de alarmların kendi ses kanalı vardır: Saat uygulamasını, ardından Ayarlar'ı, ardından Alarm ses düzeyi kaydırıcısını açın ya da bir ses düğmesine basıp menüyü açarak ona ulaşın.
+Sonra ses düzeyi; ki bu, bütün akşam ayarladığınız ses düzeyi değildir. iPhone'da alarmlar, yan düğmelerinizin genellikle oynattığı medya ses düzeyini değil, Ayarlar, Sesler ve Dokunsallar altındaki Zil Sesi ve Uyarılar kaydırıcısını izler; iOS 27'de alarmlar ve zamanlayıcılar bölümünde, ses düzeylerini zil sesine eşitleyen seçeneği kapatarak alarmlara kendi kaydırıcılarını verebilirsiniz ([Apple](https://support.apple.com/guide/iphone/set-an-alarm-iph2909d3a74/ios)). Android'de alarmların kendi ses kanalı vardır: Saat uygulamasını, ardından Ayarlar'ı, ardından Alarm ses düzeyi kaydırıcısını açın ya da bir ses düğmesine basıp menüyü açarak ona ulaşın.
 
 Google'ın Saat uygulaması, ertesi sabah size [alarm ses düzeyinizin %30'un altında olduğunu ve fazla düşük olabileceğini](https://support.google.com/pixelphone/answer/2840926) gerçekten söyler. Yararlı bilgi; yaklaşık dokuz saat gecikmeyle teslim edilmiş.
 
@@ -112,7 +112,7 @@ Ve hiçbir platformda hiçbir yapılandırma uyanacağınıza söz veremez. Aksi
 
 O listedeki her maddenin ortak bir biçimi var: telefon, koşulların yanlış olduğunu saatler öncesinden biliyordu ve bundan söz etmek için hiçbir nedeni yoktu.
 
-WakeSharp'ın alarm güvenilirliği kontrolünün yaptığı şey budur; kontrolü Ayarlar &gt; Alarm güvenilirliği bölümünde bulursunuz. Aynı sınıftan kontrolü cihazınızda çalıştırır ve sizi susturacak olan şeyi adıyla söyler: eksik bir izin, fazla düşük ayarlanmış bir alarm ses düzeyi, bildirim ayarları, pil kısıtlamaları. Mesele, adını koymaktır. Rahatlatıcı bir yeşil onay işareti yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde tahmin etmek yerine bunu belirtir. iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verildikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur.
+WakeSharp'ın alarm güvenilirliği kontrolünün yaptığı şey budur; kontrolü Ayarlar &gt; Alarm güvenilirliği bölümünde bulursunuz. Aynı sınıftan kontrolü cihazınızda çalıştırır ve sizi susturacak olan şeyi adıyla söyler; örneğin eksik bir alarm izni ya da kapalı veya gerçekte zamanlanmamış bir alarm. Android'de alarm ses düzeyini, bildirim ayarlarını ve pil kısıtlamalarını da okur. iPhone'da alarm ses düzeyini okuyamaz, çünkü iOS uygulamalara bunu görmenin bir yolunu vermez; o kaydırıcı kendi listenizde kalır. Mesele, adını koymaktır. Rahatlatıcı bir yeşil onay işareti yerine net bir hükümle başlar ve platformun ona bir şeyi söylemediği yerde tahmin etmek yerine bunu belirtir. iPhone'da WakeSharp, Apple'ın AlarmKit'i üzerinden çalar; böylece alarm izni verildikten sonra alarm, Saat uygulamasının yaptığı gibi Sessiz mod ve Odak açıkken de duyulur.
 
 Dürüst sınırlar: bir kontrol aracı yalnızca işletim sisteminin göstermeyi seçtiği şeyi görebilir; bu yüzden her nedeni eleyemez ve uyanacağınıza söz veremez. WakeSharp bir tıbbi cihaz değildir. Kaçırmayı göze alamayacağınız bir sabah için o ikinci, bağımsız alarmı yine de kurun.
 
@@ -120,7 +120,7 @@ Dürüst sınırlar: bir kontrol aracı yalnızca işletim sisteminin göstermey
 
 ### Alarmımın sabah çalacağından nasıl emin olurum?
 
-Yatmadan önce altı şeyi kontrol edin. Alarm açık, yarın için kurulu ve sesi Hiçbiri değil; alarm ses düzeyi doğru kaydırıcıda ayarlı (iPhone'da Zil Sesi ve Uyarılar, Android'de Saat uygulamasının Alarm ses düzeyi); alarm uygulamanızın çalma izni var; Android'deyseniz Rahatsız Etmeyin alarmlara izin veriyor; uygulama pil tasarrufuyla kısıtlanmamış; telefon sert bir yüzeyde şarj oluyor. Sonra kritik olan her şey için başka bir cihazda ikinci bir alarm kurun.
+Yatmadan önce altı şeyi kontrol edin. Alarm açık, yarın için kurulu ve sesi Hiçbiri değil; alarm ses düzeyi doğru kaydırıcıda ayarlı (iPhone'da Zil Sesi ve Uyarılar ya da iOS 27'de alarmlar ve zamanlayıcılar; Android'de Saat uygulamasının Alarm ses düzeyi); alarm uygulamanızın çalma izni var; Android'deyseniz Rahatsız Etmeyin alarmlara izin veriyor; uygulama pil tasarrufuyla kısıtlanmamış; telefon sert bir yüzeyde şarj oluyor. Sonra kritik olan her şey için başka bir cihazda ikinci bir alarm kurun.
 
 ### Telefonum sessizdeyken alarmım çalar mı?
 

@@ -23,11 +23,11 @@ Estas son las siete causas que explican la mayoría de las alarmas perdidas, má
 
 ### 1. El volumen de la alarma no es el volumen que has estado ajustando
 
-Un iPhone mantiene dos volúmenes. El volumen multimedia cubre música, video y pódcasts. El volumen de tono de llamada y avisos cubre el timbre, los sonidos de notificación y las alarmas. Se mueven de forma independiente, y los botones físicos normalmente solo tocan el primero.
+Un iPhone mantiene dos volúmenes. El volumen multimedia cubre música, video y pódcasts. El volumen de tono de llamada y avisos cubre el timbre, los sonidos de notificación y, por defecto, las alarmas. Se mueven de forma independiente, y los botones físicos normalmente solo tocan el primero. iOS 27 añade una forma de separar las alarmas: en la sección de alarmas y temporizadores, al desactivar la opción que iguala su volumen al del tono de llamada, tienen su propio control ([Apple](https://support.apple.com/guide/iphone/set-an-alarm-iph2909d3a74/ios)).
 
 Así que el pódcast que subiste a medianoche no hizo nada por tu alarma. Y si tienes activado «Ajustar con botones», una pulsación larga del botón de bajar volumen en un cine silencioso puede arrastrar tu alarma hasta casi lo inaudible sin mostrarte nunca un aviso con forma de alarma.
 
-Compruébalo ahora: Ajustes &gt; Sonidos y vibraciones, y mira el control deslizante bajo Tono de llamada y avisos. Arrástralo y el teléfono reproduce una muestra a ese nivel, que es la prueba honesta. [Apple lo pone en primer lugar](https://support.apple.com/en-us/118444) en su propia guía de solución de problemas de alarmas, lo que te dice con qué frecuencia es la respuesta.
+Compruébalo ahora: Ajustes &gt; Sonidos y vibraciones, y mira el control deslizante bajo Tono de llamada y avisos (en iOS 27, revisa también la sección de alarmas y temporizadores). Arrástralo y el teléfono reproduce una muestra a ese nivel, que es la prueba honesta. [Apple lo pone en primer lugar](https://support.apple.com/en-us/118444) en su propia guía de solución de problemas de alarmas, lo que te dice con qué frecuencia es la respuesta.
 
 El arreglo: ajusta el control a propósito y luego desactiva Ajustar con botones en la misma pantalla, para que una pulsación perdida no pueda volver a vaciarlo. A partir de entonces los botones de volumen solo moverán el volumen multimedia, que es un precio pequeño.
 
@@ -113,7 +113,7 @@ Y a veces es de verdad un error de software, y nada de esto es culpa tuya. Los i
 
 Todas las causas anteriores comparten una forma. El teléfono sabía, con horas de antelación, que las condiciones estaban mal. Simplemente no tenía ningún motivo para mencionarlo.
 
-Ese es el trabajo de la comprobación de fiabilidad de WakeSharp, que vive en Ajustes &gt; Fiabilidad de la alarma. Lee las condiciones de tu teléfono que pueden detener una alarma: permisos, volumen de alarma, ajustes de notificaciones, superposición en la pantalla de bloqueo, restricciones de batería. Empieza por un veredicto claro en lugar de una promesa, y cuando la plataforma no le dice algo, lo reconoce en vez de mostrarte una tranquilizadora marca verde. Si una alarma falla, a menudo puede nombrar después la causa demostrable, o admitir que no pudo averiguarla.
+Ese es el trabajo de la comprobación de fiabilidad de WakeSharp, que vive en Ajustes &gt; Fiabilidad de la alarma. En iPhone comprueba lo que iOS deja comprobar a una app, como el permiso de alarmas y si tus alarmas están activadas y programadas de verdad. No puede leer el volumen de la alarma, porque iOS no da a las apps ninguna forma de verlo, así que ese control sigue siendo cosa tuya. Empieza por un veredicto claro en lugar de una promesa, y cuando la plataforma no le dice algo, lo reconoce en vez de mostrarte una tranquilizadora marca verde. Si una alarma falla, a menudo puede nombrar después la causa demostrable, o admitir que no pudo averiguarla.
 
 En iPhone, WakeSharp suena a través de AlarmKit de Apple, así que una vez que has concedido el permiso de alarmas, la alarma suena en modo Silencio y Concentración igual que lo hace la app Reloj. Ese permiso es todo el cimiento: recházalo o revócalo y WakeSharp no puede programar ninguna alarma, que es exactamente lo primero que te dirá la comprobación de fiabilidad.
 
@@ -125,7 +125,7 @@ El límite es el honesto, y es el mismo límite que tiene cualquier app de alarm
 
 ### ¿Por qué no sonó la alarma de mi iPhone?
 
-Por orden de probabilidad: el volumen de tono de llamada y avisos estaba bajo, el sonido de la alarma estaba en Ninguno, las Funciones con detección de atención la atenuaron, la alarma no estaba armada para hoy, el teléfono estaba apagado o sin batería, el despertador de tu horario de sueño tenía su propio volumen más bajo, o la descartaste apenas despierto. Comprueba primero el control Tono de llamada y avisos y el ajuste Sonido de la alarma, porque esos dos explican la mayoría de los casos.
+Por orden de probabilidad: el volumen de la alarma estaba bajo (Tono de llamada y avisos, o alarmas y temporizadores en iOS 27), el sonido de la alarma estaba en Ninguno, las Funciones con detección de atención la atenuaron, la alarma no estaba armada para hoy, el teléfono estaba apagado o sin batería, el despertador de tu horario de sueño tenía su propio volumen más bajo, o la descartaste apenas despierto. Comprueba primero el control de volumen de la alarma y el ajuste Sonido de la alarma, porque esos dos explican la mayoría de los casos.
 
 ### ¿La alarma del iPhone suena en silencio?
 
@@ -133,7 +133,7 @@ Sí. Apple es explícita en que el modo Silencio, el interruptor de timbre/silen
 
 ### ¿Por qué la alarma de mi iPhone suena tan baja?
 
-Normalmente por una de tres cosas: el control Tono de llamada y avisos está bajo, Ajustar con botones dejó que una pulsación de volumen lo vaciara, o las Funciones con detección de atención bajaron el volumen porque la cámara frontal te vio mirando la pantalla. El despertador de un horario de sueño también tiene su propio control de volumen en Salud, separado de todo lo demás.
+Normalmente por una de tres cosas: el control de volumen de la alarma está bajo (Tono de llamada y avisos, o alarmas y temporizadores en iOS 27), Ajustar con botones dejó que una pulsación de volumen lo vaciara, o las Funciones con detección de atención bajaron el volumen porque la cámara frontal te vio mirando la pantalla. El despertador de un horario de sueño también tiene su propio control de volumen en Salud, separado de todo lo demás.
 
 ### ¿Las Funciones con detección de atención pueden bajar el volumen de mi alarma?
 

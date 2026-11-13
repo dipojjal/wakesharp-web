@@ -91,9 +91,9 @@ Everything above is a population average. Your own curve is the one you live in,
 
 WakeSharp shows a daily [Sharpness Score](/features/sharpness-score), with badges and a history of your mornings. The score describes activity in the app. It does not measure sleep quality, diagnose a problem or tell you whether you are safe to drive. Use it to review your routine alongside how you feel, without treating a change in the number as proof of what caused it.
 
-Play one at minute five and another at minute twenty five for a week and you get a rough picture of your own recovery curve: how steep it is, and which nights flatten it.
+Because the score comes from the missions you finish when the alarm rings, it captures the start of this window, not the end of it. Kept for a week or two, it gives you a rough record of which mornings started slow, to set beside your bedtimes and how you felt by mid-morning.
 
-A daily app score cannot tell you that you are fully alert. Your bedtime, stress, surroundings and familiarity with the games all affect a morning. WakeSharp does not track sleep or shorten the time the body needs to wake up. Leave time before demanding work, even after completing a mission.
+A daily app score cannot tell you that you are fully alert. Your bedtime, stress, surroundings and familiarity with the missions all affect a morning. WakeSharp does not track sleep or shorten the time the body needs to wake up. Leave time before demanding work, even after completing a mission.
 
 ## FAQ
 
