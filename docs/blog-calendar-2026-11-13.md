@@ -17,35 +17,35 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 | Day | Slot (ET) | Headline | Slug · Category | Target query (US volume/mo, KD) | Status |
 |---|---|---|---|---|---|
 | 1 | Fri Nov 13, 6:00 PM | Do Sunrise Alarm Clocks Work? What Dawn Simulation Can and Can't Do | `do-sunrise-alarm-clocks-work` · tips-and-tricks | sunrise alarm clock (49,500, KD 4) | Ready |
-| 2 | Sat Nov 14, 6:00 PM | Why Do I Wake Up With a Headache? 9 Causes and What Helps | `waking-up-with-a-headache` · sleep-science | waking up with a headache / wake up headache (27,100 (cluster), KD 3) | Writing |
-| 3 | Sun Nov 15, 6:00 PM | iPhone Alarm Too Quiet? How to Make Your Alarm Louder | `iphone-alarm-volume-too-low` · tips-and-tricks | iphone alarm volume (18,100, KD 8) | Writing |
-| 4 | Mon Nov 16, 6:00 PM | Sleep Paralysis: Why You Wake Up and Can't Move (and How to Make It Rarer) | `sleep-paralysis-causes-how-to-stop` · sleep-science | sleep paralysis (201,000, KD 33) | Writing |
-| 5 | Tue Nov 17, 6:00 PM | How to Wake Yourself Up When You're Still Tired: 11 Things That Work | `how-to-wake-yourself-up` · morning-routines | how to wake yourself up (8,100, KD 16) | Writing |
-| 6 | Wed Nov 18, 6:00 PM | SAD Lamps: How to Use Light Therapy on Dark Winter Mornings | `sad-lamp-light-therapy-guide` · sleep-science | sad lamp (18,100, KD 8) | Writing |
-| 7 | Thu Nov 19, 6:00 PM | The Best Alarm Sound to Wake Up To, According to Research | `best-alarm-sound-to-wake-up` · tips-and-tricks | alarm sounds (14,800, KD 3) | Writing |
-| 8 | Fri Nov 20, 6:00 PM | Is 6 Hours of Sleep Enough? What 4, 5, 6 and 7 Hours Do to Your Mornings | `is-6-hours-of-sleep-enough` · sleep-science | is 6 hours of sleep enough (22,200, KD 11) | Writing |
-| 9 | Sat Nov 21, 6:00 PM | Does Turkey Make You Sleepy? The Tryptophan Myth and the Real Food Coma | `does-turkey-make-you-sleepy` · sleep-science | does turkey make you sleepy (5,400, KD 4) | Writing |
-| 10 | Sun Nov 22, 6:00 PM | How to Fall Asleep Fast: The Military Method, 4-7-8 and What Actually Works | `how-to-fall-asleep-fast` · tips-and-tricks | how to fall asleep fast (74,000, KD 26) | Writing |
-| 11 | Mon Nov 23, 6:00 PM | Night Owl in a 9-to-5 World: What You Can (and Can't) Change | `night-owl-wake-up-early` · sleep-science | night owl (49,500, KD 18) | Writing |
-| 12 | Tue Nov 24, 6:00 PM | Math Puzzles for Adults: 12 Quick Ones to Wake Up Your Brain | `math-puzzles-for-adults` · productivity | math puzzles (8,100, KD 13) | Writing |
-| 13 | Wed Nov 25, 6:00 PM | Why Am I Always Tired? 10 Reasons You Wake Up Exhausted | `why-am-i-always-tired` · sleep-science | why am i always tired (33,100, KD 36) | Writing |
-| 14 | Thu Nov 26, 6:00 PM | Sleeping With Earplugs: Is It Safe, and Will You Hear Your Alarm? | `sleeping-with-earplugs` · tips-and-tricks | sleeping with earplugs (14,800, KD 18) | Writing |
-| 15 | Fri Nov 27, 6:00 PM | How Much Deep Sleep Do You Need? (and How to Get More) | `how-much-deep-sleep-do-you-need` · sleep-science | how much deep sleep do you need (22,200, KD 18) | Writing |
-| 16 | Sat Nov 28, 6:00 PM | A Morning Routine That Survives Real Mornings: 7 Steps in 20 Minutes | `morning-routine-that-sticks` · morning-routines | morning routine (18,100, KD 38) | Writing |
-| 17 | Sun Nov 29, 6:00 PM | Chronotype Quiz: Bear, Wolf, Lion or Dolphin, and What the Science Says | `chronotype-quiz-body-clock` · sleep-science | chronotype quiz (3,600, KD 7) | Writing |
-| 18 | Mon Nov 30, 6:00 PM | Time Blindness: Why ADHD Mornings Slip Away (and Alarms That Help) | `time-blindness-adhd-mornings` · productivity | time blindness (12,100, KD 27) | Writing |
-| 19 | Tue Dec 1, 6:00 PM | Winter Blues and Dark Mornings: How to Wake Up When It's Still Night Outside | `winter-blues-dark-mornings` · morning-routines | winter blues (5,400, KD 20) | Writing |
-| 20 | Wed Dec 2, 6:00 PM | Why Do I Wake Up at 3 AM? Causes and How to Fall Back Asleep | `why-do-i-wake-up-at-3am` · sleep-science | waking up at 3am (9,900, KD 25) | Writing |
-| 21 | Thu Dec 3, 6:00 PM | Working Memory: What It Is, Why Mornings Shrink It, and How to Help It | `working-memory-morning-brain` · productivity | working memory (18,100, KD 38) | Writing |
-| 22 | Fri Dec 4, 6:00 PM | The Best Temperature for Sleep, and How to Hit It on Winter Nights | `best-temperature-for-sleep` · tips-and-tricks | best temperature for sleep (18,100, KD 23) | Writing |
-| 23 | Sat Dec 5, 6:00 PM | Dysania: Why Getting Out of Bed Feels Impossible (and What Helps) | `dysania-cant-get-out-of-bed` · morning-routines | dysania (3,600, KD 3) | Writing |
-| 24 | Sun Dec 6, 6:00 PM | Delayed Sleep Phase Syndrome: When Your Body Clock Runs Hours Late | `delayed-sleep-phase-syndrome` · sleep-science | delayed sleep phase syndrome (12,100, KD 20) | Writing |
-| 25 | Mon Dec 7, 6:00 PM | How to Stay Awake While Studying (and in Class) Without Wrecking Tomorrow | `how-to-stay-awake-while-studying` · productivity | how to stay awake while studying (720, KD 2) | Writing |
-| 26 | Tue Dec 8, 6:00 PM | Why Do I Wake Up With Anxiety? Morning Cortisol, Explained | `waking-up-with-anxiety` · morning-routines | waking up with anxiety (4,400, KD 9) | Writing |
-| 27 | Wed Dec 9, 6:00 PM | How Long Should a Nap Be? The 20-Minute Rule and When to Break It | `how-long-should-a-nap-be` · productivity | how long should a nap be (9,900, KD 40) | Writing |
-| 28 | Thu Dec 10, 6:00 PM | Why Is Snooze 9 Minutes? (and How to Change Snooze Time on iPhone) | `why-is-snooze-9-minutes` · tips-and-tricks | how to change snooze time on iphone (3,600, KD 5) | Writing |
-| 29 | Fri Dec 11, 6:00 PM | Sleep Drunkenness: Why Some People Wake Up Confused | `sleep-drunkenness-confusional-arousal` · sleep-science | confusional arousal / sleep drunkenness (2,900 / 1,900, KD 6) | Writing |
-| 30 | Sat Dec 12, 6:00 PM | How Long Does It Take to Form a Habit? (Not 21 Days) | `how-long-does-it-take-to-form-a-habit` · productivity | how long does it take to form a habit (8,100, KD 15) | Writing |
+| 2 | Sat Nov 14, 6:00 PM | Why Do I Wake Up With a Headache? 9 Causes and What Helps | `waking-up-with-a-headache` · sleep-science | waking up with a headache / wake up headache (27,100 (cluster), KD 3) | Ready |
+| 3 | Sun Nov 15, 6:00 PM | iPhone Alarm Too Quiet? How to Make Your Alarm Louder | `iphone-alarm-volume-too-low` · tips-and-tricks | iphone alarm volume (18,100, KD 8) | Ready |
+| 4 | Mon Nov 16, 6:00 PM | Sleep Paralysis: Why You Wake Up and Can't Move (and How to Make It Rarer) | `sleep-paralysis-causes-how-to-stop` · sleep-science | sleep paralysis (201,000, KD 33) | Ready |
+| 5 | Tue Nov 17, 6:00 PM | How to Wake Yourself Up When You're Still Tired: 11 Things That Work | `how-to-wake-yourself-up` · morning-routines | how to wake yourself up (8,100, KD 16) | Ready |
+| 6 | Wed Nov 18, 6:00 PM | SAD Lamps: How to Use Light Therapy on Dark Winter Mornings | `sad-lamp-light-therapy-guide` · sleep-science | sad lamp (18,100, KD 8) | Ready |
+| 7 | Thu Nov 19, 6:00 PM | The Best Alarm Sound to Wake Up To, According to Research | `best-alarm-sound-to-wake-up` · tips-and-tricks | alarm sounds (14,800, KD 3) | Ready |
+| 8 | Fri Nov 20, 6:00 PM | Is 6 Hours of Sleep Enough? What 4, 5, 6 and 7 Hours Do to Your Mornings | `is-6-hours-of-sleep-enough` · sleep-science | is 6 hours of sleep enough (22,200, KD 11) | Ready |
+| 9 | Sat Nov 21, 6:00 PM | Does Turkey Make You Sleepy? The Tryptophan Myth and the Real Food Coma | `does-turkey-make-you-sleepy` · sleep-science | does turkey make you sleepy (5,400, KD 4) | Ready |
+| 10 | Sun Nov 22, 6:00 PM | How to Fall Asleep Fast: The Military Method, 4-7-8 and What Actually Works | `how-to-fall-asleep-fast` · tips-and-tricks | how to fall asleep fast (74,000, KD 26) | Ready |
+| 11 | Mon Nov 23, 6:00 PM | Night Owl in a 9-to-5 World: What You Can (and Can't) Change | `night-owl-wake-up-early` · sleep-science | night owl (49,500, KD 18) | Ready |
+| 12 | Tue Nov 24, 6:00 PM | Math Puzzles for Adults: 12 Quick Ones to Wake Up Your Brain | `math-puzzles-for-adults` · productivity | math puzzles (8,100, KD 13) | Ready |
+| 13 | Wed Nov 25, 6:00 PM | Why Am I Always Tired? 10 Reasons You Wake Up Exhausted | `why-am-i-always-tired` · sleep-science | why am i always tired (33,100, KD 36) | Ready |
+| 14 | Thu Nov 26, 6:00 PM | Sleeping With Earplugs: Is It Safe, and Will You Hear Your Alarm? | `sleeping-with-earplugs` · tips-and-tricks | sleeping with earplugs (14,800, KD 18) | Ready |
+| 15 | Fri Nov 27, 6:00 PM | How Much Deep Sleep Do You Need? (and How to Get More) | `how-much-deep-sleep-do-you-need` · sleep-science | how much deep sleep do you need (22,200, KD 18) | Ready |
+| 16 | Sat Nov 28, 6:00 PM | A Morning Routine That Survives Real Mornings: 7 Steps in 20 Minutes | `morning-routine-that-sticks` · morning-routines | morning routine (18,100, KD 38) | Ready |
+| 17 | Sun Nov 29, 6:00 PM | Chronotype Quiz: Bear, Wolf, Lion or Dolphin, and What the Science Says | `chronotype-quiz-body-clock` · sleep-science | chronotype quiz (3,600, KD 7) | Ready |
+| 18 | Mon Nov 30, 6:00 PM | Time Blindness: Why ADHD Mornings Slip Away (and Alarms That Help) | `time-blindness-adhd-mornings` · productivity | time blindness (12,100, KD 27) | Ready |
+| 19 | Tue Dec 1, 6:00 PM | Winter Blues and Dark Mornings: How to Wake Up When It's Still Night Outside | `winter-blues-dark-mornings` · morning-routines | winter blues (5,400, KD 20) | Ready |
+| 20 | Wed Dec 2, 6:00 PM | Why Do I Wake Up at 3 AM? Causes and How to Fall Back Asleep | `why-do-i-wake-up-at-3am` · sleep-science | waking up at 3am (9,900, KD 25) | Ready |
+| 21 | Thu Dec 3, 6:00 PM | Working Memory: What It Is, Why Mornings Shrink It, and How to Help It | `working-memory-morning-brain` · productivity | working memory (18,100, KD 38) | Ready |
+| 22 | Fri Dec 4, 6:00 PM | The Best Temperature for Sleep, and How to Hit It on Winter Nights | `best-temperature-for-sleep` · tips-and-tricks | best temperature for sleep (18,100, KD 23) | Ready |
+| 23 | Sat Dec 5, 6:00 PM | Dysania: Why Getting Out of Bed Feels Impossible (and What Helps) | `dysania-cant-get-out-of-bed` · morning-routines | dysania (3,600, KD 3) | Ready |
+| 24 | Sun Dec 6, 6:00 PM | Delayed Sleep Phase Syndrome: When Your Body Clock Runs Hours Late | `delayed-sleep-phase-syndrome` · sleep-science | delayed sleep phase syndrome (12,100, KD 20) | Ready |
+| 25 | Mon Dec 7, 6:00 PM | How to Stay Awake While Studying (and in Class) Without Wrecking Tomorrow | `how-to-stay-awake-while-studying` · productivity | how to stay awake while studying (720, KD 2) | Ready |
+| 26 | Tue Dec 8, 6:00 PM | Why Do I Wake Up With Anxiety? Morning Cortisol, Explained | `waking-up-with-anxiety` · morning-routines | waking up with anxiety (4,400, KD 9) | Ready |
+| 27 | Wed Dec 9, 6:00 PM | How Long Should a Nap Be? The 20-Minute Rule and When to Break It | `how-long-should-a-nap-be` · productivity | how long should a nap be (9,900, KD 40) | Ready |
+| 28 | Thu Dec 10, 6:00 PM | Why Is Snooze 9 Minutes? (and How to Change Snooze Time on iPhone) | `why-is-snooze-9-minutes` · tips-and-tricks | how to change snooze time on iphone (3,600, KD 5) | Ready |
+| 29 | Fri Dec 11, 6:00 PM | Sleep Drunkenness: Why Some People Wake Up Confused | `sleep-drunkenness-confusional-arousal` · sleep-science | confusional arousal / sleep drunkenness (2,900 / 1,900, KD 6) | Ready |
+| 30 | Sat Dec 12, 6:00 PM | How Long Does It Take to Form a Habit? (Not 21 Days) | `how-long-does-it-take-to-form-a-habit` · productivity | how long does it take to form a habit (8,100, KD 15) | Ready |
 
 ## Rules for this series (on top of the handbook)
 
@@ -92,7 +92,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-11-15T18:00:00-05:00`
 - **Headline (`title`):** iPhone Alarm Too Quiet? How to Make Your Alarm Louder
 - **`seoTitle`** (50 characters): iPhone Alarm Volume Too Low? How to Make It Louder
-- **`description`** (160 characters): iPhone alarm volume is set by the Ringtone and Alerts slider, not media volume. How to make your iPhone alarm louder, change the sound, and stop it going quiet.
+- **`description`** (157 characters): iPhone alarm volume follows the ringer, not media volume, unless you split them in iOS 27. How to make your alarm louder, change the sound, and keep it loud.
 - **Category:** `tips-and-tricks` · **Tags:** `[iphone, ios, alarm-troubleshooting]`
 - **Target query:** iphone alarm volume: 18,100 US searches a month (window: 18,100), keyword difficulty 8
 - **Meta keywords:** iphone alarm volume; how to make iphone alarm louder (6,600); iphone alarm volume low (2,900, KD 2); change alarm sound iphone (2,400, KD 8); iphone alarm too quiet
@@ -148,7 +148,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-11-19T18:00:00-05:00`
 - **Headline (`title`):** The Best Alarm Sound to Wake Up To, According to Research
 - **`seoTitle`** (56 characters): Alarm Sounds: Which Wake You Best, According to Research
-- **`description`** (154 characters): Alarm sounds aren't equal: melodic tones beat harsh beeps for morning grogginess in one study, and novelty beats volume. How to pick the best alarm sound.
+- **`description`** (160 characters): Alarm sounds aren't equal: melodic tones went with less grogginess in one study, and low beeps beat shrill ones in sleep labs. How to pick the best alarm sound.
 - **Category:** `tips-and-tricks` · **Tags:** `[alarms, sleep-inertia, heavy-sleepers]`
 - **Target query:** alarm sounds: 14,800 US searches a month (window: 14,800), keyword difficulty 3
 - **Meta keywords:** alarm sounds; best alarm sound to wake up (720); gentle alarm sound (260, KD 1); best alarm tone (140, KD 6); melodic alarm
@@ -218,7 +218,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-11-24T18:00:00-05:00`
 - **Headline (`title`):** Math Puzzles for Adults: 12 Quick Ones to Wake Up Your Brain
 - **`seoTitle`** (51 characters): Math Puzzles for Adults: 12 Quick Ones With Answers
-- **`description`** (152 characters): Math puzzles for adults that take under two minutes each: twelve mental math warm-ups with answers, and why a little arithmetic wakes up a groggy brain.
+- **`description`** (151 characters): Math puzzles for adults, each under two minutes: twelve with answers, four mental math tricks, and what arithmetic can and can't do for a groggy brain.
 - **Category:** `productivity` · **Tags:** `[morning-cognition, brain-games, math]`
 - **Target query:** math puzzles: 8,100 US searches a month (window: 8,100), keyword difficulty 13
 - **Meta keywords:** math puzzles; mental math (4,400, KD 1); mental math tricks (480); math puzzles for adults; brain teasers
@@ -260,7 +260,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-11-27T18:00:00-05:00`
 - **Headline (`title`):** How Much Deep Sleep Do You Need? (and How to Get More)
 - **`seoTitle`** (52 characters): How Much Deep Sleep Do You Need? And How to Get More
-- **`description`** (158 characters): How much deep sleep do you need? Most adults spend roughly a fifth of the night in deep sleep. What it does, why trackers disagree, and how to get more of it.
+- **`description`** (151 characters): How much deep sleep do you need? Most adults spend 10 to 20 percent of the night in it. What it does, why trackers disagree, and how to get more of it.
 - **Category:** `sleep-science` · **Tags:** `[sleep-architecture, sleep-quality, rem-sleep]`
 - **Target query:** how much deep sleep do you need: 22,200 US searches a month (window: 22,200), keyword difficulty 18
 - **Meta keywords:** how much deep sleep do you need; how to get more deep sleep (9,900, KD 10); deep sleep (14,800, KD 33); how much rem sleep do you need (14,800, KD 22); deep sleep vs rem sleep
@@ -302,7 +302,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-11-30T18:00:00-05:00`
 - **Headline (`title`):** Time Blindness: Why ADHD Mornings Slip Away (and Alarms That Help)
 - **`seoTitle`** (58 characters): Time Blindness: What It Is and How to Manage ADHD Mornings
-- **`description`** (157 characters): Time blindness makes ten minutes feel like two, so ADHD mornings slip away. What research says, and the alarm, cue and routine tricks that make time visible.
+- **`description`** (156 characters): Time blindness makes minutes slip by unnoticed, so ADHD mornings run late. What research says, and the alarm, cue and routine tricks that make time visible.
 - **Category:** `productivity` · **Tags:** `[adhd, calendar-alarms, morning-routine]`
 - **Target query:** time blindness: 12,100 US searches a month (window: 9,900), keyword difficulty 27
 - **Meta keywords:** time blindness; adhd time blindness (2,400, KD 22); adhd alarm clock (480); adhd morning routine (320); how to manage time blindness
@@ -344,7 +344,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-12-03T18:00:00-05:00`
 - **Headline (`title`):** Working Memory: What It Is, Why Mornings Shrink It, and How to Help It
 - **`seoTitle`** (48 characters): Working Memory: What It Is and How to Improve It
-- **`description`** (159 characters): Working memory holds what you're thinking about right now, and it's weakest after waking or a short night. What it is, how sleep shapes it, and how to help it.
+- **`description`** (152 characters): Working memory holds what you're thinking about right now, and it's slow to come back after waking. What it is, how sleep shapes it, and how to help it.
 - **Category:** `productivity` · **Tags:** `[morning-cognition, memory, brain-games]`
 - **Target query:** working memory: 18,100 US searches a month (window: 22,200), keyword difficulty 38
 - **Meta keywords:** working memory; how to improve working memory (1,300, KD 25); working memory examples; working memory and sleep; memory games (49,500, KD 16)
@@ -442,7 +442,7 @@ One English post a day at **6:00 PM ET** for 30 days, starting Friday November 1
 - **pubDate:** `2026-12-10T18:00:00-05:00`
 - **Headline (`title`):** Why Is Snooze 9 Minutes? (and How to Change Snooze Time on iPhone)
 - **`seoTitle`** (59 characters): How to Change Snooze Time on iPhone, and Why It's 9 Minutes
-- **`description`** (147 characters): How to change snooze time on iPhone and Android, why snooze defaulted to 9 minutes for decades, and what a snooze of any length costs your morning.
+- **`description`** (137 characters): How to change snooze time on iPhone and Android, where the 9-minute snooze came from, and what a snooze of any length costs your morning.
 - **Category:** `tips-and-tricks` · **Tags:** `[snooze, iphone, android]`
 - **Target query:** how to change snooze time on iphone: 3,600 US searches a month (window: 4,000), keyword difficulty 5
 - **Meta keywords:** how to change snooze time on iphone; why is snooze 9 minutes (1,300, KD 8); snooze alarm (1,600, KD 5); iphone snooze time; android snooze length
