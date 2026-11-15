@@ -819,21 +819,24 @@ import { REFERRAL_DISCLOSURE } from './legal-copy';
   {/*
     AI features. Written 2026-11-08 against the app repository: the lark-ai edge
     function and Docs/LARK-AI.md (what each route takes, no bodies in logs, the
-    HMAC sent as metadata.user_id, the lark schema's expiring rows), the consent
-    sheets and LarkAISettings on both apps, LarkChatStore (backup-excluded
-    files), and Anthropic's privacy center as read that day (API inputs and
-    outputs deleted within 30 days; up to 2 years when flagged; not used for
-    training). Re-check it whenever those change, and tighten the retention
-    sentence if Anthropic grants zero data retention.
+    HMAC sent as metadata.user_id, the lark schema's expiring rows),
+    LarkAISettings on both apps, LarkChatStore (backup-excluded files), and
+    Anthropic's privacy center as read that day (API inputs and outputs deleted
+    within 30 days; up to 2 years when flagged; not used for training).
+    Updated 2026-11-15: the apps' consent sheets were removed (owner decision),
+    so the switches in Settings > Lark AI turn the features on directly and
+    this section is the one place that names Anthropic and says what is sent.
+    Re-check it whenever those change, and tighten the retention sentence if
+    Anthropic grants zero data retention.
   */}
   <h2 id="ai-features">AI features</h2>
   <p>
     Some Lark features, called Lark AI in the app, can use Claude, an AI made by
     <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic</a>. They are
-    <strong>off unless you turn them on</strong>. The app asks once, and you can change your answer any time in
-    Settings under Lark AI. Your answer is kept on your phone only, so a restored backup or a new phone asks again.
-    With them off, nothing goes to Anthropic and the Lark uses its own scripts and templates. Screens written by
-    Lark AI say so, and the Lark says it is an AI if you ask.
+    <strong>off unless you turn them on</strong> with the <em>Use Lark AI</em> switch in Settings under Lark AI,
+    and you can turn them off there at any time. The switch is kept on your phone only, so on a restored backup or a
+    new phone they start off again. With them off, nothing goes to Anthropic and the Lark uses its own scripts and
+    templates. Screens written by Lark AI say so, and the Lark says it is an AI if you ask.
   </p>
   <p>Here is what each feature sends when it is on:</p>
   <ul>
